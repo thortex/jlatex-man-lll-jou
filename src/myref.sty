@@ -4,25 +4,25 @@
 % Date: 2006/04/20
 % Copying: copyright (c) 2004, 2006 Thor Watanabe
 \ProvidesPackage{myref.sty}[2004/08/04 v0.1 Thor]
-\newcommand*{\chaplab}[1]{\label{chap:#1}}%     ¾Ï¤Î¥é¥Ù¥ë
-\newcommand*{\chapref}[1]{Âè~\ref{chap:#1}~¾Ï}% ¾Ï¤Î»²¾È
-\newcommand*{\seclab}[1]{\label{sec:#1}}%       Àá¤Î¥é¥Ù¥ë
-\newcommand*{\secref}[1]{\ref{sec:#1}~Àá}%      Àá¤Î»²¾È
-\newcommand*{\figlab}[1]{\label{fig:#1}}%       ¿Ş¤Î¥é¥Ù¥ë
-\newcommand*{\figref}[1]{\figurename~\ref{fig:#1}}%      ¿Ş¤Î»²¾È
-\newcommand*{\tablab}[1]{\label{tab:#1}}%       É½¤Î¥é¥Ù¥ë
-\newcommand*{\tabref}[1]{\tablename~\ref{tab:#1}}%     É½¤Î»²¾È
-\newcommand*{\equlab}[1]{\label{equ:#1}}%       ¼°¤Î¥é¥Ù¥ë
-\newcommand*{\equref}[1]{¼°~\ref{equ:#1}}%     ¼°¤Î»²¾È
-\newcommand*{\applab}[1]{\label{app:#1}}%       ÉÕÏ¿¤Î¥é¥Ù¥ë
-\newcommand*{\appref}[1]{\appendixname~\ref{app:#1}}%    ÉÕÏ¿¤Î»²¾È
+\newcommand*{\chaplab}[1]{\label{chap:#1}}%     ç« ã®ãƒ©ãƒ™ãƒ«
+\newcommand*{\chapref}[1]{ç¬¬~\ref{chap:#1}~ç« }% ç« ã®å‚ç…§
+\newcommand*{\seclab}[1]{\label{sec:#1}}%       ç¯€ã®ãƒ©ãƒ™ãƒ«
+\newcommand*{\secref}[1]{\ref{sec:#1}~ç¯€}%      ç¯€ã®å‚ç…§
+\newcommand*{\figlab}[1]{\label{fig:#1}}%       å›³ã®ãƒ©ãƒ™ãƒ«
+\newcommand*{\figref}[1]{\figurename~\ref{fig:#1}}%      å›³ã®å‚ç…§
+\newcommand*{\tablab}[1]{\label{tab:#1}}%       è¡¨ã®ãƒ©ãƒ™ãƒ«
+\newcommand*{\tabref}[1]{\tablename~\ref{tab:#1}}%     è¡¨ã®å‚ç…§
+\newcommand*{\equlab}[1]{\label{equ:#1}}%       å¼ã®ãƒ©ãƒ™ãƒ«
+\newcommand*{\equref}[1]{å¼~\ref{equ:#1}}%     å¼ã®å‚ç…§
+\newcommand*{\applab}[1]{\label{app:#1}}%       ä»˜éŒ²ã®ãƒ©ãƒ™ãƒ«
+\newcommand*{\appref}[1]{\appendixname~\ref{app:#1}}%    ä»˜éŒ²ã®å‚ç…§
 %
-\newcommand*{\pref}[1]{\pageref{#1}¥Ú¡¼¥¸}%     ¥Ú¡¼¥¸¤Î»²¾È
-\newcommand*\Pref[2]{(\pageref{#1:#2}¥Ú¡¼¥¸)}
+\newcommand*{\pref}[1]{\pageref{#1}ãƒšãƒ¼ã‚¸}%     ãƒšãƒ¼ã‚¸ã®å‚ç…§
+\newcommand*\Pref[2]{(\pageref{#1:#2}ãƒšãƒ¼ã‚¸)}
 %
 \newcommand*\fullchapref[1]{\chapref{#1} \Pref{chap}{#1}}
 \newcommand*\fullsecref[1]{\ref{#1} \Pref{sec}{#1}}
 \newcommand*\fullfigref[1]{\figurename~\ref{#1} \Pref{fig}{#1}}
 \newcommand*\fulltabref[1]{\tablename~\ref{#1} \Pref{tab}{#1}}
-\newcommand*\fullequref[1]{¼°~\ref{#1} \Pref{equ}{#1}}
+\newcommand*\fullequref[1]{å¼~\ref{#1} \Pref{equ}{#1}}
 \endinput

@@ -1,9 +1,9 @@
 #!/bin/sh
-# mendex $B$N$?$a$K(B jisyo.dic $B$OE,59(B
+# mendex のために jisyo.dic は適宜
 #    nkf -Lu --euc <jisyo.dic >hoge.dic
 #    mv jisyo.dic jisyo.dic.old 
 #    mv hoge.ci jisyo.dic
-# $BEy$H$7$F$/$@$5$$!%(B
+# 等としてください．
 #\begin{comment}
 ## Author  : Thor Watanabe
 ## date    : December 25, 2003
@@ -15,6 +15,7 @@ TEX=	platex
 BIBTEX=	jbibtex
 DVIPS=	dvips 
 DVIPDFMX=dvipdfmx
+MAKEIDX=mendex
 FILE=	jou
 #REF=	jou.bib latexbase.bib latexbase2.bib latextools.bib manual.bib
 IST=	sind.ist
@@ -40,7 +41,7 @@ SRC=	001kuchie.tex \
 	15info.tex \
 	fdl.tex 
 SRC2=	sampleMakefile \
-	jisyo.dic \
+	jou.dic \
 	gnuplot1.tex \
 	gnuplot2.tex \
 	roji06.tex \
@@ -59,8 +60,8 @@ joumac.sty:	joumac.dtx joumac.ins
 #
 joumac.dvi:	joumac.dtx
 	$(TEX) joumac.dtx && $(TEX) joumac.dtx
-	mendex -s gind.ist -o joumac.ind joumac.idx
-#	mendex -s gglo.ist -o joumac.gls joumac.glo
+	$(MAKEIDX) -s gind.ist -o joumac.ind joumac.idx
+#	$(MAKEIDX) -s gglo.ist -o joumac.gls joumac.glo
 	$(TEX) joumac.dtx
 	rm -f joumac.aux joumac.glo joumac.idx joumac.ilg
 	rm -f joumac.log *~
@@ -80,8 +81,8 @@ $(FILE).pdf: $(FILE).dvi
 $(FILE)hyper.pdf: cleanany $(FILE)hyper.tex
 	$(TEX) $(FILE)hyper
 	$(TEX) $(FILE)hyper
-	mendex -s $(IST) -d jisyo.dic -o $(FILE)hyper.ind $(FILE)hyper.idx
-	mendex -s $(GST) -d jisyo.dic -o $(FILE)hyper.gls $(FILE)hyper.glo
+	$(MAKEIDX) -s $(IST) -d jou.dic -o $(FILE)hyper.ind $(FILE)hyper.idx
+	$(MAKEIDX) -s $(GST) -d jou.dic -o $(FILE)hyper.gls $(FILE)hyper.glo
 	$(TEX) $(FILE)hyper
 	$(TEX) $(FILE)hyper
 	$(DVIPDFMX) -o $(FILE)hyper.pdf $(FILE)hyper
@@ -92,10 +93,10 @@ $(FILE).dvi:$(FILE).ind $(FILE).gls# $(FILE).bbl
            do $(TEX) $(FILE); done)
 
 $(FILE).ind: $(FILE).idx 
-	mendex -s $(IST) -d jisyo.dic -o $(FILE).ind $(FILE).idx
+	$(MAKEIDX) -s $(IST) -d jou.dic -o $(FILE).ind $(FILE).idx
 
 $(FILE).gls: $(FILE).glo
-	mendex -s $(GST) -d jisyo.dic -o $(FILE).gls $(FILE).glo
+	$(MAKEIDX) -s $(GST) -d jou.dic -o $(FILE).gls $(FILE).glo
 
 $(FILE).bbl: $(FILE).aux
 	$(BIBTEX) $(FILE)

@@ -1,341 +1,341 @@
 %#!platex jou.tex
-\section{���Ƥν��Ϸ���}
+\section{原稿の出力形式}
 %\begin{abstract}
-%{\LaTeX}�θ��Ƥμ�ɮ������ä��餽�������\pp{�����ץ��å�}
-%���ʤ���Фʤ�ʤ��Τϼ����Τ��ȤǤ������ɤΤ褦��
-%�ե���������ˤ��뤫�����Ӥˤ��ʬ�����Ȥ����Ǥ���
-%���ξϤǤϤɤΤ褦�ʥե��������������Τ����ɤ���ä�
-%�Ѵ�����Τ����������ޤ���
-\zindind{����}{�ν��Ϸ���}%
-{\LaTeX}�θ��Ƥμ�ɮ������ä��餽�������\pp{�����ץ��å�}���ʤ���Ф�
-��ʤ��Τϼ����λ��Ǥ������ɤΤ褦�ʥե���������ˤ��뤫�����Ӥˤ�ä�
-ʬ�����Ȥ����Ǥ���������ǤϤɤΤ褦�ʥե��������������Τ����ɤ����
-���Ѵ�����Τ����������ޤ���
+%{\LaTeX}の原稿の執筆が終わったらそれを組版\pp{タイプセット}
+%しなければならないのは自明のことですが，どのような
+%ファイル形式にするかは用途により分かれるところです．
+%この章ではどのようなファイル形式があるのか，どうやって
+%変換するのかを説明します．
+\zindind{原稿}{の出力形式}%
+{\LaTeX}の原稿の執筆が終わったらそれを組版\pp{タイプセット}しなければな
+らないのは自明の事ですが，どのようなファイル形式にするかは用途によって
+分かれるところです．この節ではどのようなファイル形式があるのか，どうやっ
+て変換するのかを説明します．
 %\end{abstract}
 
-\subsection{���Ϸ����μ���γ���}
+\subsection{出力形式の種類の概説}
 
-{\LaTeX}�θ��Ƥμ�ɮ������ä��餽�������\pp{�����ץ��å�}���ʤ���Ф�
-��ʤ��Τϼ����λ��Ǥ������ɤΤ褦�ʥե���������ˤ��뤫�����Ӥˤ��ʬ
-�����Ȥ����Ǥ�����Ū�ȵ�ʬ�ˤ�äƤ��η������Ѥ��ޤ��������줾��η�����
-�ɤΤ褦����ħ����äƤ���Τ����ΤäƤ����ʤ���С��ɤη������Ѵ������
-�ɤ��Τ���ʬ����ޤ��󡥤Ǥ�����ޤ��ϤɤΤ褦�ʷ�����¸�ߤ����ɤΤ褦��
-��ħ������Τ���Ҳ𤷤ޤ���
+{\LaTeX}の原稿の執筆が終わったらそれを組版\pp{タイプセット}しなければな
+らないのは自明の事ですが，どのようなファイル形式にするかは用途により分
+かれるところです．目的と気分によってその形式を変えますが，それぞれの形式が
+どのような特徴を持っているのかを知っておかなければ，どの形式に変換すれば
+良いのかが分かりません．ですからまずはどのような形式が存在し，どのような
+特徴があるのかを紹介します．
 
 \begin{description}
 %\item[DVI]
-%  DVI��\emph{Device Independent}��ά�����֤˰�¸���ʤ�
-%  ���ѤΥڡ������Ҹ���Ǥ���������ޤ�����ü��
-%  �����ԤäƤ��ʤ����Ƥξ��Ϥ���DVI�ե����뤫��
-%  ������Ԥ����Ȥ��Ǥ��ޤ������֤˰�¸����̿���
-%  ����DVI�ե��������˵��Ҥ���Ƥ��ꡤ�����Ŭ�ڤ�
-%  ��ᤷ�Ƥ����ǥХ����ɥ饤�Ф�����ޤ����̾��
-%  �ץ�ӥ塼����Ѥ˻Ȥ��Ƥ��ޤ���DVI�ե������
-%  \Va{file}{dvi}�Τ褦�˳�ĥ�Ҥ�\exten{dvi}�Ȥʤ�ޤ���
+%  DVIは\emph{Device Independent}の略で装置に依存しない
+%  汎用のページ記述言語です．画像を含んだり特殊な
+%  描画を行っていない原稿の場合はこのDVIファイルから
+%  印刷を行うことができます．装置に依存する命令も
+%  このDVIファイルの中に記述されており，それを適切に
+%  解釈してくれるデバイスドライバがあります．通常は
+%  プレビュー作業用に使われています．DVIファイルは
+%  \Va{file}{dvi}のように拡張子が\exten{dvi}となります．
 %\item[{\PS}]
-%  Adobe�Ҥ��Τ˳�ȯ�����ڡ������Ҹ���Ǥ���
-%  ���ߤΥС�������1.3��Unix��OS�ǤϤ���{\PS}������
-%  �ե����뤬�ץ�ӥ塼�ڤӰ����˹����Ȥ��Ƥ��ޤ����ɤ�
-%  {\PS}���ά����PS�Ƚ񤯤��Ȥ�����ޤ�������ĥ�Ҥ�
-%  \exten{ps}�ˤʤäƤ��ޤ���ɸ��Ǥ�  �ե����뤬���̤���
-%  �ʤ��Τ�\Va{file}{ps.gz}�η������ۤ���Ƥ��뤫�⤷���
-%  ���󡥰����ȳ��Ǥ⤳��{\PS}  �������ɤ��Ȥ��Ƥ�
-%  �ޤ���{\PS}����֤�EPS\pp{Encapsulated {\PS}}
-%  �Ȥ����ե���������⤢��ޤ���������ϥ٥��ȥ������
-%  �ɤ��ɤ��Ȥ��Ƥ��ޤ���
+%  Adobe社が昔に開発したページ記述言語です．
+%  現在のバージョンは1.3でUnix系OSではこの{\PS}形式の
+%  ファイルがプレビュー及び印刷に広く使われています．良く
+%  {\PS}を省略してPSと書くことがありますし，拡張子は
+%  \exten{ps}になっています．標準では  ファイルが圧縮され
+%  ないので\Va{file}{ps.gz}の形で配布されているかもしれま
+%  せん．印刷業界でもこの{\PS}  形式が良く使われてい
+%  ます．{\PS}の仲間にEPS\pp{Encapsulated {\PS}}
+%  というファイル形式もあります．こちらはベクトル画像な
+%  どに良く使われています．
 %\item[PDF]
-%  PDF��Portable Document Format��ά��Adobe�Ҥγ�ȯ���Ƥ���
-%  {\PS}�θ�ѤΥڡ������Ҹ���Ǥ���\zindind{�ڡ���}{���Ҹ���}
-%  ���ߤΥС�������1.5�ǥץ�ӥ塼�Ȱ�����̤�Ʊ���٤��ʼ�
-%  �����뤳�Ȥ��Ǥ�������Ǥ���������ǹ����Ȥ��Ƥ��ޤ���
-%  ���ܸ���̤�ޤ���{\LaTeX}�����θ��Ƥ�ľ��PDF���Ѵ�����
-%  \Prog[pdfLaTeX]{pdf\LaTeX}�Ȥ����ץ�������¸�ߤ��ޤ���
+%  PDFはPortable Document Formatの略でAdobe社の開発している
+%  {\PS}の後継のページ記述言語です．\zindind{ページ}{記述言語}
+%  現在のバージョンは1.5でプレビューと印刷結果が同程度の品質
+%  を得ることができる形式です．世界中で広く使われています．
+%  日本語は通りませんが{\LaTeX}形式の原稿を直接PDFに変換する
+%  \Prog[pdfLaTeX]{pdf\LaTeX}というプログラムも存在します．
 %\item[HTML]
-%  \Z{HTML} HyperText Markup Language��ά�ǥ����־��
-%  �����������뤿���\Z{�ϥ��ѡ����} 
-%  \pp{\Z{Hyper Link}}�Ȥ�����ǽ���������ڡ������Ҹ���Ǥ���
-%  ���ʥ����֥֥饦�����鸫�Ƥ���ڡ�����HTML�ǵ��Ҥ����
-%  ���ޤ������ߤ�HTML�θ�Ѥ�XHTML����ή�ˤʤ����Ȥ��Ƥ��ޤ���
-%  {\LaTeX}��Ʊ���褦��\Z{�ޡ������å�}����Ǥ���
+%  \Z{HTML} HyperText Markup Languageの略でウェブ上で
+%  情報を公開するための\Z{ハイパーリンク} 
+%  \pp{\Z{Hyper Link}}という機能を備えたページ記述言語です．
+%  普段ウェブブラウザから見ているページもHTMLで記述されて
+%  います．現在はHTMLの後継のXHTMLが主流になろうとしています．
+%  {\LaTeX}と同じように\Z{マークアップ}言語です．
 \item[DVI]
-  \indindz{̿��}{���֤˰�¸����}%
-  \indindz{̿��}{�ǥХ�����¸��}%
-  DVI��\emph{Device Independent}��ά�����֤˰�¸���ʤ�
-  ���ѤΥڡ������Ҹ���Ǥ���������ޤ�����ü��
-  �����ԤäƤ��ʤ����Ƥξ��Ϥ���DVI�ե����뤫��
-  ������Ԥ������Ǥ��ޤ������֤˰�¸����̿���
-  ����DVI�ե��������˵��Ҥ���Ƥ��ꡤ�����Ŭ�ڤ�
-  ��ᤷ�Ƥ����ǥХ����ɥ饤�Ф�����ޤ����̾��
-  �ץ�ӥ塼����Ѥ˻Ȥ��Ƥ��ޤ���DVI�ե������
-  \Va{file}{dvi}�Τ褦�˳�ĥ�Ҥ�\Exten{dvi}�Ȥʤ�ޤ���
+  \indindz{命令}{装置に依存した}%
+  \indindz{命令}{デバイス依存の}%
+  DVIは\emph{Device Independent}の略で装置に依存しない
+  汎用のページ記述言語です．画像を含んだり特殊な
+  描画を行っていない原稿の場合はこのDVIファイルから
+  印刷を行う事ができます．装置に依存する命令も
+  このDVIファイルの中に記述されており，それを適切に
+  解釈してくれるデバイスドライバがあります．通常は
+  プレビュー作業用に使われています．DVIファイルは
+  \Va{file}{dvi}のように拡張子が\Exten{dvi}となります．
 \item[{\PS}]
-  \zindind{�ڡ���}{���Ҹ���}%
-  Adobe�Ҥ��Τ˳�ȯ�����ڡ������Ҹ���Ǥ���
-  ���ߤΥС�������1.3��\unixos �ǤϤ���{\PS}������
-  �ե����뤬�ץ�ӥ塼�ڤӰ����˹����Ȥ��Ƥ��ޤ����ɤ�
-  {\PS}���ά����PS�Ƚ񤯻�������ޤ�������ĥ�Ҥ�
-  \Exten{ps}�ˤʤäƤ��ޤ���ɸ��Ǥ�  �ե����뤬���̤���
-  �ʤ��Τ�\Va{file}{ps.gz}�η������ۤ���Ƥ��뤫�⤷���
-  ���󡥰����ȳ��Ǥ⤳��{\PS}  �������ɤ��Ȥ��Ƥ�
-  �ޤ���{\PS}����֤�EPS\pp{Encapsulated {\PS}}
-  �Ȥ����ե���������⤢��ޤ����������ñ��ڡ���������
-  �ɤ��ɤ��Ȥ��Ƥ��ޤ���\indindz{����}{ñ��ڡ�����}
+  \zindind{ページ}{記述言語}%
+  Adobe社が昔に開発したページ記述言語です．
+  現在のバージョンは1.3で\unixos ではこの{\PS}形式の
+  ファイルがプレビュー及び印刷に広く使われています．良く
+  {\PS}を省略してPSと書く事がありますし，拡張子は
+  \Exten{ps}になっています．標準では  ファイルが圧縮され
+  ないので\Va{file}{ps.gz}の形で配布されているかもしれま
+  せん．印刷業界でもこの{\PS}  形式が良く使われてい
+  ます．{\PS}の仲間にEPS\pp{Encapsulated {\PS}}
+  というファイル形式もあります．こちらは単一ページ画像な
+  どに良く使われています．\indindz{画像}{単一ページの}
 \item[PDF]
-\zindind{PDF}{�ΥС������}%
-  PDF��Portable Document Format��ά��Adobe�Ҥγ�ȯ���Ƥ���
-  {\PS}�θ�ѤΥڡ������Ҹ���Ǥ���\zindind{�ڡ���}{���Ҹ���}
-  \genzai �κǿ��С�������1.6�ǡ�
-  �ץ�ӥ塼�Ȱ�����̤�Ʊ���٤��ʼ�����������Ǥ�������Ǥ����ߴ�����
-  ��θ����ХС������� 1.3 �����줹��Τ�̵����Ȼפ��ޤ���PDF ����
-  ����ǹ����Ȥ��Ƥ��ޤ���\genzai �����ܸ첽�Ϥ���Ƥ��ޤ��󤬡�
-  {\LaTeX}�����θ��Ƥ�ľ�� PDF���Ѵ����� \Prog[pdfLaTeX]{\PDFLaTeX}�Ȥ�
-  ���ץ�������¸�ߤ��ޤ���\zindind{����}{����PDF�κ���}%
+\zindind{PDF}{のバージョン}%
+  PDFはPortable Document Formatの略でAdobe社の開発している
+  {\PS}の後継のページ記述言語です．\zindind{ページ}{記述言語}
+  \genzai の最新バージョンは1.6で，
+  プレビューと印刷結果が同程度の品質を得る事ができる形式です．互換性を
+  考慮すればバージョンは 1.3 で統一するのが無難だと思われます．PDF は世
+  界中で広く使われています．\genzai で日本語化はされていませんが，
+  {\LaTeX}形式の原稿を直接 PDFに変換する \Prog[pdfLaTeX]{\PDFLaTeX}とい
+  うプログラムも存在します．\zindind{原稿}{からPDFの作成}%
 \item[HTML]
-  \Z{HTML} HyperText Markup Language��ά�ǥ����־��
-  �����������뤿���\Z{�ϥ��ѡ����} 
-  \pp{\Z{Hyper Link}}�Ȥ�����ǽ���������ڡ������Ҹ���Ǥ���
-  ����\Z{�����֥֥饦��}���鸫�Ƥ���ڡ�����HTML�ǵ��Ҥ����
-  ���ޤ������ߤ�HTML�θ�Ѥ�XHTML����ή�ˤʤ����Ȥ��Ƥ��ޤ���
-  {\LaTeX}��Ʊ���褦��\Z{�ޡ������å�}����Ǥ���
+  \Z{HTML} HyperText Markup Languageの略でウェブ上で
+  情報を公開するための\Z{ハイパーリンク} 
+  \pp{\Z{Hyper Link}}という機能を備えたページ記述言語です．
+  普段\Z{ウェブブラウザ}から見ているページもHTMLで記述されて
+  います．現在はHTMLの後継のXHTMLが主流になろうとしています．
+  {\LaTeX}と同じように\Z{マークアップ}言語です．
 \end{description}
-�ʾ�η����Τۤ��ˤ⤢��ΤǤ�����ͭ̾�ʷ����Ϥ��λͤĤǤ���
-���߹����Ѥ����Ƥ���Τ�PDF�����Ǥ����顤�ܽ�Ǥ�PDF�Ȥ��μ��դ˴ؤ�
-�ƾܤ������⤷�ޤ���
+以上の形式のほかにもあるのですが，有名な形式はこの四つです．
+現在広く用いられているのはPDF形式ですから，本書でもPDFとその周辺に関し
+て詳しく解説します．
 
-%���ξϤǤϤɤΤ褦��{\LaTeX}�θ��Ƥ�Ʒ������Ѵ����뤫����⤷�ޤ���
+%この章ではどのように{\LaTeX}の原稿を各形式に変換するかを解説します．
 
-\subsection{\LaTeX �θ��Ƥ���DVI��}
-\Z{DVI}�Ȥ�\emph{DeVice Independent}��ά�ǥǥХ����˰�¸���ʤ��ե������
-���Ǥ����̾�{\LaTeX}��������η�̤�ޤȤ��Τ⤳��DVI�����Ǥ���
-\prog{platex}�ʤɤΥץ�������{\LaTeX}�θ��Ƥ򥳥󥽡��뤫�鼡�Τ褦��
-����С�\LaTeX �θ��ƥե����� \Va{filename}{tex} ����DVI�ե�����
-\Va{filename}{dvi} ����������ޤ���
+\subsection{\LaTeX の原稿からDVIへ}
+\Z{DVI}とは\emph{DeVice Independent}の略でデバイスに依存しないファイル形
+式です．通常{\LaTeX}が成形後の結果をまとめるのもこのDVI形式です．
+\prog{platex}などのプログラムで{\LaTeX}の原稿をコンソールから次のように
+すれば，\LaTeX の原稿ファイル \Va{filename}{tex} からDVIファイル
+\Va{filename}{dvi} が生成されます．
 
 \begin{InTerm}
    \type{platex filename.tex}
 \end{InTerm}
 
-���ΤȤ��̾�ϥ��������ˤ�ä����ܸ첽���줿 \pLaTeX ���Ѥ��ޤ�
-\footnote{���������Υץ������Ȥ��̤�NTT�ˤ�ä����ܸ첽���줿\JLaTeX
-��¸�ߤ��ޤ���}��
+このとき通常はアスキーによって日本語化された \pLaTeX を用います
+\footnote{アスキーのプログラムとは別にNTTによって日本語化された\JLaTeX
+も存在します．}．
 
-�ߴ����ΰ٤ˡ��Ť�\LaTeX��\LaTeX\,2.09 ����Υ������ե�����򥿥��ץ���
-�Ȥ���ˤ� \prog{platex209}���ޥ�ɤ�Ȥ��ޤ���
+互換性の為に，古い\LaTeX，\LaTeX\,2.09 時代のソースファイルをタイプセッ
+トするには \prog{platex209}コマンドを使います．
 
 \begin{InTerm}
  \type{platex209 oldfile.tex}
 \end{InTerm}
 
-\latexno{�ε���}%
-\indindz{�ե�����}{��������}%
-\zindind{����}{����Ƭ}
-�ز����ˤ�äƤ�\LaTeXe
-���б����Ƥ��ʤ��Ť��񼰤Υ��饹�ե������\Z{��������ե�����}�����󶡤���
-���ʤ���礬����ޤ���\LaTeXe �� \LaTeX\,2.09 ��ʬ������ˡ�ϴ�ñ�Ǥ���
-\LaTeX �θ��� \Va{file}{tex}����Ƭ��̿������ܤ��ޤ���
+\latexno{の旧版}%
+\indindz{ファイル}{スタイル}%
+\zindind{原稿}{の先頭}
+学会等によっては\LaTeXe
+に対応していない古い書式のクラスファイルや\Z{スタイルファイル}しか提供して
+いない場合があります．\LaTeXe と \LaTeX\,2.09 を見分ける方法は簡単です．
+\LaTeX の原稿 \Va{file}{tex}の先頭の命令に注目します．
 
 \begin{itemize}
- \item \Cmd{documentclass} ̿���ȤäƤ���� \LaTeXe �ѤΥե����롥
- \item \Cmd{documentstyle} ̿���ȤäƤ���� \LaTeX\,2.09 �ѤΥե����롥
+ \item \Cmd{documentclass} 命令を使っていれば \LaTeXe 用のファイル．
+ \item \Cmd{documentstyle} 命令を使っていれば \LaTeX\,2.09 用のファイル．
 \end{itemize}
 
-\LaTeX\,2.09����ξ��ϡ�\cmd{usepackage}̿��ϻȤ��ޤ��󡥤��Τ��ᡤ
-\cmd{documentstyle}��Ǥ�հ�����ɬ�פȤ��륹������ե��������󤷤ޤ���
+\LaTeX\,2.09時代の場合は，\cmd{usepackage}命令は使えません．そのため，
+\cmd{documentstyle}の任意引数に必要とするスタイルファイルを列挙します．
 
 \begin{InTeX}
  \documentstyle[url,mysetting,...]{jarticle}
 \end{InTeX}
 
-�ä��ᤷ�ƥ����ץ��åȸ�����������DVI�ե�����ˤϥ���դ�����ʤɤο�
-����������Ƥ��ޤ��󤬡������ξ����DVI�ե�����˵��ܤ���Ƥ��ޤ�����
-�ʤɤ����̤ʾ������Ǥ��뤫�Ϥ���\K{�ץ�ӥ塼����ǥХ����ɥ饤�Ф�
-��¸���Ƥ��ޤ�}��
+話を戻してタイプセット後に整形されるDVIファイルにはグラフや画像などの図
+は挿入されていませんが，それらの情報はDVIファイルに記載されています．図
+などの特別な情報を解釈できるかはその\K{プレビューアやデバイスドライバに
+依存しています}．
 
-%DVI�ե�����ϥץ�ӥ塼�ʤɤǰ��Ū�����Ǹ�η�̤��ǧ����Τ������Ǥ���
-%Windows�Ǥ�\Hito{����}{��ͺ}�餬��ȯ���Ƥ���\Dviout��\unixos �ʤ��
-%\prog{xdvi}��Red~Hat��Fedora~Cora�Ǥ����\prog{pxdvi}��Mac~OS~X�ʤ��
-%�ʤɤ��Ȥ��ޤ���
-\zindind{Windows}{�ǤΥץ�ӥ塼}%
-\zindind{Unix��OS}{�ǤΥץ�ӥ塼}%
-\zindind{Mac OS X}{�ǤΥץ�ӥ塼}%
-\indindz{�ץ�ӥ塼}{Windows�Ǥ�}%
-\indindz{�ץ�ӥ塼}{Unix��OS�Ǥ�}%
-\indindz{�ץ�ӥ塼}{Mac OS X�Ǥ�}%
-Windows�Ǥ�\Hito{����}{��ͺ}�餬��ȯ���Ƥ���\prog{\Dviout}��\Z{Unix��OS}��
-���\prog{xdvi}��Red Hat �� Fedora Core �Ǥ� \prog{pxdvi}���Ȥ��ޤ���
-Mac~OS~X�Ǥ�\Hito{�⻳}{����}�ˤ��\Prog{Mxdvi}�ǥץ�ӥ塼�Ǥ��ޤ���
+%DVIファイルはプレビューなどで一時的に組版後の結果を確認するのに便利です．
+%Windowsでは\Hito{大島}{利雄}らが開発している\Dviout，\unixos ならば
+%\prog{xdvi}，Red~HatやFedora~Coraであれば\prog{pxdvi}，Mac~OS~Xならば
+%などが使えます．
+\zindind{Windows}{でのプレビュー}%
+\zindind{Unix系OS}{でのプレビュー}%
+\zindind{Mac OS X}{でのプレビュー}%
+\indindz{プレビュー}{Windowsでの}%
+\indindz{プレビュー}{Unix系OSでの}%
+\indindz{プレビュー}{Mac OS Xでの}%
+Windowsでは\Hito{大島}{利雄}らが開発している\prog{\Dviout}，\Z{Unix系OS}な
+らば\prog{xdvi}，Red Hat や Fedora Core では \prog{pxdvi}が使えます．
+Mac~OS~Xでは\Hito{内山}{孝憲}による\Prog{Mxdvi}でプレビューできます．
 
-DVI�ե����뤫��������Ǥ��뤫��������ɽ���Ǥ��뤫���ɤβ����������б���
-�Ƥ��뤫�Ȥ����褦�ʾ������Ƥ��Ȥ��δĶ��ΥǥХ����ɥ饤�Ф˰�¸���Ƥ�
-�ޤ����ǥХ����ɥ饤�Ф�������ˡ������Ū�������ˡ���ϡ��Ƽ浪�Ȥ��Υǥ�
-�����ɥ饤�ФΥޥ˥奢��򻲾Ȥ��Ƥ���������
+DVIファイルから印刷ができるか，画像が表示できるか，どの画像形式に対応し
+ているかというような条件は全てお使いの環境のデバイスドライバに依存してい
+ます．デバイスドライバの設定方法，基本的な操作方法等は，各種お使いのデバ
+イスドライバのマニュアルを参照してください．
 
 
 
-\subsection{DVI��PDF��\zdash \texorpdfstring\Dvipdfmx{Dvipdfmx}}
+\subsection{DVIをPDFに\zdash \texorpdfstring\Dvipdfmx{Dvipdfmx}}
 \seclab{dviware:dvipdfmx}
-%Adobe�Ҥ���ȯ�����Ż�ʸ�������\Z{PDF}�Ȥ�������������ޤ���PDF��
-%\emph{Portable Document Format}��ά�ǡ��ѥ�����β��̤���Ǥ����������
-%����ʬ����ɽ�������뤳�Ȥ��Ǥ��ޤ����ޥ˥奢������ۤ���������ۤǤ�
-%����PDF�����������Ѥ����Ƥ��ޤ���
+%Adobe社が開発した電子文書形式で\Z{PDF}という形式があります．PDFは
+%\emph{Portable Document Format}の略で，パソコンの画面からでも印刷したの
+%と寸分違わぬ表示を得ることができます．マニュアルの配布や資料の配布では
+%このPDF形式が広く用いられています．
 
-Adobe�Ҥ���ȯ����\Z{�Ż�ʸ�����}��\Z{PDF}�Ȥ�������������ޤ���PDF��
-\emph{Portable Document Format}��ά�ǡ��ѥ�����β��̤ˤ����Ƥ����������
-����ʬ����ɽ������������Ǥ��ޤ���\zindind{�ޥ˥奢��}{����}{�ޥ˥�
-���������}��\Z{����������}�ǤϤ���PDF�����������Ѥ����Ƥ��ޤ���PDF
-�ե�������������ˤ�¿���δĶ��ˤ����ƻ��Ѳ�ǽ��\Prog{Adobe Reader}��
-���ѤǤ��ޤ���¾�ˤ�Windows�Ǥ� \Z{Foxit Software Company}�ˤ��
-\Prog{Foxit Reader}��Mac OS X �ʤ��ɸ����°�Υץ�ӥ塼���ڤ�ȴ���ʤɤ�
-��ñ���Խ����ǽ�ˡ�\unixos �Ǥ����\Prog{Xpdf}�ʤɤ�����ޤ���
-\zindind{PDF}{�Υץ�ӥ塼}%
-
-
-%\subsection{DVI��PDF��}
-
-%\qu{\str{name}}�Ȥ����Τ��ե����̾�Ǥ���\qu{\str{type}}�Ȥ���
-%�Τ����Ѥ���Ƥ���ե���Ȥμ���򼨤��ޤ���\qu{\str{emb}}��
-%���Υե���Ȥ������ޤ�Ƥ��뤫�ɤ�����\qu{\str{sub}}��
-%���֥��åȲ�����Ƥ��뤫�ɤ�����\qu{\str{uni}}�Ȥ����Τ�
-%Unicode�ޥåԥ󥰤���Ƥ��뤫�ɤ����򼨤��ޤ����ܤ���
-%���Ȥ�PDF��Ϣ�λ���~\cite{PDF1.3}��������������
+Adobe社が開発した\Z{電子文書形式}で\Z{PDF}という形式があります．PDFは
+\emph{Portable Document Format}の略で，パソコンの画面においても印刷したの
+と寸分違わぬ表示を得る事ができます．\zindind{マニュアル}{配布}{マニュ
+アルの配布}や\Z{資料の配布}ではこのPDF形式が広く用いられています．PDF
+ファイルを閲覧するには多くの環境において使用可能な\Prog{Adobe Reader}が
+利用できます．他にもWindowsでは \Z{Foxit Software Company}による
+\Prog{Foxit Reader}，Mac OS X ならば標準付属のプレビュー（切り抜きなどの
+簡単な編集も可能），\unixos であれば\Prog{Xpdf}などがあります．
+\zindind{PDF}{のプレビュー}%
 
 
-\Person{Mark}{Wicks}����������\Prog[Dvipdfm]{\Dvipdfm}~\cite{omdvipdfm}
-��Ȥ���DVI�ե����뤫��PDF������Ǥ��ޤ���\Hito{ʿ��}{�Ӻ�}�����ܸ첽�ѥ�
-�������Ƥ��С�����󤬤��줾��δĶ�������Ǥ��ޤ������줫�鸽��
-\prog{\Dvipdfm}��\hito{ʿ��}{�Ӻ�}��\Hito{��}{����}���濴�ȤʤäƳ�ư���Ƥ�
-��{\Dvipdfmx} Project Team�ˤ�äƤ���˲��ɤ��ä����
-\Prog[dvipdfmx]{\Dvipdfmx}�ؤȿʲ����Ƥ��ޤ���\prog{\Dvipdfm}�Ͼ����Ť��ʤ�
-�Ƥ��ޤ��Τǡ���Ѥ�\prog{\Dvipdfmx}��Ȥ����򤪴��ᤷ�ޤ���
+%\subsection{DVIをPDFに}
 
-%\prog{\Dvipdfmx}��\prog{dvipdfm}�ξ�̸ߴ��Τ褦�ʤ�ΤǤ��Τǡ��ޤ���
-%\prog{dvipdfm}�δ���Ū�ʻȤ������ΤäƤ����ޤ��礦��\prog{dvipdfm}�ǲ�ǽ
-%�������Τޤ�\prog{\Dvipdfmx}�����ƤϤޤ�ޤ���
+%\qu{\str{name}}というのがフォント名であり\qu{\str{type}}という
+%のが使用されているフォントの種類を示します．\qu{\str{emb}}は
+%そのフォントが埋め込まれているかどうか，\qu{\str{sub}}は
+%サブセット化されているかどうか，\qu{\str{uni}}というのは
+%Unicodeマッピングされているかどうかを示します．詳しい
+%ことはPDF関連の資料~\cite{PDF1.3}をご覧ください．
 
-%\prog{dvipdfm}�μ�ʵ�ǽ��\Z{PDF�֥å��ޡ���}��
-%\Prog[HyperTeX]{Hyper\TeX}��{\Tpic}���ڥ����ʤɤ�
-%���ݡ��Ȥ��Ƥ��ޤ��������ե������JPEG��PNG��EPS��
-%EPDF�ե������{\KY{�Х���ǥ��󥰥ܥå���}}
-%�Ȥ������󤵤줢��С����Τޤ�PDF�˼����ळ�Ȥ���
-%����褦�ˤʤ�ޤ���
 
-\zindind{PDF}{�֥å��ޡ���}%
-\zindind{����}{�Υ���������}%
+\Person{Mark}{Wicks}が作成した\Prog[Dvipdfm]{\Dvipdfm}~\cite{omdvipdfm}
+を使うとDVIファイルからPDFを作成できます．\Hito{平田}{俊作}の日本語化パッ
+チを当てたバージョンがそれぞれの環境で入手できます．それから現在
+\prog{\Dvipdfm}は\hito{平田}{俊作}と\Hito{趙}{珍煥}が中心となって活動してい
+る{\Dvipdfmx} Project Teamによってさらに改良が加えられ
+\Prog[dvipdfmx]{\Dvipdfmx}へと進化しています．\prog{\Dvipdfm}は少々古くなっ
+ていますので，後継の\prog{\Dvipdfmx}を使う事をお勧めします．
+
+%\prog{\Dvipdfmx}は\prog{dvipdfm}の上位互換のようなものですので，まずは
+%\prog{dvipdfm}の基本的な使い方を知っておきましょう．\prog{dvipdfm}で可能
+%な操作がそのまま\prog{\Dvipdfmx}に当てはまります．
+
+%\prog{dvipdfm}の主な機能は\Z{PDFブックマーク}，
+%\Prog[HyperTeX]{Hyper\TeX}，{\Tpic}スペシャルなどを
+%サポートしています．画像ファイルはJPEG，PNG，EPS，
+%EPDFファイルの{\KY{バウンディングボックス}}
+%という情報されあれば，そのままPDFに取り込むことがで
+%きるようになります．
+
+\zindind{PDF}{ブックマーク}%
+\zindind{画像}{のサイズ情報}%
 \Exten*{jpg}%
 \Exten*{png}%
 \Exten*{eps}%
 \Exten*{epdf}%
 \Exten*{bmp}%
-\prog{\Dvipdfmx}�ϼ��{PDF�֥å��ޡ���}��
-\Prog[HyperTeX]{Hyper\TeX}��{\Tpic}���ڥ����ʤɤε�ǽ�򥵥ݡ���
-���Ƥ��ޤ��������ե������JPEG��PNG��EPS��EPDF, BMP (BMP �� 2005ǯ8���
-�б�) �ե������\KY{�Х���ǥ��󥰥ܥå���}�Ȥ��������Υ��������󤵤�
-����С����Τޤ�PDF�˼���������Ǥ���褦�ˤʤ�ޤ���
+\prog{\Dvipdfmx}は主に{PDFブックマーク}，
+\Prog[HyperTeX]{Hyper\TeX}，{\Tpic}スペシャルなどの機能をサポート
+しています．画像ファイルはJPEG，PNG，EPS，EPDF, BMP (BMP は 2005年8月に
+対応) ファイルの\KY{バウンディングボックス}という画像のサイズ情報され
+あれば，そのままPDFに取り込む事ができるようになります．
 
-\Dvipdfmx �Ǥϥ��ޥ�ɥ饤�󥪥ץ����ˤ�äƽ��Ϸ�̤��Ф��������Ĵ��
-��Ԥ������Ǥ��ޤ���\Dvipdfm �ȶ��̤ʥ��ץ����ϰʲ����̤�Ǥ���
+\Dvipdfmx ではコマンドラインオプションによって出力結果に対する細部の調整
+を行う事ができます．\Dvipdfm と共通なオプションは以下の通りです．
 
 \begin{description}
 \item[\copt{-c}]
- \Z{���顼���ڥ����}������̵���ˤ��ޤ���\Z{�������}�ΤȤ��ʤɤ˻Ȥ��ޤ���
+ \Z{カラースペシャル}を全て無効にします．\Z{白黒印刷}のときなどに使います．
 %\item[\copt{-e}]
-%\indindz{�ե����}{���֥��å�}%
-% \Z{���֥��åȥե����}������ޤ���%
-%�Ƕ��{\Dvipdfmx}�ǤϤ���\copt{-e}���ץ���󤬺������Ƥ��ޤ���
-\item[\copt{-f} \va{�ե�����̾}]
-\indindz{�ե�����}{�ե���ȥޥå�}%
- \Z{�ե���ȥޥåץե�����}����ꤷ�ޤ���
-\item[\copt{-m} \va{����}]
-\indindz{����}{�ڡ�����}%
-\zindind{�ڡ���}{�γ���}%
- �ڡ����γ���Ψ����ꤷ�ޤ���
- \copt{-p}���ץ�����ʻ�Ѥ�����ɤ��Ǥ��礦��
-\item[\copt{-o} \va{�ե�����}]
- ���Ϥ���ե�����̾����ꤷ�ޤ���
- ɸ��Ǥ�\Va{file}{dvi}����ꤹ���
- \Va{file}{pdf}����������ޤ���
-\item[\copt{-p} \Va{������}]
- ���Ϥ����ѻ�Υ���������ꤷ�ޤ���\index{�ѻ�!\zdash ���礭���λ���}
-ɸ��Ǥ�\option{a4}������Ǥ��륵������
-\optionlist{letter,a6,a5,a4,a3,b5,b5,b4,b3,b5var}�ʤɤǤ���
-���Τ褦�ˤ��ʤ��Ȥ⸶�ƤΥץꥢ��֥�Ǽ��Τ褦�ˤ��Ƥ�Ʊ����̤ˤʤ��
-����
+%\indindz{フォント}{サブセット}%
+% \Z{サブセットフォント}化をやめます．%
+%最近の{\Dvipdfmx}ではこの\copt{-e}オプションが削除されています．
+\item[\copt{-f} \va{ファイル名}]
+\indindz{ファイル}{フォントマップ}%
+ \Z{フォントマップファイル}を指定します．
+\item[\copt{-m} \va{数字}]
+\indindz{拡大}{ページの}%
+\zindind{ページ}{の拡大}%
+ ページの拡大率を指定します．
+ \copt{-p}オプションと併用すると良いでしょう．
+\item[\copt{-o} \va{ファイル}]
+ 出力するファイル名を指定します．
+ 標準では\Va{file}{dvi}を指定すれば
+ \Va{file}{pdf}が作成されます．
+\item[\copt{-p} \Va{サイズ}]
+ 出力する用紙のサイズを指定します．\index{用紙!\zdash の大きさの指定}
+標準では\option{a4}．指定できるサイズは
+\optionlist{letter,a6,a5,a4,a3,b5,b5,b4,b3,b5var}などです．
+このようにしなくとも原稿のプリアンブルで次のようにしても同じ結果になりま
+す．
 
 \C*{AtBeginDvi}
 \begin{InTeX}
 \AtBeginDvi{\special{pdf:papersize width 210mm height 270mm}}
 \end{InTeX}
 
-\zindind{�ɥ�����ȥ��饹}{���ץ����}%
-\indindz{���ץ����}{�ɥ�����ȥ��饹}%
-\Y{jsclasses}�Ǥϥɥ�����ȥ��饹���ץ����� \Option{papersize}
-����ꤹ�������Ʊ�ͤθ��̤���������Ǥ��ޤ���
+\zindind{ドキュメントクラス}{オプション}%
+\indindz{オプション}{ドキュメントクラス}%
+\Y{jsclasses}ではドキュメントクラスオプションに \Option{papersize}
+を指定するだけで同様の効果を得る事ができます．
 
 \begin{InTeX}
  \documentclass[papersize]{jsarticle}
 \end{InTeX}
 
  \item[\copt{-l}]
-\zindind{�ѻ�}{������}%
-	   �ѻ��\Z{���֤�}�ˤ��ޤ����������ե�������ǥɥ�����ȥ��饹��
-	   �ץ�����\option{landscape}��ͭ���Ǥʤ���а�̣������ޤ���
- \item[\copt{-s} \va{�ϰ�}]
-\zindind{�ڡ���}{���ϰ�}%
-\zindind{�ڡ���}{��ս�ˤ���}%
-	   ���Ϥ���ڡ������ϰϤ���ꤷ�ޤ����ϥ��ե��Ȥ���
-	   �ϰϤ���ꡤ����ޤ�Ȥ���ʣ�����ϰϤ����Ǥ��ޤ���
-	   �㤨��\qu{\copt{-s 3-5,10-20}}�Ȥ����3--5�ڡ�����10--20
-	   ����Ĥ�PDF�˽��Ϥ���ޤ����ϥ��ե�������˲���ʤ��Ȥ�
-	   �������������ʹߤΥڡ��������ƴޤߤޤ���\qu{\copt{-s 15-}}
-	   �Ȥ����15�ڡ����ʹ����Ƥ���Ϥ��ޤ���¾�ˤ�ڡ������
-	   ��ˤ������Ǥ��ޤ����ޤ����դ�����\qu{\copt{-s -,-}}
-	   �Ȥ���ȤɤΤ褦�ʽ��Ϥˤʤ뤫��Ƥߤ���ɤ��Ǥ��礦��
- \item[\copt{-r} \va{������}]
-\zindind{PDF}{�β�����}%
-	   PDF�ե������\Z{������}����ꤷ�ޤ���ɸ���600\,dpi�ˤʤäƤ��ޤ���
- \item[\copt{-V} \va{�С������}]
-\zindind{PDF}{�θߴ���}%
-	   PDF�ΥС����������Ǥ��ޤ���2����5�ޤǤ�
-	   �С����������Ǥ��ޤ������Ť��С���������ꤹ���
-	   �տޤ��ʤ���̤ˤʤ��������ޤ����ߴ�����
-	   ͥ�褷�ʤ���Фʤ�ʤ��Ȥ��ʤɤ˻Ȥ��ޤ���
- \item[\copt{-x} \va{Ĺ��}]
-\indindz{���ե��å�}{��ʿ������}%
-	   ��ʿ������\Z{���ե��å�}����ꤷ�ޤ���ɸ���
-	   \copt{1.0in}�Ǥ���ñ�̤ˤ�mm��cm��in��pt���Ȥ��ޤ���
- \item[\copt{-y} \va{Ĺ��}]
-\indindz{���ե��å�}{��ľ������}%
-	   ��ľ�����Υ��ե��åȤ���ꤷ�ޤ���
-	   ɸ���\copt{1.0in}�Ǥ���ñ�̤ˤĤ��Ƥ�\copt{-x}��Ʊ�ͤǤ���
- \item[\copt{-z} \va{����}]
-\zindind{PDF}{�ΰ���Ψ}%
-	   \Z{����Ψ}����ꤷ�ޤ�������Ψ��0--9�ޤǻ���Ǥ�9���ǹ�Ǥ���
-	   ɸ���\option{9}�Ǥ��Τǥӥåȥޥåײ����ʤɤβ����
-	   ��Ȥ������ʤ�����0�ʤɤˤ�����ɤ��Ǥ��礦��
+\zindind{用紙}{の方向}%
+	   用紙を\Z{横置き}にします．ソースファイル中でドキュメントクラスオ
+	   プションの\option{landscape}が有効でなければ意味がありません．
+ \item[\copt{-s} \va{範囲}]
+\zindind{ページ}{の範囲}%
+\zindind{ページ}{を逆順にする}%
+	   出力するページの範囲を指定します．ハイフンを使うと
+	   範囲を指定，コンマを使うと複数の範囲を指定できます．
+	   例えば\qu{\copt{-s 3-5,10-20}}とすると3--5ページと10--20
+	   が一つのPDFに出力されます．ハイフンの片方に何もないとそ
+	   れ以前か，それ以降のページを全て含みます．\qu{\copt{-s 15-}}
+	   とすると15ページ以降全てを出力します．他にもページを逆
+	   順にする事もできます．また悪ふざけで\qu{\copt{-s -,-}}
+	   とするとどのような出力になるか試してみると良いでしょう．
+ \item[\copt{-r} \va{解像度}]
+\zindind{PDF}{の解像度}%
+	   PDFファイルの\Z{解像度}を指定します．標準は600\,dpiになっています．
+ \item[\copt{-V} \va{バージョン}]
+\zindind{PDF}{の互換性}%
+	   PDFのバージョンを指定できます．2から5までの
+	   バージョンを指定できますが，古いバージョンを指定すると
+	   意図しない結果になる事があります．互換性を
+	   優先しなければならないときなどに使います．
+ \item[\copt{-x} \va{長さ}]
+\indindz{オフセット}{水平方向の}%
+	   水平方向の\Z{オフセット}を指定します．標準は
+	   \copt{1.0in}です．単位にはmm，cm，in，ptが使えます．
+ \item[\copt{-y} \va{長さ}]
+\indindz{オフセット}{垂直方向の}%
+	   垂直方向のオフセットを指定します．
+	   標準は\copt{1.0in}です．単位については\copt{-x}と同様です．
+ \item[\copt{-z} \va{数字}]
+\zindind{PDF}{の圧縮率}%
+	   \Z{圧縮率}を指定します．圧縮率は0--9まで指定でき9が最高です．
+	   標準は\option{9}ですのでビットマップ画像などの画質を
+	   落としたくない場合は0などにすると良いでしょう．
  \item[\copt{-v}]
-	   �������Ƥ�ɸ����Ϥ˾ܤ���ɽ�����ޤ����̾�ʤ�С�\Z{ɸ�२�顼
-	   ����}�˷�̤�
-	   ɽ������ޤ��������ե��������¸���������\Z{������쥯��}������
-	   \str{2}���դ��ä��Ƽ��Τ褦�˼¹Ԥ��ޤ���
+	   処理内容を標準出力に詳しく表示します．通常ならば，\Z{標準エラー
+	   出力}に結果が
+	   表示されます．これをファイルに保存したければ\Z{リダイレクト}の前に
+	   \str{2}を付け加えて次のように実行します．
 
 \begin{InTerm}
  \type{dvipdfmx -v file.dvi 2>file.xlg}
 \end{InTerm}
 
  \item[\copt{-vv}]
-	   ����˽������Ƥ�ܤ���ɽ�����ޤ���
+	   さらに処理内容を詳しく表示します．
 \end{description}
 
 %\begin{Exe}
-��������Ѥ�DVI�ե������15�ڡ�������20�ڡ�����PDF���Ѵ��������Ȥ��ϼ���
-�褦�ˤ��ޤ���
+白黒印刷用のDVIファイルの15ページから20ページをPDFに変換したいときは次の
+ようにします．
 
 \begin{InTerm}
   \type{dvipdfmx -c -s 15-20 -o output.pdf input.dvi}
 \end{InTerm}
 
-\zindind{��ĥ��}{�ξ�ά}%
-���ϥե�����γ�ĥ��\exten{dvi}�ϼ��Τ褦�˾�ά���Ƥ⹽���ޤ���
+\zindind{拡張子}{の省略}%
+入力ファイルの拡張子\exten{dvi}は次のように省略しても構いません．
 
 \begin{InTerm}
   \type{dvipdfmx input}
@@ -343,60 +343,60 @@ Adobe�Ҥ���ȯ����\Z{�Ż�ʸ�����}��\Z{PDF}�Ȥ�������������ޤ���PDF��
 
 %\end{Exe}
 
-%PDF�ե������\Prog{Adobe Reader}��\Prog{Acrobat Reader}�ʤ�
-%�Ǳ������Ƥ���Ȥ���
-%\prog{dvipdfm}�ˤ��DVI�ե�������Ѵ���Ԥ���
+%PDFファイルを\Prog{Adobe Reader}や\Prog{Acrobat Reader}など
+%で閲覧しているときに
+%\prog{dvipdfm}によるDVIファイルの変換を行うと
 %\dos{** ERROR ** Unable to open output.pdf}
-%�Ȥ�����å�������ɽ�����ƥ��顼�ˤʤ�ޤ���
-%1�ٳ����Ƥ���PDF�ե�������Ĥ��Ƥ�������Ѵ������
-%�ɤ��Ǥ��礦��
-\zindind{PDF}{�ե������Ѵ����Υ��顼}
-PDF�ե������\Prog{Adobe Reader}��\Prog{Acrobat Reader}�ʤ�
-�Ǳ������Ƥ���Ȥ���\Dvipdfmx �ˤ��DVI�ե�������Ѵ���Ԥ���
-\index{���顼!Unable to open file.pdf@\texttt{Unable to open} \Va{file}{pdf}}%
+%というメッセージを表示してエラーになります．
+%1度開いているPDFファイルを閉じてから再度変換すると
+%良いでしょう．
+\zindind{PDF}{ファイル変換時のエラー}
+PDFファイルを\Prog{Adobe Reader}や\Prog{Acrobat Reader}など
+で閲覧しているときに\Dvipdfmx によるDVIファイルの変換を行うと
+\index{エラー!Unable to open file.pdf@\texttt{Unable to open} \Va{file}{pdf}}%
 \index{Unable to open file.pdf@\texttt{Unable to open} \Va{file}{pdf}}%
  \dos{Unable to open output.pdf}
-�Ȥ�����å�������ɽ�����ƥ��顼�ˤʤ�ޤ���
-\K{1�ٳ����Ƥ���PDF�ե�������Ĥ��Ƥ���}��
-�����Ѵ�����褦�ˤ��ޤ�%\footnote{\unixos �Ǥ����\Prog{xpdfopen}
-%�Ȥ����ץ�����ब���ѤǤ�����Ǥ��礦��}
-��
+というメッセージを表示してエラーになります．
+\K{1度開いているPDFファイルを閉じてから}，
+再度変換するようにします%\footnote{\unixos であれば\Prog{xpdfopen}
+%というプログラムが活用できる事でしょう．}
+．
 
 
-%\subsection{DVI��PDF�ˤ���2}
+%\subsection{DVIをPDFにその2}
 
-%\hito{ʿ�ĽӺ�}��\Hito{��}{����}���濴�ȤʤäƳ�ư���Ƥ���{{\Dvipdfmx}
-%Project}�ˤ�äƳ�ȯ����Ƥ������졤���ܸ졤�ڹ��ʤɤˤ��б�����
-%\prog{dvipdfm}�γ�ĥ��{\Dvipdfmx}��Ȥ����Ȥ��Ǥ��ޤ���
+%\hito{平田俊作}と\Hito{趙}{珍煥}が中心となって活動している{{\Dvipdfmx}
+%Project}によって開発されている中国語，日本語，韓国語などにも対応した
+%\prog{dvipdfm}の拡張版{\Dvipdfmx}を使うことができます．
 %{\Dvipdfmx}
 
-\indindz{�ե����}{CID}%
-\zindind{PDf}{�Υ������ƥ�}%
-\indindz{�ե����}{���ܸ�}%
-{\Dvipdfmx}\footnote\webDvipdfmx ��\Z{����}\pp{\Z{Chinese}}��\Z{���ܸ�}
-\pp{\Z{Japanese}}��\Z{�ڹ��}\pp{\Z{Korean}}��\Z{16�ӥåȥ��󥳡��ǥ���
-��}��ʸ��������\pp{\Z{Unicode}�ʤ�}�ˤ��б����Ƥ��ޤ���\Z{CID�ե����}��
-�����ߤˤ�ä�\Z{���ܸ�ե����}�ʤɤ���äƤ��ʤ��ͤǤ����ܸ�PDF��ɽ����
-����褦�ˤ�ʤäƤ��ޤ���PDF�Υ������ƥ���ǽ��Ȥ������Ǥ��ޤ�������Ū��
-\Dvipdfm ��\Z{��̸ߴ�}�ʤΤ�\Dvipdfm �ǲ�ǽ�ʻ���{\Dvipdfmx}��
-���ǽ�Ǥ�\footnote{ͣ��ե���ȥ饤���󥹤�ե����륵������������ˤ��
-\copt{-e}���ޥ�ɥ饤�󥪥ץ���󤬺������Ƥ��ޤ���}��
+\indindz{フォント}{CID}%
+\zindind{PDf}{のセキュリティ}%
+\indindz{フォント}{日本語}%
+{\Dvipdfmx}\footnote\webDvipdfmx は\Z{中国語}\pp{\Z{Chinese}}，\Z{日本語}
+\pp{\Z{Japanese}}，\Z{韓国語}\pp{\Z{Korean}}，\Z{16ビットエンコーディン
+グ}の文字コード\pp{\Z{Unicode}など}にも対応しています．\Z{CIDフォント}の
+埋め込みによって\Z{日本語フォント}などを持っていない人でも日本語PDFを表示で
+きるようにもなっています．PDFのセキュリティ機能も使う事ができます．基本的に
+\Dvipdfm の\Z{上位互換}なので\Dvipdfm で可能な事は{\Dvipdfmx}で
+も可能です\footnote{唯一フォントライセンスやファイルサイズ等の問題により
+\copt{-e}コマンドラインオプションが削除されています．}．
 
-%���ʤߤ�\Sty{graphicx}��\Sty{pict2e}�ѥå������ǤΥ��ץ����ˤ�
+%ちなみに\Sty{graphicx}や\Sty{pict2e}パッケージでのオプションには
 %\begin{InTeX}
 %\usepackage[dvipdfmx]{graphicx,color}
 %\end{InTeX}
-%�ǤϤʤ�
+%ではなく
 %\begin{InTeX}
 %\usepackage[dvipdfm]{graphicx,color}
 %\end{InTeX}
-%�Ȥ���褦�ˤ��Ƥ���������
+%とするようにしてください．
 
-\prog{\Dvipdfmx}�ǻ���Ǥ����ʥ��ޥ�ɥ饤�󥪥ץ����ϰʲ����̤�Ǥ���
+\prog{\Dvipdfmx}で指定できる主なコマンドラインオプションは以下の通りです．
 \begin{description}
-% \item[\copt{-d} \va{����}] 
+% \item[\copt{-d} \va{数字}] 
 %    Set PDF decimal digits (0-4) [default is 3]
-%\item[\copt{-C} \va{����}]
+%\item[\copt{-C} \va{数字}]
 %	   Specify miscellaneous option flags [0]:
 %	   0x0001 reserved
 %	   0x0002 Use semi-transparent filling for tpic shading command,
@@ -405,111 +405,111 @@ PDF�ե������\Prog{Adobe Reader}��\Prog{Acrobat Reader}�ʤ�
 %	   0x0008 Do not replace duplicate fontmap entries.
 %	   Positive values are always ORed with previously given flags.
 %	   And negative values replace old values.
-%\item[\copt{-O} \va{����}]   
-%	   PDF�������Ÿ���������ο�������ꤷ�ޤ���
+%\item[\copt{-O} \va{数字}]   
+%	   PDFしおりを展開する最大の深さを指定します．
 %\item[\copt{-M}]
 %	   Experimental mps-to-pdf mode
  \item[\copt{-S}] 
-  PDF�Υ������ƥ���ͭ���ˤ��ޤ���
- \item[\copt{-K} \va{����}] 
-  PDF�Υ������ƥ���\Z{�����ӥå�}����ꤷ�ޤ���
-  40��128�Ǥ��� ɸ���40�Ǥ���
+  PDFのセキュリティを有効にします．
+ \item[\copt{-K} \va{数字}] 
+  PDFのセキュリティの\Z{キービット}を指定します．
+  40か128です． 標準で40です．
  \item[\copt{-P}] 
-  PDF�Υ������ƥ��Υ�٥�����ꤷ�ޤ���
+  PDFのセキュリティのレベルを設定します．
 % \item[\copt{-vh}]
-% �ѻ極��������ꤹ��\copt{-p}�ǻ��ѤǤ����ѻ������
-% ɽ�����ޤ���%�¤ˤ��ޤ��ޤ��ѻ椬���Ǥ��������Ƥ��ޤ���
- \item[\copt{-p} \va{��},\va{�⤵}] 
- ����Ѥߤ�\qu{\str{a4}}�ʳ��ˤ⡤�ѻ�Υ�������ñ���դ�
- ��\qu{\str{20cm,20cm}}�Τ褦�˻��ꤹ�����Ǥ��ޤ���
-% �ܤ�����
+% 用紙サイズを指定する\copt{-p}で使用できる用紙一覧を
+% 表示します．%実にさまざまな用紙がすでに定義されています．
+ \item[\copt{-p} \va{幅},\va{高さ}] 
+ 定義済みの\qu{\str{a4}}以外にも，用紙のサイズを単位付き
+ で\qu{\str{20cm,20cm}}のように指定する事もできます．
+% 詳しくは
 %\begin{InTerm}
 %   \type{dvipdfmx -vh}
 %\end{InTerm}
-%�Ȥ���ɽ����������򸫤Ƥ���������	
+%として表示される情報を見てください．	
 \end{description}
 
-\prog{\Dvipdfmx}�� \copt{-P} ���ץ����ˤ��PDF��
-�������ƥ�������ˤĤ��Ƥ�\tabref{dvipdfmx:poption}
-�򸫤Ƥ���������
+\prog{\Dvipdfmx}の \copt{-P} オプションによるPDFの
+セキュリティの設定については\tabref{dvipdfmx:poption}
+を見てください．
 
 \begin{table}[htbp]
 \begin{center}
-\caption{\Dvipdfmx �Ǥ�\Z{�������ƥ���٥�}�λ���}
+\caption{\Dvipdfmx での\Z{セキュリティレベル}の指定}
 \tablab{dvipdfmx:poption}
 \begin{tabular}{lcccc}
 \TR
-\Th{�ӥå�} & \Th{����} & \Th{����} & \Th{ʸ����ʤɤΥ��ԡ�} & \Th{������ɲ�}\\ 
+\Th{ビット} & \Th{印刷} & \Th{改変} & \Th{文字列などのコピー} & \Th{注釈の追加}\\ 
 \MR
-\str{0x04}  & ���� &      &      &       \\
-\str{0x08}  &      & ���� &      &       \\
-\str{0x10}  &      &      & ���� &       \\
-\str{0x20}  &      &      &      & ����  \\
+\str{0x04}  & 許可 &      &      &       \\
+\str{0x08}  &      & 許可 &      &       \\
+\str{0x10}  &      &      & 許可 &       \\
+\str{0x20}  &      &      &      & 許可  \\
 \MR
-\str{0x28}  &      & ���� &      & ����  \\      
-\str{0x3C}  & ���� & ���� & ���� & ����  \\
+\str{0x28}  &      & 許可 &      & 許可  \\      
+\str{0x3C}  & 許可 & 許可 & 許可 & 許可  \\
 \BR
 \end{tabular}
 \end{center}
 \end{table}
 
-\str{0x04}����\str{0x20}�ޤǤΥӥåȤˤ��줾��
-\Z{����}��\Z{�Ե���}��������Ƥ��Ƥ��ޤ����פ�\tabref{dvipdfmx:poption}��
-16�ʿ����ͤ�\Z{10�ʿ�}��ľ���������ʬ������
-��������٥�˹�碌�ơ����줾��ΥӥåȤ�­����
-��Τ�Ƥ�\Z{16�ʿ�}��ľ�����ɤ��ΤǤ���%16�ʤ�ӥå�
-%��Ω�Ƥ�Ȥ������Ȥ��Τ�ʤ��Ƥ�ʤ�Ȥʤ�������
-%ˡ��ʬ����ΤǤϤʤ��Ǥ��礦����
-����\pp{\str{0x04}}��ʸ��β���\pp{\str{0x08}}������
-���Ĥ������ʤ�Ф��ΥӥåȤ�10�ʤ�ľ������Ĥ�
-�ӥåȤ�­���ޤ��������12�ˤʤ�ΤǤ����16�ʤ�
-ľ���Ƥ����ޤ���\Z{����}�ʤɤǷ׻������\qu{\str{0x0C}}
-�ˤʤ�ޤ�����
+\str{0x04}から\str{0x20}までのビットにそれぞれ
+\Z{許可}・\Z{不許可}が割り当てられています．要は\tabref{dvipdfmx:poption}の
+16進数の値を\Z{10進数}に直し，それを自分の設定
+したいレベルに合わせて，それぞれのビットを足した
+ものを再び\Z{16進数}に直せば良いのです．%16進やビット
+%を立てるということを知らなくてもなんとなく設定方
+%法が分かるのではないでしょうか．
+印刷\pp{\str{0x04}}と文書の改変\pp{\str{0x08}}だけを
+許可したいならばこのビットを10進に直して二つの
+ビットを足します．すると12になるのでこれを16進に
+直してあげます．\Z{電卓}などで計算すると\qu{\str{0x0C}}
+になりますから
 %\begin{InTerm}
    \type{dvipdfmx -S -P 0x0C input.dvi}
 %\end{InTerm}
-�Ȥ�����ɤ����ˤʤ�ޤ��������
+とすれば良い事になります．さらに
 %\begin{InTerm}
    \type{dvipdfmx -S -P 0x28 input.dvi}
 %\end{InTerm}
-�Ȥ���Ȳ��Ѥ�������ɲä�������Ĥ���褦�ˤǤ��ޤ�����
-�ä����¤�ݤ��ʤ��ʤ��
+とすると改変と注釈の追加だけを許可するようにできますし，
+特に制限を課さないならば
 %\begin{InTerm}
    \type{dvipdfmx -S -P 0x3C input.dvi}
 %\end{InTerm}
-\zindind{PDF}{�Υѥ����}%
-\zindind{PDF}{�ΰŹ沽}%
-�Ȥ����\Z{�ѥ���ɤˤ���ݸ�}��\Z{�Ź沽}�Τߤ�
-�ʤ��ΤȻפ��ޤ���
+\zindind{PDF}{のパスワード}%
+\zindind{PDF}{の暗号化}%
+とすると\Z{パスワードによる保護}と\Z{暗号化}のみに
+なるものと思われます．
 
-\subsubsection{�ե���Ȥ˴ؤ�������}
+\subsubsection{フォントに関する設定}
 
-\zindind{��ʸ}{���}
-��ʸ��Ƥ�\Z{������}���Ϥ��褦��PDF�Υǡ������������Ȥ��ϡ�
-�ߴ�����ե���Ȥ��������˴ؤ��ơ��������٤���θ��ɬ�פǤ���
+\zindind{論文}{投稿}
+論文投稿や\Z{印刷所}に渡すようなPDFのデータを作成するときは，
+互換性やフォントの問題等に関して，ある程度の配慮が必要です．
 
-��ʬ�δĶ�������˰����Ǥ��Ƥ�\Z{������}��\Z{���Ǽ�}�δĶ��ˤ�äƤϥե�
-��Ȥ���\indindz{�ե����}{������٤Υӥåȥޥå�}%
-�����Ǥ��ޤ������Ǥ��ʤ���礬����ޤ����ޤ�������٤Υӥåȥޥåץե���
-�Ȥ��ޤޤ�Ƥ����������դ��Ƥ���ʤ����⤷��ޤ���\footnote{¿����
-�����dvips �Ǻ�������\PS �ե������ps2pdf����PDF���Ѵ��������˵�������
-����¿���褦�Ǥ���}��
+自分の環境で正常に印刷できても\Z{印刷所}や\Z{出版社}の環境によってはフォ
+ントがな\indindz{フォント}{低解像度のビットマップ}%
+い等でうまく処理できない場合があります．また低解像度のビットマップフォン
+トが含まれている場合も受け付けてくれないかもしれません\footnote{多くの
+問題はdvips で作成した\PS ファイルをps2pdf等でPDFに変換した事に起因する
+事が多いようです．}．
 
 \zindind{GNU}{Ghostscript}
-���ܸ�ʤɤΥե���Ȥ�ޤ�褦�ʸ��ƤǤ��ȡ�{\pLaTeX}�ǽ�������DVI�ե�����
-��\prog{\Dvipdfmx}��PDF���Ѵ��Ȥ���������ڤ���ˡ���Ȼפ��ޤ���
-\prog{\Dvipdfmx}��EPS�ʤɤ�{\PS}�ե����������Ȥ���{\LaTeX}��ĥ������
-������ϡ�������\Prog[Ghostscript]{\GS}���Ϥ�ڤ��PDF�˼����ߤޤ�
-�Τ�\prog{Ghostscript}����ǽ����̤˰�¸���ޤ���%���ʳ��Ǥ�
-%\prog{\Dvipdfmx}��{\PS}���᤹��Τ��񤷤������Ǥ������ܸ�ν����⤢��
-%���٤Ǥ���\Prog[Ghostscript]{\GS}�ΥС������7.07��Ȥ��Τ��ɤ������Ǥ���
+日本語などのフォントを含むような原稿ですと，{\pLaTeX}で処理したDVIファイル
+を\prog{\Dvipdfmx}でPDFに変換という形が手軽な方法だと思われます．
+\prog{\Dvipdfmx}はEPSなどの{\PS}ファイルを画像として{\LaTeX}に張り込んで
+いる場合は，それらを\Prog[Ghostscript]{\GS}の力を借りてPDFに取り込みます
+ので\prog{Ghostscript}の性能が結果に依存します．%現段階では
+%\prog{\Dvipdfmx}が{\PS}を解釈するのは難しいそうです．日本語の処理もある
+%程度できる\Prog[Ghostscript]{\GS}のバージョン7.07を使うのが良いそうです．
 
-\zindind{�ե����}{����ե�����}%
-\indindz{�ե�����}{Map}%
-\Dvipdfmx �Υե��������ե������ \fl{\$texmf/fonts/map/dvipdfm/base/}
-�Ǥ���Ȥ���\fl{\$texmf/dvipdfm/config/} �ʲ��� \Fl{cid-x.map} �Ȥ���̾
-���Ǥ���ޤ���\fl{cid-x.map}��{\KY{Map�ե�����}}�ȸƤФ졤���󥽡��뤫��
-���Τ褦�ˤ����Map�ե�����ν�ߤ�ʬ����ޤ���
+\zindind{フォント}{設定ファイル}%
+\indindz{ファイル}{Map}%
+\Dvipdfmx のフォント設定ファイルは \fl{\$texmf/fonts/map/dvipdfm/base/}
+であるとか，\fl{\$texmf/dvipdfm/config/} 以下に \Fl{cid-x.map} という名
+前であります．\fl{cid-x.map}は{\KY{Mapファイル}}と呼ばれ，コンソールから
+次のようにするとMapファイルの所在が分かります．
 
 \begin{InTerm}
    \type{kpsewhich -progname=platex -expand-path='$CMAPINPUTS'}
@@ -519,14 +519,14 @@ PDF�ե������\Prog{Adobe Reader}��\Prog{Acrobat Reader}�ʤ�
 %.;/usr/local/share/texmf/fonts/cmap
 %\end{OutTerm}
 
-�ե����� \fl{cid-x.map} ����� \str{rml}��\str{gbm}�Ȥ���ʸ���󤬽񤫤�
-���Ԥ�¸�ߤ���Ȼפ��ޤ�\footnote{\Dvipdfmx �ΥС������ˤ�äƤ��̥ե�
-�����Ʊ���褦�ʵ��Ҥ������礬����ޤ���}��
+ファイル \fl{cid-x.map} の中に \str{rml}や\str{gbm}という文字列が書かれ
+た行が存在すると思います\footnote{\Dvipdfmx のバージョンによっては別ファ
+イルに同じような記述がある場合があります．}．
 
 \index{Ryumin-Light@\texttt{Ryumin-Light}}%
 \index{GothicBBB-Medium@\texttt{GothicBBB-Medium}}%
-\index{�ե����!Ryumin-Light@\texttt{Ryumin-Light}}%
-\index{�ե����!GothicBBB-Medium@\texttt{GothicBBB-Medium}}%
+\index{フォント!Ryumin-Light@\texttt{Ryumin-Light}}%
+\index{フォント!GothicBBB-Medium@\texttt{GothicBBB-Medium}}%
 \index{rml@\texttt{rml}}%
 \index{rml@\texttt{rmlv}}%
 \index{gbm@\texttt{gbm}}%
@@ -538,53 +538,53 @@ rmlv V Ryumin-Light
 gbmv V GothicBBB-Medium 
 \end{plainfile}
 
-���줾��\str{rml}��\str{H}, \str{Ryumin-Light}���ϼ��Τ褦�ʰ�̣����ä�
-���ޤ�\footnote{ɸ��Ū�����ܸ�ե�������꤬����Ƥ��륯�饹�ե������Ȥ�
-�����˸¤�ޤ���}��
+それぞれ\str{rml}，\str{H}, \str{Ryumin-Light}等は次のような意味を持って
+います\footnote{標準的な日本語フォント設定がされているクラスファイルを使っ
+た場合に限ります．}．
 
 \begin{description}
  \item[\str{rml}/\str{rmlv}] 
-  ���ܸ��\Z{��ī��}�˳�����Ƥ���Τ���뤿��Υ�٥롥
-  \str{rmlv}�ϽĽ��ѤΤ�Ρ�
+  日本語の\Z{明朝体}に割り当てる書体を決めるためのラベル．
+  \str{rmlv}は縦書き用のもの．
  \item[\str{gbm}/\str{gbmv}] 
-  ���ܸ��\Z{�����å���}�˳�����Ƥ���Τ���뤿��Υ�٥롥
-  \str{gbmv}�ϽĽ��ѤΤ�Ρ�
+  日本語の\Z{ゴシック体}に割り当てる書体を決めるためのラベル．
+  \str{gbmv}は縦書き用のもの．
  \item[\str{H}/\str{V}] 
-  \Z{���󥳡��ǥ��󥰥ޥå�}�λ��ꡥ\str{H}��\Z{����}�ѡ�\str{V}��\Z{�Ľ�}�ѡ�
+  \Z{エンコーディングマップ}の指定．\str{H}は\Z{横書き}用，\str{V}は\Z{縦書き}用．
  \item[\str{Ryumin-Light}] 
-  �ºݤ����ܸ����ī�Τ˳�����Ƥ���ե���Ȥ�̾����
-  \Dvipdfmx �� \str{Ryumin-Light}\footnote{\str{Ryumin-Light}�Ȥ���
-  �Τ�\Z{��ꥵ��}����ȯ�䤵��Ƥ����L��奦�ߥ�L-KL�פΥե����̾�Ǥ���
-  \str{GothicBBB-Medium}�ϡ�M�楴���å�BBB�פ��б����ޤ���\pTeX �������Ǥ�
-  �ߴ������ݻ��������ˤ�ꤳ��̾�����Ȥ��Ƥ��ޤ���} �Ȥ���̾���Υե�
-  ��ȤǤ����ɸ��Ǥ� PDF ���Ф��ƥե���Ȥ������ޤʤ��褦�ˤʤäƤ��ޤ���
+  実際に日本語の明朝体に割り当てられるフォントの名前．
+  \Dvipdfmx は \str{Ryumin-Light}\footnote{\str{Ryumin-Light}という
+  のは\Z{モリサワ}から発売されている「LリュウミンL-KL」のフォント名です．
+  \str{GothicBBB-Medium}は「M中ゴシックBBB」に対応します．\pTeX の世界では
+  互換性の保持や諸事情によりこの名前が使われています．} という名前のフォ
+  ントであれば標準では PDF に対してフォントを埋め込まないようになっています．
  \item[\str{GothicBBB-Medium}] 
-  �ºݤ����ܸ�Υ����å��Τ˳�����Ƥ���ե���Ȥ�̾����
-  \str{GothicBBB-Medium}��ɸ��Ǥ������ޤ�ޤ���
+  実際に日本語のゴシック体に割り当てられるフォントの名前．
+  \str{GothicBBB-Medium}は標準では埋め込まれません．
 \end{description}
 
-%\qu{\str{rml}}��\qu{\str{gbm}}�ǻϤޤ�Ԥ�����Ȼפ��ޤ���
-���ε��Ҥ�ե����̾�ʤɤ��ѹ���������ܸ�Υե���Ȥ˲���Ȥ��Τ�������
-�Ǥ��ޤ������Ȥ��δĶ��ν������˰�¸����Ȥϻפ��ޤ�����ɸ��Ǥ����ܸ�
-�ʤɤΥե���Ȥ������ޤʤ��褦�ˤʤäƤ���Ȼפ��ޤ���
+%\qu{\str{rml}}や\qu{\str{gbm}}で始まる行があると思います．
+この記述をフォント名などに変更すると日本語のフォントに何を使うのかが指定
+できます．お使いの環境の初期設定に依存するとは思いますが，標準では日本語
+などのフォントを埋め込まないようになっていると思います．
 
-%�㤨��\hito{�ߤ������}�ˤ��
-%{�ե����}\Fl{mikachanAll.ttc}�����ܸ����ī�Τ˻Ȥ���
-%MS�����å��򥴥��å��Τ˻Ȥ���������ϼ��Τ褦�ˤʤ�ޤ���
+%例えば\hito{みかちゃん}による
+%{フォント}\Fl{mikachanAll.ttc}を日本語の明朝体に使い，
+%MSゴシックをゴシック体に使う場合の設定は次のようになります．
 
-\zindind{IPA}{�ե����}%
-\Z{GRASS}��ݲ��� (\Z{i18n})\footnote{\webGRASSIPA} ����°���롤����
-���פ���к����۲�ǽ�Ǥ����\Z{��Ω����ˡ��}~\Z{���������ʵ���}�Υե�
-��� ({IPA�ե����}) �פ�Ȥ����ϼ��Τ褦�ˤ��ޤ�\footnote{IPA�ե���
-�Ȥ�\genzai �ˤ����ơ�\Z{���ѥǥ����ȥ�ӥ塼�����}�ǤϤʤ�\unixos �ǻ��ѽ�
-������Ū���ʼ���\Z{TrueType}�ե���ȤǤ���
-\indindz{�ե����}{TrueType}%
-\indindz{�ե����}{����}%
-\indindz{�ե����}{�����ʤ�}%
-\indindz{�ե����}{���ĸ�}%
-�⤷�⡤\ruby{����}{����}�ե���Ȥ�\Z{�����ʤߥե����}��\Z{���ĸ��ե���
-��}����PDF�ؤ������ߤ˻ȤäƤ���褦�Ǥ����顤IPA�ե���ȤذܹԤ����
-�����ᤷ�ޤ���}��
+\zindind{IPA}{フォント}%
+\Z{GRASS}国際化版 (\Z{i18n})\footnote{\webGRASSIPA} に付属する，条件に
+合致すれば再配布可能である「\Z{独立行政法人}~\Z{情報処理推進機構}のフォ
+ント ({IPAフォント}) 」を使う場合は次のようにします\footnote{IPAフォン
+トは\genzai において，\Z{商用ディストリビューション}ではない\unixos で使用出
+来る比較的高品質な\Z{TrueType}フォントです．
+\indindz{フォント}{TrueType}%
+\indindz{フォント}{東風}%
+\indindz{フォント}{さざなみ}%
+\indindz{フォント}{和田研}%
+もしも，\ruby{東風}{こち}フォントや\Z{さざなみフォント}，\Z{和田研フォン
+ト}等をPDFへの埋め込みに使っているようでしたら，IPAフォントへ移行する事
+をお薦めします．}．
 
 \begin{plainfile}
 rml  H ipam.ttf
@@ -593,20 +593,20 @@ gbm  H ipag.ttf
 gbmv V ipag.ttf
 \end{plainfile}
 
-�嵭���ͤʵ��Ҥ򤷤��ե����� \fl{ipa.map} ���������Map�ե�������Ǽ���٤�
-�ǥ��쥯�ȥ�����֤��Ƥ�����\footnote{���֤�����˴Ķ��ˤ�äƤ�
-\Prog{mktexlsr}��¹Ԥ���ɬ�פ�����ޤ���}��\type{dvipdfmx -f ipa.map
-file.dvi}�Ȥ���ȡ�IPA�ե���Ȥ��������PDF�ե����뤬�����Ǥ��ޤ���
+上記の様な記述をしたファイル \fl{ipa.map} を作成し，Mapファイルを格納すべき
+ディレクトリに配置しておけば\footnote{配置した後に環境によっては
+\Prog{mktexlsr}を実行する必要があります．}，\type{dvipdfmx -f ipa.map
+file.dvi}とすると，IPAフォントを埋め込んだPDFファイルが作成できます．
 
 
-\subsubsection{PDF�ե���������}
+\subsubsection{PDFファイルの操作}
 
-PDF�ե�����Ͼ��ѤΥץ�������Ȥ�ʤ��ȼ�ͳ�٤ι⤤�Խ����񤷤��Ȼפ�
-��ޤ�����ñ�����ʤ��\Prog{Xpdf}\footnote{\webXpdf}����°����ġ����
-�Ȥ����ɤ��Ǥ��礦��
+PDFファイルは商用のプログラムを使わないと自由度の高い編集は難しいと思わ
+れます．簡単な操作ならば\Prog{Xpdf}\footnote{\webXpdf}に付属するツールを
+使うと良いでしょう．
 
-%\prog{xpdf}����°����ġ����Ȥ��ˤ�\Fl{xpdfrc}�Ȥ�������ե�����˰ʲ�
-%�Τ褦������򤹤���ɤ��Ǥ��礦��
+%\prog{xpdf}に付属するツールを使うには\Fl{xpdfrc}という設定ファイルに以下
+%のような設定をすると良いでしょう．
 %
 %\begin{plainfile}
 %cidToUnicode  Adobe-Japan1  /usr/share/Resource/Adobe-Japan1.cidToUnicode
@@ -617,42 +617,42 @@ PDF�ե�����Ͼ��ѤΥץ�������Ȥ�ʤ��ȼ�ͳ�٤ι⤤�Խ����񤷤��Ȼפ�
 %toUnicodeDir                /usr/share/Resource/CMap
 %\end{plainfile}
 %
-%\fl{/usr/share/Resource}�Ϥ��Ȥ��δĶ��ˤ�ä�Ŭ�ڤʥǥ��쥯�ȥ��
-%�ѹ����Ƥ���������
+%\fl{/usr/share/Resource}はお使いの環境によって適切なディレクトリに
+%変更してください．
 
-�����Υץ�������PDF�ե�����˥������ƥ����꤬�ʤ���Ƥ�����ϥѥ�
-��ɤ�ɬ�פȤ����ꡤ�ޤ���������ǽ���ʤ���礬����ޤ����ʲ��Υץ�����
-������ƥ��󥽡��뤫�����ޤ���
+下記のプログラムはPDFファイルにセキュリティ設定がなされている場合はパス
+ワードを必要としたり，または全く機能しない場合があります．以下のプログラ
+ムは全てコンソールから操作します．
 
 \begin{description}
  \item[\Prog{pdftops}] 
-  PDF�ե������{\PS}�ե�������Ѵ����ޤ���
+  PDFファイルを{\PS}ファイルに変換します．
  \item[\Prog{pdfimages}]
-  PDF�ե�����˴ޤޤ��ӥåȥޥåײ�����
-  ���ꤷ���ǥ��쥯�ȥ����Ф��ޤ������餫������Ϥ���
-  �ǥ��쥯�ȥ��������Ƥ����ޤ���
+  PDFファイルに含まれるビットマップ画像を
+  指定したディレクトリに抽出します．あらかじめ出力する
+  ディレクトリを作成しておきます．
 
 \begin{InTerm}
    \type{pdfiamges filename.pdf dir/}
 \end{InTerm}
 
-����ȥǥ��쥯�ȥ�\qu{\fl{dir}}��\str{ppm}������\str{pbm}�����β����Ȥ�
-����Ф���ޤ��Τǡ�Ŭ����˾�ߤ��Ѵ��򤷤Ƥ���������
+するとディレクトリ\qu{\fl{dir}}に\str{ppm}形式か\str{pbm}形式の画像とし
+て抽出されますので，適宜お望みの変換をしてください．
 
- \item[\Prog{pdftotext}]PDF�ե������ʸ�Ϥ�ƥ����ȥե������
-  ��Ф��ޤ����ե���ȥޥåץե������ɬ�פȤ��ޤ���
-  ASCII���������ɸ��Ū��ʸ���Ǥʤ���Ф��ޤ������ʤ�
-  ���⤷��ޤ���
+ \item[\Prog{pdftotext}]PDFファイルの文章をテキストファイルに
+  抽出します．フォントマップファイルを必要とします．
+  ASCIIコード中の標準的な文字でなければうまくいかない
+  かもしれません．
 
- \item[\Prog{pdfinfo}] PDF�ե������\yo{ʸ�����}��ɽ�����ޤ���
+ \item[\Prog{pdfinfo}] PDFファイルの\yo{文書情報}を表示します．
 
- \item[\Prog{pdffonts}] PDF�ե�����˻Ȥ��Ƥ���ե���Ⱦ����
-  ɽ�����ޤ����ե����̾��ե���Ȥμ��ࡤ�ե���Ȥ������ޤ�
-  �Ƥ��뤫�ʤɤ�ʬ����ޤ���
+ \item[\Prog{pdffonts}] PDFファイルに使われているフォント情報を
+  表示します．フォント名やフォントの種類，フォントが埋め込まれ
+  ているかなどが分かります．
 \end{description}
 
-�㤨�С�\fl{file.pdf}�Ȥ���PDF��¸�ߤ��������\type{pdffonts file.pdf}����
-�Ȥ���ȼ��Τ褦�ʾ���ɽ������ޤ���
+例えば，\fl{file.pdf}というPDFが存在し，それを\type{pdffonts file.pdf}した
+とすると次のような情報が表示されます．
 
 %\begin{InTerm}
 %   \type{pdffonts file.pdf}
@@ -677,43 +677,43 @@ UQXVYG+rtxr                         Type 1C      yes yes yes     66  0
 
 \begin{description}
  \item[\str{name}]
-\zindind{PDF}{�ǤΥե����̾}%
-    PDF�ե�����ǤΥե����̾�Ǥ���\str{FRZWWS+txsy}�Ȥ���С��ץ饹
-    \str{+}�ʹߤ�����Υե����̾�ˤʤ�ޤ���
+\zindind{PDF}{でのフォント名}%
+    PDFファイルでのフォント名です．\str{FRZWWS+txsy}とあれば，プラス
+    \str{+}以降が本来のフォント名になります．
  \item[\str{type}]
-\zindind{PDF}{�ǤΥե���Ȥμ���}%
-    �ե���Ȥμ����ɽ���ޤ���\Z{Type1}, \Z{CID Type0}, \Z{TrueType}, 
-    Type1 Collection��������ޤ���\Z{Type3}�Ȥ���ɽ��������С�
-    ������٤Υӥåȥޥåץե���Ȥ������ޤ�Ƥ����ǽ��������ޤ��Τǡ�
-   ���դ��Ƥ���������\indindz{�ե����}{�ӥåȥޥå�}
+\zindind{PDF}{でのフォントの種類}%
+    フォントの種類を表します．\Z{Type1}, \Z{CID Type0}, \Z{TrueType}, 
+    Type1 Collection等があります．\Z{Type3}という表示があれば，
+    低解像度のビットマップフォントが埋め込まれている可能性がありますので，
+   注意してください．\indindz{フォント}{ビットマップ}
  \item[\str{emb}]
-    ���Υե���Ȥ������ޤ�Ƥ��뤫�ɤ�����ɽ���ޤ���\str{yes}�Ǥ����
-    �����ޤ�Ƥ��ꡤ\str{no}�Ǥ���������ޤ�Ƥ��ޤ���
+    そのフォントが埋め込まれているかどうかを表します．\str{yes}であれば
+    埋め込まれており，\str{no}であれば埋め込まれていません．
  \item[\str{sub}]
-    \Z{���֥��å�}������Ƥ��뤫�ɤ����򼨤��ޤ�������ե���Ȥ�PDF�ե�����
-    ��������Ȥ��˻ȤäƤ��ʤ�\Z{�����}��\Z{����}�ˤ������ޤʤ��褦
-    �ˤ��ޤ���
+    \Z{サブセット}化されているかどうかを示します．あるフォントをPDFファイル
+    に埋め込むときに使っていない\Z{グリフ}（\Z{字形}）を埋め込まないよう
+    にします．
  \item[\str{uni}]
-\zindind{PDF}{���Խ����}%
-\zindind{PDF}{�Υƥ����ȤΥ��ԡ�}%
-\zindind{PDF}{��ʸ��������}%
-\zindind{PDF}{��ʸ���󸡺�}%
-\zindind{��˥�����}{���󥳡��ǥ���}%
-    {��˥����ɥ��󥳡��ǥ���}����Ƥ��뤫�ɤ����򼨤��ޤ�������ˤ���
-    ���Խ���ȡ�ʸ�������С��ƥ����ȤΥ��ԡ���ʸ����θ������˱ƶ���
-    �Ф��礬����ޤ���
+\zindind{PDF}{の編集作業}%
+\zindind{PDF}{のテキストのコピー}%
+\zindind{PDF}{の文字列の抽出}%
+\zindind{PDF}{の文字列検索}%
+\zindind{ユニコード}{エンコーディング}%
+    {ユニコードエンコーディング}されているかどうかを示します．これにより後
+    の編集作業，文字列の抽出，テキストのコピー，文字列の検索等に影響が
+    出る場合があります．
  \item[\str{object ID}]
-    PDF �ե�����ˤ�����\Z{�ե���Ȥμ���ID} �Ǥ���
+    PDF ファイルにおける\Z{フォントの識別ID} です．
 \end{description}
 
-PDF��ʸ����������������Ȥ��� \Prog{pdfinfo}���ޥ�ɤ򼡤Τ褦�˻Ȥ���
-����
+PDFの文書情報を閲覧したいときは \Prog{pdfinfo}コマンドを次のように使いま
+す．
 
 \begin{InTerm}
  \type{pdfinfo file.pdf}
 \end{InTerm}
 
-����Ƚ��Ϸ�̤Ȥ��ưʲ��Τ褦�ʤ�Τ������ޤ���
+すると出力結果として以下のようなものが得られます．
 
 \begin{plainfile}
 Title:          How to Write Your Own Thesis Tutorial with LaTeX2e 
@@ -732,269 +732,269 @@ Optimized:      no
 PDF version:    1.4 
 \end{plainfile}
 
-���줾��ι��ܤΰ�̣�ϼ����̤�Ǥ���
+それぞれの項目の意味は次の通りです．
 
 \begin{description}
  \item[\str{Title}]
-    ʸ��μ���Ǥ���
+    文書の主題です．
  \item[\str{Subject}]
-    ʸ�������Ǥ���
+    文書の副題です．
  \item[\str{Keywords}]
-    ������ɡ���Ϣ�Ѹ����Ǥ���
+    キーワード，関連用語等です．
  \item[\str{Author}]
-    PDF �μ�ɮ�ԤǤ���
+    PDF の執筆者です．
  \item[\str{Creator}]
-    �����Υե��������������ץ������Ǥ���
+    元々のファイルを作成したプログラムです．
  \item[\str{Producer}]
-    �ºݤ˲��餫�Υե������������ PDF �ؤ��Ѵ������ץ������Ǥ���
+    実際に何らかのファイル形式から PDF へと変換したプログラムです．
  \item[\str{CreationDate}]
-    PDF �κ��������Ǥ���
+    PDF の作成日時です．
  \item[\str{Tagged}]
-\zindind{PDF}{�Υ��������ӥ�ƥ�}%
-    \Z{���������ӥ�ƥ�}�θ���Τ���˥����դ�����Ƥ��뤫�ɤ����Ǥ���
- %    \footnote{��˻�о㳲�Ը������ɤ߾夲��ǽ�ν�����ݻ��Τ�����ղä�
- %    ������Ǥ���}��
- %    ʸ��¤����äƤ��뤫�ɤ������̾� ���� ����������줿 PDF �Ǥϡ֤�
- %    �����餳���ޤǤ�����θǤޤ����פȤ��֤������ϤθǤޤ����פȤ���
- %    ������� PDF ���Ȥˤϴޤ�ʤ��������ޤǼ��̻� (Object ID) ����ä���
- %    ��������ȹԤä���Τ� xy ��ɸ�ϤΤɤ������֤��٤����Ȥ������������
- %    ���롣���Τ��ᡢXML ��Ʊ�ͤ� PDF �˥����դ�����Ȥ�����ǽ�����롣��
- %    ��ϥ��������ӥ�ƥ��θ���Τ���ʼ���ɤ߾夲��ǽ�ν�����ݻ����뤿
- %    ��ˤ��ߤ���줿��ǽ��
+\zindind{PDF}{のアクセシビリティ}%
+    \Z{アクセシビリティ}の向上のためにタグ付けされているかどうかです．
+ %    \footnote{主に視覚障害者向けに読み上げ機能の順序の保持のために付加さ
+ %    れる情報です．}．
+ %    文書構造を持っているかどうか。通常 ○○ から作成された PDF では「こ
+ %    こからここまでが段落の固まりだよ」とか「ここが章の固まりだよ」といっ
+ %    た情報を PDF 自身には含めない。あくまで識別子 (Object ID) を持った字
+ %    形や画像と行ったモノが xy 座標系のどこに配置すべきかという情報だけで
+ %    ある。そのため、XML と同様に PDF にタグ付けするという機能がある。こ
+ %    れはアクセシビリティの向上のため（主に読み上げ機能の順序を保持するた
+ %    め）に設けられた機能。
  \item[\str{Pages}]
-    �ڡ������Ǥ���
+    ページ数です．
  \item[\str{Encrypted}]
-    �Ź沽����Ƥ��뤫�ɤ����Ǥ����Ź沽����Ƥ���Ȥ��ϰŹ沽��������
-    ɽ������ޤ���\secref{dviware:dvipdfmx}�ˡ�
+    暗号化されているかどうかです．暗号化されているときは暗号化の内訳が
+    表示されます（\secref{dviware:dvipdfmx}）．
  \item[\str{Page size}]
-\zindind{PDF}{���ѻ極����}%
-    �ѻ�Υ������Ǥ� [pt]��
+\zindind{PDF}{の用紙サイズ}%
+    用紙のサイズです [pt]．
  \item[\str{File size}]
-    �ե���������̤Ǥ� [byte]��
+    ファイルの容量です [byte]．
  \item[\str{Optimized}]
-    ��˥����Ѥ˺�Ŭ������Ƥ��뤫�ɤ����Ǥ���
+    モニター用に最適化されているかどうかです．
  \item[\str{PDF version}]
-    PDF �ΥС������Ǥ���%���줾�� 1.3 �ʤ�� Acrobat 4.0��
- % 1.4��Acrobat 5��1.5��Acrobat 6��1.6��Acrobat 7�ѤΥե�����Ȥʤ�ޤ���
- %PDF �ΥС������򤢤���Ф������¿��ǽ�ˤʤ뤬�� PDF ����������ʪ��
- %    �����ˤ��� Acrobat Reader 5.05 ��ȤäƤ����ǽ���⤢��ΤǤ���������
- %    ����� Acrobat Reader 4.0 ��ȤäƤ���Ȥ������⤢�ꤨ��Τǡ��ޤ���
- %    ������ 1.4 �ˤǤ⤷�Ƥ���������ס�TeX �������Ǥ� 1.5 �ޤǤޤȤ��
- %    �����ܸ���̤��˽����ϤϾ��ʤ������줾��ɤΤ褦�ʻ��ͤˤʤäƤ��뤫
- %    �� Adobe �ҤΥ����� �����ꤹ������Ǥ��롣
+    PDF のバージョンです．%それぞれ 1.3 ならば Acrobat 4.0，
+ % 1.4はAcrobat 5，1.5はAcrobat 6，1.6はAcrobat 7用のファイルとなります．
+ %PDF のバージョンをあげればそれだけ多機能になるが、 PDF を閲覧する人物が
+ %    いしにえの Acrobat Reader 5.05 を使っている可能性もあるのでだろうし、
+ %    古代の Acrobat Reader 4.0 を使っているという事もありえるので、まぁだ
+ %    いたい 1.4 にでもしておけば大丈夫。TeX の世界では 1.5 までまともに
+ %    （日本語を通す）処理系は少ない。それぞれどのような仕様になっているか
+ %    は Adobe 社のサイト で入手する事ができる。
 \end{description}
 
-Xpdf��°�Υ桼�ƥ���ƥ��ˤ� PDF ��\PS �ե�������Ѵ�����\Prog{pdftops}
-������ޤ���%pdftops�μ�ʥ��ޥ�ɥ饤�󥪥ץ�����ʲ��˼����ޤ���
-���󥽡��뤫�� \type{pdftops file.pdf} �Ȥ��������\fl{file.ps}����������
-�ޤ���
+Xpdf付属のユーティリティには PDF を\PS ファイルに変換する\Prog{pdftops}
+があります．%pdftopsの主なコマンドラインオプションを以下に示します．
+コンソールから \type{pdftops file.pdf} とするだけで\fl{file.ps}が作成され
+ます．
 
-%/etc/xpdfrc �ʤɤΥե���������ܸ�˴ؤ������꤬Ŭ�ڤˤʤ���Ƥ��ʤ�����
-%�ܸ줬���ä����ȴ����Ȥ����Ỵ�ʻ��֤ˤʤ����롣
+%/etc/xpdfrc などのファイルで日本語に関する設定が適切になされていないと日
+%本語がごっそりと抜けるという悲惨な事態になり得る。
 
-PDF�ե����뤫��ƥ����ȤΤߤ���Ф������Ȥ���\Prog{pdftotext}���Ȥ��ޤ���
-\type{pdftotext file.pdf} �Ȥ��������\fl{file.txt}����������ޤ�
-\footnote{���󥳡��ǥ��󥰤��������������Ƥ�ʸ������ФǤ���Ȥϸ¤��
-����}��
+PDFファイルからテキストのみを抽出したいときは\Prog{pdftotext}が使えます．
+\type{pdftotext file.pdf} とするだけで\fl{file.txt}が作成されます
+\footnote{エンコーディングの問題で正常に全ての文字を抽出できるとは限りま
+せん．}．
 
-%pdf utilities ��°�� PDF ��ʸ�������Ф��� ASCII �ƥ����ȥե��������¸
-%���뤿��Υץ�����ࡣxpdfrc �ˤ�Ŭ�ڤ�����򤷤Ƥ����С������������ܸ�
-%������ס�fi, fl, ffi, ffl oe, ae ���Τ褦�˹���ʤɤ��������Ф��뤳��
-%���Ǥ��ʤ��Τǡ��虜�ȹ���򻦤����ե���Ȥ�Ȥ��Τ⤢�ꡣ
+%pdf utilities 付属の PDF の文字列を抽出して ASCII テキストファイルに保存
+%するためのプログラム。xpdfrc にて適切な設定をしておけば、いちおう日本語
+%も大丈夫。fi, fl, ffi, ffl oe, ae 等のように合字などは正常に抽出すること
+%ができないので、わざと合字を殺したフォントを使うのもあり。
 
-Xpdf��°�Υ桼�ƥ���ƥ��ʳ��ˤ�\Person{Sid}{Steward}�ˤ��
-\Prog{PDFtk}\footnote{\webPdftk}��ͭ�ѤǤ���Windows �Ǥ����GUI�夫��
-PDFtk������ǽ��\Prog{GUI for PDFTK}\footnote{\webPdftkWinGui}�⤢���
-����PDFtk�λȤ�������⤷���ܤ����ܸ�������Ǥ���Ƥ��ޤ�~\cite{pdftk}��
-�ޤ���\Person{Hans}{Hagen}��ˤ��\Prog[ConTeXt]{Con\TeX t}�Ȥ����ġ���
-���˴ޤޤ�Ƥ���\Prog{texexec}��Ȥ���ʣ����PDF����������Ǥ��ޤ���
+Xpdf付属のユーティリティ以外にも\Person{Sid}{Steward}による
+\Prog{PDFtk}\footnote{\webPdftk}も有用です．Windows であればGUI上から
+PDFtkを操作可能な\Prog{GUI for PDFTK}\footnote{\webPdftkWinGui}もありま
+す．PDFtkの使い方を解説した本の日本語訳も出版されています~\cite{pdftk}．
+また，\Person{Hans}{Hagen}らによる\Prog[ConTeXt]{Con\TeX t}というツール
+群に含まれている\Prog{texexec}を使うと複数のPDFを操作する事ができます．
 
 
-\subsection{DVI��\PS ��\zdash dvips}
-%�������\pp{\Z{DTP}}���Ϥޤä�������
-%Adobe�Ҥ�\Z{\PS}�Ȥ����Τ����Ƕȳ��ˤ�����ڡ������Ҹ����ɸ��Ǥ����ץ�
-%����ߥ󥰸���Ȥ��Ƥδ����٤�⤯�����������줿�ڡ������Ҹ���Ǥ�����
-%�Ǥ�¿���ν��Ǽҡ������꤬����{{\PS}}����Ѥ��Ƥ��ޤ���{{\PS}}�ϰ�������
-%Ū�Ȥ����ե���������ʤΤǤ�����ȼ���Ƨ��й��ʼ��ʰ�����̤����뤳��
-%���Ǥ��ޤ���{\LaTeX}�⤳��{\PS}�����ؤν��Ϥ���ǽ�ȤʤäƤ��ޤ�������
-%{\PS}�����Υե������\Prog[Ghostscript]{\GS}�ȸƤФ��ץ�������Ȥ���
-%�Ȥˤ�ꡤ����ԥ塼����Ǳ��������ꡤ�ץ�󥿡��ǰ������뤳�Ȥ��Ǥ���
-%����
-\Z{Adobe}�Ҥ�\Prog[PostScript]{\PS}�Ȥ����Τ����Ƕȳ��ˤ�����ڡ�������
-�����ɸ��Ǥ����ץ�����ߥ󥰸���Ȥ��Ƥδ����٤�⤯�����������줿�ڡ�
-�����Ҹ���Ǥ������Ǥ�¿����\Z{���Ǽ�}��\Z{������}������{{\PS}}����Ѥ�
-�Ƥ��ޤ���{{\PS}}�ϰ�������Ū�Ȥ����ե���������ʤΤǤ�����ȼ���Ƨ��
-�й��ʼ��ʰ�����̤���������Ǥ��ޤ���{\LaTeX}�⤳��{\PS}�����ؤν���
-����ǽ�ȤʤäƤ��ޤ�������{\PS}�����Υե������¿���δĶ��ˤ�����
-\Prog[Ghostscript]{\GS}�ȸƤФ��ץ�������Ȥ����ˤ�ꡤ����ԥ塼
-����Ǳ��������ꡤ�ץ�󥿡��ǰ�����������Ǥ��ޤ���
+\subsection{DVIを\PS に\zdash dvips}
+%机上出版\pp{\Z{DTP}}が始まった頃から
+%Adobe社の\Z{\PS}というのが出版業界におけるページ記述言語の標準です．プロ
+%グラミング言語としての完成度も高く非常に洗練されたページ記述言語です．今
+%でも多くの出版社，印刷所がこの{{\PS}}を採用しています．{{\PS}}は印刷を目
+%的としたファイル形式なのできちんと手順を踏めば高品質な印刷結果を得ること
+%ができます．{\LaTeX}もこの{\PS}形式への出力が可能となっています．この
+%{\PS}形式のファイルは\Prog[Ghostscript]{\GS}と呼ばれるプログラムを使うこ
+%とにより，コンピュータ上で閲覧したり，プリンターで印刷することができま
+%す．
+\Z{Adobe}社の\Prog[PostScript]{\PS}というのが出版業界におけるページ記述
+言語の標準です．プログラミング言語としての完成度も高く非常に洗練されたペー
+ジ記述言語です．今でも多くの\Z{出版社}，\Z{印刷所}がこの{{\PS}}を採用し
+ています．{{\PS}}は印刷を目的としたファイル形式なのできちんと手順を踏め
+ば高品質な印刷結果を得る事ができます．{\LaTeX}もこの{\PS}形式への出力
+が可能となっています．この{\PS}形式のファイルは多くの環境において
+\Prog[Ghostscript]{\GS}と呼ばれるプログラムを使う事により，コンピュー
+タ上で閲覧したり，プリンターで印刷する事ができます．
 
-%\subsection{DVI��PS��\zdash dvips}
+%\subsection{DVIをPSに\zdash dvips}
 
-\Person{Tomas}{Rokicki}����ȯ�����ʤ�����\Person{Karl}{Berry}��
-\Z{Kpathsearch}���б���������\Prog{dvips}��Ȥ���DVI�ե������\PS �ե�����
-���Ѵ��Ǥ��ޤ���
-\Prog{dvips}�Ȥ����ץ�������Windows������\prog{dvipsk}��Unix��OS������
-\prog{dvips}�Ȥ���̾�����դ��Ƥ��뤫���Τ�ޤ���\Z{Red Hat}�ξ���
-\Prog{pdvips}�Ȥ���̾���ˤʤäƤ��ޤ���
-�Ȥ����ϥ��󥽡���ʤɤ��鼡�Τ褦�ˤ�������Ǥ���
+\Person{Tomas}{Rokicki}が開発した（そして\Person{Karl}{Berry}が
+\Z{Kpathsearch}に対応させた）\Prog{dvips}を使うとDVIファイルを\PS ファイル
+に変換できます．
+\Prog{dvips}というプログラムはWindowsの方は\prog{dvipsk}，Unix系OSの方は
+\prog{dvips}という名前が付いているかも知れません．\Z{Red Hat}の場合は
+\Prog{pdvips}という名前になっています．
+使い方はコンソールなどから次のようにするだけです．
 
 \begin{InTerm}
    \type{dvips file.dvi}
 \end{InTerm}
 
-����ˤ�äƤ�ľ�ܥץ�󥿤˥ե����뤬����������礬����ޤ������Τ褦
-�ʾ��ϼ��Τ褦�� \copt{-o} ���ץ������դ��ޤ���
+設定によっては直接プリンタにファイルが送信される場合があります．このよう
+な場合は次のように \copt{-o} オプションを付けます．
 
 \begin{InTerm}
  \type{dvips -o file.ps file.dvi}
 \end{InTerm}
 
-��ĥ��\exten{dvi}�Ͼ�ά���Ƥ⹽���ޤ��󡥤���\prog{dvips}��¹Ԥ���Ȥ���%
-\zindind{���ޥ��}{�饤�󥪥ץ����}%
-{���ޥ�ɥ饤�󥪥ץ����}��¿������ޤ�����ʥ��ץ�����ܤ��Ƥ����ޤ���
+拡張子\exten{dvi}は省略しても構いません．この\prog{dvips}を実行するときの%
+\zindind{コマンド}{ラインオプション}%
+{コマンドラインオプション}が多数あります．主なオプションを載せておきます．
 
 \begin{description}
-\item[\copt{-D} \va{������}] 
-   ���Ϥ�������٤�dpiñ�̤ǻ��ꤷ�ޤ���
-\item[\copt{-o} \va{�ե�����̾}]  
-   ���Ϥ���ե�����̾����ꤷ�ޤ���
-\item[\copt{-t} \va{������}] 
-   \option{a0}����\option{a8}��\option{b0}����\option{b8}��
-  �ϰϤ��ѻ���礭������ꤷ�ޤ���\index{�ѻ�!\zdash ���礭���λ���}
-\item[\copt{-T} \va{����},\va{�⤵}] 
-   �ѻ���礭����ñ���դ���ľ�ܻ��ꤷ�ޤ���
-   \qu{\copt{21cm,27cm}}�Τ褦�˻Ȥ��ޤ���
-   ���Τ褦�ˤ��ʤ��Ȥ⸶�ƤΥץꥢ��֥��
+\item[\copt{-D} \va{解像度}] 
+   出力する解像度をdpi単位で指定します．
+\item[\copt{-o} \va{ファイル名}]  
+   出力するファイル名を指定します．
+\item[\copt{-t} \va{サイズ}] 
+   \option{a0}から\option{a8}，\option{b0}から\option{b8}の
+  範囲で用紙の大きさを指定します．\index{用紙!\zdash の大きさの指定}
+\item[\copt{-T} \va{横幅},\va{高さ}] 
+   用紙の大きさを単位付きで直接指定します．
+   \qu{\copt{21cm,27cm}}のように使います．
+   このようにしなくとも原稿のプリアンブルで
    \begin{quote}
     \Cmd{AtBeginDvi}\verb|{\special{papersize=210mm,270mm}}|
    \end{quote}
-   �Ȥ��Ƥ�Ʊ�����ˤʤ�ޤ���
+   としても同じ事になります．
 \item[\copt{-A}] 
-	   ����ڡ����������Ϥ��ޤ���
+	   奇数ページだけ出力します．
 \item[\copt{-B}] 
-	   �����ڡ����������Ϥ��ޤ���
+	   偶数ページだけ出力します．
 %\item[\copt{-i}]
-%	   �ե�����򤢤�ñ�̤��Ȥ�ʬ���ޤ���\copt{-S}��ʻ�Ѥ��ޤ���
-%	   ɸ��Ǥ�1�ڡ������ʬ�䤵�졤���줾��Υե�����̾��
-%	   \fl{filename.003}�Τ褦�ˡ���ĥ�Ҥ�3ʸ���ǥڡ����ֹ��
-%	   �б����ޤ���
-%\item[\copt{-S} \va{����}] 
-%	   �ե��������ڤ�Ȥ���ñ�̤ˤʤ�ڡ�������
-%	   ���ꤷ�ޤ���
+%	   ファイルをある単位ごとに分けます．\copt{-S}と併用します．
+%	   標準では1ページ毎に分割され，それぞれのファイル名が
+%	   \fl{filename.003}のように，拡張子が3文字でページ番号に
+%	   対応します．
+%\item[\copt{-S} \va{数字}] 
+%	   ファイルを区切るときの単位になるページ数を
+%	   指定します．
 %\item[\copt{-k}] 
-%	   �ȥ�ܷ�����ɽ�����ޤ���
-\item[\copt{-p} \va{�ڡ����ֹ�}]
-   ���Ϥ���ǽ�Υڡ�������ꤷ�ޤ���
-   ������{\LaTeX}�θ�����Υڡ����ֹ�򻲾Ȥ��ޤ���
-\item[\copt{-l} \va{�ڡ����ֹ�}] 
-   ���Ϥ���ǽ��Υڡ�������ꤷ�ޤ���
-   ������{\LaTeX}�θ�����Υڡ����ֹ�򻲾Ȥ��ޤ���
-%\item[\copt{-O} \va{Ĺ��,Ĺ��}]
-\item[\copt{-pp} \va{�ڡ����ꥹ��}]
-   ���Ϥ���ڡ����ϰϤ���ꤷ�ޤ��������{\LaTeX}��
-   �ڡ����ֹ�˰�¸���ޤ���\copt{11,21-35}�Τ褦��
-   ����ޤ�ʣ���ڡ������ꤹ�����Ǥ��ޤ���
+%	   トンボ罫線を表示します．
+\item[\copt{-p} \va{ページ番号}]
+   出力する最初のページを指定します．
+   ただし{\LaTeX}の原稿中のページ番号を参照します．
+\item[\copt{-l} \va{ページ番号}] 
+   出力する最終のページを指定します．
+   ただし{\LaTeX}の原稿中のページ番号を参照します．
+%\item[\copt{-O} \va{長さ,長さ}]
+\item[\copt{-pp} \va{ページリスト}]
+   出力するページ範囲を指定します．これも{\LaTeX}の
+   ページ番号に依存します．\copt{11,21-35}のように
+   コンマで複数ページ指定する事もできます．
 \item[\copt{-r}]
-   ��������ڡ����ν����ս�ˤ��ޤ���
-\item[\copt{-P} \va{����}] 
-   ����ե�������ɤ߹��ߤޤ���ɸ��Ǥ�\Fl{config.ps}
-   �Ȥ����ե�������ɤ߹��ߤޤ���Windows�����Ͼ��\fl{config.dl}
-���ɤ߹��ि���
+   印刷するページの順序を逆順にします．
+\item[\copt{-P} \va{設定}] 
+   設定ファイルを読み込みます．標準では\Fl{config.ps}
+   というファイルを読み込みます．Windowsの方は常に\fl{config.dl}
+を読み込むために
 \begin{InTerm}
    \type{dvips -P dl -o filename.ps filename.dvi}
 \end{InTerm}
-�ʤɤȤ���Τ��ɤ��Ǥ��礦��
+などとするのが良いでしょう．
 \end{description}
 %
-%�Ȥ�����
+%使い方は
 %\begin{InTerm}
-%   \type{dvips} \va{���ץ����} \va{����} \Va{filename}{dvi}
+%   \type{dvips} \va{オプション} \va{引数} \Va{filename}{dvi}
 %\end{InTerm}
-%�Ȥ�������Ǥ���Windows�ξ��ϡ�
+%とするだけです．Windowsの場合は，
 %\begin{InTerm}
 %   \type{dvipsk -dl -o output.ps input}
 %\end{InTerm}
 
 \begin{Trick}
- ʣ���ڡ�������ʤ�DVI�ե������
- ����Υڡ���������EPS�����ˤ���ʤ��
+ 複数ページからなるDVIファイルの
+ 特定のページだけをEPS形式にするならば
  \begin{InTerm}
    \type{dvipsk -E -Pdl -pp14 -o outp14.eps input}
  \end{InTerm}
- �Ȥ��ޤ������Τ褦�ˤ�����Ф���EPS�����Υե�����\fl{outp14.eps}
- ��EPS�����Ȥ��ƺ����ѤǤ��ޤ���
+ とします．このようにして抽出したEPS形式のファイル\fl{outp14.eps}
+ はEPS画像として再利用できます．
 \end{Trick}
 
 \begin{Prob}
- {\LaTeX}�ե�����򥿥��ץ��åȤ���\Va{file}{dvi}��
- \Prog{dvips}��\Va{file}{ps}�ؤ��Ѵ���������Ǥ��ޤ�����
- ����{\PS}�ե�������Խ���������Ǥ���������Ǥ���
- ����ˤ�\Person{Angus}{Duggan}��\Prog{psutils}�Ȥ���%
- \index{�ڡ���!\zdash �κ�����}\index{���դ�}%
- �ġ��뷲����Ω���ޤ����ڡ����κ����֤����դ����
- �ʤɤ⤳��\prog{psutils}�ǹԤ����ɤ��Ǥ��礦��
-�ºݤˤɤΤ褦�ʵ�ǽ������Τ����ץ�������¹Ԥ������η�̤�
-��̣���Ƥ���������
+ {\LaTeX}ファイルをタイプセットした\Va{file}{dvi}は
+ \Prog{dvips}で\Va{file}{ps}へと変換する事ができますが，
+ この{\PS}ファイルを編集する事ができれば便利です．
+ これには\Person{Angus}{Duggan}の\Prog{psutils}という%
+ \index{ページ!\zdash の再配置}\index{面付け}%
+ ツール群が役立ちます．ページの再配置や面付け作業
+ などもこの\prog{psutils}で行うと良いでしょう．
+実際にどのような機能があるのか，プログラムを実行し，その結果を
+吟味してください．
 \end{Prob}
 
 
 
-\subsection{\TeX ����HTML��\zdash \texforht}
+\subsection{\TeX からHTMLへ\zdash \texforht}
 
-{\LaTeX}�θ��ƥե������HTML���Ѵ��������Ǥ��ޤ���
-��ǯ�Ǥϼ�ʬ����������ʸ���WWW��Ǹ�������������ˤˤ���ޤ���
-�㤨�С��������Ǥ���п��������̤˴ޤ�褦�ʹֵ�������ͥåȥ�����
-��������Ȥ��ˤϡ�HTML�ǽ��Ϥ���Ƚ�������Ȼפ��ޤ���
-{Unix}��OS�Ǥ����\prog{\LaTeX2HTML}��\Prog[TtH]{\TtH}�ʤɤ�ͭ̾�Ǥ���
+{\LaTeX}の原稿ファイルをHTMLに変換する事もできます．
+近年では自分が作成した文書をWWW上で公開する事が頻繁にあります．
+例えば，教職員であれば数式を大量に含むような講義資料をネットワーク上に
+公開するときには，HTMLで出力すると重宝すると思います．
+{Unix}系OSであれば\prog{\LaTeX2HTML}，\Prog[TtH]{\TtH}などが有名です．
 
-%{Unix}��OS�Ǥ���д��Ĥ��Υ饤�֥����ɲä���лȤ���
-%���֤ˤ���ΤǤϤʤ����Ȼפ��ޤ���
-%Vine~Linux�ξ��ϴ����Ը��¤� \type{apt-get install latex2html}
-%�Ȥ��������\Prog[LaTeX2HTML]{\LaTeX2HTML}�򥤥󥹥ȡ���Ǥ��ޤ���
-%{Windows}�ξ���\Hito{��ƣ}{μ}��\pTeX ��ɬ�פʥե�������Ѱդ��Ʋ���
-%�äƤ���ޤ���
-�ܽ�Ǥ�\Person{Eitan}{Gurari}����ȯ���Ƥ���\texforht �λȤ����ˤĤ��Ʋ���
-���ޤ���\LaTeX2HTML ��\texforht ����٤�����ܸ���󤬥����־�ˤ���ޤ�
-�Τǡ�������򻲾Ȥ��Ƥ���������
+%{Unix}系OSであれば幾つかのライブラリを追加すれば使える
+%状態にあるのではないかと思います．
+%Vine~Linuxの場合は管理者権限で \type{apt-get install latex2html}
+%とするだけで\Prog[LaTeX2HTML]{\LaTeX2HTML}をインストールできます．
+%{Windows}の場合は\Hito{角藤}{亮}の\pTeX に必要なファイルを用意して下さ
+%っております．
+本書では\Person{Eitan}{Gurari}が開発している\texforht の使い方について解説
+します．\LaTeX2HTML は\texforht に比べれば日本語情報がウェブ上にあります
+ので，そちらを参照してください．
 
-%\Prog[TeX4ht]{\texforht}��
-%Unix��OS�ʤ�Хѥå������Ȥ����Ѱդ���Ƥ���Ȼפ��ޤ���
+%\Prog[TeX4ht]{\texforht}は
+%Unix系OSならばパッケージとして用意されていると思います．
 
-HTML�ؤ��Ѵ���ɬ�פʥץ�������NTT����ȯ����{\TeX}�Ǥ���
-\prog{\JTeX}�������Խ��ץ�������\Prog[ImageMagick]{\IM}��
-\prog{\texforht}���ΤǤ���\prog{\IM}��Windows�Ǥ�Х��ʥ꤬�Ѱդ���Ƥ�
-�ޤ�����Unix��OS�ʤ�Хѥå������˴ޤޤ�Ƥ������¿���褦�Ǥ���
+HTMLへの変換に必要なプログラムはNTTが開発した{\TeX}である
+\prog{\JTeX}，画像編集プログラムの\Prog[ImageMagick]{\IM}，
+\prog{\texforht}本体です．\prog{\IM}はWindowsでもバイナリが用意されてい
+ますし，Unix系OSならばパッケージに含まれている事が多いようです．
 
-%\prog{\IM}�ϥ�󥰥����С��������������ɤǤ��ޤ������󥹥ȡ���ˤĤ�
-%�ƤϤ���ۤ��񤷤��ʤ��Ȼפ��ޤ���
+%\prog{\IM}はリングサーバーからダウンロードできます．インストールについ
+%てはそれほど難しくないと思います．
 
-������ˡ��\Sty{tex4ht}�ѥå������򸶹ƤΥץꥢ��֥��
-���Τ褦�˵��Ҥ��ޤ���
+使用方法は\Sty{tex4ht}パッケージを原稿のプリアンブルに
+次のように記述します．
 
 \begin{InTeX}
 \usepackage[html,charset=Shift_JIS,png]{tex4ht}
 \end{InTeX}
 
-���˥��󥽡��뤫��
+次にコンソールから
 %\begin{InTerm}
    \type{ht jlatex file}
 %\end{InTerm}
-�Ȥ����\Va{file}{html}�ȿ���������ʤɤ�PNG�ե�����
-������夬��ޤ�\footnote{�����β������˴ؤ��Ƥ�\IM ���γ����ץ�������
-ɬ�פȤ��ޤ��Τǡ����������꤬Ŭ�ڤ˹Ԥ��Ƥ��ʤ��Ȳ�����ɽ���Ϥ��ޤ�
-�����ޤ���}��\Prog{ht}��¹Ԥ���Ȥ��Υ��ޥ��
-�饤�󥪥ץ������ΤäƤ����������ʤ�Τ˼��Τ褦��
-��Τ�����ޤ���
+とすれば\Va{file}{html}と数式や画像などのPNGファイル
+が出来上がります\footnote{数式の画像化に関しては\IM 等の外部プログラムを
+必要としますので，それらの設定が適切に行われていないと画像の表示はうまく
+いきません．}．\Prog{ht}を実行するときのコマンド
+ラインオプションで知っておくと便利なものに次のような
+ものがあります．
 \begin{description}
 % \item[\copt{--dry-run}] 
-%   \prog{ht}�ץ�����ब�ƤӽФ��Ƥ���ץ�����ब
-%    �ɤΤ褦�˼¹Ԥ���뤫��ʬ����ޤ���
-%�㤨��
+%   \prog{ht}プログラムが呼び出しているプログラムが
+%    どのように実行されるかが分かります．
+%例えば
 %\begin{InTerm}
 %   \type{ht --dry-run jlatex hoge}
 %\end{InTerm}
-%�ȼ¹Ԥ����
+%と実行すると
 %\begin{OutTerm}
 %ht: running command:
 %jlatex  hoge.tex
@@ -1007,33 +1007,33 @@ HTML�ؤ��Ѵ���ɬ�פʥץ�������NTT����ȯ����{\TeX}�Ǥ���
 %ht: running command:
 %t4ht hoge.tex
 %\end{OutTerm}
-%�Ƚ��Ϥ���뤳�Ȥ��顤\prog{jlatex} $\rightarrow$
+%と出力されることから，\prog{jlatex} $\rightarrow$
 %\prog{jlatex} $\rightarrow$ \prog{jlatex} $\rightarrow$
-%\prog{tex4ht} $\rightarrow$\prog{t4ht}�Ȥ����ץ�����ब���֤˼¹�
-%����Ƥ��뤳�Ȥˤʤ�ޤ���
+%\prog{tex4ht} $\rightarrow$\prog{t4ht}というプログラムが順番に実行
+%されていることになります．
  \item[\copt{--cleanup}] 
-   HTML�ե����������������ӥե�����������ޤ���
- \item[\copt{--output-name=}\va{̾��}]
- ���ϥե�����̾��\va{̾��}�˻��ꤷ�ޤ���
- \item[\copt{--output-dir=}\va{�ǥ��쥯�ȥ�}]
- ���Ϥ���ǥ��쥯�ȥ��\va{�ǥ��쥯�ȥ�}�˻��ꤷ�ޤ���
- ���Ǥ�¸�ߤ���ǥ��쥯�ȥ�Ǥʤ��ȤǤ��ʤ����⤷��ޤ���
+   HTMLファイルを生成後に中途ファイルを削除します．
+ \item[\copt{--output-name=}\va{名前}]
+ 出力ファイル名を\va{名前}に指定します．
+ \item[\copt{--output-dir=}\va{ディレクトリ}]
+ 出力するディレクトリを\va{ディレクトリ}に指定します．
+ すでに存在するディレクトリでないとできないかもしれません．
 \end{description}
 
 \begin{Exe}
-\Prog{ht}���ޥ�ɤ��ɤΤ褦��Ư���򤷤Ƥ���Τ����ʲ��Τ褦�ʥ��ޥ����
-��¹Ԥ��ơ������ͻҤ��ǧ���Ƥ���������
+\Prog{ht}コマンドがどのような働きをしているのか，以下のようなコマンド列
+を実行して，その様子を確認してください．
 
 \begin{InTerm}
  \type{jlatex} \Va{file}{tex}
  \type{jlatex} \Va{file}{tex}
  \type{jlatex} \Va{file}{tex}
- \type{tex4ht} \Va{file}{tex} ��\Va{file}{dvi}����\Va{file}{html}��������
- \type{t4ht} \va{file}.tex��\Va{file}{css}�Ȳ�����������
+ \type{tex4ht} \Va{file}{tex} （\Va{file}{dvi}から\Va{file}{html}の生成）
+ \type{t4ht} \va{file}.tex（\Va{file}{css}と画像の生成）
 \end{InTerm}
 
-\Prog{ht}���ޥ�ɤϴ���Ū�ˤϾ嵭�ν�����Ϣ³���Ƽ¹Ԥ���ץ������Ǥ���
-��Ϣ��ư��򼨤���\figref{tex4ht}�Ȥʤ�ޤ���
+\Prog{ht}コマンドは基本的には上記の処理を連続して実行するプログラムです．
+一連の動作を示すと\figref{tex4ht}となります．
 
 \begin{figure}[htbp]
  \begin{scenter}
@@ -1047,125 +1047,125 @@ HTML�ؤ��Ѵ���ɬ�פʥץ�������NTT����ȯ����{\TeX}�Ǥ���
    \Va{file}{idv} \Va{file}{lg} \Va{file}{htm}& \nexto & 
    \Va{file}{png} \Va{file}{css}\\
   \end{tabular}
-  \caption{\texforht ��ư��γ���}\figlab{tex4ht}
+  \caption{\texforht の動作の概要}\figlab{tex4ht}
  \end{scenter}
 \end{figure}
 \end{Exe}
 
 
-�̤��Ѵ���ˡ�Ȥ��ƥ������ե������\Y{tex4ht}��
-\K{�ɤ߹��ޤ���}���󥽡��뤫��ľ��
+別の変換方法としてソースファイルで\Y{tex4ht}を
+\K{読み込まずに}コンソールから直接
 \begin{InTerm}
    \type{htlatex filename "html,charset=Shift_JIS,png"}
 \end{InTerm}
-�Ȥ��Ƥ��Ѵ��Ǥ��ޤ���%"
+としても変換できます．%"
 
-���ܸ��ʸ�񥯥饹��Ȥ��Ȥ���\Cls{j-article}
-\Cls{j-report}��\Cls{j-book}��Ȥ��褦�ˤ��ޤ���
-���Τ���β������Ȥ��� \fl{\$texmf/tex/generic/tex4ht/}
-�ʤɤΥǥ��쥯�ȥ�˰�ư����
+日本語の文書クラスを使うときは\Cls{j-article}
+\Cls{j-report}，\Cls{j-book}を使うようにします．
+そのための下準備として \fl{\$texmf/tex/generic/tex4ht/}
+などのディレクトリに移動し，
 \begin{InTerm}
    \type{cp article.cls j-article.cls}
    \type{cp report.cls j-report.cls}
    \type{cp book.cls j-book.cls}
 \end{InTerm}
-�Ȥ���\cls{j-classes}�Ѥ�����ե������ʣ�����ޤ���
-��������ȼ��Τ褦�����ܸ쥯�饹�ե������Ȥ������Ǥ��ޤ���
+として\cls{j-classes}用に設定ファイルを複製します．
+そうすると次のように日本語クラスファイルを使う事ができます．
 
 \begin{InTeX}
 \documentclass[11pt]{j-report} 
 \end{InTeX}
 
 
-\sty{tex4ht}���ɤ߹���Ȥ��Υ��ץ����Ȥ��ưʲ��Τ�Τ��ɲä�����ɤ��Ǥ��礦��
+\sty{tex4ht}を読み込むときのオプションとして以下のものを追加すると良いでしょう．
 \begin{description}
  \item[\Option{html}]
-  \sty{tex4ht}�Υ��ץ����ǰ��ֺǽ��
- ���ꤹ��ΤϽ��Ϥ���ե�����η����Ǥ���
-HTML\pp{\Option{html}}��XHTML\pp{\Option{xhtml}}
-�ʤɤη�������ꤷ�ޤ���
- \item[\Option{charset}=\va{���󥳡��ǥ���}]
- ʸ�������ɤ�\va{���󥳡��ǥ���}�ǻ��ꤷ�ޤ���
- \qu{\str{Shift\char"5F JIS}}�Ȼ��ꤷ�Ƥ������Ⱦ�ѱѻ�%"
- ��������ɽ������ޤ���
+  \sty{tex4ht}のオプションで一番最初に
+ 指定するのは出力するファイルの形式です．
+HTML\pp{\Option{html}}やXHTML\pp{\Option{xhtml}}
+などの形式を指定します．
+ \item[\Option{charset}=\va{エンコーディング}]
+ 文字コードを\va{エンコーディング}で指定します．
+ \qu{\str{Shift\char"5F JIS}}と指定しても一部の半角英字%"
+ が正しく表示されません．
  \item[\Option{fonts+}] 
- ɸ��Υե��������ǤϾ����䤷����Τ�����Ȥ���
- ľ�ܥե���Ȥ򥦥��֥֥饦���˻��ꤷ�ޤ��������ե���Ȥ�
- �ʤ��������إե���Ȥ��֤������ޤ���
+ 標準のフォント設定では少し寂しいものがあるときは
+ 直接フォントをウェブブラウザに指定します．該当フォントが
+ ない場合は代替フォントに置き換わります．
  \item[\Option{fn-in}] 
- ɸ��Ǥϵ�����˵���������餯�̥ڡ����˽��Ϥ���ޤ�����
- ���Υ��ץ�����Ȥ��ȥڡ����ǲ����˽��Ϥ����褦�ˤʤ�ޤ���
+ 標準では脚注や傍注がおそらく別ページに出力されますが，
+ このオプションを使うとページ最下部に出力されるようになります．
  \item[\Option{png}] 
- ɸ��Ǥβ������Ϸ�����GIF\pp{\Option{gif}}�ˤʤäƤ���Ȼפ��ޤ�����
- GIF�ξ��ϥХ��ʤΤ��ɤ���ʬ����ޤ��󤬡�������GIF��
- �����������⤢��Τ�PNG�ˤ����ۤ����ɤ��Ǥ��礦��
- �����������ԤΥ����֥֥饦����PNG�����β�����ɽ���Ǥ��뤫
- �ɤ�����ʬ����ʤ��Τ����դ�ɬ�פǤ��������Ƕ�Υ֥饦����
- ���PNG��ɽ���Ǥ���Ȼפ��ޤ���¾��JPEG\pp{\Option{jpg}}��
-����Ǥ��ޤ���
- \item[\option{imgdir:\va{�ǥ��쥯�ȥ�}/}] 
- ɸ��Ǥϲ�����HTML�ե������Ʊ���ǥ��쥯�ȥ�˽���
- �����ΤǤ��Υ��ץ�������ꤷ��\va{�ǥ��쥯�ȥ�}��
- ���ꤷ�ޤ����Ǹ�Υ���å����ɬ�ܤȻפ��ޤ���
+ 標準での画像出力形式はGIF\pp{\Option{gif}}になっていると思いますが，
+ GIFの場合はバグなのかどうか分かりませんが，不正なGIFが
+ 生成される事もあるのでPNGにしたほうが良いでしょう．
+ ただし閲覧者のウェブブラウザがPNG形式の画像を表示できるか
+ どうかは分からないので注意が必要です．ここ最近のブラウザな
+ らばPNGは表示できると思われます．他にJPEG\pp{\Option{jpg}}も
+指定できます．
+ \item[\option{imgdir:\va{ディレクトリ}/}] 
+ 標準では画像はHTMLファイルと同じディレクトリに出力
+ されるのでこのオプションを指定して\va{ディレクトリ}を
+ 指定します．最後のスラッシュは必須と思われます．
  \item[\Option{pic-m}]
- ��������������륪�ץ����\sty{tex4ht}�ϲ��������ʤ��Ƥ�
- �ɤ��Ȼפ�����ʬ�ϲ����ˤ��ޤ��󡥤�������ܸ����
- �ʹ֤ˤϤ���Ǥ��Թ礬������������Τǡ���¤������
- ���Ƥο�������������ޤ�����äȶ��Ϥ˲���������Ȥ���
- \Option{pic-m+}��Ȥ��ޤ���
- \env{equation}�ʤɤο����Ķ����Τ����������ʤ��
- \Option{pic-equation}��\Option{pic-eqnarray}��
- \Option{pic-matrix}��\Option{pic-array}��
- \Option{pic-align}�ʤɤ�Ȥ��ޤ���
+ 数式を画像化するオプション．\sty{tex4ht}は画像化しなくても
+ 良いと思われる部分は画像にしません．われわれ日本語圏の
+ 人間にはそれでは都合が悪い事があるので，苦渋の選択で
+ 全ての数式を画像化します．もっと強力に画像化するときは
+ \Option{pic-m+}を使います．
+ \env{equation}などの数式環境全体を画像化するならば
+ \Option{pic-equation}，\Option{pic-eqnarray}，
+ \Option{pic-matrix}，\Option{pic-array}，
+ \Option{pic-align}などを使います．
  \item[\Option{pic-eqnarray}]
- ʻ�Ѥ���ѥå������ˤ�äƤ�\env{eqnarray}�Ķ���
- ������ǧ������ʤ����ᤫ�����ץ��åȤǤ��ʤ��Τ�
- \env{eqnarray}�Ķ������ϲ���������褦�����ꤷ���ۤ���
- ̵�񤫤⤷��ޤ���
- \item[\va{����}] 1����4�ޤǤο�������ꤷ�ơ�����HTML�ե������
-�ڡ������ؤ��Ȥ˶��ڤ�ޤ���{\LaTeX}�Ǥθ��Ф��γ��ؤ˽��ä�
-���ڤ��ޤ���
- \item[\Option{section+}] �̾���ܼ������󥯤�é��ޤ���
-���Υ��ץ���󤬻��ꤵ��Ƥ�����ϸ��Ф������ܼ�������
-���Ǥ��ޤ���
- \item[\Option{next}] DVI������PDF�����Υե������Ϣ³Ū��
-�ڡ�����³���Ƥ��ޤ���������HTML�����ǥե��������Ϥ����
-��Ϣ³�ˤʤ�ޤ��Τǡ�Ϣ³Ū�˼��Υڡ����ؿʤि���
-��󥯤�������ޤ���
- \item[\Option{htm}] ����HTML�����Υե�����̾��
-\Va{8ʸ��}{htm}�Ȥ��ޤ���¾��OS�Ȥθߴ������θ����
-�ʤ��ɬ�פ��⤷��ޤ�����¿�ˤʤ��Ȼפ��ޤ�����
-�㤨�н��Ϥ��줿HTML�ե������\Z{ISO9660}�ե���
-�ޥåȤ�CD\raise.2ex\hbox{-}R�˽񤭹���Ȥ��ʤɤ˻Ȥ��ޤ���
+ 併用するパッケージによっては\env{eqnarray}環境が
+ 正しく認識されないためかタイプセットできないので
+ \env{eqnarray}環境だけは画像化するように設定したほうが
+ 無難かもしれません．
+ \item[\va{数字}] 1から4までの数字を指定して，出力HTMLファイルの
+ページを階層ごとに区切ります．{\LaTeX}での見出しの階層に従って
+区切られます．
+ \item[\Option{section+}] 通常は目次からリンクを辿りますが
+このオプションが指定されている場合は見出しから目次に戻る事
+ができます．
+ \item[\Option{next}] DVI形式やPDF形式のファイルは連続的に
+ページが続いています．しかしHTML形式でファイルを出力すると
+不連続になりますので，連続的に次のページへ進むための
+リンクを作成します．
+ \item[\Option{htm}] 出力HTML形式のファイル名を
+\Va{8文字}{htm}とします．他のOSとの互換性を考慮する
+ならば必要かもしれません．滅多にないと思いますが，
+例えば出力されたHTMLファイルを\Z{ISO9660}フォー
+マットのCD\raise.2ex\hbox{-}Rに書き込むときなどに使えます．
 
 \end{description}
-�ʾ�Τ褦�������ץꥢ��֥�˼��Τ褦�ˤ�����ɤ��Ǥ��礦��
+以上のような設定をプリアンブルに次のようにすると良いでしょう．
 
 \begin{InTeX}
 \usepackage[html,charset=Shift_JIS,fonts+,fn-in,png,imgdir:images/,
 pic-m,pic-eqnarray,info]{tex4ht}
 \end{InTeX}
 
-\sty{tex4ht}�ϰ��ֺǸ��
-�ɤ߹���褦�ˤ���Τ����ܤǤ���
+\sty{tex4ht}は一番最後に
+読み込むようにするのが基本です．
 
-¾�ˤ���Ѥ���ѥå�����������ʤ��\sty{tex4ht}�������ɤ߹���Ǥ���������
+他にも使用するパッケージがあるならば\sty{tex4ht}の前に読み込んでください．
 
 \begin{InTeX}
 \usepackage[dvips]{graphicx,color}
 \usepackage{url}
 \end{InTeX}
 
-\Sty{hyperref}�Ȥ϶��礹��褦�Ǥ����顤���Τ褦�ˤ�����ɤ��Ǥ��礦��
+\Sty{hyperref}とは競合するようですから，次のようにすると良いでしょう．
 
 \begin{InTeX}
-\usepackage{����¾�Υѥå�����}
-\usepackage[���ץ����]{tex4ht}
+\usepackage{その他のパッケージ}
+\usepackage[オプション]{tex4ht}
 \usepackage[tex4ht]{hyperref}
 \end{InTeX}
 
 
-ɸ��Ǥϰʲ���ʸ�������ܸ�Ķ����Ȳ����ޤ���
+標準では以下の文字が日本語環境だと化けます．
 
 \begin{InTeX}
 \S \P \pounds \OE \ae \AE \aa \AA \ss \l \L
@@ -1173,90 +1173,90 @@ pic-m,pic-eqnarray,info]{tex4ht}
 \textgreater
 \end{InTeX}
 
-ʸ�������ɤ�{{iso-8859-1}}�ϲ����ˤ��ʤ��Ƥ�
-�ɤ�ʸ���ʤΤǤ�����ʸ�������Τ������ܸ�Ķ��Ǥ�
-ɽ����ǽ�ǤϤ���ޤ���\texttt{uhtlatex}���
-�ä�\indindz{�ե����}{Unicode}Unicode�ե���Ȥ�
-�֤���������ʸ�ե���Ȥ�Unicode�ˤ����ɽ���Ǥ�
-��Ȼפ��ޤ���
+文字コードの{{iso-8859-1}}は画像にしなくても
+良い文字なのですが，文字化けのため日本語環境では
+表示可能ではありません．\texttt{uhtlatex}を使
+って\indindz{フォント}{Unicode}Unicodeフォントに
+置き換え，欧文フォントもUnicodeにすると表示でき
+ると思われます．
 
 %htlatex html,
 %uhtlatex html,uni-html4
 %uxhlatex xhtml,uni-html4
 %xhlatex xhtml
 
-���ܸ�����ǤҤȤ�����Ȥʤ�Τ�;�פ���ʬ��
-����Ⱦ�Ѷ���Ǥ�������Ⱦ�Ѷ����\sty{tex4ht}
-��ʸ����ν��������Ū�˹�ñ�̤ǹԤ������ι�
-�������\qu{\str{<P>}}���Ĥ��Ƥ��ޤ�����Ǥ���
-��ʸ�ξ���Ŭ�ڤʶ��ڤ��ʸ��������
-�����ΤǤ�����ˡ�Ǥ��ɤ��ΤǤ��礦������ʸ
-�ξ��Ϥ���ǤϤ����ޤ��󡥤�������Ŭ����
-�����ϻ�ˤ�ʬ����ޤ���%�ץ��������ѹ�
-%�򤷤ʤ��Ȳ��Ǥ��ʤ�����ǤϤʤ����Ȼפ��ޤ���
+日本語処理でひとつ問題となるのは余計な部分に
+入る半角空白です．この半角空白は\sty{tex4ht}
+が文字列の処理を基本的に行単位で行い，その行
+を段落タグ\qu{\str{<P>}}で閉じてしまうからです．
+欧文の場合は適切な区切りで文字が改行
+されるのでこの方法でも良いのでしょうが，和文
+の場合はこれではいけません．しかし，適当な
+解決策は私にも分かりません．%プログラムの変更
+%をしないと解決できない問題ではないかと思います．
 
-��¸�β����������������Ȥ��� \Cmd{Picture}̿���
-�Ȥ��ޤ���
+既存の画像を挿入したいときは \Cmd{Picture}命令を
+使います．
 \begin{Syntax}
- \Cmd{Picture}\opa{����ʸ��}\pa{�����ե�����̾}
+ \Cmd{Picture}\opa{代替文字}\pa{画像ファイル名}
 \end{Syntax}
-�����ϰϤ����������Ȥ��� \Cmd{Picture+}
-̿��� \Cmd{EndPicture}̿��ǰϤߤޤ���
+ある範囲を画像化するときは \Cmd{Picture+}
+命令と \Cmd{EndPicture}命令で囲みます．
 \begin{Syntax}
-\Cmd{Picture+}\pa{���ϥե�����̾}\pa{����}\Cmd{EndPicture}
+\Cmd{Picture+}\pa{出力ファイル名}\pa{要素}\Cmd{EndPicture}
 \end{Syntax}
-�㤨��\fl{hoge.jpg}�Ȥ����ե����뤬¸�ߤ��������
-HTML�ե��������Ž���դ���Ȥ��ϼ��Τ褦�ˤ��ޤ���
+例えば\fl{hoge.jpg}というファイルが存在し，これを
+HTMLファイル中に貼り付けるときは次のようにします．
 
 \begin{InTeX}
-\Picture[hoge�β����Ǥ�]{hoge.jpg}
+\Picture[hogeの画像です]{hoge.jpg}
 \end{InTeX}
 
-\env{tabular}�Ķ��ʤɤ�ɽ���Τ����������ʤ��
-���Τ褦�ˤʤ�ޤ���
+\env{tabular}環境などの表全体を画像化するならば
+次のようになります．
 
 \begin{InTeX}
 \usepackage[html,png]{tex4ht}
-\Picture+[�����ˤ���ɽ�Ǥ�]{mytable.png}
+\Picture+[画像にした表です]{mytable.png}
 \begin{tabular}{|c|c|c|}
  \LaTeX\,2.09& \LaTeXe& \LaTex3\\
 \end{tabular}
 \EndPicture
 \end{InTeX}
 
-\Z{HTML����}��ľ�ܽ��ϥե������������ˤ� \Cmd{HCode}
-̿���Ȥ��ޤ���HTML�����ζ������Ԥ��ʿ���������ʤ��
-���Τ褦�ʻȤ�����Ǥ��ޤ���
+\Z{HTMLタグ}を直接出力ファイルに埋め込むには \Cmd{HCode}
+命令を使います．HTMLタグの強制改行や水平線を入れるならば
+次のような使い方もできます．
 
 \begin{InTeX}
 \HCode{<HR><BR><BR><BR><BR>}
 \end{InTeX}
 
-\env{hoge}�Ķ�����Ѥ��Ƥ��ꡤ���δĶ���ݤ��Ȳ�����
-�������ʤ��\env{document}�Ķ�����ǡ�
-���Τ褦������򤹤��\env{hoge}�Ķ�������������ޤ���
+\env{hoge}環境を使用しており，その環境を丸ごと画像に
+したいならば\env{document}環境の中で，
+次のような設定をすると\env{hoge}環境が画像化されます．
 
 \begin{InTeX}
 \ConfigureEnv{hoge}
    {\IgnorePar\EndP\Tg<div class="pic-hoge">\Picture*{}}
    {\EndPicture\Tg</div>}{}{}
-\Css{div.pic-hoge {�������륷����}}
-%\ConfigureEnv{hoge*}%�����Ŭ�����Ҥ��Ƥ���������
+\Css{div.pic-hoge {スタイルシート}}
+%\ConfigureEnv{hoge*}%これは適宜記述してください．
 %   {\IgnorePar\EndP\Tg<div class="pic-hoge-star">\Picture*{}}
 %   {\EndPicture\Tg</div>}{}{}
-%\Css{div.pic-hoge-star {�������륷����}}
+%\Css{div.pic-hoge-star {スタイルシート}}
 \end{InTeX}
 
 
-\env{picture}�Ķ��ʤɤ�{\LaTeX}��ɸ��������Ѥ�
-�Ķ��ϼ�ưŪ�˲����Ȥ��ƽ��Ϥ���ޤ���
+\env{picture}環境などの{\LaTeX}で標準の描画用の
+環境は自動的に画像として出力されます．
 
 \begin{Trick}
-�����仲��ʸ���ʤɤ�������Ƥ������\prog{ht}��
-\prog{htlatex}�ʤɤǤ��б����Ť餤���ᡤ��ʬ��
-������ץȤ�Хå��ե������������ޤ����ʲ���
-�褦�ʥ����륹����ץ�\prog{tex4html}�������PATH���̤ä�
-������˥��ԡ�������ɤ��Ǥ��礦��
+索引や参考文献なども作成している場合は\prog{ht}や
+\prog{htlatex}などでは対応しづらいため，自分で
+スクリプトやバッチファイルを作成します．以下の
+ようなシェルスクリプト\prog{tex4html}を作成しPATHの通って
+いる場所にコピーすると良いでしょう．
 
 \begin{InText}
 #!/bin/sh
@@ -1271,94 +1271,94 @@ tex4ht $1
 t4ht $1 $2
 \end{InText}
 
-���Υե������
+このファイルを
 %\begin{InTerm}
   \type{tex4html test}
 %\end{InTerm}
-�Ȥ���л���ʸ�������Υڡ������������� HTML ���Ѵ��Ǥ���Ϥ��Ǥ���
- Windows������\qu{\str{$1}}��\qu{\texttt{\%1}}�˽񤭴���
-�Ƥ���������������������Ƥ��ʤ��Ȥ�������
-��\fl{test.idx}���ʤ�����˥��顼�ˤʤ�Ȥ�
-������ޤ������鷺���Ԥ򲡤�������פǤ��礦��
-\sty{tex4ht}�Ǥϡ�NTT \JTeX ���Ѥ���ɬ�פ�������ͳ�ˤ���\Prog{mendex}
-��Ȥ����ϤǤ��ޤ���Τ�\Prog[jmakeindex]{jmakeindex}��Ȥ����ˤʤ�ޤ���
-����˺����κ�����ˡ�Ͼ����ü��
+とすれば参考文献一覧のページや索引ありの HTML に変換できるはずです．
+ Windowsの方は\qu{\str{$1}}を\qu{\texttt{\%1}}に書き換え
+てください．索引を作成していないときは途中
+で\fl{test.idx}がないためにエラーになるとき
+がありますが構わず改行を押せば大丈夫でしょう．
+\sty{tex4ht}では（NTT \JTeX を用いる必要がある理由により）\Prog{mendex}
+を使う事はできませんので\Prog[jmakeindex]{jmakeindex}を使う事になります．
+さらに索引の作成方法は少し特殊で
 \begin{InTerm}
  \type{jtex }\verb|"\def\filename{{file}{idx}{4dx}{ind}} \input idxmake.4ht"|
  \type{jmakeindex -o file.ind  file.4dx  }
 \end{InTerm}
-�Τ褦�˼¹Ԥ��ʤ��Ⱥ��������Ϥ���ޤ���
-\Prog{mendex}�򤤤Ĥ�ȤäƤ��Ƽ���ե�����
-�ʤɤ�\yo{�ɤ�}���̥ե��������¸���Ƥ�������
-���դ�ɬ�פǤ���
+のように実行しないと索引が出力されません．
+\Prog{mendex}をいつも使っていて辞書ファイル
+などで\yo{読み}を別ファイルに保存している方は
+注意が必要です．
 \end{Trick}
 
 
-\prog{tex4html}������ܤΰ�����\Prog{t4ht}��
-�Ϥ�������񤯻���Ǥ��ޤ��������
+\prog{tex4html}の二つ目の引数に\Prog{t4ht}に
+渡す引数を書く事もできます．これは
 \begin{InTerm}
    \type{tex4html test "-p"}
 \end{InTerm}
-�Τ褦�ʻ���򤷤Ʋ������������ʤ��褦�˵�ư��
-�Ѥ������Ǥ��ޤ���
+のような指定をして画像を生成しないように挙動を
+変える事もできます．
 
-�ϥ��ѡ���󥯤��������ˤ� \Cmd{Link}̿���Ȥ��ޤ�����
-�Ŀ�Ū�ˤ�\Sty{hyperref}��\Sty{url}�ѥå��������Ѥ���
-�ۤ������������⤤���Ҥˤʤ�Ǥ��礦��
+ハイパーリンクを作成するには \Cmd{Link}命令も使えますが，
+個人的には\Sty{hyperref}か\Sty{url}パッケージを用いた
+ほうが汎用性が高い記述になるでしょう．
 
 \begin{InTeX}
 \usepackage[html,charset=Shift_JIS]{tex4ht}
 \usepackage[tex4th]{hyperref}
-\href{http://www.google.co.jp}{Google}�ϸ������󥸥�Ǥ���
-Google�򻲾Ȥ���ˤϥ����֥֥饦���Υ��ɥ쥹���
+\href{http://www.google.co.jp}{Google}は検索エンジンです．
+Googleを参照するにはウェブブラウザのアドレス欄に
  \begin{quote}
   \url{http://www.google.co.jp} 
  \end{quote}
-���Ǥ�����ǰ�ư���Ƥ���������
+と打ち込んで移動してください．
 \end{InTeX}
 
-%¾�ˤ�\Hito{Ĺ��}{����}�Υ����֥ڡ���\footnote\webNagasima
-%��\Hito{����}{��}����Υ����֥ڡ���\footnote\webTamaki
-%�⻲�ͤˤʤ뤳�ȤǤ��礦��
+%他にも\Hito{長島}{順清}のウェブページ\footnote\webNagasima
+%や\Hito{玉木}{広}さんのウェブページ\footnote\webTamaki
+%も参考になることでしょう．
 
-%{\pTeX}��{\pLaTeX}�˰�¸����ѥå������ʤɤ�
-%���ѤǤ��ޤ��󡥥ѥå�����\Va{file}{sty}����Ƭ��
+%{\pTeX}や{\pLaTeX}に依存するパッケージなどは
+%使用できません．パッケージ\Va{file}{sty}の先頭に
 %\begin{InTeX}
 %\NeedsTeXFormats{pLaTeX2e} 
 %\end{InTeX}
-%�Ƚ񤫤�Ƥ������{\pTeX}��¸�Ǥ������������Τ�
-%�񤷤��ʤ�ޤ���
+%と書かれている場合は{\pTeX}依存ですから処理するのが
+%難しくなります．
 
 
 
 \begin{comment}
 \subsubsection{\LaTeX2HTML}
 
-Unix��OS�ǹ����Ȥ��Ƥ���HTML�ȥ�󥹥졼���ΤҤȤĤ�
-\Person{Nikos}{Drakos}����������Perl������ץȤǽ񤫤줿
-\Prog[LaTeX2HTML]{\LaTeX2HTML}������ޤ���Windows�Ǥ�Ȥ��ʤ�
-���Ϥʤ��褦�Ǥ�����Cygwin��饤�֥�꤬ɬ�פˤʤ�Ȼ�
-���ޤ����Ƕ��Linux�ǥ����ȥ�ӥ塼�����ǤϤ��餫����
-���ܸ첽���줿\prog{\LaTeX2HTML}�����󥹥ȡ���Ǥ�����
-��¿���褦�Ǥ���
+Unix系OSで広く使われているHTMLトランスレータのひとつに
+\Person{Nikos}{Drakos}が作成したPerlスクリプトで書かれた
+\Prog[LaTeX2HTML]{\LaTeX2HTML}があります．Windowsでも使えない
+事はないようですが，Cygwinやライブラリが必要になると思
+います．最近のLinuxディストリビューションではあらかじめ
+日本語化された\prog{\LaTeX2HTML}がインストールできる場合
+が多いようです．
 
-\prog{\LaTeX2HTML}�˴ؤ�������\Hito{����}{�м�}��
-�����֥ڡ���\footnote\webTakeno �򻲾Ȥ��Ƥ���������
+\prog{\LaTeX2HTML}に関する情報は\Hito{竹野}{茂治}の
+ウェブページ\footnote\webTakeno を参照してください．
 \end{comment}
 
 \begin{comment}
 
-\subsection{\TeX ����ľ��PDF��\zdash\texorpdfstring\PDFLaTeX{pdfLaTeX}}
+\subsection{\TeX から直接PDFへ\zdash\texorpdfstring\PDFLaTeX{pdfLaTeX}}
 
-\TeX ������������ȯŸ���Ƥ��ޤ��Τǡ�\TeX �����������ץ��åȥġ���Ȥ���
-�󶡤���Ƥ������ǤϤ���ޤ���\Person{H\`an Th\'{\^e}}{Th\`anh}�ˤ��
-��\TeX �θ��Ƥ���ľ�� PDF �ե�������� \PDFTeX��\TeX �ε�ǽ���ĥ����
-\eTeX ������ȯ����Ƥ��ޤ���������Ĥ���Τ�����\PDFeTeX ������μ�ή��
-�ʤ�Ȼפ��ޤ���\figref{texhist}�ˡ�
+\TeX の世界も日々発展していますので，\TeX だけがタイプセットツールとして
+提供されている訳ではありません．\Person{H\`an Th\'{\^e}}{Th\`anh}によっ
+て\TeX の原稿から直接 PDF ファイルを作る \PDFTeX，\TeX の機能を拡張した
+\eTeX 等が開発されています．この二つを合体させた\PDFeTeX が今後の主流に
+なると思われます（\figref{texhist}）．
 
 \begin{table}[htbp]
  \begin{center}
-  \caption{\TeX �ΰܤ��Ѥ��}\figlab{texhist}
+  \caption{\TeX の移り変わり}\figlab{texhist}
   \begin{tabular}{ll|c|ll}
 \cline{3-3}
 \TeX & $\to$  & {\eTeX} $+$ {\PDFTeX} & $\to$ & \PDFeTeX \\
@@ -1374,16 +1374,16 @@ Unix��OS�ǹ����Ȥ��Ƥ���HTML�ȥ�󥹥졼���ΤҤȤĤ�
 \end{comment}
 
 %\begin{metacomment}
-% ������ʬ�˴ؤ��Ƥϼºݤ����ܸ�Ķ��� eTeX �� pdfTeX ���Ȥ��Ƥ���
-% �Ǥ��٤��Ϥʤ���������
+% この部分に関しては実際に日本語環境で eTeX や pdfTeX が使われてから
+% でも遅くはないだろう．
 %\end{metacommnet}
 
-%\genzai ��\PDFeLaTeX �����ܸ첽�Ϥ���Ƥ��ޤ��󤬡����ܸ��ޤޤʤ��褦��
-%�ե�����򥿥��ץ��åȤ���Ȥ��ˡ�\PDFeLaTeX �����������ʥġ���Ǥ��뤿�ᡤ
-%���������ǿ���Ƥ����ޤ���
+%\genzai ，\PDFeLaTeX の日本語化はされていませんが，日本語を含まないような
+%ファイルをタイプセットするときに，\PDFeLaTeX は大変便利なツールであるため，
+%少しここで触れておきます．
 
 %\begin{table}[htbp]
-% \caption{\PDFTeX �����ꥳ�ޥ��}
+% \caption{\PDFTeX の設定コマンド}
 % \begin{tabular}{llll}
 % \TR
 % \Th{internal name} & \Th{type} & \Th{default} & \Th{comment} \\

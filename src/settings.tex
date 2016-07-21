@@ -1,7 +1,7 @@
 \ProvidesFile{settings.tex}
 \makeatletter
 \ifHyper
-% °Õ¿Ş
+% æ„å›³
 \def\@setref#1#2#3{% csname, extract group, refname
   \ifx#1\relax
     \protect\G@refundefinedtrue
@@ -35,37 +35,37 @@
   \@safe@activesfalse
 }
 
-% CTAN ¤Î¥Ù¡¼¥¹¥Ç¥£¥ì¥¯¥È¥ê
+% CTAN ã®ãƒ™ãƒ¼ã‚¹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
 \newcommand*\@ctan@base{http://www.ring.gr.jp/pub/text/CTAN/}
 \let \ctanBaseDir= \@ctan@base
-% CTAN ¤ËÄ¾ÀÜ¤¢¤¯¤»¤¯½ĞÍè¤ë¤è¤¦¤Ë¤¹¤ëÇÛÎ¸
+% CTAN ã«ç›´æ¥ã‚ãã›ãå‡ºæ¥ã‚‹ã‚ˆã†ã«ã™ã‚‹é…æ…®
 \newcommand*\CTAN[1]{\href{\@ctan@base#1}{CTAN:~\fl{#1}}}
 \else
 \newcommand*\CTAN[1]{CTAN:~\fl{#1}}
 \fi
-% 15info.tex ¤Ç»È¤¦
+% 15info.tex ã§ä½¿ã†
 \newenvironment{myreferences}{%
   \begin{mybibliography}{99}\small}{\end{mybibliography}}
 %
-% usepackage ¤òÌµ¸ú¤«¤¹¤ë
+% usepackage ã‚’ç„¡åŠ¹ã‹ã™ã‚‹
 \clear@usepackage%
-% ½ñÂÎÂ°À­¤ÎÀë¸À
+% æ›¸ä½“å±æ€§ã®å®£è¨€
 \DeclareFontShape{JY1}{gbm}{m}{sc}{<->ssub*gbm/m/n}{}
 \DeclareFontShape{JT1}{gbm}{m}{sc}{<->ssub*gbm/m/n}{}
 \DeclareFontShape{U}{manual}{bx}{n}{<->ssub*manual/m/n}{}
 \DeclareFontShape{JT1}{gbm}{bx}{sc}{<->ssub*gbm/bx/n}{}
 \DeclareFontShape{JY1}{gbm}{bx}{sc}{<->ssub*gbm/bx/n}{}
-% ¤Á¤ç¤Ã¤È´ñ¿ôµ¯¤³¤·¤Ï¤É¤¦¤·¤¿¤Î¤µ
+% ã¡ã‚‡ã£ã¨å¥‡æ•°èµ·ã“ã—ã¯ã©ã†ã—ãŸã®ã•
 \def\@makeEvenChapterHead#1{%
-  \vspace*{2\Cvs}% ²¤Ê¸¤Ï50pt
+  \vspace*{2\Cvs}% æ¬§æ–‡ã¯50pt
   {\parindent \z@ \raggedright
     \reset@font
     \interlinepenalty\@M
     \hb@xt@ \fullwidth{\Huge \headfont #1\hfill}\par\nobreak\vskip\fboxsep
     \hrule height 1ex
-    \par\vskip2\Cvs}}% ²¤Ê¸¤Ï40pt
-% º÷°ú¤À¤±¤ÏÊÌÊª¤µ
-\renewenvironment{theindex}{% º÷°ú¤ò3ÃÊÁÈ¤Ç½ĞÎÏ¤¹¤ë´Ä¶­
+    \par\vskip2\Cvs}}% æ¬§æ–‡ã¯40pt
+% ç´¢å¼•ã ã‘ã¯åˆ¥ç‰©ã•
+\renewenvironment{theindex}{% ç´¢å¼•ã‚’3æ®µçµ„ã§å‡ºåŠ›ã™ã‚‹ç’°å¢ƒ
     \if@twocolumn
       \onecolumn\@restonecolfalse
     \else

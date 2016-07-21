@@ -1,7 +1,7 @@
 %#!platex jou.tex
-\chapter{�ѹ�����}\applab{changelog}
+\chapter{変更履歴}\applab{changelog}
 
-% �ѹ��������Ѥ� list ���Ķ� changelog
+% 変更履歴専用の list 型環境 changelog
 \newenvironment{changelog}
  {\list{}{%
      \setlength{\leftmargin}{3zw}%
@@ -26,80 +26,80 @@
   \hspace{0.5em}#2}
 \makeatother
 
-����ʸ��ϻ��ͤǼ�ɮ���Ƥ���ޤ����顤�ɤ����˴ְ㤤������������Ψ��
-�⤯�ʤäƤ��ޤ����֤���ä��������ʡ��פȻפ��ս꤬����ޤ������Υۡ�
-��ڡ���\footnote{\webThorTeX}�ηǼ��Ĥ��᡼�륢�ɥ쥹
-\footnote{thor@tex.dante.jp}�ˤ�Ϣ������������
+この文書は私一人で執筆しておりますから，どこかに間違いや誤植がある確率が
+高くなっています．「あれっおかしいな？」と思う箇所がありましたら私のホー
+ムページ\footnote{\webThorTeX}の掲示板かメールアドレス
+\footnote{thor@tex.dante.jp}にご連絡ください．
 
 \begin{comment}
-�ѹ�����μ�ɮ�ˤ����äƤϡ�1--5 ����̤��Ƶ��Ҥ��뤳�ȡ�
+変更履歴の執筆にあたっては，1--5 を区別して記述すること．
  \begin{itemize} 
-  \item[��� (deleted)]   �������Ǥ����������
-  \item[�ɲ� (added)]     �������Ǥ򿷵��˼����������
-  \item[��ɮ (extended)]  ���Ǥˤ������Ǥξ����Ǥ��ɲä������
-  \item[���� (revised)]   ���Ǥˤ������Ǥ��ѹ���ä������
-  \item[���� (updated)]   ʸ����������������
-  \item[���� (fixed bug)] ���ä����ҡ����������٤����ǡ�
+  \item[削除 (deleted)]   ある要素を取り除く事．
+  \item[追加 (added)]     ある要素を新規に取り入れる事．
+  \item[加筆 (extended)]  すでにある要素の小要素を追加する事．
+  \item[修正 (revised)]   すでにある要素に変更を加える事．
+  \item[改訂 (updated)]   文書を改めて訂する事．
+  \item[誤植 (fixed bug)] 誤った記述．訂正されるべき要素．
  \end{itemize}
 \end{comment}
 
 \begin{changelog}
  \item[1.12 2006/05/12] % 1.12
-   \item \figref{RingServer}�ˤ�����ɾΤ���ά����Ƥ����Τ������ޤ�����
-   \item �ܳѥ������θ��;�פʶ����������ޤ�����
-   \item \secref{ref:macropackage}��\sty{fancyhdr}�ѥå������Υ��ɥ쥹��
-   �������ޤ�����
+   \item \figref{RingServer}における敬称が省略されていたのを修正しました．
+   \item 倍角ダーシの後の余計な空白を取り除きました．
+   \item \secref{ref:macropackage}の\sty{fancyhdr}パッケージのアドレスを
+   修正しました．
  \item[1.11 2006/05/12] % 1.11
-   \item ver.~1.10 �򤵤�˹������ޤ�����
-   \item ���դ��ˤ���إե꡼���եȥ������ȥե꡼�ޥ˥奢��٤������ޤ�����
-   �����ȼ���ؼռ��٤�ľ��Υڡ���������Ȥʤ�FSF�Ȥ���ʸ���
-   �����դ��ڤ�PDF�Ǥ��ܽ�ν�ߤ˴ؤ����������ɲä��ޤ�����
-   \item ʸ�����Τˤ����Ƹ�硦��Ĵ�������Ԥ��ޤ�����
+   \item ver.~1.10 をさらに校正しました．
+   \item 前付けにある『フリーソフトウェアとフリーマニュアル』を削除しました．
+   これに伴い『謝辞』の直後のページに代わりとなるFSFとこの文書の
+   位置付け及びPDF版の本書の所在に関する説明を追加しました．
+   \item 文書全体において語句・語調の統一を行いました．
  \item[1.10 2006/05/07] % 1.10
-   \item ver.~1.00 �θ��������ǤȤ������ۤ��ޤ�����
+   \item ver.~1.00 の誤植訂正版として配布しました．
  \item[1.00 2006/04/20] % 1.00
-   \item �����ʲ�����Ԥ�����������㴳�������Ϥγ���������Ը����פȤ�
-   �ޤ�����
-   \item �ڡ����쥤�����ȤȻ��Ѥ��Ƥ���ޥ����β��Ѥ�Ԥ��ޤ�����
-   \item \secref{RingServer}���ɲä��ޤ�����
-   \item \appref{info}�ο�̾�����Ū�˺������ɲä��ޤ�����
-   \item �����������ޤ�����
-   \item ���դ��ˤ���ؤޤ������٤Ρ�����٤��ɮ������FUNNIST�ˤĤ��ƾ�
-   ���٤������ޤ�����
-   \item ���դ��ˤ���إե꡼���եȥ������ȥե꡼�ޥ˥奢��٤Ρ�Free
-   Software Foundation�Ȥ��γ�ư�Ĥ��ơ٤��ɮ���ޤ�����
-   \item �Ϲ����������ؤ��ޤ�����
-   \item \secref{doublespace}�������ޤ�����
-   \item \chapref{math}��������ɮ���ޤ�����
-   \item \secref{amsmath}��\AmSLaTeX �˴ؤ��������ɲä��ޤ�����
-   \item \secref{figure}���ɮ���������ޤ�����
-   \item \secref{lakulaku}�������ޤ�����
-   \item \appref{future}���ɲä��ޤ�����
- \item[0.34 2005/03/20] % �� 0.3d
-   \item 0.33 �θ��������ǤȤ����������ۤ��ޤ�����
- \item[0.33 2004/12/28] % �� 0.3c
-   \item ������������Ԥ��ޤ�����
-   \item �饤����Ū�� \emph{free} �Ȥϸ��������������������ޤ�����
- \item[0.32 2004/01/14] % �� 0.3b
-   \item ������������Ԥ��ޤ�����
-   \item ���Ԥ�Ϣ���褬�ѹ��ˤʤä����ᡤURL �� e-mail ���ѹ����ޤ�����
-   \item URL���ѹ��ˤȤ�ʤ�\appref{info}�������ޤ�����
- \item[0.31 2004/08/19] % �� 0.3a
-   \item ������������Ԥ��ޤ�����
-   \item ���Ԥ��Ѥ���ʬ��������ܳѥ������������ޤ�����
-   \item URL���ѹ����ˤȤ�ʤ�\appref{info}�������ޤ�����
- \item[0.30 2004/08/05] % �� 0.30
-   \item ����Ԥ�ɬ�פ��Ȼפ�����ʬ�򵭽Ҥ�������ʾ�Ͻ������ʤ��Ȥ�
-   �������Ǥ˶ᤤ��Τ�������ޤ�����
- \item[0.21 2004/04/30] % �� 0.2a
-   \item ������������Ԥ��ޤ�����
- \item[0.20 2004/04/16] % �� 0.20
-   \item ������������Ԥ��ޤ�����
-   \item �����������ѤΥԥꥪ�ɡ�����ޤ����줷�ޤ�����
-   \item �޳ݤ��ˤĤ��ƤϾϸ��Ф�����Ϥ���褦�ˤ��ޤ�����
-   \item \chapref{math}�Ƕ����˴ؤ��뵭�Ҥ��ɮ���ޤ�����
-   \item �����ˤĤ���ȴ���Ƥ�����̾������佼�򤷤ޤ�����
+   \item 大幅な改訂を行い，方向性を若干「理工系の学生・研究者向け」とし
+   ました．
+   \item ページレイアウトと使用しているマクロの改変を行いました．
+   \item \secref{RingServer}を追加しました．
+   \item \appref{info}の人名を包括的に索引に追加しました．
+   \item 口絵を削除しました．
+   \item 前付けにある『まえがき』の『凡例』を加筆し，『FUNNISTについて少
+   し』を削除しました．
+   \item 前付けにある『フリーソフトウェアとフリーマニュアル』の『Free
+   Software Foundationとその活動ついて』を加筆しました．
+   \item 章構成を入れ替えました．
+   \item \secref{doublespace}を修正しました．
+   \item \chapref{math}に例題を加筆しました．
+   \item \secref{amsmath}に\AmSLaTeX に関する情報を追加しました．
+   \item \secref{figure}を加筆・修正しました．
+   \item \secref{lakulaku}を修正しました．
+   \item \appref{future}を追加しました．
+ \item[0.34 2005/03/20] % 旧 0.3d
+   \item 0.33 の誤植訂正版という形で配布しました．
+ \item[0.33 2004/12/28] % 旧 0.3c
+   \item 誤植の訂正を行いました．
+   \item ライセンス的に \emph{free} とは言いがたい画像を削除しました．
+ \item[0.32 2004/01/14] % 旧 0.3b
+   \item 誤植の訂正を行いました．
+   \item 著者の連絡先が変更になったため，URL と e-mail を変更しました．
+   \item URLの変更にともない\appref{info}を修正しました．
+ \item[0.31 2004/08/19] % 旧 0.3a
+   \item 誤植の訂正を行いました．
+   \item 改行が変な部分や索引の倍角ダーシを修正しました．
+   \item URLの変更等にともない\appref{info}を修正しました．
+ \item[0.30 2004/08/05] % 旧 0.30
+   \item 初級編に必要だと思われる部分を記述し，これ以上は修正しないとい
+   う完成版に近いものを公開しました．
+ \item[0.21 2004/04/30] % 旧 0.2a
+   \item 誤植の訂正を行いました．
+ \item[0.20 2004/04/16] % 旧 0.20
+   \item 誤植の訂正を行いました．
+   \item 句読点を全角のピリオド・コンマに統一しました．
+   \item 爪掛けについては章見出しも出力するようにしました．
+   \item \chapref{math}で空きに関する記述を加筆しました．
+   \item 索引について抜けていた人名や語句の補充をしました．
  \item[0.10 2004/04/02] 
-   \item ���Ǥ�ȯ�Ԥ��ޤ�����
+   \item 初版を発行しました．
 \end{changelog}
 

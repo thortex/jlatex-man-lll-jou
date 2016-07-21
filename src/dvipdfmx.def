@@ -124,8 +124,9 @@
 \@namedef{Gin@rule@.jpeg}#1{{bmp}{.bb}{#1}}
 \@namedef{Gin@rule@.png}#1{{bmp}{.bb}{#1}}
 \@namedef{Gin@rule@.bmp}#1{{bmp}{.bb}{#1}}
+\def\Gin@extensions{.pdf,.jpg,.jpeg,.png,.bmp}
 %\def\Gin@extensions{.eps,.ps,.eps.gz,.ps.gz,.eps.Z}
-\def\Gin@extensions{.jpg,.jpeg,.png,.bmp,.pdf,.eps,.ps,.eps.gz,.ps.gz,.eps.Z}
+%\def\Gin@extensions{.jpg,.jpeg,.png,.bmp,.pdf,.eps,.ps,.eps.gz,.ps.gz,.eps.Z}
 %\@namedef{Gin@rule@.pdf}#1{{bmp}{.bb}{#1}}
 \@namedef{Gin@rule@.pdf}#1{{eps}{.bb}{#1}}
 %

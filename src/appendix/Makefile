@@ -1,9 +1,9 @@
 all: jou-app.pdf
 f=jou-app
-p=platex-euc -kanji=euc
-m=mendex -E
+p=platex -kanji=utf8
+m=mendex -U
 SRC=Makefile 8.6.pdf dvipdfmx.pre
-VER=1.1.3
+VER=1.1.4
 
 jou-app.pdf:	jou-app.tex
 	$p $f

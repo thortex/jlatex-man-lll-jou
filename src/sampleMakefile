@@ -1,21 +1,21 @@
 #!/bin/sh
 ## Author  : Thor Watanabe
 ## date    : December 25, 2003
-# $BAv$i$;$k(BTeX 
+# 走らせるTeX 
 TEX=platex
-# mendex $B$K>o$K;2>H$5$;$k<-=q%U%!%$%k$N;XDj(B
+# mendex に常に参照させる辞書ファイルの指定
 MAKEINDEX=mendex -d jisyo.dic
-# DVI->PS $B$N%G%P%$%9%I%i%$%P(B
+# DVI->PS のデバイスドライバ
 DVIPS=dvipsk -Pdl
-# DVI->PDF$B$N%G%P%$%9%I%i%$%P(B
+# DVI->PDFのデバイスドライバ
 DVIPDFM=dvipdfmx -f dlbase14.map
-# $B%a%$%s%U%!%$%k(B
+# メインファイル
 FILE=main
-# $B;29MJ88%%G!<%?%Y!<%9(B
+# 参考文献データベース
 REF=thesis.bib journal.bib book.bib manual.bib
-# $B%a%$%s%U%!%$%k$G(Binput/include$B$5$l$F$$$k%U%!%$%k(B
+# メインファイルでinput/includeされているファイル
 SRC=preface.tex chap1.tex chap2.tex thanx.tex
-# $BI8=`$N%?!<%2%C%H(B
+# 標準のターゲット
 all: $(FILE).pdf 
 # main.pdf/main.ps
 $(FILE).pdf: $(FILE).dvi
@@ -42,7 +42,7 @@ $(FILE).idx: $(FILE).aux $(SRC)
 	$(TEX) $(FILE)
 $(FILE).aux: $(FILE).tex $(SRC)
 	$(TEX) $(FILE)
-# $B%"!<%+%$%V2=(B
+# アーカイブ化
 tar: $(FILE).tex $(SRC) $(REF) Makefile
 	mkdir -p $(FILE)src/
 	cp $(REF) $(SRC) $(FILE).tex Makefile $(FILE)src/

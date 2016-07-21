@@ -1,303 +1,303 @@
 %#!platex jou.tex
-\chapter{��ɽ�ι���}\chaplab{floats}
+\chapter{図表の構成}\chaplab{floats}
 \begin{abstract}
-%%������餱�С������
-%\yo{���շ��������Ϥ⤦��ǯ��63�ˤʤ뤱�ɡ�������
-%��������ʸ�ʤ�Ƥߤ�ʼ�񤭤��ä�����͡��ޤ�
-%��ʬ�Ǳ����구��Ȥä������Ƥ��补�����
-%�ޤˤϥ����꡼��ȡ���⹩�פ���Ž�äƤ��衤����
-%�����ʤ���������������Ϥ���ʤ��Ȥ�ä����Ȥʤ�
-%��������ͤ���}\pp{����Ű�ر��Τ��������٤��}
+%%おちゃらけばーじょん
+%\yo{渡辺君，先生はもう今年で63になるけど，先生の
+%ころは論文なんてみんな手書きだったからね，図も
+%自分で雲形定規を使って描いてたよ．それに
+%図にはスクリーントーンも工夫して貼ってたよ，懐か
+%しいなぁ．君たちの世代はそんなことやったことない
+%んだろうねぇ．}\pp{渡辺徹『雲のうえの声』より}
 %
-%����ǯ���ޤǤ���ʸ������ɬ�פʤ�ΤȤ����иҤȤ�
-%���ߤȥ��å����ʤɤΥ��ʥ�����ƻ��Ǥ��������Ǥ�
-%�ۤȤ�ɤ���ʸ���Ż�Ū����ФǤ���褦�ˤʤ�ޤ�
-%����{\LaTeX}�ǤϤ������٤μ���Ƨ������˹���
-%�����Ż�Ū�ʿ�ɽ�����Ǥ���ǽ�Ǥ���
-��ݡ��ȡ���ʸ�˿ޤ�ɽ�������������ɼԤ�������������ˤʤ�ޤ���
-���ξϤǤ�ʸ����ˤɤΤ褦�˿�ɽ����������ɤ��Τ�����⤷�ޤ���
+%数十年前までは論文作成に必要なものといえば糊とは
+%さみとカッターなどのアナログな道具でした．今では
+%ほとんどの論文を電子的に提出できるようになりまし
+%た．{\LaTeX}ではある程度の手順を踏めば非常に高品
+%質に電子的な図表の組版が可能です．
+レポート・論文に図や表を取り入れる事は読者の理解を助ける事になります．
+この章では文書中にどのように図表を構成すれば良いのかを解説します．
 \end{abstract}
 
-\section{����Ū�ʼ����}
+\section{一般的な取り決め}
 
-�ʲ��ϰ���Ū�ʥ�ݡ��ȡ���ʸ�����ˤ������ɽ�˴ؤ�������Ǥ���
+以下は一般的なレポート・論文作成における図表に関する取り決めです．
 
 \begin{description}
-\item[��ɽ�ΰ���] 
- ����Ū�ˡ���ʸ��ˤ����ƿ�ɽ��\K{�ڡ����ξ�ü����ü�˽��Ϥ��ޤ�}��
- \K{�ط�ʸ�Ϥ������Ф�������ʤ����}����ʸ������֤������
- ��ǽ�Ǥ�������������ɽ�������ʸ�Ϥ�1�Ԥ������Ĥ����褦�ʻ����򤱤�
- �褦�ˤ��ޤ���\K{��ɽ�����·���ˤ��ޤ�}�����ΤȤ���ɽ�κ�����
- ʸ�Ϥ�ή��������⤢��ޤ�������§�Ȥ��ƿ�ɽ����ʸ����̤��뤿��
- �ˡ�������ʸ�Ϥϵ��Ҥ��ƤϤ����ޤ���
+\item[図表の位置] 
+ 一般的に，論文中において図表は\K{ページの上端か下端に出力します}．
+ \K{関係文章よりも前出する事がなければ}，本文中に配置する事も
+ 可能です．ただし，図表の前後に文章が1行だけ取り残されるような事は避ける
+ ようにします．\K{図表は中央揃えにします}．このとき図表の左右に
+ 文章を流し込む事もありますが，原則として図表と本文を区別するため
+ に，左右に文章は記述してはいけません．
 
-\item[��ɽ����ʸ�ζ���] 
- ��ʸ�ΰ�ȶ��̤��뤿��ˡ���ɽ����ʸ��1�����٤϶������ߤ���
- ���Ϥ��ޤ���
+\item[図表と本文の空き] 
+ 本文領域と区別するために，図表と本文は1行程度は空きを設けて
+ 出力します．
 
-\item[��ɽ������] 
- ��ɽ��������դ��ä���Ȥ���\K{����Υ�������
- ��ʸ���⾯����������}����ɽ�β��������֤��ޤ���
+\item[図表の注釈] 
+ 図表に注釈を付け加えるとき，\K{注釈のサイズは
+ 本文よりも少し小さくし}，図表の下部に配置します．
 
-\item[��ɽ���Ф�] 
- \zindind{��}{�����·��}\zindind{ɽ}{�����·��}\zindind{��ɽ}{���Ф�}%
- ʸ�����\K{���٤Ƥο�ɽ}��ɬ�����Ф���\K{��ɽ���Ф�}��
- ���դ��ޤ����ޤˤ�\KY{�޸��Ф�}�� ɽ�ˤ�\KY{ɽ���Ф�}��
- �դ��ޤ������Ф��Ͽ�ɽ��Ʊ����\K{���·��}�ˤ���
- �������ˤ�äƤϡ���ɽ���Ф�����ʸ���Ф��ơ����Τȥ��������ѹ�
- ���ƽ��Ϥ���ɬ�פ⤢��ޤ���ɽ���Ф���\K{ɽ�ξ���}���޸��Ф���
- \K{�ޤβ���}�����֤��ޤ���
+\item[図表見出し] 
+ \zindind{図}{の中央揃え}\zindind{表}{の中央揃え}\zindind{図表}{見出し}%
+ 文書中の\K{すべての図表}に必ず見出し（\K{図表見出し}）
+ を付けます．図には\KY{図見出し}を， 表には\KY{表見出し}を
+ 付けます．見出しは図表と同じく\K{中央揃え}にしま
+ す．場合によっては，図表見出しは本文に対して，書体とサイズを変更
+ して出力する必要もあります．表見出しは\K{表の上部}，図見出しは
+ \K{図の下部}に配置します．
 
-\item[�̤��ֹ�] 
- \index{���}%
- ��ɽ���Ф��ˤ����֤������\K{��դ��̤��ֹ�}��ɽ�����ޤ���
- ����ϡ�38���ܤοޡפȤ�����ˡ�Ǥ⡤��5�Ϥ�6���ܤ�ɽ�פʤɤ�
- �⹽���ޤ����̾��ʸ�ʤɤε��ϤǤ�\KY{��Ω��}����
- ɬ�פ������ޤ��Τǡ���ɽ���Ф����ղä����ֹ��`��~5.6'�Τ褦�ˡ�
- \K{�Ϥ�Ϣư�����ֹ��դ�}����ޤ���
+\item[通し番号] 
+ \index{一意}%
+ 図表見出しには配置した順に\K{一意の通し番号}も表記します．
+ これは「38番目の図」という方法でも，「5章の6番目の表」などで
+ も構いません．通常，論文などの規模では\KY{章立て}する
+ 必要に迫られますので，図表見出しに付加する番号は`図~5.6'のように，
+ \K{章に連動して番号付け}されます．
 
-\item[\Z{ɽ����}] 
- \indindz{ɽ�Ȥ�}{��ʸ��}%
- \indindz{����}{ɽ��}%
- ��ʸ��\Z{ɽ�Ȥ�}�ξ�硤\K{�ķ����ϸ�§Ū�˻Ȥ��ޤ���}��
- ��ʸ�ξ��Ǥ⡤ɽ�˻��Ѥ�������ϺǾ��ˤȤɤ����ˤʤ�ޤ���
+\item[\Z{表罫線}] 
+ \indindz{表組み}{欧文の}%
+ \indindz{罫線}{表の}%
+ 欧文の\Z{表組み}の場合，\K{縦罫線は原則的に使いません}．
+ 和文の場合でも，表に使用する罫線は最小にとどめる事になります．
 \end{description}
 
-�����μ���������ˤ���ɽ�˴ؤ������������ޤ����Ȥʤ�ޤ���
-ɬ���嵭�Τ褦�ˤ��ʤ���Фʤ�ʤ��Ȥ����롼��Ϥ���ޤ��󡥳ز��
-���ؤˤ�äƤϤ���Ȥϰۤʤ����ˤ���äƤ�����⤢��ޤ����������
-���Ƥ⡤��������ΰ�������������Ȥ������ܸ�§�ϼ��褦�˼�ɮ
-������򿴤�����褦�ˤ���ȡ��ɼԤ˿��ڤ�ɽ���ȸ�����Ǥ��礦��
+これらの取り決めを守る事により図表に関する一貫性がうまれる事となります．
+必ず上記のようにしなければならないというルールはありません．学会や
+機関によってはこれとは異なる方針を持っている事もあります．いずれに
+しても，何かしらの一貫性を持たせるという基本原則は守るように執筆
+する事を心がけるようにすると，読者に親切な表記と言えるでしょう．
 
-%\section{��ɽ�δ���}
-\section{\LaTeX �Ǥΰ���}
+%\section{図表の基礎}
+\section{\LaTeX での扱い}
 
-%�ޤ�ɽ��{\LaTeX}�Ǥ�\Z{��ư��}\pp{\tabref{floats}}
-%�ȸƤФ����˰������򤵤��뤳�Ȥ��Ǥ��ޤ������Τ褦��
-%�����{\LaTeX}��{\LaTeX}���Ȥ���Ŭ���Ȼפ�����˿�ɽ
-%����Ϥ��褦�����Ϥ��ޤ�����ư�ΤȤ������򤵤����ޤ�ɽ��
-%�������¤�¿���������Ǥ���ޤ���
-��ݡ��Ȥ���ʸ�ˤ����Ƥϴ���Ū�˿�ɽ���Ф����̤��ֹ�򿶤뤿��ˡ���ɽ��
-\Env{table}�Ķ���\Env{figure}�Ķ�������Ҥˤ��ޤ������ξ�硤{\LaTeX}��
-�Ͽ�ɽ��\KY{��ư��} (\Z{float}) �ȸƤФ����˰������򤵤�����Ŭ�ʰ���
-�˿�ɽ�����֤��褦�Ȼ�ߤޤ�\pp{\tabref{floats}}����ư�ΤȤ�������
-������ɽ�Ͼ������¤�¿���������Ǥ���ޤ���
+%図や表を{\LaTeX}では\Z{浮動体}\pp{\tabref{floats}}
+%と呼ばれる場所に一度退避させることができます．このように
+%すると{\LaTeX}は{\LaTeX}自身が最適だと思われる場所に図表
+%を出力しようと努力します．浮動体として退避させた図や表は
+%少し制限の多い条件で組版されます．
+レポートや論文においては基本的に図表に対して通し番号を振るために，図表は
+\Env{table}環境か\Env{figure}環境に入れ子にします．この場合，{\LaTeX}で
+は図表を\KY{浮動体} (\Z{float}) と呼ばれる場所に一度退避させ，最適な位置
+に図表を配置しようと試みます\pp{\tabref{floats}}．浮動体として退避さ
+せた図表は少し制限の多い条件で組版されます．
 \begin{wraptable}[6]{r}{20zw}
-\caption{��ư�Τμ���}\tablab{floats}
+\caption{浮動体の種類}\tablab{floats}
 \begin{tabular}{lcc} 
 \TR
-           & \Th{ɽ}          & \Th{��}          \\ 
+           & \Th{表}          & \Th{図}          \\ 
 \MR
-�����Ķ� & \Env{table}�Ķ� & \Env{figure}�Ķ� \\ 
-���Ф��ΰ��� & ɽ�ξ��� & �ޤβ��� \\
+入れる環境 & \Env{table}環境 & \Env{figure}環境 \\ 
+見出しの位置 & 表の上部 & 図の下部 \\
 \BR
 \end{tabular}
 \end{wraptable}
-%\indindz{�ֹ�}{��ɽ���̤�}\indindz{�ֹ�}{ɽ���̤�}\indindz{�ֹ�}{�ޤ��̤�}%%%
-%ɽ��\Env{tabular}�Ķ��Ǻ��������ֹ��դ����������\Env{table}�Ķ����
-%����Ҥˤ��ޤ����ޤ�\Env{picture}�Ķ���\indindz{�ե�����}{����}�����ե��������ꤷ���ֹ���
-%�����������\Env{figure}�Ķ��������Ҥˤ��ޤ������Τ褦�ˤ���Ȥ���
-%��ο�ɽ����ư�ΤȤ��ư����ޤ�����ݡ��Ȥ���ʸ�ǤϿ�ɽ���̤��ֹ�
-%���դ���Τ�ɬ�ܤǤ����顤���Ƥ�ɽ��\env{table}�Ķ�����ء��ޤ�
-%\env{figure}�Ķ�����������Τ��ɤ��Ǥ��礦��
+%\indindz{番号}{図表の通し}\indindz{番号}{表の通し}\indindz{番号}{図の通し}%%%
+%表は\Env{tabular}環境で作成し，番号付けしたければ\Env{table}環境中に
+%入れ子にします．図は\Env{picture}環境や\indindz{ファイル}{画像}画像ファイルを指定し，番号付
+%けしたければ\Env{figure}環境中に入れ子にします．このようにするとそれ
+%らの図表は浮動体として扱われます．レポートや論文では図表に通し番号
+%を付けるのは必須ですから，全ての表は\env{table}環境の中へ，図は
+%\env{figure}環境の中に入れるのが良いでしょう．
 %
-%{\LaTeX}�������ǤɤΤ褦�ˡ��������ư�Τ����֤��Ƥ���Τ��Ȥ�����
-%����ʬ�򲡤����ʤ���м�ʬ�λפ��̤�ΰ��֤˿�ɽ�����֤��뤳�Ȥ��Ǥ�
-%�ʤ���礬¿���Ǥ��礦��;��ޤν��ϰ��֤ʤɤ򵤤ˤ��ʤ���Ф����
-%�ɤ�����Ǥ���
+%{\LaTeX}が内部でどのように，これら浮動体を配置しているのかという難し
+%い部分を押さえなければ自分の思い通りの位置に図表を配置することができ
+%ない場合が多いでしょう．余り図の出力位置などを気にしなければそれで
+%良い問題です．
 %
-%��ư�Τ���������Ȥ��˻��ꤹ��ΤϤ������־��Ǥ�������Ū��{\LaTeX}��
-%��ɽ��ڡ����κǾ������ǲ��������֤��褦�Ȥ��ơ�����Ǥ�̵���ʤȤ���
-%�̥ڡ����ؤȽ��Ϥ��ޤ����桼���Ϥ������ư�Τ����־�����ꤹ��
-%���Ȥ��Ǥ��ޤ�������Ǥ������\tabref{hudoutai}�Ȥʤ�ޤ�����
-%�ֻ����ʣ�����ꤹ�뤳�Ȥ���ǽ�Ǥ���
+%浮動体を挿入するときに指定するのはその配置場所です．基本的に{\LaTeX}は
+%図表をページの最上部か最下部に配置しようとして，それでも無理なときは
+%別ページへと出力します．ユーザはこれら浮動体の配置場所を指定する
+%ことができます．指定できる場所は\tabref{hudoutai}となります．位
+%置指定は複数指定することが可能です．
 
-\indindz{�ֹ�}{��ɽ���̤�}\indindz{�ֹ�}{ɽ���̤�}\indindz{�ֹ�}{�ޤ��̤�}%
-ɽ (\Z{table}) ��\Env{tabular}�Ķ��Ǻ��������ֹ��դ����������
-\Env{table}�Ķ��������Ҥˤ��ޤ���
+\indindz{番号}{図表の通し}\indindz{番号}{表の通し}\indindz{番号}{図の通し}%
+表 (\Z{table}) は\Env{tabular}環境で作成し，番号付けしたければ
+\Env{table}環境中に入れ子にします．
 %
-�� (\Z{figure}) ��\Env{picture}�Ķ���\indindz{�ե�����}{����}%
-�����ե��������ꤷ���ֹ���
-�����������\Env{figure}�Ķ��������Ҥˤ��ޤ������Τ褦�ˤ���Ȥ���
-��ο�ɽ����ư�ΤȤ��ư����ޤ�����ݡ��Ȥ���ʸ�ǤϿ�ɽ���̤��ֹ�
-���դ���Τ�ɬ�ܤǤ����顤���Ƥ�ɽ��\env{table}�Ķ�����ء��ޤ�
-\env{figure}�Ķ�����������Τ��ɤ��Ǥ��礦��
-\indindz{����}{��ư�ΤȤ��Ƥ�}%
+図 (\Z{figure}) は\Env{picture}環境や\indindz{ファイル}{画像}%
+画像ファイルを指定し，番号付
+けしたければ\Env{figure}環境中に入れ子にします．このようにするとそれ
+らの図表は浮動体として扱われます．レポートや論文では図表に通し番号
+を付けるのは必須ですから，全ての表は\env{table}環境の中へ，図は
+\env{figure}環境の中に入れるのが良いでしょう．
+\indindz{画像}{浮動体としての}%
 
-%{\LaTeX}�������ǤɤΤ褦�ˡ��������ư�Τ����֤��Ƥ���Τ��Ȥ�����
-%����ʬ�򲡤����ʤ���м�ʬ�λפ��̤�ΰ��֤˿�ɽ�����֤��뤳�Ȥ��Ǥ�
-%�ʤ���礬¿���Ǥ��礦��;��ޤν��ϰ��֤ʤɤ򵤤ˤ��ʤ���Ф����
-%�ɤ�����Ǥ���
+%{\LaTeX}が内部でどのように，これら浮動体を配置しているのかという難し
+%い部分を押さえなければ自分の思い通りの位置に図表を配置することができ
+%ない場合が多いでしょう．余り図の出力位置などを気にしなければそれで
+%良い問題です．
 
-\zindind{�ڡ���}{�κǲ���}%
-\zindind{�ڡ���}{�κǾ���}%
-��ɽ����������Ȥ��˻��ꤹ��ΤϤ������־��Ǥ�������Ū��{\LaTeX}��
-��ɽ��ڡ����κǾ������ǲ��������֤��褦�Ȥ��ơ�����Ǥ�̵���ʤȤ���
-�̥ڡ����ؤȽ��Ϥ��ޤ����桼���Ϥ�����ɽ����ư�Ρˤ����־�����ꤹ��
-�����Ǥ��ޤ�������Ǥ������\tabref{hudoutai}�Ȥʤ�ޤ�����
-�ֻ����ʣ�����ꤹ�������ǽ�Ǥ���
+\zindind{ページ}{の最下部}%
+\zindind{ページ}{の最上部}%
+図表を挿入するときに指定するのはその配置場所です．基本的に{\LaTeX}は
+図表をページの最上部か最下部に配置しようとして，それでも無理なときは
+別ページへと出力します．ユーザはこれら図表（浮動体）の配置場所を指定する
+事ができます．指定できる場所は\tabref{hudoutai}となります．位
+置指定は複数指定する事が可能です．
 
 \begin{table}
 \begin{center}
-\caption{��ư�Τΰ��ֻ���}\tablab{hudoutai}
+\caption{浮動体の位置指定}\tablab{hudoutai}
 \begin{tabular}{cl}
 \TR
-\Th{����} & \Th{��ư�Τ����֤�����} \\
+\Th{記号} & \Th{浮動体の配置する場所} \\
 \MR
-\str h & �ޤ��ˤ��ξ������֤��褦�Ȼ�ߤޤ�\\
-\str t & �ڡ������������֤��褦�Ȼ�ߤޤ�\\
-\str b & �ڡ������������֤��褦�Ȼ�ߤޤ�\\
-\str p & ��ư�Τ��̥ڡ��������֤��褦�Ȼ�ߤޤ�\\
-\str ! & ̵����ꤽ�ξ������֤��ޤ�\\
+\str h & まさにその場所に配置しようと試みます\\
+\str t & ページ上部に配置しようと試みます\\
+\str b & ページ下部に配置しようと試みます\\
+\str p & 浮動体を別ページに配置しようと試みます\\
+\str ! & 無理やりその場所に配置します\\
 \BR
 \end{tabular}
 \end{center}
 \end{table}
-�����ΰ��ֻ����\env{table}�Ķ���\env{figure}�Ķ���
-\K{Ǥ�հ����Ȥ����Ϥ��ޤ�}��\env{figure}�Ķ�����򼨤���
-���Τ褦�˻Ȥ��ޤ���
+これらの位置指定は\env{table}環境や\env{figure}環境の
+\K{任意引数として渡します}．\env{figure}環境で例を示すと
+次のように使います．
 
 \begin{InTeX}
 \begin{figure}[htbp]
-�����˿ޤ�����ޤ���
+ここに図が入ります．
 \end{figure}
 \end{InTeX}
 
 
-%\indindz{���Ф�}{�ޤ�}
-%\indindz{���Ф�}{ɽ��}
-%��Ĥ��������դ��ʤ���Фʤ�ʤ����Ȥϡ���ɽ�θ��Ф��ΰ��֤Ǥ���\KY{�޸�
-%�Ф�}�Ͽޤβ����ˡ�\KY{ɽ���Ф�}��ɽ�ξ����˸��Ф���Ĥ��ޤ�������ˤ�
-%���Ƥ�\KY{��ɽ���Ф�}����Ϥ��� \Cmd{caption}̿��ΰ��֤��Ѥ�������Ǥ���
+%\indindz{見出し}{図の}
+%\indindz{見出し}{表の}
+%一つここで注意しなければならないことは，図表の見出しの位置です．\KY{図見
+%出し}は図の下部に，\KY{表見出し}は表の上部に見出しをつけます．これにつ
+%いては\KY{図表見出し}を出力する \Cmd{caption}命令の位置を変えるだけです．
 %\begin{Syntax}
-%\Cmd{caption}\opa{��ɽ�ܼ��Ѥθ��Ф�}\pa{��ɽ���Ф�\Cmd{label}\pa{��٥�}}
+%\Cmd{caption}\opa{図表目次用の見出し}\pa{図表見出し\Cmd{label}\pa{ラベル}}
 %\end{Syntax}
 %
-%\env{figure}�Ķ����ɽ�����줿�ꡤ\env{table}�Ķ����
-%�ޤ����줿�ꤹ�뤳�Ȥ��Ǥ��ޤ���¾�ˤ�Ķ����ʸ����
-%���������뤳�Ȥ��ǽ�Ǥ���
+%\env{figure}環境中に表を入れたり，\env{table}環境中に
+%図を入れたりすることができます．他にも環境中に文字列
+%を挿入することも可能です．
 
 %\begin{Exe}
-% \cmd{caption}�λȤ�����
+% \cmd{caption}の使い方．
 %\end{Exe}
 
-��ɽ�Ѥθ��Ф�����Ϥ���ˤ� \C{caption}̿���
-\E{figure}/\E{table}�Ķ���ǻ��Ѥ��ޤ���
+図表用の見出しを出力するには \C{caption}命令を
+\E{figure}/\E{table}環境中で使用します．
 \begin{Syntax}
-\C{caption}\pa{��ɽ���Ф�}\C{label}\pa{��٥�}
+\C{caption}\pa{図表見出し}\C{label}\pa{ラベル}
 \end{Syntax}
-���ҤΤ褦��ɽ���Ф���ɽ�ξ����˽��Ϥ��뤿��ˡ�\C{caption}
-̿�����ˡ��޸��Ф��ξ��ϡ��ޤθ�� \C{caption}�����
-���Ҥ��ޤ���
+前述のように表見出しは表の上部に出力するために，\C{caption}
+命令を先に，図見出しの場合は，図の後に \C{caption}を先に
+記述します．
 
-\env{figure}�Ķ����ɽ�����줿�ꡤ\env{table}�Ķ����
-�ޤ����줿�ꤹ������Ǥ��ޤ���¾�ˤ�Ķ����ʸ����
-��������������ǽ�Ǥ���
+\env{figure}環境中に表を入れたり，\env{table}環境中に
+図を入れたりする事ができます．他にも環境中に文字列
+を挿入する事も可能です．
 
-����Ū�ʥ�ݡ��ȡ���ʸ���ˤ����Ƥ�
-��ɽ��ʸ����ǻ��Ȥ���Ȥ��ϡ־�οޤϲ����פ�����Ҥοޤϲ�����
-�Ȼ��Ȥ��ƤϤ����ޤ���ɬ��\K{�ղä����̤��ֹ�}�ǡֿ�~3.8��
-�����פȤ��� \C{ref}̿��ǻ��Ȥ��ޤ������Τ���ˤ� \C{label}̿���
-��٥���դ��ä�����ˤʤ�ޤ����ְ�äƤ�\K{��ư�ǿ�ɽ���ֹ��
-�񤫤ʤ��ǲ�����}��%�ֹ�λ��Ȥ� \LaTeX ��\secref{xr}�򻲾Ȥ��ơ�
+一般的なレポート・論文等においては
+図表を文章中で参照するときは「上の図は何々」や「前述の図は何々」
+と参照してはいけません．必ず\K{付加した通し番号}で「図~3.8は
+何々」として \C{ref}命令で参照します．そのためには \C{label}命令で
+ラベルを付け加える事になります．間違っても\K{手動で図表の番号を
+書かないで下さい}．%番号の参照は \LaTeX の\secref{xr}を参照して，
 
 
 
-\section{ɽ}
-\LaTeX ��ɽ���뤿��˻��ĤδĶ����Ѱդ���Ƥ��ޤ���
+\section{表}
+\LaTeX で表を作るために三つの環境が用意されています．
 \begin{description}
- \item[\Env{tabbing}�Ķ�] 
-   ���֤����椹����ˤ�ä�ɽ��������롥
- \item[\Env{tabular}�Ķ�] 
-   ���٤�ɽ�������������Ǥ�������Ū��ɽ�����Ķ���
- \item[\Env{array}�Ķ�]
-   \env{tabular}�Ķ��ȵ�ǽ��������Ƥ��뤬������
-   ����ʤɤ˻Ȥ������¿����
+ \item[\Env{tabbing}環境] 
+   タブを制御する事によって表を作成する．
+ \item[\Env{tabular}環境] 
+   高度な表も作成する事ができる汎用的な表作成環境．
+ \item[\Env{array}環境]
+   \env{tabular}環境と機能は類似しているが数式の
+   行列などに使われる事が多い．
 \end{description}
-\env{array}�Ķ���
-\secref{math:array}�ˤƾҲ𤷤Ƥ��ޤ�
-�ΤǤ�����򻲾Ȥ��Ƥ���������\env{tabbing}�Ķ�
-���ñ��ɽ�������Ǥ���Ķ��ʤΤǤ�����\env{tabular}
-�Τۤ������Ҥ��ڤ��Ȼפ��ޤ��Τǡ������Ǥ�\env{tabular}
-�Τߤ�Ҳ𤷤ޤ���\env{tabular}�Ķ��ϼ��Τ褦��
-���Ҥ��ޤ���
+\env{array}環境は
+\secref{math:array}にて紹介しています
+のでそちらを参照してください．\env{tabbing}環境
+も簡単に表が作成できる環境なのですが，\env{tabular}
+のほうが記述が楽だと思いますので，ここでは\env{tabular}
+のみを紹介します．\env{tabular}環境は次のように
+記述します．
 \begin{Syntax}
-\verb|\begin{tabular}|\pa{������}\\
+\verb|\begin{tabular}|\pa{列指定子}\\
 $\begin{array}{*6c}
-\text{����}_{11} &\verb+&+ & \dots &\verb+&+ & \text{����}_{1n}  & \verb+\\+\\
+\text{要素}_{11} &\verb+&+ & \dots &\verb+&+ & \text{要素}_{1n}  & \verb+\\+\\
 \vdots &\verb+&+ & \ddots&\verb+&+ & \vdots  & \verb+\\+\\
-\text{����}_{m1} &\verb+&+ & \dots &\verb+&+ & \text{����}_{mn}  & 
+\text{要素}_{m1} &\verb+&+ & \dots &\verb+&+ & \text{要素}_{mn}  & 
 \end{array}$\\
 \verb|\end{tabular}|
 \end{Syntax}
-����Ȥۤ�Ʊ���Ǥ����㤦�ΤϿ����Ķ��ˤ�����ʤ���
-���ɤ��Ȥ������Ǥ���
+行列とほぼ同じです．違うのは数式環境には入れなくて
+も良いという事です．
 
-\indindz{������}{ɽ���}%
-{\KY{������}}�ȤϤ���\env{tabular}�Ķ��ˤ�����%
-\indindz{����}{ɽ���}%
-ɽ�������������η����ʤɤ�����ΤǤ���
-\env{tablar}�Ķ��ǻ��ѤǤ����������Ҥ�
-\tabref{graphic:tabular}���̤�Ǥ���
+\indindz{列指定子}{表中の}%
+{\KY{列指定子}}とはその\env{tabular}環境における%
+\indindz{罫線}{表中の}%
+表の列数や縦方向の罫線などを決めるものです．
+\env{tablar}環境で使用できる主な列指定子は
+\tabref{graphic:tabular}の通りです．
 \begin{table}[htbp]
 \begin{center}
-\caption{\texttt{tabular}�Ķ��μ��������}
+\caption{\texttt{tabular}環境の主な列指定子}
 \tablab{graphic:tabular}
 \begin{tabular}{cl}
 \TR
- \Th{������} & \Th{��̣}\\
+ \Th{列指定子} & \Th{意味}\\
 \MR
-\str l & ����ν�1���·���ˤ���\\
-\str c & ����ν�1������·���ˤ���\\
-\str r & ����ν�1���·���ˤ���\\
-\str | & �Ĥη��������\\
-\str {||} & �Ĥ�2�ŷ��������\\
-\str @\pa{ɽ��} & \va{ɽ��}���1���ɲä��ޤ�\\
-\str p\pa{Ĺ��} & �����������\va{Ĺ��}��ľ�ܻ��ꤷ�ޤ�\\
-\str *\pa{���}\pa{������} & ���ʬ����\va{������}�򷫤��֤���\\
+\str l & 行列の縦1列を左揃えにする\\
+\str c & 行列の縦1列を中央揃えにする\\
+\str r & 行列の縦1列を右揃えにする\\
+\str | & 縦の罫線を引く\\
+\str {||} & 縦の2重罫線を引く\\
+\str @\pa{表現} & \va{表現}を縦1列追加します\\
+\str p\pa{長さ} & ある列の幅の\va{長さ}を直接指定します\\
+\str *\pa{回数}\pa{列指定子} & 回数分だけ\va{列指定子}を繰り返す．\\
 \BR
 \end{tabular}
 \end{center}
 \end{table}
-\env{tabular}�Ķ��ˤ����������\pp{��ʬ}��
-\Z{����ѥ����}\qu{\texttt{\&}}�Ƕ��ڤ�ޤ���
-\index{"&@\verb+&+!tabular@\texttt{tabular}�Ķ���\zdash}%
-\glossary{"&@\verb+&+!tabular@\texttt{tabular}�Ķ���\zdash}%
-\qu{\texttt{\bs\bs}}��Ԥν����Ȥ��ޤ��Τ�
-�㤨��1��3���ɽ�ϼ��Τ褦�ˤʤ�ޤ���
+\env{tabular}環境における各要素\pp{成分}は
+\Z{アンパサンド}\qu{\texttt{\&}}で区切ります．
+\index{"&@\verb+&+!tabular@\texttt{tabular}環境の\zdash}%
+\glossary{"&@\verb+&+!tabular@\texttt{tabular}環境の\zdash}%
+\qu{\texttt{\bs\bs}}を行の終わりとしますので
+例えば1行3列の表は次のようになります．
 \begin{InOut}
 \begin{tabular}{ccc}
 \LaTeX\,2.09 & \LaTeXe & \LaTeX\,3\\
 \end{tabular} 
 \end{InOut}
 
-�������˷���������ˤ� \C{hline}��
-���Ǥ���ǽĤη���������Ȥ��ˤ� \C{vline}�ʤ�
-��Ȥ��ޤ�\pp{\tabref{tabular:lines}}��
+横方向に罫線を引くには \C{hline}，
+要素の中で縦の罫線を引くときには \C{vline}など
+を使います\pp{\tabref{tabular:lines}}．
 \begin{table}[htbp]
-\caption{\texttt{tabular}�Ķ���Ǥη�����̿��}
+\caption{\texttt{tabular}環境中での罫線の命令}
 \tablab{tabular:lines}
 \IOmargin\makebox[0pt][l]{
 \begin{tabular}{lp{22zw}}
 \TR
- \Th{̿��} & \Th{��̣}\\
+ \Th{命令} & \Th{意味}\\
 \MR
 \Cmd{hline}& 
-   ���˰���������η���������ޤ�\\
+   横に引けるだけの罫線を引きます\\
 \cmd{hline}\cmd{hline}&
-  �����������2�Ť�\Z{������}������ޤ�\\
+  引けるだけの2重の\Z{横罫線}を引きます\\
 \Cmd{vline}& 
-   ���Ǥ���ǰ���������νķ���������ޤ�\\
-\Cmd{cline}\pa{�ϰ�}& 
-   ���Ǥη�����Ԥ��ϰϤ���ꤷ�ư����ޤ�\\
-\Cmd{multicolumn}\pa{����} & �Ԥ�Ĥʤ����������̤�����Ǥ���Ϥ��ޤ�\\
-\multicolumn{1}{r}{\pa{����}\pa{������}} & \\
+   要素の中で引けるだけの縦罫線を引きます\\
+\Cmd{cline}\pa{範囲}& 
+   要素の罫線を行の範囲を指定して引きます\\
+\Cmd{multicolumn}\pa{数値} & 行をつなげて列指定子通りに要素を出力します\\
+\multicolumn{1}{r}{\pa{要素}\pa{列指定子}} & \\
 \BR
 \end{tabular} \IOlabel}
 \end{table}
 
-�������η���������ˤ� \Cmd{hline}��
-�Ԥ�Ϣ�뤹��ˤ� \Cmd{multicolumn}��Ȥ��ޤ���
+横方向の罫線を引くには \Cmd{hline}を，
+行を連結するには \Cmd{multicolumn}を使います．
 \begin{InOut}
 \begin{tabular}{|c|c|c|}
 \hline\hline
@@ -308,7 +308,7 @@ $\begin{array}{*6c}
 \end{tabular} 
 \end{InOut}
 
-���������Ѥ�����ϩ�Τ褦�ʤ�Τ���ޤ���
+罫線を利用して迷路のようなものも作れます．
 \begin{InOut}
 \begin{tabular}{|ccc|c|c|}
 \hline
@@ -325,38 +325,38 @@ $\begin{array}{*6c}
 \end{tabular} 
 \end{InOut}
 %
-\index{��ʸ!\zdash �ˤ������ɽ}
-��ݡ��Ȥ���ʸ�Ǥ�ɽ�ˤ�ɽ���Ф����դ���
-���·���ˤ���Τ�˾�ޤ����Ȼפ��ޤ��Τ�
-�ʲ��Τ褦�ʥե����ޥåȤˤʤ�ޤ���
+\index{論文!\zdash における図表}
+レポートや論文では表には表見出しを付けて
+中央揃えにするのが望ましいと思われますので
+以下のようなフォーマットになります．
 
 \begin{InTeX}
 \begin{table}[htpb]          
  \begin{center}              
- \caption{ɽ�ν�����}\label{tab:tabular:example}  
+ \caption{表の出力例}\label{tab:tabular:example}  
   \begin{tabular}{llcr}
    \hline
-   ������ & 1 & 2 & 3 \\ \hline
-   \LaTeX ������& \LaTeX\,2.09  & {\LaTeXe}& \LaTeX\,3 \\\hline
+   出力例 & 1 & 2 & 3 \\ \hline
+   \LaTeX の遷移& \LaTeX\,2.09  & {\LaTeXe}& \LaTeX\,3 \\\hline
   \end{tabular}              
  \end{center}                
 \end{table}                  
 \end{InTeX}
-�嵭�Υ������ν����㤬\tabref{nankadame}�Ȥʤ�ޤ���
+上記のソースの出力例が\tabref{nankadame}となります．
 \begin{table}[htpb]
  \begin{center}              
- \caption{ɽ�ν�����}\tablab{nankadame}  
+ \caption{表の出力例}\tablab{nankadame}  
   \begin{tabular}{llcr}
    \hline
-   ������ & 1 & 2 & 3 \\ \hline
-   \LaTeX ������& \LaTeX\,2.09  & {\LaTeXe}& \LaTeX\,3 \\\hline
+   出力例 & 1 & 2 & 3 \\ \hline
+   \LaTeX の遷移& \LaTeX\,2.09  & {\LaTeXe}& \LaTeX\,3 \\\hline
   \end{tabular}
  \end{center}
 \end{table}
 
 \begin{Exe}
-�������������������Ʊ���褦�ʵ��Ҥ򤷤Ƥ����ΤǤ����ޤ��Τǡ�
-������ɽ�Ѥ� \env{mytab} �Ķ��򼡤Τ褦��������ޤ���
+しかし，さすがに毎回同じような記述をしていたのでは疲れますので，
+自前で表用の \env{mytab} 環境を次のように定義します．
 
 \begin{InTeX}
 \newenvironment{mytab}[3][htbp]
@@ -364,11 +364,11 @@ $\begin{array}{*6c}
  {\end{center}\end{table}}
 \end{InTeX}
 
-���Τ褦���������С����Τ褦�˴�ñ���Ѥ�������Ǥ���褦�ˤʤ�ޤ���
-�ºݤ˾嵭��������Ѥ��ƥ����ץ��åȤ����¹Է�̤��̣���Ƥ���������
+このように定義すれば，次のように簡単に用いる事ができるようになります．
+実際に上記の定義を用いてタイプセットし，実行結果を吟味してください．
 
 \begin{InTeX}
-\begin{mytab}[htbp]{���·���Ǹ��Ф��Τ���ɽ�δĶ�}{tab:hoge}
+\begin{mytab}[htbp]{中央揃えで見出しのある表の環境}{tab:hoge}
 \begin{tabular}{lll}
 \LaTeX\,2.09 & \LaTeXe & \LaTeX\,3\\
 \end{tabular} 
@@ -378,147 +378,147 @@ $\begin{array}{*6c}
 
 
 \begin{Prob}
-����~\ref{prob:maketitle:and} �Ǥ� \C{maketitle} �Ȥ���ɽ�����Ϥ��뤿��
-��̿���Ҳ𤷤ޤ����������Ǥ� \C{and} �ˤ�ä����Ԥ���󤹤�����Ǥ���
-����������������ʽ��Ϥ� \Env{tabular} �Ķ��Ǽ����Ǥ��뤫�ɤ����ͤ���
-��������
+問題~\ref{prob:maketitle:and} では \C{maketitle} という表題を出力するため
+の命令を紹介しました．そこでは \C{and} によって著者を列挙する事ができま
+した．それと等価な出力を \Env{tabular} 環境で実装できるかどうか考えて
+下さい．
  
-������ͼ��Τ褦����ˡ�Ǥ�����Ǥ�������ǧ���Ƥ���������
+おおむね次のような方法でも実装できる事を確認してください．
 
 \begin{InTeX}
 \newcommand \AND{\end{tabular}\hspace{1zw}\begin{tabular}[t]{c}}
 \newcommand \makeAUTHOR[1]{%
   \begin{center}\begin{tabular}[t]{c}#1\end{tabular}\end{center}}
-\makeAUTHOR{�������� \\  ��������� \\ ����������  \AND
-      ʡ߷͡�� \\  ����������� \\ ���������\AND
-      ����ζǷ��\\ ������� �������� \\ �����ز�}
+\makeAUTHOR{夏目漱石 \\  ○○研究所 \\ ○○事業部  \AND
+      福澤諭吉 \\  △△株式会社 \\ △△研究所\AND
+      芥川龍之介\\ □□大学 □□学部 \\ □□学科}
 \end{InTeX}
 \end{Prob}
 
 
-\subsection{ɽ��ε���}
-\indindz{����}{ɽ���}
-\env{tabular}�Ķ���Ǥε����Ϥ��ޤ����ϤǤ��ʤ�
-����¿���褦�Ǥ������ξ��� \Cmd{footnotemark}
-�� \Cmd{footnotetext}����Ĥ�Ȥ��ޤ���
-\indindz{�ֹ�}{������}%
+\subsection{表中の脚注}
+\indindz{脚注}{表中の}
+\env{tabular}環境中での脚注はうまく出力できない
+事が多いようです．その場合は \Cmd{footnotemark}
+と \Cmd{footnotetext}の二つを使います．
+\indindz{番号}{脚注の}%
 \begin{Syntax}
-\Cmd{footnotemark}\opa{�ֹ�}\\
-\Cmd{footnotetext}\opa{�ֹ�}\pa{��������} 
+\Cmd{footnotemark}\opa{番号}\\
+\Cmd{footnotetext}\opa{番号}\pa{注釈内容} 
 \end{Syntax}
-\cmd{footnotemark}�ǵ��������ɽ������
-\cmd{footnotetext}�������񤭤ޤ���
+\cmd{footnotemark}で脚注記号を表示し，
+\cmd{footnotetext}に注釈を書きます．
 \begin{InOut}
 \begin{tabular}{|c|c|c|} \hline 
-  �����\footnotemark[1] & 
-  �����\footnotemark[2] & 
-  ������\footnotemark[3]\\ \hline
+  一つ目\footnotemark[1] & 
+  二つ目\footnotemark[2] & 
+  三つ目\footnotemark[3]\\ \hline
 \end{tabular} 
-\footnotetext[1]{����ܤε����Ǥ�.}
-\footnotetext[2]{����ܤε����Ǥ�.}
-\footnotetext[3]{�����ܤε����Ǥ�.}
-\\����ä�ɽ�����ѤˤʤäƤ��ޤ���
+\footnotetext[1]{一つ目の脚注です.}
+\footnotetext[2]{二つ目の脚注です.}
+\footnotetext[3]{三つ目の脚注です.}
+\\ちょっと表示が変になっています．
 \end{InOut}
-�嵭����ˡ�ǤϤ��ޤ������ʤ����ϼ�ư��
-�������դ������Ǥ��ޤ���
+上記の方法ではうまくいかない場合は手動で
+脚注を付ける事もできます．
 \begin{InOut}
 \begin{tabular}{|c|c|c|}\hline 
-  �����${}^{a}$ & �����${}^{b}$ & 
-  ������${}^{c}$ \\ \hline
+  一つ目${}^{a}$ & 二つ目${}^{b}$ & 
+  三つ目${}^{c}$ \\ \hline
 \end{tabular} 
 {\footnotesize \\ 
-$^{a}$ɽ�����ܤε����Ǥ�.\\ 
-$^{b}$ɽ������ܤε����Ǥ�.\\ 
-$^{c}$ɽ�滰���ܤε����Ǥ�.}
+$^{a}$表中一つ目の脚注です.\\ 
+$^{b}$表中二つ目の脚注です.\\ 
+$^{c}$表中三つ目の脚注です.}
 \end{InOut}
 
 
-\subsection{\env{tabular}�Ķ��ν��ϰ���}
+\subsection{\env{tabular}環境の出力位置}
 
-�¤�\env{tabular}�Ķ��������Ҥ�����Ǥ�հ������ĤȤ�ޤ���
+実は\env{tabular}環境は列指定子の前に任意引数を一つとります．
 \begin{Syntax}
-\verb|\begin{tabular}|\opa{���ֻ����}\pa{������}\\
-\va{ɽ�������뤿��ε���}\\
+\verb|\begin{tabular}|\opa{位置指定子}\pa{列指定子}\\
+\va{表を構成するための記述}\\
 \verb|\end{tabular}|
 \end{Syntax}
-�����ɽ�ΰ��֤�����ΰ��֤�Ĵ�������ΤǤ���\env{tabular}�Ķ��Ǻ�����
-�줿ɽ�ξ���������ΰ��֤��碌��Ȥ���\qu{\str{t}}�򡤲����ʤ��
-\qu{\str{b}}������ʤ��\qu{\str{c}}�����Ӥޤ���
+これは表の位置と段落の位置を調整するものです．\env{tabular}環境で作成さ
+れた表の上部と段落の位置を合わせるときは\qu{\str{t}}を，下部ならば
+\qu{\str{b}}を，中央ならば\qu{\str{c}}を選びます．
 
 \begin{InOut}
-\newcommand{\testtab}[1][c]{~����~
+\newcommand{\testtab}[1][c]{~日本~
 \begin{tabular}[#1]{|c|} \hline 
-ȡ��\\ ̤��\\ \hline\end{tabular}}
+函館\\ 未来\\ \hline\end{tabular}}
 \testtab \testtab[t] \testtab[b]
 \end{InOut}
 
 
-\subsection{���ҥ��������ɽ����\zdash\textsf{booktabs}}
+\subsection{書籍スタイルの表罫線\zdash\textsf{booktabs}}
 
-���ܿͤΥ�������δ����Ȥ���\Z{ɽ�Ȥ�}��\Z{�ķ���}��\Z{����}��Ȥ�������
-������褦�Ǥ���ŵ��Ū�� (\Z{typical}) ���ܿͤ��Ȥ����Τϲ����Τ褦
-�ˤʤ�ޤ���
+日本人のスタイルの慣習として\Z{表組み}で\Z{縦罫線}や\Z{斜線}を使う傾向が
+見られるようです．典型的な (\Z{typical}) 日本人が組んだものは下記のよう
+になります．
 \begin{InOut}
 \begin{tabular}{|l||l|l|}
  \hline
- ̾��   & ����  & �Ŀ� \\
+ 名称   & 型番  & 個数 \\
  \hline\hline
- ���路 & TWS01 & 1000 \\ \hline
- �и�   & SP01  & 5000 \\ \hline
+ たわし & TWS01 & 1000 \\ \hline
+ 石鹸   & SP01  & 5000 \\ \hline
 \end{tabular}
 \end{InOut}
-�ºݤ��ܺ��䲤ʸ�Ǥ�ɽ�ȤߤǤϾ嵭�Τ褦���Ȥ������򤱤�����̵��Ǥ���
-\Z{ǧ�ο�����}Ū�ˤ�䤵�������Τ褦���Ȥ��������ᤷ�ޤ���
+実際の本作りや欧文での表組みでは上記のような組み方は避けた方が無難です．
+\Z{認知心理学}的にもやさしい次のような組み方をお薦めします．
 \begin{InOut}
 \begin{tabular}{lll}
  \hline
- ̾��   & ����  & �Ŀ� \\ \hline
- ���路 & TWS01 & 1000 \\
- �и�   & SP01  & 5000 \\ \hline
+ 名称   & 型番  & 個数 \\ \hline
+ たわし & TWS01 & 1000 \\
+ 石鹸   & SP01  & 5000 \\ \hline
 \end{tabular}
 \end{InOut}
-�������⤦�����ܳ�Ū�ˤ�����Ȼפ��С�\Person{Simon}{Fear}�ˤ��
-\Y{booktabs} �ѥå�������Ȥ����ɤ��Ǥ��礦����������������Ҥ˶ᤤ����
-����Ȥʤ�ޤ���
+ただ，もう少し本格的にやろうと思えば，\Person{Simon}{Fear}による
+\Y{booktabs} パッケージを使うと良いでしょう．こちらの方が書籍に近いスタ
+イルとなります．
 \begin{Syntax}
 \begin{tabular}{*4l}
- \C{toprule}    & \pp{ɽ�κǾ����˰���} &
- \C{midrule}    & \pp{ɽ����֤˰���} \\
- \C{bottomrule} & \pp{ɽ�κǲ����˰���} &
- \multicolumn{2}{l}{\C{cmidrule}   \pa{����������ϰ�}}
+ \C{toprule}    & \pp{表の最上部に引く} &
+ \C{midrule}    & \pp{表の中間に引く} \\
+ \C{bottomrule} & \pp{表の最下部に引く} &
+ \multicolumn{2}{l}{\C{cmidrule}   \pa{罫線を引く範囲}}
 \end{tabular}
 \end{Syntax}
-\C{toprule} �� \C{midrule}�������� \C{bottomrule} �λ��Ĥ�
-ɬ���Ȥ��褦�ˤ��ޤ���
+\C{toprule} と \C{midrule}，そして \C{bottomrule} の三つを
+必ず使うようにします．
 \begin{InOut}
 \usepackage{booktabs}
 \begin{tabular}{lll}
  \toprule
- ��̾ & �ֹ� & �Ŀ� \\ \midrule
- ���路 & 02A & 3 \\
- ����   & 55B & 2 \\
- ��     & X2B & 5 \\ \bottomrule
+ 品名 & 番号 & 個数 \\ \midrule
+ たわし & 02A & 3 \\
+ 雑巾   & 55B & 2 \\
+ 傘     & X2B & 5 \\ \bottomrule
 \end{tabular}
 \end{InOut}
-ɽ�����Ⱦü�η������������ \C{cmidrule} ̿���Ȥ��ޤ���
-\C{cmidrule} �� \C{multicolumn} �ʤɤˤ�����Ϣ�뤷���������
-�Ȥ������Ǥ���Ȼפ��ޤ���
+表の中に半端の罫線を引く場合は \C{cmidrule} 命令を使います．
+\C{cmidrule} は \C{multicolumn} などにより列を連結した場合等に
+使う事ができると思います．
 \begin{InOut}
 \usepackage{booktabs}
 \begin{tabular}{lll}
  \toprule
- \multicolumn{2}{c}{����} & \\
+ \multicolumn{2}{c}{項目} & \\
  \cmidrule{1-2}
- ��̾ & ���� & �Ŀ�\\ \midrule
- ���路 & 02A & 3 \\
- ����   & 55B & 2 \\
- ��     & X2B & 5 \\ \bottomrule
+ 品名 & 型番 & 個数\\ \midrule
+ たわし & 02A & 3 \\
+ 雑巾   & 55B & 2 \\
+ 傘     & X2B & 5 \\ \bottomrule
 \end{tabular}
 \end{InOut}
 
-\subsection{������·��\zdash\textsf{dcolumn}}\seclab{dcolumn}
-\E{tabular} �Ķ��ʤɤ�ɽ���äƤ���ȡ�\Z{������}�ʤɤ����\Z{����}����
-�����Ȥ�������ޤ������ξ�硤��ư�Ǽ��Τ褦�ˤ�Ǥ��ޤ���
+\subsection{小数点揃え\zdash\textsf{dcolumn}}\seclab{dcolumn}
+\E{tabular} 環境などで表を作っていると，\Z{小数点}などで列を\Z{整列}させ
+たいときがあります．この場合，手動で次のようにもできます．
 \begin{InOut}
  \begin{center}
   \begin{tabular}{|l|r@{.}l|}
@@ -527,15 +527,15 @@ $^{c}$ɽ�滰���ܤε����Ǥ�.}
   \end{tabular}
  \end{center}
 \end{InOut}
-�������������ϼ�ưŪ�˾������Ǥ��������ߤ�����ΤǤ���
-�������ʤɤ򤽤������Ĥ���ˡ�Ȥ��� \Person{David}{Carlisle} �� \Y{dcolumn}
-��Ȥ���ˡ������ޤ���
+しかし，ここは自動的に小数点でそろえて欲しいものです．
+小数点などをそろえる一つの方法として \Person{David}{Carlisle} の \Y{dcolumn}
+を使う方法があります．
 \begin{Syntax}
-\str{D}\pa{\TeX �Ǥζ��ڤ�}\pa{DVI �Ǥν��Ϸ���}\pa{�������η��} \\
-\C{newcolumntype}\pa{���ڤ국��}\pa{�����Ϥ˴ؤ�������} 
+\str{D}\pa{\TeX での区切り}\pa{DVI での出力形式}\pa{小数部の桁数} \\
+\C{newcolumntype}\pa{区切り記号}\pa{入出力に関する設定} 
 \end{Syntax}
-�����������ˤ�ꡤ������ `.' �˸¤餺���ʤ�餫�ζ��ڤ��
-�������Ǥ��ޤ���
+と定義する事により，小数点 `.' に限らず，なんらかの区切りで
+列を整列できます．
 \begin{InOut}
  \usepackage{dcolumn}
  \begin{center}
@@ -546,134 +546,134 @@ $^{c}$ɽ�滰���ܤε����Ǥ�.}
   \end{tabular}
  \end{center}
 \end{InOut}
-\indindz{������}{��������·����}%
-\E{tabular} �Ķ��ʤɤ�ľ��{������} `D' ��Ȥ�����Ǥ��ޤ���
-�嵭�ξ��Ϥ��餫����\Z{�ԥꥪ��} `.' ����������Ѥλ���ҤȤ���
-��Ͽ���Ƥ��ޤ���
+\indindz{列指定子}{小数点を揃える}%
+\E{tabular} 環境などで直接{列指定子} `D' を使う事もできます．
+上記の場合はあらかじめ\Z{ピリオド} `.' を列の整列用の指定子として
+登録しています．
 
 
 
-\subsection{ɽ�ˤ�����Ԥ�Ϣ��\zdash\textsf{multirow}}
+\subsection{表における行の連結\zdash\textsf{multirow}}
 
-\E{array}/\E{tabular} �Ķ���ɽ�ʤɤ�������Ƥ���ȡ����Ϣ���
-�Ԥʤ��������Ф��Ф���ޤ���
+\E{array}/\E{tabular} 環境で表などを作成していると，列の連結を
+行なう事がしばしばあります．
 \begin{InOut}
 \begin{tabular}{lll}
-\multicolumn{2}{c}{���} & ��¦\\
- ��¦ & ��� & ��¦\\
+\multicolumn{2}{c}{中央} & 右側\\
+ 左側 & 中央 & 右側\\
 \end{tabular}
 \end{InOut}
-���������Ԥ�Ϣ��Ȥʤ�ȷ빽���ݤǤ��������� \Person{Jerry}{Jeichter}��
-\Person{Piet}{Oostrum}�ˤ�� \Y{multirow} �ѥå�������Ȥ����ɤ��Ǥ���
-����
+しかし，行の連結となると結構面倒です．そこで \Person{Jerry}{Jeichter}と
+\Person{Piet}{Oostrum}による \Y{multirow} パッケージを使えば良いでしょ
+う．
 \begin{Syntax}
-\C{multirow}\pa{�Կ�}\pa{��}\pa{����}\\
-\C{multirow}\pa{�Կ�}\string*\pa{����} 
+\C{multirow}\pa{行数}\pa{幅}\pa{要素}\\
+\C{multirow}\pa{行数}\string*\pa{要素} 
 \end{Syntax}
-�����դ�������\va{����}��LR�⡼�ɤ��Ȥ���Ȥ�������ɽ�����֤��ޤ���
-�ޤ��ϹԤ�Ϣ�뤷�ʤ����Ǥ���
+星を付けた場合は\va{要素}をLRモードで組んだときの幅で表を配置します．
+まずは行を連結しない場合です．
 \begin{InOut}
 \usepackage{multirow}
 \begin{tabular}{|l|l|l|}
 \hline
-\multicolumn{2}{|c|}{������} & 
-  �쾦��\\ \hline
- �ʤ� & �䤫�� & ���路\\ \hline
+\multicolumn{2}{|c|}{新商品} & 
+  旧商品\\ \hline
+ なべ & やかん & たわし\\ \hline
 \end{tabular} 
 \end{InOut}
-���ϹԤ�\va{����}ʬ������Ϣ�뤷�����Ǥ���
+次は行を\va{要素}分の幅で連結した場合です．
 \begin{InOut}
 \begin{tabular}{|l|l|}
  \hline
- \multirow{2}*{������}
-   & �ʤ�\\
-   & �䤫��\\ \hline
- �쾦�� & ���路\\ \hline
+ \multirow{2}*{新商品}
+   & なべ\\
+   & やかん\\ \hline
+ 旧商品 & たわし\\ \hline
 \end{tabular} 
 \end{InOut}
-�Ǹ������ 1 ʸ��ʬ�����ǹԤ�ͤ�Ϣ�뤵������Ǥ�����������
-�Ǹ�ιԤ� 3 ʸ��ʬ���뤿�ᡤ���λ���ϸ��Ϥ�����ޤ���
+最後に全角 1 文字分の幅で行を四つ連結させた例です．ただし，
+最後の行が 3 文字分あるため，幅の指定は効力がありません．
 \begin{InOut}
 \begin{tabular}{|c|l|}
  \hline
- \multirow{4}{1zw}{������}
-   & �ʤ� \\
-   & �䤫�� \\
-   & ���å�\\
-   & ���� \\ \hline
- �쾦��  & ���路 \\ \hline
+ \multirow{4}{1zw}{新商品}
+   & なべ \\
+   & やかん \\
+   & コップ\\
+   & 洗剤 \\ \hline
+ 旧商品  & たわし \\ \hline
 \end{tabular}
 \end{InOut}
 
 %\begin{comment}
 
-\subsection{�ڡ�����٤�ɽ\zdash\Y{longtable}}\seclab{longtable}
+\subsection{ページを跨ぐ表\zdash\Y{longtable}}\seclab{longtable}
 
-���Ǥ�����¿�����ϡ�ɽ���ڡ����˼��ޤ꤭��ʤ���礬����ޤ���
-���Τ褦�ʾ��� \Person{David}{Carlisle}�� \Y{longtable} �ѥå������Ǥ��
-���ޤ��礦�� \Y{longtable} �ѥå��������ɤ߹�����ˤ�� \E{longtable}
-�Ķ����Ȥ���褦�ˤʤ�ޤ���
+要素が非常に多い時は，表がページに収まりきらない場合があります．
+このような場合は \Person{David}{Carlisle}の \Y{longtable} パッケージでも使
+いましょう． \Y{longtable} パッケージを読み込む事により \E{longtable}
+環境が使えるようになります．
 
-�������� \E{table} �Ķ���ˤϤ���ޤ��󡥤ޤ�ɽ�����򤽤����뤿��ˤϡ�
-\Y{longtable}�ѥå������ηٹ𤬽Фʤ��ʤ�ޤ�ʣ����Υ����ץ��åȤ�ɬ��
-�ˤʤ�ޤ���
+ただし， \E{table} 環境中にはいれません．また表の幅をそろえるためには，
+\Y{longtable}パッケージの警告が出なくなるまで複数回のタイプセットが必要
+になります．
 
-�ڡ�����ʣ���ڡ����˸٤��Ǥ��ޤä��Ȥ��ˡ��ƥڡ����β�����������ɽ����������
-���Ǥ�����Ǥ��ޤ���
+ページが複数ページに跨いでしまったときに，各ページの下部・上部に表示させたい
+要素が指定できます．
 \begin{Syntax}
 \begin{tabular}{ll}
-\va{����} \C{endfirsthead}
- & \pp{ɽ�κǽ�Υڡ����ξ����ˤ���ɽ������Ԥ�����}\\
-\va{����} \C{endhead}
- & \pp{�Ԥ��ڡ�����٤��Ȥ��ڡ���������ɽ����������}\\
-\va{����} \C{endfoot}
- & \pp{�Ԥ��ڡ�����٤��Ȥ��ڡ���������ɽ����������}\\
-\va{����} \C{endlastfoot}
- & \pp{ɽ�κǸ�Υڡ����β���������ɽ������Ԥ�����}
+\va{要素} \C{endfirsthead}
+ & \pp{表の最初のページの上部にだけ表示する行の要素}\\
+\va{要素} \C{endhead}
+ & \pp{行がページを跨ぐときページ上部に表示する要素}\\
+\va{要素} \C{endfoot}
+ & \pp{行がページを跨ぐときページ下部に表示する要素}\\
+\va{要素} \C{endlastfoot}
+ & \pp{表の最後のページの下部だけに表示する行の要素}
 \end{tabular}
 \end{Syntax}
-������򸫤�����ʬ����䤹���Ǥ��礦�����Τ褦�����Ϥ������
-����Ƚ��Ϥ� \figref{longtable} �Ȥʤ�ޤ���
+具体例を見た方が分かりやすいでしょう．次のような入力があると
+すると出力は \figref{longtable} となります．
 
 \begin{InTeX}
 \documentclass[a4j,11pt,papersize]{jsarticle}
 \usepackage{longtable}
 \newcommand\hoge[1][0]{%
-  ���� #1-0 & 32892378923894832894 & 1000 \\
-  ���� #1-1 & 32892378923894832894 & 1000 \\
-  ���� #1-2 & 32892378923894832894 & 1000 \\
-  ���� #1-3 & 32892378923894832894 & 1000 \\
-  ���� #1-4 & 32892378923894832894 & 1000 \\
-  ���� #1-5 & 32892378923894832894 & 1000 \\
-  ���� #1-6 & 32892378923894832894 & 1000 \\
-  ���� #1-7 & 32892378923894832894 & 1000 \\
-  ���� #1-8 & 32892378923894832894 & 1000 \\
-  ���� #1-9 & 32892378923894832894 & 1000 \\
+  醤油 #1-0 & 32892378923894832894 & 1000 \\
+  醤油 #1-1 & 32892378923894832894 & 1000 \\
+  醤油 #1-2 & 32892378923894832894 & 1000 \\
+  醤油 #1-3 & 32892378923894832894 & 1000 \\
+  醤油 #1-4 & 32892378923894832894 & 1000 \\
+  醤油 #1-5 & 32892378923894832894 & 1000 \\
+  醤油 #1-6 & 32892378923894832894 & 1000 \\
+  醤油 #1-7 & 32892378923894832894 & 1000 \\
+  醤油 #1-8 & 32892378923894832894 & 1000 \\
+  醤油 #1-9 & 32892378923894832894 & 1000 \\
 }
 \begin{document}
-% ɽ������������뤿��� \jobname.aux �� longtable �ѥå�������
-% �����񤭽Ф���2 ���ܰʾ�Υ����ץ��åȤ����򤽤����롣
-\newcommand\mytablehead{\hline ���� & �ֹ� & �Ŀ� \\}
+% 表の幅を取得するために \jobname.aux に longtable パッケージは
+% 情報を書き出し、2 回目以上のタイプセットで幅をそろえる。
+\newcommand\mytablehead{\hline 商品 & 番号 & 個数 \\}
 \begin{longtable}{|l|l|l|}
-\caption{Ĺ���ʤ�����ɽ\tablab{longtable}}
-% ɽ�κǽ�Υڡ����ξ����ˤ���ɽ������Ԥ�����
+\caption{長いながーい表\tablab{longtable}}
+% 表の最初のページの上部にだけ表示する行の要素
 \endfirsthead
 \hline
-\multicolumn{3}{|c|}{���ڡ�����ɽ��³���Ǥ���}\\
+\multicolumn{3}{|c|}{前ページの表の続きです。}\\
 \mytablehead
 \hline
-% �Ԥ��ڡ�����٤��Ȥ����ƥڡ����ξ�����ɽ������Ԥ�����
+% 行がページを跨ぐとき、各ページの上部に表示する行の要素
 \endhead
 \hline
-\multicolumn{3}{|c|}{����ɽ��³�������ڡ����ˤ���ޤ���}\\
+\multicolumn{3}{|c|}{この表の続きが次ページにあります。}\\
 \hline
-% �Ԥ��ڡ�����٤��Ȥ����ƥڡ����β�����ɽ������Ԥ�����
+% 行がページを跨ぐとき、各ページの下部に表示する行の要素
 \endfoot
-\multicolumn{3}{|c|}{����Ǥ���ɽ�Ͻ����Ǥ���}\\
+\multicolumn{3}{|c|}{これでこの表は終わりです。}\\
 \hline
-% ɽ�κǸ�Υڡ����β���������ɽ������Ԥ�����
+% 表の最後のページの下部だけに表示する行の要素
 \endlastfoot
-% �ºݤ�ɽ�λϤޤ�
+% 実際の表の始まり
 \mytablehead
 \hline
 \hoge[1] \hoge[2] \hoge[3] \hoge[4] \hoge[5]
@@ -691,23 +691,23 @@ $^{c}$ɽ�滰���ܤε����Ǥ�.}
       \includegraphics[width=\fullwidth]{images/longtable}%
    \IOlabel
    }%
-   \caption{\Y{longtable}�λ�����ν��Ϸ��}\figlab{longtable}%
+   \caption{\Y{longtable}の使用例の出力結果}\figlab{longtable}%
 \end{figure}
 
 %\end{comment} 
 
-\subsection{ɽ�����λ���\zdash\Y{tabularx}}\seclab{tabularx}
-\LaTeXe �� \E{array}/\E{tabular} �Ķ��Ǥ��������ľ�ܻ���Ǥ���
-������ `\str p\pa{��}' ���Ѱդ���Ƥ��ޤ��������Ƥ�ɮ���Ƥ����ʳ�
-�ǤϤ����������Ǥ��ʤ��������Ф��Ф���ޤ�����ưŪ�ˤ���������
-�Ƥ����褦�ʴĶ�������������Ǥ��������� \Person{David}{Carlisle}�κ���
-���� \Y{tabularx} �ѥå��������Ѥ������ \E{tabularx} �Ķ����Ȥ��ޤ���
+\subsection{表の幅の指定\zdash\Y{tabularx}}\seclab{tabularx}
+\LaTeXe の \E{array}/\E{tabular} 環境では列の幅を直接指定できる
+列指定子 `\str p\pa{幅}' が用意されていますが，原稿を執筆している段階
+ではその幅を決定できない事がしばしばあります．自動的にその幅を求め
+てくれるような環境があれば便利です．そこで \Person{David}{Carlisle}の作成
+した \Y{tabularx} パッケージを用いる事で \E{tabularx} 環境が使えます．
 \begin{Syntax}
-\cmd{begin}\verb|{tabularx}|\pa{��}\pa{������}\\
-\va{ɽ������������}\\
+\cmd{begin}\verb|{tabularx}|\pa{幅}\pa{列指定子}\\
+\va{表を構成する要素}\\
 \cmd{end}\verb|{tabularx}| 
 \end{Syntax}
-�������ʲ��˼����ޤ���
+具体例を以下に示します．
 
 
 \begin{InTeX}
@@ -715,7 +715,7 @@ $^{c}$ɽ�滰���ܤε����Ǥ�.}
 \usepackage{tabularx}
 \makeatletter
 \def\hoge{\@tempcnta=\z@ \@whilenum \@tempcnta<10\do{%
-   ��������\advance\@tempcnta\@ne}��}
+   ○○○○\advance\@tempcnta\@ne}。}
 \makeatother
 \begin{document}
 \hoge%
@@ -730,11 +730,11 @@ $^{c}$ɽ�滰���ܤε����Ǥ�.}
 \begin{center}
  \begin{tabularx}{\linewidth}{|r|l|X|l|X|}
   \hline
-  ����   & ���� & ����  & ���� & ��­���� \\
+  商品   & 値段 & 説明  & 型番 & 補足事項 \\
   \hline
-  ��     &  500 & \hoge & 59A  & \hoge    \\
+  鍋     &  500 & \hoge & 59A  & \hoge    \\
   \hline
-  �䤫�� &  300 & \hoge & 9JA  & \hoge    \\
+  やかん &  300 & \hoge & 9JA  & \hoge    \\
   \hline
  \end{tabularx}
 \end{center}
@@ -742,13 +742,13 @@ $^{c}$ɽ�滰���ܤε����Ǥ�.}
 \end{document}
 \end{InTeX}
 
-�嵭�����Ϥν������\figref{tabularx}�Ȥʤ�ޤ���
+上記の入力の出力例は\figref{tabularx}となります．
 
 \begin{figure}[htbp]
  \begin{center}
 \makeatletter
 \def\hoge{\@tempcnta=\z@ \@whilenum \@tempcnta<10\do{%
-   ��������\advance\@tempcnta\@ne}��}%
+   ○○○○\advance\@tempcnta\@ne}。}%
 \makeatother
   \begin{tabularx}{\linewidth}{|X|X|X|}
    \hline
@@ -757,205 +757,205 @@ $^{c}$ɽ�滰���ܤε����Ǥ�.}
   \end{tabularx}\par\vskip1em
  \begin{tabularx}{\linewidth}{|r|l|X|l|X|}
   \hline
-  ����   & ���� & ����  & ���� & ��­���� \\
+  商品   & 値段 & 説明  & 型番 & 補足事項 \\
   \hline
-  ��     &  500 & \hoge & 59A  & \hoge    \\
+  鍋     &  500 & \hoge & 59A  & \hoge    \\
   \hline
-  �䤫�� &  300 & \hoge & 9JA  & \hoge    \\
+  やかん &  300 & \hoge & 9JA  & \hoge    \\
   \hline
  \end{tabularx}
-\caption{\Y{tabularx}������ν��Ϸ��\label{fig:tabularx}}
+\caption{\Y{tabularx}使用例の出力結果\label{fig:tabularx}}
 \end{center}
 \end{figure}
 %
-\E{tabularx} �Ķ��ˤ����������� `X' �������˻Ȥ���褦�ˤʤäƤ��ޤ���
-\E{tabularx} �Ķ����Ȥ�٤�ɽ�������Τ�ɬ�פ�����ޤ���`X' ��ʣ���ξ���
-���줾���������϶�����Ĺ���ˤʤ�ޤ���
+\E{tabularx} 環境において列指定子 `X' が新たに使えるようになっています．
+\E{tabularx} 環境は組むべき表の幅を知る必要があります．`X' が複数の場合は
+それぞれの列の幅は均等な長さになります．
 
-\subsection{ɽ�����ٱ�ġ���}
+\subsection{表作成支援ツール}
 
-{\LaTeX}�ǥ�������ɽ���Ȥ�ΤϽ鿴�Ԥˤ�
-�ɤ����⤷��ޤ���GUI�١�����
-�ץ�������ɽ��������������{\LaTeX}��
-\env{tabular}�Ķ��ε��Ҥ��Ѵ�����ġ����
-�Ȥ����ɤ��Ǥ��礦��Microsoft��\Prog{Excel}
-��ȤäƤ������\Hito{����}{��Ϻ}��
+{\LaTeX}でゼロから表を組むのは初心者には
+辛いかもしれません．GUIベースの
+プログラムで表を作成し，それを{\LaTeX}の
+\env{tabular}環境の記述に変換するツールを
+使うと良いでしょう．Microsoftの\Prog{Excel}
+を使っている場合は\Hito{浦壁}{厚郎}の
 \Prog{Excel2tabular}\footnote\webEtoT
-�ʤɤ�����ޤ��Τǻ��ͤˤ��Ƥ���������������
-�ץ�������{Microsoft}��\Prog{Excel}�Ǻ�����
-�줿ɽ��{\LaTeX}�Υ��������Ѵ����ޤ���
+などがありますので参考にしてください．これらの
+プログラムは{Microsoft}の\Prog{Excel}で作成さ
+れた表を{\LaTeX}のソースに変換します．
 
-Microsoft��Excel�ǤϤʤ�{OpenOffice.org}��
-\Prog{Calc}��ȤäƤ���ʤ��\Hito{����}{��ʿ}��
+MicrosoftのExcelではなく{OpenOffice.org}の
+\Prog{Calc}を使っているならば\Hito{阿部}{昌平}の
 \Prog[calc2latex]{Calc2\LaTeX}\footnote \webCtoL
-�Ȥ�����Τ⤢��ޤ���
-�����Ȥ���Calc�Ǻ�������ɽ��\env{tabular}�Ķ���
-�Ѵ�����ɽ�Ȥ���{\LaTeX}��Ž���դ�������Ǥ��ޤ���
+というものもあります．
+これを使えばCalcで作成した表を\env{tabular}環境に
+変換し，表として{\LaTeX}に貼り付ける事ができます．
 
-�Ƕ�Ǥ�ľ�� \LaTeX ���� \Prog{Excel} �ե�������ɤ߹����
-\Person{Hans-Peter}{Doerr}�ˤ�� \Y{exceltex} �ѥå�������
-����ޤ�\footnote{\webExceltex}��
-\Prog{Perl}������ץȤ���𤹤���ǻ��ꤷ������䥷���Ȥ��ɤ߹��������
-���ޤ���
+最近では直接 \LaTeX から \Prog{Excel} ファイルを読み込める
+\Person{Hans-Peter}{Doerr}による \Y{exceltex} パッケージが
+あります\footnote{\webExceltex}．
+\Prog{Perl}スクリプトを仲介する事で指定したセルやシートを読み込む事がで
+きます．
 
 % end of table
 
 
-\section{�ޤ˴ؤ�������Ȳ����ΰ���}\label{sec:figure}
+\section{図に関する制約と画像の扱い}\label{sec:figure}
 
-�ޤ������˴ؤ��Ƥ��礭��ʬ����2�̤����ˡ������ޤ�����Ĥϥڥ���ȥ�
-�եȤʤɤǽ񤤤������򤽤Τޤ޼�������ˡ�� �⤦��Ĥ�{\LaTeX}��
-\env{picture}�Ķ��ǿޤ�ľ�ܽ���ˡ�Ǥ���
+図の挿入に関しては大きく分けて2通りの方法があります．一つはペイントソ
+フトなどで書いた画像をそのまま取り込む方法， もう一つは{\LaTeX}の
+\env{picture}環境で図を直接書く方法です．
 
-\LaTeX �ˤ�\Env{picture}�Ķ��ȸƤФ���ñ��\Z{���}�򤹤뤿���
-����Ķ����Ѱդ���Ƥ��ޤ�������\Env{picture}�Ķ����ĥ����
-\Y{epic}, \Y{eepic}, \Y{pict2e}�ʤɤ�¸�ߤ����������٤κ�ޤ�
-�Ǥ��륳�ޥ�ɤ��Ѱդ���Ƥ��ޤ���\Env{picture}�Ķ��Ȥ��μ��դξܤ���
-����\wasyo{\COMP}\cite{latexcomp}��\wasyo{\GCOMP}\cite{graphicscomp}
-�򻲾Ȥ��Ƥ���������
+\LaTeX には\Env{picture}環境と呼ばれる簡単な\Z{作図}をするための
+描画環境が用意されています．この\Env{picture}環境を拡張した
+\Y{epic}, \Y{eepic}, \Y{pict2e}などが存在し，ある程度の作図が
+できるコマンドが用意されています．\Env{picture}環境とその周辺の詳しい
+事は\wasyo{\COMP}\cite{latexcomp}や\wasyo{\GCOMP}\cite{graphicscomp}
+を参照してください．
 
-���餫�γ����ץ������Ǻ������� BMP, JPEG, PNG, EPS, PDF ���β�����
-\LaTeX ��ĥ����ि��ˤϡ�����Ū�ˤ�\sty{graphicx}�ѥå��������Ѥ��ޤ���
+何らかの外部プログラムで作成した BMP, JPEG, PNG, EPS, PDF 等の画像を
+\LaTeX に張り込むためには，一般的には\sty{graphicx}パッケージを用います．
 
-\LaTeX ���ȤǤϲ����ե������ľ��Ū�˰������Ȥߤ��Ѱդ���Ƥ��餺��
-�����ե�����˴ؤ���¿���ν�����ǥХ����ɥ饤�ФȤ��������ץ������˰�
-¸���������뤿�ᡤ��ʬ�λȤ����Ȥ��Ƥ���ǥХ����ɥ饤�Ф��ɤΤ褦�ʲ�
-���������б����Ƥ���Τ����ΤäƤ����������ǽ�Ū�˽��Ϥ�����ʸ�������
-PDF�ʤ��\prog{\Dvipdfmx}��\PS �ʤ��\prog{dvips}��Ȥ����ˤʤ�ޤ���
-��ǯ�Ǥ�DVI ��������ľ�� PDF �������Ǥ���\Dvipdfmx ��Ȥ����򶯤��侩��
-�ޤ���\Dvipdfmx ���Ѥ������BMP, JPEG, PNG, \Z{EPDF}��ñ��ڡ�����PDF��, 
-EPS ������ĥ����ߤ���ǽ�Ȥʤꡤ����� DVI �ե����뤫��ľ�� PDF ��������
-������Ǥ��ޤ���
+\LaTeX 自身では画像ファイルを直接的に扱う仕組みは用意されておらず，
+画像ファイルに関する多くの処理をデバイスドライバという外部プログラムに依
+存した形を取るため，自分の使おうとしているデバイスドライバがどのような画
+像処理に対応しているのかを知ってください．最終的に出力したい文書形式が
+PDFならば\prog{\Dvipdfmx}，\PS ならば\prog{dvips}を使う事になります．
+近年ではDVI 形式から直接 PDF を生成できる\Dvipdfmx を使う事を強く推奨し
+ます．\Dvipdfmx を用いる事でBMP, JPEG, PNG, \Z{EPDF}（単一ページのPDF）, 
+EPS 画像の張り込みが可能となり，さらに DVI ファイルから直接 PDF を生成す
+る事ができます．
 
-�Ƕ��ư���Ȥ�����ʸ������С������ˤ� PDF ���Ѥ����礬�����Ƥ���
-�褦�Ǥ���\Dvipdfmx ��Ȥ��� \LaTeX �Ǥ��Τޤ� PDF ������������
-���⥵�ݡ��Ȥ��Ƥ��뤿�ᡤ����ϲ�����������꤬�ʤ��¤ꡤ\Dvipdfmx 
-��Ȥ��褦�ˤ���Ȳ������������Ȼפ��ޤ���
-\zindind{����}{��ĥ�����}%
+最近の動向として論文等の提出，印刷には PDF を用いる場合が増えている
+ようです．\Dvipdfmx を使えば \LaTeX でそのまま PDF 画像の埋め込み
+等もサポートしているため，今後は何かしらの問題がない限り，\Dvipdfmx 
+を使うようにすると何かと便利だと思われます．
+\zindind{画像}{の張り込み}%
 
-��ǯ�ޤ�{\LaTeX}�Ǥ�EPS�ʳ��β�����ĥ����ߤ��񤷤��Ȥ����Ի�����Ū����
-�⤬����ޤ����������ߤ� \Dvipdfmx ���о�ˤ������ϴ�ʬ�Ѳ����Ƥ��ޤ�
-�������줫����Ѳ�����ȹͤ����ޤ���
-
-
-
-\section{�����ե������ĥ�����}\seclab{gazou}
-
-\LaTeX\ �Ǥϥӥåȥޥåײ����䡤����������ʤɤ�¿���ν�����ǥХ����ɥ�
-���ФȸƤФ�볰���Υץ������˰�¸���Ƥ��ޤ������Τ��ᡤ\LaTeX\ �ǲ���
-�ե�����򰷤����ϡ��ޤ��ǥХ����ɥ饤�Ф������̤����򤹤���ˤʤ��
-����
+近年まで{\LaTeX}ではEPS以外の画像の張り込みは難しいという都市伝説的な定
+説がありましたが，現在は \Dvipdfmx の登場により状況は幾分変化しています
+し，これからも変化すると考えられます．
 
 
-\subsection{�ǥХ����ɥ饤�Ф�����}
 
-�Ƽ�ΥǥХ����ɥ饤�Хץ������ˤ���������������Ф����б�������
-\tabref{ddimage}�˼����ޤ���\genzai �Ǥ��б������ˡ�
+\section{画像ファイルの張り込み}\seclab{gazou}
+
+\LaTeX\ ではビットマップ画像や，曲線の描画などの多くの処理をデバイスドラ
+イバと呼ばれる外部のプログラムに依存しています．そのため，\LaTeX\ で画像
+ファイルを扱う場合は，まずデバイスドライバを用途別に選択する事になりま
+す．
+
+
+\subsection{デバイスドライバの選択}
+
+各種のデバイスドライバプログラムにおける画像形式に対する対応状況を
+\tabref{ddimage}に示します（\genzai での対応状況）．
 \begin{table}[htbp]
  \begin{center}
-  \caption{�Ƽ�ǥХ����ɥ饤�Фβ��������б�����}\tablab{ddimage}
+  \caption{各種デバイスドライバの画像形式対応状況}\tablab{ddimage}
   \begin{tabular}{ll}
   \TR
-  \Th{�ǥХ����ɥ饤��} & \multicolumn{1}{c}{\Th{�б���������}}\\
+  \Th{デバイスドライバ} & \multicolumn{1}{c}{\Th{対応画像形式}}\\
   \MR
   xdvi      & EPS*  \\
   dvips     & EPS   \\
   \Dvipdfmx & EPS*, EPDF, PNG, BMP, JPEG\\
-  \Dviout    & EPS*, \Prog{Susie} {plug-in} �ˤ��¾�η������б���ǽ\\
+  \Dviout    & EPS*, \Prog{Susie} {plug-in} により他の形式に対応可能\\
   \BR
   \end{tabular}
  \end{center}
 \end{table}
-�������Ĥ��Ƥ����Τ�\GS �ʤɤγ����ץ�������ɬ�פȤ�������Ǥ���
+星印がついているものは\GS などの外部プログラムを必要とする形式です．
 
-{\LaTeX}�ǲ�����ĥ��������¿���ξ���ɸ��Ū��\sty{graphicx}�ѥå�������
-�Ȥ����ˤʤ�ޤ���\Dvipdfmx ��ȤäƤ�����ϥѥå��������ץ����
-��\Option{dvipdfmx}�Ȥ��ޤ���
+{\LaTeX}で画像を張り込む時，多くの場合は標準的に\sty{graphicx}パッケージを
+使う事になります．\Dvipdfmx を使っている場合はパッケージオプション
+を\Option{dvipdfmx}とします．
 
 \begin{InText}
 \usepackage[dvipdfmx]{graphicx}
 \end{InText}
 
-����ˤ��\sty{graphicx}�ѥå�������\fl{dvipdfmx.def}�Ȥ�������ե������
-�ɤ߹��ߤޤ����⤷�� \Fl{dvipdfmx.def}�Ȥ����ե����뤬¸�ߤ��ʤ��褦�Ǥ�
-��С��ʲ���URL����ե�����������`\str{$texmf/tex/latex/graphics/}'��
-�Υǥ��쥯�ȥ�˥��ԡ����Ƥ�������%
-\footnote{\url{http://tex.dante.jp/jou1/dvipdfmx.def}}��
+これにより\sty{graphicx}パッケージは\fl{dvipdfmx.def}という設定ファイルを
+読み込みます．もしも \Fl{dvipdfmx.def}というファイルが存在しないようであ
+れば，以下のURLからファイルを取得し`\str{$texmf/tex/latex/graphics/}'等
+のディレクトリにコピーしてください%
+\footnote{\url{http://tex.dante.jp/jou1/dvipdfmx.def}}．
 
 
-�Ť� \TeX/\LaTeX ��2006ǯ�����ˤ����󥹥ȡ��뤵��Ƥ���ΤǤ���С�
-\option{dvipdfmx}�ǤϤʤ���\Option{dvipdfm}���ץ�������ꤷ�ơ�
-\Dvipdfmx �� PDF ��ǥХ����ɥ饤�ФȤ��ޤ�\footnote{���������
-��ͳ���ʤ��¤� \TeX �Ķ������Ū�˹����������˾�ޤ����Ǥ���}��
+古い \TeX/\LaTeX （2006年以前）がインストールされているのであれば，
+\option{dvipdfmx}ではなく，\Option{dvipdfm}オプションを指定して，
+\Dvipdfmx で PDF をデバイスドライバとします\footnote{何かしらの
+理由がない限り \TeX 環境は定期的に更新する事が望ましいです．}．
 
 \begin{InText}
  \usepackage[dvipdfm]{graphicx}
 \end{InText}
 
-Unix��OS�ʤ��{\PS}�Τۤ����ɤ��Ǥ��礦����\Option{dvips}��\sty{graphicx}
-�ѥå������Υ��ץ����Ȥ��ޤ���\prog{dvipsk}�Ǥ�������\prog{pdvips}����
-����\Option{dvips}���ץ�����Ȥ��ޤ���
+Unix系OSならば{\PS}のほうが良いでしょうから\Option{dvips}を\sty{graphicx}
+パッケージのオプションとします．\prog{dvipsk}であろうが\prog{pdvips}だろ
+うが\Option{dvips}オプションを使います．
 
-¾�ˤ�\prog{xdvi}�䡤Windows �Ǥ���� \Dviout �����Ǥ��ޤ���
-Windows�����Ǽ�����β����ΤۤȤ�ɤ��ӥåȥޥåפ�¸�ߤ���ʤ��\Dviout
-��ǥХ����ɥ饤�Ф����򤹤���ɤ��Ǥ��礦��\Dviout �Ǥϥץ�ӥ塼�������
-�Ԥ��ޤ���
-\Dviout �ξ���\Dviout �����󥹥ȡ��뤵��Ƥ���ե������
-\fl{GRAPHIC/LATEX2E/dviout.def}�Ȥ����ե�����
-�� \fl{\$texmf/tex/latex/graphics/} �˥��ԡ����Ƥ�������\footnote{\Dviout ��
-���EPS�����������Ȥ���\prog{\GS}�ˤ�EPS��\Z{PPM}���Ѵ����Ƥ������
-��ɽ�����ޤ�����\prog{\Dviout}��\prog{Ghostscript}�˴ؤ��������Ŭ�ڤ˹Ԥ�
-�Ƥ���������}��
+他には\prog{xdvi}や，Windows であれば \Dviout も指定できます．
+Windowsの方で手持ちの画像のほとんどがビットマップで存在するならば\Dviout
+をデバイスドライバに選択すれば良いでしょう．\Dviout ではプレビューも印刷も
+行えます．
+\Dviout の場合は\Dviout がインストールされているフォルダの
+\fl{GRAPHIC/LATEX2E/dviout.def}というファイル
+を \fl{\$texmf/tex/latex/graphics/} にコピーしてください\footnote{\Dviout の
+場合EPS画像を取り込むときは\prog{\GS}にてEPSを\Z{PPM}に変換してから画像
+を表示しますから\prog{\Dviout}の\prog{Ghostscript}に関する設定を適切に行っ
+てください．}．
 
-EPS������¿���ʤ�Ф�����ˤ��Ƥ�1��EPS����PDF���Ѵ����Ƥ���
-\prog{\Dvipdfmx}��Ȥ��Τ��ɤ��Ȼפ��ޤ���%\unixos �ʤ�м�����β�����
-%EPS���Ѵ�����\prog{dvips}��Ȥ����Ȥˤʤ�Ǥ��礦��
+EPS画像が多いならばいずれにしても1度EPSからPDFに変換してから
+\prog{\Dvipdfmx}を使うのが良いと思われます．%\unixos ならば手持ちの画像を
+%EPSに変換して\prog{dvips}を使うことになるでしょう．
 
 
-\subsection{����Ū�ʼ��}
+\subsection{具体的な手順}
 
-�����ե������\LaTeX ��ʸ���ĥ�����ˤϡ�����Ū�˼��Τ褦�ʼ���Ƨ��
-���ˤʤ�ޤ���
+画像ファイルを\LaTeX の文書に張り込むには，一般的に次のような手順を踏む
+事になります．
 
 \begin{enumerate}
-\zindind{�ե����}{�Υ����ȥ饤��}%
-\zindind{PDF}{������ĥ�����}%
-\item �����ץ�������PDF��EPS�����ǥե��������¸����¸�������
-      ���ץ����ǲ�ǽ�Ǥ���Хե���Ȥϥ����ȥ饤�󲽤������顼��
-      ��¸���ʤ��褦�ʥե�����Ȥ��ޤ���
-\item ʸ��Υץꥢ��֥��\sty{graphicx}�ѥå�������Ȥ�����������ޤ���
-\item \sty{graphicx}�ѥå������ˤ�\K{�ǥХ����ɥ饤��}����ꤷ�ޤ���
-      \PS ������ʸ�����Ϥ���ʤ�С�\Option{dvips}����ꤷ�ޤ���PDF�������
-      �����Ȥ���\prog{\Dvipdfmx}��Ȥ������\Option{dvipdfmx}����ꤷ�ޤ���
-\item EPS�ʳ��β����Ǥ����\LaTeX �����Ǥ������\K{�Х���ǥ��󥰥ܥ�
-      ����}����ꤷ�ޤ���
-\item  �ޤ��������٤����� \C{includegraphics}̿���Ȥäƥե�����̾��
-      �����ޤ���
+\zindind{フォント}{のアウトライン化}%
+\zindind{PDF}{画像の張り込み}%
+\item 外部プログラムでPDFやEPS形式でファイルを保存．保存する時の
+      オプションで可能であればフォントはアウトライン化し，カラーに
+      依存しないようなファイルとします．
+\item 文書のプリアンブルで\sty{graphicx}パッケージを使う事を宣言します．
+\item \sty{graphicx}パッケージには\K{デバイスドライバ}を指定します．
+      \PS 形式の文書を出力するならば，\Option{dvips}を指定します．PDFを作成し
+      たいときは\prog{\Dvipdfmx}を使うために\Option{dvipdfmx}を指定します．
+\item EPS以外の画像であれば\LaTeX が解釈できる形で\K{バウンディングボッ
+      クス}を指定します．
+\item  図を挿入すべき場所に \C{includegraphics}命令を使ってファイル名を
+      示します．
 \end{enumerate}
 
-�ǥХ����ɥ饤�Ф�\Dvipdfmx ���ϲ����ե�����򰷤�������ǽ�Ǥ�����\LaTeX
-�ϲ����ե������ľ�ܰ��������Ǥ����������˴ؤ�����������Ǥ��ޤ���
-���Τ��ᡤ\Dvipdfmx �ˤ�����\Z{JPEG}��\Z{PNG}��\Z{PDF}, \Z{BMP}�β�
-���ե������\KY{�Х���ǥ��󥰥ܥå���}�Ȥ��������Ρ�\Z{������ɸ}��ޤ��
-\zindind{����}{�θ�����ɸ}%
-�����������Ϳ�������ĥ����������ǽ�Ǥ�������Ū�ˤϲ����β���Ĺ���Ƚ�
-��Ĺ���Υ���������ꤹ����Ȥʤ�ޤ����Х���ǥ��󥰥ܥå�����
-\Va{filename}{img}�Ȥ��������ե����뤬����С�\Va{filename}{bb}�Ȥ���
-�ե������\sty{graphicx}�ѥå����������Ȥ���褦�ˤʤäƤ��ޤ���
+デバイスドライバの\Dvipdfmx 等は画像ファイルを扱う事が可能ですが，\LaTeX
+は画像ファイルを直接扱う事ができず，画像に関する情報を取得できません．
+そのため，\Dvipdfmx において\Z{JPEG}，\Z{PNG}，\Z{PDF}, \Z{BMP}の画
+像ファイルは\KY{バウンディングボックス}という画像の（\Z{原点座標}を含む）
+\zindind{画像}{の原点座標}%
+サイズ情報を与える事で張り込む事が可能です．一般的には画像の横の長さと縦
+の長さのサイズを指定する事となります．バウンディングボックスは
+\Va{filename}{img}という画像ファイルがあれば，\Va{filename}{bb}という
+ファイルを\sty{graphicx}パッケージが参照するようになっています．
 
-\Dvipdfm ����°����\Prog{ebb}�Ȥ����ץ������ǲ����ΥХ���ǥ��󥰥ܥ�
-��������Υե����� \Va{filenam}{bb}������Ǥ��ޤ����б����Ƥ����������
-��JPEG, PNG, PDF �Ǥ�\footnote{ebb�ʳ��ˤ�\Prog{identify}���ޥ�ɤ�\Prog{file}��%
-�ޥ�ɤǥ�����������Τ�����Ǥ��ޤ�����Windows��Mac~OS~X�Ǥ����%
-\Prog{�������ץ�����}��\Prog{�ե��������}�ˤ�ɽ������ޤ���}��
+\Dvipdfm に付属する\Prog{ebb}というプログラムで画像のバウンディングボッ
+クス情報のファイル \Va{filenam}{bb}を作成できます．対応している画像形式
+はJPEG, PNG, PDF です\footnote{ebb以外にも\Prog{identify}コマンドや\Prog{file}コ%
+マンドでサイズ情報は知る事ができますし，WindowsやMac~OS~Xであれば%
+\Prog{エクスプローラ}や\Prog{ファインダー}にも表示されます．}．
 
-JPEG��PNG��PDF��EPS��ľ��PDF��ĥ�����ޤ�������Ū�ʼ��Ȥ���
-�ϡ��ե������¸�ߤ���ǥ��쥯�ȥ��
+JPEG，PNG，PDF，EPSを直接PDFに張り込めます．具体的な手順として
+は，ファイルの存在するディレクトリで
 \begin{InTerm}
 \type{ebb filename.jpg}
 \end{InTerm}
-�Ȥ���г�ĥ�Ҥ�\exten{bb}��\Va{filename}{bb}�Ȥ����ե����뤬
-��������ޤ����������줿\Va{filename}{bb}�򸫤Ƥߤޤ���
+とすれば拡張子が\exten{bb}の\Va{filename}{bb}というファイルが
+作成されます．作成された\Va{filename}{bb}を見てみます．
 
 \begin{InText}
 %%Title: ./filename.jpg
@@ -964,27 +964,27 @@ JPEG��PNG��PDF��EPS��ľ��PDF��ĥ�����ޤ�������Ū�ʼ��Ȥ���
 %%CreationDate: Tue Dec 30 13:04:10 2003
 \end{InText}
 
-�嵭�Τ褦��\va{�ե�����̾}��\va{�����ץ������}�� \va{�Х���ǥ��󥰥ܥ�
-����}�� \va{��������}�ξ��󤬽��Ϥ���ޤ�������\Va{filename}{bb}�Υե���
-�����¸���Ƥ����Τ����ޤ����ʤ����ϡ�������������ե�������ɤ߹����
-����ս�ǡ����Τ褦�ˤ����\Va{filename}{bb}���ʤ��Ƥ��ɤ����ˤʤ��
-����
+上記のように\va{ファイル名}，\va{作成プログラム}， \va{バウンディングボッ
+クス}， \va{作成日時}の情報が出力されます．沢山\Va{filename}{bb}のファイ
+ルを保存しておくのが好ましくない場合は，該当する画像ファイルを読み込んで
+いる箇所で，次のようにすれば\Va{filename}{bb}がなくても良い事になりま
+す．
 
 \begin{InText}
 \includegraphics[bb={0 0 595 842}]{filename.jpg}
 \end{InText}
 
-���Ѥ�������Υե�����̾��\Va{�ե�����̾}{��ĥ��}��
-\qu{\fl{filename.png}}�Τ褦��\Va{8ʸ��}{3ʸ��}�Ȥ����ۤ����ߴ����ξ�ǰ�
-���Ǥ���
+使用する画像のファイル名の\Va{ファイル名}{拡張子}は
+\qu{\fl{filename.png}}のように\Va{8文字}{3文字}としたほうが互換性の上で安
+全です．
 
 
 \begin{Exe}
-���˥ե�����̾��\fl{image.png}�β��������ä��Ȥ���С����󥽡��뤫��
-\type{ebb image.png}�Ȥ���\fl{image.png}�Ѥ�\fl{image.bb}������������
-���ǧ���Ƥ�������������\texttt{image.bb}�ϲ����ե�����νĲ�����������
-������Υե�����Ǥ���\texttt{image.bb} �򸫤��ʬ����ޤ�������Ȥϼ�
-�Τ褦�ʤ�ΤˤʤäƤ���Ȼפ��ޤ���
+仮にファイル名が\fl{image.png}の画像があったとすれば，コンソールから
+\type{ebb image.png}として\fl{image.png}用の\fl{image.bb}が作成される事
+を確認してください．この\texttt{image.bb}は画像ファイルの縦横を正しく扱
+うためのファイルです．\texttt{image.bb} を見れば分かりますが，中身は次
+のようなものになっていると思います．
 
 \begin{InText}
 %%Title: ./image.png
@@ -992,8 +992,8 @@ JPEG��PNG��PDF��EPS��ľ��PDF��ĥ�����ޤ�������Ū�ʼ��Ȥ���
 %%BoundingBox: 0 0 595 841
 \end{InText}
 
-\qu{\str{BoundingBox}}�Ȥϸ�����ɸ�Ȳ����νĲ���Ĺ�����ͤǤ������˥�����
-�ե������ʲ��Τ褦�ˤ��ޤ���
+\qu{\str{BoundingBox}}とは原点座標と画像の縦横の長さの値です．次にソース
+ファイルを以下のようにします．
 
 \begin{InText}
 \documentclass[papersize]{jsarticle}
@@ -1003,72 +1003,72 @@ JPEG��PNG��PDF��EPS��ľ��PDF��ĥ�����ޤ�������Ū�ʼ��Ȥ���
 \end{document}
 \end{InText}
 
-��Ϥ��Ĥ��̤�˥����ץ��åȤ���DVI�ե������������\prog{\Dvipdfmx}��PDF
-��������ޤ�������ˤ�� \fl{image.png}��ĥ����ޤ줿 PDF ������������
-���Ǥ���
+後はいつも通りにタイプセットしてDVIファイルを生成し\prog{\Dvipdfmx}でPDF
+を作成します．これにより \fl{image.png}が張り込まれた PDF が生成されるは
+ずです．
 \end{Exe}
 
-\subsection{ĥ����ߤˤ����륪�ץ����}
+\subsection{張り込みにおけるオプション}
 
-�����ץ������Ǻ������ơ����Ǥ�¸�ߤ���褦�ʲ����� \C{includegraphics}
-̿���ĥ����ߤޤ���
+外部プログラムで作成して，すでに存在するような画像は \C{includegraphics}
+命令で張り込みます．
 \begin{Syntax}
-\C{includegraphics}\opa{����}\pa{�ե�����̾}
+\C{includegraphics}\opa{設定}\pa{ファイル名}
 \end{Syntax}
 
-\va{����}�˴ؤ��Ƥϰʲ��˼����褦�ʥ��ץ���󤬻��ѤǤ��ޤ���
+\va{設定}に関しては以下に示すようなオプションが使用できます．
 
 \begin{description}
-\zindind{����}{�ι⤵}%
- \item[\str{height=}\va{�⤵}]
-    ñ���դ��ǲ����ι⤵����ꤷ�ޤ���
- \item[\str{totalheight=}\va{����Ū�ʹ⤵}]
-    ñ���դ��ǲ���������Ū�ʹ⤵����ꤷ�ޤ���
-\zindind{����}{����}%
- \item[\str{width=}\va{��}]\indindz{��}{������}%
-    ñ���դ��ǲ�����������ꤷ�ޤ��� 
- \item[\str{scale=}\va{����}]
-\zindind{����}{�γ���}%
-    �����γ���Ψ����ꤷ�ޤ��� \indindz{����}{�ޤ�}
- \item[\str{angle=}\va{����}]
-\zindind{����}{�β�ž}%
-    \K{ȿ���ײ���}�������ž������٤���ꤷ�ޤ��� 
- \item[\str{origin=}\va{����}]
-    �����δ��������ޤ��� 
- \item[\str{bb=}\va{�ΰ����}]
-    \KY{�Х���ǥ��󥰥ܥå���}�ȸƤФ��������礭���ȸ�����ɸ����ꤷ�ޤ���
-    �����Τɤ��ΰ��Ȥ��٤�������ꤷ�ޤ���\zindind{����}{�ΥХ���ǥ��󥰥ܥå���}%
-    \qu{\str{bb=0 0 640 480}}�Ȥ���ȸ�����
-    \xy{0}{0}�Ȥ��ƽĲ�\qu{$640\times480$}
-    ���ΰ��Ȥ��褦�ˤ��ޤ���
- \item[\str{viewport=}\va{�ΰ����}] 
-\zindind{����}{���ڤ�ȴ��}%
-	    �����������ΰ����ꤷ�ޤ����ڤ�ȴ���Ǥ���
+\zindind{画像}{の高さ}%
+ \item[\str{height=}\va{高さ}]
+    単位付きで画像の高さを指定します．
+ \item[\str{totalheight=}\va{総合的な高さ}]
+    単位付きで画像の総合的な高さを指定します．
+\zindind{画像}{の幅}%
+ \item[\str{width=}\va{幅}]\indindz{幅}{画像の}%
+    単位付きで画像の幅を指定します． 
+ \item[\str{scale=}\va{数値}]
+\zindind{画像}{の拡大}%
+    画像の拡大率を指定します． \indindz{拡大}{図の}
+ \item[\str{angle=}\va{角度}]
+\zindind{画像}{の回転}%
+    \K{反時計回りに}画像を回転する角度を指定します． 
+ \item[\str{origin=}\va{原点}]
+    画像の基準点を決めます． 
+ \item[\str{bb=}\va{領域情報}]
+    \KY{バウンディングボックス}と呼ばれる画像の大きさと原点座標を指定します．
+    画像のどの領域を使うべきかを指定します．\zindind{画像}{のバウンディングボックス}%
+    \qu{\str{bb=0 0 640 480}}とすると原点を
+    \xy{0}{0}として縦横\qu{$640\times480$}
+    の領域を使うようにします．
+ \item[\str{viewport=}\va{領域情報}] 
+\zindind{画像}{の切り抜き}%
+	    画像の利用領域を指定します．切り抜きです．
 %	    \str{viewport={30 30 600 40}}
- \item[\str{trim=}\va{�ΰ����}] 
-\zindind{����}{�Υȥ�ߥ�}%
-	    ������ü���ڤ�ȴ���ޤ���
+ \item[\str{trim=}\va{領域情報}] 
+\zindind{画像}{のトリミング}%
+	    画像の端を切り抜きます．
 %	    \str{trim={3 3 2 2}}
  \item[\str{noclip}] 
-  �����Ѥ˻Ȥ��٤��ΰ�򸵤β������Ϥ߽Ф��Ƥ���
-  ���˲������ڤ�ȴ���ʤ��褦�ˤ��ޤ���
+  画像用に使うべき領域を元の画像がはみ出している
+  場合に画像を切り抜かないようにします．
  \item[\str{clip}] 
-\zindind{����}{�Υ���åԥ�}%
-  ���������ݤ��줿�ΰ�����礭������
-  �ڤ�ȴ�����ޤ���
+\zindind{画像}{のクリッピング}%
+  画像が確保された領域よりも大きい場合は
+  切り抜きします．
  \item[\str{draft}] 
- �ºݤ˲�����ĥ����ޤ��˲�������ͭ��
- ��������ΰ褬�Ȥˤ������ɽ���ˤʤꡤ�ե�����̾��ɽ�����ޤ���
+ 実際に画像を張り込まずに画像が占有す
+ るだろう領域が枠による代替表示になり，ファイル名を表示します．
  \item[\str{keepaspectratio}] 
-\zindind{����}{�νĲ���}%
- ����̾������Ȥ��˽Ĳ������¸����褦�ˤ��ޤ���
- \sty{graphicx}�ѥå�������ɸ��Ǥ���¸����ޤ���
+\zindind{画像}{の縦横比}%
+ 拡大縮小したときに縦横比を保存するようにします．
+ \sty{graphicx}パッケージの標準では保存されます．
 \end{description}
 
 \begin{Exe}
-����ʬ�λ��äƤ������\va{�ե�����}��\va{�ǥХ���}��
-�������Τ����Ƥߤ��������ʹ�Ƭ�Υѡ�����Ȥϼ�������
-\fl{images}�ե������\Fl{gnu-head.pdf}��\fl{gnu-head.bb}������Ȳ��ꤷ�ޤ��ˡ�
+ご自分の持っている画像\va{ファイル}を\va{デバイス}が
+取り込めるのかを試してみください（行頭のパーセントは取り除き，
+\fl{images}フォルダに\Fl{gnu-head.pdf}と\fl{gnu-head.bb}があると仮定します）．
 \begin{InOut}
 \usepackage[dvipdfmx]{graphicx}
 \includegraphics[width=3cm]
@@ -1104,72 +1104,72 @@ JPEG��PNG��PDF��EPS��ľ��PDF��ĥ�����ޤ�������Ū�ʼ��Ȥ���
   {images/gnu-head}    
 \end{InOut}
 
-\subsection{�����γ�����ž�������}
+\subsection{画像の拡大や回転等の操作}
 
-�ޤʤɤ�ȿ���ײ���\kaku{90}��ž�������������Ǥ��礦��
-���ξ��� \Cmd{rotatebox}̿���Ȥ��ޤ���
+図などを反時計回りに\kaku{90}回転させる事があるでしょう．
+その場合は \Cmd{rotatebox}命令を使います．
 \begin{Syntax}
-\Cmd{rotatebox}\opa{����}\pa{����}\pa{����}
+\Cmd{rotatebox}\opa{設定}\pa{角度}\pa{要素}
 \end{Syntax}
-����� \cmd{includegraphics}��Ǥ�հ�����
-\qu{\str{angle}}��Ȥä�����Ʊ���Ǥ���
- \cmd{rotatebox}�Ͽޤ˸¤餺���������ǡ�ɽ���ǽ�ˤ�
-\Z{��ž}���ޤ���\va{����}�ι��ܤˤϰʲ��Τ褦��
-��Τ�����ޤ���
+これは \cmd{includegraphics}の任意引数に
+\qu{\str{angle}}を使った事と同じです．
+ \cmd{rotatebox}は図に限らずあらゆる要素（表も可能）を
+\Z{回転}します．\va{設定}の項目には以下のような
+ものがあります．
 \begin{description}
-\item[\str{origin=}\va{��٥�}] 
- ���Ǥ��ž���뤿��θ�������ꤷ�ޤ���%%
- ��\qu{\str l}����\qu{\str r}�����\qu{\str c}��
- ����\qu{\str t}������\qu{\str b}������Ǥ��ޤ���
-\item[\str{x=}\va{Ĺ��}] 
-$x$�����θ����ΰ��֤�ľ��\va{Ĺ��}����ꤷ�ޤ���
-\item[\str{y=}\va{Ĺ��}]
-$y$�����θ����ΰ��֤�ľ��\va{Ĺ��}����ꤷ�ޤ���
+\item[\str{origin=}\va{ラベル}] 
+ 要素を回転するための原点を指定します．%%
+ 左\qu{\str l}，右\qu{\str r}，中央\qu{\str c}，
+ 上部\qu{\str t}，下部\qu{\str b}が指定できます．
+\item[\str{x=}\va{長さ}] 
+$x$方向の原点の位置を直接\va{長さ}を指定します．
+\item[\str{y=}\va{長さ}]
+$y$方向の原点の位置を直接\va{長さ}を指定します．
 \end{description}
 
-\indindz{��ž}{ʸ�����}%%%
+\indindz{回転}{文字列の}%%%
 \begin{InOut}
-\rotatebox{70}{ʸ����ʤ�}��
-\rotatebox[origin=c]{60}{��ž�Ȥ�}��
-\rotatebox[origin=b]{50}{�ɤ�}
-\rotatebox{30}{�Ǥ���?}
+\rotatebox{70}{文字列など}の
+\rotatebox[origin=c]{60}{回転とか}は
+\rotatebox[origin=b]{50}{どう}
+\rotatebox{30}{ですか?}
 \end{InOut}
 %
-���Ǥ�\K{����̾�}����ˤ� \cmd{scalebox}��
-�Ȥ��ޤ���\index{����}\index{�̾�}\indindz{����}{ʸ�����}
+要素を\K{拡大縮小}するには \cmd{scalebox}を
+使います．\index{拡大}\index{縮小}\indindz{拡大}{文字列の}
 \begin{Syntax}
-\Cmd{scalebox}\pa{���γ���Ψ}\opa{�Ĥγ���Ψ}\pa{����}
+\Cmd{scalebox}\pa{横の拡大率}\opa{縦の拡大率}\pa{要素}
 \end{Syntax}
-\va{����Ψ}�ˤ�Ĺ������ꤷ�ޤ���\begin{InOut}
-\scalebox{2.3}{����̾�}\par
-\scalebox{3}[1]{����̾�}
+\va{拡大率}には長さを指定します．\begin{InOut}
+\scalebox{2.3}{拡大縮小}\par
+\scalebox{3}[1]{拡大縮小}
 \end{InOut}
 
-���Ǥ�\K{ȿž}�ˤ� \cmd{reflectbox}��Ȥ��ޤ���
+要素の\K{反転}には \cmd{reflectbox}を使います．
 \begin{Syntax}
-\Cmd{reflectbox}\pa{����}
+\Cmd{reflectbox}\pa{要素}
 \end{Syntax}
 \begin{InOut}
-\reflectbox{ʸ�����ȿž}\par
-\reflectbox{���ϻ�}\par
-\scalebox{-1}[1]{�����ȿž}
+\reflectbox{文字列の反転}\par
+\reflectbox{山は山}\par
+\scalebox{-1}[1]{これも反転}
 \end{InOut}
 
-�ꥵ�����ˤ� \cmd{resizebox}��Ȥ��ޤ���
+リサイズには \cmd{resizebox}を使います．
 \begin{Syntax}
-\Cmd{resizebox}\pa{��}\pa{�⤵}\pa{����}
+\Cmd{resizebox}\pa{幅}\pa{高さ}\pa{要素}
 \end{Syntax}
-���ǤΥꥵ�����������\va{��}�ˡ��⤵��\va{�⤵}�ˤ��ޤ���
-�ɤ��餫�����γ��硦�̾�Ψ�˹�碌�����Ȥ���\qu{\str!}��
-�Ȥ��ޤ���
+要素のリサイズ後の幅を\va{幅}に，高さを\va{高さ}にします．
+どちらか一方の拡大・縮小率に合わせたいときは\qu{\str!}を
+使います．
 \begin{InOut}
-\resizebox{!}{1cm}{�ꥵ����}\par
-\resizebox{3cm}{!}{�ꥵ����}
+\resizebox{!}{1cm}{リサイズ}\par
+\resizebox{3cm}{!}{リサイズ}
 \end{InOut}
 
-�ʾ�� \cmd{rotatebox}�� \cmd{scalebox}�� \cmd{reflectbox}��
- \cmd{resizebox}��ʸ����ɽ���ޡ�\env{minipage}�Ķ��ʤ�
-������ʤɤˤ�Ȥ��ޤ���\indindz{��ž}{ɽ��}%%
+以上の \cmd{rotatebox}， \cmd{scalebox}， \cmd{reflectbox}，
+ \cmd{resizebox}は文字列，表，図，\env{minipage}環境など
+の段落などにも使えます．\indindz{回転}{表の}%%
 \begin{InOut}
 \newcommand{\testtab}{%
 \begin{tabular}{|c|}
@@ -1179,27 +1179,27 @@ $y$�����θ����ΰ��֤�ľ��\va{Ĺ��}����ꤷ�ޤ���
 \reflectbox{\testtab}
 \end{InOut}
 
-\subsection{\texorpdfstring\Dvipdfmx{Dvipdfmx} �ˤ�����EPS�����ΰ���}
+\subsection{\texorpdfstring\Dvipdfmx{Dvipdfmx} におけるEPS画像の扱い}
 
-\Dvipdfmx �ξ��ϴ���Ū��PDF��JPEG��PNG��BMP��MetaPost ������
-�����������ݡ��Ȥ��Ƥ���ޤ���Τǡ�EPS�����β����ϲ��餫�η���PDF���Ѵ�
-���Ƥ����������ˤʤ�ޤ���\LaTeX �θ������ \C{includegraphics}̿
-����Ѥ���EPS������ĥ�����Ǥ�����ϡ�\Dvipdfmx �� DVI ���� PDF �ؤ�
-�Ѵ����ʳ��� \GS �ץ����������¹Ԥ���EPS��EPDF���Ѵ����Ƥ��ޤ���
-���Τ��ᡤ\Dvipdfmx ��ǥХ����ɥ饤�ФȤ��ƻ��Ѥ��Ƥ���Ȥ��ˤ϶���
-EPS�ǤϤʤ���EPDF������ĥ�����褦�ˤ��ޤ��������ץ�����बPDF�Ǥ�
-��¸���б����Ƥ��ʤ��褦�Ǥ���С����餫����EPS��EPDF���Ѵ������
-����®�٤θ���ˤĤʤ���ޤ���
+\Dvipdfmx の場合は基本的にPDF，JPEG，PNG，BMP，MetaPost 形式の
+画像しかサポートしておりませんので，EPS形式の画像は何らかの形でPDFに変換
+してから取り込む事になります．\LaTeX の原稿中で \C{includegraphics}命
+令を用いてEPS画像を張り込んでいる場合は，\Dvipdfmx が DVI から PDF への
+変換の段階で \GS プログラムを毎回実行してEPSをEPDFに変換しています．
+そのため，\Dvipdfmx をデバイスドライバとして使用しているときには極力
+EPSではなく，EPDF画像を張り込むようにします．外部プログラムがPDFでの
+保存に対応していないようであれば，あらかじめEPSをEPDFに変換すると
+処理速度の向上につながります．
 
-����EPS�ե������\prog{Ghostscript}��\qu{pdfwrite}�Ȥ����ǥХ�����Ȥä�
-�Ѵ���������ۤȤ�ɤǤ������λ���
-\Prog{epstopdf}��\Prog{ps2pdf}�ʤɤ�Ȥ��ޤ�\footnote{Vine Linux �ξ�
-���\Prog{ps2jpdf}�Ȥ������ܸ�ե���Ȥ������ޤʤ� PDF ������Ǥ���
-�ץ������⤢��ޤ���\type{apt-get update; apt-get install ps2jpdf}
-�ǥ��󥹥ȡ���Ǥ��ޤ���}��
-\prog{epstopdf}��PDF��EPS��{\BB}��ȿ�Ǥ��Ƥ���ޤ���
-\prog{ps2pdf}�Ϥ�Ȥ�����PDF��{\BB}�����ޤ�ȿ�Ǥ���ޤ����\genzai�ˡ�
-�ʲ��Τ褦�ʥ����륹����ץ�\fl{eps2pdfs}��������ޤ���
+このEPSファイルは\prog{Ghostscript}の\qu{pdfwrite}というデバイスを使って
+変換する事がほとんどです．その時に
+\Prog{epstopdf}か\Prog{ps2pdf}などを使います\footnote{Vine Linux の場
+合は\Prog{ps2jpdf}という日本語フォントを埋め込まない PDF を作成できる
+プログラムもあります．\type{apt-get update; apt-get install ps2jpdf}
+でインストールできます．}．
+\prog{epstopdf}はPDFにEPSの{\BB}を反映してくれます．
+\prog{ps2pdf}系を使う場合はPDFに{\BB}がうまく反映されません（\genzai）．
+以下のようなシェルスクリプト\fl{eps2pdfs}を作成します．
 
 \begin{InText}
 #!/bin/bash
@@ -1211,35 +1211,35 @@ for fig in $EPS; do
 done
 \end{InText}
 
-\fl{eps2pdfs}��\Z{PATH}���̤äƤ������\fl{/usr/local/bin/} �ʤɡˤ�ʣ
-�������ʤ��
+\fl{eps2pdfs}を\Z{PATH}の通っている場所（\fl{/usr/local/bin/} など）に複
+製したならば
 \begin{InTerm}
 \type{eps2pdfs}
 \end{InTerm}
-�Ȥ����Ʊ�ǥ��쥯�ȥ��EPS�ե����뤬����PDF��
-�Ѵ�����ޤ���\Va{file}{eps}�����ä��Ȥ���Ф����
-\Va{file}{pdf}��\Va{file}{bb}����������ޤ���
+とすると同ディレクトリのEPSファイルが全てPDFに
+変換されます．\Va{file}{eps}があったとすればこれは
+\Va{file}{pdf}と\Va{file}{bb}が作成されます．
 
 
-\subsection{PDF�������ڤ�ȴ����\BB}
+\subsection{PDF画像の切り抜きと\BB}
 
-%���������򺣤�EPS�ǤϤʤ���ľ��PDF����¸�ߤ��ʤ���礬���ꡤ
-%��� \BB ��������������ץ������Ȥ����Τ⾯�ʤ��褦��
-%���ޤ�¿���Ϥʤ��褦����%���ޥ�ɥ饤�󤫤�ͤ��ܤǸ��Ʒ�¬����
-��������Υץ������Ǻ�������PDF�ˤ�;�פ�;�򤬴ޤޤ�Ƥ���
-�������Ф��Ф���ޤ��������ưŪ���ڤ�ȴ����ˡ�ΰ�ĤȤ���
-\Person{Heiko}{Oberdiek}�ˤ�� \Prog{pdfcrop} ��Ȥ����ˤ�ꡤ
-PDF������;����ڤ�ȴ����Ԥ������Ǥ��ޤ����� \PDFTeX, Perl, \GS�ˡ�
-�Ȥ����ϥ��󥽡��뤫�鼡�Τ褦�ˤ�������Ǥ���
+%しかし，昨今はEPSではなく，直接PDFしか存在しない場合があり，
+%割と \BB を正しく扱えるプログラムというのも少ないようで
+%あまり多くはないようだ．%コマンドラインから人が目で見て計測する
+何かしらのプログラムで作成したPDFには余計な余白が含まれている
+事がしばしばあります．これを自動的に切り抜く方法の一つとして
+\Person{Heiko}{Oberdiek}による \Prog{pdfcrop} を使う事により，
+PDF画像の余白の切り抜きを行う事ができます（要 \PDFTeX, Perl, \GS）．
+使い方はコンソールから次のようにするだけです．
 \begin{InTerm}
  \type{pdfcrop input.pdf}
 \end{InTerm}
-����ˤ�� \fl{input-crop.pdf}����������ޤ���
+これにより \fl{input-crop.pdf}が生成されます．
 
-�ޤ���PDF�����Τ�\BB ����������Ĥ���ˡ�Ȥ���
-\Prog{pdfinfo} ��Ȥ������ͤ����ޤ���
+また，PDFの正確な\BB を取得する一つの方法として
+\Prog{pdfinfo} を使う事が考えられます．
 
-\prog{pdfinfo} �ˤ�ä�ɽ����������ϰʲ��Τ褦�ʹ����ˤʤäƤ��ޤ���
+\prog{pdfinfo} によって表示される情報は以下のような構成になっています．
 
 \begin{OutTerm}
 Creator:        TeX
@@ -1254,18 +1254,18 @@ Optimized:      no
 PDF version:    1.4
 \end{OutTerm}
 
-\prog{pdfcrop} �ˤ�ä��ڤ�ȴ����Ԥä������Ǥ���С�
-`\str{Page size: 416 x 40 pts}'��Ŭ�ڤ˲ù������\BB ��
-���ƻȤ���褦�ˤʤ�Ǥ��礦��%`\str{PDF version}'��`1.4'�Ǥ��뤿��
-%\Prog{ebb}�Ǥϼ��Ԥ���Ǥ��礦��
+\prog{pdfcrop} によって切り抜きを行った画像であれば，
+`\str{Page size: 416 x 40 pts}'を適切に加工すれば\BB と
+して使えるようになるでしょう．%`\str{PDF version}'が`1.4'であるため
+%\Prog{ebb}では失敗するでしょう．
 
-�ʲ��Τ褦�ʥ�����ץ� \Fl{makebb}���Ѱդ��ޤ�\footnote{\url{http://tex.dante.jp/jou1/makebb}}��
+以下のようなスクリプト \Fl{makebb}を用意します\footnote{\url{http://tex.dante.jp/jou1/makebb}}．
 
 \begin{plainfile}
 #!/bin/sh
-# �����Ȥ���Ϳ����줿�ǥ��쥯�ȥ�����оݤȤ���
+# 引数として与えられたディレクトリを作業対象とする
 cd $1;
-# PNG ������ BoudingBox �������� ebb �ˤ��Ԥ�
+# PNG 画像の BoudingBox の生成を ebb により行う
 for f in `ls *.png`; do 
    if [ -f `basename $f .png`.bb ] ; then 
       echo "already `basename $f .png`.bb exits."
@@ -1273,7 +1273,7 @@ for f in `ls *.png`; do
       ebb -v $f; 
    fi
 done
-# JPEG ������ BoundingBox �������� ebb �ˤ��Ԥ�
+# JPEG 画像の BoundingBox の生成を ebb により行う
 for f in `ls *.jpg`; do 
    if [ -f `basename $f .jpg`.bb ] ; then 
       echo "already `basename $f .jpg`.bb exits."
@@ -1281,7 +1281,7 @@ for f in `ls *.jpg`; do
       ebb -v $f; 
    fi
 done
-# PDF ������ BoundingBox �������� pdfinfo �ˤ�ä� �Ԥ�
+# PDF 画像の BoundingBox の生成を pdfinfo によって 行う
 for f in `ls *.pdf`; do 
    if [ -f `basename $f .pdf`.bb ] ; then 
       echo "already `basename $f .pdf`.bb exits."
@@ -1294,65 +1294,65 @@ for f in `ls *.pdf`; do
 done
 \end{plainfile}
 
-������㤨�С�Ŭ���˥�����������Ϳ���� \type{makebb img}
-�Ȥ���С�\fl{img}�ǥ��쥯�ȥ��¸�ߤ���PNG, JPEG, PDF������
-\BB ��������ޤ���
+これを例えば，適当にアクセス権を与えて \type{makebb img}
+とすれば，\fl{img}ディレクトリに存在するPNG, JPEG, PDF画像の
+\BB を作成します．
 
-\Z{���ȥ꡼�२�ǥ��å�}��\Prog{sed}���ʤ�����Ŭ���� 
-\Prog{Perl}���Ǽ¹Ԥ��Ƥ���������
+\Z{ストリームエディッタ}の\Prog{sed}がない場合は適当に 
+\Prog{Perl}等で実行してください．
 
-%���Τ褦�ˤ���EPS����PDF���Ѵ������ե������
-%{\LaTeX}�θ��ƤǼ��Τ褦�˼����ळ�Ȥ��Ǥ��ޤ�
-%�ʹ�Ƭ�Υѡ�����Ȥϼ������Ƥ��������ˡ�
+%このようにしてEPSからPDFに変換したファイルは
+%{\LaTeX}の原稿で次のように取り込むことができます
+%（行頭のパーセントは取り除いてください）．
 %\begin{InOut}
 %\usepackage[dvipdfmx]{graphicx}
 % \includegraphics[width=3cm]
 %    {images/gnu-head}
 %\end{InOut}
 
-\subsection{dvips��\texorpdfstring{\Dvipdfmx}{Dvipdfmx} ��ʻ��}
+\subsection{dvipsと\texorpdfstring{\Dvipdfmx}{Dvipdfmx} の併用}
 
-dvipsk��\Dvipdfmx ��ξ����ʻ�Ѥ��Ƥ����
-\Z{Unix��OS}���������ʤ�\PS �ǰ������Ƥ��ơ�
-����Ѥ�PDF���������ʤɡ˾���\fl{images}�ǥ��쥯�ȥ�
-���������������\Va{image}{eps}��\Va{image}{pdf}��
-\Va{images}{bb}�λ��ĤΥե�������֤��ޤ�������
-������Ǽ��Τ褦�� \C{includegraphics} ̿���Ȥ��Ȥ�
-\K{��ĥ�Ҥ��ά���ޤ�}��
+dvipskと\Dvipdfmx の両方を併用している（
+\Z{Unix系OS}の方で普段は\PS で印刷していて，
+提出用にPDFを作成するなど）場合は\fl{images}ディレクトリ
+を作成し，そこに\Va{image}{eps}，\Va{image}{pdf}，
+\Va{images}{bb}の三つのファイルを置きます．次に
+原稿中で次のように \C{includegraphics} 命令を使うとき
+\K{拡張子を省略します}．
 
 \begin{InText}
 \includegraphics[width=3cm]{images/gnu-head}
 \end{InText}
 
-�����\sty{graphicx}�ѥå��������Ϥ��줿�ѥå��������ץ�����
-���äơ�ĥ����ޤ�������ͥ���̤��Ѥ��ޤ��Τǡ�
-\Option{dvips}����ꤷ�Ƥ������EPS����\Option{dvipdfmx}��
-���ꤷ�Ƥ������PDF��ĥ����ޤ��褦�ˤʤ�ޤ���
-���Τ褦��\sty{graphicx}���ɤ߹��ߤλ������ѹ���������Ǥ���
+すると\sty{graphicx}パッケージに渡されたパッケージオプションに
+従って，張り込まれる画像の優先順位が変わりますので，
+\Option{dvips}を指定している場合はEPSが，\Option{dvipdfmx}を
+指定している場合はPDFが張り込まれるようになります．
+次のように\sty{graphicx}の読み込みの仕方を変更するだけです．
 
 \begin{InText}
-%\usepackage[dvips]{graphicx}  % dvipsk   �ξ��
-\usepackage[dvipdfmx]{graphicx} % Dvipdfmx �ξ��
+%\usepackage[dvips]{graphicx}  % dvipsk   の場合
+\usepackage[dvipdfmx]{graphicx} % Dvipdfmx の場合
 \end{InText}
 
 
-\subsection{��ݡ��ȡ���ʸ�ˤ�����ޤ�ĥ�����}
+\subsection{レポート・論文における図の張り込み}
 
-��ݡ��Ȥ���ʸ�ʤɤǿޤˤ�\K{�޸��Ф�}���դ���\K{���·��}��
-����Τ�˾�ޤ����Ȼפ��ޤ��Τǡ����Τ褦�˻Ȥ����ˤʤ�ޤ���
+レポートや論文などで図には\K{図見出し}を付けて\K{中央揃え}に
+するのが望ましいと思われますので，次のように使う事になります．
 
 \begin{InText}
 \begin{figure}[htbp]
  \begin{center}
    \includegraphics[width=10cm]{images/file.eps}
-   \caption{�޸��Ф�}\label{fig:samplefig}
+   \caption{図見出し}\label{fig:samplefig}
  \end{center} 
 \end{figure} 
 \end{InText}
 
-����������������
-�񤯤Τ����ݤʤΤǼ��Τ褦�ʿ��Ѥ�\env{myfig}̿���
-�������ޤ���
+ただし，これを毎回
+書くのは面倒なので次のような図用の\env{myfig}命令を
+作成します．
 
 \begin{InText}
 \newcommand{myfig}[4][width=.8\linewidth]{%
@@ -1362,68 +1362,68 @@ dvipsk��\Dvipdfmx ��ξ����ʻ�Ѥ��Ƥ����
 \end{figure}}
 \end{InText}
 
-���Τ褦��������Ƥ����м��Τ褦�˴�ñ�˻Ȥ��ޤ���
+このように定義しておけば次のように簡単に使えます．
 
 \begin{InText}
-�ʾ�ιͻ������~\ref{fig:sample}�Τ褦�ʿޤ������롥
-\myfig[width=100pt,clip]{images/file.eps}{�ޤ�ĥ����ߤ���}{sample}
+以上の考察から図~\ref{fig:sample}のような図が得られる．
+\myfig[width=100pt,clip]{images/file.eps}{図の張り込みの例}{sample}
 \end{InText}
 
-��ư�Τοޤ�DVI�ե�����˽��Ϥ����Ȥ��˻פ�����ʤ����ޤ�ι�򤷤�
-���Τǡ��פ��̤�ξ��˿ޤ����֤���ʤ��Ƥ�ʢ��Ω�Ƥʤ��Ǥ���������
-���⤽���ɽ���Ф���\yo{�嵭�οޤϲ���}�Ȥ�\yo{�����οޤϲ���}�Ȥ���ɽ��
-�ϴְ㤤�ǡ����Ƥο�ɽ��\yo{��~3.1�ϲ���}�Τ褦���ֹ�ǻ��Ȥ��ޤ����Ǥ�
-��������Ͽ�ɽ���ɤΤ褦�ʾ���ιΩ�äƤ⺤��ʤ��Ϥ��Ǥ���
+浮動体の図はDVIファイルに出力されるときに思いもよらない場所まで旅をしま
+すので，思い通りの場所に図が配置されなくても腹を立てないでください．
+そもそも図表に対して\yo{上記の図は何々}とか\yo{下記の図は何々}という表現
+は間違いで，全ての図表は\yo{図~3.1は何々}のように番号で参照します．です
+から本来は図表がどのような場所に旅立っても困らないはずです．
 
-%HOGE 1037 ������������
+%HOGE 1037 例題を作成する
 
-\subsection{����Ū�ʲ����κ����ȳ���}\seclab{excel:kowaza}
+\subsection{汎用的な画像の作成と活用}\seclab{excel:kowaza}
 
-\LaTeX ��\Dvipdfmx ���Ѥ�����ǡ�JPEG, PNG, BMP, EPS, PDF ���β�����ĥ��
-���������ǽ�Ǥ������������������ץ������ˤ�äƤϤ����η����β����ե�
-�����\Z{�񤭽Ф�}���Ѵ��ˤ��б����Ƥ��ʤ���礬����ޤ������ξ��Ϥ���
-����Υץ�����फ�顤\Z{���ۥץ��}���Ф��Ʋ��������Ƥ���������EPS��
-PDF����¸����Τ���û�ˤǤ�����ˡ�Ȥʤ�ޤ���
+\LaTeX と\Dvipdfmx を用いる事で，JPEG, PNG, BMP, EPS, PDF 等の画像を張り
+込む事が可能でした．しかし，外部プログラムによってはそれらの形式の画像ファ
+イルの\Z{書き出し}（変換）に対応していない場合があります．この場合はある
+特定のプログラムから，\Z{仮想プリンタ}に対して画像の内容を送信し，EPSか
+PDFで保存するのが手短にできる方法となります．
 
-Windows �Ǥ���� \Prog{PrimoPDF}���Υե꡼���Ѵ��ץ�����ब����ޤ���
-Mac~OS~X�Ǥ����OS���Τ�Τ�PDF�Ǥν񤭽Ф����б����Ƥ��ޤ���%\unixos �Ǥ�
+Windows であれば \Prog{PrimoPDF}等のフリーの変換プログラムがあります．
+Mac~OS~XであればOSそのものがPDFでの書き出しに対応しています．%\unixos では
 
-���ߤ��Ȥ��δĶ���\Prog{Adobe Acrobat}��������ϡ�Acrobat����Ѥ�
-�Ƥ��������ƹ����ޤ���
+現在お使いの環境に\Prog{Adobe Acrobat}がある場合は，Acrobatを活用し
+ていただいて構いません．
 
-\subsection{�ץ��������ͭ�ν���}\seclab{picture:program}
+\subsection{プログラム特有の処理}\seclab{picture:program}
 
-����γ����ץ�����फ�饰��դ�����������Ȥ��ˤϴ��Ĥ����Ĥ�ɬ
-�פǤ���\secref{excel:kowaza}�Ǥ�ĥ���������¾�Υ��ץꥱ�������
-�Ǥ�Ŭ�ѤǤ����礬¿���Τǡ��嵭����ˡ���ƤߤƤ���������
+特定の外部プログラムからグラフや画像を取り込むときには幾つかコツが必
+要です．\secref{excel:kowaza}での張り込み方が他のアプリケーション
+でも適用できる場合が多いので，上記の方法を試してみてください．
 
-�ɤΥץ���������Ѥ��Ƥ��Ƥ�ǽ�Ū�˽��Ϥ����������Υ������򸵤Υץ���
-���¦��Ĵ�ᤷ�Ƥ���{\LaTeX}��ĥ�����褦�ˤ��������⾯�ʤ��Ǥ��礦��
-\sty{graphicx}�ѥå������γ���̾���Ȥ��Ȱ����ʼ�������ޤ����ƥץ�
-�����ˤ�����������ˡ�ϰʲ����̤�Ǥ�\footnote{�ץ������ΥС�������
-��äƤϴ�ʬ�����ˡ���ۤʤ�Ȼפ��ޤ���}��
+どのプログラムを使用していても最終的に出力したい画像のサイズを元のプログ
+ラム側で調節してから{\LaTeX}に張り込むようにすると問題も少ないでしょう．
+\sty{graphicx}パッケージの拡大縮小を使うと印刷品質が落ちます．各プロ
+グラムにおける設定方法は以下の通りです\footnote{プログラムのバージョンに
+よっては幾分操作方法が異なると思います．}．
 
 \begin{description}
 \item[\prog{Illustrator}]
-  ��ǽ�Ǥ����ʸ���ϥ����ȥ饤�󲽤��ޤ���
-  Adobe PDF �θߴ����Ǥ� \win{Acrobat 4 (PDF 1.3)}����ꤹ��
-  �褦�ˤ���ȡ����꤬ȯ�����Ť餤�Ȼפ��ޤ���
-  �ġ���С���\win{��̾����¸}�ǥե����������\qu{Adobe 
-  PDF}�Ȥ�����¸���ޤ���PDF�����Ǥ���¸���ץ�����\yo{����͡�
-  ���������}��\K{�����å��򳰤���}��\yo{����}�Ϥ��ʤ��褦��
-  ���Ƥ���������\Prog{Illustrator}�ξ����ѻ極�������ڤ�ȴ����
-  �ޤ���Τǲ��餫����ˡ��\Prog{Adobe Acrobat}�� \cmd{includegraphics}
-  ̿��� \option{trim} ���ץ����ˤ��ڤ�ȴ����Ԥ�ɬ�פ�����ޤ���
+  可能であれば文字はアウトライン化します．
+  Adobe PDF の互換性では \win{Acrobat 4 (PDF 1.3)}を指定する
+  ようにすると，問題が発生しづらいと思われます．
+  ツールバーの\win{別名で保存}でファイル形式を\qu{Adobe 
+  PDF}として保存します．PDF形式での保存オプションで\yo{サムネー
+  ルを埋め込み}の\K{チェックを外して}，\yo{圧縮}はしないように
+  してください．\Prog{Illustrator}の場合は用紙サイズが切り抜かれ
+  ませんので何らかの方法（\Prog{Adobe Acrobat}や \cmd{includegraphics}
+  命令の \option{trim} オプション）で切り抜きを行う必要があります．
 \item[\Prog{Photoshop}]
-  \win{�ե�����}��\win{ʣ������¸}������\yo{��¸����}
-  ��\qu{Photoshop PDF}�ˤ�����¸���ޤ����ӥåȥޥåײ����ϰ��̤��ʤ��ۤ�����
-  ���ʼ����ɤ��褦�Ǥ���
-\item[Gnuplot] �ե꡼�Υץ��åȥ��եȤ� \PS, \Y{PSTricks}, \Prog{Tgif},
+  \win{ファイル}，\win{複製を保存}を選び\yo{保存形式}
+  を\qu{Photoshop PDF}にして保存します．ビットマップ画像は圧縮しないほうが印
+  刷品質が良いようです．
+\item[Gnuplot] フリーのプロットソフトで \PS, \Y{PSTricks}, \Prog{Tgif},
   \Prog{Illustrator}, \Y{eepic}, \Prog[MetaFont]{\MF},
-  \Prog[MetaPost]{\MP}����¿���η����ǲ����ν񤭽Ф��򥵥ݡ��Ȥ��Ƥ��ޤ���
-  \Prog{Octave}��\Prog{MATLAB}�����GPL�ο��ͱ黻���եȤ� Gnuplot ���Ȥ�
-  ��ȯ����Ƥ��ޤ��ΤǼ��� Gnuplot �ξ��ȤۤȤ��Ʊ���Ǥ���\Y{eepic}
-  �ѥå��������н褹��ˤϡ��㤨�� Gnuplot ¦�Ǽ��Τ褦�ˤ��ޤ���
+  \Prog[MetaPost]{\MP}等，多くの形式で画像の書き出しをサポートしています．
+  \Prog{Octave}も\Prog{MATLAB}類似でGPLの数値演算ソフトで Gnuplot をもとに
+  開発されていますので手順は Gnuplot の場合とほとんど同じです．\Y{eepic}
+  パッケージで対処するには，例えば Gnuplot 側で次のようにします．
 
 \begin{InText}
 set output 'plotfile1.tex'\\
@@ -1431,8 +1431,8 @@ set term eepic rotated dashed\\
 plot x
 \end{InText}
 
-����ȡ������ȥǥ��쥯�ȥ��\fl{plotfile1.tex}����������ޤ����顤
-\Y{eepic}�ѥå����������Ѥ��ơ�\LaTeX �θ���¦�Ǽ��Τ褦�˵��Ҥ��ޤ���
+すると，カレントディレクトリに\fl{plotfile1.tex}が作成されますから，
+\Y{eepic}パッケージ等を用いて，\LaTeX の原稿側で次のように記述します．
 
 \begin{InText}
 \documentclass[dvipdfmx]{jsarticle}
@@ -1442,13 +1442,13 @@ plot x
 \end{document}
 \end{InText}
 
-  ���ξ��� \sty{graphicx}, \Y{epic}, \Y{eepic}, \Y{amssymb}�ѥå�������
-  ɬ�פȤ��Ƥ��ꡤ\C{input} ̿��ǥץ��åȤ��줿����� \fl{plotfile1.tex}
-  ���ɤ߹���褦�ˤ��Ƥ���ޤ���
+  この場合は \sty{graphicx}, \Y{epic}, \Y{eepic}, \Y{amssymb}パッケージを
+  必要としており，\C{input} 命令でプロットされたグラフ \fl{plotfile1.tex}
+  を読み込むようにしてあります．
  \item[R] 
   \index{GNU!\zdash GPL}
-  \Z{GPL}�����ײ��ϥ��եȤ� \PS, PDF, \Prog[PicTeX]{Pic\TeX}, \Prog{Xfig}, 
-  PNG, JPEG ���ν񤭽Ф��򥵥ݡ��Ȥ��Ƥ��ޤ���
+  \Z{GPL}の統計解析ソフトで \PS, PDF, \Prog[PicTeX]{Pic\TeX}, \Prog{Xfig}, 
+  PNG, JPEG 等の書き出しをサポートしています．
 
 \begin{InText}
 pdf()\\
@@ -1456,107 +1456,107 @@ plot(rnorm(10))\\
 dev.off()
 \end{InText}  
 
-  �嵭�Τ褦��\Prog{R}��������Х�����ȥǥ��쥯�ȥ��PDF������
-  ����� \Fl{Rplots.pdf}����������ޤ���
-\item[Tgif] \Person{William Chia-Wei}{Cheng}�ˤ��\Z{QPL}�����襽�եȡ�EPS
-  �� PDF �������б����Ƥ��ޤ���PDF�˴ؤ��Ƥ�\GS ���γ����ץ�������ɬ��
-  �Ȥ��ޤ���
- \item[Mac OS X] Mac OS X �ξ��ϴĶ����Τ� PDF �˴�Ϣ������ǽ����ä�
- ���뤿�ᡤPDF �����ǽ񤭽Ф����ˤ�� \LaTeX �˲�����
- ����������Ǥ��ޤ���\Prog{Keynotes}, \Prog{Pages}, \Prog{Grapher},
- \Prog{OmniGraffle}����������ξ����˥塼�С��� \win{�ե�����} ��
- \win{�񤭽Ф�} �� \win{PDF} �����򤹤���� PDF �Ȥ�����¸�Ǥ���
- ����\Prog{�ץ�ӥ塼}�� \win{����ġ���} �ˤ�ä��ڤ�ȴ�������ΰ��
- ���򤷡������ \win{���ԡ�} ������ \win{����åץܡ��ɤ��鿷����
- ��} �Ȥ����PDF�������ڤ�ȴ����Ǥ��ޤ���
+  上記のように\Prog{R}から操作すればカンレントディレクトリにPDF形式の
+  グラフ \Fl{Rplots.pdf}が作成されます．
+\item[Tgif] \Person{William Chia-Wei}{Cheng}による\Z{QPL}の描画ソフト．EPS
+  や PDF 形式に対応しています．PDFに関しては\GS 等の外部プログラムを必要
+  とします．
+ \item[Mac OS X] Mac OS X の場合は環境自体が PDF に関連した機能を持って
+ いるため，PDF 形式で書き出す事により \LaTeX に画像を
+ 取り込む事ができます．\Prog{Keynotes}, \Prog{Pages}, \Prog{Grapher},
+ \Prog{OmniGraffle}等，いずれの場合もメニューバーの \win{ファイル} の
+ \win{書き出し} で \win{PDF} を選択する事で PDF として保存できま
+ す．\Prog{プレビュー}で \win{選択ツール} によって切り抜きたい領域を
+ 選択し，それを \win{コピー} した後 \win{クリップボードから新規作
+ 成} とすればPDF画像の切り抜きもできます．
 
-\zindind{PDF}{��Mac OS X}%
+\zindind{PDF}{とMac OS X}%
 \item[\Prog{Mathematica}]
-  �ġ���С�����\win{�ե�����}��\win{�ü�ʷ�������¸}������
-  \win{TeX(X)}�����Ӥޤ��� ��������ȿ����䥰��դʤɤ���ưŪ��
-  {\LaTeXe}��������¸����ޤ����ޤ�����դ�EPS������{\fl{
-  filename.eps}}�Ȥ���̾������¸����ޤ���{Mathematica}�ξ��
-  ���Ϥ����EPS������\Z{�Х���ǥ��󥰥ܥå���}�������
-  ���Ϥ���ʤ���������Τ�{\LaTeX}�������������Ǥ��ʤ����
-  ������ޤ������Ϥ��줿\fl{filename.eps}�Ȥ����ե������
-  �ƥ����ȥ��ǥ����ǳ����м��Τ褦�ʵ��Ҥ�����ޤ���
+  ツールバーから\win{ファイル}の\win{特殊な形式で保存}を選び
+  \win{TeX(X)}を選びます． そうすると数式やグラフなどが自動的に
+  {\LaTeXe}形式に保存されます．またグラフはEPS形式で{\fl{
+  filename.eps}}という名前で保存されます．{Mathematica}の場合
+  出力されるEPS画像の\Z{バウンディングボックス}が正常に
+  出力されない事があるので{\LaTeX}で正しく処理できない場合
+  があります．出力された\fl{filename.eps}というファイルを
+  テキストエディタで開けば次のような記述があります．
 
 \begin{InText}
 %%BoundingBox: 91.5625 3.1875 321.938 190
 \end{InText}
 
-  ����ϲ�����ʿ�̾�
-  �Τɤ������֤��뤫����ꤹ���Τǡ�������
-  2����ʿ�̾�λ�����$x_0$��$y_0$��������$x$��
-  $y$���б����ޤ����ޤ����̾�Ϥ����ͤ������ͤ�
-  �侩����ޤ����嵭�ο��ͤ�ͼθ�������������
-  ľ���Ƽ�����Ǥ���������
+  これは画像を平面上
+  のどこに配置するかを指定するもので，左から
+  2次元平面上の始点の$x_0$と$y_0$，終点の$x$と
+  $y$に対応します．また，通常はこの値は整数値が
+  推奨されます．上記の数値を四捨五入して整数に
+  直して取り込んでください．
 \item[\Prog{MATLAB}]
-  ����դ�ɽ�����Ƥ���MATLAB�ץ������Υ�����ɥ���
-  �ġ���С��ˤ��� \win{�ե�����} ���� \win{�������ݡ���} ��
-  ���ӡ��ե�����μ����\qu{EPS Level 2}�ˤ���Ǥ�դ�̾��
-  ��Ĥ�����¸���ޤ���{Illustrator}�����Ǥν��Ϥ⥵�ݡ���
-  ����Ƥ��ޤ��Τǡ��������ξ��ϥ���դ��Խ��Ǥ��ޤ���
+  グラフを表示しているMATLABプログラムのウィンドウの
+  ツールバーにある \win{ファイル} から \win{エクスポート} を
+  選び，ファイルの種類を\qu{EPS Level 2}にし，任意の名前
+  をつけて保存します．{Illustrator}形式での出力もサポート
+  されていますので，お持ちの場合はグラフを編集できます．
 \end{description}
 
-����Ū�ˤ� PDF �ˤ����Ѵ����Ƥ���� \Prog{Adobe Acrobat} �ˤ���Խ���
-��ǽ�Ȥʤꡤ����� \Dvipdfmx ���Ѥ���д�ñ�˲�����ĥ���������Ǥ��ޤ���
-����PDF�˲������Ѵ�����ȡ�����PDF�ե�������Խ���\prog{Adobe Acrobat}��
-�褦��PDF�Խ��ץ�����बɬ�פȤʤ�ޤ������Τ��ᡤ������Ĵ���˴ؤ��Ƥ�
-���γ����ץ������¦�ǹԤ��褦�ˤ��ƤߤƤ���������
-\zindind{PDF}{���Խ�}%
+全般的には PDF にさえ変換していれば \Prog{Adobe Acrobat} による編集が
+可能となり，さらに \Dvipdfmx を用いれば簡単に画像を張り込む事ができます．
+一度PDFに画像を変換すると，そのPDFファイルの編集は\prog{Adobe Acrobat}の
+ようなPDF編集プログラムが必要となります．そのため，画像の調整に関しては
+元の外部プログラム側で行うようにしてみてください．
+\zindind{PDF}{の編集}%
 
-\section{�ޤ�ĥ����ߤκݤι���}
+\section{図の張り込みの際の工夫}
 
 
-\subsection{�ޤ���Ĳ����¤٤�}
-2���Ȥξ��Ϥ��Τ褦�ʻ��Ϥ���ޤ��󤬡�1���Ȥξ��ϰ�Ĥοޤ����Ǥ�
-ξ�Ƥ������Ƥ��ޤ��ΤǤ�������Ĥοޤ�\qu{(a)}��\qu{(b)}�Ȥ�������������
-�Ȥ�������ޤ������Τ褦�ʤȤ���\Env{minipage}�Ķ���Ȥ��ޤ����ʲ��Τ褦
-�����Ϥ�����⤢��ޤ���
+\subsection{図を二つ横に並べる}
+2段組の場合はそのような事はありませんが，1段組の場合は一つの図だけでは
+両脇が開いてしまうのでそこに二つの図を\qu{(a)}と\qu{(b)}として挿入したい
+ときがあります．このようなときは\Env{minipage}環境を使います．以下のよう
+に入力する例もあります．
 
 \C*{hfill}%
 \begin{InText}
 \begin{figure}[htbp]
   \begin{minipage}{.47\textwidth}
-      \centering%�����˿�(a)�������
-      {\small (a) �����$c=0.6$}
+      \centering%ここに図(a)を入れる
+      {\small (a) 初期値$c=0.6$}
   \end{minipage} \hfill
   \begin{minipage}{.47\textwidth}
-      \centering%�����˿�(b)�������
-      {\small (b) �����$c=1.0$}
+      \centering%ここに図(b)を入れる
+      {\small (b) 初期値$c=1.0$}
   \end{minipage}
-  \caption{1���Ȥǲ��˿ޤ�����¤٤�}
+  \caption{1段組で横に図を二つ並べる}
 \end{figure}
 \end{InText}
 
-ξ���οޤ��ֹ���̤ˤ������Ȥ���Ʊ�ͤ˵��Ҥ��ޤ���
-��İʾ岣���¤٤�Ȥ����ˤ�\Person{Steven Douglas}{Cochran}�ˤ��
-\Y{subfigure}�ѥå�������Ȥ��Ȥ���ñ�˵��ҤǤ�����ˤʤ�ޤ���
+両方の図の番号を別にしたいときも同様に記述します．
+二つ以上横に並べるとき等には\Person{Steven Douglas}{Cochran}による
+\Y{subfigure}パッケージを使うとより簡単に記述できる事になります．
 
 \begin{figure}[htbp]
   \begin{minipage}{.47\textwidth}
       \centering
       \includegraphics[width=2cm]{images/gnu-head}\\
-      {\small(a) ����� $c=0.6$}
+      {\small(a) 初期値 $c=0.6$}
   \end{minipage}
 \hfill
   \begin{minipage}{.47\textwidth}
       \centering
       \includegraphics[width=2cm]{images/gnu-head}\\
-      {\small(b) ����� $c=1.0$}
+      {\small(b) 初期値 $c=1.0$}
   \end{minipage}
-  \caption{1���Ȥǲ��˿ޤ�����¤٤�}
+  \caption{1段組で横に図を二つ並べる}
 \end{figure}
 
 
 \begin{Prob}
-����Ķ��ʤɤˤ����뤽�λ�����ʸ�������ݻ����Ƥ��� \Cmd{linewidth}
-�Ȥ���Ĺ��������ޤ�������Ĺ����Ȥ���
-���δĶ��ˤ�����ʸ�������äѤ��οޤ�ĥ�����Ȥ�����
-��Ǥ���褦�ˤʤ�ޤ���
+ある環境などにおけるその時々の文章幅を保持している \Cmd{linewidth}
+という長さがあります．この長さを使うと
+その環境において文章幅いっぱいの図を張り込むという事
+もできるようになります．
 
- �������Ϥ�ºݤ˼�ʬ�ǥ����ץ��åȤ������η�̤��̣���Ƥ���������
+ 次の入力を実際に自分でタイプセットし，その結果を吟味してください．
 \begin{InOut}
 \begin{quote}
   linewidth $=$ \the\linewidth\par
@@ -1566,8 +1566,8 @@ dev.off()
 \end{quote}
 \end{InOut}
 
-����ˤ��Ԥ�Ⱦʬ���٤�Ĺ���ǿޤ�ĥ�����ʤ�С����Τ褦��
-����Ǥ���ȹͤ�����Ǥ��礦��
+これにより行の半分程度の長さで図を張り込むならば，次のように
+設定できると考えられるでしょう．
 
 \begin{InTeX}
 \includegraphics[width=.47\linewidth]{images/gnu-head}\\ 
@@ -1575,88 +1575,88 @@ dev.off()
 \end{Prob}
 
 \begin{Prob}
-��ɽ��ĥ�������� \C{includegraphics}̿������
-�ǥ��쥯�ȥ�̾�򵭽Ҥ���Τ����ݤʾ��� \C{graphicspath}
-̿�᤬�Ȥ��ޤ���
+図表を張り込む時に \C{includegraphics}命令に毎回
+ディレクトリ名を記述するのが面倒な場合は \C{graphicspath}
+命令が使えます．
 
 \begin{Syntax}
- \C{graphicspath}\pa{�ǥ��쥯�ȥ�Υꥹ��}
+ \C{graphicspath}\pa{ディレクトリのリスト}
 \end{Syntax}
 
-���� \fl{images} �� \fl{pictures} �ǥ��쥯�ȥ�˲�����
-��¸����Ƥ���Ȥ���С�\cmd{graphicspath}�ϼ��Τ褦��
-�Ǥ��뤫���ºݤ˥����ץ��åȤ������η�̤��̣���Ƥ���������
+仮に \fl{images} と \fl{pictures} ディレクトリに画像が
+保存されているとすれば，\cmd{graphicspath}は次のように
+できるか，実際にタイプセットし，その結果を吟味してください．
 
 \begin{InTeX}
 \graphicspath{{images/}{geolay/}}
 \end{InTeX}
 \end{Prob} 
 
-\subsection{������ʸ�����ɲä���\zdash\textsf{labelfig}}
+\subsection{画像に文字を追加する\zdash\textsf{labelfig}}
 
-\zindind{����}{�ؤ�ʸ�����ɲ�}%
-���Խ����񤷤������ե����롤�㤨�� EPS �ե�����ξ��ʸ���ʤɤΥ�٥��
-�ɲä�������礬����ޤ�������ˤ� \Person{Raymond}{S\'eroul} ��
-\Person{Laurent}{Siebenmann} �ˤ�� \Y{labelfig} �ѥå��������Ȥ���
-�Ǥ��礦��
+\zindind{画像}{への文字の追加}%
+再編集が難しい画像ファイル，例えば EPS ファイルの上に文字などのラベルを
+追加したい場合があります．これには \Person{Raymond}{S\'eroul} と
+\Person{Laurent}{Siebenmann} による \Y{labelfig} パッケージが使える
+でしょう．
 \begin{Syntax}
 \C{SetLabels} \\
-\va{�����ξ��ɽ����������٥�}\\
+\va{画像の上に表示したいラベル}\\
 \C{endSetLabels}\\
-\C{ShowGrid} \pp{ɬ�פ˱�����}\\
-\C{strut}\C{AffixLabels}\va{���֤������}
+\C{ShowGrid} \pp{必要に応じて}\\
+\C{strut}\C{AffixLabels}\va{配置する画像}
 \end{Syntax}
-\C{SetLabels} ���� \C{endSetLabels} ����ǲ����ξ��ɽ����������٥��
-���ꤷ�ޤ�����٥���ɲä���Ȥ���ɬ�פ˱����� \C{ShowGrid} ���ޥ�ɤ�
-��ɸ��ɽ�����ޤ���\C{AffixLabels} �ΰ��������֤��٤���������ꤷ�ޤ���
-��٥�ϼ��ν񼰤˽��ä��ɲä��ޤ���
+\C{SetLabels} から \C{endSetLabels} の中で画像の上に表示したいラベルを
+設定します．ラベルを追加するときに必要に応じて \C{ShowGrid} コマンドで
+座標を表示します．\C{AffixLabels} の引数に配置すべき画像を指定します．
+ラベルは次の書式に従って追加します．
 \begin{Syntax}
-\va{���ֻ���}\string(\va{0--1}\string*\va{0--1}\string) \va{��٥�} \verb|\\|
+\va{位置指定}\string(\va{0--1}\string*\va{0--1}\string) \va{ラベル} \verb|\\|
 \end{Syntax}
-��ɸ����� \verb|(0.5*0.3)| �Τ褦�� 0 ���� 1 ���ϰϤǻ��ꤷ�ޤ���
-\va{���ֻ���}�ˤ� ��ľ������·���Ǥ� \C{T}��\C{E}��\C{B}��
-��ʿ�����Ǥ� \C{L}, \C{R} ��̵����\pp{̵���������ˤʤ�}��ξ����
-�Ȥ߹�碌�ƻȤ������Ǥ��ޤ���
+座標指定は \verb|(0.5*0.3)| のように 0 から 1 の範囲で指定します．
+\va{位置指定}には 垂直方向の揃えでは \C{T}，\C{E}，\C{B}，
+水平方向では \C{L}, \C{R} と無指定\pp{無指定で中央になる}の両方を
+組み合わせて使う事ができます．
 
-\C{ShowGrid} �ˤ�äƥ���åɤ�ɽ������Τϸ��Ƽ�ɮ�ʳ������ǡ�
-�������ˤ�ɽ�����ʤ��Ȥʤ�� \Option{draft} ���ץ�������Ѥ��ޤ���
-��������\sty{graphicx} �ѥå������ˤ�ä��ɤ߹���Ǥ�������˴ؤ��Ƥ�
-\Option{draft} ���ץ����ͭ���ˤʤäƤ���Ȥ��Ǥ� \Option{final} 
-���ץ������դ����Ȥ��Τ褦�����֤��Ƥ�餤�����Τǡ��㤨��
-���Τ褦�ˤ��ޤ���
+\C{ShowGrid} によってグリッドを表示するのは原稿執筆段階だけで，
+印刷時には表示しないとなれば \Option{draft} オプションを活用します．
+ただし，\sty{graphicx} パッケージによって読み込んでいる画像に関しては
+\Option{draft} オプションが有効になっているときでも \Option{final} 
+オプションを付けたときのように配置してもらいたいので，例えば
+次のようにします．
 
 \begin{InText}
-% ����åɤ�ɽ��������Τ� draft �λ������ˤ�����ɤ����Ȥˤʤ�
+% グリッドを表示させるのは draft の時だけにすれば良いことになる
 %\documentclass[draft,a4j,11pt,papersize]{jsarticle}
-% �������ˤ� draft ���ץ�����������ɤ����Ȥˤʤ롥
+% 印刷時には draft オプションを除けば良いことになる．
 \documentclass[a4j,11pt,papersize]{jsarticle}
-% graphicx �ѥå������ˤ� final ���Ϥ��ơ����ĤǤ�ޤ�ɽ�������
-% �褦�ˤ���ȡ�labelfig ��Ĵ�����ưפˤʤ롥
+% graphicx パッケージには final を渡して，いつでも図が表示される
+% ようにすると，labelfig の調整が容易になる．
 \usepackage[final]{graphicx}
 \usepackage{labelfig} 
 \end{InText}
 
-�㤨�м��Τ褦�����Ϥ������ \figref{labelfig} �Τ褦�ʽ��Ϥ�
-�ʤ�ޤ���\C{GridLineWidth}���ޥ�ɤǷ��������������Ǥ��ޤ���
+例えば次のような入力があれば \figref{labelfig} のような出力に
+なります．\C{GridLineWidth}コマンドで罫線の太さを指定できます．
 
 \begin{InText}
 \begin{figure}[htbp]
 \begin{center}
  \GridLineWidth{.2pt}
  \SetLabels 
-  \T\L(.8*.45) ɡ\\
-  \T\L(.2*.9) ���γ�\\
-  \T\L(.7*.9) ���γ�\\ 
-  \T\L(.75*.3)  ��\\ 
-  \T\L(.65*.1) ɦ\\ 
-  \T\L(.3*.6) ����\\ 
-  \T\L(.7*.6)  ����\\ 
+  \T\L(.8*.45) 鼻\\
+  \T\L(.2*.9) 左の角\\
+  \T\L(.7*.9) 右の角\\ 
+  \T\L(.75*.3)  口\\ 
+  \T\L(.65*.1) 髭\\ 
+  \T\L(.3*.6) 左目\\ 
+  \T\L(.7*.6)  右目\\ 
  \endSetLabels
  \ifdraft
    \ShowGrid
  \fi
  \strut\AffixLabels{\includegraphics{images/gnu-head}}%
- \caption{\Y{labelfig} �λȤ���\label{fig:you}}%
+ \caption{\Y{labelfig} の使い方\label{fig:you}}%
 \end{center} 
 \end{figure} 
 \end{InText}
@@ -1665,13 +1665,13 @@ dev.off()
 \begin{minipage}{.49\linewidth}
  \GridLineWidth{.2pt}
   \SetLabels 
-  \T\L(.8*.45) ɡ\\
-  \T\L(.2*.9) ���γ�\\
-  \T\L(.7*.9) ���γ�\\ 
-  \T\L(.75*.3)  ��\\ 
-  \T\L(.65*.1) ɦ\\ 
-  \T\L(.3*.6) ����\\ 
-  \T\L(.7*.6)  ����\\ 
+  \T\L(.8*.45) 鼻\\
+  \T\L(.2*.9) 左の角\\
+  \T\L(.7*.9) 右の角\\ 
+  \T\L(.75*.3)  口\\ 
+  \T\L(.65*.1) 髭\\ 
+  \T\L(.3*.6) 左目\\ 
+  \T\L(.7*.6)  右目\\ 
   \endSetLabels
   \ShowGrid
   \strut\AffixLabels{%
@@ -1680,34 +1680,34 @@ dev.off()
 \hfil
 \begin{minipage}{.49\linewidth}
   \SetLabels 
-  \T\L(.8*.45) ɡ\\
-  \T\L(.2*.9) ���γ�\\
-  \T\L(.7*.9) ���γ�\\ 
-  \T\L(.75*.3)  ��\\ 
-  \T\L(.65*.1) ɦ\\ 
-  \T\L(.3*.6) ����\\ 
-  \T\L(.7*.6)  ����\\ 
+  \T\L(.8*.45) 鼻\\
+  \T\L(.2*.9) 左の角\\
+  \T\L(.7*.9) 右の角\\ 
+  \T\L(.75*.3)  口\\ 
+  \T\L(.65*.1) 髭\\ 
+  \T\L(.3*.6) 左目\\ 
+  \T\L(.7*.6)  右目\\ 
   \endSetLabels
   \strut\AffixLabels{%
     \includegraphics[clip,width=\linewidth]{images/gnu-head}}% 
 \end{minipage}
- \caption{\sty{labelfig} �λȤ���\label{fig:labelfig}}%
+ \caption{\sty{labelfig} の使い方\label{fig:labelfig}}%
 \end{figure}
 
 
-%��ݡ��Ȥ���ʸ�ʤɤǿޤˤ�\K{�޸��Ф�}���դ���\K{���·��}��
-%����Τ�˾�ޤ����Ȼפ��ޤ��Τ�
+%レポートや論文などで図には\K{図見出し}を付けて\K{中央揃え}に
+%するのが望ましいと思われますので
 %\begin{InTeX}
 %\begin{figure}[htbp]
 % \begin{center}
 %   \includegraphics[width=10cm]{images/file.eps}
-%   \caption{�޸��Ф�}\figlab{samplefig}
+%   \caption{図見出し}\figlab{samplefig}
 % \end{center} 
 %\end{figure} 
 %\end{InTeX}
-%�Τ褦�˻Ȥ����Ȥˤʤ�Ǥ��礦������������������
-%�񤯤Τ����ݤʤΤǼ��Τ褦�ʿ��Ѥ�\env{myfig}̿���
-%�������ޤ���
+%のように使うことになるでしょう．ただし，これを毎回
+%書くのは面倒なので次のような図用の\env{myfig}命令を
+%作成します．
 %\begin{InTeX}
 %\newcommand{myfig}[4][width=.8\textwidth]{%
 %\begin{figure}[htbp]%
@@ -1715,87 +1715,87 @@ dev.off()
 %   \caption{#3}\figlab{#4}%
 %\end{figure}}
 %\end{InTeX}
-%���Τ褦��������Ƥ����м��Τ褦�˻Ȥ��ޤ���
+%このように定義しておけば次のように使えます．
 %\begin{InTeX}
-%�ʾ�ιͻ������~\ref{fig:sample}�Τ褦��
-%�ޤ������롥
-%\myfig[width=100pt,clip]{images/file.eps}{�ޤ�ĥ����ߤ���}{sample}
+%以上の考察から図~\ref{fig:sample}のような
+%図が得られる．
+%\myfig[width=100pt,clip]{images/file.eps}{図の張り込みの例}{sample}
 %\end{InTeX}
 
 
-%��ư�Τοޤ�DVI�ե�����˽��Ϥ����Ȥ��˻פ���
-%���ʤ����ޤ�ι�򤷤ޤ��Τǡ��פ��̤�ξ���
-%�ޤ���ϤǤ��ʤ��Ƥⵤ�ˤ��ʤ��Ǥ���������
-%���⤽���ɽ���Ф���\yo{�嵭�οޤϤʤ�����}�Ȥ�
-%\yo{�����οޤϤʤ�����}�Ȥ���ɽ���ϴְ㤤�ǡ�
-%���Ƥο�ɽ��\yo{��~3.1�Ϥʤ�����}�Τ褦���ֹ��
-%���Ȥ��ޤ����Ǥ���������Ͽޤ�ɽ���ɤΤ褦�ʾ���
-%ιΩ�äƤ⺤��ʤ��Ϥ��Ǥ���
+%浮動体の図はDVIファイルに出力されるときに思いも
+%よらない場所まで旅をしますので，思い通りの場所に
+%図を出力できなくても気にしないでください．
+%そもそも図表に対して\yo{上記の図はなんちゃら}とか
+%\yo{下記の図はなんちゃら}という表現は間違いで，
+%全ての図表は\yo{図~3.1はなんちゃら}のように番号で
+%参照します．ですから本来は図や表がどのような場所に
+%旅立っても困らないはずです．
 
-%�ޤʤɤ�ȿ���ײ���\kaku{90}��ž�����뤳�Ȥ�����Ǥ��礦��
-%���ξ��� \Cmd{rotatebox}̿���Ȥ��ޤ���
-%¾�ˤ�������̿�᤬����ޤ���
+%図などを反時計回りに\kaku{90}回転させることがあるでしょう．
+%その場合は \Cmd{rotatebox}命令を使います．
+%他にも便利な命令があります．
 %\begin{Syntax}
-%\Cmd{rotatebox}\opa{����}\pa{����}{����}
+%\Cmd{rotatebox}\opa{設定}\pa{角度}{要素}
 %\end{Syntax}
-%����� \cmd{includegraphics}��Ǥ�հ�����
-%\qu{\str{angle}}��Ȥä����Ȥ�Ʊ���Ǥ���
-%\cmd{rotatebox}�Ͽޤ˸¤餺���������Ǥ�
-%\Z{��ž}���ޤ���\va{����}�ι��ܤˤϰʲ��Τ褦��
-%��Τ�����ޤ���
+%これは \cmd{includegraphics}の任意引数に
+%\qu{\str{angle}}を使ったことと同じです．
+%\cmd{rotatebox}は図に限らずあらゆる要素を
+%\Z{回転}します．\va{設定}の項目には以下のような
+%ものがあります．
 %\begin{description}
-%\item[\str{origin=}\va{��٥�}] 
-% ���Ǥ��ž���뤿��θ�������ꤷ�ޤ���%%
-% ��\qu{\str l}����\qu{\str r}�����\qu{\str c}��
-% ����\qu{\str t}������\qu{\str b}������Ǥ��ޤ���
-%\item[\str{x=}\va{Ĺ��}] 
-%$x$�����θ����ΰ��֤�ľ��\va{Ĺ��}����ꤷ�ޤ���
-%\item[\str{y=}\va{Ĺ��}]
-%$y$�����θ����ΰ��֤�ľ��\va{Ĺ��}����ꤷ�ޤ���
+%\item[\str{origin=}\va{ラベル}] 
+% 要素を回転するための原点を指定します．%%
+% 左\qu{\str l}，右\qu{\str r}，中央\qu{\str c}，
+% 上部\qu{\str t}，下部\qu{\str b}が指定できます．
+%\item[\str{x=}\va{長さ}] 
+%$x$方向の原点の位置を直接\va{長さ}を指定します．
+%\item[\str{y=}\va{長さ}]
+%$y$方向の原点の位置を直接\va{長さ}を指定します．
 %\end{description}
-%\indindz{��ž}{ʸ�����}%%%
+%\indindz{回転}{文字列の}%%%
 %\begin{InOut}
-%\rotatebox{70}{ʸ����ʤ�}��
-%\rotatebox[origin=c]{60}{��ž�Ȥ�}��
-%\rotatebox[origin=b]{50}{�ɤ��衩}
-%\rotatebox{30}{����ݡ�}
+%\rotatebox{70}{文字列など}の
+%\rotatebox[origin=c]{60}{回転とか}は
+%\rotatebox[origin=b]{50}{どうよ？}
+%\rotatebox{30}{だめぽ．}
 %\end{InOut}
 
-%���Ǥ�\K{����̾�}����ˤ� \cmd{scalebox}��
-%�Ȥ��ޤ���\index{����}\index{�̾�}\indindz{����}{ʸ�����}
+%要素を\K{拡大縮小}するには \cmd{scalebox}を
+%使います．\index{拡大}\index{縮小}\indindz{拡大}{文字列の}
 %\begin{Syntax}
-%\Cmd{scalebox}\pa{���γ���Ψ}\opa{�Ĥγ���Ψ}\pa{����}
+%\Cmd{scalebox}\pa{横の拡大率}\opa{縦の拡大率}\pa{要素}
 %\end{Syntax}
-%\va{����Ψ}�ˤ�Ĺ������ꤷ�ޤ���\begin{InOut}
-%\scalebox{2.3}{����̾�}\par
-%\scalebox{3}[1]{����̾�}
+%\va{拡大率}には長さを指定します．\begin{InOut}
+%\scalebox{2.3}{拡大縮小}\par
+%\scalebox{3}[1]{拡大縮小}
 %\end{InOut}
 %
-%���Ǥ�\K{ȿž}�ˤ� \cmd{reflectbox}��Ȥ��ޤ���
+%要素の\K{反転}には \cmd{reflectbox}を使います．
 %\begin{Syntax}
-%\Cmd{reflectbox}\pa{����}
+%\Cmd{reflectbox}\pa{要素}
 %\end{Syntax}
 %\begin{InOut}
-%\reflectbox{ʸ�����ȿž}\par
-%\reflectbox{���ϻ�}\par
-%\scalebox{-1}[1]{�����ȿž}
+%\reflectbox{文字列の反転}\par
+%\reflectbox{山は山}\par
+%\scalebox{-1}[1]{これも反転}
 %\end{InOut}
 %
-%�ꥵ�����ˤ� \cmd{resizebox}��Ȥ��ޤ���
+%リサイズには \cmd{resizebox}を使います．
 %\begin{Syntax}
-%\Cmd{resizebox}\pa{��}\pa{�⤵}\pa{����}
+%\Cmd{resizebox}\pa{幅}\pa{高さ}\pa{要素}
 %\end{Syntax}
-%���ǤΥꥵ�����������\va{��}�ˡ��⤵��\va{�⤵}�ˤ��ޤ���
-%�ɤ��餫�����γ��硦�̾�Ψ�˹�碌�����Ȥ���\qu{\str!}��
-%�Ȥ��ޤ���
+%要素のリサイズ後の幅を\va{幅}に，高さを\va{高さ}にします．
+%どちらか一方の拡大・縮小率に合わせたいときは\qu{\str!}を
+%使います．
 %\begin{InOut}
-%\resizebox{!}{1cm}{�ꥵ����}\par
-%\resizebox{3cm}{!}{�ꥵ����}
+%\resizebox{!}{1cm}{リサイズ}\par
+%\resizebox{3cm}{!}{リサイズ}
 %\end{InOut}
 
-%�ʾ�� \cmd{rotatebox}��\cmd{scalebox}��\cmd{reflectbox}��
-%\cmd{resizebox}��ʸ����ɽ���ޡ�\env{minipage}�Ķ��ʤ�
-%������ʤɤˤ�Ȥ��ޤ���\indindz{��ž}{ɽ��}%%
+%以上の \cmd{rotatebox}，\cmd{scalebox}，\cmd{reflectbox}，
+%\cmd{resizebox}は文字列，表，図，\env{minipage}環境など
+%の段落などにも使えます．\indindz{回転}{表の}%%
 %\begin{InOut}
 %\newcommand{\testtab}{\begin{tabular}{|c|}
 %\hline \LaTeX\\ \LaTeXe \\ \hline %
@@ -1805,246 +1805,246 @@ dev.off()
 %\end{InOut}
 
 
-%\subsection{¾�Υץ�����फ��ĥ�������ˡ����1}\seclab{excel:kowaza}
-%�㤨��{Excel}��{PowerPoint}�ʤɤΥ���դ��ɽ��ĥ��
-%�������礭��ʬ���Ƽ���3�̤����ˡ������ޤ���
-%�оݤȤʤ륰��դ��ɽ���ڡ����ϴ���Ū��PS������
-%�������Ѵ����뤳�Ȥ��Ǥ��ޤ������ξ�����ä�Windows
-%�˸��ꤷ�ޤ���
+%\subsection{他のプログラムから張り込む方法その1}\seclab{excel:kowaza}
+%例えば{Excel}や{PowerPoint}などのグラフや図表を張り
+%込む場合大きく分けて次の3通りの方法があります．
+%対象となるグラフや図表，ページは基本的にPS形式の
+%画像に変換することができます．この小節の話はWindows
+%に限定します．
 %\begin{enumerate}
 %\item 
-% �����Υڡ����ʤɤ򥹥��꡼�󥷥�åȤǥӥåȥޥåײ�����
-% ������¸�����β�����\Prog[EPSconv]{\EPSconv}��\Prog[ImageMagick]{\IM}
-% ��EPS�������Ѵ����Ƥ���ĥ����ࡥ
+% 該当のページなどをスクリーンショットでビットマップ画像と
+% して保存しその画像を\Prog[EPSconv]{\EPSconv}や\Prog[ImageMagick]{\IM}
+% でEPS画像に変換してから張り込む．
 %\item 
-%  �ڡ����ʤɤ��礭����Ĵ�����Ƥ���{\PS}�ץ�󥿡����̤���
-%  �ץ�󥿡��ե�����Ȥ�����¸�����Х���ǥ��󥰥ܥå�����
-%  \Prog{eps2eps}��Ĵ�����Ƥ���ĥ����ࡥ
+%  ページなどの大きさを調整してから{\PS}プリンターを通して
+%  プリンターファイルとして保存し，バウンディングボックスを
+%  \Prog{eps2eps}で調整してから張り込む．
 %\item 
-%  �ڡ����ʤɤ��礭����A4�λ椤�äѤ��˥ե�����Ȥ��ư�������
-%  �����\textsf{graphicx}�ѥå������ǲ�ž�ȳ��硦�̾��򤷤�ĥ����ࡥ
+%  ページなどの大きさをA4の紙いっぱいにファイルとして印刷し，
+%  それを\textsf{graphicx}パッケージで回転と拡大・縮小をして張り込む．
 %\end{enumerate}
-%����ܤ�����ܤϼ�֤������뤦���˰����ʼ��Ⱝ���Τ�
-%�����Ǥ��������ޤ��󡥻����ܤ���ˡ����⤷�ޤ���
+%一つ目と二つ目は手間がかかるうえに印刷品質も悪いので
+%ここでは説明しません．三つ目の方法を解説します．
 %
-%���ϰʲ��λͤĤΤ褦�ˤʤ�ޤ���Microsoft��Excel��
-%����դ�����������˽Ф��Ƥ��ޤ���
+%手順は以下の四つのようになります．MicrosoftのExcelの
+%グラフを取り込む手順を例に出しています．
 %\begin{enumerate}
-%\item �ޤ���{Windows}��\win{����}��\win{�ץ�󥿤��ɲ�}�򤷤ޤ���
-%      �ɲä���ץ�󥿤�\yo{��������ץ��}�ǻ��Ѥ���ݡ��Ȥ�
-%      \yo{�ե�����ؽ���}�����򤷡������Ǥ�\yo{HP Color Laser Jet PS}
-%      �Ȥ����ץ�󥿥��եȥ����������򤷤ޤ����ƥ��ȥڡ������������
-%      ���ϡ����ϥե�����̾��\qu{hoge.eps}�Τ褦�˳�ĥ�Ҥ�\exten{eps}�ˤ���
-%      ��¸���ޤ����������������줤�뤫�ɤ������ǧ����ˤ�
-%      \prog{\GS}��\prog{GSView}�ʤɤǸ��뤳�Ȥ��Ǥ��ޤ���
-%\item ���˸��Ȥʤ륰��դ�ڡ�����������ޤ������ΤȤ�
-%      ��Υ������������ꤷ�ƥ���դ�Ĵ�����ޤ������������������
-%      �����򤷤��ʤ�С�\win{�ڡ�������}�ǰ����θ�����\yo{��}��
-%      �ѻ極������\yo{A4}��\win{;��}���֤Ǿ岼�������إå�����
-%      �եå�����;��򤹤٤�\yo{0}�����ꤷ��\win{�إå������եå���}
-%      ���֤ǲ�����Ϥ��ʤ����Ȥ����򤷡�\win{�����}���֤ǡ�
-%      �������륰��դΥ�������\yo{�ѻ極����}�˹�碌�ޤ���
-%      �����ʼ���\yo{�������}�ˤ���ȥե����륵�����⾮�����ʤ�
-%      ����®�٤���夷�ޤ��������ץ�ӥ塼�����꤬�ʤ����Ȥ�
-%      ��ǧ�����ʤ�С�{���ץꥱ�������}¦�Ǥ�����Ͻ�λ�Ǥ���
-%\item \win{�ե�����}����\win{����}�����ӡ��ץ�󥿤�̾��������
-%      �ɲä����ץ�󥿤����ꤷ�ޤ���\qu{OK}�ܥ���򲡤����Хѥ���
-%      \zindind{�ե�����}{���դ���̾��}�ե�����̾����ꤷ�ƥե�����ؽ��Ϥ���С���Ū�Υ���դ�EPS
-%      ����¸���뤳�Ȥ��Ǥ��ޤ������ΤȤ���¸����ե�����̾��Ⱦ��
-%      �ѿ����Ȥ���ĥ�Ҥ�\exten{.eps}�Ȥ��Ƥ���������
-%      �ե��������¸��򸶹Ƥ�Ʊ�����ˤ��������⾯�ʤ��Ǥ��礦��
-%\item ���Ϥ���\fl{filename.eps}��{\LaTeX}ʸ����ǻ��Ȥ��ޤ���
-%      \textsf{graphicx}�ѥå�������Ȥä�
+%\item まず，{Windows}の\win{設定}で\win{プリンタの追加}をします．
+%      追加するプリンタは\yo{ローカルプリンタ}で使用するポートは
+%      \yo{ファイルへ出力}を選択し，ここでは\yo{HP Color Laser Jet PS}
+%      というプリンタソフトウェアを選択します．テストページを印刷する
+%      場合は，出力ファイル名を\qu{hoge.eps}のように拡張子を\exten{eps}にして
+%      保存します．正しく印刷されいるかどうかを確認するには
+%      \prog{\GS}か\prog{GSView}などで見ることができます．
+%\item 次に元となるグラフやページを作成します．このとき
+%      モノクロ印刷を想定してグラフを調整します．印刷したいグラフ
+%      を選択したならば，\win{ページ設定}で印刷の向きは\yo{横}，
+%      用紙サイズは\yo{A4}，\win{余白}タブで上下左右，ヘッダー，
+%      フッターの余白をすべて\yo{0}に設定し，\win{ヘッダー，フッター}
+%      タブで何も出力しないことを選択し，\win{グラフ}タブで，
+%      印刷するグラフのサイズを\yo{用紙サイズ}に合わせます．
+%      印刷品質は\yo{白黒印刷}にするとファイルサイズも小さくなり
+%      処理速度も向上します．印刷プレビューで問題がないことを
+%      確認したならば，{アプリケーション}側での設定は終了です．
+%\item \win{ファイル}から\win{印刷}を選び，プリンタの名前を先程
+%      追加したプリンタに設定します．\qu{OK}ボタンを押し絶対パスで
+%      \zindind{ファイル}{に付ける名前}ファイル名を指定してファイルへ出力すれば，目的のグラフをEPS
+%      で保存することができます．このとき保存するファイル名は半角
+%      英数字とし拡張子は\exten{.eps}としてください．
+%      ファイルの保存先を原稿と同じ場所にすると問題も少ないでしょう。
+%\item 出力した\fl{filename.eps}を{\LaTeX}文書中で参照します．
+%      \textsf{graphicx}パッケージを使って
 %      \begin{quote}
 %       \verb+\includegraphics[scale=0.4,angle=-90]{filename}+
 %      \end{quote}
-%      �Ȥ���������ɤ�����Ф��Ǽ�����ޤ���A4�λ��
-%      ����դ���Ϥ�����硤0.4�ܤν̾�Ψ�ǡ����ײ���
-%      90�ٲ�ž�������{\LaTeX}ʸ�����������ɤ�������
-%      �Ȥ���ĥ����ळ�Ȥ��Ǥ��ޤ���
+%      とすれば丁度良いあんばいで取り込めます．A4の紙に
+%      グラフを出力した場合，0.4倍の縮小率で，時計回りに
+%      90度回転させると{\LaTeX}文書の中で丁度良いサイズ
+%      として張り込むことができます．
 %\end{enumerate}
-%�ʾ��2--4�κ�Ȥ򥰥�դο����������֤����Ȥˤ�ꡤ
-%{\LaTeX}���Ф���{Excel}�Ǻ�������륰��դȤۤ�Ʊ����%
-%\indindz{�ե����}{�ӥåȥޥå�}\indindz{�ե����}{����������}%%%
-%�᡼�����������뤳�Ȥ���ǽ�Ǥ����ե���Ȥ��ӥåȥޥå�
-%�ե���Ȥǥ��������ˤʤ�Ȥ��ϥץ�󥿤������
-%\yo{TrueType�ե���ȥ���������ɥ��ץ����}�Τ褦��
-%���ܤ�����Ϥ��Ǥ��Τǡ������\yo{�����ȥ饤��}�ˤ����
-%�ɤ��Ǥ��礦��
+%以上の2--4の作業をグラフの数だけ繰り返すことにより，
+%{\LaTeX}に対して{Excel}で作成されるグラフとほぼ同じイ%
+%\indindz{フォント}{ビットマップ}\indindz{フォント}{ギザギザの}%%%
+%メージを挿入することが可能です．フォントがビットマップ
+%フォントでギザギザになるときはプリンタの設定で
+%\yo{TrueTypeフォントダウンロードオプション}のような
+%項目があるはずですので，これを\yo{アウトライン}にすると
+%良いでしょう．
 
 
-%\subsection{¾�Υץ�����फ�������Ȥ�}\seclab{picture:program}
+%\subsection{他のプログラムから取り込むとき}\seclab{picture:program}
 %
-%\Prog{Mathematica}��\Prog{Illustrator}���饰��դ�����������Ȥ��ˤ�
-%���Ĥ����Ĥ�ɬ�פǤ���\secref{excel:kowaza}�Ǥ�{Excel}�Ǥ�ĥ���������¾
-%�Υ��ץꥱ�������Ǥ�Ŭ�ѤǤ����礬¿���Τǡ��嵭����ˡ���ƤߤƤ�
-%��������
+%\Prog{Mathematica}や\Prog{Illustrator}からグラフや画像を取り込むときには
+%幾つかコツが必要です．\secref{excel:kowaza}での{Excel}での張り込み方が他
+%のアプリケーションでも適用できる場合が多いので，上記の方法を試してみてく
+%ださい．
 %
-%�ɤΥץ���������Ѥ��Ƥ��Ƥ�ǽ�Ū�˽��Ϥ����������Υ������򸵤Υץ���
-%���¦��Ĵ�ᤷ�Ƥ���{\LaTeX}��ĥ�����褦�ˤ��������⾯�ʤ��Ǥ��礦��
-%\sty{graphicx}�ѥå������γ���̾���Ȥ��Ȱ����ʼ�������ޤ����ƥץ�
-%�����ˤ�����������ˡ�ϰʲ����̤�Ǥ���
+%どのプログラムを使用していても最終的に出力したい画像のサイズを元のプログ
+%ラム側で調節してから{\LaTeX}に張り込むようにすると問題も少ないでしょう．
+%\sty{graphicx}パッケージの拡大縮小を使うと印刷品質が落ちます．各プロ
+%グラムにおける設定方法は以下の通りです．
 %\begin{description}
 %\item[\prog{Illustrator}]
-% �ޤ�ʸ���ϥ����ȥ饤�󲽤��ޤ���
-% �ġ���С���\win{��̾����¸}�ǥե����������\qu{Illustrator
-% EPS}�Ȥ�����¸���ޤ���EPS�����Ǥ���¸���ץ�����\yo{����͡�
-% ������}��\K{�����å��򳰤���}��\yo{�ե���ȥǡ�����ޤ�}
-% �Υ����å���Ϥ����Ƥ����������ݥ��ȥ�����ץȤΥ�٥��\qu{{\PS} 
-% level 2}�Ȥ��Ƥ����������ץ�ӥ塼�ˤĤ��Ƥ�\qu{8-bit IBM PC}���ɤ�
-% �Ȼפ��ޤ���{Illustrator}�ξ��ϥ���������ưŪ��Ĵ�ᤵ��ޤ���
-% ���ѻ極���������ꤹ��ɬ�פϤ���ޤ���
-%���äƥ���͡�����դ������С������ˤ�äƥ��顼��
-%�ʤ�Τ�\Person{Tomas}{Rokicki}��\Prog{fixill.pl}��Ȥ���
-%�ɤ��Ǥ��礦��Perl������ץȤǽ񤫤�Ƥ��ꡤ�¹Ԥ��뤿��ˤ�
-%Perl��ɬ�ܤ�
+% まず文字はアウトライン化します．
+% ツールバーの\win{別名で保存}でファイル形式を\qu{Illustrator
+% EPS}として保存します．EPS形式での保存オプションで\yo{サムネー
+% ルを作成}の\K{チェックを外して}，\yo{フォントデータを含む}
+% のチェックをはずしてください．ポストスクリプトのレベルは\qu{{\PS} 
+% level 2}としてください．プレビューについては\qu{8-bit IBM PC}で良い
+% と思います．{Illustrator}の場合はサイズが自動的に調節されますの
+% で用紙サイズを設定する必要はありません．
+%誤ってサムネールを付けた場合バージョンによってエラーに
+%なるので\Person{Tomas}{Rokicki}の\Prog{fixill.pl}を使うと
+%良いでしょう．Perlスクリプトで書かれており，実行するためには
+%Perlが必須で
 %\begin{InTerm}
 %   \type{fixill < input.eps > output.eps}
 %\end{InTerm}
-%�Τ褦�˻Ȥ��ޤ���
+%のように使います．
 %
 %\item[\Prog{photoshop} ver.7]
-%\win{�ե�����}��\win{ʣ������¸}������\yo{��¸����}
-%��\qu{Photoshop EPS}�ˤ�����¸���롥��¸���ץ����
-%��\yo{���󥳡��ǥ���}��\qu{ASCII}�Ȥ��롥�ӥ�
-%�ȥޥåײ����ϥ��󥳡��ǥ��󥰤ǰ��̤��ʤ��ۤ���
-%�����ʼ����ɤ��Ǥ��礦��
+%\win{ファイル}，\win{複製を保存}を選び\yo{保存形式}
+%を\qu{Photoshop EPS}にして保存する．保存オプション
+%で\yo{エンコーディング}は\qu{ASCII}とする．ビッ
+%トマップ画像はエンコーディングで圧縮しないほうが
+%印刷品質が良いでしょう．
 %
 %\item[\Prog{Mathematica} ver.4]
-%�ġ���С�����\win{�ե�����}��\win{�ü�ʷ�������¸}������
-%\win{TeX(X)}�����Ӥޤ��� ��������ȿ����䥰��դʤɤ���ưŪ��
-%{\LaTeXe}��������¸����ޤ����ޤ�����դ�EPS������{\fl{
-%filename.eps}}�Ȥ���̾������¸����ޤ���{Mathematica}�ξ��
-%���Ϥ����EPS������\Z{�Х���ǥ��󥰥ܥå���}�������
-%���Ϥ���ʤ����Ȥ�����Τ�{\LaTeX}�������������Ǥ��ʤ����
-%������ޤ������Ϥ��줿\fl{filename.eps}�Ȥ����ե������
-%�ƥ����ȥ��ǥ����ǳ�����
+%ツールバーから\win{ファイル}の\win{特殊な形式で保存}を選び
+%\win{TeX(X)}を選びます． そうすると数式やグラフなどが自動的に
+%{\LaTeXe}形式に保存されます．またグラフはEPS形式で{\fl{
+%filename.eps}}という名前で保存されます．{Mathematica}の場合
+%出力されるEPS画像の\Z{バウンディングボックス}が正常に
+%出力されないことがあるので{\LaTeX}で正しく処理できない場合
+%があります．出力された\fl{filename.eps}というファイルを
+%テキストエディタで開けば
 %\begin{InText}
 %%%BoundingBox: 91.5625 3.1875 321.938 190
 %\end{InText}
-%�Τ褦�ʵ��Ҥ�����ޤ�������ϲ�����ʿ�̾�
-%�Τɤ������֤��뤫����ꤹ���Τǡ�������
-%2����ʿ�̾�λ�����$x_0$��$y_0$��������$x$��
-%$y$���б����ޤ����ޤ����̾�Ϥ����ͤ������ͤ�
-%�侩����ޤ����嵭�ο��ͤ�ͼθ�������������
-%ľ���Ƽ�����Ǥ���������
+%のような記述があります．これは画像を平面上
+%のどこに配置するかを指定するもので，左から
+%2次元平面上の始点の$x_0$と$y_0$，終点の$x$と
+%$y$に対応します．また，通常はこの値は整数値が
+%推奨されます．上記の数値を四捨五入して整数に
+%直して取り込んでください．
 %
 %\item[\Prog{MATLAB}]%underfull
-%����դ�ɽ�����Ƥ���MATLAB�ץ������Υ�����ɥ���
-%�ġ���С��ˤ���\win{�ե�����}����\win{�������ݡ���}��
-%���ӡ��ե�����μ����\qu{EPS Level 2}�ˤ���Ǥ�դ�̾��
-%��Ĥ�����¸���ޤ���{Illustrator}�����Ǥν��Ϥ⥵�ݡ���
-%����Ƥ��ޤ��Τǡ��������ξ��ϥ���դ��Խ��Ǥ���ΤǤ�
-%�ʤ��Ǥ��礦����
+%グラフを表示しているMATLABプログラムのウィンドウの
+%ツールバーにある\win{ファイル}から\win{エクスポート}を
+%選び，ファイルの種類を\qu{EPS Level 2}にし，任意の名前
+%をつけて保存します．{Illustrator}形式での出力もサポート
+%されていますので，お持ちの場合はグラフを編集できるのでは
+%ないでしょうか．
 %
 %%\item[{Gnuplot}]
-%%{Gnuplot}�ˤĤ��Ƥ�\pref{subsec:gnuplot}
-%%\secref{subsec:gnuplot}�Ǿܤ������⤷�Ƥ���ޤ���
+%%{Gnuplot}については\pref{subsec:gnuplot}
+%%\secref{subsec:gnuplot}で詳しく解説してあります．
 %\end{description}
 %
-%%¾�Υץ�����फ�������ʤ��{\LaTeX}¦�Ǥ�������
-%%�б��Ǥ��ޤ�����{\LaTeX}�Ǻ��������ڡ����������
-%%Illustrator�˻��äƤ��äơ������ù������ޤ��������
-%%�Ȥ�������{\LaTeX}�ν��Ϥ򥢥��ȥ饤�󲽤����
-%%���ޤ������ޤ���{\LaTeX}�ǻȤ��Ƥ���ե���Ȥ�
-%%\Person{Donald}{Knuth}��Υǥ����󤷤�Computer Modern�ե����
-%%�ʤɤ��Ȥ��Ƥ��뤳�Ȥ�¿���ΤǤ���������餬��OS��
-%%�����ƥ�˥��󥹥ȡ��뤵��Ƥ��ʤ��������ʥե���ȤȤ���
-%%���إե���Ȥ��֤�����ä��ꤷ�ޤ��������ƥ��{\LaTeX}
-%%�Υե���Ȥ򥤥󥹥ȡ���Ǥ���Ф���Ǥ褤�ΤǤ�����
-%%�Ǥ��ʤ�����ͤ��Ƥߤ����Ȼפ��ޤ���
+%%他のプログラムから取り込むならば{\LaTeX}側である程度
+%%対応できますが，{\LaTeX}で作成したページや数式を
+%%Illustratorに持っていって，それを加工した図を作成する
+%%という場合は{\LaTeX}の出力をアウトライン化すると
+%%うまくいきます．{\LaTeX}で使われているフォントは
+%%\Person{Donald}{Knuth}氏のデザインしたComputer Modernフォント
+%%などが使われていることが多いのですが，それらが各OSの
+%%システムにインストールされていないと不明なフォントとして
+%%代替フォントに置き換わったりします．システムに{\LaTeX}
+%%のフォントをインストールできればそれでよいのですが，
+%%できない場合を考えてみたいと思います．
 %
 %%platex input
 %%dvips -Ppdf -E  -o input.eps input
 %%eps2eps input.eps output.eps
 %
 %
-%\subsection{�ޤ���Ĳ����¤٤�}
-%2���Ȥξ��Ϥ��Τ褦�ʤ��ȤϤ���ޤ��󤬡�
-%1���Ȥξ��ϰ�Ĥοޤ����Ǥ�ξ�Ƥ������Ƥ��ޤ��Τ�
-%��������Ĥοޤ�\qu{(a)}��\qu{(b)}�Ȥ�������������
-%�Ȥ�������ޤ������Τ褦�ʤȤ���\Env{minipage}�Ķ�
-%��Ȥ��ޤ����ʲ��Τ褦�����Ϥ�����⤢��ޤ���
+%\subsection{図を二つ横に並べる}
+%2段組の場合はそのようなことはありませんが，
+%1段組の場合は一つの図だけでは両脇が開いてしまうので
+%そこに二つの図を\qu{(a)}と\qu{(b)}として挿入したい
+%ときがあります．このようなときは\Env{minipage}環境
+%を使います．以下のように入力する例もあります．
 %\begin{InTeX}
 %\begin{figure}[htbp]
 %  \begin{minipage}{.47\textwidth}
-%      \centering%�����˿�(a)�������
-%      (a) �����$c=0.6$
+%      \centering%ここに図(a)を入れる
+%      (a) 初期値$c=0.6$
 %  \end{minipage}
 %\hfill
 %  \begin{minipage}{.47\textwidth}
-%      \centering%�����˿�(b)�������
-%      (b) �����$c=1.0$
+%      \centering%ここに図(b)を入れる
+%      (b) 初期値$c=1.0$
 %  \end{minipage}
-%  \caption{1���Ȥǲ��˿ޤ�����¤٤�}
+%  \caption{1段組で横に図を二つ並べる}
 %\end{figure}
 %\end{InTeX}
-%ξ���οޤ��ֹ���̤ˤ������Ȥ���Ʊ�ͤ�
-%���Ҥ��ޤ���
+%両方の図の番号を別にしたいときも同様に
+%記述します．
 %
-%%���������㴳�ۤʤ�ޤ������ޤ��٤�ʸ������¤٤�
-%%�Τ�Ʊ�ͤ���ˡ�ǤǤ���櫓�Ǥ���
+%%方向性が若干異なりますが，図の隣に文字列を並べる
+%%のも同様の方法でできるわけです．
 %%\begin{wrapfigure}{r}{5cm}
 %%\includegraphics[bb=0 0 124 98,clip]{images/vector}
 %%\end{wrapfigure}
-%%��Ȥ���\Person{Donald}{Arseneau}�ˤ��\Sty{wrapfig}
-%%��Ȥ��������������������Τ褦�ʽ��Ϥ����뤿���
+%%例として\Person{Donald}{Arseneau}による\Sty{wrapfig}
+%%を使う場合をご覧ください．このような出力を得るために
 %%\begin{InTeX}
 %% \begin{wrapfigure}[5]{r}{5cm}
 %% \includegraphics{file}
 %% \end{wrapfigure}
 %%\end{InTeX}
-%%�Ȥ������Ϥ򤷤ޤ���
+%%という入力をします．
 %
 
 
 
 
 %\begin{Syntax}
-% \C{DeclareGraphicsExtensions}\pa{��ĥ�ҤΥꥹ��}\\
-% \C{DecrelaGraphicsRule}\pa{��ĥ��}\pa{����}\pa{�ɤ߹���ե�����}\pa{��
-% �ޥ��}
+% \C{DeclareGraphicsExtensions}\pa{拡張子のリスト}\\
+% \C{DecrelaGraphicsRule}\pa{拡張子}\pa{種類}\pa{読み込むファイル}\pa{コ
+% マンド}
 %\end{Syntax}
 
-%\subsection{EPS�ʳ��β�����ĥ�����}
-%{\LaTeX}�Ǥ�EPS�ʳ��β�����ĥ����ߤ��ǽ
-%�Ǥ��������ʤ�����ޤ������긵�ˤ�GIF��BMP��
-%JPEG�ʤɤΥӥåȥޥåײ���������Ȼפ��ޤ���
-%�ӥåȥޥåײ�����EPS���Ѵ��Ǥ���ġ����
-%̵���Ǥ������󤢤ꡤͭ̾�ʤΤ�\prog{\IM}
-%�Ǥ���{Windows}���ѤǤ���\Prog[EPSconv]{\EPSconv}\footnote{\webEpsconv}
-%�Ȥ������եȥ�������Ƴ�����뤳�Ȥˤ�ꡤ
-%��¸����ۤȤ�ɤβ�����EPS���Ѵ���ǽ�Ǥ���
-%�����Υ��ץꥱ�������Ϥ����ޤǥӥåȥޥå�
-%��EPS��������¸��������ʤΤǥե����륵��������
-%����礭���ʤ�ޤ���
+%\subsection{EPS以外の画像の張り込み}
+%{\LaTeX}ではEPS以外の画像の張り込みも可能
+%ですが少々癖があります．お手元にはGIFやBMP，
+%JPEGなどのビットマップ画像があると思います．
+%ビットマップ画像をEPSに変換できるツールは
+%無料でたくさんあり，有名なのが\prog{\IM}
+%です．{Windows}専用ですが\Prog[EPSconv]{\EPSconv}\footnote{\webEpsconv}
+%というソフトウェアを導入することにより，
+%現存するほとんどの画像をEPSに変換可能です．
+%これらのアプリケーションはあくまでビットマップ
+%をEPS形式で保存するだけなのでファイルサイズが非
+%常に大きくなります．
 %
-%�ǥХ����ɥ饤�ФȤ���\prog{\Dvipdfmx}��Ȥ���
-%EPS�����ʳ��β����Ǥ�����ळ�Ȥ��Ǥ��ޤ���
-%%����ʤ��BMP��JPG������{\EPSconv}��{\IM}�ʤɤ�
-%%�ġ����Ȥäư���EPS���Ѵ������礬ɬ�פǤ���
-%%��\prog{\Dvipdfmx}�ξ��Ϥ��μ�礬ɬ�פ���ޤ���
-%�Ѵ����ʤ��Ƥ������������PDF��JPEG��PNG��MetaPost��4����
-%�Ǥ���{Windows}��BMP�ʤɤ��㰵�̤�JPEG�ʤɤ�
-%�Ѵ����ޤ���\fl{image.png} �����ä����
-%ü���ʤɤ�
+%デバイスドライバとして\prog{\Dvipdfmx}を使うと
+%EPS形式以外の画像でも取り込むことができます．
+%%本来ならばBMPやJPG形式は{\EPSconv}や{\IM}などの
+%%ツールを使って一度EPSに変換する手順が必要でした
+%%が\prog{\Dvipdfmx}の場合はその手順が必要ありません．
+%変換しなくても取り込める形式はPDF，JPEG，PNG，MetaPostの4種類
+%です．{Windows}のBMPなどは低圧縮のJPEGなどに
+%変換します．\fl{image.png} があった場合
+%端末などで
 %\begin{InTerm}
 %   \type{ebb image.png}
 %\end{InTerm}
-%�Ȥ����\fl{image.png}�Ѥ�\fl{image.bb}��
-%��������ޤ���\prog{ebb}��{dvipdfm}��
-%Ʊ������Ƥ��ޤ�������\texttt{image.bb}��
-%�����ե�����νĲ�����������������Υ�
-%������Ǥ���\texttt{image.bb} �򸫤��
-%ʬ����ޤ�������Ȥ�
+%とすれば\fl{image.png}用の\fl{image.bb}が
+%作成されます．\prog{ebb}は{dvipdfm}に
+%同封されています．この\texttt{image.bb}は
+%画像ファイルの縦横を正しく扱うためのフ
+%ァイルです．\texttt{image.bb} を見れば
+%分かりますが，中身は
 %\begin{InText}
 %%%Title: ./image.png
 %%%Creator: ebb Version 0.5.2
 %%%BoundingBox: 0 0 595 841
 %\end{InText}
-%�ȤʤäƤ��ޤ��� \qu{\str{BoundingBox}}�Ȥ�
-%������ɸ�Ȳ����νĲ���Ĺ�����ͤǤ���
-%���˥������ե������ʲ��Τ褦�ˤ��ޤ���
+%となっています． \qu{\str{BoundingBox}}とは
+%原点座標と画像の縦横の長さの値です．
+%次にソースファイルを以下のようにします．
 %\begin{InTeX}
 %\documentclass{jsarticle}
 %\usepackage[dvipdfm]{graphicx}
@@ -2052,29 +2052,29 @@ dev.off()
 %\includegraphics[width=3cm]{image.png}
 %\end{document}
 %\end{InTeX}
-%��Ϥ��Ĥ��̤�˥����ץ��åȤ���DVI�ե������
-%������\prog{\Dvipdfmx}��PDF�����������ɤ���
-%�Ȥˤʤ�ޤ���
+%後はいつも通りにタイプセットしてDVIファイルを
+%生成し\prog{\Dvipdfmx}でPDFを作成すれば良いこ
+%とになります．
 %
-%\subsection{EPS����PDF�ؤ��Ѵ�}
-%�ǥХ����ɥ饤�ФȤ���\prog{\Dvipdfmx}�Ǽ������
-%EPS�����������褦�ˤ��Ƥ����硤\prog{\Dvipdfmx}
-%��¹Ԥ��뤿�Ӥ����\Prog[Ghostscript]{\GS}��Ȥä�EPS����PDF���Ѵ�
-%����������Ԥ��ޤ����������֤�û�̤Τ���ˡ�
-%���餫����PDF���Ѵ����Ƥ������ɤ��Ǥ��礦��EPS����
-%�β�����PDF���Ѵ�������ˡ�Ϥ����Ĥ����뤽���Ǥ�����
-%��ñ�ǰ�������ˡ��Ҳ𤷤ޤ����ޤ�\prog{\GS}��
-%\qu{pdfwrite}���Ϥ�ڤ����ˡ�Ǥ���BoundingBox��
-%���ꤵ��Ƥ���EPS������\Prog{epstopdf}�ˤ�ä�
-%PDF���Ѵ����ޤ���
+%\subsection{EPSからPDFへの変換}
+%デバイスドライバとして\prog{\Dvipdfmx}で手持ちの
+%EPS画像を取り込むようにしている場合，\prog{\Dvipdfmx}
+%を実行するたびに毎回\Prog[Ghostscript]{\GS}を使ってEPSからPDFに変換
+%する処理が行われます．処理時間の短縮のために，
+%あらかじめPDFに変換しておけば良いでしょう．EPS形式
+%の画像をPDFへ変換する方法はいくつかあるそうですが，
+%簡単で安全な方法を紹介します．まず\prog{\GS}の
+%\qu{pdfwrite}の力を借りる方法です．BoundingBoxの
+%設定されているEPS画像を\Prog{epstopdf}によって
+%PDFに変換します．
 %\begin{InTerm}
 %   \type{epstopdf filename.eps}
 %\end{InTerm}
-%�Ȥ����\fl{filename.pdf}����������ޤ������ܸ줬
-%�Ȥ��Ƥ���EPS�����ޤ������Ǥ��ʤ��ʤɤ�
-%���꤬���뤫�⤷��ޤ��󡥤��ξ���GNU��
-%\Prog[GhostScript]{\GS}�ΥС������7.07��Ȥ����ɤ���
-%���礦���ʲ��Τ褦�ʥ����륹����ץ�\fl{epspdf}
+%とすると\fl{filename.pdf}が作成されます．日本語が
+%使われているEPSがうまく処理できないなどの
+%問題があるかもしれません．その場合はGNUの
+%\Prog[GhostScript]{\GS}のバージョン7.07を使うと良いで
+%しょう．以下のようなシェルスクリプト\fl{epspdf}
 %\begin{InText}
 %#!/bin/bash
 %FILE=$1
@@ -2082,18 +2082,18 @@ dev.off()
 %epstopdf $FILE
 %egrep "%%BoundingBox:" $FILE > $fig.bb
 %\end{InText}
-%�������\fl{/usr/local/bin/}�ʤɤ�ʣ������%$
+%を作成し\fl{/usr/local/bin/}などに複製して%$
 %\begin{InTerm}
 %   \type{epspdf filename.eps}
 %\end{InTerm}
-%�Ȥ����PDF�ե�����\fl{filename.pdf}�ȥХ����\indindz{�ե�����}{PDF}%
-%���󥰥ܥå�������\fl{filename.bb}�����������
-%����%\prog{echo}��ü����ʸ������Ϥ���̿�ᡤ
-%%\prog{test}��ʸ����򸡺�����̿�ᡤ
-%%\prog{egrep}�ϥե�����ʤɤ��������ɽ���򸫤Ĥ���̿�ᡤ
-%%\prog{basename}�ϥե�����̾�����ĥ�Ҥ���������ꤹ��̿�ᡥ
-%Ʊ���ǥ��쥯�ȥ��������Ƥ�EPS������
-%PDF���Ѵ��������Ȥ���
+%とするとPDFファイル\fl{filename.pdf}とバウンデ\indindz{ファイル}{PDF}%
+%ィングボックス情報\fl{filename.bb}が作成されま
+%す．%\prog{echo}は端末に文字を出力する命令，
+%%\prog{test}は文字列を検査する命令，
+%%\prog{egrep}はファイルなどから特定の表現を見つける命令，
+%%\prog{basename}はファイル名から拡張子を取り除いたりする命令．
+%同じディレクトリの中の全てのEPS画像を
+%PDFに変換したいときは
 %\begin{InText}
 %#!/bin/sh
 %for f in `ls *.eps`; do
@@ -2102,8 +2102,8 @@ dev.off()
 %   grep "^%%BoundingBox:" $f > $fig.bb
 %done
 %\end{InText}
-%��\fl{epspdfs}�Ȥ���̾����Ʊ���褦��ʣ�����ޤ���
-%���Τ褦�ˤ��ƽ�������PDF��{\LaTeX}�θ��Ƥ�
+%を\fl{epspdfs}という名前で同じように複製します．
+%このようにして処理したPDFは{\LaTeX}の原稿で
 %\begin{InTeX}
 %\documentclass{jsarticle} 
 %\usepackage[dvipdfm]{graphicx}
@@ -2111,53 +2111,53 @@ dev.off()
 %\includegraphics{filename.pdf}
 %\end{document}
 %\end{InTeX}
-%�Τ褦�ˤ��Ƽ����ळ�Ȥ��Ǥ��ޤ���
+%のようにして取り込むことができます．
 %
 %\begin{comment}
-%���ʤߤ�\fl{filename.bb}��
+%ちなみに\fl{filename.bb}は
 %\begin{InText}
 %%%Title: filename.dvi
 %%%Creator: hoge
 %%%BoundingBox: 142 160 443 665
 %%%CreationDate: Tue Dec 30 16:01:48 2003
 %\end{InText}
-%�Τ褦�ʾ��󤬽��Ϥ���Ƥ���Ǥ��礦���������
+%のような情報が出力されているでしょう．この中の
 %\begin{InText}
 %%%BoundingBox: 142 160 443 665 
 %\end{InText}
-%�Ȥ���1�Ԥ�������С�\prog{\Dvipdfmx}���ϲ�����
-%ĥ����ळ�Ȥ��Ǥ��ޤ���
-%%%�ʾ�Τ褦�ʥ����륹����ץȤ�ư����뤳�Ȥ��Ǥ��ʤ�Windows�桼����
-%%%���ϥե꡼��Cygwin��Ƴ�������Τ��ɤ��Ȼפ��ΤǤ���\verb|^^;|��
+%という1行だけあれば，\prog{\Dvipdfmx}等は画像を
+%張り込むことができます．
+%%%以上のようなシェルスクリプトを動作させることができないWindowsユーザの
+%%%方はフリーのCygwinを導入されるのが良いと思うのですが\verb|^^;|．
 %\end{comment}
 
-\section{�������ˡ}
-{\LaTeX}�ǿޤ��갷�����ʤϤ����Ĥ�¸�ߤ��ޤ���
-�̿��Τ褦�ʲ�����\sty{graphicx}�ѥå�����
-�ʤɤ�Ȥä�ĥ�������ˡ�ȡ�1�������褹����ˡ�Ǥ���
-\sty{graphicx}�ѥå��������Ѥ��ƴ�¸�β�����ĥ�����
-��ˡ��\secref{figure}�򻲾Ȥ��Ƥ���������������
-�ޤ��������Ƥ��ʤ��ʳ��Ǥ��������ˡ��Ҳ𤷤ޤ���
+\section{描画の方法}
+{\LaTeX}で図を取り扱う手段はいくつも存在します．
+写真のような画像を\sty{graphicx}パッケージ
+などを使って張り込む方法と，1から描画する方法です．
+\sty{graphicx}パッケージを用いて既存の画像を張り込む
+方法は\secref{figure}を参照してください．画像を
+まだ作成していない段階での描画の方法を紹介します．
 
-�������ˡ���礭��ʬ������Ĥ���ޤ�����Ĥ�{\LaTeX}
-���Ȥ�ǽ�Ϥ����褹����ˡ�� \cmd{special}̿���Ȥ�
-¾�Υץ������ʥǥХ����ɥ饤�����ˤ���������ͤ���ˡ�Ǥ������̤�
-{\LaTeX}�ˤ����������ǽ�Ϥ�{\TeX}����Υ����ƥ��
-�������ϼ�ʤ�ΤȤʤäƤ��ޤ�����ñ�ʿޤ��������
-�ʤ��{\LaTeX}������äƤ���\env{picture}�Ķ���
-��������Ԥ��Τ���ڤǤ���
+描画の方法は大きく分けて二つあります．一つは{\LaTeX}
+自身の能力で描画する方法と \cmd{special}命令を使い
+他のプログラム（デバイスドライバ等）へ描画をゆだねる方法です．一般に
+{\LaTeX}における描画の能力は{\TeX}譲りのシステムの
+お陰で貧弱なものとなっています．簡単な図を作成する
+ならば{\LaTeX}に備わっている\env{picture}環境に
+よる描画を行うのが手軽です．
 
-\subsection{�٤��񤭤ˤ��ޤκ���}
-��äȤ��ñ���������ˡ�Ȥ���{\LaTeX}�Ǥ٤��񤭤�
-�Ԥ���\Env{verbatim}�Ķ���Ȥ������ͤ����ޤ���
-\env{verbatim}�Ķ���Ǥ�ʸ����{\KY{����}}�˶ᤤ���ͤ��
-�Ȥޤ��Τǡ����Ƥ����Ϥ��Ƥ���ɽ����DVI�ե�����
-�ؤν��Ϥ�Ʊ���褦�ˤʤ�ޤ�%
-\footnote{\Hito{����}{����}�κ�������\Prog{plain2}�Ȥ����ġ����Ȥ�����
-�ѵ�����Ȥ߹�碌����ˤ�ä�{\LaTeX}�Ѥο�ɽ��������뤳�Ȥ�Ǥ��ޤ���}��
+\subsection{べた書きによる図の作成}
+もっとも簡単な描画の方法として{\LaTeX}でべた書きを
+行う，\Env{verbatim}環境を使う事が考えられます．
+\env{verbatim}環境内では文字が{\KY{等幅}}に近い字詰めで
+組まれるので，原稿で入力している表示とDVIファイル
+への出力が同じようになります%
+\footnote{\Hito{内田}{昭宏}の作成した\Prog{plain2}というツールを使うと全
+角記号を組み合わせる事によって{\LaTeX}用の図表を作成することもできます．}．
 
 \begin{Exe}
-�ʲ�����������򻲹ͤˤ٤��񤭤ˤ���ޤ򤷤ƤߤƤ���������
+以下の入出力例を参考にべた書きによる作図をしてみてください．
 \begin{InOut}
 \begin{verbatim}
        a
@@ -2169,56 +2169,56 @@ dev.off()
 \end{verbatim}
 \end{InOut}
 
-%\env{verbatim}�Ķ���Ǥ�Ⱦ�Ѥζ����Ȥ鷺��
-%���Ѥζ����Ȥ����ɤ��Ǥ��礦��Ⱦ�Ѥζ����
-%�ƥ����ȥ��ǥ��å������Ϥ��Ƥ���ʬ�ζ���
-%���������櫓�ǤϤ���ޤ���
+%\env{verbatim}環境内では半角の空白を使わずに
+%全角の空白を使うと良いでしょう．半角の空白は
+%テキストエディッタで入力している分の空白が
+%挿入されるわけではありません．
 \end{Exe}
 
 
 
 
-\subsection{��
-  ��������}
-\indindz{����}{���ץ饤��}\indindz{����}{���}\indindz{����}{�٥���}%
-{\KY{�٥��ȥ����}}�ʤɤǤ�{\KY{�٥�������}}
-�Ȥ�{\KY{���ץ饤�����}}�Ȥ���{\KY{�������}}
-���Ȥ��Ƥ����¿���λ��ͽ�ǵ��Ҥ���Ƥ��ޤ����٥��ȥ������
-�Τ뤦���ǥ٥��������θ������ΤäƤ����ȡ�������������
-����Ƭ����Ƕ����򥤥᡼�����䤹���Ȼפ��ޤ��ΤǾҲ�
-���Ƥ����ޤ�����餫�ʶ�������������ˤ�¿��������ɸ
-��ɬ�פˤʤ�Ȼפ��ͤ⤤��Ǥ��礦�����������ٳ�餫
-�ʶ�������������ˤ�3������н�ʬ�Ǥ���\indindz{��}{����}
-�����������������\pp{\Z{������}}�����ʤ���о��ʤ��ۤɾ���
-�̤Ͼ��ʤ��ʤ�Τǡ����ʤ��������ǳ�餫�ʶ���������
-��ˡ�������Ϻ�����ޤ�����������Ǥ�٥��������Ϲ�
-����Ĥδ�����Ȱ�Ĥ�������\pp{$2+1$��}������и��߻�
-������\prog{Illustrator}�ʤɤǤ褯������������ˤʤ�
-�ޤ������θ�����\Prog{Illustrator}�Υڥ�ġ���˳褫
-����Ƥ��ޤ��Τǡ������������ϳ�ǧ���Ƥ����������ɤ���
-���礦������\Prog{Illustrator}�ξ��ϥ桼���θ�����
-���ս���͡��ʹ��פ��ʤ���Ƥ��ޤ���
+\subsection{曲
+  線の描画}
+\indindz{曲線}{スプライン}\indindz{曲線}{近似}\indindz{曲線}{ベジェ}%
+{\KY{ベクトル画像}}などでは{\KY{ベジェ曲線}}
+とか{\KY{スプライン曲線}}という{\KY{近似曲線}}
+が使われていると多くの参考書で記述されています．ベクトル画像を
+知るうえでベジェ曲線の原理を知っておくと，曲線を描くと
+きに頭の中で曲線をイメージしやすいと思いますので紹介
+しておきます．滑らかな曲線を描くためには多くの点座標
+が必要になると思う人もいるでしょうが，ある程度滑らか
+な曲線を描くためには3点あれば十分です．\indindz{点}{制御}
+曲線を描くための点\pp{\Z{制御点}}が少なければ少ないほど情報
+量は少なくなるので，少ない制御点で滑らかな曲線を描く
+方法が過去に模索されました．その中でもベジェ曲線は高
+々二つの基準点と一つの制御点\pp{$2+1$点}があれば現在私
+たちが\prog{Illustrator}などでよく見かける曲線になり
+ます．この原理が\Prog{Illustrator}のペンツールに活か
+されていますので，お持ちの方は確認していただくと良いで
+しょう．ただ\Prog{Illustrator}の場合はユーザの見えな
+い箇所で様々な工夫がなされています．
 
-��������������ˤ���$n$�Ĥ������������ꤽ��$i$����
-�κ�ɸ��$P_i=(x_i,y_i)$�Ȥ���\equref{bez1}��
-\equref{bez2}��ɽ��������٥��������ȸƤӤޤ���
+曲線を描くためにいま$n$個の制御点がありその$i$番目
+の座標を$P_i=(x_i,y_i)$として\equref{bez1}と
+\equref{bez2}で表す曲線をベジェ曲線と呼びます．
 \begin{eqnarray}
 P(u)&=&\sum^{n-1}_{i=0} P_i\, B_{i, n} (u)\equlab{bez1}\\
 B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
 \end{eqnarray}
-\indindz{�ե����}{Type1}%%
-���줬�٥��������ΰ��̷��Ǥ�������Ȥ���Type1�ե���Ȥ�
-��Ȥ��Ƥ��롩2���٥��������򼨤��ޤ���
-ʿ�̺�ɸ��$P_0=(-1,1)$��$P_1=(0,0)$��$P_2=(1,1)$��
-����Ȥ����\equref{bez1}��\equref{bez2}��ꡤ
+\indindz{フォント}{Type1}%%
+これがベジェ曲線の一般形ですが，例としてType1フォントで
+も使われている？2次ベジェ曲線を示します．
+平面座標に$P_0=(-1,1)$，$P_1=(0,0)$，$P_2=(1,1)$が
+あるとすれば\equref{bez1}と\equref{bez2}より，
 \begin{eqnarray}
  P(u)&=& P_0 B_{0,2} + P_1 B_{1,2} + P_1 B_{1,2} \nonumber\\
      &=& P_0 (1-u)^2 + P_12u(1-u) + P_2 u^2 \equlab{bez3}
 \end{eqnarray}
-�Ȥʤ�\equref{bez3}���Ф���̵����$u$��Ϳ��
-��г�餫�ʶ����������ޤ��������3�����Ǥ�Ʊ
-�ͤ˷׻��Ǥ���Τ������ʼ��Ǥ�����δ��������������
-�٥���������\figref{bez1}���̤�ˤʤ�ޤ���
+となり\equref{bez3}に対して無数の$u$を与え
+れば滑らかな曲線を描けます．これは3次元でも同
+様に計算できるので便利な式です．例の基準点，制御点と
+ベジェ曲線は\figref{bez1}の通りになります．
 \begin{figure}[htbp]
 \begin{center}
 \setlength{\unitlength}{1cm}
@@ -2240,71 +2240,71 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
  \dashline{.1}(4,3)(3,2)
  \qbezier(2,3)(3,2)(4,3)
 \end{picture}
-\caption{�������ȼ�����������٥�������}\figlab{bez1}
+\caption{制御点と式から得られるベジェ曲線}\figlab{bez1}
 \end{center}
 \end{figure}
-���Τ褦�ʸ������ΤäƤ����ȸ�ۤɾҲ𤹤�
-{\LaTeX}��\env{picture}�Ķ��ǻ��ѤǤ���̿���
-�������Ω�Ļ��Ǥ��礦��������{\LaTeX}
-�Ǥ�¿���Υ٥����������������ޥ�ɤϤ�ä�
-�׻��ξ��ʤ����르�ꥺ���ȤäƤ����礬
-����ޤ������ǥХ����ɥ饤�Ф������Ǥ���Ƥ���
-���⤢��ޤ���
+このような原理を知っておくと後ほど紹介する
+{\LaTeX}の\env{picture}環境で使用できる命令の
+理解に役立つ事でしょう．ただし{\LaTeX}
+での多くのベジェ曲線を描くコマンドはもっと
+計算の少ないアルゴリズムを使っている場合が
+ありますし，デバイスドライバに描画を任せている
+事もあります．
 
 
-\subsection{\env{picture}�Ķ��ˤ������}
-{\LaTeX}���Ϥ�Ȥä������Ԥ��ˤ����̤ʴĶ���
-�������Ѥ�\Env{picture}�Ķ��Ǻ�Ȥ�Ȥ��ޤ���
-\env{picture}�Ķ��Ǥϴ��Ȥʤ�Ĺ������Ƥ���
-����Ū�ʵ�Υ�ˤ�ä������Ԥ��ޤ������ΤȤ����
-�Ȥʤ�Ĺ�� \cmd{unitlength}����ޤ���
+\subsection{\env{picture}環境による描画}
+{\LaTeX}の力を使った描画を行うには特別な環境，
+描画専用の\Env{picture}環境で作業を使います．
+\env{picture}環境では基準となる長さを決めてその
+相対的な距離によって描画を行います．このとき基準
+となる長さ \cmd{unitlength}を決めます．
 \begin{Syntax}
 \verb+\begin{picture}+\xy{x}{y}\xy{$x_0$}{$y_0$}\\
-\va{��������}\\
+\va{描画内容}\\
 \verb+\end{picture}+
 \end{Syntax}
-\env{picture}�Ķ���������褷�������Ƥ�
-���Ҥ��ޤ���\env{picture}�Ķ����Ϥ�\qu{\xy{x}{y}}
-��ɬ�ܰ����Ǥ���\qu{\xy{$x_0$}{$y_0$}}��Ǥ�հ����Ǥ���
-\qu{\xy{x}{y}}�ˤϺ�ɸ�ˤ�����\env{picture}�Ķ����礭��
-��������$x$�ǽ�������$y$�ǻ��ꤷ�ޤ���
-����ˤ�ñ�̤ʤɤ��դ����˿��ͤǻ��ꤷ�ޤ���
-\qu{\xy{$x_0$}{$y_0$}}�ˤϸ����ΰ��֤���ꤷ�ޤ���
+\env{picture}環境の中に描画したい内容を
+記述します．\env{picture}環境に渡す\qu{\xy{x}{y}}
+は必須引数ですが\qu{\xy{$x_0$}{$y_0$}}は任意引数です．
+\qu{\xy{x}{y}}には座標における\env{picture}環境の大きさ
+を横方向は$x$で縦方向は$y$で指定します．
+これには単位などを付けずに数値で指定します．
+\qu{\xy{$x_0$}{$y_0$}}には原点の位置を指定します．
 
-���餫�����Ǥ����֤���ˤ� \cmd{put}�� \cmd{multiput}��
-�Ȥ��ޤ���$x$��$y$��ñ�� \cmd{unitlength}��
-��°���ޤ���
+何らかの要素を配置するには \cmd{put}か \cmd{multiput}を
+使います．$x$と$y$は単位 \cmd{unitlength}に
+従属します．
 \begin{Syntax}
-\Cmd{put}\xy{x}{y}\pa{����}\\
+\Cmd{put}\xy{x}{y}\pa{要素}\\
 \Cmd{multiput}\xy{x}{y}\xy{$\Delta{x}$}{$\Delta{y}$}%
-  \pa{���}\pa{����}
+  \pa{回数}\pa{要素}
 \end{Syntax}
-\cmd{put}̿��Ϻ�ɸ\xy{x}{y}��\va{����}���֤�������
-̿��Ǥ���\cmd{multiput}�Ϻ�ɸ\xy{x}{y}������Ȥ���
-����ܤκ�ɸ\xy{$\Delta{x}$}{$\Delta{y}$}��\Z{�٥��ȥ�}
-�Ȥ���\xy{$\Delta x$}{$\Delta y$}���Ѳ��̤˱�����
-���Ǥ���ʬ���������֤������֤��ޤ���
-����¾��2���٥������������� \Cmd{qbezier}̿�᤬����ޤ���\zindind{����}{������}
+\cmd{put}命令は座標\xy{x}{y}に\va{要素}を置くだけの
+命令です．\cmd{multiput}は座標\xy{x}{y}を基点とし，
+二つ目の座標\xy{$\Delta{x}$}{$\Delta{y}$}を\Z{ベクトル}
+として\xy{$\Delta x$}{$\Delta y$}の変化量に応じて
+要素を回数分だけ繰り返して配置します．
+この他に2次ベジェ曲線を描く \Cmd{qbezier}命令があります．\zindind{曲線}{の描画}
 \begin{Syntax}
 \Cmd{qbezier}\xy{$x_1$}{$y_1$}\xy{$x_2$}{$y_2$}\xy{$x_3$}{$y_3$}
 \end{Syntax}
-\qu{\xy{$x_1$}{$y_1$}}�������\qu{\xy{$x_2$}{$y_2$}}
-��������\qu{\xy{$x_3$}{$y_3$}}�����Ȥ���2���٥���
-�����������ޤ���
+\qu{\xy{$x_1$}{$y_1$}}を始点，\qu{\xy{$x_2$}{$y_2$}}
+を基準点，\qu{\xy{$x_3$}{$y_3$}}を終点として2次ベジェ
+曲線を描きます．
 
-\va{����}�ˤϼ��Τ褦�ʥ��ޥ�ɤ�ɸ��Ȥ��ƻȤ��ޤ���
+\va{要素}には次のようなコマンドが標準として使えます．
 \begin{Syntax}
-\Cmd{line}\xy{x}{y}\pa{Ĺ��}\\
-\Cmd{vector}\xy{x}{y}\pa{Ĺ��}\\
-\Cmd{circle*}\pa{ľ��}\\
-\Cmd{oval}\xy{��}{�⤵}\opa{���ֻ���}
+\Cmd{line}\xy{x}{y}\pa{長さ}\\
+\Cmd{vector}\xy{x}{y}\pa{長さ}\\
+\Cmd{circle*}\pa{直径}\\
+\Cmd{oval}\xy{幅}{高さ}\opa{位置指定}
 \end{Syntax}
-\cmd{line}��\qu{\xy{x}{y}}��٥��ȥ�Ȥ���
-\va{Ĺ��}ʬ����ʬ�������ޤ���\cmd{vector}�� \cmd{line}
-�ν�ü��\Z{���}��Ĥ�����ΤǤ���
-\cmd{circle*}��ľ�¤���ꤷ��\Z{��}�������ޤ���\indindz{����}{�ߤ�}%
-�������ꥹ��\qu{\texttt*}���դ��ʤ��ȱߤ���¦���ɤ�Ĥ֤���ޤ���
-\cmd{oval}�����ȹ⤵����ꤷ���ʱߤ������ޤ���\indindz{����}{�ʱߤ�}%
+\cmd{line}は\qu{\xy{x}{y}}をベクトルとして
+\va{長さ}分の線分を描きます．\cmd{vector}は \cmd{line}
+の終端に\Z{矢印}をつけたものです．
+\cmd{circle*}は直径を指定して\Z{円}を描きます．\indindz{描画}{円の}%
+アスタリスク\qu{\texttt*}を付けないと円の内側が塗りつぶされません．
+\cmd{oval}は幅と高さを指定して楕円を描きます．\indindz{描画}{楕円の}%
 \begin{InOut}
 \setlength{\unitlength}{1mm}
 \begin{picture}(40,30)
@@ -2313,11 +2313,11 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
 \put(20,20){\circle{5}}
 \end{picture} 
 \end{InOut}
-�ʱߤ����� \cmd{oval}̿���Ǥ�հ�����\va{���ֻ���}
-�ˤ��ʱߤΤɤ���ʬ����Ϥ��뤫����ꤷ�ޤ���
-���줾�����\qu{\str t}������\qu{\str b}��
-��\qu{\str l}����\qu{\str r}�Ȥʤꡤʣ��Ū��
-���ѤǤ��ޤ���
+楕円を描く \cmd{oval}命令の任意引数の\va{位置指定}
+には楕円のどの部分を出力するかを指定します．
+それぞれ上部\qu{\str t}，下部\qu{\str b}，
+左\qu{\str l}，右\qu{\str r}となり，複合的に
+使用できます．
 \begin{InOut}
 \setlength{\unitlength}{1mm}
 \begin{picture}(50,30)
@@ -2328,11 +2328,11 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
 \put(12,8){\oval(10,15)[br]}
 \end{picture} 
 \end{InOut}
-\env{picture}�Ķ���Ǥ�����������
-\Cmd{thinlines}�� \Cmd{thicklines}����Ĥ�Ĵ��
-���ޤ���\cmd{thinilnes}�Τۤ����٤� \cmd{thicklines}
-�Τۤ��������ʤ�ޤ���\env{picture}�Ķ��������
-����ʬ��ͭ���ˤʤ�ޤ���
+\env{picture}環境中での線の太さは
+\Cmd{thinlines}と \Cmd{thicklines}の二つで調整
+します．\cmd{thinilnes}のほうが細く \cmd{thicklines}
+のほうが太くなります．\env{picture}環境中の全て
+の線分に有効になります．
 \begin{InOut}
 \setlength{\unitlength}{1mm}
 \begin{picture}(50,30)
@@ -2346,8 +2346,8 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
 \end{InOut}
 
 \begin{Exe}
-\figref{bez1}�� \env{picture} �Ķ������褹��ˤϤɤ������
-�ɤ�����ͤ��Ƥ�����������򼨤��Ȱʲ��Τ褦�ʵ��Ҥˤʤ�ޤ���
+\figref{bez1}を \env{picture} 環境で描画するにはどうすれば
+良いかを考えてください．例を示すと以下のような記述になります．
 
 \C*{makebox}%
 \begin{InTeX}
@@ -2357,34 +2357,34 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
  \put(6.2,2){\makebox(0,0)[b]{$x$}}
  \put(3,0){\vector(0,1){4}}
  \put(3.2,4){\makebox(0,0)[t]{$y$}}
- \multiput(0,1.9)(1,0){6}{\line(0,1){.2}}%���
- \multiput(2.9,0)(0,1){4}{\line(1,0){.2}}%���
+ \multiput(0,1.9)(1,0){6}{\line(0,1){.2}}%後述
+ \multiput(2.9,0)(0,1){4}{\line(1,0){.2}}%後述
  \put(2,3){\circle*{.1}}
  \put(2,3.1){\makebox(0,0)[b]{$P_0$}}
- \dashline{.1}(2,3)(3,2)%���
+ \dashline{.1}(2,3)(3,2)%後述
  \put(3,2){\circle*{.1}}
  \put(2.8,1.9){\makebox(0,0)[t]{$P_1$}}
  \put(3.2,1.9){\makebox(0,0)[t]{$O$}}
  \put(4,3){\circle*{.1}}
  \put(4,3.1){\makebox(0,0)[b]{$P_2$}}
- \dashline{.1}(4,3)(3,2)%���
+ \dashline{.1}(4,3)(3,2)%後述
  \qbezier(2,3)(3,2)(4,3)
 \end{picture}
 \end{InTeX}
 
 \end{Exe}
 
-\subsection{\env{picture}�Ķ��γ�ĥ����1\zdash \sty{epic}}
-{\LaTeX}�Ǥ�ɸ���\env{picture}�Ķ��Υ��ޥ�ɤ�
-�ǥХ����˰�¸���ʤ��Τ�������������ΤǤ�����
-����ǤϤ��ޤ�ˤ�ɽ���Ϥ�˳�����Τ������Ǥ���
-�����Ǥ���\env{picture}�Ķ��γ�ĥ���Ԥ���
-���ޤ�����\env{picture}�Ķ��˸¤餺{\LaTeX}�Ǥ�����
-��1980ǯ���Ⱦ���餵�ޤ��ޤ���ˡ���Ϻ����졤��ĥ
-����³���ޤ�����������Ǥ�\Person{Sunil}{Podar}�ˤ��
-\Sty{epic}��\env{picture}�Ķ��γ�ĥ�ǤȤ��Ƥ���ɾ��
-����ޤ���\sty{epic}�Ǥ�{\LaTeX}��\env{picture}�Ķ�
-�ǻ��ѤǤ��륳�ޥ�ɤΤۤ��˰ʲ���̿�᤬��ĥ����Ƥ��ޤ���
+\subsection{\env{picture}環境の拡張その1\zdash \sty{epic}}
+{\LaTeX}での標準の\env{picture}環境のコマンドも
+デバイスに依存しないので汎用性があるのですが，
+それではあまりにも表現力に乏しいのが現状です．
+そこでこの\env{picture}環境の拡張が行われて
+きました．\env{picture}環境に限らず{\LaTeX}での描画
+は1980年代後半からさまざまな方法が模索され，拡張
+され続けました．その中でも\Person{Sunil}{Podar}による
+\Sty{epic}は\env{picture}環境の拡張版としては定評が
+あります．\sty{epic}では{\LaTeX}の\env{picture}環境
+で使用できるコマンドのほかに以下の命令が拡張されています．
 \begin{quote}% underfull
 \begin{tabular}{lllll}
 \Cmd{multiputlist}&\Cmd{matrixput}&\Cmd{grid}&\Cmd{picsquare}&\Cmd{dottedline}\\
@@ -2393,20 +2393,20 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
 
 
 \end{quote}
-���Τۤ���\Env{dottedjoin}��\Env{dashjoin}��\Env{drawjoin}��
-���ĤδĶ����������Ƥ��ޤ���
-��ɸ���Ѳ��̤�\xy{$\Delta{x}$}{$\Delta{y}$}�Ȥ���ʣ����
-���ܤ����֤��� \cmd{multiputlist}̿�᤬����ޤ���
+このほかに\Env{dottedjoin}，\Env{dashjoin}，\Env{drawjoin}の
+三つの環境が定義されています．
+座標の変化量を\xy{$\Delta{x}$}{$\Delta{y}$}として複数の
+項目を配置する \cmd{multiputlist}命令があります．
 \begin{Syntax}
 \Cmd{multiputlist}\xy{x}{y}\xy{$\Delta{x}$}{$\Delta{y}$}%
-   \opa{tbrl}\pa{ʣ���ι���}
+   \opa{tbrl}\pa{複数の項目}
 \end{Syntax}
-% tbrl �Τ����줫����ꤷ�ޤ���
-��ɸ��˹���Τ褦�����Ǥ򷫤��֤������֤��� \cmd{matrixput}̿��⤢��ޤ���
+% tbrl のいずれかを指定します．
+座標上に行列のように要素を繰り返して配置する \cmd{matrixput}命令もあります．
 \begin{Syntax}
 \Cmd{matrixput}\xy{x}{y}\xy{$\Delta{x_1}$}{$\Delta{y_1}$}%
    \pa{$n_1$}\xy{$\Delta{x_2}$}{$\Delta{y_2}$}%
-   \pa{$n_2$}\pa{����}
+   \pa{$n_2$}\pa{要素}
 \end{Syntax}
 \begin{InOut}
 \setlength{\unitlength}{1pt}
@@ -2414,31 +2414,31 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
 \multiputlist(0,0)(15,10)%
   {0,1,2,3,4,5,6,7,8,9,10}
 \matrixput(0,0)(20,0){7}(0,20)%
-   {5}{\mbox{̤��}}
+   {5}{\mbox{未来}}
 \end{picture} 
 \end{InOut}
-��ɸ�Ϥ�ɽ������Τ˳ʻҤ������ˤ� \cmd{grid}̿�᤬�Ȥ��ޤ���
+座標系を表現するのに格子を描くには \cmd{grid}命令が使えます．
 \begin{Syntax}
-\Cmd{grid}\xy{��}{�⤵}\xy{$\Delta{\text{��}}$}{$\Delta{\text{�⤵}}$}%
-   \opa{$x$��ɸ�ν����,$y$��ɸ�ν����}
+\Cmd{grid}\xy{幅}{高さ}\xy{$\Delta{\text{幅}}$}{$\Delta{\text{高さ}}$}%
+   \opa{$x$座標の初期値,$y$座標の初期値}
 \end{Syntax}
 %\begin{InOut}
 %\begin{picture}(150,100)(0,0)
 %\put(10,10){\grid(50,50)(10,10)[0,0]}
 %\end{picture} 
 %\end{InOut}
-\indindz{����}{�ޤ�����}\indindz{����}{������}\indindz{����}{������}%%
-¾�ˤ������������ʤɤ��������ޥ�ɤ�����ޤ���
+\indindz{描画}{折れ線の}\indindz{描画}{破線の}\indindz{描画}{点線の}%%
+他にも点線や破線などを描くコマンドがあります．
 \begin{Syntax}
-\Cmd{dottedline}\opa{���μ���}\pa{�ֳ�}%
+\Cmd{dottedline}\opa{点の種類}\pa{間隔}%
    \xy{$x_1$}{$y_1$}\xy{$x_2$}{$y_2$}$\cdots$\xy{$x_n$}{$y_n$}\\
-\Cmd{dashline}\pa{������Ĺ��}\opa{�ֳ�}%
+\Cmd{dashline}\pa{破線の長さ}\opa{間隔}%
    \xy{$x_1$}{$y_1$}\xy{$x_2$}{$y_2$}$\cdots$\xy{$x_n$}{$y_n$}\\
 \Cmd{drawline}\xy{$x_1$}{$y_1$}\xy{$x_2$}{$y_2$}$\cdots$\xy{$x_n$}{$y_n$}
 \end{Syntax}
-\cmd{dottedline}��������\cmd{dashline}��������
-\cmd{drawline}��\Z{�ޤ���}����������˻Ȥ��ޤ���\Z{����}��\Z{����}��
-�ޤ�Ƥ⹽���ޤ���
+\cmd{dottedline}は点線を，\cmd{dashline}は破線を，
+\cmd{drawline}は\Z{折れ線}を描くために使います．\Z{点線}や\Z{破線}は
+折れても構いません．
 \begin{InOut}
 \setlength{\unitlength}{1pt}
 \begin{picture}(150,120)(0,0)
@@ -2453,36 +2453,36 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
 \end{picture} 
 \end{InOut}
 
-\subsection{\env{picture}�Ķ��γ�ĥ����2\zdash \sty{eepic}}
-\Person{Sunil}{Podar}�ˤ��\Sty{epic}����ɡ���ĥ������ΤȤ��ơ�
-\Person{Conrad}{Kwok}�κ�������\Sty{eepic}������ޤ��������\sty{epic}��
-���ɡ���ĥ�ǤǤ���ޤ��Τǻ��Ѥ���Ȥ��ϼ��Τ褦��\sty{epic}������ɤ߹�
-��Ǥ����ޤ���
+\subsection{\env{picture}環境の拡張その2\zdash \sty{eepic}}
+\Person{Sunil}{Podar}による\Sty{epic}を改良・拡張したものとして，
+\Person{Conrad}{Kwok}の作成した\Sty{eepic}があります．これは\sty{epic}の
+改良・拡張版でありますので使用するときは次のように\sty{epic}も先に読み込
+んでおきます．
 
 \begin{InTeX}
 \usepackage{epic,eepic} 
 \end{InTeX}
 
-{\LaTeX}��\env{picture}�Ķ��ǻ��ѤǤ��� \cmd{line}��
-\cmd{circle*}��\cmd{oval}�γ�ĥ���Ԥ��Ƥ��ޤ���
-\sty{epic}�Υ��ޥ�ɤ����ƺ��������Ƥ��ޤ���
-\sty{eepic}�Ϥ�����̿���{\Tpic}���ڥ������֤�����
-�Ƥ��ޤ��Τ������ϤϹ⤤�ΤǤ������ǥХ����ɥ饤�Ф�
-{\Tpic}���ڥ������б����Ƥ���ɬ�פ�����ޤ���
-\prog{dviout}��\prog{dvips}��\prog{\Dvipdfmx}�ʤɤ�
-�б����Ƥ���褦�Ǥ����ǥХ����ɥ饤�Фˤ�ä�{\Tpic} 
-���ڥ����β�᤬�㴳�ۤʤ�褦�Ǥ��Τǡ����Ϥ��ǧ����
-�ǥХ��������򤷤Ƥ���������
+{\LaTeX}の\env{picture}環境で使用できる \cmd{line}，
+\cmd{circle*}，\cmd{oval}の拡張が行われています．
+\sty{epic}のコマンドも全て再定義されています．
+\sty{eepic}はこれらの命令を{\Tpic}スペシャルに置き換え
+ていますので描画力は高いのですが，デバイスドライバが
+{\Tpic}スペシャルに対応している必要があります．
+\prog{dviout}，\prog{dvips}，\prog{\Dvipdfmx}などは
+対応しているようです．デバイスドライバによって{\Tpic} 
+スペシャルの解釈が若干異なるようですので，出力を確認して
+デバイスを選択してください．
 
-���������˴ؤ��륳�ޥ�ɤ��������������Ƥ��ޤ���
+線の太さに関するコマンドが新たに定義されています．
 \begin{Syntax}
-\Cmd{allinethickness}\pa{����} \\
+\Cmd{allinethickness}\pa{太さ} \\
 \Cmd{Thicklines}
 \end{Syntax}
-\cmd{allinethickness}�Ϥ���̿���Ȥä����
-\env{picture}�Ķ���ˤ������Ƥ������������ѹ����ޤ���
-\Cmd{Thicklines}�� \Cmd{thicklines}���⤳�Υ��ޥ�ɤ�
-���������������������������ޤ���
+\cmd{allinethickness}はこの命令を使った後の
+\env{picture}環境中にある全ての線の太さを変更します．
+\Cmd{Thicklines}は \Cmd{thicklines}よりもこのコマンドを
+宣言した後の線の太さを太くします．
 \setlength\unitlength{1pt}
 \begin{InOut}
 \begin{picture}(100,100)(0,0)
@@ -2493,10 +2493,10 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
 \Thicklines \VP{2}{1}
 \end{picture} 
 \end{InOut}
-\sty{eepic}�Ǥ� \cmd{drawline}���� \C{path}��Ȥ���
-\C{qbezier}���� \C{spline}��Ȥ����ɤ��Ǥ��礦��
-\C{spline}�ϻ����Ƚ����ʳ����������Ȥ���
-\Z{Chaikin����}�������ޤ���\indindz{����}{Chaikin}
+\sty{eepic}では \cmd{drawline}よりも \C{path}を使い，
+\C{qbezier}よりも \C{spline}を使うと良いでしょう．
+\C{spline}は始点と終点以外は制御点として
+\Z{Chaikin曲線}を描きます．\indindz{曲線}{Chaikin}
 \begin{Syntax}
 \Cmd{path}\xy{$x_1$}{$y_1$}\xy{$x_2$}{$y_2$}%
    $\cdots$\xy{$x_n$}{$y_n$}\\
@@ -2513,21 +2513,21 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
  (150,50)(100,100)(25,0)(55,75)
 \end{picture} 
 \end{InOut}
-������ʱߤ������Τ� \cmd{ellipse}��\index{��}\index{�߸�}%
-�̤������ˤ� \cmd{arc}��Ȥ��ޤ���
-�������ꥹ�����դ�����ΰ���ɤ�Ĥ֤��ޤ���
+卵形の楕円を描くのに \cmd{ellipse}を，\index{弧}\index{円弧}%
+弧を描くには \cmd{arc}を使います．
+アスタリスクを付けると領域を塗りつぶします．
 \begin{Syntax}
-\Cmd{ellipse*}\pa{��}\pa{�⤵}\\
-\Cmd{arc}\pa{Ĺ��}\pa{��������}\pa{��������}
+\Cmd{ellipse*}\pa{幅}\pa{高さ}\\
+\Cmd{arc}\pa{長さ}\pa{始点角度}\pa{終点角度}
 \end{Syntax}
-\va{��������}���ͤ�$[0,\pi/2]$���ϰϤˡ�
-\va{��������}���ͤ�$[\text{��������},\text{��������}+2\pi]$
-���ϰϤˤ��ޤ����ΰ���ɤ�Ĥ֤��ˤ� \C{filltype} ��Ȥ��ޤ���
-�������ꥹ�����դ������� \Cmd{circle*}
-�� \Cmd{ellipse*}���ΰ���ɤ�Ĥ֤������\qu{\str{black}}��
-\qu{\str{white}}��\qu{\str{shade}}�λ��Ĥ������򤷤ޤ���
+\va{始点角度}の値は$[0,\pi/2]$の範囲に，
+\va{終点角度}の値は$[\text{始点角度},\text{始点角度}+2\pi]$
+の範囲にします．領域の塗りつぶしには \C{filltype} を使います．
+アスタリスクを付けた場合の \Cmd{circle*}
+と \Cmd{ellipse*}の領域の塗りつぶす種類を\qu{\str{black}}，
+\qu{\str{white}}，\qu{\str{shade}}の三つから選択します．
 \begin{Syntax}
-\Cmd{filltype}\pa{����}
+\Cmd{filltype}\pa{種類}
 \end{Syntax}
 %   \blacken        \whiten         \shade
 %   \texture        \filltype{type} type=black|white|shade
@@ -2541,28 +2541,28 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
 \end{picture} 
 \end{InOut}
 
-\subsection{\env{picture}�Ķ��γ�ĥ����3\zdash \sty{pict2e}}
-\person{Hubert}{G\"a\ss lein}��
-\Person{Rolf}{Niepraschk}�ˤ��\Sty{pict2e}��
-\Env{picture}�Ķ��γ�ĥ�Ȥ���2003ǯ���˸�ɽ
-���줿��ΤǤ����ǥХ����ɥ饤�Ф��Ϥ�ڤ��
-\env{picture}�Ķ��ǻ��ѤǤ��륳�ޥ�ɤ�����
-���Ƥ��ޤ��������������ޥ�ɤ��������Ƥ��ޤ���
-���ν�
+\subsection{\env{picture}環境の拡張その3\zdash \sty{pict2e}}
+\person{Hubert}{G\"a\ss lein}と
+\Person{Rolf}{Niepraschk}による\Sty{pict2e}は
+\Env{picture}環境の拡張として2003年頃に公表
+されたものです．デバイスドライバの力を借りて
+\env{picture}環境で使用できるコマンドを再定義
+していますし，新しいコマンドも定義されています．
+今の所
 \begin{quote}
  \str{dvips} \str{xdvi} \str{pdftex} \str{vtex} \str{dvipdfm}
 \end{quote}
-�ʤɤΥǥХ����ɥ饤�Ф򥵥ݡ��Ȥ��Ƥ��ޤ���
-\env{picture}�Ķ��ˤ�����ۤȤ�ɤΥ��ޥ�ɤ�
-��ĥ���Ƥ���ޤ���\cmd{circle}��������ߤ��礭���ˤ�\indindz{����}{�ߤ�}%
-���¤Ϥ���ޤ��󡥥٥��������˴ؤ��Ƥ� \cmd{cbezier}̿��
-���ɲä���ޤ�����
+などのデバイスドライバをサポートしています．
+\env{picture}環境におけるほとんどのコマンドを
+拡張してあります．\cmd{circle}で描ける円の大きさにも\indindz{描画}{円の}%
+制限はありません．ベジェ曲線に関しては \cmd{cbezier}命令
+が追加されました．
 \begin{Syntax}
 \Cmd{qbezier}\xy{$x_1$}{$y_1$}\xy{$x_2$}{$y_2$}\xy{$x_3$}{$x_3$}\\
 \Cmd{cbezier}\xy{$x_1$}{$y_1$}\xy{$x_2$}{$y_2$}\xy{$x_3$}{$x_3$}\xy{$x_4$}{$x_4$}\\
 \end{Syntax}
-\cmd{qbezier}��\Z{2���٥�������}�ѡ�\cmd{cbezier}��\Z{3���٥���������}
-��̿��Ǥ���\indindz{����}{2���٥���}\indindz{����}{3���٥���}%
+\cmd{qbezier}は\Z{2次ベジェ曲線}用，\cmd{cbezier}は\Z{3次ベジェ曲線用}
+の命令です．\indindz{曲線}{2次ベジェ}\indindz{曲線}{3次ベジェ}%
 \begin{InOut}
 \setlength{\unitlength}{1pt}
 \begin{picture}(100,100)(0,0)
@@ -2572,42 +2572,42 @@ B(u)&=&\frac{n!}{i!\, (n-i)!}u^i(1-u)^{n-i}\equlab{bez2}
 \end{picture}
 \end{InOut}
 
-\section{¾�Υץ������ˤ������}
-�����Ȥ��Ƥ�������ġ����Ҳ𤷤ޤ���
-�ʲ�������ġ���Ǻ��������ޤʤɤ�
-���줾����ꤵ�줿��ˡ�ǥǥХ����ɥ饤�Ф�
-Ŭ�ڤ˲��Ǥ�����֤ˤʤ���Фʤ�ޤ���
+\section{他のプログラムによる描画}
+広く使われている描画ツールを紹介します．
+以下の描画ツールで作成した図などは
+それぞれ指定された方法でデバイスドライバが
+適切に解釈できる状態になければなりません．
 
 
-\subsection{\texorpdfstring{\Tpic}{Tpic}�ˤ������}
+\subsection{\texorpdfstring{\Tpic}{Tpic}による描画}
 
-Unix��OS������ġ���Ȥ���\Person{Brian}{Kernighan}��
-��ȯ����\Prog[PIC]{\PIC}������ޤ��������
-\Person{Tim}{Morgan}��{\TeX}�˰ܿ�����\Prog[Tpic]{\Tpic}
-��Ȥ��ȴ�ñ�ʿ޷��ʤ�Ф��������������Ǥ��ޤ���
-Unix��OS����äƤ���ʤ��\prog{\PIC}�Ȥ����ץ�
-����बƳ������Ƥ���Ǥ��礦������\prog{\PIC}��
-���ܸ첽����Ƥ��ʤ����⤷��ʤ��Τ����դ��Ƥ���������
-{\Tpic}�ϤۤȤ�ɤε�ǽ��{\TeX}�ǤϤʤ��ǥХ���
-�ɥ饤�Ф�Ǥ���Ƥ��ޤ���������̿��� \cmd{special}
-̿�����˵��Ҥ���Ƥ��ޤ���{\Tpic}�ν��Ϥ�����ͭ��
-̿���{\Tpic}���ڥ����ȸ����ޤ���{\Tpic}���ڥ�����
-�б����Ƥ���ɥ饤�Ф�\prog{dvips}��\prog{dviout}��
-\prog{\Dvipdfmx}�ʤɤǤ���¿���Υɥ饤�Ф��б�
-���Ƥ��ޤ������ǥХ����ɥ饤�Фˤ����ΰ㤤�ʤ�
-�⤢��ޤ��ΤǼ㴳���դ�ɬ�פǤ��礦��
+Unix系OSの描画ツールとして\Person{Brian}{Kernighan}が
+開発した\Prog[PIC]{\PIC}があります．これを
+\Person{Tim}{Morgan}が{\TeX}に移植した\Prog[Tpic]{\Tpic}
+を使うと簡単な図形ならばすぐに描く事ができます．
+Unix系OSを持っているならば\prog{\PIC}というプロ
+グラムが導入されているでしょう．ただ\prog{\PIC}は
+日本語化されていないかもしれないので注意してください．
+{\Tpic}はほとんどの機能を{\TeX}ではなくデバイス
+ドライバに任せています．これらの命令は \cmd{special}
+命令の中に記述されています．{\Tpic}の出力する特有な
+命令を{\Tpic}スペシャルと言います．{\Tpic}スペシャルに
+対応しているドライバは\prog{dvips}や\prog{dviout}，
+\prog{\Dvipdfmx}などです．多くのドライバが対応
+していますが，デバイスドライバによる解釈の違いなど
+もありますので若干注意が必要でしょう．
 
 \begin{Exe}\label{exe:tpicsample}
-�㤨��\figref{tpicsample}�Τ褦�ʿޤ�����������Ȥ��ޤ��礦��
+例えば\figref{tpicsample}のような図を作成したいとしましょう．
 \begin{figure}[htbp]
 \begin{center}
  %\input{tpicsample}{\box\graph}
- \includegraphics[width=\linewidth]{images/tpicsample}
- \caption{\Tpic �λ�����}\figlab{tpicsample}
+ \includegraphics[width=\linewidth]{images/tpicsample.pdf}
+ \caption{\Tpic の使用例}\figlab{tpicsample}
 \end{center}
 \end{figure}
-{\PIC}�����ϥե�����\fl{tpicsmpl.pic}�˰ʲ���
-�褦�ʵ��Ҥ򤷤ޤ���
+{\PIC}の入力ファイル\fl{tpicsmpl.pic}に以下の
+ような記述をします．
 
 \begin{InText}
 .PS
@@ -2623,15 +2623,15 @@ Unix��OS����äƤ���ʤ��\prog{\PIC}�Ȥ����ץ�
 .PE
 \end{InText}
 
-����\fl{tpicsmpl.pic}��\prog{pic}��{\TeX}�Ѥ˽���
-���뤿��� \copt{-t} ���ץ������դ���
+この\fl{tpicsmpl.pic}を\prog{pic}で{\TeX}用に出力
+するために \copt{-t} オプションを付けて
 \begin{InTerm}
    \type{pic -t tpicsmpl.pic > tpicsmpl.tex}
 \end{InTerm}
-�Ȥ������\fl{tpicsmpl.tex}��� \cmd{graph}�˿޷�
-����Ǽ����ޤ��������\fl{file.tex}�ǻ��Ѥ��뤿��ˤ�
-���Τ褦�� \cmd{input}̿��ǥե�������ɤ߹��ߡ�\cmd{box}̿���
-�ºݤ˿ޤ���Ѥ��ޤ���
+とする事で\fl{tpicsmpl.tex}中の \cmd{graph}に図形
+が格納されます．これを\fl{file.tex}で使用するためには
+次のように \cmd{input}命令でファイルを読み込み，\cmd{box}命令で
+実際に図を使用します．
 
 \begin{InTeX}
 \input{tpicsmpl} 
@@ -2640,86 +2640,86 @@ Unix��OS����äƤ���ʤ��\prog{\PIC}�Ȥ����ץ�
 \end{center}
 \end{InTeX}
 
-����Ȥ��ξ������·���ǥ���դ������Ǥ��ޤ���
-Ŭ��\env{figure}�Ķ��������ʤɤ��ޤ���
+するとその場所に中央揃えでグラフを挿入できます．
+適宜\env{figure}環境に入れるなどします．
 \end{Exe}
 
 \begin{Prob}
-����~\ref{exe:tpicsample}�Ǻ��������ե����� \fl{tpicsmpl.tex}
-�����ľ�ܱ������ƤߤƤ�������������ȤɤΤ褦�ʵ��Ҥ�����Τ���
-��ǧ�Ǥ���Ȼפ��ޤ���
+例題~\ref{exe:tpicsample}で作成したファイル \fl{tpicsmpl.tex}
+の中を直接閲覧してみてください．するとどのような記述があるのかを
+確認できると思います．
 
-����Ū�ˤϿ�¿���� \C{special} ̿���Ȥäơ�\str{pn}, \str{pa},
-\str{fp}, \str{sh}��ǥХ����ɥ饤�Ф��Ϥ��Ƥ���Ȥ������ˤʤäƤ��ޤ���
-�����ǡ��㤨��`\verb|\special{pa 4500 0}|'�Τ褦�ʵ��Ҥ򤤤��Ĥ�������
-�����Ȥ��Ƥߤơ�����̿�᤬�ɤΤ褦��������äƤ���Τ����ͤ��ƤߤƤ���
-������
+基本的には数多くの \C{special} 命令を使って，\str{pn}, \str{pa},
+\str{fp}, \str{sh}をデバイスドライバに渡しているという事になっています．
+そこで，例えば`\verb|\special{pa 4500 0}|'のような記述をいくつかコメント
+アウトしてみて，その命令がどのような役割を持っているのか，考えてみてくだ
+さい．
 \end{Prob}
 
 \begin{Prob}
-\unixos �Ǥ���Х��󥽡��뤫�� \type{man pic}�Ȥ��ơ��ɤΤ褦��
-ɽ��ǽ�Ϥ�����Τ����ǧ���ƤߤƲ�����������ˤ�ꡤ
-\str{for}, \str{if}, \str{sin}, \str{cos} ���Υ��ޥ�ɤ�
-���ѤǤ������ʬ����Ȼפ��ޤ���
+\unixos であればコンソールから \type{man pic}として，どのような
+表現能力があるのかを確認してみて下さい．これにより，
+\str{for}, \str{if}, \str{sin}, \str{cos} 等のコマンドが
+使用できる事が分かると思います．
 \end{Prob}
 
 
-\subsection{�᥿������ץ������}
-\zindind{�ե����}{�Υǥ�����}%
-\Person{Donald}{Knuth}���ե���ȥǥ������Ѥ˳�ȯ
-����\Prog[MetaFont]{\MF}������ޤ���������Ф�
-��\Person{John}{Hobby}������˴ؤ��륢�르�ꥺ���%
-�ɲä����ꡤ���Ϸ�����EPS�ˤ���\Prog[MetaPost]{\MP}
-�Ȥ�������ץ�������ȯ���ޤ�����{\MF}��{\TeX}
-�Υե���ȷ����ե�����\Va{file}{gf}����Ϥ���Τ�
-�Ф���{\MP}��EPS�����ե�����\Va{file}{n}�����
-����ΤǺ��Ǥ�{\MP}�������Ȥ�줤�ޤ���
-{\MP}�˴ؤ������ܸ����Ͼ��ʤ��Τ������Ǥ���
-������{\MF}�����ѹ����ɲä��줿�ս꤬���ä�
-�Ȥ��Ƥ⡤\Person{Donald}{Knuth}��
-\emph{\MF book}~\cite{metafontbook}�����ͤˤ�
-��Ȼפ��ޤ���
+\subsection{メタな描画プログラム}
+\zindind{フォント}{のデザイン}%
+\Person{Donald}{Knuth}がフォントデザイン用に開発
+した\Prog[MetaFont]{\MF}があります．これに対し
+て\Person{John}{Hobby}が描画に関するアルゴリズムを%
+追加したり，出力形式をEPSにした\Prog[MetaPost]{\MP}
+という描画プログラムを開発しました．{\MF}は{\TeX}
+のフォント形式ファイル\Va{file}{gf}を出力するのに
+対して{\MP}はEPS形式ファイル\Va{file}{n}を出力
+するので今では{\MP}が広く使われいます．
+{\MP}に関する日本語情報は少ないのが現状です．
+しかし{\MF}から変更・追加された箇所があった
+としても，\Person{Donald}{Knuth}の
+\emph{\MF book}~\cite{metafontbook}が参考にな
+ると思います．
 
-{\MF}�����äȿ��äƤߤޤ��礦�����󥽡��뤫��
+{\MF}をちょっと触ってみましょう．コンソールから
 \begin{InTerm}
    \type{mf} 
 \end{InTerm}
-�Ȥ���ȥ������ꥹ��\qu{\str{*}}�����ɽ�����졤
-�ե���������Ϥ�¥���Ƥ��ޤ���
+とするとアスタリスク\qu{\str{*}}が二つ表示され，
+ファイルの入力を促しています．
 
 \begin{OutTerm}
 This is METAFONT, Version 2.7182 (Web2C 7.3.9)
 **
 \end{OutTerm}
 
-�����Ǥϼ¸�Ū�ˡ�
-\qq{\cmd{relax}}�����Ϥ��Ʋ��Ԥ��ޤ��������
-�������ꥹ������Ĥˤʤ�Ϥ��Ǥ���
+ここでは実験的に，
+\qq{\cmd{relax}}と入力して改行します．すると
+アスタリスクが一つになるはずです．
 \begin{InTerm}
    \type[**]{\relax}
 \end{InTerm}
-����ǽ����������Ǥ����Ȥꤢ��������ɽ�����Ƥߤޤ��礦��
+これで準備は万全です．とりあえず点を表示してみましょう．
 \begin{InTerm}
    \type[*]{drawdot (0,0); showit;}
 \end{InTerm}
-���٤�ľ�������������
+今度は直線を描くために
 \begin{InTerm}
    \type[*]{draw (0,0)..(100,0); showit;}
 \end{InTerm}
-�Ȥ��Ƥߤޤ��礦�������ʤɤ�
+としてみましょう．曲線などは
 \begin{InTerm}
    \type[*]{draw (0,100)..(100,100)..(100,0); showit;}
 \end{InTerm} 
-�Ȥ����ʷ�ϵ����Ĥ����Ǥ��礦��
-��λ����Ȥ���
+とすると雰囲気がつかめるでしょう．
+終了するときは
 \begin{InTerm}
    \type[*]{end.}
 \end{InTerm}
-�����Ϥ��ޤ���
+と入力します．
 
-���٤�{\MP}�򾯤��θ����Ƥߤޤ��礦��\qu{\prog{mp}}
-��\qu{\prog{mpost}}�򥳥󥽡��뤫��¹Ԥ�����ɤ��Ϥ��Ǥ���
-���٤�{\MP}�Υե�����\fl{hoge.mp}���Ѱդ��ޤ���
+今度は{\MP}を少し体験してみましょう．\qu{\prog{mp}}
+か\qu{\prog{mpost}}をコンソールから実行すれば良いはずです．
+今度は{\MP}のファイル\fl{hoge.mp}を用意します．
 
 \begin{InText}
 beginfig(1)
@@ -2730,41 +2730,41 @@ endfig;
 end. 
 \end{InText}
 
-����򸫤Ƥⲿ���ʤ�����狼��ޤ��󤬡�
-�Ȥꤢ������¸���Ƥ����ޤ������󥽡��뤫��
+これを見ても何がなんだかわかりませんが，
+とりあえず保存しておきます．コンソールから
 \begin{InTerm}
 \type{mpost hoge.mp}
 \end{InTerm}
-�Ȥ��ޤ������������EPS������\fl{hoge.1}������
-����ޤ��ΤǤ�������������\prog{\GS}�ʤɤ�
-�����\figref{mpsample}�Τ褦�ʱߤȤ��αߤ�
-���ܤ���ľ�������ջ��ѷ���ɽ������ޤ���
+とします．そうするとEPS形式の\fl{hoge.1}が作成
+されますのでご覧ください．\prog{\GS}などで
+見ると\figref{mpsample}のような円とその円に
+内接する直角二等辺三角形が表示されます．
 \begin{figure}[htbp]
  \begin{center}
   \includegraphics[clip,bb={74 74 225 225}]{images/mpsample}
-  \caption{{\protect\MP}�ν�����}\figlab{mpsample}
+  \caption{{\protect\MP}の出力例}\figlab{mpsample}
  \end{center}
 \end{figure}
-�Ķ��ˤ�äƤ����ܸ첽���줿{\MP}��Ȥ�����ˤ�
-\prog{mpost}�ǤϤʤ�\prog{jmpost}��Ȥ�����
-�ʤ뤫�⤷��ޤ���\Hito{��ƣ}{μ}��{\pTeX}��
-�ȤäƤ���Windows������\prog{jmpost}�ΤϤ��Ǥ���
+環境によっては日本語化された{\MP}を使うためには
+\prog{mpost}ではなく\prog{jmpost}を使う事に
+なるかもしれません．\Hito{角藤}{亮}の{\pTeX}を
+使っているWindowsの方は\prog{jmpost}のはずです．
 
 
 \subsection{\textsf{PSTricks}}
-\Person{Timothy}{Zandt}��ˤ��\Sty{PSTricks}�� \cmd{special}̿
-�����{\PS}̿��򵭽Ҥ�����ˤ�ä�{\PS}�����赡ǽ��
-{\laTEX}�ǻȤ���褦�ˤ���ѥå������Ǥ���{\PS}̿
-���¿�Ѥ��������ǥХ����ɥ饤�ФȤ���\Prog{dvips}
-�ʤɤ����ꤷ�Ƥ�����{\PS}�б��ץ�󥿤Ǥλ��Ѥ��侩����
-�ޤ���\sty{PSTricks}�ξܤ����Ȥ��������ܸ�����70�ڡ���ʬ��
-\wasyo{\GCOMP}\cite{graphicscomp}����4�Ϥ򻲾Ȥ��Ƥ���������
-����Ū�ʥޥ������ɤ߹��ि��ˤ�\sty{PSTricks}�ѥå��������ɤ�
-���ߤޤ�������Υѥå���������̤��ɤ߹������Ǥ��ޤ���
-����Ȥ�����ˤ�\sty{grahics}�ѥå������˴ޤޤ��\Sty{color}
-�ѥå������ǤϤʤ�\Sty{pst-col}�ѥå��������ɤ߹��ߤޤ�������
-�ε�ǽ��Ȥ��Ȥ���\Sty{pst-all}���ɤ߹��ޤ���ɸ��Ū�˰ʲ��Τ�
-���ˤ���Ȥ��ޤ��Ԥ��Ȼפ��ޤ���
+\Person{Timothy}{Zandt}らによる\Sty{PSTricks}は \cmd{special}命
+令中に{\PS}命令を記述する事によって{\PS}の描画機能を
+{\laTEX}で使えるようにするパッケージです．{\PS}命
+令を多用する事からデバイスドライバとして\Prog{dvips}
+などを想定していたり{\PS}対応プリンタでの使用が推奨され
+ます．\sty{PSTricks}の詳しい使い方は日本語訳で70ページ分の
+\wasyo{\GCOMP}\cite{graphicscomp}の第4章を参照してください．
+基本的なマクロを読み込むためには\sty{PSTricks}パッケージを読み
+込みます．特定のパッケージを個別に読み込む事もできます．
+色を使うためには\sty{grahics}パッケージに含まれる\Sty{color}
+パッケージではなく\Sty{pst-col}パッケージを読み込みます．全て
+の機能を使うときは\Sty{pst-all}を読み込ます．標準的に以下のよ
+うにするとうまく行くと思います．
 
 \begin{InTeX}
 \usepackage[dvips]{graphicx}
@@ -2772,13 +2772,13 @@ end.
 \usepackage{pst-all}
 \end{InTeX}
 
-����Ū��\Z{�������ͱ�}��������EPS�Ѵ���\Z{����ǡ������}��
-\Z{�ڹ�¤}��\Z{��ϩ��}��\Z{�ץ��å�}�ʤɤ��ޤ��ޤʻ����Ǥ��ޤ���
-%\kutiref{pstricks}�˾������ܿޤ���򼨤��ޤ���
+具体的に\Z{三次元射影}，画像のEPS変換，\Z{グラデーション}，
+\Z{木構造}，\Z{回路図}，\Z{プロット}などさまざまな事ができます．
+%\kutiref{pstricks}に状態遷移図の例を示します．
 
-\sty{PSTricks}��\Prog[dvipdfmx]{\Dvipdfmx}��
-�Ȥ��ˤϤޤ����ݤ���ˡ�Ȥ���\sty{PSTricks}��
-�Ȥä��������޷����İ��EPS�ե�������Ѵ�������ˡ������ޤ���
+\sty{PSTricks}を\Prog[dvipdfmx]{\Dvipdfmx}で
+使うにはまず面倒な方法として\sty{PSTricks}を
+使って描いた図形を一つ一つEPSファイルに変換する方法があります．
 
 \begin{InTeX}
 \documentclass{jsarticle}
@@ -2788,13 +2788,13 @@ end.
 \pagestyle{empty}
 \begin{document}
 \begin{pspicture}(100,100)
- ��������
+ 描画内容
 \end{pspicture}
 \end{document}
 \end{InTeX}
 
-���Τ褦�ʥե�����\fl{fig1.tex}�������������򥳥󥽡��뤫��
-���Τ褦�ˤ��ޤ���
+このようなファイル\fl{fig1.tex}を作成し，これをコンソールから
+次のようにします．
 \begin{InTerm}
 \type{platex fig1}
 \type{dvipsk -Pdl -E -o fig1.eps fig1}
@@ -2802,22 +2802,22 @@ end.
 \type{egrep} \verb|"^%%BoundingBox:" fig1.eps > fig1.bb|
 \end{InTerm}
 
-�嵭������޷��ο��������ʤ����޷�����Ѥ�����
-{\LaTeX}�θ��Ƥ�PDF�ե�����\fl{fig1.pdf}�Ȥ���
-\sty{graphicx}�� \cmd{includegraphics}��ĥ����ߤޤ���
+上記の操作を図形の数だけこなし，図形を使用したい
+{\LaTeX}の原稿にPDFファイル\fl{fig1.pdf}として
+\sty{graphicx}の \cmd{includegraphics}で張り込みます．
 
 \begin{InTeX}
 \usepackage[dvipdfmx]{graphicx}
 \includegrpahics[bb={0 0 100 100}]{fig1.pdf}
 \end{InTeX}
 
-\Person{CV}{Radhakrishnan}��\Person{CV}{Rajagopal}���
-���\Sty{pdftricks}��Ȥ��Ⱦ����ϳڤˤʤ�ޤ���
-����Ϥ�Ȥ��\prog{pdf\TeX}��\sty{PSTricks}��
-�Ȥ�����Τ�ΤǤ�����\prog{\pLaTeX}�ˤ�ή�ѤǤ�
-�����Ǥ����ޤ���\sty{pdftricks}����°��
-\Prog{pst2pdf}�Ȥ��������륹����ץȤ򾯤��ѹ�
-���ޤ���
+\Person{CV}{Radhakrishnan}と\Person{CV}{Rajagopal}らに
+よる\Sty{pdftricks}を使うと少しは楽になります．
+これはもともと\prog{pdf\TeX}で\sty{PSTricks}を
+使うためのものですが，\prog{\pLaTeX}にも流用でき
+そうです．まずは\sty{pdftricks}に付属の
+\Prog{pst2pdf}というシェルスクリプトを少し変更
+します．
 
 \begin{InText}
 for f in $FIGURES ; do
@@ -2827,291 +2827,291 @@ for f in $FIGURES ; do
 done
 \end{InText}
 
-������ʬ��\qu{\str{latex}}�Ϥ������\qu{\str{platex}}
-�ˤ��ޤ�����\qu{\str{dvips}}�⤴��ʬ�Υ����ƥ��
-�礦�褦���ѹ����Ƥ���������\Prog{epstopdf}��
-�Ѵ�����PDF�ΥХ���ǥ��󥰥ܥå���������Ǥ�����
-������������꤬���ä����ϼ���1�Ԥ��ɲä��Ƥ������ɤ��Ǥ��礦��
+この部分で\qu{\str{latex}}はもちろん\qu{\str{platex}}
+にしますし．\qu{\str{dvips}}もご自分のシステムに
+合うように変更してください．\Prog{epstopdf}で
+変換したPDFのバウンディングボックスは正常ですが，
+何かしらの問題があった時は次の1行も追加しておくと良いでしょう．
 
 \begin{InText}
     egrep "^%%BoundingBox:"      $FILE > $fig.bb 
 \end{InText}
 
-%���Ȥ�
+%あとは
 %\begin{InTerm}
 %   \type{platex file}
 %   \type{pst2pdf file}
 %   \type{platex file}
 %   \type{dvipdfmx file}
 %\end{InTerm}
-%�Τ褦�ʺ�Ȥ򤷤ޤ���
-%\sty{graphicx}��\sty{color}
-%�ѥå��������ɤ߹���Ȥ���
+%のような作業をします．
+%\sty{graphicx}と\sty{color}
+%パッケージを読み込むときは
 %\begin{InText}
 %\usepackage[dvipdfm]{graphicx,color} 
 %\end{InText}
-%�Τ褦��\Option{dvipdfm}���դ��ޤ���
+%のように\Option{dvipdfm}を付けます．
 
 \subsection{Xy-pic}
-\Z{�����������}�ʤɤ������ˤ�\Person{Kristoffer}{Rose}��
-\Person{Ross}{Moore}�ˤ��\Prog[Xy-pic]{\Xy-pic}�ѥå�
-������Ȥ����ɤ��Ǥ��礦��\Z{�������ܿ�}��\Z{�����ȥޥȥ�}��
-\Z{��ϩ��}�ʤɤ����������Ǥ������������줿�����ƥ��
-�ʤäƤ��ޤ����ܺ٤�\wasyo{\GCOMP}\cite{graphicscomp}
-����5�Ϥ򻲾Ȥ��Ƥ���������
+\Z{ダイアグラム}などを描くには\Person{Kristoffer}{Rose}と
+\Person{Ross}{Moore}による\Prog[Xy-pic]{\Xy-pic}パッケ
+ージを使うと良いでしょう．\Z{状態遷移図}や\Z{オートマトン}，
+\Z{回路図}などを描く事ができ非常に洗練されたシステムに
+なっています．詳細は\wasyo{\GCOMP}\cite{graphicscomp}
+の第5章を参照してください．
 
-\subsection{���ؼ������ع�¤��}\zindind{����}{��}\zindind{����}{��¤��}
-���ؼ��䲽�ع�¤������������ˤϡ�\Hito{ƣ��}{�ú�}�ˤ��
-\ruby{\XyMTeX}{�����Ƥ�}�ѥå�������Ȥ����ɤ�
-�Ǥ��礦�������{\LaTeX}��\env{picture}�Ķ���
-\sty{epic}��Ȥäƥ٥󥼥�Ĥ䤽��¾¿���β��ؼ���
-���������Ǥ��ޤ���\Prog[XyMTeX]{\XyMTeX}�ˤĤ���
-�ܤ����Τꤿ������\hito{ƣ��}{�ú�}�ν񤤤�
-\yousyo{\XyMTeX}~\cite{xymtex}�򻲾Ȥ��Ƥ���������
+\subsection{化学式・化学構造式}\zindind{化学}{式}\zindind{化学}{構造式}
+化学式や化学構造式を描くためには，\Hito{藤田}{眞作}による
+\ruby{\XyMTeX}{きゅむてふ}パッケージを使うと良い
+でしょう．これは{\LaTeX}の\env{picture}環境と
+\sty{epic}を使ってベンゼン環やその他多くの化学式を
+描く事ができます．\Prog[XyMTeX]{\XyMTeX}について
+詳しく知りたい方は\hito{藤田}{眞作}の書いた
+\yousyo{\XyMTeX}~\cite{xymtex}を参照してください．
 
 
-%\subsection{�������侭��}
-%��ݡ��Ȥ���ʸ�ǳ����������������ʤɤοޤ�
-%�����ͤϾ������Ȼפ��ޤ������ܤ������Ȥ�
-%\wasyo{\GCOMP}\cite{graphicscomp}����7�Ϥ�
-%��8�Ϥ򻲾Ȥ��Ƥ���������
+%\subsection{チェスや将棋}
+%レポートや論文で楽譜やチェス，将棋などの図を
+%描く人は少数だと思いますが，詳しいことは
+%\wasyo{\GCOMP}\cite{graphicscomp}の第7章と
+%第8章を参照してください．
 %
 % hoge hoge
 
 
-\subsection{����դ�����}\seclab{gnuplot}
-{\LaTeX}�˥���դ���������ˤ��͡�����ˡ��
-����ޤ���Windows�����Ǥʤ��{Excel}�Ǻ�������
-����դ�EPS����¸���������\textsf{graphicx}��
-�å��������ɤ߹���Ȥ�����ˡ\pp{\secref{picture:program}����}������ޤ���
-����ɽ�׻����եȤʤ�ƻȤ������ʤ�����
-\Person{Thomas}{Williams}��\Person{Colin}{Kelley}��ˤ��
-\Prog{Gnuplot}��Ȥ����ɤ��Ǥ��礦��\prog{gnuplot}
-�ϥС������3.7�˴ؤ��Ƥ�\Hito{����}{����}�����С�����
-��3.8�˴ؤ��Ƥ�\Hito{����}{��}���ץ����������ܸ첽��
-����Ƥ��ޤ����ޤ�\prog{gnuplot}�Υޥ˥奢���
-�ؤ��Ƥ�\Hito{����}{�м�}��ˤ�äƹԤ��Ƥ��ޤ�\footnote{\webGplotman}��
+\subsection{グラフの描画}\seclab{gnuplot}
+{\LaTeX}にグラフを挿入するには様々な方法が
+あります．Windowsの方でならば{Excel}で作成した
+グラフをEPSで保存し，それを\textsf{graphicx}パ
+ッケージで読み込むという方法\pp{\secref{picture:program}参照}があります．
+巷の表計算ソフトなんて使いたくない方は
+\Person{Thomas}{Williams}と\Person{Colin}{Kelley}らによる
+\Prog{Gnuplot}を使うと良いでしょう．\prog{gnuplot}
+はバージョン3.7に関しては\Hito{山賀}{正人}が，バージョ
+ン3.8に関しては\Hito{尾田}{晃}がプログラムの日本語化を
+されています．また\prog{gnuplot}のマニュアルに
+関しても\Hito{竹野}{茂治}らによって行われています\footnote{\webGplotman}．
 
-\Z{�����}�Ǥ�\Prog{SciLab}�Ȥ����Τ�����ޤ���
-�ޥ˥奢�뤬\Hito{����}{����}��ˤ�ä����ܸ첽����Ƥ��ޤ�\footnote{\webScilabman}��
+\Z{制御系}では\Prog{SciLab}というのがあります．
+マニュアルが\Hito{大野}{修一}らによって日本語化されています\footnote{\webScilabman}．
 
-\Person{John}{Eaton}��ˤ��\Prog{Octave}�Ȥ����Τ⤢��ޤ�
-�Τ�Ĵ�٤ƤߤƤ���������
+\Person{John}{Eaton}らによる\Prog{Octave}というのもあります
+ので調べてみてください．
 
 \endinput
 
-%�ܽ�Ǥϥ��������Τ���Υץ��åȥ��եȤβ���򤷤ޤ���
-%���Ǥ������λ��ͽ�����ܸ첽�ޥ˥奢�뤬����ޤ��Τǡ�
-%\appref{info}�򻲾Ȥ��Ƥ���������
+%本書ではグラフ描画のためのプロットソフトの解説をしません．
+%すでに沢山の参考書や日本語化マニュアルがありますので，
+%\appref{info}を参照してください．
 
 %
 %
-%\subsection{����Ū�����}
-%�ޤ�{Gnuplot}�����÷��Υ��եȥ������Ǥ������÷��Ȥ������޷��ʤɤ�
-%���ץ����ʤɤ���ꤷ�ʤ���������ǧ���Ƥ������֤Τ��ȤǤ���
-%{Windows}�Ǥ�{Gnuplot}�򥤥󥹥ȡ��뤷��`\texttt{Readme}'���ɤ���塤
-%\texttt{wgnuplot}��¹Ԥ���С�
+%\subsection{基本的な操作}
+%まず{Gnuplot}は対話型のソフトウェアです．対話型とは描く図形などの
+%オプションなどを指定しながら設定を確認していく形態のことです．
+%{Windows}版の{Gnuplot}をインストールし，`\texttt{Readme}'を読んだ後，
+%\texttt{wgnuplot}を実行すれば，
 %\begin{quote}
 %\verb+gnuplot> +
 %\end{quote}
-%�Ȥ������֤ˤ���Ȼפ��ޤ����桼����������Ϥ��Ե����Ƥ�����֤Ǥ���
-%ư����{Unix}�ϤΥ�����˻��Ƥ��ޤ���
-%����󥰥ǥ��쥯�ȥ�γ�ǰ�⤢��ޤ���
-%��λ��\texttt{exit}�Ǥ��Ĥ���ܥ���Ǥ⤫�ޤ��ޤ���
-%������
+%という状態にあると思います．ユーザからの入力を待機している状態です．
+%動きは{Unix}系のシェルに似ています．
+%ワーキングディレクトリの概念もあります．
+%終了は\texttt{exit}でも閉じるボタンでもかまいません．
+%ここで
 %\begin{quote}
 %\verb+gnuplot> help+
 %\end{quote}
-%�Ȥ����{Windows}�ʤ�бѸ�Υإ�פ�ɽ�������Ǥ��礦��
-%����Ĥ��Ǥ狼��䤹����ΤǤ��Τǡ������̤����ɤ�Ǥߤ�
-%���Ȥ򤪴��ᤷ�ޤ���
+%とすれば{Windows}ならば英語のヘルプが表示されるでしょう．
+%例題つきでわかりやすいものですので，一度通して読んでみる
+%ことをお勧めします．
 %
-%��������դ�ɽ�����Ƥߤޤ��礦��
+%何かグラフを表示してみましょう．
 %\begin{quote}
 %\verb+gnuplot>plot sin(x)+
 %\end{quote}
-%�Ȥ�����̥�����ɥ���������sin�ؿ���ɽ�����줿�Ȼפ��ޤ���
-%\subsection{�Ф��륳�ޥ��}
-%�ޤ��Ϥ�������ϲ������Ƥ������ۤ����ɤ����ޥ�ɤ�\tabref{gnuplotcmd}
-%�˵����ޤ����롼��Ȥ��ƥե�����̾��ǥ��쥯�ȥ�̾����٥�̾�ʤɡ�
-%ʸ����ϥ��󥰥륯�����Ȥ����֥륯�����ȤǰϤळ�Ȥ�ɬ�פǤ���
+%とすれば別ウィンドウに正弦波sin関数が表示されたと思います．
+%\subsection{覚えるコマンド}
+%まずはこれだけは押さえておいたほうが良いコマンドを\tabref{gnuplotcmd}
+%に記します．ルールとしてファイル名やディレクトリ名，ラベル名など，
+%文字列はシングルクオートかダブルクオートで囲むことが必要です．
 %\begin{table}[htbp]
-%\caption{{Gnuplot}�δ��ܥ��ޥ��}\tablab{gnuplotcmd}
+%\caption{{Gnuplot}の基本コマンド}\tablab{gnuplotcmd}
 %\begin{center}
 %\begin{tabular}{|l|l|l|}
 %\hline
-%̿�� & ���� & ���� \\
+%命令 & 説明 & 引数 \\
 %\hline
-%\texttt{exit}   & {Gnuplot}��λ���ޤ� & �ʤ� \\
-%\texttt{cd}     & ��ȥե�������ѹ����ޤ� &  '�ǥ��쥯�ȥ�̾'\\
-%\texttt{pwd}    & ���ߤκ�ȥե������ɽ�����ޤ� & �ʤ� \\
-%\texttt{help}   & �إ�פ�ɽ�����ޤ� &  �������\\
-%\texttt{load}   & �ե�������ɤ߹��ߤޤ� &  '�ե�����̾'\\
-%\texttt{plot}   & 2�����Ǵؿ���ǡ�����ץ��åȤ��ޤ� & �ؿ��ʤ� \\
-%\texttt{splot}  & 3�����Ǵؿ���ǡ�����ץ��åȤ��ޤ� & �ؿ��ʤ� \\
-%\texttt{multiplot}&ʣ���δؿ���ǡ������Ĥ����ɽ�����ޤ�& �ؿ��ʤ�\\
-%\texttt{replot} & ����ɽ��������Τ�⤦���٥ץ��åȤ�ľ���ޤ� & �ʤ� \\
-%\texttt{set}    & ���ץ��������ꤷ�ޤ� & ¿�� \\
+%\texttt{exit}   & {Gnuplot}を終了します & なし \\
+%\texttt{cd}     & 作業フォルダを変更します &  'ディレクトリ名'\\
+%\texttt{pwd}    & 現在の作業フォルダを表示します & なし \\
+%\texttt{help}   & ヘルプを表示します &  キーワード\\
+%\texttt{load}   & ファイルを読み込みます &  'ファイル名'\\
+%\texttt{plot}   & 2次元で関数やデータをプロットします & 関数など \\
+%\texttt{splot}  & 3次元で関数やデータをプロットします & 関数など \\
+%\texttt{multiplot}&複数の関数やデータを一つの窓に表示します& 関数など\\
+%\texttt{replot} & 一度表示したものをもう一度プロットし直します & なし \\
+%\texttt{set}    & オプションを設定します & 多種 \\
 %\hline
 %\end{tabular}
 %\end{center}
 %\end{table}
-%�Ȥ⤫����\texttt{plot}�Ȥ������ޥ�ɤǲ��Ǥ������Ȥ������ȤǤ���
-%\texttt{plot}���ޥ�ɤǤ�ʣ���δؿ���ʣ���Υǡ���
-%(\secref{gnuplotdatafile}����)��ץ��åȤ��뤳�Ȥ���ǽ�Ǥ���
-%�ޤ����ѿ�������������`A=35'�ʤɤΤ褦��ñ��ˤǤ��ޤ���
+%ともかく，\texttt{plot}というコマンドで何でも描くということです．
+%\texttt{plot}コマンドでは複数の関数，複数のデータ
+%(\secref{gnuplotdatafile}参照)をプロットすることが可能です．
+%また，変数や定数の定義は`A=35'などのように単純にできます．
 %
-%\subsection{�ؿ��ȱ黻��}\seclab{gnuplot:functions}
-%��������Ѥߤδؿ��ˤĤ��ƤǤ���
-%Gnuplot�Ǥ��͡��ʴؿ����Ѱդ���Ƥ��ޤ���
-%�ۤȤ�ɤ�����Ѥߴؿ���`�ؿ�(�ѿ�$x$)'��
-%`sin($x$)'�Τ褦�˻Ȥ��ޤ���
-%\tabref{gnuplot:functions}�˼��פ�����Ѥߴؿ���ܤ��Ƥ����ޤ���
+%\subsection{関数と演算子}\seclab{gnuplot:functions}
+%次に定義済みの関数についてです．
+%Gnuplotでは様々な関数が用意されています．
+%ほとんどの定義済み関数は`関数(変数$x$)'，
+%`sin($x$)'のように使います．
+%\tabref{gnuplot:functions}に主要な定義済み関数を載せておきます．
 %\begin{table}[htbp]
-%\caption{Gnuplot�μ������Ѥߴؿ�}
+%\caption{Gnuplotの主な定義済み関数}
 %\tablab{gnuplot:functions}
 %\begin{center}
 %\begin{tabular}{|ll|ll|}
 %\hline
-%�ؿ�     & ����         &  �ؿ�    &  ���� \\
+%関数     & 説明         &  関数    &  説明 \\
 %\hline
-%\verb+sin(x)+   & ����         & \verb+log(x)+   & �����п�\\
-%\verb+asin(x)+  & ������       & \verb+log10(x)+ & �����п�\\
-%\verb+asinh(x)+ & ���ж������� & \verb+exp(x)+   & �ؿ��ؿ�\\
-%\verb+cos(x)+   & ;��         & \verb+int(x)+   & $x$������\\
-%\verb+acos(x)+  & ��;��       & \verb+sqrt(x)+  & $x$��ʿ����\\
-%\verb+asinh(x)+ & ���ж���;�� & \verb+abs(x)+   & $x$��������\\
-%\verb+tan(x)+   & ����         & \verb+rand(x)+  & 0����1̤�������$\times x$\\
-%\verb+atan(x)+  & ������       & \verb+imag(z)+  & z�ε���\\
-%\verb+atanh(x)+ & ���ж������� & \verb+real(z)+  & z�μ���\\
+%\verb+sin(x)+   & 正弦         & \verb+log(x)+   & 自然対数\\
+%\verb+asin(x)+  & 逆正弦       & \verb+log10(x)+ & 常用対数\\
+%\verb+asinh(x)+ & 逆双曲線正弦 & \verb+exp(x)+   & 指数関数\\
+%\verb+cos(x)+   & 余弦         & \verb+int(x)+   & $x$の整数\\
+%\verb+acos(x)+  & 逆余弦       & \verb+sqrt(x)+  & $x$の平方根\\
+%\verb+asinh(x)+ & 逆双曲線余弦 & \verb+abs(x)+   & $x$の絶対値\\
+%\verb+tan(x)+   & 正接         & \verb+rand(x)+  & 0から1未満の乱数$\times x$\\
+%\verb+atan(x)+  & 逆正接       & \verb+imag(z)+  & zの虚部\\
+%\verb+atanh(x)+ & 逆双曲線正接 & \verb+real(z)+  & zの実部\\
 %\hline
 %\end{tabular}
 %\end{center}
 %\end{table}
-%�ʾ�Υ��ޥ�ɤȴؿ������򤷤��顤
-%���٤Ϥ���˴ؤ��\Z{�黻��}���ͤ�
-%���ޤ����黻�Ҥ�ɽ����ˡ��C����Ȼ��Ƥ��ޤ���
-%`���Ƥ���'�Ȥ����Τ�ɽ���Τ��������ǤϤʤ��������Τ����Ǥ⤽���Ǥ���
-%����Ʊ�Τν������������㤨��`$7/2=3$'�Ȥʤꡤɬ�������ˤʤ�ޤ���
-%�ޤ����黻�Ҥˤ�äƤ�����Ʊ�ΤΤߤΤ�Τ⤢��ޤ���
-%ɽ���ˤ����ơ��٤������ɽ����ˡ����äơ�
-%FORTRAN�Τ褦�˥������ꥹ��`*'�����³����`**'��ɽ�����ޤ���
-%�黻�Ҥ�ñ��黻��(Unary)�����黻��(Binary)��
-%����黻��(Ternary)����ʤ�ޤ���
-%Gnuplot�μ�ʱ黻�Ҥ�\tabref{gnuplot:Operators}���̤�Ǥ���
-%�ʤ����Ʊ黻�Ҥ�ͥ���̤�C����Ȥۤ�Ʊ���Ǥ��Τ�Ŭ��
-%���`()'�ǳ��ʤɤ��б����Ƥ���������
+%以上のコマンドと関数を理解したら，
+%今度はそれに関わる\Z{演算子}で値を
+%操作します．演算子の表記方法はC言語と似ています．
+%`似ている'というのは表現のうえだけではなく，処理のうえでもそうです．
+%整数同士の除算の答え，例えば`$7/2=3$'となり，必ず整数になります．
+%また，演算子によっては整数同士のみのものもあります．
+%表現において，べき乗だけ表記方法が違って，
+%FORTRANのようにアスタリスク`*'を二つ続けて`**'と表現します．
+%演算子は単項演算子(Unary)，二項演算子(Binary)，
+%三項演算子(Ternary)からなります．
+%Gnuplotの主な演算子は\tabref{gnuplot:Operators}の通りです．
+%なお，各演算子の優先順位はC言語とほぼ同じですので適宜
+%括弧`()'で括るなどで対応してください．
 %\begin{table}[htbp]
-%\caption{Gnuplot�μ�ʱ黻��}
+%\caption{Gnuplotの主な演算子}
 %\tablab{gnuplot:Operators}
 %\begin{center}
-%*���դ��Ƥ���黻�Ҥΰ����������˸¤�ޤ�\\
+%*の付いている演算子の引数は整数に限ります\\
 %\begin{tabular}{|l|l|l@{$= $ }l|}
 %\hline
-%�黻��    & ����             & ��   & ������ \\\hline
-%\multicolumn{4}{|c|}{1��黻��}\\\hline
-%\verb+-+ & ��                & -5   & -5     \\
-%\verb-+- & ��                & +5   & +5     \\
-%\verb+!+ & *����             & 4!   & 24     \\
-%\verb+$+ & *`using'���������& \$ 3 &        \\\hline
-%\multicolumn{4}{|c|}{2��黻��}\\\hline
-%\verb+**+& �٤���            & 2**10& 1024   \\
-%\verb+*+ & �軻              & 2*5  & 10     \\
-%\verb+/+ & ����              & 7/2  & 3      \\
-%\verb+%+ & *��;             & 7\%2 & 1      \\
-%\verb-+- & �û�              & 7+2  & 9      \\
-%\verb+-+ & ����              & 7-2  & 5      \\\hline
+%演算子    & 説明             & 例   & 出力例 \\\hline
+%\multicolumn{4}{|c|}{1項演算子}\\\hline
+%\verb+-+ & 負                & -5   & -5     \\
+%\verb-+- & 正                & +5   & +5     \\
+%\verb+!+ & *階乗             & 4!   & 24     \\
+%\verb+$+ & *`using'時の列指定& \$ 3 &        \\\hline
+%\multicolumn{4}{|c|}{2項演算子}\\\hline
+%\verb+**+& べき乗            & 2**10& 1024   \\
+%\verb+*+ & 乗算              & 2*5  & 10     \\
+%\verb+/+ & 除算              & 7/2  & 3      \\
+%\verb+%+ & *剰余             & 7\%2 & 1      \\
+%\verb-+- & 加算              & 7+2  & 9      \\
+%\verb+-+ & 減算              & 7-2  & 5      \\\hline
 %\end{tabular}
 %\end{center}
 %\end{table}
 %
-%\subsection{���ץ���������}
-%����������������Ǥ���­�Τ�������դ������ޤ����̾�$x$���Υ�٥��
-%�ϰϻ���ʤɤ�ɬ�פˤʤ�ޤ������Τ褦�ʤȤ���`\texttt{set}'
-%���ޥ�ɤ�Ȥ��ޤ���Gnuplot��\texttt{set}���ޥ�ɤǥ���
-%�դ˴ؤ��������Ԥ��ޤ�����ʥ��ץ�����
-%\tabref{gnuplot:options}�˼����ޤ���
+%\subsection{オプションの設定}
+%しかし，これだけでは満足のいくグラフが描けません．通常$x$軸のラベルや
+%範囲指定などが必要になります．そのようなときは`\texttt{set}'
+%コマンドを使います．Gnuplotは\texttt{set}コマンドでグラ
+%フに関する設定を行います．主なオプションを
+%\tabref{gnuplot:options}に示します．
 %
 %\begin{table}[htbp]
-%\caption{Gnuplot�μ��ץ��ץ����}\tablab{gnuplot:options}
+%\caption{Gnuplotの主要オプション}\tablab{gnuplot:options}
 %\begin{center}
-%`()'���ͤ�Ǥ�դǤ���`\{\}'���ͤϤ����줫��Ĥ����Ӥޤ���\\
+%`()'の値は任意です．`\{\}'の値はいずれか一つを選びます．\\
 %\begin{tabular}{|l|l|l|}
 %\hline
-%����               & ���� & ���� \\\hline
-%\verb+data style+         & �ǡ�����ɽ�������λ��� & \texttt{lines��points,...}\\
-%\verb+function style+     & �ؿ���ɽ�������λ���   & \texttt{lines��points,...}\\
-%\verb+(no)grid+           & �ʻ�����(��)ɽ��       & \texttt{(no)x(2)tics}\\
-%\verb+(no)key+            & ̾����(��)ɽ��         & \texttt{left,right,...}\\
-%\verb+(no)logscale+       & �п�������(���ʤ�)���� & \texttt{x,y,z,xy,...}\\
-%\verb+output+             & ������λ���           & \texttt{'filename.tex'} \\
-%\verb+{xyz}(2)range+      & �Ƽ����ϰϻ���         & \verb+[�Ǿ���:������]+ \\
-%\verb+samples+            & �ץ��åȤ�������       & 1����礭����\\
-%\verb+size ��,�⤵+       & ���Ϥ��륰��դ��礭�� & $0<$��$\leq 1$\\
-%\verb+terminal+           & ���ϥǥХ���������     & \texttt{eepic,tgif,...}\\
-%\verb+(no){xyz}(2)tics+   & ��������դ����λ���   & �����,�ֳ�,����\\
-%\verb+(no){xyz}(2)label+  & �ƥ�٥�λ���         & 'ɽ������̾��'\\\hline
+%項目               & 説明 & 引数 \\\hline
+%\verb+data style+         & データの表示形式の指定 & \texttt{lines，points,...}\\
+%\verb+function style+     & 関数の表示形式の指定   & \texttt{lines，points,...}\\
+%\verb+(no)grid+           & 格子線の(非)表示       & \texttt{(no)x(2)tics}\\
+%\verb+(no)key+            & 名前の(非)表示         & \texttt{left,right,...}\\
+%\verb+(no)logscale+       & 対数目盛に(しない)する & \texttt{x,y,z,xy,...}\\
+%\verb+output+             & 出力先の指定           & \texttt{'filename.tex'} \\
+%\verb+{xyz}(2)range+      & 各軸の範囲指定         & \verb+[最小値:最大値]+ \\
+%\verb+samples+            & プロットする精度       & 1より大きい値\\
+%\verb+size 幅,高さ+       & 出力するグラフの大きさ & $0<$値$\leq 1$\\
+%\verb+terminal+           & 出力デバイスの設定     & \texttt{eepic,tgif,...}\\
+%\verb+(no){xyz}(2)tics+   & 目盛りの付け方の指定   & 初期値,間隔,終値\\
+%\verb+(no){xyz}(2)label+  & 各ラベルの指定         & '表示する名前'\\\hline
 %\end{tabular}
 %\end{center}
 %\end{table}
-%�Ȥ�����
+%使い方は
 %\begin{quote}
-%\verb+gnuplot> set ���� ����1 ����2...+\\
+%\verb+gnuplot> set 項目 引数1 引数2...+\\
 %\verb+gnuplot> set xtics 0,1,10+
 %\end{quote}
-%��������Ǥ���
+%するだけです．
 %
 %\begin{comment}
-%�⤦�����狼��䤹���ºݤΥ���դ��б��������\figref{gnuplot:taiou}
-%�Ȥʤ�ޤ���
+%もう少しわかりやすく実際のグラフと対応させると\figref{gnuplot:taiou}
+%となります．
 %\begin{figure}[htbp]
 %  \begin{center}
 %  \begin{minipage}{.9\textwidth}
 %    \begin{minipage}{.47\textwidth}
 %      \begin{center}
 %        \input{gnuplottaiou1}
-%        (a)���ץ����ι���
+%        (a)オプションの項目
 %      \end{center}
 %    \end{minipage}
 %  \hfill
 %    \begin{minipage}{.47\textwidth}
 %      \begin{center}
 %        \input{gnuplottaiou2}
-%        (b)���ܸ�Ǥβ���
+%        (b)日本語での解説
 %      \end{center}
 %    \end{minipage}
 %  \end{minipage}
-%  \caption{Gnuplot���ץ����ο޲�}\figlab{gnuplot:taiou}
+%  \caption{Gnuplotオプションの図解}\figlab{gnuplot:taiou}
 %  \end{center}
 %\end{figure}
-%\figref{gnuplot:taiou}(a)�Τۤ������ץ����ι��ܤ��б�����
-%\figref{gnuplot:taiou}(b)�����ܸ�Ǥ������Ǥ���
+%\figref{gnuplot:taiou}(a)のほうがオプションの項目に対応し，
+%\figref{gnuplot:taiou}(b)が日本語での説明です．
 %\end{comment}
 %
-%\subsection{���դ��٤�����}
-%�黻�Ҥ�ͥ���̤䡤�黻���٤ˤĤ��ƤϤ����褽C�����Ʊ���ʤΤǡ�
-%C������ΤäƤ���Ф����˻Ȥ����ʤ���Ȼפ��ޤ���
-%�������������ͤȼ��ˤĤ��Ƥ����դ�ɬ�פǤ���
-%�ޤ������ͤˤĤ��ƤǤ�����Gnuplot���ͤ�������Ϳ������ȡ��黻�⤽��
-%������ͥ�褷�ޤ����Ȥꤢ������Ϳ����ǡ����Ͼ����Τۤ�����̤����٤�
-%�ɤ��褦�Ǥ����ޤ������ˤĤ��ƤǤ�����Gnuplot�Ǥϼ��λ��꤬��Ĥ���ޤ���
+%\subsection{注意すべきこと}
+%演算子の優先順位や，演算精度についてはおおよそC言語と同じなので，
+%C言語を知っていればすぐに使いこなせると思います．
+%しかし，整数値と軸については注意が必要です．
+%まず整数値についてですが，Gnuplotは値が整数で与えられると，演算もその
+%整数を優先します．とりあえず，与えるデータは小数のほうが結果の精度が
+%良いようです．また，軸についてですが，Gnuplotでは軸の指定が二つあります．
 %
-%\subsection{�ǡ����ե����뤫����ɤ߹���}\seclab{gnuplotdatafile}
-%�������\Prog{Cygwin}�򳫤��ޤ��礦��\Prog{perl}��
-%��ñ�ʥ�����ץȤ�񤭤ޤ���
-% ���Υ�����ץȤϷ��Ū��Gnuplot
-%��$-10 \leqq  x \leqq 10$���ϰϤ�$ y = x^3 $�Υ���դ�ץ��åȤ��Ƥ���ޤ���
-%�ޤ����ʲ��Τ褦��`\texttt{Xcubed.pl}'��������ޤ���
+%\subsection{データファイルからの読み込み}\seclab{gnuplotdatafile}
+%シェルや\Prog{Cygwin}を開きましょう．\Prog{perl}で
+%簡単なスクリプトを書きます．
+% このスクリプトは結果的にGnuplot
+%で$-10 \leqq  x \leqq 10$の範囲で$ y = x^3 $のグラフをプロットしてくれます．
+%まず，以下のような`\texttt{Xcubed.pl}'を作成します．
 %\begin{quote}
 %\verb?for($i=-10.0; $i<=10; $i+=0.1){print "$i ",$i*$i*$i,"\n";}?
 %\end{quote}
-%�Ȥ����ե�������ä��Ȥ��ޤ���
-%����ǡ�
+%というファイルを作ったとします．
+%それで，
 %\begin{InTerm}
 %   \type{perl Xcubed.pl > plot.dat}
 %\end{InTerm}
-%�Ȥ��ơ����ν��Ϸ�̤�`\texttt{plot.dat}'�Ȥ����ե������
-%�񤭽Ф��ޤ���`\texttt{plot.dat}'�����Ƥϰʲ���\figref{plot.dat}�Τ褦�ˤʤ�ޤ���
+%として，この出力結果を`\texttt{plot.dat}'というファイルに
+%書き出します．`\texttt{plot.dat}'の内容は以下の\figref{plot.dat}のようになります．
 %\begin{figure}[htbp]
 %\begin{center}
 %\begin{InText}
@@ -3122,35 +3122,35 @@ done
 %9.99999999999996  999.999999999989
 %\end{InText}
 %\end{center}
-%\caption{Perl�ǽ��Ϥ��줿`plot.dat'������}\figlab{plot.dat}
+%\caption{Perlで出力された`plot.dat'の内容}\figlab{plot.dat}
 %\end{figure}
-%���Υǡ�����n��2��Υǡ����ˤʤäƤ��ޤ���
-%���������顤���٤�Gnuplot��ư����
+%このデータはn行2列のデータになっています．
+%そうしたら，今度はGnuplotを起動して
 %\begin{InTerm}
 %gnuplot >  plot 'plot.dat'
 %\end{InTerm}
-%�Ȥ���С�$y=x^3$�Υ���դ������ޤ���
-%���η�̤�\figref{gnuplot1}(a)`���ץ�������ʤ�'�ˤʤ�ޤ���
+%とすれば，$y=x^3$のグラフが描けます．
+%その結果が\figref{gnuplot1}(a)`オプション指定なし'になります．
 %\begin{figure}[htbp]
 %    \begin{minipage}{.47\textwidth}
 %      \begin{center}
 %        \input{gnuplot1}
-%        \\(a)���ץ�������ʤ�
+%        \\(a)オプション指定なし
 %      \end{center}
 %    \end{minipage}
 %  \hfill
 %    \begin{minipage}{.47\textwidth}
 %      \begin{center}
 %        \input{gnuplot2}
-%        \\(b)���ץ������ꤢ��
+%        \\(b)オプション指定あり
 %      \end{center}
 %    \end{minipage}
-%  \caption{�ǡ�������Gnuplot�ؤ��ɤ߹���}\figlab{gnuplot1}
+%  \caption{データからGnuplotへの読み込み}\figlab{gnuplot1}
 %\end{figure}
-%�����������ΤޤޤǤϤޤ������ǤϤʤ��Ȼפ��ޤ������ץ�������Ĥ����ꤷ��
-%ɬ�פʤ�Τ��ɲä��ޤ��礦��
-%\figref{gnuplot1}(b)`���ץ������ꤢ��'�ϰʲ���Gnuplot�Υ��ޥ��
-%�����褵��Ƥ��ޤ���
+%しかし，このままではまだ完全ではないと思います．オプションを幾つか指定して
+%必要なものを追加しましょう．
+%\figref{gnuplot1}(b)`オプション指定あり'は以下のGnuplotのコマンド
+%で描画されています．
 %\begin{quote}
 %\begin{InText}
 %cd 'D:\Gnuplot'
@@ -3161,15 +3161,15 @@ done
 %\end{InText}
 %\end{quote}
 %%$
-%\subsection{Gnuplot��Excel��Ϣ��}
-%�ǡ����ե����뤫����ɤ߹��ߤ���ǽ�ˤʤ�ޤ�����
-%�������Ѥ���Microsoft��Excel�Υǡ�������Ѥ�
-%�뤳�Ȥ��Ǥ��ޤ���Excel�ˤϿ�¿����
-%�ؿ����Ѱդ���Ƥ���Τǡ����������Ǥ���
-%������\tabref{excel2gnuplot}
-%�����ä��Ȥ��ޤ���
+%\subsection{GnuplotとExcelの連携}
+%データファイルからの読み込みが可能になりました．
+%これを応用してMicrosoftのExcelのデータも活用す
+%ることができます．Excelには数多くの
+%関数が用意されているので，大変便利です．
+%そこで\tabref{excel2gnuplot}
+%があったとします．
 %\begin{table}[htbp]
-%\caption{Excel��Gnuplot��Ϣ��}\label{excel2gnuplot}
+%\caption{ExcelとGnuplotの連携}\label{excel2gnuplot}
 %\begin{center}
 %\begin{tabular}{|r|r|r|r|} \hline
 %-5 & 0.11920  & 0.04743  & 0.00669  \\\hline
@@ -3186,91 +3186,91 @@ done
 %\end{tabular}
 %\end{center}
 %\end{table}
-%\tabref{excel2gnuplot}�����Ƥ�Gnuplot��
-%ɽ������ˤ�`\texttt{using}'���ޥ�ɤ�Ȥ��ޤ���
-%�ޤ������Υǡ�����Gnuplot�Ǥ�Ȥ���褦�ʥǡ����ˤ��뤿��ˡ�
-%{Excel}�Υġ���С�����\win{�ե�����}�����ӡ�
-%\win{̾����Ĥ�����¸}�ǥե����������
-%`�ƥ�����(���ֶ��ڤ�)'�ǥե�����̾��`excel.txt'�Ȳ�����¸���ޤ���
-%���Υǡ�����11��4��Υǡ����ˤʤäƤ��ޤ���
-%�����\texttt{plot}�ץ��åȥ��ޥ�ɤ�
+%\tabref{excel2gnuplot}の内容をGnuplotで
+%表示するには`\texttt{using}'コマンドを使います．
+%まず，このデータをGnuplotでも使えるようなデータにするために，
+%{Excel}のツールバーから\win{ファイル}を選び，
+%\win{名前をつけて保存}でファイル形式を
+%`テキスト(タブ区切り)'でファイル名を`excel.txt'と仮に保存します．
+%このデータは11行4列のデータになっています．
+%これを\texttt{plot}プロットコマンドで
 %\begin{InTerm}
 %gnuplot$>$ plot 'excel.txt'
 %\end{InTerm}
-%�Ȥ���ȡ�1���ܤ�$x$����2���ܤ�$y$�����ͤȤ��ƥץ��åȤ���ޤ���
-%�����ͳ���ߤ�1���ܤ�3���ܡ�2���ܤ�4���ܤʤɤΤ褦�˰����ˤ�
+%とすると，1列目が$x$軸，2列目が$y$軸の値としてプロットされます．
+%これを自由自在に1列目と3列目，2列目と4列目などのように扱うには
 %\begin{quote}
-%\texttt{plot "�ե�����̾" using x����:y����}
+%\texttt{plot "ファイル名" using xの列:yの列}
 %\end{quote}
-%�Τ褦�ˡ��ץ��åȤ���ؿ����դ�­���ޤ���
-%��ۤɤ�ɽ������(\figref{gnuplot:using})�򼨤��ޤ���
+%のように，プロットする関数に付け足します．
+%先ほどの表から例(\figref{gnuplot:using})を示します．
 %\begin{figure}[htbp]
 %\begin{center}
 %\begin{InText}
 %> cd 'D:\MyThesis'
-%> plot 'excel.txt' using 1:3��'excel.txt'
-%      using 1:4 ��1/(1+exp(-x)) 
+%> plot 'excel.txt' using 1:3，'excel.txt'
+%      using 1:4 ，1/(1+exp(-x)) 
 %\end{InText}
 %\end{center}
-%\caption{Gnuplot��`\texttt{using}'��Ȥ���}\figlab{gnuplot:using}
+%\caption{Gnuplotで`\texttt{using}'を使う例}\figlab{gnuplot:using}
 %\end{figure}
 %\begin{comment}
-%\subsection{�¸���̤������ͤΰ���}
-%Gnuplot�ε�ǽ�ΰ�Ĥˡ��¸���������줿\tabref{excel2gnuplot}��
-%�褦�ʥǡ�����������\equref{roji1})
+%\subsection{実験結果と理論値の一致}
+%Gnuplotの機能の一つに，実験して得られた\tabref{excel2gnuplot}の
+%ようなデータと方程式\equref{roji1})
 %\begin{equation}\equlab{roji1}
 %f(x) = \frac{A}{B+Ce^{-Dx}}
 %\end{equation}
-%����Ϥ�����ưŪ���ѿ�$A,B,C,D$����ꤷ�Ƥ���ޤ���
-%3�����Ϥ������Τ��ȡ�����������������ꤹ��Τ������Ǥ���
-%�Ȥ�����
+%を解析し，自動的に変数$A,B,C,D$を推定してくれます．
+%3次元はもちろんのこと，非線形方程式も推定するので便利です．
+%使い方は
 %\begin{quote}
-%\verb+fit �ؿ�f(x) "�ǡ����ե�����̾" via �ѿ��Υꥹ��+
+%\verb+fit 関数f(x) "データファイル名" via 変数のリスト+
 %\end{quote}
-%�Ȥ��ޤ����ޤ������\figref{roji2}`\texttt{Fit.plt}'�򸫤Ƥ���������
+%とします．まずは例の\figref{roji2}`\texttt{Fit.plt}'を見てください．
 %\begin{figure}[htbp]\begin{center}
 %\begin{InText}
 %> f(x) = A/(B+C*exp(-D*x))
 %> A=1 ; B=1 ; C=0.6 ; D= 0.6 ;
-%> fit f(x) 'excel.txt' using 1:2 via A��B��C��D
-%> plot f(x)��'excel.txt' using 1:2��
+%> fit f(x) 'excel.txt' using 1:2 via A，B，C，D
+%> plot f(x)，'excel.txt' using 1:2，
 %   1/(1+0.6*exp(-0.6*x))
 %\end{InText}
-%\caption{Gnuplot��`\texttt{fit}'�λ�����}\figlab{roji2}
+%\caption{Gnuplotの`\texttt{fit}'の使用例}\figlab{roji2}
 %\end{center}\end{figure}
-%����ˤ�ꡤ�ѿ�$A,B,C,D$���ͤ�����Ū�˷�ޤ�ޤ���
-%���β��Ϸ�̤Ͻ�����˼�ưŪ��`\texttt{fit.log}'�Ȥ���
-%�ե��������¸���졤ɸ������ʤɤΥǡ������ǧ���뤳�Ȥ��Ǥ��ޤ���
+%これにより，変数$A,B,C,D$の値が具体的に決まります．
+%この解析結果は処理後に自動的に`\texttt{fit.log}'という
+%ファイルに保存され，標準誤差などのデータを確認することができます．
 %\end{comment}
 %
-%\subsection{Gnuplot����Υ���դ�����}
-%Gnuplot�ˤⴷ��Ƥ����Ȼפ��ޤ��Τǡ����褤��{\LaTeX}��
-%Gnuplot�Υ���դ������������Ȼפ��ޤ���
+%\subsection{Gnuplotからのグラフの挿入}
+%Gnuplotにも慣れてきたと思いますので，いよいよ{\LaTeX}に
+%Gnuplotのグラフを挿入したいと思います．
 %
-%Gnuplot�ν��Ϥ�EPS����¸���Ƥ��ޤ��ȡ��夫���Խ�������ˤʤ뤿�ᡤ
-%�ʤ�٤�\textsf{eepic}�����Ǽ����ळ�Ȥ򤪴��ᤷ�ޤ���
+%Gnuplotの出力をEPSで保存してしまうと，後から編集が困難になるため，
+%なるべく\textsf{eepic}形式で取り込むことをお勧めします．
 %
-%{Tgif}�����󥹥ȡ��뤵��Ƥ���Ķ��Ǥ����顤
-%{Tgif}�Υ��֥������ȥե�����ǽ��Ϥ��Ƥ��ɤ��ΤǤ�����
-%�Ȥ����ʤ��ʤ���Фʤ�ʤ��ץ�����ब�ޤ����������Τ�
-%������\Sty{eepic}�ǽ��Ϥ������󤲤ޤ���
+%{Tgif}がインストールされている環境でしたら，
+%{Tgif}のオブジェクトファイルで出力しても良いのですが，
+%使いこなさなければならないプログラムがまた一つ増えるので
+%ここは\Sty{eepic}で出力する例を挙げます．
 %
-%Gnuplot�Ǥ�{\LaTeX}��
-%\texttt{picture}�Ķ������Ѥ���
-%\textsf{eepic}�Ȥ��������ǥǡ�����񤭽Ф����Ȥ��Ǥ��ޤ���
-%\Env{picture}�Ķ��Ȥ�{\LaTeX}�ˤ����ƴ�ñ�ʿޤ�������뤿���
-%�Ķ��Ǥ���\texttt{picture}�Ķ��ν�����
+%Gnuplotでは{\LaTeX}の
+%\texttt{picture}環境を利用した
+%\textsf{eepic}という形式でデータを書き出すことができます．
+%\Env{picture}環境とは{\LaTeX}において簡単な図を作成するための
+%環境です．\texttt{picture}環境の書き方は
 %\begin{quote}
 %\yen begin\{picture\}($x$,$y$)($x_0$,$y_0$)\\
-%$xy$ʿ�̾�����Ǥ����֤��륳�ޥ�ɤ��\\
+%$xy$平面上に要素を配置するコマンドを書く\\
 %\yen end\{picture\}
 %\end{quote}
-%�ȤʤäƤ��ꡤ$x_0$,$y_0$�������κ�ɸ��$x$��$y$������ʿ�̤�
-%�������ˤʤ�ޤ������ȤϤ��δĶ���������Ǥ����֤��륳�ޥ�ɤ�
-%�ɤ�ɤ�񤤤Ƥ��������Ǥ������ΤȤ������ޤ��礭���ϡ�����Ū��Ĺ����
-%���ꤷ�ޤ���ľ��5\,cm�Ȥ�10\,pt�ʤɤˤ��������Ȥʤ�Ĺ����
-%\Cmd{unitlength}�����$xy$ʿ�̾�˽񤤤Ƥ����ޤ���
-%\figref{latex:picture}��������������
+%となっており，$x_0$,$y_0$が原点の座標，$x$，$y$が描く平面の
+%サイズになります．あとはこの環境の中に要素を配置するコマンドを
+%どんどん書いていくだけです．このとき描く図の大きさは，相対的な長さで
+%指定します．直接5\,cmとか10\,ptなどにせず，基準となる長さ，
+%\Cmd{unitlength}を決めて$xy$平面上に書いていきます．
+%\figref{latex:picture}をご覧ください．
 %\begin{figure}[htbp]
 %  \begin{center}
 %  \begin{minipage}{.9\textwidth}
@@ -3297,117 +3297,117 @@ done
 %       \put(1,0){\circle*{0.02}}
 %       \put(0,1){\circle*{0.02}}
 %       \put(1,1){\circle*{0.02}}
-%       \put(0,0.5){��1}
-%       \put(0.5,0){��2}
-%       \put(0.5,0.5){��3}
+%       \put(0,0.5){線1}
+%       \put(0.5,0){線2}
+%       \put(0.5,0.5){線3}
 %    \end{picture}
 %    \end{OutText}
 %  \end{minipage}
-%  \caption{{\LaTeX}��\texttt{picture}�Ķ�����}\figlab{latex:picture}
+%  \caption{{\LaTeX}の\texttt{picture}環境の例}\figlab{latex:picture}
 %  \end{center}
 %\end{figure}
-%���οޤǤ�3�ܤ�ľ���������$(0,0)$����񤤤Ƥ��ޤ���
+%この図では3本の直線を始点の$(0,0)$から書いています．
 %
-%{\LaTeX}��\texttt{picture}�Ķ���ͽ���μ������ä��Ȼפ��ޤ��Τǡ�
-%���褤��Gnuplot���饰��դ�����ߤ����Ȼפ��ޤ���
-%Gnuplot�����Ϥ���\textsf{eepic}�ե������夫�鼫ʬ���Խ����ʤ��Ƥ�
-%�ɤ��褦��Gnuplot�ǤǤ��빩�פ򤷤ޤ���
-%\texttt{plot}�Ǥ�\texttt{splot}�Ǥ�빽�Ǥ��Τǡ���������դ�ɽ�����Ƥ���������
-%���������顤Gnuplot��
+%{\LaTeX}の\texttt{picture}環境の予備知識も整ったと思いますので，
+%いよいよGnuplotからグラフを取り込みたいと思います．
+%Gnuplotが出力した\textsf{eepic}ファイルを後から自分で編集しなくても
+%良いようにGnuplotでできる工夫をします．
+%\texttt{plot}でも\texttt{splot}でも結構ですので，何かグラフを表示してください．
+%そうしたら，Gnuplotで
 %\begin{quote}
 %\verb+gnuplot> set term eepic dashed rotate+\\
 %\verb+gnuplot> set output 'filename.tex'+\\
 %\verb+gnuplot> replot+
 %\end{quote}
-%�Τ褦�ˤ��Ƥ���������
-%���ߤΥǥ��쥯�ȥ�\footnote{`pwd'���ޥ�ɤǳ�ǧ��ǽ}
-%��`\texttt{filename.tex}'�Ȥ����ե����뤬��¸����Ƥ���Ȼפ��ޤ���
-%����ǥե����뤬����夬��ޤ����Τǡ�{\LaTeX}��ʸ����������ޤ���
-%�ޤ��ץꥢ��֥��
+%のようにしてください．
+%現在のディレクトリ\footnote{`pwd'コマンドで確認可能}
+%に`\texttt{filename.tex}'というファイルが保存されていると思います．
+%これでファイルが出来上がりましたので，{\LaTeX}の文書に挿入します．
+%まずプリアンブルに
 %\begin{quote}
 %\verb+\usepackage{epic,eepic,amssymb,graphicx}+
 %\end{quote}
-%�ΰ�Ԥ��ɲä��Ƥ��顤�����ߤ������ǡ�
-%\figref{figure}��Ʊ���褦��
-%�������ޤ�����`includegraphics'�������
-%\verb+\input{filename}+�Ȥ��Ƥ���������
-%��������С�Gnuplot�Υ���դ������Ǥ��ޤ���
-%����������Ĥ��������դ��Ƥ�������������դ�������{\LaTeX}
-%ʸ���{\LaTeX}�������Ƥ褯���Ƥ���������$y$�μ�̾����������
-%�񤫤�Ƥ��ޤ���������������������뤿��ˤϡ�
-%�Ƽ���ñ�̤��դ��ä��뤳�Ȥ�˺��ƤϤ����ޤ���
-%\subsection{�������������������}\seclab{gnuplot:tech}
+%の一行を追加してから，取り込みたい場所で，
+%\figref{figure}と同じように
+%挿入しますが，`includegraphics'の代わりに
+%\verb+\input{filename}+としてください．
+%そうすれば，Gnuplotのグラフが挿入できます．
+%しかし，一つここで注意してください．グラフを取り込んだ{\LaTeX}
+%文書を{\LaTeX}処理してよく見てください．$y$の軸名が横方向に
+%書かれています．これをより美しく見せるためには，
+%各軸に単位を付け加えることも忘れてはいけません．
+%\subsection{グラフ挿入時の注意点}\seclab{gnuplot:tech}
 %
-%�Ǥϡ�Gnuplot����\textsf{eepic}����������Ȥ�������������Ĥ��󤲤ޤ���
-%�ޤ�������Ȥʤ�Τϰʲ��δ����Ǥ���
+%では，Gnuplotから\textsf{eepic}で挿入するときの注意点を幾つか挙げます．
+%まず，問題となるのは以下の観点です．
 %\begin{enumerate}
-%\item ̾�������ܸ줬�Ȥ��ʤ�\label{gnuplot:enu:nihongo}
-%\item ̾���˿������Ȥ��ʤ�\label{gnuplot:enu:susiki}
-%\item ���������ѹ����Ƥ�ºݤ˼�������礭��\label{gnuplot:enu:size}
+%\item 名前に日本語が使えない\label{gnuplot:enu:nihongo}
+%\item 名前に数式が使えない\label{gnuplot:enu:susiki}
+%\item サイズを変更しても実際に取り込むと大きい\label{gnuplot:enu:size}
 %\end{enumerate}
-%�ʤɤ����꤬����ޤ���
+%などの問題があります．
 %
-%�ޤ�\ref{gnuplot:enu:nihongo}���ܤ�����Ǥ�����
-%����Ͻ�����꤬���ޤ��ԤäƤʤ����Ȥ����֤˹ͤ����ޤ���
-%������ѹ����Ƥ�ɤ����Ƥ��Ѥ��ʤ����ϡ�\textsf{eepic}������
-%�ե�����˽��Ϥ�������ѹ���ä��ޤ���
-%����餷���ս�����ܸ���������Ƥ���������
+%まず\ref{gnuplot:enu:nihongo}つ目の問題ですが，
+%これは初期設定がうまく行ってないことが一番に考えられます．
+%設定を変更してもどうしても変わらない場合は，\textsf{eepic}形式で
+%ファイルに出力した後に変更を加えます．
+%それらしき箇所に日本語を挿入してください．
 %
-%����\ref{gnuplot:enu:susiki}���ܤˤĤ��ƤǤ�����
-%�����夫����ϸ�Υե������������Ф褤�ΤǤ�����
-%Gnuplot��ü���夫����ꤹ��Ф褤�Ϥ��Ǥ���$x$,$y$����
-%��٥�˿������ؿ��ˤ������Ȥ������ΤǤ���С�
+%次に\ref{gnuplot:enu:susiki}つ目についてですが，
+%これも後から出力後のファイルを修正すればよいのですが，
+%Gnuplotの端末上から指定すればよいはずです．$x$,$y$軸の
+%ラベルに数式，関数にも数式を使いたいのであれば，
 %\begin{quote}
 %\verb+gnuplot>set xlabel '$x$(t)'+\\
 %\verb+gnuplot>set ylabel '$y$(\%)'+\\
 %\verb+gnuplot>plot 1/x title '$y=\frac{1}{x}$' +
 %\end{quote}
-%�Ȥ���С�{\LaTeX}�����������Ȥ��˿��������Ϥ���ޤ���
+%とすれば，{\LaTeX}に挿入したときに数式が出力されます．
 %
-%\ref{gnuplot:enu:size}���ܤǤ���������Ͻ��ϸ�Υե������������
-%¾����ޤ����㤨�С�Gnuplot����ĤΥ���դ��ĤΥ�����ɥ���
-%ɽ�����뤳�Ȥ�\texttt{multiplot}���ޥ�ɤǲ�ǽ�Ǥ�����
-%���ν��ϥե������ľ����������ȥ��������������ȿ�Ǥ���ޤ���
+%\ref{gnuplot:enu:size}つ目ですが，これは出力後のファイルを修正する
+%他ありません．例えば，Gnuplotで二つのグラフを一つのウィンドウに
+%表示することが\texttt{multiplot}コマンドで可能ですが，
+%その出力ファイルを直接挿入するとサイズがきちんと反映されません．
 %\begin{comment}
-%�㤨�С�\figref{gnuplot1}�Τ褦�ʥ���դ�Gnuplot�Ǻ�ꤿ���Ȥ��ޤ���
-%��������ȥ��ޥ�ɤ�Ÿ���ϰʲ���\figref{gnuplot:size}�Τ褦�ˤʤ�ޤ���
+%例えば，\figref{gnuplot1}のようなグラフをGnuplotで作りたいとします．
+%そうするとコマンドの展開は以下の\figref{gnuplot:size}のようになります．
 %\begin{figure}[htbp]
 %\begin{center}
 %\begin{InText}
 %set multiplot ; set grid 
-%% ����ܤΥ���դϺ���������
+%% 一つ目のグラフは左下に配置
 %set origin 0,0 ; set size 0.5,0.5 
 %set xlabel '$x$'; set ylabel '$y$(\%)' 
 %plot sin(x) title '$\sin x$'
-%set origin 0.5,0 ; set size 0.5,0.5 %����ܤϱ���������
+%set origin 0.5,0 ; set size 0.5,0.5 %二つ目は右下に配置
 %set xlabel '$t$'; set ylabel '$z$(\%)' 
 %plot cos(x) title '$\cos x$'
 %set terminal eepic ; set output 'windowsize.tex'
 %replot
 %\end{InText}
 %\end{center}
-%\caption{Gnuplot������Ϥ����eepic�Υե�����}\figlab{gnuplot:size}
+%\caption{Gnuplotから出力されるeepicのファイル}\figlab{gnuplot:size}
 %\end{figure}
 %
-%���Τ褦�ˤ���з�̤�`\texttt{windowsize.tex}'�˽��Ϥ���ޤ���
-%�����Gnuplot�Υ�����ɥ��κ����ȱ����˥���դ�ɽ��������Ǥ���
-%�ºݤ��Ǥ������ʬ����Ȼפ��ޤ���������ȱ��夬�����Ƥ��ޤ���
-%������ʬ����ǰ����򤷤ޤ������Ϥ��줿����դ�
-%��������{\LaTeX}��������С���ĤΥ���դξ�˿�ľ������
-%�������äƤ��ޤ���
+%このようにすれば結果は`\texttt{windowsize.tex}'に出力されます．
+%これはGnuplotのウィンドウの左下と右下にグラフを表示する例です．
+%実際に打ち込めば分かると思いますが，左上と右上が開いています．
+%この部分が後で悪さをします．出力されたグラフを
+%挿入して{\LaTeX}処理すれば，二つのグラフの上に垂直方向の
+%空白が入っています．
 %\end{comment}
 %
-%Gnuplot��{\LaTeX}��\texttt{picture}�Ķ���
-%���Τۤ�{\MF}�ʤɤǤ⡤
-%���������褹��Ȥ��ϸ���(0,0)����ܤȤ��ޤ����Ǥ����顤
-%Gnuplot�ǰ�ĤΥ�����ɥ�(��Ĥ�\texttt{picture}�Ķ�)�˥���դ����
-%ɽ����������(���Ϥ�����)�Ȥ��ϡ������Τۤ��������Ƥ������ޤ���
-%�������ƽ��Ϥ��줿\textsf{eepic}�Υե�����
+%Gnuplotや{\LaTeX}の\texttt{picture}環境，
+%そのほか{\MF}などでも，
+%何かを描画するときは原点(0,0)を基本とします．ですから，
+%Gnuplotで一つのウィンドウ(一つの\texttt{picture}環境)にグラフを二つ
+%表示させたい(出力したい)ときは，原点のほうから埋めていきいます．
+%そうして出力された\textsf{eepic}のファイル
 %`\texttt{windowsize.tex}'(\figref{gnuplot:windowsize})
-%�λ����ܤ����ܤ��Ƥ���������\texttt{picture}�Ķ��οޤ��礭����
-%$(x,y)=(1500,900)$�ȤʤäƤ��ޤ���
-%����ι⤵��Ⱦʬ�ˤ���$(x,y)=(750,900)$�˽���������ɤ����Ȥ�
-%���Ť��Ǥ��礦��
+%の三行目に注目してください．\texttt{picture}環境の図の大きさが
+%$(x,y)=(1500,900)$となっています．
+%これの高さを半分にして$(x,y)=(750,900)$に修正すれば良いことに
+%気づくでしょう．
 %\begin{figure}[htbp]
 %\begin{center}
 %\begin{InText}
@@ -3418,16 +3418,16 @@ done
 %5   \thinlines \drawline[-50](221,135)(660,135)
 %\end{InText}
 %\end{center}
-%\caption{Gnuplot����Ĥδؿ����ĤΥ�����ɥ���ɽ��������}
+%\caption{Gnuplotで二つの関数を一つのウィンドウに表示する例}
 %\figlab{gnuplot:windowsize}
 %\end{figure}
-%�⤷����ĤΥ�����ɥ��˰�Ĥ����δؿ���ǡ����ΤȤ���
-%�⤵������Ⱦʬ��$(x,y)=(750,450)$�˽��������ͤĤΤȤ��ϲ��⽤�����ʤ���
-%�ɤ��Ȥ������Ȥˤʤ�ޤ����ʾ����ޤ���Gnuplot�λȤ�����{\LaTeX}�ؤ�������
-%�����򽪤��ޤ���
+%もし，一つのウィンドウに一つだけの関数やデータのときは
+%高さも幅も半分の$(x,y)=(750,450)$に修正し，四つのときは何も修正しなくて
+%良いということになります．以上で大まかなGnuplotの使い方と{\LaTeX}への挿入の
+%説明を終わります．
 %
 %
-%\subsection{�ͤĤΥ���դ��Ĥοޤ�}
+%\subsection{四つのグラフを一つの図に}
 %\begin{verbatim}
 %gnuplot> set multiplot
 %multiplot> set origin 0,0 ; set size 0.5,0.5
@@ -3444,45 +3444,45 @@ done
 
 
 
-%\subsubsection{�����ե�����ΰ���}
-%\prog{dvipdfm}�ˤ�����JPEG��PNG��PDF��EPS�ʤɤβ����ե������
-%{\KY{�Х���ǥ��󥰥ܥå���}}�Ȥ������󤬤����ĥ���
-%�ळ�Ȥ���ǽ�Ǥ���\prog{dvipdfm}��°��\Prog{ebb}�Ȥ����ץ���
-%���ǲ����ΥХ���ǥ��󥰥ܥå����κ����򤹤�С�JPEG��PNG��
-%PDF��EPS��ľ��PDF��ĥ�����ޤ�������Ū�ʼ��Ȥ��Ƥϥե�����
-%�Τ���ǥ��쥯�ȥ��
+%\subsubsection{画像ファイルの扱い}
+%\prog{dvipdfm}においてJPEG，PNG，PDF，EPSなどの画像ファイルは
+%{\KY{バウンディングボックス}}という情報があれば張り込
+%むことが可能です．\prog{dvipdfm}付属の\Prog{ebb}というプログ
+%ラムで画像のバウンディングボックスの作成をすれば，JPEG，PNG，
+%PDF，EPSを直接PDFに張り込めます．具体的な手順としてはファイル
+%のあるディレクトリで
 %\begin{InTerm}
 %   \type{ebb filename.jpg}
 %\end{InTerm}
-%�Ȥ���г�ĥ�Ҥ�\Exten{bb}��\Va{filename}{bb}�Ȥ����ե����뤬
-%��������ޤ����������줿\Va{filename}{bb}�򸫤Ƥߤ��
+%とすれば拡張子が\Exten{bb}の\Va{filename}{bb}というファイルが
+%作成されます．作成された\Va{filename}{bb}を見てみると
 %\begin{InText}
 %%%Title: ./filename.jpg
 %%%Creator: ebb Version 0.5.2
 %%%BoundingBox: 0 0 595 842
 %%%CreationDate: Tue Dec 30 13:04:10 2003
 %\end{InText}
-%�Τ褦��\va{�ե�����̾}��\va{�����ץ������}�� 
-%\va{�Х���ǥ��󥰥ܥå���}�� \va{��������}��
-%���󤬽��Ϥ���ޤ�������\Va{filename}{bb}��
-%�ե��������¸���Ƥ����Τ����ޤ����ʤ����ϡ�
-%������������ե�������ɤ߹���Ǥ���ս�ǡ�
+%のように\va{ファイル名}，\va{作成プログラム}， 
+%\va{バウンディングボックス}， \va{作成日時}の
+%情報が出力されます．沢山\Va{filename}{bb}の
+%ファイルを保存しておくのが好ましくない場合は，
+%該当する画像ファイルを読み込んでいる箇所で，
 %\begin{InTeX}
 %\includegraphics[bb={0 0 595 842}]{filename.jpg}
 %\end{InTeX}
-%�Ȥ����\Va{filename}{bb}���ʤ��Ƥ��ɤ����Ȥ�
-%�ʤ�ޤ������Ѥ�������Υե�����̾��
-%\Va{�ե�����̾}{��ĥ��}��\qu{\fl{filename.png}}�Τ褦��
-%\Va{8ʸ��}{3ʸ��}�����ۤ���̵��ʤ褦�Ǥ���
+%とすれば\Va{filename}{bb}がなくても良いことに
+%なります．使用する画像のファイル名の
+%\Va{ファイル名}{拡張子}は\qu{\fl{filename.png}}のように
+%\Va{8文字}{3文字}したほうが無難なようです．
 
 
-%\prog{\Dvipdfmx}�ξ��ϴ���Ū��PDF��JPEG��PNG��{\MP}�����β����������ݡ�
-%�Ȥ��Ƥ���ޤ���Τǡ�EPS�����β����ϲ��餫�η���PDF���Ѵ����Ƥ������
-%�ळ�Ȥˤʤ�ޤ�������EPS�ե������\prog{Ghostscript}��\qu{pdfwrite}�Ȥ�
-%���ǥХ�����Ȥä��Ѵ����뤳�Ȥ��ۤȤ�ɤǤ������ΤȤ���\Prog{epstopdf}
-%��\Prog{ps2pdf14}�ʤɤ�Ȥ��ޤ���\prog{epstopdf}��PDF��EPS��{\BB}��ȿ��
-%���Ƥ���ޤ���\prog{ps2pdf}�Ϥ�Ȥ�����PDF��{\BB}�����ޤ�ȿ�Ǥ���ʤ�
-%�Τǰʲ��Τ褦�ʥ����륹����ץ�\fl{eps2pdfs}
+%\prog{\Dvipdfmx}の場合は基本的にPDF，JPEG，PNG，{\MP}形式の画像しかサポー
+%トしておりませんので，EPS形式の画像は何らかの形でPDFに変換してから取り込
+%むことになります．このEPSファイルは\prog{Ghostscript}の\qu{pdfwrite}とい
+%うデバイスを使って変換することがほとんどです．そのときに\Prog{epstopdf}
+%か\Prog{ps2pdf14}などを使います．\prog{epstopdf}はPDFにEPSの{\BB}を反映
+%してくれます．\prog{ps2pdf}系を使う場合はPDFに{\BB}がうまく反映されない
+%ので以下のようなシェルスクリプト\fl{eps2pdfs}
 %
 %\begin{InText}
 %#!/bin/bash
@@ -3493,16 +3493,16 @@ done
 %   grep "^%%BoundingBox:" $fig > $f.bb
 %done
 %\end{InText}
-%�������PATH���̤äƤ������ʣ�������ʤ��
+%を作成しPATHの通っている場所に複製したならば
 %\begin{InTerm}
 %   \type{eps2pdfs}
 %\end{InTerm}
-%�Ȥ����Ʊ�ǥ��쥯�ȥ��EPS�ե����뤬����PDF��
-%�Ѵ�����ޤ���\Va{file}{eps}�����ä��Ȥ���Ф����
-%\Va{file}{pdf}��\Va{file}{bb}����������ޤ���%������
-%%�ǥ��쥯�ȥ����ꤹ�뤳�Ȥ�Ǥ���Ȼפ��ޤ���
-%���Τ褦�ˤ���EPS����PDF���Ѵ������ե������
-%{\LaTeX}�θ��Ƥ�
+%とすると同ディレクトリのEPSファイルが全てPDFに
+%変換されます．\Va{file}{eps}があったとすればこれは
+%\Va{file}{pdf}と\Va{file}{bb}が作成されます．%引数に
+%%ディレクトリを指定することもできると思います．
+%このようにしてEPSからPDFに変換したファイルは
+%{\LaTeX}の原稿で
 %\begin{InText}
 %\documentclass{jarticle} 
 %\usepackage[dvipdfm]{graphicx}
@@ -3510,18 +3510,18 @@ done
 %\includegraphics{filename.pdf}
 %\end{document}
 %\end{InText}
-%�Τ褦�ˤ��Ƽ����ळ�Ȥ��Ǥ��ޤ���
-%���ʤߤ�\Va{file}{bb}��
+%のようにして取り込むことができます．
+%ちなみに\Va{file}{bb}は
 %\begin{InText}
 %%%BoundingBox: 142 160 443 665
 %\end{InText}
-%�Τ褦�ʾ��󤬽��Ϥ���Ƥ���Ǥ��礦���ʾ��
-%�褦�ʥ����륹����ץȤ�ư����뤳�Ȥ��Ǥ�
-%�ʤ�Windows�桼�������ϥե꡼��Cygwin��Ƴ��
-%�����Τ��ɤ��Ȼפ��ΤǤ���\verb|^^;|��
-%����\Va{file}{bb}�ˤ���ͤĤο��ͤ򸶹����
+%のような情報が出力されているでしょう．以上の
+%ようなシェルスクリプトを動作させることができ
+%ないWindowsユーザの方はフリーのCygwinを導入
+%されるのが良いと思うのですが\verb|^^;|．
+%この\Va{file}{bb}にある四つの数値を原稿中で
 %\begin{InTeX}
 %\includegraphics[bb={142 160 443 665}]{filename.pdf} 
 %\end{InTeX}
-%�ȵ��Ҥ����\Va{file}{bb}�Ϥ���ʤ��ʤ�ޤ���
+%と記述すると\Va{file}{bb}はいらなくなります．
 

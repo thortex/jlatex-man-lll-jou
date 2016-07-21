@@ -1,317 +1,317 @@
 %#!platex jou.tex
-\chapter{���ޥ�ɤȥޡ������å�}\chaplab{cmd:and:markup}
+\chapter{コマンドとマークアップ}\chaplab{cmd:and:markup}
 
 \begin{abstract}
-%{\LaTeX}�ϥڡ������ҥץ�����ߥ󥰸���Ǥ���
-%�Ǥ���\Z{�ޡ������å�}����Ȥ��Ƥ�������褫����
-%�Ȥ�������⤷�������򤢤ޤ긫�����ޤ���
-%�����Ǥޤ��ϥޡ������å׸���Ȥϲ��ʤΤ����ޡ������åפ�
-%�����¸��Ǥ���Τ��������{\LaTeX}�ǤɤΤ褦�˼¸�����Τ�
-%�Ȥ�������Ū����ʬ��Ҳ𤷤ޤ���
-�ޡ������å׸���Ȥϲ��ʤΤ����ޡ������åפǲ����¸��Ǥ���Τ���
-�����{\LaTeX}�ǤɤΤ褦�˼¸�����Τ��Ȥ�������Ū����ʬ��Ҳ𤷤ޤ���
+%{\LaTeX}はページ記述プログラミング言語です．
+%ですが\Z{マークアップ}言語としての特性を活かした
+%使い方を解説した説明をあまり見かけません．
+%そこでまずはマークアップ言語とは何なのか，マークアップで
+%何が実現できるのか，それを{\LaTeX}でどのように実現するのか
+%という基本的な部分を紹介します．
+マークアップ言語とは何なのか，マークアップで何が実現できるのか，
+それを{\LaTeX}でどのように実現するのかという基本的な部分を紹介します．
 \end{abstract}
 
 
-\section{�ޡ������å׸���Ȥϡ�}
-%1980ǯ��Τ��ȤǤ��礦��������ʸ�񵭽Ҹ���Ȥ���
-%�ޡ������å׸���Ȥ�����Τ��Ӹ�����Ӥ������Ǥ���
-�����Ρ�ʸ����Ф�������ҷ���������¤��Ϳ������ˤ�ä�
-����������������ʹ֤ˤⵡ���ˤ����򤹤�Τ���ñ��ʸ��ε��Ҥ˴ؤ��Ƹ���
-���ʤ��줿�����Ǥ�\footnote{HTML�����Ǥ���SGML��1960ǯ�夫�鷳��
-���Ѥΰ�ĤȤ��Ƹ��椵��Ƥ��ޤ�����}��������Ǥ⥦���֥ڡ����򵭽Ҥ���
-���줷��HTML: Hyper Text Markup Language�Ȥ�����Τ��и���
-�������Ǥ��������\Person{Tim}{Berners-Lee}�餬��ȯ����
-����W3C���������Ƥ���ڡ������Ҹ���Ǥ�\footnote{�����ϳؽ���ʸ
-�Ѥε��Ҹ���Ȥ��������դ����ä��Ȥ����ä�����ޤ���}�����ߤ�
-XHTML: Extended Hyper Text Markup Language�ؤȿ�
-���������첽���ޤ��Ƥ��ޤ���{\LaTeX}��HTML��XHTML��
-Ʊ���褦�˥ޡ������å���������Ѥ��Ƥ���ڡ������Ҹ���Ǥ���
+\section{マークアップ言語とは？}
+%1980年代のことでしょうか，当時文書記述言語として
+%マークアップ言語というものが脚光を浴びたそうです．
+今は昔，文書に対して入れ子型の論理構造を与える事によって
+汎用性を持たせ，人間にも機械にも理解するのが簡単な文書の記述に関して研究
+がなされたそうです\footnote{HTMLの先駆けであるSGMLが1960年代から軍事
+技術の一環として研究されてきました．}．その中でもウェブページを記述する
+言語してHTML: Hyper Text Markup Languageというものが出現し
+たそうです．これは\Person{Tim}{Berners-Lee}らが開発し，
+今はW3Cが管理しているページ記述言語です\footnote{当時は学術論文
+用の記述言語という位置付けだったという話があります．}．現在は
+XHTML: Extended Hyper Text Markup Languageへと進
+化し，統一化が図られています．{\LaTeX}もHTMLやXHTMLと
+同じようにマークアップ方式を採用しているページ記述言語です．
 
-�ޡ������å׷��θ���ˤϤɤΤ褦������������ΤǤ��礦����
-����򤳤ξϤǤϾ����ͤ��Ƥߤ����Ȼפ��ޤ��������ͤ���ˤ�
-\LaTeX �Ρ�̿�ᡦ�Ķ��������ޤ�˥��ޥ�ɤ�ѻ��������������������
-����Ȼפ��ޤ��Τǡ����ޥ�ɤ˴ؤ����ä��濴�˿ʤ�Ƥ����ޤ���
+マークアップ型の言語にはどのような利点があるのでしょうか．
+それをこの章では少し考えてみたいと思います．これを考えるには
+\LaTeX の（命令・環境・宣言を含む）コマンドを観察する事から糸口が見えて
+くると思いますので，コマンドに関する話を中心に進めていきます．
 
 \begin{comment}
- ����������ä�����԰ʾ�ǰ����٤��������Ȼפ����ޤ��ϥ��ޥ�ɤδ���
- Ū����ΤߤˤĤ��ư����ޤ�����
+ これより先の話は中級編以上で扱うべきだろうと思い，まずはコマンドの基本
+ 的事項のみについて扱いました．
 \end{comment}
 
 
-\section{����ȥ��ޥ��}
-{\LaTeX}�ϥ���ԥ塼���ץ������Ǥ����顤�ʹ֤ΰջ֤����򤹤뤿
-��ˤϲ������̤�̿���ʹ֤�������դ��ʤ��ƤϤʤ�ޤ���
+\section{記号とコマンド}
+{\LaTeX}はコンピュータプログラムですから，人間の意志を理解するた
+めには何か特別な命令を人間から受け付けなくてはなりません．
 \begin{quote}
- \yo{�⤷�����Ƥ����դ�\textgt{����}�ˤ������ΤǤ�����}
+ \yo{もしかしてこの辺は\textgt{太字}にしたいのですか？}
 \end{quote}
-�ʤɤ��б�������Ϥ���ޤ��󡥳�̵�Ȥ����櫓�ǤϤ���ޤ��󤬡�
-����Ū�ˤ����餫��̿�᤹��ޤǲ��⤷�ʤ����ʤǤ���
-���Τ��Ḷ�Ƥˤ�\K{���ޥ��}�ȸƤФ�����̤�\Z{����}���֤��Ȥä��ꡤ
-�����Ĥ��ε����\K{���̤ʰ�̣}��������ƻ��Ѥ��ޤ����Ǥ�����{\LaTeX}�Ǥ�
-����ΰ�̣�ȥ��ޥ�ɤ������ΤäƤ����ޤ��礦��
+などと対応する事はありません．皆無というわけではありませんが，
+基本的にこちらから命令するまで何もしない性格です．
+そのため原稿には\K{コマンド}と呼ばれる特別な\Z{記号}の綴りを使ったり，
+いくつかの記号に\K{特別な意味}を持たせて使用します．ですから{\LaTeX}での
+記号の意味とコマンドの役割を知っておきましょう．
 
 
-\subsection{�����ʬ��}\zindind{����}{��ʬ��}%
-�����ʤ�{\laTEX}�ε����ʬ���ͤ�����⡤
-���ʻ��Ѥ��Ƥ������ܸ��Ѹ�ε���ȸ����ͤ��ޤ��礦��
-�䤿���ϥ���ԥ塼�������򤹤�Τ��񤷤������ȤäƤ��ޤ���
-�ä����ܸ�ϥ���ԥ塼�������򤷤Ť餤��ΤȤʤäƤ��ޤ���
-����Ǥ�䤿���ʹ֤�ʸ̮�ʤɤ�ƻ�ڤˡ������ΰ�̣���ɤ߼��ޤ���
+\subsection{記号の分類}\zindind{記号}{の分類}%
+いきなり{\laTEX}の記号の分類を考えるよりも，
+普段使用している日本語や英語の記号と言語を考えましょう．
+私たちはコンピュータが理解するのが難しい言語を使っています．
+特に日本語はコンピュータが理解しづらいものとなっています．
+それでも私たち人間は文脈などを道筋に，それらの意味を読み取ります．
 \begin{quotation}
- ������1,000�ߤ���äơ���ƣ����ξ�Ź�˱����㤤�˹Ԥä���
+ 今日は1,000円を持って，佐藤さんの商店に塩を買いに行った．
 \end{quotation}
-�Ȥ���1ʸ��ͤ���ȡ��ʹ֤Ϥ�����\yo{1,000��}�Υ����\qu{\str,}��
-\yo{�����3���ܤ��������ڤ�}���Ǹ�ζ���\yo{��}��\yo{ʸ�ν����}��
-���������Ǥ��ޤ����䤿����ʣ��������ʸ������Ǥ�����ͳ�Ȥ��ơ�
-ʸ�����ɬ��\K{ʸˡ}��¸�ߤ���Ȥ��������󤲤��ޤ���
+という1文を考えると，人間はすぐに\yo{1,000円}のコンマ\qu{\str,}を
+\yo{お金の3桁目に入れる区切り}，最後の句点\yo{．}を\yo{文の終わり}で
+あると理解できます．私たちが複雑な日常文を理解できる理由として，
+文の中に必ず\K{文法}が存在するという事が挙げられます．
 
-�ʹ֤Ϥ�������
-ۣ���ɽ���򸫤Ĥ��Ƥ⤽�����������Ǥ��ޤ���������ԥ塼����
-�ʤˤ�`1'��`0'����ʬ����ʤ�ͻ�̤������ʤ������Ǥ����顤%\K{ʸˡ}
-�ʹ֤�����Ū���Ѥ��Ƥ���\Z{��������}�������Τ�ʸˡ����ä���
-����ԥ塼��������Ǥ���\Z{��������}�ǵ��Ҥ��Ƥ�����ɬ����������ޤ���
-%��������Ǥ��ޤ�������ʸˡ�ˤĤ��Ƥ��̤ε���˾Ҳ𤷤褦��
-%�פ��ޤ�����
-%�Ȥˤ����ʹ֤λȤ����ܸ�Ȥϰ㤤���ä��ꤷ�Ƥ���Ȥ������ȤǤ���
-%��������ʸˡ�˴�Ť���\K{��������}������
-%����Τ�����ԥ塼���ץ������ʤ櫓�Ǥ���{\laTEX}����������
-\laTEX ��\Z{����ʸˡ}����äȤ�����������
-��������Ǥ��ޤ��󤫤顤�桼���������Ϥ���뵭��ˤ�����
-���Τʰ�̣���������ɬ�פ�����ޤ������ߤΥС������� \laTEX �Ǥ�
-ۣ��ʰ�̣���������ʸ�Ϥ�ɮ������ϤǤ��ޤ���
+人間はある程度
+曖昧な表現を見つけてもそれを柔軟に理解できますが，コンピュータは
+なにせ`1'と`0'しか分からない融通の利かない機械ですから，%\K{文法}
+人間が日常的に用いている\Z{自然言語}よりは正確な文法を持った，
+コンピュータが理解できる\Z{形式言語}で記述してあげる必要性があります．
+%しか理解できません．正規文法については別の機会に紹介しようと
+%思いますが，
+%とにかく人間の使う日本語とは違いきっかりしているということです．
+%この正規文法に基づいた\K{正規言語}を理解
+%するのがコンピュータプログラムなわけです．{\laTEX}も正規言語
+\laTEX は\Z{生成文法}を基礎とした形式言語
+しか理解できませんから，ユーザから入力される記号には全て
+明確な意味を持たせる必要があります．現在のバージョンの \laTEX では
+曖昧な意味を持たせて文章を執筆する事はできません．
 
-{\LaTeX}�Ǥϥ桼�������Ϥ�������̣�����򤹤뤿������Ƥε����
-{\LaTeX}�ʤ�ΰ�̣�������ƤƤ��ޤ���
-�ʹ֤������ܡ��ɤ���\qu{\str<}�Ȥ�����������Ϥ��Ƥ���ؤ�
-��ӱ黻�ҤȤ����򤷤Ƥ���ޤ���\qu{\str$\str<\str$}�Ȥ��ʤ����
-\yo{�������餳���Ͽ����Ǥ��ꡤ\qu{\str<}����ӱ黻�ҤȤ��ƻȤ�}
-�Ȥ���\K{��̣}�����򤷤Ƥ���ޤ��󡥤��Τ���{\LaTeX}�����Ϥ�
-Ϳ����桼����{\LaTeX}��ʸˡ��Ф���ɬ�פ�����ޤ���
-�ܤ����Ф���ɬ�פϤ���ޤ���
+{\LaTeX}ではユーザが出力したい意味を理解するために全ての記号に
+{\LaTeX}なりの意味を割り当てています．
+人間がキーボードから\qu{\str<}という記号を入力しても数学の
+比較演算子とは理解してくれません．\qu{\str$\str<\str$}としなければ
+\yo{ここからここは数式であり，\qu{\str<}は比較演算子として使う}
+という\K{意味}を理解してくれません．そのため{\LaTeX}に入力を
+与えるユーザは{\LaTeX}の文法を覚える必要があります．
+詳しく覚える必要はありませんが
 \begin{quote}
 \verb|\ { } $ & # ^ _ ~ %|
 \end{quote}
-�Ȥ���10�Ĥε���ˤ����̤ʰ�̣���������Ф��Ƥ���������
-���줾��ε���λȤ����Ϥ��λ������������ޤ��Τǡ����Ϥ��ä�10��
-�ε��椬���̤ʰ�̣���������ʸ���ȴ����������ʿ��̾���Ҳ�̾������
-���̤�ñ����뤿���ʸ���Ȥ���%���򤷤Ƥ����ȻפäƤ���������
-ǧ�������Τ��Ȳ�ᤷ��ĺ���Ƥ⹽���ޤ���
+という10個の記号には特別な意味がある事を覚えてください．
+それぞれの記号の使い方はその時々に説明しますので，今はざっと10個
+の記号が特別な意味を持ち，英文字と漢字，それに平仮名や片仮名だけが
+普通の単語を作るための文字として%理解してくれると思ってください．
+認識されるのだと解釈して頂いても構いません．
 
 \begin{Trick}
 \index{JIS X 0208@JIS~X~0208}%
-\index{ʸ��!Ⱦ�ѥ���}%
-\laTEX ��ɸ��Ū�ˤ�JIS~X~0208��JIS ��1��ࡦ��2���ˤ�ʸ������ޤǤ���
-���������Ǥ��ޤ��󤫤顤\Z{�����¸ʸ��}��\Z{Ⱦ�ѥ���}ʸ���Ͻ��ϤǤ��ޤ�
-�󡥤������ĥ�����ߤ������Ĥ�����ޤ�����ǯ��\Hito{�ƣ}{����Ϻ}��
-���Adobe-Japan-1-6�ޤǤ�ʸ������򰷤���\Y{OTF}�ѥå�������������ޤ���
-�����¸���ɤ�ʸ�������Τ뤿��ˡ��㤨�Х����֤Ǹ�������Τ��ɤ��Ǥ��礦��
+\index{文字!半角カナ}%
+\laTEX は標準的にはJIS~X~0208（JIS 第1水準・第2水準）の文字集合までしか
+扱う事ができませんから，\Z{機種依存文字}や\Z{半角カナ}文字は出力できませ
+ん．これらを拡張する試みがいくつかあります．近年は\Hito{齋藤}{修三郎}に
+よるAdobe-Japan-1-6までの文字集合を扱える\Y{OTF}パッケージ等があります．
+機種依存がどの文字かを知るために，例えばウェブで検索するのも良いでしょう．
 
 \end{Trick}
 
-\subsection{���ޥ��}\seclab{ml:command}
-�ƥ����Ȥ����Ϥ��Ƥ����\qu{\str{<}}�Ȥ��������ܡ��ɤ�������Ϥ�
-\qu{!`}�ˤʤäƤ��ޤ��ޤ�������ϰ��Τɤ��������Ǥ��礦�����ͤ���
-�ߤ��\qu{\str{<}}�Ȥ������Ϥ�\qu{\str{<}}�Ȥ����������Ϥ���Ȥ���
-̿��ǤϤʤ��̤�̿�ᡤ\qu{!`}����Ϥ���Ȥ���̿��˳�����Ƥ��Ƥ���
-�ȹͤ����ޤ�������� \verb|\%| �Τ褦�ʥХå�����å���\pp{��}�μ���
-���椬���褦�ʥ��ޥ�ɤ�¸�ߤ��ޤ���������{\LaTeX}�Υ��ޥ�ɤ�
-\yo{�Хå�����å����ʸ����}�Ȥ��������ǤϤʤ�����ʬ����ޤ���
-���Τˤ�\yo{�Хå�����å���ȵ�����֤�}��\K{����ȥ�����%
-����������}�ȸƤӡ��ü쵭��1ʸ����\K{����ȥ����륷��ܥ�}
-�ȸƤӤޤ���
-{\LaTeX}�ˤ����륳�ޥ�ɤ��礭��ʬ����Ȼ��Ĥ�ʬ��Ǥ��ޤ���
+\subsection{コマンド}\seclab{ml:command}
+テキストを入力していると\qu{\str{<}}というキーボードからの入力が
+\qu{!`}になってしまいます．これは一体どういう事でしょうか．考えて
+みると\qu{\str{<}}という入力は\qu{\str{<}}という記号を出力するという
+命令ではなく別の命令，\qu{!`}を出力するという命令に割り当てられている
+と考えられます．さらに \verb|\%| のようなバックスラッシュ\pp{円}の次に
+記号が来るようなコマンドも存在します．ここで{\LaTeX}のコマンドは
+\yo{バックスラッシュと文字列}という形式ではない事が分かります．
+正確には\yo{バックスラッシュと記号の綴り}を\K{コントロール%
+シークエンス}と呼び，特殊記号1文字を\K{コントロールシンボル}
+と呼びます．
+{\LaTeX}におけるコマンドは大きく分けると三つに分類できます．
 \begin{description}
-\zindind{����ȥ�����}{����������}%
-\zindind{����ȥ�����}{����ܥ�}%
-\zindind{����ȥ�����}{���ڡ���}%
-\zindind{����ȥ�����}{���}%
- \item[{����ȥ����륷��������}]
+\zindind{コントロール}{シークエンス}%
+\zindind{コントロール}{シンボル}%
+\zindind{コントロール}{スペース}%
+\zindind{コントロール}{ワード}%
+ \item[{コントロールシークエンス}]
 \index{"\@\verb+\+}\glossary{"\@\verb+\+}
-   �Хå�����å���\qu{\texttt\bs}\pp{\qu{\texttt\yen}}�ȵ�����֤ꡥ%}
-   \K{�����֤�}�����������⤢��ޤ���������ܽ�Ǥ�%"}
-   ������\K{���ޥ��}�Ȥ���ɽ�����Ƥ��ޤ���
+   バックスラッシュ\qu{\texttt\bs}\pp{\qu{\texttt\yen}}と記号の綴り．%}
+   \K{制御綴り}と訳される事もあります．これを本書では%"}
+   狭義の\K{コマンド}として表現しています．
  \begin{description}
-   \item[{����ȥ�������}] 
-      �Хå�����å���ȱѻ����֤ꡥ�㤨��\qu{\texttt{\bs section}}�ʤɡ�
-   \item[{����ȥ����륷��ܥ�}] 
-      �Хå�����å���ȱ�ʸ���ʳ����֤ꡥ�㤨��\qu{\texttt{\bs3}}�Ȥ�
-      \qu{\texttt{\bs\#}}�ʤɡ�
-   \item[{����ȥ����륹�ڡ���}] 
-      �Хå�����å���ȥ��ڡ�����Ĥ��֤ꡥ\qu{\texttt{\bs}\textvisiblespace}�λ���
+   \item[{コントロールワード}] 
+      バックスラッシュと英字の綴り．例えば\qu{\texttt{\bs section}}など．
+   \item[{コントロールシンボル}] 
+      バックスラッシュと英文字以外の綴り．例えば\qu{\texttt{\bs3}}とか
+      \qu{\texttt{\bs\#}}など．
+   \item[{コントロールスペース}] 
+      バックスラッシュとスペース一つの綴り．\qu{\texttt{\bs}\textvisiblespace}の事．
  \end{description}
- \item[�ü쵭��]
-   ���̤ʰ�̣����ĵ��桥{\KY{ͽ��ʸ��}}�ȸƤФ�����
-����ޤ�����Ȥ���\qu{\texttt{\char'173}}, \qu{\texttt{\$}}�ʤɡ�%$
- \item[�ѿ����ʤ�]
-   �Хå�����å�����դ��ʤ����̤�ʸ����
+ \item[特殊記号]
+   特別な意味を持つ記号．{\KY{予約文字}}と呼ばれる事も
+あります．例として\qu{\texttt{\char'173}}, \qu{\texttt{\$}}など．%$
+ \item[英数字など]
+   バックスラッシュの付かない普通の文字列．
 \end{description}
-���ʳ��Ǥ��礭��ʬ�����
+現段階では大きく分けると
 \begin{itemize}
- \item �Хå�����å����ʸ������֤ꡥ
- \item �ü�ʵ��桥\indindz{����}{�ü��}%
- \item ���̤�ʸ����
+ \item バックスラッシュと文字列の綴り．
+ \item 特殊な記号．\indindz{記号}{特殊な}%
+ \item 普通の文字列．
 \end{itemize}
-�λ��Ĥ�����������򤷤Ƥ����������ܽ�Ǥ������֤�
-\pp{����ȥ����륷��������}�λ���\K{���ޥ��}�ȸƤ�
-\K{̿��}��\K{���}��\K{�Ķ�}�λ��Ĥ�ʬ�ष�ޤ���
+の三つがある事を理解してください．本書では制御綴り
+\pp{コントロールシークエンス}の事を\K{コマンド}と呼び
+\K{命令}，\K{宣言}，\K{環境}の三つに分類します．
 \begin{description}
-\item[\Z{̿��}] 
-   ����ν��������ΤȤ��˼¹Ԥ���륳�ޥ�ɡ�
-   ¾�λ��ͽ�ǤϤ���̿��λ���\K{���ޥ��}�ȸƤֻ���
-   ¿���褦�Ǥ���\K{����}����������ꡤ���ΰ����λ���
-   \K{����}�ȸƤ���ꡤ\K{���ץ����}�ȸƤ���ꤷ�ޤ���
-   ��Ȥ��� \cmd{maketitle} �� \cmd{section}�ʤɤ�����ޤ���
+\item[\Z{命令}] 
+   特定の処理がそのときに実行されるコマンド．
+   他の参考書ではこの命令の事を\K{コマンド}と呼ぶ事が
+   多いようです．\K{引数}を取る事があり，その引数の事を
+   \K{要素}と呼んだり，\K{オプション}と呼んだりします．
+   例として \cmd{maketitle} や \cmd{section}などがあります．
 
-\item[\Z{���}] 
-   ����ν���������ʹ߷�³���ƹԤ��륳�ޥ�ɡ�
-   ������Ŭ�Ѥ�����ϰϤ���ꤹ��\pp{\Z{���롼�ԥ�}����}����
-   �Ǥ��ޤ���������Ȥ���ϵ����褯����λ���\K{̿��}��
-   \K{�����̿��}�Ȥ�\K{��������ޥ��}�ȸƤФ�ޤ���
-   ��Ȥ��� \cmd{ttfamily}���Ǥ���������Υ��ޥ�ɤ�̿�����٤��
-   ���ʤ��Τǡ��ܽ�Ǥ��Ǥ�񤭤Ȥ�����������ޥ�ɤ�
-   �Ƥֻ���¿���Ǥ���
+\item[\Z{宣言}] 
+   特定の処理がそれ以降継続して行われるコマンド．
+   処理の適用される範囲を限定する\pp{\Z{グルーピング}する}事も
+   できます．引数をとる事は稀．よく宣言の事も\K{命令}や
+   \K{宣言方命令}とか\K{宣言型コマンド}と呼ばれます．
+   例として \cmd{ttfamily}等です．宣言型のコマンドは命令に比べると
+   少ないので，本書でも断り書きとして宣言型コマンドと
+   呼ぶ事が多いです．
 
-\item[\Z{�Ķ�}] 
-%   \verb|\begin|\pa{����}��\verb|\end|\pa{����}
-%   �ˤ�ä����Ǥ�Ϥॳ�ޥ�ɡ��ޤ��ϰϤޤ�Ƥ����ΰ��
-%   ���ȡ��������뤳�Ȥ�����ޤ���
-%   ��Ȥ���\env{document}�Ķ��ʤɤ�����ޤ���
-  \cmd{begin}\pa{����} �� \cmd{end}\pa{����} ��
-  ��ä����Ǥ�Ϥॳ�ޥ�ɡ��ޤ��ϰϤޤ�Ƥ����ΰ��
-  �������������������ޤ���
-  ��Ȥ���\env{document}�Ķ��ʤɤ�����ޤ���
+\item[\Z{環境}] 
+%   \verb|\begin|\pa{何々}と\verb|\end|\pa{何々}
+%   によって要素を囲むコマンド，または囲まれている領域の
+%   こと．引数を取ることがあります．
+%   例として\env{document}環境などがあります．
+  \cmd{begin}\pa{何々} と \cmd{end}\pa{何々} に
+  よって要素を囲むコマンド，または囲まれている領域の
+  事．引数を取る事があります．
+  例として\env{document}環境などがあります．
 \end{description}
 
 
-\subsection{���ޥ�ɤ����}
-\zindind{�ޥ���}{�����}%
-\zindind{�ޥ���}{�κ����}%
-{\LaTeX}�θ��ƤǤϿ�����̿��ʤɤ�����򤹤�����Ǥ��ޤ���
+\subsection{コマンドの定義}
+\zindind{マクロ}{の定義}%
+\zindind{マクロ}{の再定義}%
+{\LaTeX}の原稿では新しい命令などの定義をする事ができます．
 \begin{Syntax}
-\C{newcommand}\pa{̿��}\opa{����}\opa{ɸ����}\pa{���}\\
-\C{renewcommand}\pa{̿��}\opa{����}\opa{ɸ����}\pa{���}
+\C{newcommand}\pa{命令}\opa{整数}\opa{標準値}\pa{定義}\\
+\C{renewcommand}\pa{命令}\opa{整数}\opa{標準値}\pa{定義}
 \end{Syntax}
-\Cmd{newcommand}�ˤĤ��ƤǤ���������̿��ˤ�äơ�
-�ޤ��������Ƥ��ʤ�\va{̿��}�򿷵�����������
-���Ǥ��ޤ���
+\Cmd{newcommand}についてですが，この命令によって，
+まだ定義されていない\va{命令}を新規に定義する事
+ができます．
 
 \begin{InTeX}
-\newcommand{\example}{�������Ǥ���}
+\newcommand{\example}{これは例です．}
 \end{InTeX}
 
-��ʸ���`\cmd{example}'�ȵ��Ҥ����
+本文中で`\cmd{example}'と記述すると
 %\begin{OutText}
-`�������Ǥ���'
+`これは例です．'
 %\end{OutText}
-�Ȥ������Ϥˤʤ�ޤ���
+という出力になります．
 
 \begin{InTeX}
-\newcommand{\example}[2]{#1��#2�Ǥ���}
+\newcommand{\example}[2]{#1は#2です．}
 \end{InTeX}
 
-³���ƾ嵭�ε��Ҥ˴�Ť���ʸ���`\cmd{example}\verb|{�ܥ�}{�ؤ��⤤}|'
-�ȵ��Ҥ���ȡ�
+続いて上記の記述に基づき本文中で`\cmd{example}\verb|{ボブ}{背が高い}|'
+と記述すると，
 %\begin{OutText}
-`�ܥ֤��ؤ��⤤�Ǥ���'
+`ボブは背が高いです．'
 %\end{OutText}
-�Ȥ������Ϥˤʤ�ޤ�������ˤ��� \cmd{example}̿��
-��Ǥ�հ��������äƤ��ɤ�����������뤿��ˤϼ��Τ褦�ˤ��ޤ�����
-Ǥ�հ�������������¤˴��ꤷ�ޤ���
+という出力になります．さらにこの \cmd{example}命令
+に任意引数があっても良い事を宣言するためには次のようにしますが，
+任意引数も引数の総和に勘定します．
 %\begin{InOut}
-%\newcommand{\example}[2][ɸ��]{Ǥ�հ����� #1
-%�ǡ�ɬ�ܰ����� #2 �Ǥ���}
-%\example{����}\\ \example[���ץ����]{����}
+%\newcommand{\example}[2][標準]{任意引数は #1
+%で，必須引数は #2 です．}
+%\example{それ}\\ \example[オプション]{それ}
 %\end{InOut}
 \begin{InOut}
-\newcommand{\example}[2][̤��]{%
-  ���#1#2�ˤ��ޤ���}
-\example{���}   \example{����}\par
-\example[]{���} \example[ȡ��]{��
-��}
+\newcommand{\example}[2][未来]{%
+  私は#1#2にいます．}
+\example{大学}   \example{出版}\par
+\example[]{大学} \example[函館]{出
+版}
 \end{InOut}
-���Τ褦��Ǥ�հ�����ɬ�ܰ���������ʤɤ⡤
-\cmd{newcommand}̿���Ȥ����ˤ��¸��Ǥ��ޤ���
-�������ǰ�����\qu{\texttt\#}\va{n}�Ȥ��ư�����1����9�ޤǤ�
-�������Ȥ��ޤ���
-%���Τ褦����������˻Ȥ���Τ��Ⱦ�������
-%�˻פ��������뤫���Τ�ޤ��󤬡��ʲ��������������������
+このように任意引数や必須引数の定義なども，
+\cmd{newcommand}命令を使う事により実現できます．
+定義の中で引数は\qu{\texttt\#}\va{n}として扱い，1から9までの
+整数が使えます．
+%このような定義が何に使えるのかと少し疑問
+%に思う方がいるかも知れませんが，以下の例題をご覧ください．
 %\begin{InOut}
 %\newcommand{\seq}[2][n]{%
 %  \{#2_{0},\ldots,\,#2_{#1}\}}
-%�֤ä��㤱$\seq{a}$�ä�$\seq[k]{x}$����͡�
+%ぶっちゃけ$\seq{a}$って$\seq[k]{x}$だよね．
 %\end{InOut}
 %%$
-���Τ褦������Ͽ����ε��Ҥʤɤ˰��Ϥ�ȯ�����ޤ���
+このような定義は数式の記述などに威力を発揮します．
 \begin{InOut}
 \newcommand{\seq}[2][n]{%
  \{#2_{0},#2_{1},\ldots,#2_{#1}\}}
-�����ν����ޥ�����Ȥä�$\seq{a}$��
-$\seq[k]{x}$�ȤǤ��ޤ���
+数式の集合もマクロを使って$\seq{a}$や
+$\seq[k]{x}$とできます．
 \end{InOut}
 
-\cmd{newcommand}�Ǥ�Ǥ�հ������Ĥ����ߤ��뤳
-�Ȥ��Ǥ��ޤ��󤬡������Ϲ��9�ĤޤǻȤ������Ǥ��ޤ���
-\Cmd{renewcommand}�Ǥϰ����������̿�������������
-�����Ǥ��ޤ���
+\cmd{newcommand}では任意引数を一つしか設けるこ
+とができませんが，引数は合計9個まで使う事ができます．
+\Cmd{renewcommand}では一度定義した命令を再度定義する
+事ができます．
 
-������̾�{\LaTeX}�Ǥ褯��������Ķ����Υ��ޥ�ɤ�
-����˴ؤ��Ƥϰʲ��λͤĤ�̿�᤬�Ȥ��ޤ���
+さらに通常{\LaTeX}でよく見かける環境型のコマンドの
+定義に関しては以下の四つの命令が使えます．
 \begin{Syntax}
-\C{newenvironment}\pa{�Ķ�̾}\opa{�����θĿ�}\opa{ɸ����}%
- \pa{�Ϥ�}\pa{�����}\\
-\C{renewenvironment}\pa{�Ķ�̾}\opa{�����θĿ�}\opa{ɸ����}%
- \pa{�Ϥ�}\pa{�����}
+\C{newenvironment}\pa{環境名}\opa{引数の個数}\opa{標準値}%
+ \pa{始め}\pa{終わり}\\
+\C{renewenvironment}\pa{環境名}\opa{引数の個数}\opa{標準値}%
+ \pa{始め}\pa{終わり}
 \end{Syntax}
-\Cmd{newenvironment}�ǤϴĶ��λϤ����ʬ�Ƚ�������ʬ
-��������ơ������˴Ķ�����̿���������ޤ��������˴ؤ���
-������ \cmd{newcommand}��Ʊ���Ǥ���
-\Cmd{renewenvironment}�ˤĤ��Ƥϰ�����������Ķ�����
-���ޥ�ɤ����������뵡ǽ������ޤ���
+\Cmd{newenvironment}では環境の始めの部分と終わりの部分
+を定義して，新たに環境型の命令を作成します．引数に関する
+扱いは \cmd{newcommand}と同じです．
+\Cmd{renewenvironment}については一度定義した環境型の
+コマンドを再度定義する機能があります．
 
-\cmd{newcommand}/\cmd{newenvironment}�ʳ��ˤ������ʥ��ޥ�ɤ�����ޤ���
+\cmd{newcommand}/\cmd{newenvironment}以外にも便利なコマンドがあります．
 
 \begin{Syntax}
-\cmd{providecommand}\pa{̿��}\opa{����}\opa{ɸ����}\pa{���}\\
-\Cmd{DeclareRobustCommand}\pa{̿��}\opa{����}\opa{ɸ��}\pa{����}
+\cmd{providecommand}\pa{命令}\opa{整数}\opa{標準値}\pa{定義}\\
+\Cmd{DeclareRobustCommand}\pa{命令}\opa{数値}\opa{標準}\pa{設定}
 \end{Syntax}
 
-���� \Cmd{providecommand}�Ϥ��Ǥ�̿�᤬����Ѥߤʤ�в��⤻�����⤷���
-����Ƥ��ʤ��ʤ�л��ꤵ�줿���Ƥ��̤��̿��������������Ǥ��ޤ���
-\cmd{DeclareRobustCommand}��Ȥä����ϴ���̿�������Ǥ��ޤ���
+この \Cmd{providecommand}はすでに命令が定義済みならば何もせず，もし定義
+されていないならば指定された内容の通りに命令を定義する事ができます．
+\cmd{DeclareRobustCommand}を使った場合は頑丈な命令を作成できます．
 
 \begin{Prob}
-���Τ褦�˥������ꥹ���դ�������������ޥ�ɤ���Ϳ���Ƥ��ʤ����Υ��ޥ�ɤ�
-�㤤��ͻ����Ƥ���������
+次のようにアスタリスク付きで定義したコマンドと付与していない場合のコマンドの
+違いを考察してください．
 
 \begin{InTeX}
 \newcommand\testargs[1]{[#1]}
 \newcommand*\testArgs[1]{[#1]}
-\testArgs{1���ܤ�����\par 2���ܤ�����}.
-\testargs{1���ܤ�����\par 2���ܤ�����}.
+\testArgs{1行目の入力\par 2行目の入力}.
+\testargs{1行目の段落\par 2行目の段落}.
 \end{InTeX} 
 
-�ºݤ˥����ץ��åȤ���ȥ��顼��ɽ������ޤ�������ˤ�ꥢ�����ꥹ���դ���
-�����������ʣ���Ԥ����������Ȥ��Ƽ����Ȥ�ʤ��ʤ�ȹͤ����ޤ���
+実際にタイプセットするとエラーが表示されます．これによりアスタリスク付きで
+定義した場合は複数行の段落を引数として受けとらなくなると考えられます．
 \end{Prob}
 
 \begin{Exe}
-���·����Ԥ�ʸ�Ϥ�Ĵ����褦�� \E{cemph} �Ķ��ϼ��Τ褦��������ޤ���
+中央揃えを行い文章を強調するような \E{cemph} 環境は次のように定義します．
 \begin{InOut}
 \newenvironment{cemph}%
   {\begin{center}\begin{em}}%
   {\end{em}\end{center}}
-������ʸ�Ϥ��̾��̤���Ϥ��졤
+ここの文章は通常通り出力され，
 \begin{cemph}
-�������ʸ�Ϥ����·���Ƕ�Ĵɽ��
+この中の文章は中央揃えで強調表示
 \end{cemph}
-����ޤ�������
+されましたか？
 \end{InOut}
 \end{Exe}
 
 \begin{Prob} 
-\C{DeclareRobustCommand} ��Ȥä���򼨤��ޤ������Υե�����򥿥��ץ���
- �Ȥ������η�̤��̣���Ƥ���������
+\C{DeclareRobustCommand} を使った例を示します．次のファイルをタイプセッ
+ トし，その結果を吟味してください．
 
 \begin{InTeX}
 \documentclass{jarticle}
@@ -319,263 +319,263 @@ $\seq[k]{x}$�ȤǤ��ޤ���
 \newcommand{\moroiyen}{{\ooalign{Y\crcr\hss=\hss}}}
 \begin{document}
 \tableofcontents
-\section{�����{\moroiyen}�ϲ���䤹��}
-�ɤ��Ǥ����ͤ���
-\section{���פ�{\joubuyen}�ϲ���ˤ���}
-����פǤ�����
+\section{もろい{\moroiyen}は壊れやすい}
+どうですかねぇ。
+\section{丈夫な{\joubuyen}は壊れにくい}
+大丈夫ですか？
 \end{document}
 \end{InTeX}
 
-������Ǥ�1���ܤΥ����ץ��åȤǥ��顼��ɽ������ޤ���
+この例では1回目のタイプセットでエラーが表示されます．
 
 \begin{OutTerm}
 ! Illegal parameter number in definition of \reserved@a.
 <to be read again> \crcr
-l.6 \section{�����{\moroiyen}�ϲ���䤹��}
+l.6 \section{もろい{\moroiyen}は壊れやすい}
 ?
 \end{OutTerm}
 
-�����2���ܤΥ����ץ��åȤǤ��ܼ�
-�ե�����\Va{file}{toc}���������졤���줬�ɤ߹��ޤ��Τ�
-����˥��顼�Ȥʤ�ޤ���\Va{file}{toc}��\Va{file}{aux}��
-�������Ҥ���Ƥ���Τ����̣���Ƥ���������\Va{file}{aux}�ˤ�
-���Τ褦�˽��Ϥ���Ƥ��ꡤ�������ˤʤäƤ��ޤ���
+さらに2回目のタイプセットでは目次
+ファイル\Va{file}{toc}が作成され，それが読み込まれるので
+さらにエラーとなります．\Va{file}{toc}と\Va{file}{aux}に
+何が記述されているのかを吟味してください．\Va{file}{aux}には
+次のように出力されており，凄い事になっています．
 
 \begin{InTeX}
 \relax
-\@writefile{toc}{\contentsline{section}{\numberline{1}�����
+\@writefile{toc}{\contentsline{section}{\numberline{1}もろい
   {{\lineskiplimit -\maxdimen \unhbox \voidb@x \vtop {\baselineskip 
   \z@skip \lineskip .25ex\everycr{}\tabskip \z@skip \halign {##\crcr
-  Y\crcr \hss =\hss \crcr }}}}�ϲ���䤹��}{1}}
-\@writefile{toc}{\contentsline{section}{\numberline{2}���פ�
-  {\joubuyen}�ϲ���ˤ���}{1}} 
+  Y\crcr \hss =\hss \crcr }}}}は壊れやすい}{1}}
+\@writefile{toc}{\contentsline{section}{\numberline{2}丈夫な
+  {\joubuyen}は壊れにくい}{1}} 
 \end{InTeX}
 
-�����\Va{file}{toc}�ˤϼ��Τ褦�ʽ��Ϥˤʤ�ޤ���
+さらに\Va{file}{toc}には次のような出力になります．
 
 \begin{InTeX}
-\contentsline{section}{\numberline{1}�����{{\lineskiplimit 
+\contentsline{section}{\numberline{1}もろい{{\lineskiplimit 
   -\maxdimen \unhbox\voidb@x \vtop {\baselineskip \z@skip 
   \lineskip .25ex\everycr{}\tabskip \z@skip \halign {####\crcr 
-  Y\crcr \hss =\hss \crcr}}}}�ϲ���䤹��}{1}
-\contentsline{section}{\numberline{2}���פ�{\joubuyen}
-  �ϲ���ˤ���}{1}
+  Y\crcr \hss =\hss \crcr}}}}は壊れやすい}{1}
+\contentsline{section}{\numberline{2}丈夫な{\joubuyen}
+  は壊れにくい}{1}
 \end{InTeX}
 
-���줬 \cmd{DeclareRobustCommand}�� \cmd{moroiyen}̿��
-��������ʤ��ä���̤Ȥʤ�ޤ���{\LaTeX}��̿���
-�����̤Υե�����˽񤭽Ф����Ͼ��פ�̿��Ȥ����������
-��������̵��ʤ褦�Ǥ��������������Τ褦�� \Cmd{protect}
-̿���Ȥä����Ϥ��ޤ��Ԥ������ǧ���Ƥ���������
+これが \cmd{DeclareRobustCommand}で \cmd{moroiyen}命令
+を定義しなかった結果となります．{\LaTeX}の命令を
+何か別のファイルに書き出す場合は丈夫な命令として定義して
+いた方が無難なようです．ただし，次のように \Cmd{protect}
+命令を使った場合はうまく行く事を確認してください．
 
 \begin{InTeX}
-\section{�����{\protect\moroiyen}�ϲ���䤹��} 
+\section{もろい{\protect\moroiyen}は壊れやすい} 
 \end{InTeX}
 
-\Cmd{protect}��Ȥ��� \cmd{moroiyen}�����줺��
-\Va{file}{toc}��\Va{file}{aux}�˽��Ϥ���Ƥ������
-��ǧ���Ƥ���������
+\Cmd{protect}を使うと \cmd{moroiyen}が壊れずに
+\Va{file}{toc}や\Va{file}{aux}に出力されている事も
+確認してください．
 \end{Prob}
 
-%���Τ褦������򤹤륳�ޥ�ɤΤۤ���{\LaTeX}�Ǥ�
-%���ͤ����륳�ޥ�ɡ����Ǥ˴ؤ��륳�ޥ�ɤʤ�
-%��¿��¸�ߤ��ޤ���
+%このような定義をするコマンドのほかに{\LaTeX}では
+%数値を操作するコマンド，組版に関するコマンドなど
+%数多く存在します．
 %
-%�ʾ�Τ��Ȥ�Ƨ�ޤ��Ƥ��줫��ޥ����ȥ��饹�ˤĤ��Ƥ�
-%����򤷤ޤ����ƾ��¤Ӥ˳���������̤ˤ�����ʬ�ष��
-%ɬ�פ˱�������߻��Ȥ򤷤Ƥ��ޤ����ޤ�������������
-%�å������䥯�饹�����ޥ�ɤʤɤ��ɤ����Ȥ��Ǥ��ޤ���
+%以上のことを踏まえてこれからマクロとクラスについての
+%解説をします．各章並びに各節は用途別にそれらを分類し，
+%必要に応じて相互参照をしています．また，索引からもパ
+%ッケージやクラス，コマンドなどを追うことができます．
 
 
-\subsection{ʸ���䥳�ޥ�ɤζ��ڤ�}\seclab{moji:kugiri}
+\subsection{文字やコマンドの区切り}\seclab{moji:kugiri}
 
-�䤿���ʹ֤Ϥ���ʸ����ζ��ڤ��ɤΤ褦��Ƚ�Ǥ��Ƥ���ΤǤ��礦�������
-��ʸ��ʸ�Τ�������ñ���ñ��Τ�������������������Ǥ��������ʸ�����
-���ڤ�򼨤������ζ���ˤϰ�̣�ζ��ڤ꤬����ޤ����Ǥ���Ϥɤ���
-���礦�����㤨�����ܸ�Ǥ�
+私たち人間はある文や節の区切りをどのように判断しているのでしょうか．一つ
+は文と文のあいだや単語と単語のあいだに挿入される空白です．空白は文字列の
+区切りを示し，その空白には意味の区切りがあります．では節はどうで
+しょうか．例えば日本語では
 \begin{quote} 
- \yo{�������Υ٥���Τ���}
+ \yo{公園の中のベンチのうえ}
 \end{quote}
-�Ȥ���̾�줬���ä��Ȥ���ȡ�����Ϥ��줾��
+という名詞があったとすると，これはそれぞれ
 \begin{quote}  
- \yo{����}\yo{��}\yo{��}\yo{��}\yo{�٥��}\yo{��}\yo{����}
+ \yo{公園}\yo{の}\yo{中}\yo{の}\yo{ベンチ}\yo{の}\yo{うえ}
 \end{quote}
-��ʬ����ʸ���ᤷ��{\KY{̾��}}��{\KY{��ư��}}�ʤ�
-��{\KY{�ʻ�}}��ʬ��������Ǥ��ޤ���
+に分けて文を解釈し，{\KY{名詞}}や{\KY{助動詞}}など
+の{\KY{品詞}}に分ける事ができます．
 
-�⤦��Ĥ���Ȥ��ƥ᡼�륢�ɥ쥹�ξ���ͤ��Ƹ��ޤ��礦��
-�᡼�륢�ɥ쥹�Ϥ��⤽�⥳��ԥ塼����Ǽ��Τ�����
-���뤿��ν���Ǥ����饳��ԥ塼����ʬ����䤹��
-ɽ���ˤʤäƤ��ޤ������ʹ֤ˤ�ʬ����䤹��ɽ���ˤʤäƤ��ޤ���
-����
+もう一つの例としてメールアドレスの場合を考えて見ましょう．
+メールアドレスはそもそもコンピュータ上で手紙のやり取りを
+するための住所ですからコンピュータが分かりやすい
+表現になっていますが，人間にも分かりやすい表記になっています．
+仮に
 \begin{quote}
 \verb|name@server.co.jp|
 \end{quote}
-�Ȥ����᡼�륢�ɥ쥹�����ä��Ȥ��ޤ�������Ȥ����
+というメールアドレスがあったとします．するとこれは
 \begin{quote}
 \qu{\str{name}} \qu{\str{@}} \qu{\str{server}}
 \qu{\str{.}} \qu{\str{co}} \qu{\str{.}} \qu{\str{jp}}
 \end{quote}
-��ʬ�����ޤ������줾��
+に分けられます．それぞれ
 \begin{description}
- \item[\str{name}] �᡼�륢�ɥ쥹��ȤäƤ���ͤ�\yo{̾��}��
- \item[\str{@}]   \qu{\str@}��\qu{at}�ΰ�̣�Ǥ⤢�äơ�����ʹߤ�ʸ����\yo{����}��
-	    ɽ�����򼨤���
- \item[\str{jp}] ���οͤ�\yo{��}��ɽ����
- \item[\str{co}] ���οͤ��ɤ��\yo{�ϰ�\pp{�ȿ�}}�˽�°���Ƥ���Τ���ɽ����
- \item[\str{server}] �ϰ����Τɤ��ˤ���Τ��򤢤�魯���ꡥ
- \item[\str{.}] �������ڤ뤿��˻Ȥ��Ƥ��롥
+ \item[\str{name}] メールアドレスを使っている人の\yo{名前}．
+ \item[\str{@}]   \qu{\str@}は\qu{at}の意味でもあって，これ以降の文字は\yo{住所}を
+	    表す事を示す．
+ \item[\str{jp}] その人の\yo{国}を表す．
+ \item[\str{co}] その人がどんな\yo{地域\pp{組織}}に所属しているのかを表す．
+ \item[\str{server}] 地域の中のどこにいるのかをあらわす住所．
+ \item[\str{.}] 住所を区切るために使われている．
 \end{description}
-�Ȥ�����̣�礤����äƤ��ޤ�������ζ��ڤ꤬����ǤϤʤ��ԥꥪ�ɤʤΤ�
-�����Τʤ����Ǥ�������ԥ塼���������ǤϤʤ�٤�ʸ�����
-�����ޤ�Ǥ��ʤ��ۤ����������Ԥ��䤹���ΤǤ���
-���ơ�����ϤɤΤ褦�ˤ��ƶ��ڤ�򸫤Ĥ����ΤǤ��礦����
-�᡼�륢�ɥ쥹����Ǥ�\qu{\str{@}}��\qu{\str{.}}��ʸ���ζ��ڤ�Ȥ���
-�����Ƚ�ꤷ�Ƥ��ޤ���{\LaTeX}�Ǥ�Ʊ���褦�ʻ����äƤ��ޤ���
+という意味合いを持っています．住所の区切りが空白ではなくピリオドなのは
+仕方のない事です．コンピュータの世界ではなるべく文字列は
+空白を含んでいないほうが処理が行いやすいのです．
+さて，これはどのようにして区切りを見つけたのでしょうか．
+メールアドレスの例では\qu{\str{@}}や\qu{\str{.}}を文字の区切りとして
+住所を判定しています．{\LaTeX}でも同じような事をやっています．
 
-�Ǥ�ʸ����Ȥ��ƤΥ��ޥ�ɤ�{\LaTeX}�ǤɤΤ褦�˲�ᤵ���Τ���
-�ͤ��Ƥߤޤ��礦�������Ǥϰ�������̿���ͤ��Ƥߤޤ���
-�ޤ��ϼ��Τ褦�����Ϥν��Ϥ�ͽ�ۤ��Ƥߤޤ��礦��
-
-\begin{InTeX}
-\newcommand{\OneArg}[1]{����#1����}
-\OneArg �ۤ��줽�졥
-\end{InTeX}
-
-��̤�\yo{�����ۤ��褢�줽�졥}�Ǥ���
-���η�̤���{\LaTeX}�Ǥϰ����ˤϲ�����꤬�ʤ����1ʸ�������������ʤ�
-�Ȥ�������ʬ����ޤ���
-%�Ȥ���������ޥ�������Ǥϲ�ǽ�ʤΤǡ��桼������ \cmd{hoge}̿���
-%���֤򱣤����Ȥ��Ǥ��ޤ���
-%����ϳ�ȯ�ԤȻ��ѼԤ�ʬΥ��Ԥ������
-%�������ʤ��ΤǤ������դ˻��ѼԤ���ʬ�λפ��̤��
-%̿��򥫥����ޥ����Ǥ��ʤ��Ȥ����͡�������������褦�Ǥ���
-
-³���Ƽ��Τ褦�ˤ��Ƥߤޤ��礦��
+では文字列としてのコマンドが{\LaTeX}でどのように解釈されるのかを
+考えてみましょう．ここでは引数を取る命令を考えてみます．
+まずは次のような入力の出力を予想してみましょう．
 
 \begin{InTeX}
-\newcommand{\OneArg}[1]{����#1����}
-\OneArg {���줽��}�����졥
+\newcommand{\OneArg}[1]{あ，#1だよ}
+\OneArg ほあれそれ．
 \end{InTeX}
 
-��̤�\yo{�������줽����衤���졥}�ˤʤ�Ǥ��礦��
-�ɤ����������ȳ��\qu{\texttt{\lb\space\rb}}�ǰϤ��
-\K{������Ĥ�ʸ���β��Ȥ���}�������褦�Ǥ���
+結果は\yo{あ，ほだよあれそれ．}です．
+この結果から{\LaTeX}では引数には何も指定がなければ1文字しか受け取らない
+という事が分かります．
+%という定義がマクロの中では可能なので，ユーザから \cmd{hoge}命令の
+%実態を隠すことができます．
+%これは開発者と使用者の分離を行うために
+%仕方がないのですが，逆に使用者が自分の思い通りに
+%命令をカスタマイズできないとか，様々な不満があるようです．
 
-������İ�������̿���������ޤ���
+続いて次のようにしてみましょう．
 
 \begin{InTeX}
-\newcommand{\twoArgs}[2]{����#1���衤�ۤ�#2}
-\twoArgs       {����}          �͡�
+\newcommand{\OneArg}[1]{あ，#1だよ}
+\OneArg {あれそれ}，それ．
 \end{InTeX}
 
-���ξ��η�̤�\yo{����������衤�ۤ�͡�}�Ȥʤ�Ǥ��礦��
-�⤦��ʬ����Ǥ��͡�{\LaTeX}�ΰ�����ʣ����ʸ������Ϥ������Ȥ���
-��̤ǥ��롼�ԥ󥰤�����ɤ��ΤǤ���
+結果は\yo{あ，あれそれだよ，それ．}になるでしょう．
+どうやら引数を波括弧\qu{\texttt{\lb\space\rb}}で囲むと
+\K{それを一つの文字の塊として}受け取るようです．
 
-���ƺ��٤ϡ�\TeX �������Ǥ��̾�Ρ�ʸ���ǤϤʤ�\qu{\str{@}}��ޤ�̿���
-������Ƥߤޤ��礦��
+次に二つ引数を取る命令を定義します．
 
 \begin{InTeX}
-\newcommand{\two@args}[2]{����#1���衤�ۤ�#2}
-\two@args       {����}          �͡�
+\newcommand{\twoArgs}[2]{あ，#1だよ，ほら#2}
+\twoArgs       {それ}          ね．
 \end{InTeX}
 
-����򥿥��ץ��åȤ���ȥ��顼�ˤʤ�Τ�
-\keytop{Enter}������4��ۤɲ����ȥ��顼��ɽ�������Ǥ��礦��
+この場合の結果は\yo{あ，それだよ，ほらね．}となるでしょう．
+もうお分かりですね．{\LaTeX}の引数に複数の文字列を渡したいときは
+括弧でグルーピングすれば良いのです．
+
+さて今度は（\TeX の世界では通常の）文字ではない\qu{\str{@}}を含む命令を
+定義してみましょう．
+
+\begin{InTeX}
+\newcommand{\two@args}[2]{あ，#1だよ，ほら#2}
+\two@args       {それ}          ね．
+\end{InTeX}
+
+これをタイプセットするとエラーになるので
+\keytop{Enter}キーを4回ほど押すとエラーが表示されるでしょう．
 
 \begin{OutTerm}
 ! Missing number, treated as zero.
 <to be read again>
                    g
-l.7 \newcommand{\two@args}[2]{����#1���衤�ۤ�#2}
+l.7 \newcommand{\two@args}[2]{あ，#1だよ，ほら#2}
 ?
 ! You already have nine parameters.
 \reserved@a ...def \expandafter \h \reserved@b #10
                                                   g{
-l.7 \newcommand{\two@args}[2]{����#1���衤�ۤ�#2}
+l.7 \newcommand{\two@args}[2]{あ，#1だよ，ほら#2}
 ?
 ! You can't use `macro parameter character #' in horizontal mode.
-<argument> ����##
-                 1���衤�ۤ�##2
-l.7 \newcommand{\two@args}[2]{����#1���衤�ۤ�#2}
+<argument> あ，##
+                 1だよ，ほら##2
+l.7 \newcommand{\two@args}[2]{あ，#1だよ，ほら#2}
 ?
 ! You can't use `macro parameter character #' in horizontal mode.
-<argument> ����##1���衤�ۤ�##
+<argument> あ，##1だよ，ほら##
                               2
-l.7 \newcommand{\two@args}[2]{����#1���衤�ۤ�#2}
+l.7 \newcommand{\two@args}[2]{あ，#1だよ，ほら#2}
 ?
 \end{OutTerm}
 
 
-����ϰ��Τɤ��������Ǥ��礦����%
-\indindz{���ڤ�}{���ޥ�ɤ�}%%
-�᡼�륢�ɥ쥹�����פ��Ф��Ƥۤ����ΤǤ�����{\LaTeX}�ǤϤɤ���
-��\qu{\str{@}}�򥳥ޥ�ɤζ��ڤ�Ȥ��Ʋ�ᤷ�Ƥ���褦�Ǥ���
+これは一体どういう事でしょうか．%
+\indindz{区切り}{コマンドの}%%
+メールアドレスの例を思い出してほしいのですが，{\LaTeX}ではどうや
+ら\qu{\str{@}}をコマンドの区切りとして解釈しているようです．
 
 \begin{InTeX}
-\newcommand{\h}[2]{����#1���衤�ۤ�#2}
-\two@args       {����}          �͡�
+\newcommand{\h}[2]{あ，#1だよ，ほら#2}
+\two@args       {それ}          ね．
 \end{InTeX}
 
-�����ư����μ����������ͤ������η�̤�\yo{����@���衤�ۤ�ge����͡�}
-�Ȥʤ���Ǥ��礦��
+そして引数の受け取り方を考えた場合の結果は\yo{あ，@だよ，ほらgeそれね．}
+となる事でしょう．
 
-���λ�����{\LaTeX}�ˤ����Ƥ�̿�������ˤϱѻ��Τߤ�
-�������������褦�Ǥ��������Ʊѻ��ʳ���ʸ����ϡ�
-�����򥳥ޥ�ɤζ��ڤ�Ȥ��Ʊѻ��ʳ���ʸ���������Ȥ���
-�������Ȥ������Ǥ���
+この事から{\LaTeX}においての命令の定義には英字のみに
+する事が求められるようです．そして英字以外の文字列は，
+そこをコマンドの区切りとして英字以外の文字列を引数として
+受け取るという事です．
 
-����ʸ����ʬ������Ѥ���{\LaTeX}�Ǥϥޥ�������ˤ��������̤�
-�����򤷤Ƥ��ޤ����ޥ������ưפ��ѹ����Ƥ��äƤϺ���Τ�
-�桼�����餽�Υޥ������ñ���ѹ�����ʤ��褦�ˤ��Ƥ��ޤ���
-������ˡ�ΰ�ĤȤ��ƥޥ�������Ǥ�\Z{���åȥޡ���}\qu{\str{@}}��ѻ���Ʊ��ʬ��\index{"@@\verb+"@+}%
-�Ȥ��ư����ΤǤ���\qu{\str{@}}��ѻ���Ʊ��ʬ��ˤ���ȡ�
-�����ǥ��ޥ�ɤ϶��ڤ��ʤ��ΤǼ��Τ褦�� \cmd{two@args} ������Ǥ���
-�櫓�Ǥ���
+この文字の分類を利用して{\LaTeX}ではマクロの中において特別な
+処理をしています．マクロは容易に変更してもらっては困るので
+ユーザからそのマクロを簡単に変更されないようにしています．
+その方法の一つとしてマクロの中では\Z{アットマーク}\qu{\str{@}}を英字と同じ分類\index{"@@\verb+"@+}%
+として扱うのです．\qu{\str{@}}を英字と同じ分類にすると，
+そこでコマンドは区切られないので次のように \cmd{two@args} が定義できる
+わけです．
 
 \begin{InTeX}
-\newcommand{\two@args}[2]{����#1���衤�ۤ�#2}
+\newcommand{\two@args}[2]{あ，#1だよ，ほら#2}
 \end{InTeX}
 
-������ \cmd{two@args} ��������ޥ�������Ǥϲ�ǽ�ʤΤǡ�
-�桼������ \cmd{twoArgs} ̿��μ��֤򱣤������Ǥ��ޤ���
+そして \cmd{two@args} の定義がマクロの中では可能なので，
+ユーザから \cmd{twoArgs} 命令の実態を隠す事ができます．
 
 \begin{InTeX}
-\newcommand{\two@args}[2]{����#1���衤�ۤ�#2}
+\newcommand{\two@args}[2]{あ，#1だよ，ほら#2}
 \newcommand{\twoArgs}{\two@args}
 \end{InTeX}
 
-����ϳ�ȯ�ԤȻ��ѼԤ�ʬΥ��Ԥ������
-�������ʤ��ΤǤ������դ˻��ѼԤ���ʬ�λפ��̤��
-̿��򥫥����ޥ����Ǥ��ʤ������͡�������������褦�Ǥ���
+これは開発者と使用者の分離を行うために
+仕方がないのですが，逆に使用者が自分の思い通りに
+命令をカスタマイズできない等，様々な不満があるようです．
 
-�ºݥإå�����եå�����ʬή�˥������ޥ����������Ȥ���
-������̿���\qu{\str{@}}���ޤޤ�Ƥ��뤿����ѹ��Ǥ��ʤ���
-�Ȥ������֤˴٤�ޤ����ޥ����ǹԤäƤ������\qu{\str{@}}��
-�ѻ���Ʊ��ʬ��ˤ��ƥ��ޥ�ɤ�������뤿��ˤ�
+実際ヘッダーやフッターを自分流にカスタマイズしたいときは
+それらの命令に\qu{\str{@}}が含まれているために変更できない，
+という事態に陥ります．マクロで行っている事，\qu{\str{@}}を
+英字と同じ分類にしてコマンドを定義するためには
 \begin{Syntax}
-\Cmd{makeatletter} \pp{\qu{\str{@}}��ѻ���Ʊ��ʬ��ˤ��롥}\\
-\Cmd{makeatother}  \pp{\qu{\str{@}}��㤦ʬ��ˤ��롥}
+\Cmd{makeatletter} \pp{\qu{\str{@}}を英字と同じ分類にする．}\\
+\Cmd{makeatother}  \pp{\qu{\str{@}}を違う分類にする．}
 \end{Syntax}
 
-`\str{@}'��ޤॳ�ޥ�ɤ˴ؤ��ƤϾ嵭����Ĥ�̿���Ȥ��ޤ���
-����̿�����Ȥ򸫤Ƥߤ�ȼ¤ϼ��Τ褦�ˤʤäƤ��ޤ���
+`\str{@}'を含むコマンドに関しては上記の二つの命令を使います．
+この命令の中身を見てみると実は次のようになっています．
 
 \begin{InTeX}
 \def\makeatletter{\catcode`\@11\relax}
 \def\makeatother{\catcode`\@12\relax}
 \end{InTeX}
 
-\indindz{������}{���ƥ��꡼}\indindz{������}{ʬ��}%%
-�ɤ����\qu{\str{@}}��{\KY{���ƥ��꡼������}}
-�Ȥ�����Τ�11�ˤ���ȱѻ���Ʊ���ˤʤꡤ12�ˤ���Ȱ㤦ʬ���
-�ʤ�褦�Ǥ������Τ褦�ʵ����ʬ���{\KY{���ƥ��꡼������}}��
-�ƤӤޤ�\pp{\tabref{catcode1}����}��
+\indindz{コード}{カテゴリー}\indindz{コード}{分類}%%
+どうやら\qu{\str{@}}の{\KY{カテゴリーコード}}
+というものを11にすると英字と同じになり，12にすると違う分類に
+なるようです．このような記号の分類を{\KY{カテゴリーコード}}と
+呼びます\pp{\tabref{catcode1}参照}．
 
 \begin{table}[htbp]
 \begin{scenter}
-\index{����@����ʸ���Ȥ��Ƥ�\zdash}%}"
+\index{改行@行末文字としての\zdash}%}"
 \index{" @\verb*+ +}
 \index{"#@\verb+#+} 
 \index{"$@\verb+$+}\glossary{"$@\verb+$+}
@@ -592,234 +592,234 @@ l.7 \newcommand{\two@args}[2]{����#1���衤�ۤ�#2}
 \index{%@\verb+%+}
 \glossary{%@\verb+%+}
 % {, }, @ | ! " 
-\caption{���ƥ��꡼�����ɤΰ���}\tablab{catcode1}
+\caption{カテゴリーコードの一覧}\tablab{catcode1}
 \begin{tabular}{*3l} 
 \TR
-\Th{���ƥ���} & \Th{��̣}        & \Th{ɸ��Ǥγ������}   \\ 
+\Th{カテゴリ} & \Th{意味}        & \Th{標準での割り当て}   \\ 
 \MR
-%0  & ����������ʸ��    & \verb|\| \pp{\ttfamily\yen}\\
-%1  & ���롼�פγ���    & \verb|{| \\
-%2  & ���롼�פν����  & \verb|}| \\
-%3  & �����⡼�ɤ�����  & \verb|$|  \\
-%4  & ��������Ǥζ��ڤ�& \verb|&|\\%&
-%5  & ����ʸ��          & \va{����} \pp{\HEXCODE{0D}} \\
-%6  & �ѥ�᡼��ʸ��    & \verb|#|  \\
-%7  & ���դ�ʸ��        & \verb|^|  \\
-%8  & ���դ�ʸ��        & \verb|_|  \\
-%9  & ̵�뤵���ʸ��    & �ʤ�${}^{*1}$\\
-%10 & ����              & \verb*| | \\
-%11 & ��ʸ��            & \str A$\cdots$\str Z��\str a$\cdots$\str z\\
-%12 & ���Τۤ���ʸ��    & \verb| ( ! ? 1 2 @|�ʤ�\\
-%13 & �����ƥ���ʸ��    & \verb|~| \\
-%14 & ������ʸ��      & \verb|%| \\
-%15 & ̵��ʸ��          & \va{�ǥ꡼��} \pp{\HEXCODE{7E}}\\
-0  & \Z{����������ʸ��}    & \verb|\| \pp{\ttfamily\yen}\\
-1  & ���롼�פγ���    & \verb|{| \zindind{���롼��}{�γ���}\\
-2  & ���롼�פν����  & \verb|}| \zindind{���롼��}{�ν����}\\
-3  & �����⡼�ɤ�����  & \verb|$|  \\
-4  & ��������Ǥζ��ڤ�& \verb|&| \zindind{����}{�����Ǥζ��ڤ�} \\%&
-5  & {����ʸ��}          & \va{����} \pp{\str{0x0D}} \zindind{����}{ʸ��}\\
-6  & {�ѥ�᡼��ʸ��}    & \verb|#|  \zindind{�ѥ�᡼��}{ʸ��}\\
-7  & \Z{���դ�ʸ��}        & \verb|^|  \\
-8  & {���դ�ʸ��}        & \verb|_|  \zindind{���դ�}{ʸ��} \\
-9  & \Z{̵�뤵���ʸ��}    & �ʤ�${}^{*1}$\\
-10 & \Z{����}              & \verb*| | \\
-11 & \Z{��ʸ��}            & \str A$\cdots$\str Z��\str a$\cdots$\str z\\
-12 & ���Τۤ���ʸ��    & \verb| ( ! ? 1 2 @|�ʤ�\\
-13 & \Z{�����ƥ���ʸ��}    & \verb|~| \\
-14 & {������ʸ��}      & \verb|%| \zindind{������}{ʸ��}\\
-15 & \Z{̵��ʸ��}          & \va{�ǥ꡼��} \pp{\str{0x7E}}\\
+%0  & エスケープ文字    & \verb|\| \pp{\ttfamily\yen}\\
+%1  & グループの開始    & \verb|{| \\
+%2  & グループの終わり  & \verb|}| \\
+%3  & 数式モードの制御  & \verb|$|  \\
+%4  & 配列の要素の区切り& \verb|&|\\%&
+%5  & 行末文字          & \va{改行} \pp{\HEXCODE{0D}} \\
+%6  & パラメータ文字    & \verb|#|  \\
+%7  & 上付き文字        & \verb|^|  \\
+%8  & 下付き文字        & \verb|_|  \\
+%9  & 無視される文字    & なし${}^{*1}$\\
+%10 & 空白              & \verb*| | \\
+%11 & 英文字            & \str A$\cdots$\str Zと\str a$\cdots$\str z\\
+%12 & そのほかの文字    & \verb| ( ! ? 1 2 @|など\\
+%13 & アクティブ文字    & \verb|~| \\
+%14 & コメント文字      & \verb|%| \\
+%15 & 無効文字          & \va{デリート} \pp{\HEXCODE{7E}}\\
+0  & \Z{エスケープ文字}    & \verb|\| \pp{\ttfamily\yen}\\
+1  & グループの開始    & \verb|{| \zindind{グループ}{の開始}\\
+2  & グループの終わり  & \verb|}| \zindind{グループ}{の終わり}\\
+3  & 数式モードの制御  & \verb|$|  \\
+4  & 配列の要素の区切り& \verb|&| \zindind{配列}{の要素の区切り} \\%&
+5  & {行末文字}          & \va{改行} \pp{\str{0x0D}} \zindind{行末}{文字}\\
+6  & {パラメータ文字}    & \verb|#|  \zindind{パラメータ}{文字}\\
+7  & \Z{上付き文字}        & \verb|^|  \\
+8  & {下付き文字}        & \verb|_|  \zindind{下付き}{文字} \\
+9  & \Z{無視される文字}    & なし${}^{*1}$\\
+10 & \Z{空白}              & \verb*| | \\
+11 & \Z{英文字}            & \str A$\cdots$\str Zと\str a$\cdots$\str z\\
+12 & そのほかの文字    & \verb| ( ! ? 1 2 @|など\\
+13 & \Z{アクティブ文字}    & \verb|~| \\
+14 & {コメント文字}      & \verb|%| \zindind{コメント}{文字}\\
+15 & \Z{無効文字}          & \va{デリート} \pp{\str{0x7E}}\\
 \MR
-\multicolumn{3}{c}{\Th{�ʲ����Ĥ����ܸ�{\TeX}�Τ��}}\\
+\multicolumn{3}{c}{\Th{以下三つは日本語{\TeX}のもの}}\\
 \MR
-16 & ��1����2���δ���      & ����Ч�ʤ�\\
-17 & ���ʡ����ѥ���ե��٥å�& ���������ᡤ���ʤ�\\
-18 & ����¾�����ѵ���        & �����ڤʤ�\\
+16 & 第1・第2水準の漢字      & 亜，丼など\\
+17 & かな，全角アルファベット& あ，ア，ａ，Ａなど\\
+18 & その他の全角記号        & ┼，【など\\
 \BR
 \end{tabular}
-\\ {\small ${}^{*1}$ɸ��Ǥϳ�����Ƥ��Ƥ��ʤ�}%$
+\\ {\small ${}^{*1}$標準では割り当てられていない}%$
 \end{scenter} 
 \end{table}
 
-���Τ��Ჿ���ޥ�������Υ��ޥ�ɤ˼�ʬ���ѹ���ä������Ȥ���
-\qu{\str{@}}��ޤ�ս�� \cmd{makeatletter}
-�� \cmd{makeatother}�ǰϤ�Ǥ����ޤ���
+そのため何かマクロの中のコマンドに自分で変更を加えたいときは
+\qu{\str{@}}を含む箇所を \cmd{makeatletter}
+と \cmd{makeatother}で囲んであげます．
 
 \begin{InTeX}
 \documentclass{jsarticle} 
 \makeatletter
-\newcommand{\two@args}[2]{����#1���衤�ۤ�#2}
+\newcommand{\two@args}[2]{あ，#1だよ，ほら#2}
 \newcommand{\twoArgs}{\two@args}
 \makeatother
 \begin{document}
-\twoArgs{����}{��}��
+\twoArgs{それ}{ね}．
 \end{document}
 \end{InTeX}
 
 
 \begin{Exe}
-\C{@ifstar}�� `\str @'��ޤ�̿��ǡ������λϤ�˥������ꥹ��������`\str{*}'��
-���뤫�ɤ�����Ƚ�ꤷ�ޤ���������μ¹Է�̤��̣���Ƥ���������
+\C{@ifstar}は `\str @'を含む命令で，引数の始めにアスタリスク（星）`\str{*}'が
+あるかどうかを判定します．次の例の実行結果を吟味してください．
 
 \begin{InTeX}
-\newcommand\checkstar{\@ifstar{���դ�}{���ʤ�}}
+\newcommand\checkstar{\@ifstar{星付き}{星なし}}
 \checkstar, \checkstar*, \checkstar!.
 \end{InTeX}
 
-�嵭�����¹Ԥ���ȼ��Τ褦�ʥ��顼��ɽ������ޤ���
+上記の例を実行すると次のようなエラーが表示されます．
 
 \begin{OutTerm}
 ! You can't use `\spacefactor' in vertical mode.
 \end{OutTerm}
 \index{You can't use `spacefactor'@\texttt{You can't use
  `\bs spacefactor' in vertical mode}}%
-\index{���顼!You can't use ``spacefactor'@\texttt{You can't use
+\index{エラー!You can't use ``spacefactor'@\texttt{You can't use
  `\bs spacefactor' in vertical mode}}
 
 
-��Ϥ�`\str @'��ޤ�̿����Ѥ���ˤ� \C{makeatletter} �� \C{makeatother}
-�ǰϤ�ɬ�פ�����褦�Ǥ����ʲ��Τ褦�˽����������μ¹Է�̤��̣
-���Ƥ���������
+やはり`\str @'を含む命令を用いるには \C{makeatletter} と \C{makeatother}
+で囲む必要があるようです．以下のように修正し，その実行結果を吟味
+してください．
 
 \begin{InTeX}
 \makeatletter
-\newcommand\checkstar{\@ifstar{���դ�}{���ʤ�}}
+\newcommand\checkstar{\@ifstar{星付き}{星なし}}
 \checkstar, \checkstar*, \checkstar!.
 \makeatother
 \end{InTeX}
-% ���� \C{@ifstar} �˻��äƤ�����ޤ���
+% 星は \C{@ifstar} に持っていかれます．
 \end{Exe}
 
-\subsection{���ޥ�ɤΰ���}
-%�����ȼ�륳�ޥ�ɤ��Ф���ʸ������Ϥ�������
-%��ư��ͽ�ۤ��䤹���Ȼפ��ޤ����Ǥϥ��ޥ�ɤ��Ф���
-%���ޥ�ɤ��Ϥ������Ϥɤ��ʤ�Ǥ��礦����
+\subsection{コマンドの引数}
+%引数と取るコマンドに対して文字列を渡した場合の
+%挙動は予想しやすいと思います．ではコマンドに対して
+%コマンドを渡した場合はどうなるでしょうか．
 %\begin{InOut}
-%\newcommand{\twoarg}[2]{����ܤ�#1������ܤ�#2}
-%\twoarg a b�Ȥ�\twoarg{����}{����}�Ȥ���
-%�����\twoarg{\LaTeX}{\LaTeXe}�ϡ�
+%\newcommand{\twoarg}[2]{一つ目の#1，二つ目の#2}
+%\twoarg a bとか\twoarg{それ}{げほ}とか，
+%さらに\twoarg{\LaTeX}{\LaTeXe}は？
 %\end{InOut}
-%�ɤ����������륳�ޥ�ɤ��Ф��Ƥ���˥��ޥ�ɤ�
-%������Ϳ���Ƥ��ɤ��褦�Ǥ����Ǥϼ��ξ��Ϥɤ��Ǥ��礦����
+%どうやら引数を取るコマンドに対してさらにコマンドを
+%引数に与えても良いようです．では次の場合はどうでしょうか．
 %\begin{InOut}
-%\newcommand{\twoarg}[2]{����ܤ�#1������ܤ�#2}
-%�ۤۤ�\twoarg\LaTeX\LaTeXe �ȤϿ���͡�
-%�Ǥ�\twoarg\LaTeX2\LaTeXe �Ϥɤ����͡�
+%\newcommand{\twoarg}[2]{一つ目の#1，二つ目の#2}
+%ほほう\twoarg\LaTeX\LaTeXe とは粋だね．
+%では\twoarg\LaTeX2\LaTeXe はどうだね？
 %\end{InOut}
-�������륳�ޥ�ɤ��Ф���ʸ������Ϥ�������
-��ư��ͽ�ۤ��䤹���Ȼפ��ޤ����Ǥϥ��ޥ�ɤ��Ф���
-���ޥ�ɤ��Ϥ������Ϥɤ��ʤ�Ǥ��礦����
+引数を取るコマンドに対して文字列を渡した場合の
+挙動は予想しやすいと思います．ではコマンドに対して
+コマンドを渡した場合はどうなるでしょうか．
 \begin{InOut}
 \newcommand{\twoarg}[2]{#1! #2? }
-\twoarg a b�Ȥ�\twoarg{�Ϥ�����}
-{̤��}�Ȥ��������\twoarg{\LaTeX}
+\twoarg a bとか\twoarg{はこだて}
+{未来}とか，さらに\twoarg{\LaTeX}
 {\LaTeXe}
 \end{InOut}
-�ɤ����������륳�ޥ�ɤ��Ф��Ƥ���˥��ޥ�ɤ�
-������Ϳ���Ƥ��ɤ��褦�Ǥ����Ǥϼ��ξ��Ϥɤ��Ǥ��礦����
+どうやら引数を取るコマンドに対してさらにコマンドを
+引数に与えても良いようです．では次の場合はどうでしょうか．
 \begin{InOut}
 \newcommand{\twoarg}[2]{#1! #2? }
 \twoarg\LaTeX\LaTeXe 
 \twoarg\LaTeX2\LaTeX3
 \end{InOut}
-�����\secref{moji:kugiri}�ǹԤä����Ƥ���
-�ޤ�Ƥ��ޤ���\qu{\LaTeX}��\qu{2}�Τ������Ǹ줬��
-�ڤ��Ʋ�ᤵ��Ƥ���Τ�����ܤΰ�����\qu{2}
-�������Ϥ���Ƥ��ޤ���
+これは\secref{moji:kugiri}で行った内容が含
+まれています．\qu{\LaTeX}と\qu{2}のあいだで語が区
+切られて解釈されているので二つ目の引数に\qu{2}
+だけが渡されています．
 
-%\subsection{���ޥ�������ζ���ΰ���}
-%���ޥ�ɤ�������뤿���̿�� \cmd{newcommand}����Ǥ�
-%����̵�뤵���櫓�ǤϤ���ޤ��󡥼��ν��Ϥΰ㤤��
-%����٤Ƥ���������
+%\subsection{コマンド定義中の空白の扱い}
+%コマンドを定義するための命令 \cmd{newcommand}の中では
+%空白が無視されるわけではありません．次の出力の違いを
+%見比べてください．
 %\begin{InOut}
-%\newcommand\kuhaku[1]{�����   #1��,}
-%\newcommand\Kuhaku[1]{�����#1��.}
-%\kuhaku{����} \Kuhaku{����   }
+%\newcommand\kuhaku[1]{それと   #1だ,}
+%\newcommand\Kuhaku[1]{それと#1だ.}
+%\kuhaku{だめ} \Kuhaku{だめ   }
 %\end{InOut}
-%������Ǥ϶�����İʾ�³���Ƥ��ꡤ����餬��Ĥζ���Ȥ���
-%��ᤵ��ơ�������ʸ�Τ�������;ʬ�ʶ�����������Ƥ��ޤ���
-%��������
+%この例では空白が二つ以上続いており，それらが一つの空白として
+%解釈されて，引数と文のあいだに余分な空白が挿入されています．
+%正しくは
 %\begin{InOut}
-%\newcommand\kuhaku[1]{�����#1��,}
-%\newcommand\Kuhaku[1]{�����#1��.}
-%\kuhaku{����} \Kuhaku{����}
+%\newcommand\kuhaku[1]{それと#1だ,}
+%\newcommand\Kuhaku[1]{それと#1だ.}
+%\kuhaku{だめ} \Kuhaku{だめ}
 %\end{InOut}
-%�Τ褦����������ۤ����ɤ��褦�Ǥ���
+%のように定義したほうが良いようです．
 
-%�����㳰�⤢�äƶ����ۼ����륳�ޥ�ɤθ��
-%���򤬤��äƤ�;ʬ���������������ޤ���
+%ただ例外もあって空白を吸収するコマンドの後に
+%空白があっても余分が空白は挿入されません．
 %\begin{InOut}
 %\newcommand{\chisai}[2]{{\small#1}{\Large#2}}
-%���졤\chisai{  ����}{����}��\chisai{  ����}{����}��
+%あれ，\chisai{  それ}{げほ}は\chisai{  だめ}{ろう}．
 %\end{InOut}
-%�嵭����Ǥ�\Cmd{relax}�Ȥ���̿�᤬�Ȥ��Ƥ���
-%�����������������Ȥɤ��ʤ�Ǥ��礦����
+%上記の例では\Cmd{relax}という命令が使われていま
+%すが，これを取り除くとどうなるでしょうか．
 
-\section{���롼�ԥ󥰡�����ҹ�¤}
-\indindz{��������}{�ѿ���}
-{\laTEX}��\Z{�ѿ�}��\Z{��������}\pp{ͭ���ϰ�}�Ȥ����ץ�����ߥ󥰤Ǥ�
-���������ε�ǽ����äƤ��ޤ�������ϥץ�����ߥ󥰤��ä����Τʤ���
-�ˤ������ߤ�������ΤʤΤǾܤ����������ޤ��礦��
+\section{グルーピング・入れ子構造}
+\indindz{スコープ}{変数の}
+{\laTEX}は\Z{変数}の\Z{スコープ}\pp{有効範囲}というプログラミングでは
+当たり前の機能を持っています．これはプログラミングをやった事のない人
+には馴染みの薄いものなので詳しく説明しましょう．
 
-�ޤ��ѿ��ˤ�\yo{�¤�줿�ϰϤ���ͭ��}
-��{\KY{�ɽ��ѿ�}}��\yo{���Ƥ��ϰϤ�}
-ͭ����{\KY{����ѿ�}}��2�̤꤬����ޤ���
-{\LaTeX}�ˤ����Ƥ⤳��Ͻ��פ��ä�
-������ͭ���ϰ�\pp{\K{��������}}�����Τ�
-\Z{�ȳ��}�Ǥ���
+まず変数には\yo{限られた範囲だけ有効}
+な{\KY{局所変数}}と\yo{全ての範囲で}
+有効な{\KY{大域変数}}の2通りがあります．
+{\LaTeX}においてもこれは重要な話で
+，この有効範囲\pp{\K{スコープ}}を決めるのが
+\Z{波括弧}です．
 
-�����Τ褦�������ˤ�äƥ�������Ȥ�
-���դ��㤦��������ޤ�����{\LaTeX}
-�Ǥ�����\pp{�ϰ�}��ʬ���Ƹ���\pp{���}��
-�Ȥ�ʬ�����Ǥ��ޤ����ʲ�������򤴼�ʬ
-�ǻ�ƤߤƤ���������
+方言のように地方によってアクセントや
+言葉が違う事がありますが，{\LaTeX}
+でも地方\pp{範囲}を分けて言葉\pp{定義}の
+使い分けができます．以下の例題をご自分
+で試してみてください．
 
 \begin{InTeX}
-\newcount\test%          �������ѿ���Ĵã
-\the\test%               �ѿ����ͤ�ɽ��
-{%                       ���롼��1�γ���
-   \test=3 \the\test%    \test��3�����������ͤ�ɽ��
-   {%                    ���롼��2�γ���
-      \test=5 \the\test% \test��5�����������ͤ�ɽ��
-   }%                    ���롼��2�ν�λ
-   \the\test%            ���롼��2�� test��5���������Ƥ⡩
-}%                       ���롼�פν�λ
-\the\test%               �����Ǥ��ͤϡ�
-\test=6 \the\test%       \test���ͤ�?
+\newcount\test%          新規に変数の調達
+\the\test%               変数の値を表示
+{%                       グループ1の開始
+   \test=3 \the\test%    \testに3を代入して値を表示
+   {%                    グループ2の開始
+      \test=5 \the\test% \testに5を代入して値を表示
+   }%                    グループ2の終了
+   \the\test%            グループ2で testに5を代入しても？
+}%                       グループの終了
+\the\test%               ここでの値は？
+\test=6 \the\test%       \testの値は?
 \end{InTeX}
 
-\cmd{newcount}�Ͽ����˥�����\pp{�쥸����}���Ѱդ���
-\Cmd{the}�ϥ����󥿤ʤɤ��ͤ�ɽ������̿��Ǥ���
-���ơ��ʾ�����Ϥ���\yo{035306}��
-�����ͤ���������Ǥ����Ǥ��礦����
-���λ���ͤ����\yo{��¦�γ�̤����������ͤϳ�¦��
-��̤��ΰ�˱ƶ����ʤ���}�Ȥ������Ǥ��ꡤ\yo{��¦���ͤ�
-�ѹ����Ƥ���¦�γ�̤ˤ����ͤޤ��ѹ��Ǥ��ʤ�}�Ȥ���
-���Ǥ����ޤ���\yo{���롼��}���äƤ�����ǹ�������ˤ�ä�
-����櫓�Ǥ���
+\cmd{newcount}は新規にカウンタ\pp{レジスタ}を用意し，
+\Cmd{the}はカウンタなどの値を表示する命令です．
+さて，以上の入力から\yo{035306}と
+いう値を得る事ができたでしょうか．
+この事を考えると\yo{内側の括弧で代入した値は外側の
+括弧の領域に影響しない．}という事であり，\yo{外側で値を
+変更しても内側の括弧にある値まで変更できない}という
+事です．まさに\yo{グループ}を作ってその中で好き勝手にやって
+いるわけです．
 
-���˽����ѹ�������ǤɤΤ褦�˽��Τ��ѹ������Τ���
-���Ƥߤޤ��礦������ϥե��ߥ꡼���Ѥ��� \cmd{ttfamily}��
-�������פ��Ѥ��� \cmd{itshape}�����������̤ν��Τ���
-�� \cmd{normalfont}�Ȥ������Ĥ������Ȥ��ޤ���
+次に書体変更の宣言でどのように書体が変更されるのかを
+見てみましょう．今回はファミリーを変える \cmd{ttfamily}と
+シェープを変える \cmd{itshape}，そして普通の書体に戻
+す \cmd{normalfont}という三つの宣言を使います．
 \begin{InOut}
 roman {\ttfamily tt {\itshape it}
  tt \normalfont it} roman
 \end{InOut}
-�����Ǥ���äȵ��Ť��Ƥ������������Τ� \cmd{ttfamily}�Ȥ����������Ĥ�
-��̤���ˤޤǱƶ����Ƥ���Ȥ������Ǥ�����ۤɤ��ѿ��������ǤϤ��Τ褦��
-�Ϥʤ�ޤ���Ǥ������ɤ������Τ�����ϡ���������򤷤���꤫����¦�γ�
-�̤ޤǤ⤬ͭ���ϰϤˤʤäƤ���褦�Ǥ�������ϸ��ߤ�{\LaTeX}�λ��ͤǤ���
-����ǤϤʤ�̿��Ȥ��Ƥ��̤�Ʊ���ˤʤ�ޤ���
+ここでおやっと気づいていただきたいのは \cmd{ttfamily}という宣言が二つの
+括弧の中にまで影響しているという点です．先ほどの変数の代入ではこのように
+はなりませんでした．どうやら書体の宣言は，その宣言をした場所から内側の括
+弧までもが有効範囲になっているようです．これは現在の{\LaTeX}の仕様です．
+宣言ではなく命令としても結果は同じになります．
 
 \begin{InOut}
 roman \texttt{ tt \textit{it}
  tt \normalfont it} roman
 \end{InOut}
-������ \cmd{normalfont}̿���Ȥ��ȥ����ץ饤���Τ�ͭ���ϰϤǤ�
-�������̾�ν��Τ���äƤ��ޤ��ޤ��������ͤ���ȱƶ���
-Ϳ�������ʤ���̤���¦���ΰ�ˤ� \cmd{normalfont}��
-�Ȥ����ɤ����ˤʤ�ޤ���
+しかし \cmd{normalfont}命令を使うとタイプライタ体の有効範囲でも
+そこで通常の書体に戻ってしまいます．こう考えると影響を
+与えたくない括弧の内側の領域には \cmd{normalfont}を
+使うと良い事になります．
 \begin{InOut}
 roman {\ttfamily tt {\normalfont
   \itshape it} tt} roman\par
@@ -827,29 +827,29 @@ roman \texttt{tt {\normalfont
   \textit{it}} tt} roman
 \end{InOut}
 
-̿��ǤϤʤ�������Υ��ޥ�ɤΤ����Ĥ��ϳ�̤���¦�ޤ�
-�ƶ�����Τǡ�����°��������ʤ��褦�ˤ��뤿��ι��פ�
-ɬ�פˤʤ�ޤ���
+命令ではなく宣言型のコマンドのいくつかは括弧の内側まで
+影響するので，その属性を受けないようにするための工夫が
+必要になります．
 
-\subsection{��貽}
-���Τ�°�����ѹ�����������Υ��ޥ�ɤϥ����å���
-�ѹ��򤷤Ƥ����ü�ʤ�ΤǤ����������ǤϺǽ��
-����ѿ��ȶɽ��ѿ�����Ĥ�⤦���ٸ�ľ���Ƥ����ޤ��礦��
+\subsection{大域化}
+書体の属性を変更する宣言型のコマンドはスイッチの
+変更をしている特殊なものでした．ここでは最初の
+大域変数と局所変数の二つをもう一度見直しておきましょう．
 
-��̤���¦������������Ƥ�¦�Ǥ�ͭ���ˤ������Ȥ���
-�ɤ�������ɤ��Ǥ��礦���ޤ���̤γ�¦���������¦�ˤ�
-ͭ���ˤ�����ˡ���ʤ������ؤǤ��礦��\yo{�ѻ極����}
-�Τ褦�ˤ�����ñ���Ѥ�äƤۤ����ʤ��ѿ��ϳ�̤���¦
-�Ǥ�ͭ���Ǥ��äƤۤ�����ΤǤ����������̤���¦��
-��ͭ���ˤ������{\KY{��貽}}\pp{{\KY{�������Х벽}}}
-�ȸ����ޤ���{\laTEX}�ˤ����Ƥ���貽�Τ���� \cmd{global}
-�Ȥ���̿�᤬�Ѱդ���Ƥ��ޤ���
+括弧の内側で定義した内容を外側でも有効にしたいときは
+どうすれば良いでしょう．また括弧の外側の定義を内側にも
+有効にする方法がないと不便でしょう．\yo{用紙サイズ}
+のようにそう簡単に変わってほしくない変数は括弧の内側
+でも有効であってほしいものです．それらを括弧の内側で
+も有効にする事を{\KY{大域化}}\pp{{\KY{グローバル化}}}
+と言います．{\laTEX}においても大域化のための \cmd{global}
+という命令が用意されています．
 
 \begin{InTeX}
 \newcount\test \the\test
-{%���롼��1
-   \global\test=3  \the\test% ��������
-   {%���롼��2
+{%グループ1
+   \global\test=3  \the\test% 大域に代入
+   {%グループ2
       \the\test
       \test=5 \the\test
    }
@@ -859,34 +859,34 @@ roman \texttt{tt {\normalfont
 \test=6 \the\test
 \end{InTeX}
 
-�Ȥ�������\qu{0 3 35 3 36}�Ȥʤ�Ǥ��礦����3���ܤ����Ū��
-\qu{3}���������Ƥ��ޤ��Τ���¦�γ�̤ˤ�ͭ���Ǥ��������롼��2��
-�Ф���ο��ͤ�\qu3�Ǥ��������ƥ��롼��1��ȴ������Ǥ�\qu3��
-��������Ƥ��ޤ����ʾ�Τ褦�� \cmd{global} ��Ȥ��Ȥ���
-���롼�פ���¦�ȳ�¦�����Ƥν����˱ƶ����ޤ���\LaTeX
-�ˤ����ơ������Ĥ��ο��ͤ�����̿��ϡ����餫������貽
-����褦���������Ƥ��ޤ��ˡ�
+とした場合は\qu{0 3 35 3 36}となるでしょうか．3行目で大域的に
+\qu{3}を代入していますので内側の括弧にも有効ですし，グループ2を
+出た後の数値も\qu3です．そしてグループ1を抜けた後でも\qu3が
+代入されています．以上のように \cmd{global} を使うとその
+グループの内側と外側の全ての処理に影響します（\LaTeX
+において，いくつかの数値を操作する命令は、あらかじめ大域化
+するように定義されています）．
 
-\section{�����̿��ΰ㤤}
-�㤨��\env{center}�Ķ��Υ��ޥ�ɤ�ͤ���ȡ�
-�ʤ��Ķ�����¦�Ǥ����ƤιԤ����·���ˤʤ�ΤǤ��礦��
-��ĤϻϤ�Ƚ����򥰥롼�פˤ�����ǡ��ɤ�����ɤ��ޤǤ����·���ʤΤ�
-��ʬ���äƤ���ΤǤ��礦��
+\section{宣言と命令の違い}
+例えば\env{center}環境のコマンドを考えると，
+なぜ環境の内側では全ての行が中央揃えになるのでしょう．
+一つは始めと終わりをグループにする事で，どこからどこまでが中央揃えなのか
+が分かっているのでしょう．
 
-`\verb|\begin{center}|'�ˤ�äƥ��롼�פ��Ϥޤꡤ
-`\verb|\end{center}|'�ˤ�äƥ��롼�פν���꤬������Ƥ��ޤ���
+`\verb|\begin{center}|'によってグループが始まり，
+`\verb|\end{center}|'によってグループの終わりが示されています．
 
-\yo{\K{�����ޤ������·���ˤ��Ƥ���������}}
-�ȸ�������\yo{\K{�������餳���ޤǤ����·���ˤ��Ƥ�������}}
-�Ȥ������ޥ�ɤΤۤ����Թ礬�ɤ����˵��Ť��Ǥ��礦��
-\C{centering}̿���Ȥ��ȼ��Τ褦�ˤʤ�ޤ���
+\yo{\K{これをまさに中央揃えにしてください．}}
+と言うよりは\yo{\K{ここからここまでを中央揃えにしてください}}
+というコマンドのほうが都合が良い事に気づくでしょう．
+\C{centering}命令を使うと次のようになります．
 
 \begin{InTeX}
 {\centering A long long ago, a man was doing any test...} 
 \end{InTeX}
 
-������������Ĺ��ʸ�Ϥξ��� \cmd{centering} ̿���Ȥ����ϡ�
-\env{center}�Ķ��Ȥ��ƥ��롼�ײ������ۤ���ʬ����䤹���Ǥ��礦��
+しかし，非常に長い文章の場合は \cmd{centering} 命令を使うよりは，
+\env{center}環境としてグループ化したほうが分かりやすいでしょう．
 
 \begin{InTeX}
 \begin{center}
@@ -894,29 +894,29 @@ roman \texttt{tt {\normalfont
 \end{center}
 \end{InTeX}
 
-�����ͤ���ȥ��ޥ�ɤˤϼ�����Ĥ��������ʬ����ޤ���
+そう考えるとコマンドには次の二つがある事が分かります．
 
 \begin{description}
-\indindz{���ޥ��}{�������}%
-\indindz{���ޥ��}{̿�᷿��}%
-\zindind{���}{���Υ��ޥ��}%
-\zindind{̿��}{���Υ��ޥ��}%
- \item[{��������ޥ��}] ���Ѥ��Ƥ��餽��ʹߤ��ä�ͭ��
-	    �ʥ��ޥ�ɡ��Ķ����Υ��ޥ�ɤ˻Ȥ�줿�ꡤ
-	    ñ�ȤǻȤ��롥
- \item[{̿�᷿���ޥ��}] ���Ѥ�������ͭ���ʥ��ޥ�ɡ�
-	    �̾�ϰ�����Ϳ����줿��Τ�������롥
+\indindz{コマンド}{宣言型の}%
+\indindz{コマンド}{命令型の}%
+\zindind{宣言}{型のコマンド}%
+\zindind{命令}{型のコマンド}%
+ \item[{宣言型コマンド}] 使用してからそれ以降ずっと有効
+	    なコマンド．環境型のコマンドに使われたり，
+	    単独で使われる．
+ \item[{命令型コマンド}] 使用した場所で有効なコマンド．
+	    通常は引数に与えられたものを処理する．
 \end{description}
 
 
-��Ȥ���̿�᷿�� \cmd{textsf} ��������� \cmd{sffamily} ��
-�ͤ��Ƥߤޤ��礦��̿�᷿�ξ��ϼ��Τ褦�ʻȤ����ϤǤ��ޤ���
+例として命令型の \cmd{textsf} と宣言型の \cmd{sffamily} を
+考えてみましょう．命令型の場合は次のような使い方はできません．
 
 \begin{InTeX}
 Roman. \textsf{Roman? \par This is sans serif family.} Roman!
 \end{InTeX}
 
-��������������ʤ�п�����\env{sffont}�Ķ�������Ǥ��ޤ���
+ただし，宣言型ならば新規に\env{sffont}環境を定義できます．
 
 \begin{InOut}
 \newenvironment{sffont}{\sffamily}{}
@@ -927,32 +927,32 @@ Roman.
 \par Roman!
 \end{InOut}
 
-������Υ��ޥ�ɤϤ���ʹߤ��ä�ͭ���ʤΤ�ͭ���ϰϤ�
-���Ƥ����ޤ���\cmd{sffamily}�ʤɤν��Τ��ѹ�����
-���ޥ�ɤϥ��롼�ԥ󥰤���ɬ�פ�����ޤ���
+宣言型のコマンドはそれ以降ずっと有効なので有効範囲を
+決めてあげます．\cmd{sffamily}などの書体を変更する
+コマンドはグルーピングする必要があります．
 \begin{InOut}
 Roman! {\sffamily sans serif.}
 Roman!
 \end{InOut}
 
 \begin{Trick}
-���ޤǻȤäƤ��� \cmd{begin}\pa{����} �� \cmd{end}\pa{����} 
-�Ȥ������ޥ�ɤϡ����Υ��롼�ԥ󥰤κ�Ȥ��äƤ���Ƥ����
-�Ǥ�����­Ū�ʻ��Ǥ���
+今まで使ってきた \cmd{begin}\pa{何々} と \cmd{end}\pa{何々} 
+というコマンドは，このグルーピングの作業をやってくれているの
+です．補足的な事ですが
 %\begin{InTeX}
-%\begin{<����>}  <����> \end{<����>}
+%\begin{<何々>}  <要素> \end{<何々>}
 %\end{InTeX}
 \begin{Syntax}
-\cmd{begin}\pa{�Ķ�̾} \va{����} \cmd{end}\pa{�Ķ�̾}
+\cmd{begin}\pa{環境名} \va{要素} \cmd{end}\pa{環境名}
 \end{Syntax}
-�Ȥ����Τ�{\LaTeX}¦��
+というのは{\LaTeX}側で
 %\begin{InTeX}
-%{\���� <�Ϥ�ν���>  <����> <�����ν���>}
+%{\何々 <始めの処理>  <要素> <終わりの処理>}
 %\end{InTeX}
 %\begin{Syntax}
-`\texttt{\lb \va{���ޥ��} \va{�Ϥ�ν���} \va{����} \va{�����ν���}\rb}'
+`\texttt{\lb \va{コマンド} \va{始めの処理} \va{要素} \va{終わりの処理}\rb}'
 %\end{Syntax}
-�˲�ᤵ���Τ� \cmd{sffamily} �Τ褦�������
+に解釈されるので \cmd{sffamily} のような宣言も
 \begin{InOut}
 Roman?
 \begin{sffamily} 
@@ -960,124 +960,124 @@ This is sans serif family.\par
 \end{sffamily} 
 Roman!
 \end{InOut}
-�ȤǤ��ޤ�������������ä�Ĺ��ʸ�Ϥ��ɤߤ䤹���ʤ�ޤ���
+とできます．こうすると特に長い文章が読みやすくなります．
 \end{Trick} 
 
-\section{��߻���}\seclab{xr}
-ʸ�Ϥ�������¤�����Τˤ��Ƥ�����Τΰ�Ĥ�{\KY{��߻���}}
-������ޤ�����߻��Ȥλ����ϻ��Ȥ�������Τ�\Z{��٥�}��Ž�ꡤ
-�������������ǥ�٥�򻲾Ȥ���Ȥ�����Ĥκ�Ȥ�ʬ������
-������߻��ȤǤ�����ܤϰʲ��λͤ����˸¤��Ƥ��ޤ���
-\zindind{��߻���}{�Ǥ�����}%
+\section{相互参照}\seclab{xr}
+文章の論理構造を明確にしてくれるものの一つに{\KY{相互参照}}
+があります．相互参照の仕方は参照したいものに\Z{ラベル}を貼り，
+挿入したい場所でラベルを参照するという二つの作業に分けられま
+す．相互参照できる項目は以下の四つ程に限られています．
+\zindind{相互参照}{できるもの}%
 \begin{itemize}
-\item  ����̿�� \pp{{\texttt{\bs section}}̿��ʤ�}
-\item  �ֹ��դ����� \pp{\env{equation}�Ķ��ʤ�}
-\item  \texttt{float}�Ķ�������\pp{�ޤ�ɽ�ʤ�}
-\item  \texttt{enumerate}�Ķ���θġ��ι���
+\item  章節命令 \pp{{\texttt{\bs section}}命令など}
+\item  番号付き数式 \pp{\env{equation}環境など}
+\item  \texttt{float}環境の要素\pp{図や表など}
+\item  \texttt{enumerate}環境内の個々の項目
 \end{itemize}
-�פ��̤��ֹ�ΤĤ��Ƥ����Τˤ��դ��Ƥ��ɤ��褦�Ǥ���
-��٥��ñ���Ž�ꤿ����Τ� \Cmd{label} ̿��Ǽ��Τ褦�˻��Ѥ��ޤ���
+要は通し番号のついているものには付けても良いようです．
+ラベルは単純に貼りたいものに \Cmd{label} 命令で次のように使用します．
 \begin{Syntax}
-\va{���Ȥ���������}\Cmd{label}\pa{��٥�̾}
+\va{参照したい要素}\Cmd{label}\pa{ラベル名}
 \end{Syntax}
 
-���Ȥλ����ˤϤ����ֹ�򻲾Ȥ��� \Cmd{ref} �ȥڡ����򻲾Ȥ�
-�� \Cmd{pageref}��2�̤꤬����ޤ���
+参照の仕方にはその番号を参照する \Cmd{ref} とページを参照す
+る \Cmd{pageref}の2通りがあります．
 \begin{Syntax}
 \begin{tabular}{ll}
- \cmd{ref}\pa{��٥�}     &\pp{�̤��ֹ�}\\
- \cmd{pageref}\pa{��٥�} &\pp{�ڡ����ֹ�}\\
+ \cmd{ref}\pa{ラベル}     &\pp{通し番号}\\
+ \cmd{pageref}\pa{ラベル} &\pp{ページ番号}\\
 \end{tabular}
 \end{Syntax}
-���Ȥλ����ϰʲ��Τ褦�ˤʤ�ޤ����̤��ֹ�򻲾Ȥ�
-�� \cmd{ref} ̿��� \cmd{section} ̿��Τ褦�ʤ�Τ򻲾Ȥ���Ȥ�
-�����������Ǥ���\cmd{section}�ι�Ƭ�Υ����Ȥϳ����Ƥ��������ˡ�
+参照の仕方は以下のようになります．通し番号を参照す
+る \cmd{ref} 命令は \cmd{section} 命令のようなものを参照するとき
+に非常に便利です（\cmd{section}の行頭のコメントは外してください）．
 \begin{InOut}
-%\section{��߻���}\label{sec:xr}
-�ܤ�����\pageref{sec:xr}~�ڡ�����
-\ref{sec:xr}~��ǽҤ٤Ƥ���ΤǤ�
-����򻲾Ȥ��줿����
+%\section{相互参照}\label{sec:xr}
+詳しくは\pageref{sec:xr}~ページの
+\ref{sec:xr}~節で述べているのでそ
+ちらを参照されたい．
 \end{InOut}
 
-\zindind{�ܼ�}{�κ���}
-��߻��Ȥ��ܼ���������Ƥ���Ȥ��ϥ����ץ��åȤ�3������
-��ɬ�פ�����ޤ�����٥��̾������ʣ���ʤ��褦�˹��פ���
-����ɬ�פǤ���
+\zindind{目次}{の作成}
+相互参照や目次を作成しているときはタイプセットを3回程行
+う必要があります．ラベルの名前が重複しないように工夫する
+事も必要です．
 
 
 % test test test
-\subsection{��߻��Ȥλ��Ȥ�}\zindind{��߻���}{�λ��Ȥ�}%
-��\pp{���Ф�}���ɽ�ˤ��̤��ֹ���դ��ޤ��������Ʊ��̾������ 
-\pp{���Ф�}��Ʊ���ڡ�����¸�ߤ��Ƥ���̤Ǥ���Ȥ�������������
-�ޤ�����������\pp{���Ф�}�򻲾Ȥ���Ȥ��Ϥ����ֹ�򼨤��ޤ���
-���Τ褦�ʵ�ǽ��¸����뤿���{\LaTeX}�Ǥ�{\KY{������}}��Ȥ���
-�����桼�����äˤ��λ���ռ����ʤ��Ƥ�Ⱦ��ưŪ���ֹ���
-���ʤɤ��äƤ���ޤ��������������٤ˤϤ��λ��Ȥߤ�����
-���ޤ���
+\subsection{相互参照の仕組み}\zindind{相互参照}{の仕組み}%
+節\pp{見出し}や図表には通し番号を付けます．これは同じ名前の節 
+\pp{見出し}が同じページに存在しても区別できるという利点があり
+ます．そして節\pp{見出し}を参照するときはその番号を示します．
+このような機能を実現するために{\LaTeX}では{\KY{カウンタ}}を使いま
+す．ユーザが特にこの事を意識しなくても半自動的に番号付
+けなどをやってくれます．一応さわり程度にはその仕組みを説明
+します．
 
-��߻��Ȥ����оݤ��̤��ֹ�Ǥ��Τǡ���ʤ���ʤɤ����Ǥ˱�
-���������󥿤����餫�����Ѱդ���Ƥ��ޤ���{\LaTeX}�Ǥ�
-\tabref{latexcounters}���̤�ˤ��餫�����������Ƥ���
-�����󥿤�����ޤ���
+相互参照する対象が通し番号ですので，節なら節などの要素に応
+じたカウンタがあらかじめ用意されています．{\LaTeX}では
+\tabref{latexcounters}の通りにあらかじめ定義されている
+カウンタがあります．
 \begin{table}[htbp]
 \begin{scenter}
-\indindz{�ֹ�}{���Ф����̤�}\indindz{�ֹ�}{��ɽ���Ф����̤�}%%
-\caption{���餫�����������Ƥ��륫����̾}\tablab{latexcounters}
+\indindz{番号}{見出しの通し}\indindz{番号}{図表見出しの通し}%%
+\caption{あらかじめ定義されているカウンタ名}\tablab{latexcounters}
 \begin{tabular}{*3l}
  \TR
-  \Th{������̾}      & \Th{�������} \\
+  \Th{カウンタ名}      & \Th{割り当て} \\
  \MR
- \Kount{part}          & �����Ф� \\
- \Kount{chapter}       & �ϸ��Ф� \\
- \Kount{section}       & �ḫ�Ф� \\
- \Kount{subsection}    & ���ḫ�Ф�\\
- \Kount{subsubsection} & �����ḫ�Ф�\\
- \Kount{paragraph}     & ����Ф�\\
- \Kount{subparagraph}  & ������Ф�\\
- \Kount{page}          & �ڡ����ֹ�\\
- \Kount{equation}      & ���ֹ�\\
- \Kount{figure}        & �޸��Ф�\\
- \Kount{table}         & ɽ���Ф�\\
- \Kount{footnote}      & �����ֹ�\\
- \Kount{mpfootnote}    & \env{minipage}�Ķ���ε����ֹ�\\
- \Kount{enumi}         & ����ܤγ��ؤ�\env{enumerate}�Ķ����ֹ�\\
- \Kount{enumii}        & ����ܤγ��ؤ�\env{enumerate}�Ķ����ֹ�\\
- \Kount{enumiii}       & �����ܤγ��ؤ�\env{enumerate}�Ķ����ֹ�\\
- \Kount{enumiv}        & �ͤ��ܤγ��ؤ�\env{enumerate}�Ķ����ֹ�\\
+ \Kount{part}          & 部見出し \\
+ \Kount{chapter}       & 章見出し \\
+ \Kount{section}       & 節見出し \\
+ \Kount{subsection}    & 小節見出し\\
+ \Kount{subsubsection} & 小小節見出し\\
+ \Kount{paragraph}     & 段落見出し\\
+ \Kount{subparagraph}  & 小段落見出し\\
+ \Kount{page}          & ページ番号\\
+ \Kount{equation}      & 式番号\\
+ \Kount{figure}        & 図見出し\\
+ \Kount{table}         & 表見出し\\
+ \Kount{footnote}      & 脚注番号\\
+ \Kount{mpfootnote}    & \env{minipage}環境中の脚注番号\\
+ \Kount{enumi}         & 一つ目の階層の\env{enumerate}環境の番号\\
+ \Kount{enumii}        & 二つ目の階層の\env{enumerate}環境の番号\\
+ \Kount{enumiii}       & 三つ目の階層の\env{enumerate}環境の番号\\
+ \Kount{enumiv}        & 四つ目の階層の\env{enumerate}環境の番号\\
  \BR
 \end{tabular}
 \end{scenter}
 \end{table}
-�����󥿤�\yo{�Ǥ��ֹ�}�ȼºݤ˽��Ϥ��٤�\yo{ɽ���Ѥ��ֹ�}
-��\yo{�����Ѥ�ʸ����}�λ��Ĥ����Ǥ���äƤ��ޤ���
-�㤨�� `\verb|\newcounter{section}[chapter]|'
-�Ȥ����Τϡ������褽���Τ褦�ʽ�����Ʊ�����ˤʤ�ޤ���\C{newcounter}��
-�Ͽ����������󥿤�������뤿���̿��Ǥ����ˡ�
+カウンタは\yo{素の番号}と実際に出力すべき\yo{表示用の番号}
+と\yo{参照用の文字列}の三つの要素を持っています．
+例えば `\verb|\newcounter{section}[chapter]|'
+というのは，おおよそ次のような処理と同じ事になります（\C{newcounter}と
+は新しいカウンタを定義するための命令です．）．
 
 \begin{InTeX}
-\newcount\c@section %�Ǥ��ֹ���
-\def\thesection{\thechapter.\c@section}%ɽ����
-\def\p@section{\thechapter.\c@section}%������
+\newcount\c@section %素の番号用
+\def\thesection{\thechapter.\c@section}%表示用
+\def\p@section{\thechapter.\c@section}%参照用
 \end{InTeX}
 
 
 %\begin{description}
 % \item[\cmd{c@table}] 
-%	    �Ǥ��ֹ����¸����\kount{table}�ѥ����󥿡�
+%	    素の番号を保存する\kount{table}用カウンタ．
 % \item[\cmd{thetable}] 
-%	    �Ϥλҥ����󥿤Ǥ���ɽ���Ѥ�̿�ᡥ
+%	    章の子カウンタである表示用の命令．
 % \item[\cmd{p@table}] 
-%	    �����Ѥ�̿�ᡥ
+%	    参照用の命令．
 %\end{description}
-%�λ��Ĥ�Ʊ�����������뤳�Ȥˤʤ�ޤ���
+%の三つが同時に定義されることになります．
 
 %\begin{InTeX}
 %\label{test}, \ref{test} 
 %\end{InTeX}
 
-���λ��ȤߤˤĤ������򤹤�ˤϼºݤ�ư��򸫤�Τ��ᤤ�Ȼפ��ޤ���
-�ե�����̾\fl{reftest.tex}�Ȥ����ե�������������1����������ץ��åȤ���
-����������
+この仕組みについて理解するには実際の動作を見るのが早いと思います．
+ファイル名\fl{reftest.tex}というファイルを作成し，1回だけタイプセットして
+ください．
 
 \begin{InTeX}
 \documentclass{jsarticle}
@@ -1088,25 +1088,25 @@ Roman!
 \end{InTeX}
 
 
-������ \cmd{refstepcounter}�ϥ����󥿤��ͤ������䤹̿��
-�� \cmd{thetest}�ϥ�����\kount{test}���ͤ�ɽ�����뤿���
-̿����ȻפäƤ���������
-��̤Ȥ���ü���ˤ� \dos{No file reftest.aux} �Ȥ�����å�������ɽ������
-��Ϥ��Ǥ��������ʳ���\fl{reftest.aux}��\prog{cat}��\prog{type}
-���ޥ�ɤǸ���ȼ���1�Ԥ������Ϥ���Ƥ��ޤ���
+ここで \cmd{refstepcounter}はカウンタの値を一つ増やす命令
+で \cmd{thetest}はカウンタ\kount{test}の値を表示するための
+命令だと思ってください．
+結果として端末には \dos{No file reftest.aux} というメッセージが表示され
+るはずです．この段階で\fl{reftest.aux}を\prog{cat}か\prog{type}
+コマンドで見ると次の1行しか出力されていません．
 
 \begin{InTeX}
 \relax 
 \end{InTeX}
 
-\cmd{refstepcounter}̿������Ǥϻ��ȤǤ�����֤ˤϤʤ��褦�Ǥ���
+\cmd{refstepcounter}命令だけでは参照できる状態にはないようです．
 
 \begin{InTeX}
 \refstepcounter{test} \thetest
 \end{InTeX}
 
-�嵭��1�Ԥ��Ф��Ƽ��Τ褦��`\verb|\label{cnt:test}|'���­���ơ�
-1����������ץ��åȤ�ԤäƤ���������
+上記の1行に対して次のように`\verb|\label{cnt:test}|'を書き足して，
+1回だけタイプセットを行ってください．
 
 \begin{InTeX}
 \refstepcounter{test} \thetest \label{cnt:test}
@@ -1116,9 +1116,9 @@ Roman!
 \begin{flushleft}
 \dosh{Label(s) may have changed. Return to get cross-ferecenses right.} 
 \end{flushleft}
-ü���ˤϤ��Τ褦��{\LaTeX}�ηٹ�ɽ������ޤ�����٥뤬�ѹ����줿��
-�פ���Τǲ�ä��ʤ����ȸ����Ƥ��ޤ���������
-\fl{reftest.aux}�򸫤�� \C{newlabel}̿��Ȥ������������󤬽��Ϥ���Ƥ��ޤ���
+端末にはこのような{\LaTeX}の警告が表示されます．ラベルが変更されたと
+思われるので解消しなさいと言われています．ここで
+\fl{reftest.aux}を見ると \C{newlabel}命令という新しい情報が出力されています．
 
 \begin{InTeX}
 \relax
@@ -1126,25 +1126,25 @@ Roman!
 \end{InTeX}
 
 
-�����\str{cnt:test}�Ȥ���̾���Υ�٥�򻲾Ȥ��������
-�Ǥ��Ƥ������ʬ����ޤ���
+これで\str{cnt:test}という名前のラベルを参照する準備が
+できている事が分かります．
 
 \begin{InTeX}
 \newcounter{test} \thetest
 \refstepcounter{test} \thetest \label{cnt:test}
 \end{InTeX}
 
-�嵭��2�Ԥ��Ф��� \cmd{ref} �� \cmd{pagref}��ޤ�褦�ʡ�����1�Ԥ��դ�­
-����1����������ץ��åȤ��ޤ���
+上記の2行に対して \cmd{ref} と \cmd{pagref}を含むような，次の1行を付け足
+して1回だけタイプセットします．
 
 \begin{InTeX}
 ref=\ref{cnt:test}, page=\pageref{cnt:test}
 \end{InTeX}
 
-����ȥ��󥽡���˷ٹ��ɽ������ޤ���\fl{reftest.aux}�����Ƥ��Ѥ�ä�
-���ޤ��󡥤��ơ�������{\LaTeX}�˰��ϰ��򤹤뤿�ᡤ
-\C{setcounter}�ǥڡ����ֹ��\Kount{page}�ˤ�\qu{100}�ˤ��Ƥ���1�����
-�����ץ��åȤ���Ȥɤ��ʤ�Ǥ��礦����
+するとコンソールに警告は表示されません．\fl{reftest.aux}の内容も変わって
+いません．さて，ここで{\LaTeX}に意地悪をするため，
+\C{setcounter}でページ番号（\Kount{page}）を\qu{100}にしてから1回だけ
+タイプセットするとどうなるでしょうか．
 
 \begin{InTeX}
 \setcounter{page}{100}
@@ -1153,13 +1153,13 @@ ref=\ref{cnt:test}, page=\pageref{cnt:test}
 ref=\ref{cnt:test}, page=\pageref{cnt:test}
 \end{InTeX}
 
-�Ƥ�ü���ˤ�
+再び端末には
 \begin{flushleft}
 \dosh{Label(s) may have changed. Return to get cross-ferecenses right.} 
 \end{flushleft}
-�Ȥ����ٹ�ɽ������Ƥ��ޤ��ޤ�����������\fl{reftest.aux}
-�Υե��������Ȥϡ֥ڡ����ֹ��`100'�Ǥ���פȤ��������
-�ޤ�褦���ѹ�����Ƥ��ޤ���
+という警告が表示されてしまいました．そして\fl{reftest.aux}
+のファイルの中身は「ページ番号は`100'である」という情報を
+含むように変更されています．
 
 \begin{InTeX}
 \relax
@@ -1168,65 +1168,65 @@ ref=\ref{cnt:test}, page=\pageref{cnt:test}
 
 
 
-�ʾ�η�̤���ʬ����褦��\Va{file}{aux}�ˤ���߻��Ȥξ���%
+以上の結果から分かるように\Va{file}{aux}には相互参照の情報%
 %\begin{Syntax}
-%\Cmd{newlabel}\pa{��٥�}%
-% \verb|{|\pa{�������ֹ�}\pa{�ڡ����ֹ�}%
+%\Cmd{newlabel}\pa{ラベル}%
+% \verb|{|\pa{カウンタ番号}\pa{ページ番号}%
 % \verb|}|
 %\end{Syntax}
-����¸����Ƥ������ʬ����ޤ�����{\LaTeX}�ǤϤ�����
-����Υ����ץ��åȤη�̤���¸����Ƥ���\Va{file}{aux}��
-��������߻��Ȥξ������Ӥ��ƥ桼�����Ф��Ƥ�ٹ���
-���Ƥ���Ȥ�������ʬ����ޤ���\cmd{ref}̿��� \cmd{pageref}
-̿�����߻����Ѥξ��󤫤饫�����ֹ��ڡ����ֹ���٥�ˤ�ä��Τ뤳
-�Ȥ��Ǥ���Ȥ������Ǥ���%�⤦�����ܤ�����\pp{\cmd{r@��٥�}}�⤤�Ĥ���
-%�ˤ���
+が保存されている事が分かりました．{\LaTeX}ではそれらを
+前回のタイプセットの結果が保存されていた\Va{file}{aux}と
+新しい相互参照の情報を比較してユーザに対しても警告を出
+しているという事が分かります．\cmd{ref}命令と \cmd{pageref}
+命令は相互参照用の情報からカウンタ番号やページ番号をラベルによって知るこ
+とができるという事です．%もう少し詳しい話\pp{\cmd{r@ラベル}}もいつの日
+%にか．
 
-\subsection{������}
-�ϸ��Ф���ڡ����ˤ��̤��ֹ椬�����Ƥ��ޤ���
-������\K{\LaTeX ������}�ˤ�ä�����
-����Ƥ��ޤ��������󥿤ϥץ�����ߥ󥰸����
-������int��\pp{����}���ѿ��Ǥ���
-%{\LaTeX}�ǤϤ�%
-%\zindind{������}{�쥸����}%
-%���\K{�����󥿥쥸����}
-�������ѿ��λ��Ȥߤ��������ˡ�򾯤����ΤäƤ�����
-�ۤ����塹�����Ǥ���%���ξϤǤ��ѿ��δ��ä��������ޤ���
+\subsection{カウンタ}
+章見出しやページには通し番号が振られています．
+これらは\K{\LaTeX カウンタ}によって制御
+されています．カウンタはプログラミング言語で
+言えばint型\pp{整数}の変数です．
+%{\LaTeX}ではこ%
+%\zindind{カウンタ}{レジスタ}%
+%れを\K{カウンタレジスタ}
+カウンタ変数の仕組みや制御の方法を少しは知っておいた
+ほうが後々便利です．%この章では変数の基礎を説明します．
 
-�㤨��\cls{jsbook}���饹�Ǿ�\pp{\cmd{chpater}}��
-���γ��ؤ���\pp{\cmd{section}}�ѤΥ����󥿤�
-���ߤ���ˤ� \C{newcounter}̿���ȤäƼ��Τ褦�ˤ��ޤ���
+例えば\cls{jsbook}クラスで章\pp{\cmd{chpater}}の
+下の階層の節\pp{\cmd{section}}用のカウンタを
+新設するには \C{newcounter}命令を使って次のようにします．
 
 \begin{InTeX}
 \newcounter{section}[chpater]
 \end{InTeX}
 
-���Τ褦�ʥ����󥿤����ˤ�
-����̿�᤬�Ȥ��ޤ���\zindind{������}{�ο���}%
-\zindind{������}{������}%
+このようなカウンタの操作には
+次の命令が使えます．\zindind{カウンタ}{の新設}%
+\zindind{カウンタ}{の設定}%
 \begin{Syntax}
 \begin{tabular}{ll}
- \C{newcounter}\pa{������̾}\opa{�ƥ�����̾} &  \pp{�����󥿤��ߤ���}\\
- \C{setcounter}\pa{������̾}\pa{����} &  \pp{\va{����}�����ꤹ��}\\
- \C{addtocounter}\pa{������̾}\pa{����} & \pp{\va{����}��­��} \\
- \C{stepcounter}\pa{������̾} &  \pp{���­��}\\
- \C{refstepcounter}\pa{������̾} &  \pp{��߻��Ȥ��ǽ�˰��­��}\\
- \C{value}\pa{������̾} & \pp{�ͤ�ɽ������}\\
+ \C{newcounter}\pa{カウンタ名}\opa{親カウンタ名} &  \pp{カウンタを新設する}\\
+ \C{setcounter}\pa{カウンタ名}\pa{数値} &  \pp{\va{数値}を設定する}\\
+ \C{addtocounter}\pa{カウンタ名}\pa{数値} & \pp{\va{数値}を足す} \\
+ \C{stepcounter}\pa{カウンタ名} &  \pp{一つ足す}\\
+ \C{refstepcounter}\pa{カウンタ名} &  \pp{相互参照も可能に一つ足す}\\
+ \C{value}\pa{カウンタ名} & \pp{値を表示する}\\
 \end{tabular}
 \end{Syntax}
-\cmd{newcounter}�ǥ����󥿤��ߤ��ޤ���
-\cmd{setcounter}�Ͽ��ͤ���������
-\cmd{addtocounter}�Ͽ��ͤ�­����
-\cmd{stepcounter}�ϥ����󥿤��ͤ�
-��Ĥ������䤷�ޤ���\Cmd{refstepcounter}��
-�����󥿤�夫�黲�ȤǤ���褦�˥�٥뤬
-�Ѱդ���ޤ���\cmd{stepcounter}�� \cmd{refstepcounter}
-�ˤ�äƿƥ����󥿤�������Ȥ��λҤǤ��륫���󥿤�
-0�˥ꥻ�åȤ���ޤ���\cmd{value}�ϥ����󥿤���
-�ƥ����󥿤��ͤ�ʸ����ʤɤ������������
-�����󥿤��ͤ������륳�ޥ�ɤǤ���
+\cmd{newcounter}でカウンタを新設します．
+\cmd{setcounter}は数値を代入し，
+\cmd{addtocounter}は数値を足し，
+\cmd{stepcounter}はカウンタの値を
+一つだけ増やします．\Cmd{refstepcounter}は
+カウンタを後から参照できるようにラベルが
+用意されます．\cmd{stepcounter}と \cmd{refstepcounter}
+によって親カウンタが増えるとその子であるカウンタは
+0にリセットされます．\cmd{value}はカウンタから
+親カウンタの値や文字列などを取り除いた純粋な
+カウンタの値が得られるコマンドです．
 
-�����󥿤�ɽ���������ѹ������Τ˰ʲ�������ޤ���
+カウンタの表示形式を変更するものに以下があります．
 \begin{Syntax}
 \begin{tabular}{llll}
 \C{arabic}   &\pp{1, 2,  \ldots}&
@@ -1237,175 +1237,175 @@ ref=\ref{cnt:test}, page=\pageref{cnt:test}
 \C{fnsymbol} &\pp{*, \textdagger, \ldots}
 \end{tabular}
 \end{Syntax}
-�㤨����\pp{\cmd{section}}�θ��Ф��ֹ��
-�����޿������ѹ�����ΤǤ���С��ḫ�Ф��Ѥ�
-������\qu{\kount{section}}�򼡤Τ褦��
-��������ޤ���
+例えば節\pp{\cmd{section}}の見出し番号を
+ローマ数字に変更するのであれば，節見出し用の
+カウンタ\qu{\kount{section}}を次のように
+再定義します．
 
 \begin{InTeX}
 \renewcommand{\thesection}{\Roman{section}}
 \end{InTeX}
 
 \begin{Prob}
-�ʲ��Υե�����򥿥��ץ��åȤ������μ¹Է�̤��̣���Ƥ���������
+以下のファイルをタイプセットし，その実行結果を吟味してください．
 
 \begin{InTeX}
 \documentclass{jsarticle}
 \renewcommand\thesection{\Alph{section}}
 \begin{document}
 \tableofcontents
-\section{����}
-\subsection{����}
+\section{序論}
+\subsection{構成}
 \end{document}
 \end{InTeX} 
 
-���η�̤��顤\C{thesection} �Τߤ��ѹ���������ǽ�ʬ���ɤ���
-��Ƥ���Ƥ���������
+この結果から，\C{thesection} のみを変更するだけで十分かどうか
+検討してください．
 \end{Prob}
 %
 %\clearpage%
 %
 %
-\section{��߻��Ȥι���}\zindind{��߻���}{�ι���}%
-�㤨�п��ˤĤ��ƹͻ������Ϥ����Ʊ���褦���ḫ�Ф���ɽ��
-�ޤʤɤ�¸�ߤ��Ƥ����Ȥ��ޤ��礦�������Υ�٥�Ͻ�ʣ��
-�ƤϤ����ޤ���Τǡ����餫�ι��פ򤷤Ƥ������ۤ��������Ǥ���
-�ɤ��Ȥ��Ƥ�����ˡ��\tabref{xrtrick1}�Τ褦�����Ǥ˱�
-���ƥ�٥���Ф�����Ƭ����դ��ޤ���
+\section{相互参照の工夫}\zindind{相互参照}{の工夫}%
+例えば色について考察した章の中に同じような節見出し，表，
+図などが存在していたとしましょう．それらのラベルは重複し
+てはいけませんので，何らかの工夫をしておいたほうが得策です．
+良く使われている方法に\tabref{xrtrick1}のように要素に応
+じてラベルに対して接頭語を付けます．
 \begin{table}[htbp]
 \begin{center}
-\caption{���Ǥ˱�������٥��Ž����}\tablab{xrtrick1}
+\caption{要素に応じたラベルの貼り方}\tablab{xrtrick1}
 \begin{tabular}{lll}
 \TR
-\Th{����}   &\Th{��Ƭ��} & \Th{�о�}\\
+\Th{要素}   &\Th{接頭語} & \Th{対象}\\
 \MR
-�ϸ��Ф�& \str{chap:}& \Cmd{chapter}\\
-�ḫ�Ф�& \str{sec:} & \Cmd{section}\\
-��      & \str{fig:} & \env{figure}�Ķ���� \Cmd{caption}̿��\\
-ɽ      & \str{tab:} & \Cmd{table}�Ķ���� \Cmd{caption}̿��\\
-��      & \str{equ:} & �ֹ��դ��ο���\pp{\Cmd{equation}̿���\Env{eqnarray}�Ķ�}\\
+章見出し& \str{chap:}& \Cmd{chapter}\\
+節見出し& \str{sec:} & \Cmd{section}\\
+図      & \str{fig:} & \env{figure}環境中の \Cmd{caption}命令\\
+表      & \str{tab:} & \Cmd{table}環境中の \Cmd{caption}命令\\
+式      & \str{equ:} & 番号付きの数式\pp{\Cmd{equation}命令や\Env{eqnarray}環境}\\
 \BR
 \end{tabular}
 \end{center}
 \end{table}
 
-��ñ����Ȥ����ḫ�Ф��򻲾Ȥ���Ȥ���
-���Τ褦�����Ϥˤʤ�ޤ���
+簡単な例として節見出しを参照するときは
+次のような入力になります．
 
 \begin{InTeX}
-\section{��ˡ����}\label{sec:addmix}
-����ϡ������� 
-\section{��ˡ����}\label{sec:submix}
-\ref{sec:addmix}~��\pp{\pageref{sec:addmix}�ڡ���}�Ǥϱ�����
+\section{加法混色}\label{sec:addmix}
+それは，云々． 
+\section{減法混色}\label{sec:submix}
+\ref{sec:addmix}~節\pp{\pageref{sec:addmix}ページ}では云々．
 \end{InTeX}
 
-�����\tabref{xrtrick1}�ε�§�ˤ������äƲ��Υޥ���
-����������˼�ư�Ǥ��Ȥ���ä����Ѥʻ��ˤʤ�ޤ���
+これは\tabref{xrtrick1}の規則にしたがって何のマクロ
+も作成せずに手動でやるとちょっと大変な事になります．
 
 \begin{InTeX}
-\section{��ˡ����}\label{sec:addmixcolor}
-��$i$�ˤ����뿧$c_i$�ϼ�~\ref{equ:addmixcolor}�ˤ�äƷ�ޤ롥
+\section{加法混色}\label{sec:addmixcolor}
+点$i$における色$c_i$は式~\ref{equ:addmixcolor}によって決まる．
 \begin{equation}
  c_i  =  r_i + g_i + b_i\label{equ:addmixcolor}
 \end{equation}
-���δط���ɽ~\ref{tab:addmixcolor}�Ȥʤ롥
+その関係は表~\ref{tab:addmixcolor}となる．
 \begin{table}[htbp]
- % ������ɽ�����롥
- \caption{��ˡ������ɽ}\label{tab:addmixcolor}
+ % ここに表が入る．
+ \caption{加法混色の表}\label{tab:addmixcolor}
 \end{table}
-�ޤ�������޼�����ȿ�~\ref{fig:addmixcolor}�Ȥʤ롥
+またそれらを図式すると図~\ref{fig:addmixcolor}となる．
 \begin{figure}[htbp]
- % �����˿ޤ����롥
- \caption{��ˡ�����ο�}\label{fig:addmixcolor}
+ % ここに図が入る．
+ \caption{加法混色の図}\label{fig:addmixcolor}
 \end{figure}
-\section{��ˡ����}\label{sec:submixcolor}
-\ref{sec:addmixcolor}~�� (\pageref{sec:addmixcolor}~�ڡ���) �Ǥϱ�����
+\section{減法混色}\label{sec:submixcolor}
+\ref{sec:addmixcolor}~節 (\pageref{sec:addmixcolor}~ページ) では云々．
 \end{InTeX}
 
 \begin{OutText}
-{\Large\headfont 3.1 ��ˡ����}\par\vskip1em
-\hskip1zw ��$i$�ˤ����뿧$c_i$�ϼ�~3.1�ˤ�äƷ�ޤ롥\\
+{\Large\headfont 3.1 加法混色}\par\vskip1em
+\hskip1zw 点$i$における色$c_i$は式~3.1によって決まる．\\
 \hfill      $c_i=r_i+g_i+b_i$      \hfill (3.1)\\
-���δط���ɽ~3.1�Ȥʤ롥
-\begin{center} {\small ɽ~3.1 ��ˡ������ɽ} \end{center}
-�ޤ�������޼�����ȿ�~3.1�Ȥʤ롥
-\begin{center} {\small  ��~3.1 ��ˡ�����ο�} \end{center}
-{\large\headfont 3.2 ��ˡ����}\par\vskip1em
-\hskip1zw 3.1~�� (5~�ڡ���) �Ǥϱ�����
+その関係は表~3.1となる．
+\begin{center} {\small 表~3.1 加法混色の表} \end{center}
+またそれらを図式すると図~3.1となる．
+\begin{center} {\small  図~3.1 加法混色の図} \end{center}
+{\large\headfont 3.2 減法混色}\par\vskip1em
+\hskip1zw 3.1~節 (5~ページ) では云々．
 \end{OutText}
 
-\tabref{xrtrick1}�Τ褦�ʵ�§�˽����ޥ�������ޤ���
-�ޥ���¦�Ǽ�ưŪ����Ƭ����դ��Ƥ����пʹ֤κ�Ȥ������
-�������ߥ��⾯�ʤ��ʤ�ޤ���
+\tabref{xrtrick1}のような規則に従いマクロを作ります．
+マクロ側で自動的に接頭語を付けてくれれば人間の作業が減りま
+すし，ミスも少なくなります．
 
 \begin{InTeX}
 \newcommand*{\chaplab}[1]{\label{chap:#1}}
-\newcommand*{\chapref}[1]{��~\ref{chap:#1}~��}
+\newcommand*{\chapref}[1]{第~\ref{chap:#1}~章}
 \newcommand*{\seclab}[1]{\label{sec:#1}}
-\newcommand*{\secref}[1]{\ref{sec:#1}~��}
+\newcommand*{\secref}[1]{\ref{sec:#1}~節}
 \newcommand*{\figlab}[1]{\label{fig:#1}}
-\newcommand*{\figref}[1]{��~\ref{fig:#1}}
+\newcommand*{\figref}[1]{図~\ref{fig:#1}}
 \newcommand*{\tablab}[1]{\label{tab:#1}}
-\newcommand*{\tabref}[1]{ɽ~\ref{tab:#1}}
+\newcommand*{\tabref}[1]{表~\ref{tab:#1}}
 \newcommand*{\equlab}[1]{\label{equ:#1}}
-\newcommand*{\equref}[1]{��~\ref{equ:#1}}
+\newcommand*{\equref}[1]{式~\ref{equ:#1}}
 \end{InTeX}
 
-���Τ褦�ʥޥ�����������Ƥ��������������Ϥϴ�ʬ��ά��
-�Ǥ���Ǥ��礦��
+このようなマクロを作成しておけば先程の入力は幾分簡略化
+できるでしょう．
 
 \begin{InTeX}
-\section{��ˡ����}\seclab{addmixcolor}
-��$i$�ˤ����뿧$c_i$��\eqref{addmixcolor}�ˤ�äƷ�ޤ롥
+\section{加法混色}\seclab{addmixcolor}
+点$i$における色$c_i$は\eqref{addmixcolor}によって決まる．
 \begin{equation}
  c_i  =  r_i + g_i + b_i\eqlab{addmixcolor}
 \end{equation}
-���δط���\tabref{addmixcolor}�Ȥʤ롥
+その関係は\tabref{addmixcolor}となる．
 \begin{table}[htbp]
- % ������ɽ�����롥
- \caption{��ˡ������ɽ}\tablab{addmixcolor}
+ % ここに表が入る．
+ \caption{加法混色の表}\tablab{addmixcolor}
 \end{table}
-�ޤ�������޼������\figref{addmixcolor}�Ȥʤ롥
+またそれらを図式すると\figref{addmixcolor}となる．
 \begin{figure}[htbp]
- % �����˿ޤ����롥
- \caption{��ˡ�����ο�}\figlab{addmixcolor}
+ % ここに図が入る．
+ \caption{加法混色の図}\figlab{addmixcolor}
 \end{figure}
-\section{��ˡ����}\seclab{submixcolor}
-\secref{addmixcolor}(\pageref{sec:addmixcolor}~�ڡ���)�Ǥϱ�����
+\section{減法混色}\seclab{submixcolor}
+\secref{addmixcolor}(\pageref{sec:addmixcolor}~ページ)では云々．
 \end{InTeX}
 
-���ơ��Ǹ��1�Ԥ򸫤Ƥߤ�� \C{pageref}�ˤ����Ƽ��Τ褦��
-���Ҥ����������ޤ���
+さて，最後の1行を見てみると \C{pageref}において次のような
+記述が見受けられます．
 
 \begin{InTeX}
-\secref{addmixcolor}(\pageref{sec:addmixcolor}~�ڡ���)�Ǥϱ�����
+\secref{addmixcolor}(\pageref{sec:addmixcolor}~ページ)では云々．
 \end{InTeX}
 
-����Ͽʹ֤���ư����Ƭ��\str{sec:}��
-�դ��ʤ���Фʤ�ʤ���Ǥ���
-�����ߥ���Ͷ���Ф�����ˤʤ뤫�⤷��ޤ���Τǥڡ����ֹ��
-���Ȥ���褦�ʥޥ�������ޤ���
+これは人間が手動で接頭語\str{sec:}を
+付けなければならない例です．
+これもミスを誘い出す一因になるかもしれませんのでページ番号も
+参照するようなマクロを作ります．
 
 \begin{InTeX}
-\newcommand*\pref[2]{(\pageref{#1:#2}�ڡ���)}
-\newcommand*\fullchapref[1]{��\ref{chap:#1}�� \pref{chap}{#1}}
-\newcommand*\fullsecref[1]{\ref{sec:#1}~�� \pref{sec}{#1}}
-\newcommand*\fullfigref[1]{��~\ref{fig:#1} \pref{fig}{#1}}
-\newcommand*\fulltabref[1]{ɽ~\ref{tab:#1} \pref{tab}{#1}}
-\newcommand*\fullequref[1]{��~\ref{equ:#1} \pref{equ}{#1}}
+\newcommand*\pref[2]{(\pageref{#1:#2}ページ)}
+\newcommand*\fullchapref[1]{第\ref{chap:#1}章 \pref{chap}{#1}}
+\newcommand*\fullsecref[1]{\ref{sec:#1}~節 \pref{sec}{#1}}
+\newcommand*\fullfigref[1]{図~\ref{fig:#1} \pref{fig}{#1}}
+\newcommand*\fulltabref[1]{表~\ref{tab:#1} \pref{tab}{#1}}
+\newcommand*\fullequref[1]{式~\ref{equ:#1} \pref{equ}{#1}}
 \end{InTeX}
 
-�ʾ�Τ褦�ʥޥ�����������Ƥ��������Ϥ����������ñ
-�ˤʤ�Ȼפ��ޤ���
+以上のようなマクロを作成しておけば入力が先程よりも簡単
+になると思われます．
 
 \begin{InTeX}
-\section{��ˡ����}\seclab{submixcolor}
-\fullsecref{addmixcolor}�Ǥϱ�����
+\section{減法混色}\seclab{submixcolor}
+\fullsecref{addmixcolor}では云々．
 \end{InTeX}
 
-{\LaTeX}����߻��Ȥ�Ȥ������1��ʾ夢��Ȼפ��ޤ��Τ� 
-\pp{�ܽ�����ʬ�����Ϥ���ʤɤ�}�������\fl{myref.sty}�Ȥ��Ƥ�������
-���Ǥ��礦\footnote{\url{http://tex.dante.jp/jou1/myref.sty}} ��
+{\LaTeX}で相互参照を使う機会は1回以上あると思いますので 
+\pp{本書の例を自分で入力するなどで}，これを\fl{myref.sty}としておくと便
+利でしょう\footnote{\url{http://tex.dante.jp/jou1/myref.sty}} ．
 
 \begin{comment}
 \begin{InTeX}
@@ -1415,40 +1415,40 @@ ref=\ref{cnt:test}, page=\pageref{cnt:test}
 % Date: 2004/08/04
 % Copying: copyright (c) 2004, Thor Watanabe
 \ProvidesPackage{myref.sty}[2004/08/04 v0.1 Thor]
-\newcommand*{\chaplab}[1]{\label{chap:#1}}%     �ϤΥ�٥�
-\newcommand*{\chapref}[1]{��~\ref{chap:#1}~��}% �Ϥλ���
-\newcommand*{\seclab}[1]{\label{sec:#1}}%       ��Υ�٥�
-\newcommand*{\secref}[1]{\ref{sec:#1}~��}%      ��λ���
-\newcommand*{\figlab}[1]{\label{fig:#1}}%       �ޤΥ�٥�
-\newcommand*{\figref}[1]{��~\ref{fig:#1}}%      �ޤλ���
-\newcommand*{\tablab}[1]{\label{tab:#1}}%       ɽ�Υ�٥�
-\newcommand*{\tabref}[1]{ɽ~\ref{tab:#1}}%     ɽ�λ���
-\newcommand*{\equlab}[1]{\label{equ:#1}}%       ���Υ�٥�
-\newcommand*{\equref}[1]{��~\ref{equ:#1}}%     ���λ���
-\newcommand*{\applab}[1]{\label{app:#1}}%       ��Ͽ�Υ�٥�
-\newcommand*{\appref}[1]{��Ͽ~\ref{app:#1}}%    ��Ͽ�λ���
-\newcommand*{\pref}[1]{\pageref{#1}�ڡ���}%     �ڡ����λ���
-\newcommand*\pref[2]{(\pageref{#1:#2}�ڡ���)}%
-\newcommand*\fullchapref[1]{��\ref{chap:#1}�� \pref{chap}{#1}}%
-\newcommand*\fullsecref[1]{\ref{sec:#1}~�� \pref{sec}{#1}}%
-\newcommand*\fullfigref[1]{��~\ref{fig:#1} \pref{fig}{#1}}%
-\newcommand*\fulltabref[1]{ɽ~\ref{tab:#1} \pref{tab}{#1}}%
-\newcommand*\fullequref[1]{��~\ref{equ:#1} \pref{equ}{#1}}%
+\newcommand*{\chaplab}[1]{\label{chap:#1}}%     章のラベル
+\newcommand*{\chapref}[1]{第~\ref{chap:#1}~章}% 章の参照
+\newcommand*{\seclab}[1]{\label{sec:#1}}%       節のラベル
+\newcommand*{\secref}[1]{\ref{sec:#1}~節}%      節の参照
+\newcommand*{\figlab}[1]{\label{fig:#1}}%       図のラベル
+\newcommand*{\figref}[1]{図~\ref{fig:#1}}%      図の参照
+\newcommand*{\tablab}[1]{\label{tab:#1}}%       表のラベル
+\newcommand*{\tabref}[1]{表~\ref{tab:#1}}%     表の参照
+\newcommand*{\equlab}[1]{\label{equ:#1}}%       式のラベル
+\newcommand*{\equref}[1]{式~\ref{equ:#1}}%     式の参照
+\newcommand*{\applab}[1]{\label{app:#1}}%       付録のラベル
+\newcommand*{\appref}[1]{付録~\ref{app:#1}}%    付録の参照
+\newcommand*{\pref}[1]{\pageref{#1}ページ}%     ページの参照
+\newcommand*\pref[2]{(\pageref{#1:#2}ページ)}%
+\newcommand*\fullchapref[1]{第\ref{chap:#1}章 \pref{chap}{#1}}%
+\newcommand*\fullsecref[1]{\ref{sec:#1}~節 \pref{sec}{#1}}%
+\newcommand*\fullfigref[1]{図~\ref{fig:#1} \pref{fig}{#1}}%
+\newcommand*\fulltabref[1]{表~\ref{tab:#1} \pref{tab}{#1}}%
+\newcommand*\fullequref[1]{式~\ref{equ:#1} \pref{equ}{#1}}%
 \end{InTeX}
-�����ǤϤ��ޤ��Ȥ�����Ͽ�Υ�٥��դ� \cmd{applab}��
-���� \cmd{appref}���ڡ����ֹ�򻲾Ȥ��뤿���̿�� \cmd{pref}
-��������Ƥ��ޤ���
+ここではおまけとして付録のラベル付け \cmd{applab}と
+参照 \cmd{appref}，ページ番号を参照するための命令 \cmd{pref}
+も定義しています．
 \end{comment}
 
-\subsection{���ȥ�٥��ɽ��\zdash\Y{showkeys}}\seclab{showkeys}
+\subsection{参照ラベルの表示\zdash\Y{showkeys}}\seclab{showkeys}
 
-\C{label} �� \C{pageref} �ڤ� \C{ref} �ˤ�ä���߻��Ȥ�Ԥʤ��ޤ�����
-���Ȥ��뤿��Υ����򸶹Ƽ�ɮ�ʳ���˺��Ƥ��ޤ���������ޤ���
-���Τ褦�ʤȤ��� \C{label}, \C{pageref}, \C{ref} �λ��Ȥ���Ƥ����٥�
-����Ϥ��Ƥ����Ф��꤬������ΤǤ�������ˤ� \Person{David}{Carlisle}�ˤ�
-�� \Y{showkeys} �ѥå��������Ȥ��ޤ������Τ褦�ˤ���ȡ�\C{label} �ˤ��
-���������줿 \C{newlabel} ��˵���˽��Ϥ���\C{ref}, \C{pageref} �ǻ��Ȥ�
-����٥�Ϥ��θ����դ��褦�ˤʤ�ޤ���
+\C{label} と \C{pageref} 及び \C{ref} によって相互参照を行ないますが，
+参照するためのキーを原稿執筆段階で忘れてしまう事があります．
+このようなときは \C{label}, \C{pageref}, \C{ref} の参照されているラベル
+を出力してくれればありがたいものです．これには \Person{David}{Carlisle}によ
+る \Y{showkeys} パッケージが使えます．次のようにすると，\C{label} によっ
+て生成された \C{newlabel} を傍注に出力し，\C{ref}, \C{pageref} で参照し
+たラベルはその肩に付くようになります．
 
 \par\noindent\IOmargin
 \setlength\unitlength{\fullwidth}
@@ -1458,130 +1458,130 @@ ref=\ref{cnt:test}, page=\pageref{cnt:test}
 \begin{small}
 \begin{verbatim}
 \usepackage{showkeys}
-\section{����}
-\subsection{�ط�}\label{sec:back}
-��ɸ��\ref{sec:goal}~��򻲾ȡ�
-\subsection{��ɸ}\label{sec:goal}
-�طʤ�\ref{sec:back}~��򻲾ȡ�\par
-�����\par
-�طʤ�~\pageref{sec:back}�ڡ�����
+\section{序論}
+\subsection{背景}\label{sec:back}
+目標は\ref{sec:goal}~節を参照．
+\subsection{目標}\label{sec:goal}
+背景は\ref{sec:back}~節を参照．\par
+改段落．\par
+背景は~\pageref{sec:back}ページ．
 \end{verbatim}
 \end{small}\IOlabel
 
-\subsection{��߻��Ȥ˴ؤ��\LaTeX �ηٹ�}
-%\zindind{��߻���}{�˴ؤ��ٹ�}%
-%���ޥ�ɥץ���ץȤ䥷�����ɽ�������\dos{LaTeX Warning:}
-%�θ�˰ʲ��˼����褦�ʷٹ�ɽ������Ƥ���ȡ�
-%��߻��Ȥ˴ؤ������꤬��ä���Ƥ��ʤ����Ȥ򼨤��ޤ���
+\subsection{相互参照に関わる\LaTeX の警告}
+%\zindind{相互参照}{に関わる警告}%
+%コマンドプロンプトやシェルで表示される\dos{LaTeX Warning:}
+%の後に以下に示すような警告が表示されていると，
+%相互参照に関する問題が解消されていないことを示します．
 %\par\dos{Label `key' multiply defined\hfil}
-%�Ȥ����Τ� \cmd{label}̿���Ʊ����٥�̾����ĥ�٥��������Ƥ���
-%�Ȥ������ȤǤ�����٥�ν�ʣ������ޤ��Τǡ���������
-%��٥���̤�̾�����դ��ޤ���
+%というのは \cmd{label}命令で同じラベル名を持つラベルを定義している
+%ということです．ラベルの重複がありますので，該当する
+%ラベルに別の名前を付けます．
 %
 %\par\dos{Reference `key' on page n undefined\hfil}
-%�Ȥ����ٹ�ɽ�����줿�Τʤ�Х�٥�̾���������Ƥ��ʤ�
-%���Ȥˤʤ�ޤ���
+%という警告が表示されたのならばラベル名が定義されていない
+%ことになります．
 %
 %\par\noindent\dos{Label(s) may have 
 %changed. Return to get cross-ferecenses right.\hfil} 
-%��ɽ�����줿���٥���ͤ��ѹ����줿�Ȥ������ȤʤΤǡ�
-%�⤦1�٥����ץ��åȤ򤷤ޤ������κ�Ȥ�1�٤ǽ����ʤ�
-%���Ȥ⤢��Τǥ�å�������ɽ������ʤ��ʤ�ޤǥ����ץ��å�
-%�򷫤��֤����Ȥ⤢��ޤ���
+%が表示されたらラベルの値が変更されたということなので，
+%もう1度タイプセットをします．この作業は1度で終わらない
+%こともあるのでメッセージが表示されなくなるまでタイプセット
+%を繰り返すこともあります．
 %
-%��٥�˴ؤ�������ϥ�٥�λ��Ȥ���̾���ʤɤΥ��ڥ�ߥ��ʤ�
-%��ͤ����ޤ���
-\zindind{��߻���}{�˴ؤ��ٹ�}%
-���ޥ�ɥץ���ץȤ䥷�����ɽ�������\dos{LaTeX Warning:}
-�θ�˰ʲ��˼����褦�ʷٹ�ɽ������Ƥ���ȡ�
-��߻��Ȥ˴ؤ������꤬��ä���Ƥ��ʤ����򼨤��ޤ���
-\index{���顼!Label `key' multiply defined@\texttt{Label `key' multiply defined}}
+%ラベルに関する問題はラベルの参照する名前などのスペルミスなど
+%も考えられます．
+\zindind{相互参照}{に関わる警告}%
+コマンドプロンプトやシェルで表示される\dos{LaTeX Warning:}
+の後に以下に示すような警告が表示されていると，
+相互参照に関する問題が解消されていない事を示します．
+\index{エラー!Label `key' multiply defined@\texttt{Label `key' multiply defined}}
 \index{Label `key' multiply defined@\texttt{Label `key' multiply defined}}
 \par\dos{Label `key' multiply defined\hfil}
-�Ȥ����Τ� \cmd{label}̿���Ʊ����٥�̾����ĥ�٥��������Ƥ���
-�Ȥ������Ǥ�����٥�ν�ʣ������ޤ��Τǡ���������
-��٥���̤�̾�����դ��ޤ���
+というのは \cmd{label}命令で同じラベル名を持つラベルを定義している
+という事です．ラベルの重複がありますので，該当する
+ラベルに別の名前を付けます．
 
-\index{���顼!Reference `key' on page n undefined@\texttt{Reference `key' on page n undefined}}
+\index{エラー!Reference `key' on page n undefined@\texttt{Reference `key' on page n undefined}}
 \index{Reference `key' on page n undefined@\texttt{Reference `key' on page n undefined}}
 \par\dos{Reference `key' on page n undefined\hfil}
-�Ȥ����ٹ�ɽ�����줿�Τʤ�Х�٥�̾���������Ƥ��ʤ�
-���ˤʤ�ޤ���
+という警告が表示されたのならばラベル名が定義されていない
+事になります．
 
-\index{���顼!Label(s) may have 
+\index{エラー!Label(s) may have 
 changed. Return to get cross-ferecenses right.@\texttt{Label(s) may have changed. Return to get cross-ferecenses right.}}
 \index{Label(s) may have changed. Return to get cross-ferecenses right.@\texttt{Label(s) may have changed. Return to get cross-ferecenses right.}}
 \par\dos{Label(s) may have 
 changed. Return to get cross-ferecenses right.\hfil} 
-��ɽ�����줿���٥���ͤ��ѹ����줿�Ȥ������ʤΤǡ�
-�⤦1�٥����ץ��åȤ򤷤ޤ������κ�Ȥ�1�٤ǽ����ʤ�
-���⤢��Τǥ�å�������ɽ������ʤ��ʤ�ޤǥ����ץ��å�
-�򷫤��֤����⤢��ޤ���
+が表示されたらラベルの値が変更されたという事なので，
+もう1度タイプセットをします．この作業は1度で終わらない
+事もあるのでメッセージが表示されなくなるまでタイプセット
+を繰り返す事もあります．
 
-��٥�˴ؤ�������ϥ�٥�λ��Ȥ���̾���ʤɤΥ��ڥ�ߥ��ʤ�
-��ͤ����ޤ���
+ラベルに関する問題はラベルの参照する名前などのスペルミスなど
+も考えられます．
 
 
 %\begin{metacomment}
-% �ʲ��Υޡ������åפˤ����������������褦�ʥ�٥�ˤޤǽ���Ԥ�ȯŸ�Ǥ��ʤ��Ȼפ��Τǡ������ȤȤ��롥
+% 以下のマークアップによる利点を説明するようなレベルにまで初級編は発展できないと思うので，コメントとする．
 %\end{metacomment}
 
 \begin{comment}
 
-\section{�ޡ������åפˤ������}
+\section{マークアップによる利点}
 
-���ơ�����ޤ�\laTEX �ˤ����륳�ޥ�ɤι�����ˡ�ȵ�ǽ�������ˤĤ���
-���Ƥ������Ǥ��������Τ褦�ʼ��ʤ��󶡤���Ƥ���Ȳ��������Ȥʤ�ΤǤ��礦����
+さて，これまで\laTEX におけるコマンドの構成方法と機能・原理について
+見てきた訳ですが，このような手段が提供されていると何が利点となるのでしょうか．
 
-�����\LaTeX �ˤ����ƥޡ������åפˤ�뵭�Ҥ򤹤���ˤ�ꡤ\K{Ǥ�դ����Ǥ�
-��̣�դ���Ԥ������Ǥ���}�Ȥ������Ǥ���
+それは\LaTeX においてマークアップによる記述をする事により，\K{任意の要素に
+意味付けを行う事ができる}という事です．
 
-\chapref{kousei}�Ǥ�ʸ����κۤ�Ĵ�����륳�ޥ�ɡ��㤨�н��Τ��礭����
-�ѹ����� \C{Large}�����Ǥ����·���ˤ��� \Env{center} �Ķ��Ϥɤ��
-\K{���Ū���κۤ�ľ���ѹ�����}�Ȥ������ޥ�ɤ�¾�ʤ�ޤ���
-���Τ��ᡤ������ľ�ܸ�����ǵ��Ҥ��Ƥⲿ���̣�դ��ޤǤϤ��Ƥ��ʤ���
-�ˤʤ�ޤ���
+\chapref{kousei}では文書の体裁と調整するコマンド，例えば書体の大きさを
+変更する \C{Large}，要素を中央揃えにする \Env{center} 環境はどれも
+\K{視覚的に体裁を直接変更する}というコマンドに他なりません．
+そのため，これらを直接原稿中で記述しても何ら意味付けまではしていない事
+になります．
 
 %\begin{Exe}
-%���ˤ��ξ줷�Τ�Ū��
+%仮にその場しのぎ的に
 %\end{Exe}
 
 \begin{Prob}
-���줬�ɤΤ褦�����������������Τ��������絬�Ϥ�ʸ���ɮ���Ƥ����
-�ˡ����줬����Ǥ���Ǥ��礦��
+これがどのような問題を引き起こすのか，非常に大規模な文書を執筆している時
+に，それが理解できるでしょう．
 
-�Ϥᤫ��ޥ��������ޤ��ϰ��̲�������ˤ�äƤɤΤ褦������������Τ���
-��ʬ�ʤ�˹ͻ����Ƥ���������
+始めからマクロ化・または一般化する事によってどのような利点があるのか，
+自分なりに考察してください．
 \end{Prob}
 
 
-%\subsection{��̣�ε���}
+%\subsection{意味の記述}
 
-�⤷��Ǥ�դ����Ǥΰ�̣�ȥ쥤�����Ȥ�Ʊ���˵��Ҥ��褦�Ȼפ��С�
-WYSIWYG �����ˤ���ɥץ����å��Ǥ���������ʼ���Ƨ�����
-�ʤ�Ǥ��礦�������Ǥΰ�̣���ǧ���ʤ���κ�Ȥ��񤷤��Ǥ��礦��
-�������ۤȤ�ɤ� WYSIWYG �����Υ�ɥץ����å��ϻ�Х쥤������
-��ͥ�褷������ʸ�Ϥ˽񤫤�Ƥ������Ǥΰ�̣�ޤǤ��İ����ʤ��Τ�
-���̤�����Ǥ���
+もしも任意の要素の意味とレイアウトを同時に記述しようと思えば，
+WYSIWYG 方式によるワードプロセッサでは相当困難な手順を踏む事に
+なるでしょうし，要素の意味を確認しながらの作業は難しいでしょう．
+何せ，ほとんどの WYSIWYG 方式のワードプロセッサは視覚レイアウト
+を優先し，その文章に書かれている要素の意味までは把握しないのが
+普通だからです．
 
-% ��������ʤΤ���
-%\LaTeX �Τ褦�ʽ����ϤǤϤ��Τ褦���������Ǥ������Ǥ�
-%��̣���ǧ���ʤ��鸶�Ƥ�ɮ���������ǽ�Ǥ���
+% 何が問題なのか．
+%\LaTeX のような処理系ではこのような問題も解決でき，要素の
+%意味を確認しながら原稿を執筆する事が可能です．
 
-%\subsection{�����}
+%\subsection{一貫性}
 
 %\begin{Exe}
-%�絬�Ϥ�ʸ���������褦�Ȼפ���\K{���Ƥ�ɮ�������˰�����˴ؤ���
-%�롼�����ꤹ��}ɬ�פ�����Ȥ������Ǥ�\footnote{������������ڤ�����
-%�ˤ��ξ줷�Τ�Ū�˥��ߤΥ쥸�����������ʤ���Фʤ�ʤ��Ȥ�������
-%�ˤ����ƤϤ��θ¤�ǤϤ���ޤ���}��
+%大規模な文書を作成しようと思えば\K{原稿を執筆する前に一貫性に関する
+%ルールを決定する}必要があるという事です\footnote{もちろん，締め切り前日
+%にその場しのぎ的にゼミのレジュメを完成させなければならないという状況
+%においてはこの限りではありません．}．
 %\end{Exe}
 
 
-%\subsection{�Ѹ������}
+%\subsection{用語の統一}
 %
-%\subsection{�����}
+%\subsection{一意性}
 %
-%��٥뻲�Ȥξ��Ǥ�Ʊ��
+%ラベル参照の場合でも同じ
 \end{comment}
 

@@ -1,97 +1,97 @@
 %#!platex jou.tex
 
-\chapter{ʸ�Ϥν���}\chaplab{kousei}
+\chapter{文章の書き方}\chaplab{kousei}
 
 \begin{abstract}
-{\LaTeX}��ʸ���������뤿��ˤ�ʸ�Ϥ����Ǥ˴ؤ�����«����
-�Τ�ɬ�פ�����ޤ�������Ū��ʸ�Ϥ�񤭤����Ȼפä��顤������
-�����Τ�ɬ�פ�����ޤ������ξϤǤϤ�����{\LaTeX}�Ǽ¸�����
-����δ���Ū����ʬ���������ޤ���
+{\LaTeX}で文書を作成するためには文章の組版に関する約束事を
+知る必要があります．論理的な文章を書きたいと思ったら，その理
+論を知る必要があります．この章ではそれらを{\LaTeX}で実現する
+ための基本的な部分を説明します．
 \end{abstract}
 
-%\section{ʸ�Ϥι�¤}
+%\section{文章の構造}
 %
-%��ñ��ʸ���������뤦���ǳФ����ۤ����ɤ����ܤ򼨤��ޤ���
+%簡単な文書を作成するうえで覚えたほうが良い項目を示します．
 %\begin{description}
-%\item[ɽ����] 
-%   ʸ��ˤ�ɬ��ɽ���Ĥ���\K{ï}��\K{����}��\K{��}��
-%   ���������Τ��򼨤��ޤ���
-%\item[�ܡ���] 
-%   �ڡ�����¿�����ˤ��ܼ���Ĥ����ɼԤ˻��Ȥ���
-%   �����褦�ˤ��ޤ��� 
-%\item[���Ф�]
-%   ���Ф����դ��Ƥ��줫�鲿�ˤĤ����ä򤹤�Τ���
-%   ���Τˤ��ޤ��� 
-%\item[������] 
-%   ����Ϥ��1ʸ���ۤɳ����ޤ���
-%\item[�ʡ���] 
-%   ��Ĥ�����ˤĤ��ư���ڤ��դ����������ʬ���ޤ���
-%\item[������] 
-%   ʸ�Ϥ����ʸ�ζ��ڤꡤʸ�ν����ˤ϶������ʤɤζ��ڤ국���
-%   �դ��ޤ���
-%\item[������] 
-%   ���Ȼפ����Ѹ졤��­���٤����󤬤��������
-%   �Ȥ���ź���ޤ���
+%\item[表　題] 
+%   文書には必ず表題をつけて\K{誰}が\K{いつ}，\K{何}を
+%   作成したのかを示します．
+%\item[目　次] 
+%   ページが多い場合には目次をつけて読者に参照しや
+%   すいようにします． 
+%\item[見出し]
+%   見出しを付けてこれから何について話をするのかを
+%   明確にします． 
+%\item[字下げ] 
+%   段落始めは1文字ほど開けます．
+%\item[段　落] 
+%   一つの話題について一区切り付いたら段落を分けます．
+%\item[句読点] 
+%   文章の中で文の区切り，文の終わりには句読点などの区切り記号を
+%   付けます．
+%\item[注　釈] 
+%   難解と思われる用語，補足すべき情報があれば注釈
+%   として添えます．
 %\end{description}
 %
-%��������ܸ�Ǥ�ۤ��θ���Ǥ�ۤܶ��̤��Ȼפ��ޤ���
-%ï���˲�����ʸ���������Ȥ��ˤ��������Ǥ�ɬ�פǤ��礦��
-%ʸ��κǾ�����ñ�̤�\yo{ñ��}�Ǥ���\yo{ʸ��}����\yo{ʸ}���Ǥ���
-%\yo{����}���Ǥ�\yo{��}���Ǥ���\yo{��}��\yo{��}�ؤȤĤʤ��ä�
-%�����ޤ������ܸ�ξ���ɽ��ʸ���ʤΤǺǾ�ñ�̤�\yo{1ʸ��}
-%���������ޤ���
+%これは日本語でもほかの言語でもほぼ共通だと思います．
+%誰かに何かを文書で伝えるときにこれらの要素は必要でしょう．
+%文書の最小構成単位は\yo{単語}です．\yo{文字}から\yo{文}ができ，
+%\yo{段落}ができ\yo{節}ができ，\yo{章}，\yo{部}へとつながって
+%いきます．日本語の場合は表意文字なので最小単位は\yo{1文字}
+%に相当します．
 %
-%{\LaTeX}�ϥ桼������«�̤�˥��ޥ�ɤ��Ǥ�����ʸ�Ϥ�
-%����夲�Ƥ���С�����������߻��ȡ���ɽ�����֡��ܼ��κ�����
-%���͡��ʤ��Ȥ�Ⱦ��ưŪ�˹ԤäƤ���ޤ��������ǤϤ��δ���Ū��
-%��«��Ҳ𤷤ޤ���
+%{\LaTeX}はユーザが約束通りにコマンドを打ち込み文章を
+%練り上げていれば，字下げ，相互参照，図表の配置，目次の作成な
+%ど様々なことを半自動的に行ってくれます．ここではその基本的な
+%約束を紹介します．
 
-\section{ʸ�Ϥ�������¤}
-����Ū��\Z{ʸ��}\ (\Z{document}) ��������뤦���ǳФ����ۤ���
-�ɤ����ܤ򼨤��ޤ���
+\section{文章の論理構造}
+一般的な\Z{文書}\ (\Z{document}) を作成するうえで覚えたほうが
+良い項目を示します．
 \begin{description}
-\item[ɽ���� (\Z{title})]
-   ʸ��ˤ�ɬ��\Z{ɽ��}��Ĥ���\K{ï}\ (\C{author}) ��\K{����}\ 
-   (\C{date})��\K{��}\ (\C{title}) ����������Τ��򼨤��ޤ���
-\item[�ܡ��� (\Z{contents})]
-   �ڡ�����¿�����ˤ�\Z{�ܼ�}��Ĥ����ɼԤ����Ȥ���
-   �����褦�ˤ��ޤ����絬�Ϥ�ʸ��ξ�硤�ɼԤϤޤ��ܼ��򻲾Ȥ���
-   ����ʸ����ɤ�٤����ɤ�����Ƚ�Ǥ��ޤ��Τǡ�\Z{�ذ���ʸ}�ʤɤǤ�
-   �ܼ���ɬ�ܹ��ܤǤ���
-\item[���Ф� (\Z{headline})]
-   \Z{���Ф�}���դ��Ƥ��줫�鲿�ˤĤ����ä򤹤�Τ������Τˤ��ޤ���
-   ���Ф����ܼ��ȴ�Ϣ���Ƥ��ޤ��Τǡ��ɼԤ�����������Ǥ���褦��
-   ���ޤ���
-\item[�ʡ��� (\Z{paragraph})]
-   ��Ĥ�����ˤĤ��ư���ڤ��դ�����\Z{����}��ʬ���ޤ���
-\item[������ (\Z{indentation})]
-   ����Ϥ������1ʸ���ۤɳ�����\Z{������}��Ԥʤ��ޤ���
-   ��ʸ�ξ�硤���Ф�ľ��λ������ϴ���Ū�˹Ԥʤ��ޤ���
-\item[������ (\Z{punctuation})]
-   \indindz{����}{ʸ����ڤ�}%
-   ʸ�Ϥ����ʸ�ζ��ڤꡤʸ�ν����ˤ�\Z{������}�ʤɤζ��ڤ국���
-   �դ��ޤ���
-\item[������ (\Z{note})]
-\index{�����Ѹ�}%
-\index{��­������ɲ�}%
-   ���Ȼפ���\Z{�Ѹ�}����­���٤�\Z{����}�������\Z{����}�Ȥ���ź���ޤ���
-   ����Ϥ����ޤ���­����Ǥ��äơ��ɼԤ�����������ɤޤʤ��Ƥ⡤
-   ����ƶ����ʤ��褦�ˤ��ޤ���
+\item[表　題 (\Z{title})]
+   文書には必ず\Z{表題}をつけて\K{誰}\ (\C{author}) が\K{いつ}\ 
+   (\C{date})，\K{何}\ (\C{title}) を作成したのかを示します．
+\item[目　次 (\Z{contents})]
+   ページが多い場合には\Z{目次}をつけて読者が参照しや
+   すいようにします．大規模な文書の場合，読者はまず目次を参照し，
+   その文書を読むべきかどうかを判断しますので，\Z{学位論文}などでは
+   目次は必須項目です．
+\item[見出し (\Z{headline})]
+   \Z{見出し}を付けてこれから何について話をするのかを明確にします．
+   見出しは目次と関連していますので，読者がすぐに理解できるように
+   します．
+\item[段　落 (\Z{paragraph})]
+   一つの話題について一区切り付いたら\Z{段落}を分けます．
+\item[字下げ (\Z{indentation})]
+   段落始めは全角1文字ほど開けて\Z{字下げ}を行ないます．
+   欧文の場合，見出し直後の字下げは慣習的に行ないません．
+\item[句読点 (\Z{punctuation})]
+   \indindz{記号}{文を区切る}%
+   文章の中で文の区切り，文の終わりには\Z{句読点}などの区切り記号を
+   付けます．
+\item[注　釈 (\Z{note})]
+\index{難解な用語}%
+\index{補足情報の追加}%
+   難解と思われる\Z{用語}，補足すべき\Z{情報}があれば\Z{注釈}として添えます．
+   注釈はあくまで補足情報であって，読者がその注釈を読まなくても，
+   何ら影響がないようにします．
 \end{description}
-���Τ褦�ʹ�¤�����ܸ��¾�θ���Ǥ�ۤȤ�ɶ��̤Ǥ���
-ï���˲�����ʸ���������Ȥ��ˤϤ��Τ褦�ʹ�¤��ɬ�פˤʤ�ޤ���
-ʸ��κǾ�����ñ�̤�\KY{ñ��} (\Z{word}) �Ǥ���\KY{ʸ��} 
-(\Z{character}) ����\KY{ʸ} (\Z{sentence}) ���Ǥ���
-\KY{����} (\Z{paragraph}) ���Ǥ���\KY{��} (\Z{section}) ���Ǥ���
-\KY{��} (\Z{chapter})��\KY{��} (\Z{part}) �ؤȤĤʤ��ä�
-�����ޤ������ܸ�ϴ����䲾̾ʸ��������ޤ����Ǿ�ñ�̤�\KY{ʸ��} (\Z{letter})
-���������ޤ���
+このような構造は日本語や他の言語でもほとんど共通です．
+誰かに何かを文書で伝えるときにはこのような構造が必要になります．
+文書の最小構成単位は\KY{単語} (\Z{word}) です．\KY{文字} 
+(\Z{character}) から\KY{文} (\Z{sentence}) ができ，
+\KY{段落} (\Z{paragraph}) ができ，\KY{節} (\Z{section}) ができ，
+\KY{章} (\Z{chapter})，\KY{部} (\Z{part}) へとつながって
+いきます．日本語は漢字や仮名文字がありますが最小単位は\KY{文字} (\Z{letter})
+に相当します．
 \begin{table}[htbp]
  \begin{center}
-  \caption{ʸ��ι�������}\label{tab:kouzou}
+  \caption{文書の構成要素}\label{tab:kouzou}
   \begin{tabular}{*7c}
    \TR
-\Th{ʸ��} & \Th{ñ��} & \Th{ʸ} & \Th{����} & \Th{��} & \Th{��} & \Th{��}\\
+\Th{文字} & \Th{単語} & \Th{文} & \Th{段落} & \Th{節} & \Th{章} & \Th{部}\\
    \MR
    letter & word & sentence  & paragraph & section & chapter  & part \\
    \BR
@@ -99,301 +99,301 @@
  \end{center}
 \end{table}
 
-{\LaTeX}�ϥ桼������«�̤�˥��ޥ�ɤ��Ǥ�����ʸ�Ϥ�
-����夲�Ƥ���С�����������߻��ȡ���ɽ�����֡��ܼ��κ����ʤɡ�
-�͡��ʻ���Ⱦ��ưŪ�˹ԤäƤ���ޤ���%�����ǤϤ��δ���Ū��
-%��«��Ҳ𤷤ޤ���
-���ξϤǤ�\LaTeX �ˤ����뤽���Υ롼��ˤĤ��Ʋ��⤷�ޤ���
+{\LaTeX}はユーザが約束通りにコマンドを打ち込み文章を
+練り上げていれば，字下げ，相互参照，図表の配置，目次の作成など，
+様々な事を半自動的に行ってくれます．%ここではその基本的な
+%約束を紹介します．
+この章では\LaTeX におけるそれらのルールについて解説します．
 
 
-\section{ɽ��}\seclab{maketitle}
+\section{表題}\seclab{maketitle}
 
-%\Z{ɽ��}�Ϥ���ʸ�񤬲��ˤĤ��ƽ񤫤줿��ΤʤΤ��򼨤������
-%ɬ�פ����ǤǤ����̾��\yo{��̾}��\yo{���}��\yo{����}��񤯤Τ�
-%����Ū�Ǥ�����ץꥢ��֥��
-\zindind{ɽ��}{�����}%
-{ɽ��}�Ϥ���ʸ�񤬲��ˤĤ��ƽ񤫤줿��ΤʤΤ��򼨤������
-ɬ�פ����ǤǤ����̾��\KY{��̾} (\Z{title})��\KY{���} (\Z{author})��
-\KY{����} (\Z{date}) ��񤯤Τ�
-����Ū�Ǥ�����ץꥢ��֥�˼��λ��Ĥ�񤭹��ߤޤ���
+%\Z{表題}はその文書が何について書かれたものなのかを示すために
+%必要な要素です．通常は\yo{題名}，\yo{作者}，\yo{日付}を書くのが
+%一般的ですからプリアンブルに
+\zindind{表題}{の役割}%
+{表題}はその文書が何について書かれたものなのかを示すために
+必要な要素です．通常は\KY{題名} (\Z{title})，\KY{作者} (\Z{author})，
+\KY{日付} (\Z{date}) を書くのが
+一般的ですからプリアンブルに次の三つを書き込みます．
 \begin{Syntax}
 \begin{tabular}{*3l}
-\C{title}\pa{��̾} & \C{author}\pa{���} & \C{date}\pa{����}\\
+\C{title}\pa{題名} & \C{author}\pa{作者} & \C{date}\pa{日付}\\
 \end{tabular}
 \end{Syntax}
-{\LaTeX}�Ǥϥץꥢ��֥��ɽ��ξ����
-�񤭹���Ǥ���ϤޤǤϤ��ޤ���Τ�\verb|\begin{document}|
-�θ��
+{\LaTeX}ではプリアンブルに表題の情報を
+書き込んでも出力まではしませんので\verb|\begin{document}|
+の後に
 \begin{Syntax}
  \Cmd{maketitle}
 \end{Syntax}
-�Ȥ��ޤ���
+とします．
 
-��Ȥ������Ϥ��ʲ��˼����褦�ʤ�Τ��Ȳ��ꤷ�ޤ���
+例として入力が以下に示すようなものだと仮定します．
 
 \begin{InTeX}
 \documentclass{jarticle}
-\title{�Ϥ���Ƥ�\LaTeX}
-\author{̤�� ��Ϻ}
-\date{2004ǯ3��30��}
+\title{はじめての\LaTeX}
+\author{未来 太郎}
+\date{2004年3月30日}
 \begin{document}
 \maketitle
-{\LaTeX}��Ȥ��ΤϤ��줬���ƤǤ���
+{\LaTeX}を使うのはこれが初めてです．
 \end{document}
 \end{InTeX}
 
-���Τν��Ϥϰʲ��Τ褦�ˤʤ�ޤ���
+大体の出力は以下のようになります．
 
 \begin{OutText}
 \begin{center}
-{\LARGE \textbf{�Ϥ���Ƥ�\LaTeX }}\\[1.5em]
-{\large ̤�� ��Ϻ}\\[.7em]
-{2004ǯ3��30��}\\[.7em]
+{\LARGE \textbf{はじめての\LaTeX }}\\[1.5em]
+{\large 未来 太郎}\\[.7em]
+{2004年3月30日}\\[.7em]
 \end{center}
-\quad {\LaTeX}��Ȥ��Τ�$\ldots$
+\quad {\LaTeX}を使うのは$\ldots$
 \end{OutText}
 
-\begin{Exe} \exelab{maketitle1}\indindz{���ڤ�}{���Ԥ�}%
-���Ԥ�ʣ���ͤ���Ȥ��� \Cmd{and}��Ȥäƶ��ڤ�ޤ���
-��°�ʤɤ�����Ȥ��� \Cmd{thanks}���󳰤˽��Ϥ��ޤ���
-�ʲ��Τ褦�ʥ�������ºݤ˼�ʬ�ǽ��Ϥ��ƤߤƤ���������
-�ޤ����η�̤��̣���Ƥ���������
+\begin{Exe} \exelab{maketitle1}\indindz{区切り}{著者の}%
+著者が複数人いるときは \Cmd{and}を使って区切ります．
+所属などがあるときは \Cmd{thanks}で欄外に出力します．
+以下のようなソースを実際に自分で出力してみてください．
+またその結果も吟味してください．
 
 \begin{InTeX}
-\author{��������\thanks{��������� ����������}  \and
-        ʡ߷͡��\thanks{����������� ���������}\and
-        ����ζǷ��\thanks{������� �������� �����ز�}}
+\author{夏目漱石\thanks{○○研究所 ○○事業部}  \and
+        福澤諭吉\thanks{△△株式会社 △△研究所}\and
+        芥川龍之介\thanks{□□大学 □□学部 □□学科}}
 \end{InTeX}
 \end{Exe}
 
 \begin{Exe} \exelab{maketitle2}
-�⤦�����ɼ������̾��Ҳ𤹤�Ȥ����㤨��
-\yo{��̾}��\yo{��°}��\yo{Ϣ����}�λ��Ĥ򵭽Ҥ������Ȥ���
-���Τ褦�ˤ��ޤ���
+もう少し派手に著者名を紹介するとき，例えば
+\yo{氏名}，\yo{所属}，\yo{連絡先}の三つを記述したいときは
+次のようにします．
 
 \begin{InTeX}
-\author{������Ϻ\\ ������� �����ز�\\ name@server.ac.jp}
+\author{日本太郎\\ ○○大学 □□学科\\ name@server.ac.jp}
 \end{InTeX}
 
-���Υ�������ºݤ˽��Ϥ����η�̤��̣���Ƥ���������
-\exeref{maketitle1}�� \cmd{thanks}̿��� \cmd{and}̿���Ȥ��ޤ���
+このソースを実際に出力しその結果を吟味してください．
+\exeref{maketitle1}の \cmd{thanks}命令と \cmd{and}命令を使います．
 
 \begin{InTeX}
-\author{��������\thanks{������� �����ز� name@server.ac.jp}}
+\author{夏目漱石\thanks{○○大学 ○○学科 name@server.ac.jp}}
 \end{InTeX}
 
-�⤷���ϲ��ԤǶ��ڤ���ˡ�Τɤ�����Ƥ���������
+もしくは改行で区切る方法のどちらも試してください．
 
 \end{Exe}
 
 \begin{Prob}\label{prob:maketitle:and}
- �ʲ��Υ���������Ϥ��Ƥ��η�̤��̣���Ƥ���������
+ 以下のソースを出力してその結果を吟味してください．
 
 \begin{InTeX}
-\author{�������� \\  ��������� \\ ����������  \and
-        ʡ߷͡�� \\  ����������� \\ �������\and
-        ����ζǷ��\\ ������� �������� \\ �����ز�}
+\author{夏目漱石 \\  ○○研究所 \\ ○○事業部  \and
+        福澤諭吉 \\  △△株式会社 \\ △△究所\and
+        芥川龍之介\\ □□大学 □□学部 \\ □□学科}
 \end{InTeX}
 
-���ξ��ϲ������Ԥ��¤Ӥޤ���\qu{\cmd{and}}���������
-\qu{\texttt{\bs\bs}}�˽񤭴�����Ƚ��ϤϤɤ��Ѥ��Ǥ��礦����
+この場合は横に著者が並びますが\qu{\cmd{and}}を取り除いて
+\qu{\texttt{\bs\bs}}に書き換えると出力はどう変わるでしょうか．
 \end{Prob}
 
 \begin{Exe}
-���饹�ե�����ˤ��ɽ����κۤǤ����Թ礬����Ȥ���
-���ξ줷�Τ�Ū�ˤϼ��Τ褦��Ĵ�����ޤ���
+クラスファイルによる表題の体裁では不都合があるとき，
+その場しのぎ的には次のように調整します．
 
 \begin{InTeX}
 \begin{center}
-{\LARGE \textbf{�Ϥ���Ƥ�\LaTeX }}\\[2em]
-{\large ̤�� ��Ϻ}\\[1em]
-{2004ǯ3��30��}\\[1em]
+{\LARGE \textbf{はじめての\LaTeX }}\\[2em]
+{\large 未来 太郎}\\[1em]
+{2004年3月30日}\\[1em]
 \end{center} 
 \end{InTeX}
 
-����ϥ��饹�ե�������� \C{maketitle} ���դΥ��ޥ�ɤ�
-Ŭ�ڤ�Ĵ������Τ�˾�ޤ����Ǥ��礦��
+本来はクラスファイル中の \C{maketitle} 周辺のコマンドを
+適切に調整するのが望ましいでしょう．
 \end{Exe}
 
-\section{���Ф�}\zindind{���Ф�}{�κ���}%
-%ʸ���\KY{���Ф�}��\K{�ܼ�}���ʤ���С������θ���
-%�˻��֤�������Τ��ưפ������Ǥ���Ǥ��礦�������ǡ�ʸ������
-%��\K{����Ū�ʸ��Ф�}��������ޤ����ޤ�����ʸ��γ�ά
-%��¸�ߤ���Ф���ʸ��˲����񤫤�Ƥ���Τ���������ʬ����Τǡ�
-%\K{����}���դ�­���Τ����Ū�Ǥ���
-ʸ���\KY{���Ф�} (\Z{sectioning}) ��\K{�ܼ�} (\Z{contents}) ���ʤ���С�
-\Z{�����θ���}�˻��֤�������Τ��ưפ������Ǥ���Ǥ��礦�������ǡ�
-ʸ�����ˤ�\K{����Ū�ʸ��Ф�} (\Z{nested sections}) ��������ޤ���
-\zindind{ʸ��}{�γ�ά}%
-�ޤ�����ʸ��γ�ά��¸�ߤ���Ф���ʸ��˲����񤫤�Ƥ���Τ�������
-��ʬ����Τǡ�\K{����} (\Z{abstract})���դ�­���Τ����Ū�Ǥ���
+\section{見出し}\zindind{見出し}{の作成}%
+%文書に\KY{見出し}と\K{目次}がなければ，記事の検索
+%に時間がかかるのは容易に想像できるでしょう．そこで，文書の中に
+%は\K{階層的な見出し}を作成します．またその文書の概略
+%が存在すればその文書に何が書かれているのかがすぐに分かるので，
+%\K{概要}を付け足すのも効果的です．
+文書に\KY{見出し} (\Z{sectioning}) と\K{目次} (\Z{contents}) がなければ，
+\Z{記事の検索}に時間がかかるのは容易に想像できるでしょう．そこで，
+文書の中には\K{階層的な見出し} (\Z{nested sections}) を作成します．
+\zindind{文書}{の概略}%
+またその文書の概略が存在すればその文書に何が書かれているのかがすぐ
+に分かるので，\K{概要} (\Z{abstract})を付け足すのも効果的です．
 
 
-\subsection{���Ф��ν���}\indindz{�ֹ�}{�̤�}%
-ʸ�����ΰ�Ϣ������˲����񤫤�Ƥ���Τ���ʬ����䤹�����뤿���
-���Ф��򵭽Ҥ��ޤ����ޤ����Ф���Ʊ��ڡ�����Ʊ��̾���Τ�Τ�¸�ߤ�
-�Ƥ��ɤ��褦���̤��ֹ��Ĥ���\Z{���}Ū�˴������ޤ���
+\subsection{見出しの出力}\indindz{番号}{通し}%
+文書の中の一連の段落に何が書かれているのかを分かりやすくするために
+見出しを記述します．また見出しは同一ページに同じ名前のものが存在し
+ても良いように通し番号をつけて\Z{一意}的に管理します．
 
-{\LaTeX}�Ǥθ��Ф��������\tabref{headline}���̤�Ǥ���%
+{\LaTeX}での見出しの定義は\tabref{headline}の通りです．%
 
 \begin{table}[htpb]
  \begin{center}
-  \caption{{\LaTeX}�Ǥθ��Ф������}\tablab{headline}
-  \newcommand{\midasiopt}{\opa{�ܼ��Ѥθ��Ф�}\pa{���Ф�}}%
+  \caption{{\LaTeX}での見出しの定義}\tablab{headline}
+  \newcommand{\midasiopt}{\opa{目次用の見出し}\pa{見出し}}%
   \begin{tabular}{l|l}
    \TR
-   \Cmd{part}\midasiopt          & ��\\
-   \Cmd{chapter}\midasiopt       & ��${}^*$\\
-   \Cmd{section}\midasiopt       & ��\\
-   \Cmd{subsection}\midasiopt    & ��\pp{����}\\
-   \Cmd{subsubsection}\midasiopt & ��\pp{������}\\
-   \Cmd{paragraph}\midasiopt     & ����\\
-   \Cmd{subparagraph}\midasiopt  & ������\\
+   \Cmd{part}\midasiopt          & 部\\
+   \Cmd{chapter}\midasiopt       & 章${}^*$\\
+   \Cmd{section}\midasiopt       & 節\\
+   \Cmd{subsection}\midasiopt    & 項\pp{小節}\\
+   \Cmd{subsubsection}\midasiopt & 目\pp{小小節}\\
+   \Cmd{paragraph}\midasiopt     & 段落\\
+   \Cmd{subparagraph}\midasiopt  & 小段落\\
    \BR
   \end{tabular}
-%  \\${}^*$\Cls{article}��\Cls{jarticle}�Ǥ��������Ƥ��ޤ���
-\\{\small${}^*$\Cls{article}��\Cls{jarticle}�Ǥ��������Ƥ��ޤ���}
+%  \\${}^*$\Cls{article}や\Cls{jarticle}では定義されていません．
+\\{\small${}^*$\Cls{article}や\Cls{jarticle}では定義されていません．}
  \end{center}
 \end{table}
-%\cmd{section}�ʤɤθ��Ф�̿���ȤäƸ��Ф���������ޤ���
-%����ζ����Ĵ�����ڡ��������ԡ����Τ��ѹ��ʤɤϤܼۤ�ưŪ��
-%�Ԥ�졤\KY{�̤��ֹ�}���ղä���ޤ���
-%\qu{\opa{û�̤������Ф�}}�Ȥ���Ǥ�հ���������ޤ�����
-%����ϸ��Ф�������Ĺ���Ȥ��ˡ������û�̤���ʸ�������
-%���˽񤭽Ф��褦�ˤ��ޤ����̤�Ĺ���Ȥ������ǤϤʤ���
-%���Ф����ܼ���ʸ������̤ˤ������Ȥ��ʤɤˤ�Ȥ���Ǥ��礦���Ȥ���
-%�ϴ�ñ�Ǥ������Ф����ع�¤Ū�˽񤭵����С�{\LaTeX}�ϼ�ư�ǳ��ؤ�
-%�Ȥ��ֹ��դ��򤷤ޤ�����Ȥ��Ƥϼ��Τ褦���̤��ֹ椬�����ޤ�
-%\pp{���ΤˤϽ��Ϥϰۤʤ�ޤ�}��
- \cmd{section}�ʤɤθ��Ф�̿���ȤäƸ��Ф���������ޤ���
-����ζ����Ĵ�����ڡ��������ԡ����Τ��ѹ��ʤɤϤܼۤ�ưŪ��
-�Ԥ�졤\KY{�̤��ֹ�} (\Z{serial number})���ղä���ޤ���
-\zindind{�ܼ�}{�Ѥθ��Ф�}%
-\indindz{���Ф�}{�ܼ��Ѥ�}%
-\qu{\opa{�ܼ��Ѥθ��Ф�}}�Ȥ���Ǥ�հ���������ޤ�����
-����ϸ��Ф�������Ĺ���Ȥ��ˡ������û�̤���ʸ�������
-���˽񤭽Ф��褦�ˤ��ޤ����̤�Ĺ���Ȥ������ǤϤʤ���
-���Ф����ܼ���ʸ������̤ˤ������Ȥ��ʤɤˤ�Ȥ���Ǥ��礦���Ȥ���
-�ϴ�ñ�Ǥ������Ф����ع�¤Ū�˽񤭵����С�{\LaTeX}�ϼ�ư�ǳ��ؤ�
-�Ȥ��ֹ��դ��򤷤ޤ�����Ȥ��Ƥϼ��Τ褦���̤��ֹ椬�����ޤ���
+%\cmd{section}などの見出し命令を使って見出しを作成します．
+%前後の空白の調節や改ページ，改行，書体の変更などはほぼ自動的に
+%行われ，\KY{通し番号}が付加されます．
+%\qu{\opa{短縮した見出し}}という任意引数がありますが，
+%これは見出しが非常に長いときに，それを短縮した文字列を目
+%次に書き出すようにします．別に長いときだけではなく，
+%見出しと目次の文字列を別にしたいときなどにも使えるでしょう．使い方
+%は簡単です．見出しを階層構造的に書き記せば，{\LaTeX}は自動で階層ご
+%とに番号付けをします．例としては次のような通し番号が振られます
+%\pp{正確には出力は異なります}．
+ \cmd{section}などの見出し命令を使って見出しを作成します．
+前後の空白の調節や改ページ，改行，書体の変更などはほぼ自動的に
+行われ，\KY{通し番号} (\Z{serial number})が付加されます．
+\zindind{目次}{用の見出し}%
+\indindz{見出し}{目次用の}%
+\qu{\opa{目次用の見出し}}という任意引数がありますが，
+これは見出しが非常に長いときに，それを短縮した文字列を目
+次に書き出すようにします．別に長いときだけではなく，
+見出しと目次の文字列を別にしたいときなどにも使えるでしょう．使い方
+は簡単です．見出しを階層構造的に書き記せば，{\LaTeX}は自動で階層ご
+とに番号付けをします．例としては次のような通し番号が振られます．
 
 \par\vskip.3em\noindent
 \begin{minipage}[c]{.47\textwidth}
 \begin{verbatim}
-\chapter{�ü�����������}
-  \section{���Ū�ط�}
-\chapter{��������������}
-  \section{�ŵ��ؤȤδ�Ϣ}
-    \subsection{�ŵ��μ�����}
+\chapter{特殊相対性理論}
+  \section{歴史的背景}
+\chapter{一般相対性理論}
+  \section{電気学との関連}
+    \subsection{電気の次元数}
 \end{verbatim}
 \end{minipage}%
 \hspace{.05\textwidth}%
 \begin{minipage}[c]{.47\textwidth}
-{\Large \textbf{��1�� �ü�����������}}\\
-{\large \textbf{1.1 ���Ū�ط�}}\\
-{\Large \textbf{��2�� ��������������}}\\
-{\large \textbf{2.1 �ŵ��ؤȤδ�Ϣ}}\\
-{\normalsize \textbf{2.1.1 �ŵ��μ�����}}
+{\Large \textbf{第1章 特殊相対性理論}}\\
+{\large \textbf{1.1 歴史的背景}}\\
+{\Large \textbf{第2章 一般相対性理論}}\\
+{\large \textbf{2.1 電気学との関連}}\\
+{\normalsize \textbf{2.1.1 電気の次元数}}
 \end{minipage}%
 
 
-\subsection{���Ф��ο���}\zindind{���Ф�}{�ο���}%
+\subsection{見出しの深さ}\zindind{見出し}{の深さ}%
 \begin{table}[htpb]
 \begin{minipage}{.55\linewidth}
-\caption{���Ф��γ���}\tablab{sectiondepth}
+\caption{見出しの階層}\tablab{sectiondepth}
 \begin{tabular}{lll}
 \TR
-\Th{���Ф�} & \Th{̿��}     & \Th{����}${}^*$\\%$ 
+\Th{見出し} & \Th{命令}     & \Th{深さ}${}^*$\\%$ 
 \MR
-��     & \Cmd{part}         & -1 \pp{0} \\
-��     & \Cmd{chapter}      & 0  \pp{�ʤ�} \\
-��     & \Cmd{section}      & 1   \\
-����   & \Cmd{subsection}   & 2   \\
-������ & \Cmd{subsubsection}& 3   \\
-����   & \Cmd{paragraph}    & 4   \\
-������ & \Cmd{subparagraph} & 4   \\ 
+部     & \Cmd{part}         & -1 \pp{0} \\
+章     & \Cmd{chapter}      & 0  \pp{なし} \\
+節     & \Cmd{section}      & 1   \\
+小節   & \Cmd{subsection}   & 2   \\
+小小節 & \Cmd{subsubsection}& 3   \\
+段落   & \Cmd{paragraph}    & 4   \\
+小段落 & \Cmd{subparagraph} & 4   \\ 
 \BR
-\multicolumn{3}{c}{${}^*$ ������\cls{(j)article}�Ǥο���}
+\multicolumn{3}{c}{${}^*$ 括弧内は\cls{(j)article}での深さ}
 \end{tabular} 
 \end{minipage}
 \begin{minipage}{.44\linewidth}
-\hskip1zw ʸ�Ϥ�������¤����������Ȥ�����Ĥ�ʸ���\K{���ܤ���}��ʬ����
-�����Ǥ��ޤ�������ˤ��ι��ܤ򾮹��ܤ�ʬ�������Ǥ�
-��櫓�Ǥ��������ܤ������ʸ��ι�¤��\K{����Ū��}�ʤ�ޤ���
-���ܤ�ʬ����Ƥ��������̤��뤿��˸��Ф����դ��ޤ���
-���Ф���\Z{�ܼ�}�Ȥ��ƤҤȤޤȤ�˽��Ϥ���ȡ��ɼԤ�
-��Ū�ι��ܤ�õ���䤹���ʤ�ޤ���\par
+\hskip1zw 文章の論理構造を整理するとき，一つの文書を\K{項目ごと}に分ける
+事ができます．さらにその項目を小項目で分ける事もでき
+るわけです．小項目があると文書の構造は\K{階層的に}なります．
+項目が分かれている事を区別するために見出しを付けます．
+見出しを\Z{目次}としてひとまとめに出力すると，読者は
+目的の項目を探しやすくなります．\par
 \end{minipage}
 \end{table}
-%{\LaTeX}�ǤϤ��餫���������ϡ��ᡤ���ᡤ�����ᡤ���������
-%�Ȥ������Ĥθ��Ф��ѤΥ��ޥ�ɤ��Ѱդ��Ƥ��ޤ���
-%������\cls{(j)article}�ʤɤǾϤ��Ѱդ���Ƥ��ޤ��󤷡�
-%���饹�ˤ�äƿ������㴳�㤤�ޤ��� 
-{\LaTeX}�ǤϤ��餫����
-�� (\Z{part})��
-�� (\Z{chapter})��
-�� (\Z{section})��
-���� (\Z{subsection})��
-������ (\Z{subsubsection})��
-���� (\Z{paragraph})��
-������ (\Z{subparagraph})
-�Ȥ������Ĥθ��Ф��ѤΥ��ޥ�ɤ��Ѱդ��Ƥ��ޤ���
-������\cls{(j)article}�ʤɤǾϤ��Ѱդ���Ƥ��ޤ��󤷡�
-���饹�ˤ�äƿ������㴳�㤤�ޤ��� 
+%{\LaTeX}ではあらかじめ部，章，節，小節，小小節，段落，小段落
+%という七つの見出し用のコマンドを用意しています．
+%ただし\cls{(j)article}などで章は用意されていませんし，
+%クラスによって深さが若干違います． 
+{\LaTeX}ではあらかじめ
+部 (\Z{part})，
+章 (\Z{chapter})，
+節 (\Z{section})，
+小節 (\Z{subsection})，
+小小節 (\Z{subsubsection})，
+段落 (\Z{paragraph})，
+小段落 (\Z{subparagraph})
+という七つの見出し用のコマンドを用意しています．
+ただし\cls{(j)article}などで章は用意されていませんし，
+クラスによって深さが若干違います． 
 
 
-\section{�ܼ��ν���}
-%\Z{�ܼ�}�ϸ��Ф������ɤߤ����ս�˰�ư���뤿��θ��Ф������Ǥ���
-%�����20�ڡ����ʾ��ʸ��ˤ�ɬ�ܤǤ��礦���ܼ��Ȥ��äƤ�{\LaTeX}�Ǥ�
+\section{目次の出力}
+%\Z{目次}は見出しから読みたい箇所に移動するための見出し一覧です．
+%これは20ページ以上の文書には必須でしょう．目次といっても{\LaTeX}では
 %\begin{Syntax}
 %\Cmd{tableofcontents}
-%	    \pp{\K{�ܼ�}����Ϥ��뤿���̿��}\\
-%\Cmd{listoffigures} \indindz{�ܼ�}{��}
-%    	    \pp{\KY{���ܼ�}����Ϥ��뤿���̿��}\\
-%\Cmd{listoftables} \indindz{�ܼ�}{ɽ}
-%    	    \pp{\KY{ɽ�ܼ�}����Ϥ��뤿���̿��}
+%	    \pp{\K{目次}を出力するための命令}\\
+%\Cmd{listoffigures} \indindz{目次}{図}
+%    	    \pp{\KY{図目次}を出力するための命令}\\
+%\Cmd{listoftables} \indindz{目次}{表}
+%    	    \pp{\KY{表目次}を出力するための命令}
 %\end{Syntax}
-%�λ��Ĥ�̿�᤬�Ѱդ���Ƥ��ꡤ���줾����Ϥ���������̿���񤭤ޤ���
-%���դ��٤����ȤȤ����ܼ���������뤿��ˤϺ���2��Υ����ץ��åȤ�
-%�ޤ���
-\Z{�ܼ�}�ϸ��Ф������ɤߤ����ս�˰�ư���뤿���\KY{���Ф�����}�Ǥ���
-����Ͽ����ڡ����ʾ��ʸ���¸�ߤ������˾�ޤ�ޤ����ܼ��Ȥ��äƤ�
-{\LaTeX}�ˤϼ��λ��Ĥ�̿�᤬�Ѱդ���Ƥ��ޤ���
+%の三つの命令が用意されており，それぞれ出力したい場所に命令を書きます．
+%注意すべきこととして目次を作成するためには最低2回のタイプセットをし
+%ます．
+\Z{目次}は見出しから読みたい箇所に移動するための\KY{見出し一覧}です．
+これは数十ページ以上の文書に存在する事が望まれます．目次といっても
+{\LaTeX}には次の三つの命令が用意されています．
 
 \begin{Syntax}
-\indindz{�ܼ�}{��}%
-\indindz{�ܼ�}{ɽ} %
+\indindz{目次}{図}%
+\indindz{目次}{表} %
 \begin{tabular}{ll}
  \C{tableofcontents} & 
-    \pp{\KY{�ܼ�} [\Z{Contents}] ����Ϥ��뤿���̿��}\\
+    \pp{\KY{目次} [\Z{Contents}] を出力するための命令}\\
  \C{listoffigures} &
-    \pp{\KY{���ܼ�} [\Z{List of Figures}] ����Ϥ��뤿���̿��}\\
+    \pp{\KY{図目次} [\Z{List of Figures}] を出力するための命令}\\
  \C{listoftables} &
-    \pp{\KY{ɽ�ܼ�} [\Z{List of Tables}] ����Ϥ��뤿���̿��}
+    \pp{\KY{表目次} [\Z{List of Tables}] を出力するための命令}
 \end{tabular}
 \end{Syntax}
 
-�ܼ���ɽ�����뤿��ˤϡ����줾����Ϥ���������̿���񤭤ޤ���
-���դ��٤����Ȥ��ơ�
-\K{�ܼ���������뤿��ˤϺ���2��Υ����ץ��åȤ�Ԥ��ޤ�}��
+目次を表示するためには，それぞれ出力したい場所に命令を書きます．
+注意すべき事として，
+\K{目次を作成するためには最低2回のタイプセットを行います}．
 
-������ͳ��ͤ��뤿��ˡ��ʲ��Τ褦�ʥե�����\fl{mokuji.tex}����ޤ���
+その理由を考えるために，以下のようなファイル\fl{mokuji.tex}を作ります．
 
 \begin{InTeX}
 \documentclass{jarticle}
 \begin{document}
-\tableofcontents%�ܼ�����Ϥ���̿��
-\section{����}
-\subsection{�����ط�}
-\section{��ˡ}
-\subsection{�¸��Ķ�}
+\tableofcontents%目次を出力する命令
+\section{序論}
+\subsection{研究背景}
+\section{手法}
+\subsection{実験環境}
 \end{document}
 \end{InTeX}
 
-���ˤ��Υե�����\fl{mokuji.tex}�򥿥��ץ��åȤ����
-���ϥե�����\fl{mokuji.dvi}�ˤϤ���\yo{�ܼ�}�Ƚ��Ϥ��������ǡ�
-�ºݤ��ܼ������Ϥ���Ƥ��ʤ��������ܤ��Ƥ���������
-���󥽡���ˤϼ��Τ褦�ʥ�å�������ɽ������ޤ���
+次にこのファイル\fl{mokuji.tex}をタイプセットすると
+出力ファイル\fl{mokuji.dvi}にはただ\yo{目次}と出力されるだけで，
+実際の目次が出力されていない事に注目してください．
+コンソールには次のようなメッセージが表示されます．
 
 \begin{OutTerm}
  No file mokuji.aux.
@@ -402,39 +402,39 @@
 \end{OutTerm}
 \Exten*{aux}%
 
-\dos{No File �ʤ�Ȥ�} �Ȥ���
-�Τ�\va{�ʤ�Ȥ�}�Ȥ����ե����뤬¸�ߤ��ʤ���­��ʤ��Ȥ���
-��å������Ǥ����Ǥ�����Ʊ���ǥ��쥯�ȥ�\pp{�ե����}�ˤ�
-\fl{mokuji.aux}��\fl{mokuji.toc}��¸�ߤ���褦�Ǥ����ɤ����
-�����ץ��åȤ������ˤ�¸�ߤ����������ץ��åȸ�ˤ�����ĤΥե������
-�������줿�褦�Ǥ���������ĤΥե�����������Ƥߤޤ��礦���ޤ���%
-\indindz{�ե�����}{����}���ӥե�����\fl{mokuji.aux}�ˤ�
-���Τ褦�ˡ�����ä�ʬ����Ť餤���Ҥ�����ޤ���
+\dos{No File なんとか} という
+のは\va{なんとか}というファイルが存在しない，足りないという
+メッセージです．ですが，同じディレクトリ\pp{フォルダ}には
+\fl{mokuji.aux}も\fl{mokuji.toc}も存在するようです．どうやら
+タイプセットする前には存在せず，タイプセット後にこの二つのファイルは
+作成されたようです．この二つのファイルを覗いてみましょう．まずは%
+\indindz{ファイル}{中途}中途ファイル\fl{mokuji.aux}には
+次のように，ちょっと分かりづらい記述があります．
 
 \begin{InTeX}
 \relax
-\@writefile{toc}{\contentsline{section}{\numberline{1}����}{1}}
-\@writefile{toc}{\contentsline{subsection}{\numberline{1.1}�����ط�}{1}}
-\@writefile{toc}{\contentsline{section}{\numberline{2}��ˡ}{1}}
+\@writefile{toc}{\contentsline{section}{\numberline{1}序論}{1}}
+\@writefile{toc}{\contentsline{subsection}{\numberline{1.1}研究背景}{1}}
+\@writefile{toc}{\contentsline{section}{\numberline{2}手法}{1}}
 \@writefile{toc}{\contentsline{subsection}{\numberline{2.1}
-   �¸��Ķ�}{1}} 
+   実験環境}{1}} 
 \end{InTeX}
 
-�פ����%
-\indindz{�ե�����}{�ܼ��Ѥ�}%�ܼ��ե�����
-\fl{mokuji.toc}�˸��Ф��ط��ε��Ҥ�ɤ����٤�����񤤤Ƥ���褦�Ǥ���
-������ܼ��Ѥ����ӥե�����\fl{mokuji.toc}�ˤ�
-��ۤɤ�\fl{mokuji.aux}�ȤۤȤ��Ʊ�����Ҥ�����ޤ���
+要するに%
+\indindz{ファイル}{目次用の}%目次ファイル
+\fl{mokuji.toc}に見出し関係の記述をどうすべきかを書いているようです．
+さらに目次用の中途ファイル\fl{mokuji.toc}には
+先ほどの\fl{mokuji.aux}とほとんど同じ記述があります．
 
 \begin{InTeX}
-\contentsline{section}{\numberline{1}����}{1}
-\contentsline{subsection}{\numberline{1.1}�����ط�}{1}
-\contentsline{section}{\numberline{2}��ˡ}{1}
-\contentsline{subsection}{\numberline{2.1}�¸��Ķ�}{1} 
+\contentsline{section}{\numberline{1}序論}{1}
+\contentsline{subsection}{\numberline{1.1}研究背景}{1}
+\contentsline{section}{\numberline{2}手法}{1}
+\contentsline{subsection}{\numberline{2.1}実験環境}{1} 
 \end{InTeX}
 
-�����Ƨ�ޤ��Ƥ⤦1��\fl{mokuji.tex}�򥿥��ץ��åȤ��ޤ���
-����ȥ��󥽡���ˤϼ��Τ褦�ʥ�å�������ɽ������ޤ���
+これを踏まえてもう1度\fl{mokuji.tex}をタイプセットします．
+するとコンソールには次のようなメッセージが表示されます．
 
 \begin{OutTerm}
 (d:/usr/local/share/texmf/ptex/platex/base/jarticle.cls
@@ -442,46 +442,46 @@ Document Class: jarticle 2004/02/25
 ) (./mokuji.aux) (./mokuji.toc) [1] (./mokuji.aux) )
 \end{OutTerm}
 
-�ɤ����\fl{mokuji.aux}��
-\fl{mokuji.toc}��¸�ߤ���������Ŭ�ڤ˽������Ƥ��줿�褦�Ǥ���
-���ϥե�����\fl{mokuji.dvi}����Ƭ�ˤϻϤ���Ϥ���ʤ��ä�\yo{�ܼ�}
-��������Ǥ��礦��
+どうやら\fl{mokuji.aux}も
+\fl{mokuji.toc}も存在し，それらを適切に処理してくれたようです．
+出力ファイル\fl{mokuji.dvi}の先頭には始め出力されなかった\yo{目次}
+がある事でしょう．
 
 \begin{OutText}
-{\large\headfont �ܼ�}\\[1zw]{\small
-\hbox to 5zw{\textbf{1}\hfil}\textbf{����}\hfill 1\\
-\hskip2zw\hbox to 3zw{1.1\hfil}�����ط�\dotfill~1\\
-\hbox to 5zw{\textbf{1}\hfil}\textbf{��ˡ}\hfill 1\\
-\hskip2zw\hbox to 3zw{1.1\hfil}�¸��Ķ�\dotfill~1}
+{\large\headfont 目次}\\[1zw]{\small
+\hbox to 5zw{\textbf{1}\hfil}\textbf{序論}\hfill 1\\
+\hskip2zw\hbox to 3zw{1.1\hfil}研究背景\dotfill~1\\
+\hbox to 5zw{\textbf{1}\hfil}\textbf{手法}\hfill 1\\
+\hskip2zw\hbox to 3zw{1.1\hfil}実験環境\dotfill~1}
 \end{OutText}
 
-\subsection{�ܼ�����Ϥ��뿼��}
-\index{�ܼ�!tocdepth@\texttt{tocdepth}}%
-\zindind{�ܼ�}{�ο���}%
-%\index{������!tocdepth@\texttt{tocdepth}}%
-�ܼ���ɤγ��ؤޤǽ��Ϥ��뤫�ϥ�����\Kount{tocdepth}��
-�ͤ�\tabref{sectiondepth}�˽��ä��ѹ����ޤ���
-\cls{jsbook}�ʤɤǾ�\pp{\cmd{chapter}}�ޤǽ��Ϥ������ʤ��
-���Τ褦�ˤ��ޤ���
+\subsection{目次を出力する深さ}
+\index{目次!tocdepth@\texttt{tocdepth}}%
+\zindind{目次}{の深さ}%
+%\index{カウンタ!tocdepth@\texttt{tocdepth}}%
+目次をどの階層まで出力するかはカウンタ\Kount{tocdepth}の
+値を\tabref{sectiondepth}に従って変更します．
+\cls{jsbook}などで章\pp{\cmd{chapter}}まで出力したいならば
+次のようにします．
 
 \begin{InTeX}
 \secounter{tocdepth}{0}
 \end{InTeX}
 
-\cls{(j)book}��\cls{(j)report}��ɸ���2��
-\cls{(j)article}�ʤ��3�Ǥ���\cls{jsbook}��1�ˤʤäƤ��ޤ���
+\cls{(j)book}と\cls{(j)report}の標準は2，
+\cls{(j)article}ならば3です．\cls{jsbook}は1になっています．
 
-\subsection{���Ф����ֹ��դ��ο���}
-\zindind{���Ф�}{���̤��ֹ�}%
-\zindind{�ֹ�}{�ο���}%
-\index{�ܼ�!secnumdepth@\texttt{secnumdepth}}%
-\zindind{�ܼ�}{���ֹ��դ��ο���}%
-%\index{������!tocdepth@\texttt{secnumdepth}}%
-���Ф����̤��ֹ�ϥ�����\Kount{secnumdepth}�ˤ�ä�
-�ɤγ��ؤޤǽ��Ϥ��뤫������ޤ���\kount{secnumdepth}��
-�ͤ�\tabref{sectiondepth}�˽��ä��ѹ����ޤ���
-����\pp{\cmd{subsection}}�ޤǤ��ֹ���դ���褦�ˤ���ˤ�
-���Τ褦�ˤ��ޤ���������ܼ�¦�ˤ�ƶ����ޤ���
+\subsection{見出しの番号付けの深さ}
+\zindind{見出し}{の通し番号}%
+\zindind{番号}{の深さ}%
+\index{目次!secnumdepth@\texttt{secnumdepth}}%
+\zindind{目次}{の番号付けの深さ}%
+%\index{カウンタ!tocdepth@\texttt{secnumdepth}}%
+見出しの通し番号はカウンタ\Kount{secnumdepth}によって
+どの階層まで出力するかを決められます．\kount{secnumdepth}の
+値は\tabref{sectiondepth}に従って変更します．
+小節\pp{\cmd{subsection}}までに番号を付けるようにするには
+次のようにします．これは目次側にも影響します．
 
 \begin{InTeX}
 \setcounter{secnumdepth}{2}
@@ -489,70 +489,70 @@ Document Class: jarticle 2004/02/25
 
 
 
-\section{���פν���}
-%ʸ��γ�ά��¸�ߤ���Ф���ʸ��˲����񤫤�Ƥ���Τ�����ޤ���
-%ʬ����Τ�\Z{����}��񤯤Τ��ɤ��Ǥ��礦��
-%%��������1�ڡ�����ʸ��ˤ�ɬ�פʤ��Ǥ��礦����
-%\yo{����}��\yo{�Ϥ�����}�Ȥ�ƤФ졤ʸ�񥯥饹�ˤ�ä�
-%������ˡ���㤤�ޤ���\cls{(j)article}�Ϥʤ��
-%\Env{abstract}�Ķ���Ȥ��ޤ�������\env{abstract}�Ķ�
-%�� \Cmd{maketitle} ̿��ȴؤ�꤬����Τǳ��פ���Ϥ��뤿���
-%�� \cmd{maketitle} ̿��θ�˽񤭤ޤ���
-ʸ��γ�ά��¸�ߤ���Ф���ʸ��˲����񤫤�Ƥ���Τ�����ޤ���
-ʬ����Τ�\Z{����} (\Z{abstract}) ��񤯤Τ��ɤ��Ǥ��礦��
-%��������1�ڡ�����ʸ��ˤ�ɬ�פʤ��Ǥ��礦����
-\yo{����}��\yo{�Ϥ�����}�Ȥ�ƤФ졤ʸ�񥯥饹�ˤ�ä�
-������ˡ���㤤�ޤ���\cls{(j)article}�Ϥʤ��
-\Env{abstract}�Ķ���Ȥ��ޤ�������\env{abstract}�Ķ�
-�� \Cmd{maketitle} ̿��ȴؤ�꤬����Τǳ��פ���Ϥ��뤿���
-�� \cmd{maketitle} ̿��θ�˽񤭤ޤ���
+\section{概要の出力}
+%文書の概略が存在すればその文書に何が書かれているのかが大まかに
+%分かるので\Z{概要}を書くのが良いでしょう．
+%%さすがに1ページの文書には必要ないでしょうが．
+%\yo{概要}は\yo{はしがき}とも呼ばれ，文書クラスによって
+%出力方法が違います．\cls{(j)article}系ならば
+%\Env{abstract}環境を使います．この\env{abstract}環境
+%は \Cmd{maketitle} 命令と関わりがあるので概要を出力するために
+%は \cmd{maketitle} 命令の後に書きます．
+文書の概略が存在すればその文書に何が書かれているのかが大まかに
+分かるので\Z{概要} (\Z{abstract}) を書くのが良いでしょう．
+%さすがに1ページの文書には必要ないでしょうが．
+\yo{概要}は\yo{はしがき}とも呼ばれ，文書クラスによって
+出力方法が違います．\cls{(j)article}系ならば
+\Env{abstract}環境を使います．この\env{abstract}環境
+は \Cmd{maketitle} 命令と関わりがあるので概要を出力するために
+は \cmd{maketitle} 命令の後に書きます．
 \begin{Syntax}
 \cmd{maketitle}\\
 \verb|\begin{abstract}|\\
-\va{ʸ��γ���}\\
+\va{文書の概要}\\
 \verb|\end{abstract}|
 \end{Syntax}
-����\cls{(j)report}�ξ��Ǥ����������ѤδĶ����Ѱդ���Ƥ�
-�ޤ��󡥤����ǳ��פ�\Z{��Ω��}������ɤ��Τ� \Cmd{chapter*} 
-̿���Ȥ��ޤ������ΤȤ� \cmd{chapter}̿��˥������ꥹ�� 
-\qu{\texttt*}���դ�����ܼ��˸��Ф���񤭽Ф��������ֹ���դ�­���ޤ���
-��Ȥ��Ƽ��ε��Ҥ򤷤Ƥ��鳵�פ�ʸ�Ϥ�񤭤ޤ���
+次に\cls{(j)report}の場合ですが概要専用の環境は用意されてい
+ません．そこで概要を\Z{章立て}すると良いので \Cmd{chapter*} 
+命令を使います．このとき \cmd{chapter}命令にアスタリスク 
+\qu{\texttt*}を付けると目次に見出しを書き出さず，章番号を付け足しません．
+例として次の記述をしてから概要の文章を書きます．
 
 \begin{InTeX}
-\chapter*{����}\addcontentsline{toc}{chapter}{����}
+\chapter*{概要}\addcontentsline{toc}{chapter}{概要}
 \end{InTeX}
 
-ɸ���ʸ�񥯥饹�Ǥ�
-�������ѤΥ��ޥ�ɤ��������Ƥ��ޤ������Ӥϰۤʤ�ޤ���
-\Hito{��¼}{��ɧ}��\Cls{jsbook}�ˤ�\env{abstract}�Ķ������
-����Ƥ��ޤ�������ϳƾϤλϤ��\yo{���ξϤˤĤ���}�Τ褦��
-\kenten{�ޤ�����}��񤯤Ȥ��˻Ȥ��ޤ���
+標準の文書クラスでは
+概要専用のコマンドは定義されていません．用途は異なりますが
+\Hito{奥村}{晴彦}の\Cls{jsbook}には\env{abstract}環境が定義
+されています．これは各章の始めに\yo{この章について}のような
+\kenten{まえがき}を書くときに使われます．
 
-%�Ǹ��\cls{(j)book}���Ǥ���������� \Cmd{frontmatter}�����
-%����Ƥ���Ȥ��� \cmd{chapter}̿���Ȥ����ɤ��Ȼפ��ޤ���
-%����Ū�ˤ�\index{�ޤ�����}%
+%最後に\cls{(j)book}場合ですが，これは \Cmd{frontmatter}が宣言
+%されているときに \cmd{chapter}命令を使うと良いと思います．
+%具体的には\index{まえがき}%
 %\begin{InTeX}
 %\begin{document} 
-%\frontmatter % ���դ�
-%\chapter{�ޤ�����}
-%�����˳��פ�ޤ�������񤭤ޤ���
-%\mainmatter % ��ʸ
-%\chapter{����}
+%\frontmatter % 前付け
+%\chapter{まえがき}
+%ここに概要やまえがきを書きます．
+%\mainmatter % 本文
+%\chapter{序論}
 %\end{InTeX}
-%�Ȥ�����ܼ��˳��פ�񤭽Ф��ޤ����ֹ���դ�­���ޤ���
+%とすると目次に概要を書き出しますが番号を付け足しません．
 
-�Ǹ��\cls{(j)book}�ξ��Ǥ���������� \Cmd{frontmatter} �����
-����Ƥ���Ȥ��� \cmd{chapter}̿���Ȥ���;�פʼ�֤�ʤ������Ǥ��ޤ���
-����Ū�ˤ�\index{�ޤ�����}%
-���Τ褦�ˤ�����ܼ��ˤ⳵�פ��ֹ�ʤ��ǽ񤭽Ф��ޤ���
+最後に\cls{(j)book}の場合ですが，これは \Cmd{frontmatter} が宣言
+されているときに \cmd{chapter}命令を使うと余計な手間を省く事ができます．
+具体的には\index{まえがき}%
+次のようにすると目次にも概要を番号なしで書き出します．
 
 \begin{InText}
 \begin{document} 
-\frontmatter%���դ�
-\chapter{�ޤ�����}
-�����˳��פ�ޤ�������񤭤ޤ���
-\mainmatter%��ʸ
-\chapter{����}
+\frontmatter%前付け
+\chapter{まえがき}
+ここに概要やまえがきを書きます．
+\mainmatter%本文
+\chapter{序論}
 \end{InText}
 
 
@@ -560,310 +560,310 @@ Document Class: jarticle 2004/02/25
 
 
 
-\section{����Ȼ�����}\indindz{������}{����Ϥ��}%
-ʸ�Ϥ������Ϥ���褦�Ȼפ��С��ޤ�\KY{������} (\Z{indentation}) 
-�򤷤ޤ���%���ع��κ�ʸ�Ǥ�ɬ����ʸ�ѻ�
-%�Ǥϼ�������˰ܤ�Ȥ���1ʸ���������Ȼפ��ޤ���
-���λ������κ�Ȥ�{\LaTeX}��Ⱦ��ư�ǹԤ��ޤ����Ȥ�����
-1�Զ��������Ϥ�����ɤ������Ǥ���
+\section{段落と字下げ}\indindz{字下げ}{段落始めの}%
+文章で段落をはじめようと思えば，まず\KY{字下げ} (\Z{indentation}) 
+をします．%小学校の作文でも必ず作文用紙
+%では次の段落に移るときは1文字開けたと思います．
+この字下げの作業を{\LaTeX}は半自動で行います．使い方は
+1行空けて入力すれば良いだけです．
 
 \begin{InText}
-ŷ�Ĥϡ����ܹ�ξ�ħ�Ǥ������ܹ�̱����ξ�ħ�Ǥ��Ĥơ�
-�����ϰ̤ϡ��縢��¸�������ܹ�̱�����դ˴𤯡� 
+天皇は、日本国の象徴であり日本国民統合の象徴であつて、
+この地位は、主権の存する日本国民の総意に基く。 
 
-�İ̤ϡ������Τ�ΤǤ��Ĥơ����εķ褷���ļ�ŵ�Ϥ�
-����Ȥ����ˤ�ꡢ�����Ѿ����롣 
+皇位は、世襲のものであつて、国会の議決した皇室典範の
+定めるところにより、これを継承する。 
 
-ŷ�Ĥι���˴ؤ��뤹�٤Ƥι԰٤ˤϡ���դν����Ⱦ�ǧ
-��ɬ�פȤ�����դ���������Ǥ����ա� 
+天皇の国事に関するすべての行為には、内閣の助言と承認
+を必要とし、内閣が、その責任を負ふ。 
 \end{InText}
 
-%����ˤ�꼡�Τ褦�ʽ��Ϥ������ޤ���
+%これにより次のような出力が得られます．
 
 \begin{OutText}
-\hskip1zw ŷ�Ĥϡ����ܹ�ξ�ħ�Ǥ������ܹ�̱����ξ�ħ�Ǥ��Ĥơ�
-�����ϰ̤ϡ��縢��¸�������ܹ�̱�����դ˴𤯡� \par
-\hskip1zw �İ̤ϡ������Τ�ΤǤ��Ĥơ����εķ褷���ļ�ŵ�Ϥ�
-����Ȥ����ˤ�ꡢ�����Ѿ����롣 \par
-\hskip1zw ŷ�Ĥι���˴ؤ��뤹�٤Ƥι԰٤ˤϡ���դν����Ⱦ�ǧ
-��ɬ�פȤ�����դ���������Ǥ����ա� 
+\hskip1zw 天皇は、日本国の象徴であり日本国民統合の象徴であつて、
+この地位は、主権の存する日本国民の総意に基く。 \par
+\hskip1zw 皇位は、世襲のものであつて、国会の議決した皇室典範の
+定めるところにより、これを継承する。 \par
+\hskip1zw 天皇の国事に関するすべての行為には、内閣の助言と承認
+を必要とし、内閣が、その責任を負ふ。 
 \end{OutText}
 
-���Τ褦�˼�ưŪ�˻��������ʤ���ޤ�\footnote
-   {�����ܹ��ˡ�� 1947ǯ5��3��\,�ܹԤ���1�򤫤���3��ޤǤΰ��ѡ�}��
-����Ū�� \Cmd{par}̿��
-������ν�λ���Τ餻������Ǥ����ʲ��Τ褦�ˤ�񤱤ޤ���
+このように自動的に字下げがなされます\footnote
+   {『日本国憲法』 1947年5月3日\,施行の第1条から第3条までの引用．}．
+明示的に \Cmd{par}命令
+で段落の終了を知らせる事ができ，以下のようにも書けます．
 
 \begin{InText}
-ŷ�Ĥϡ����ܹ�ξ�ħ�Ǥ������ܹ�̱����ξ�ħ�Ǥ��Ĥơ�
-�����ϰ̤ϡ��縢��¸�������ܹ�̱�����դ˴𤯡�\par
-�İ̤ϡ������Τ�ΤǤ��Ĥơ����εķ褷���ļ�ŵ�Ϥ�
-����Ȥ����ˤ�ꡢ�����Ѿ����롣\par
-ŷ�Ĥι���˴ؤ��뤹�٤Ƥι԰٤ˤϡ���դν����Ⱦ�ǧ
-��ɬ�פȤ�����դ���������Ǥ����ա�\par
+天皇は、日本国の象徴であり日本国民統合の象徴であつて、
+この地位は、主権の存する日本国民の総意に基く。\par
+皇位は、世襲のものであつて、国会の議決した皇室典範の
+定めるところにより、これを継承する。\par
+天皇の国事に関するすべての行為には、内閣の助言と承認
+を必要とし、内閣が、その責任を負ふ。\par
 \end{InText}
 
-\latexno{�ȥ�ץ��ΰ㤤}%
-\indindz{����}{���Ƥˤ�����}%
-\indindz{����}{���Ϸ�̤ˤ�����}%
-\zindind{����}{��β���}%
-�ʾ�Τ褦��{\LaTeX}�ϥ�ץ����եȤȤϰ㤤��\K{������ΰ��
-�β��Ԥ����Ϥ��б����Ƥ��ʤ�}�Τ���ʬ����ˤʤ�Ǥ��礦��
-{\LaTeX}�Ǥ�{����}���٤����֤�ư�Ƿ׻����Ƥ���ΤǤ���
+\latexno{とワープロの違い}%
+\indindz{改行}{原稿における}%
+\indindz{改行}{出力結果における}%
+\zindind{原稿}{中の改行}%
+以上のように{\LaTeX}はワープロソフトとは違い，\K{原稿中の一つ
+の改行が出力と対応していない}のがお分かりになるでしょう．
+{\LaTeX}では{改行}すべき位置を自動で計算しているのです．
 
 \begin{Trick}
-\indindz{��}{��������}%
-������������ \Cmd{parindent} �Ȥ���Ĺ���ѿ��ǻ���Ǥ��ޤ���
-`\verb|\parindent = 3zw|'�Τ褦�ˤ����������3ʸ��ʬ�λ�����������λϤ�
-�ǹԤ������Ǥ��ޤ���
+\indindz{幅}{字下げの}%
+字下げの幅は \Cmd{parindent} という長さ変数で指定できます．
+`\verb|\parindent = 3zw|'のようにすると約全角3文字分の字下げを段落の始め
+で行う事ができます．
 \end{Trick}
 
 
 
-\subsection{��Ƭ�λ�����}\seclab{indentfirst}
-\zindind{������}{������}%
-\zindind{��Ƭ}{�λ�����}%
-\indindz{������}{��Ƭ��}%
+\subsection{行頭の字下げ}\seclab{indentfirst}
+\zindind{字下げ}{の抑制}%
+\zindind{行頭}{の字下げ}%
+\indindz{字下げ}{行頭の}%
 
-����γ��Ϥˤϻ������򤹤٤��ʤΤǤ�����
-���餫����ͳ�ˤ��������������������Ȥ�������ޤ���
-��������̵ͭ�˴ؤ��Ƥ� \Cmd{indent} �� \Cmd{noindent} 
-̿�᤬�Ȥ��ޤ���
+段落の開始には字下げをすべきなのですが，
+何らかの理由により字下げを抑制したいときがあります．
+字下げの有無に関しては \Cmd{indent} と \Cmd{noindent} 
+命令が使えます．
 \begin{Syntax}
 \begin{tabular}{ll}
- \C{indent}   &�ʲ�ǽ�ʤ�л������򤷤ޤ���\\
- \C{noindent} &�ʲ�ǽ�ʤ�л������򤷤ޤ����
+ \C{indent}   &（可能ならば字下げをします）\\
+ \C{noindent} &（可能ならば字下げをしません）
 \end{tabular}
 \end{Syntax}
-\cls{jreport}�ʤɤΥ��饹�ե�����ǤϤ��Τ褦��̿���
-�ȤäƤ��Ƭ�λ��������Ǥ��ʤ��Ȥ�������ޤ���
-���ξ���\Sty{indentfirst}�ѥå��������ɤ߹��ߤޤ���
+\cls{jreport}などのクラスファイルではこのような命令を
+使っても行頭の字下げができないときがあります．
+その場合は\Sty{indentfirst}パッケージを読み込みます．
 \begin{InOut}
 \usepackage{indentfirst}
-\noindent ���\indent ������Ǥ���
-�顤�����ʤ�ޤ���\par
-\noindent �����ʤ�ޤ�����
+\noindent 私は\indent 大学生ですか
+ら，そうなります．\par
+\noindent そうなりました．
 \end{InOut}
 
-\zindind{������}{������Ĵ��}%
+\zindind{字下げ}{の幅の調節}%
 
 \begin{Prob}
-��Ƭ�λ������򤻤�������������\Z{����}�����������ν���������λϤ�
-��򼨤��Ȥ�������{\LaTeX}�ǹԤ�����ˤϡ����������ζ�����Ĵ�᤹
-�� \C{parskip}�Ȥ������Ѥ�Ĺ���ѿ���Ĵ�ᤷ�ޤ���
+行頭の字下げをせずに段落と段落に\Z{空き}を入れて段落の終わりと段落の始ま
+りを示すという事を{\LaTeX}で行うためには，段落と段落の空きを調節す
+る \C{parskip}という可変の長さ変数を調節します．
 
 \begin{InTeX}
-\parindent = 0pt % ������
+\parindent = 0pt % 字下げ
 \parskip = 10pt plus 0pt minus 0pt
 \end{InTeX}
 
-�ºݤˤ��Τ褦������ˤ����ʬ����ޤ�����
-����Ȥ�������ʬ�˶������������ޤ��Τǡ����ν��Ϸ�̤��̣���Ƥ���������
+実際にこのような設定にすれば分かりますが，
+ありとあらゆる部分に空きを挿入しますので，その出力結果を吟味してください．
 \end{Prob}
 
 
-\subsection{����λ�����\zdash\Y{indent}}
+\subsection{段落の字下げ\zdash\Y{indent}}
 
-\indindz{����}{ʸ��}%
-\indindz{������}{�����}%
-ʸ����Ѥ��Ƥ�����Ϥ��줬\Z{����}�Ǥ���������Τ�
-���뤿��ˡ��������Τ���������뽬��������ޤ���
-����ˤ�\Env{quote}�Ķ���\env{quotation}�Ķ���
-�Ȥ��ޤ������������ξ��ϼ�ʬ�ǻ���������
-����Ǥ��ޤ���%\env{quote}�Ķ�����ǻȤ��Ƥ���
-%\Env{list}�Ķ���ʬ�ǥ������ޥ�������Ȥ��ޤ��Ԥ��ޤ���
-��ñ������λ�������Ĵ������ˤ�\Sty{indent}\footnote{\CTAN{macros/latex209/contrib/misc/indent.sty}}�ѥå�������\Env{indentation}�Ķ���Ȥ��ޤ���
+\indindz{引用}{文の}%
+\indindz{字下げ}{段落の}%
+文を引用している場合はそれが\Z{引用}である事を明確に
+するために，段落全体を字下げする習慣があります．
+これには\Env{quote}環境や\env{quotation}環境が
+使えます．ただしこの場合は自分で字下げ幅を
+設定できません．%\env{quote}環境の中で使われている
+%\Env{list}環境を自分でカスタマイズするとうまく行きます．
+簡単に段落の字下げを調整するには\Sty{indent}\footnote{\CTAN{macros/latex209/contrib/misc/indent.sty}}パッケージの\Env{indentation}環境を使います．
 
 \begin{Syntax}
- \verb|\begin{indentation}|\pa{��¦�λ�����}\pa{��¦�λ�����}\\
- \va{ʸ������}\\
+ \verb|\begin{indentation}|\pa{左側の字下げ}\pa{右側の字下げ}\\
+ \va{文章内容}\\
  \verb|\end{indentation}|
 \end{Syntax}
 
-\env{indentation}�Ķ���\K{�����}��ɬ�ܰ����ˤ�
-\K{��¦��}��������\K{�����}�ˤ�\K{��¦��}����������ꤷ�ޤ���
+\env{indentation}環境の\K{一つ目}の必須引数には
+\K{左側の}字下げ，\K{二つ目}には\K{右側の}字下げを指定します．
 \begin{InOut}
-���������̤�ʸ���ΰ�Ǥ�����ɬ��
-�˻�������Ĵ������ΤϹ��ޤ�����
-�ȤǤϤ���ޤ���
+ここは普通の文章領域です．不必要
+に字下げを調整するのは好ましいこ
+とではありません．
 \begin{indentation}{3zw}{3zw}
-��¦�λ�����������3ʸ��ʬ����¦��
-������������3ʸ��ʬ����ޤ�����
+左側の字下げは全角3文字分，右側の
+字下げも全角3文字分ありますか？
 \end{indentation}
 \begin{indentation}{0zw}{5zw}
-��¦�λ������Ϥʤ�����¦�λ�����
-�����ѣ�ʸ��ʬ����ޤ�����
+左側の字下げはなし，右側の字下げ
+は全角５文字分ありますか？
 \end{indentation}
-���������̤�ʸ���ΰ�Ǥ���
+ここも普通の文章領域です．
 \end{InOut}
 
 
-\subsection{���֥륹�ڡ���}\seclab{doublespace}
+\subsection{ダブルスペース}\seclab{doublespace}
 
-%�ޤ�\Z{���֥륹�ڡ���}�Ȥ��ä�\KY{������}���ܤˤ���
-%�Ȥ������Ȥ��������礬����褦�Ǥ���
-%%\pp{2�Լ��äƸ����Τ��ʡ�}
-%����Ϲ�������̤����Ĺ���ѿ� \Cmd{baselinestretch} ��
+%また\Z{ダブルスペース}といって\KY{行送り}を倍にする
+%ということも迫られる場合があるようです．
+%%\pp{2行取りって言うのかな？}
+%これは行送りの量を決める長さ変数 \Cmd{baselinestretch} を
 %\begin{InTeX}
 %\renewcommand{\baselinestretch}{2}
 %\end{InTeX}
-%�Ȥ�����ˡ������ޤ���¾�ˤ�\Sty{doublespace}�ѥå�������
+%とする方法があります．他にも\Sty{doublespace}パッケージを
 %\begin{InTeX}
 %\usepackage{doublespace} 
 %\end{InTeX}
-%�Ȥ��ƥץꥢ��֥���ɤ߹���Ⱦ嵭����ˡ���⤦�ޤ�
-%���֥륹�ڡ�����¸��Ǥ��ޤ���
+%としてプリアンブルで読み込むと上記の方法よりもうまく
+%ダブルスペースを実現できます．
 
 
-\Z{���֥륹�ڡ���}�Ȥ��ä�\KY{������}���ܤˤ���Ȥ�������
-�������礬����ޤ���
-%����Ϲ�������̤����Ĺ���ѿ� \Cmd{baselinestretch} ��
+\Z{ダブルスペース}といって\KY{行送り}を倍にするという事を
+迫られる場合があります．
+%これは行送りの量を決める長さ変数 \Cmd{baselinestretch} を
 %\begin{InText}
 %\renewcommand{\baselinestretch}{2}
 %\end{InText}
-%�Ȥ�����ˡ������ޤ���
-%¾�ˤ�\Sty{doublespace}�ѥå�������
+%とする方法があります．
+%他にも\Sty{doublespace}パッケージを
 %\begin{InText}
 %\usepackage{doublespace} 
 %\end{InText}
-%�Ȥ��ƥץꥢ��֥���ɤ߹���Ⱦ嵭����ˡ���⤦�ޤ�
-%���֥륹�ڡ�����¸��Ǥ��ޤ���
-����ˤ� \person{Geoffrey}{Tobin}�ˤ��\Y{setspace}�ѥå�����
-��Ȥ������ͤ����ޤ�\footnote{¾�ˤ� \Y{doublespace}�ѥå�����
-��Ȥ���ˡ�� \Cmd{baselinestretch} ̿�������������ˡ�⤢��ޤ���}��
+%としてプリアンブルで読み込むと上記の方法よりもうまく
+%ダブルスペースを実現できます．
+これには \person{Geoffrey}{Tobin}による\Y{setspace}パッケージ
+を使う事が考えられます\footnote{他にも \Y{doublespace}パッケージ
+を使う方法や \Cmd{baselinestretch} 命令を再定義する方法もあります．}．
 \begin{Syntax}
 \begin{tabular}{ll}
- \C{singlespacing}   &���̾��̤�ι���������ꤹ���\\
- \C{onehalfspacing}  &���̾��1.5�ܤι�����ˤ����\\
- \C{doublespacing}   &���̾��2�ܤι�����ˤ����\\
+ \C{singlespacing}   &（通常通りの行送りに設定する）\\
+ \C{onehalfspacing}  &（通常の1.5倍の行送りにする）\\
+ \C{doublespacing}   &（通常の2倍の行送りにする）\\
 \end{tabular}\\
- \verb|\begin{spacing}|\pa{����} \va{ʸ��} \verb|\end{spacing}|
+ \verb|\begin{spacing}|\pa{数値} \va{文章} \verb|\end{spacing}|
 \end{Syntax}
-\va{����}����ꤷ�ƹ�������ѹ��Ǥ���\Env{spacing}�Ķ����Ѱդ���Ƥ��ޤ���%
+\va{数値}を指定して行送りを変更できる\Env{spacing}環境も用意されています．%
 \begin{InOut}
 \usepackage{setspace}
 \singlespacing
-�������̾��\par �Դ�\par
+ここは通常の\par 行間\par
 \doublespacing
-�������̾��\par 2�ܤιԴ�\par
+ここは通常の\par 2倍の行間\par
 \begin{spacing}{.8}
-�������̾��\par 0.8�ܤιԴ�\par
+ここは通常の\par 0.8倍の行間\par
 \end{spacing}
 \end{InOut}
 
 
 
-\section{Ĺ����ñ��}\index{ñ��}
+\section{長さの単位}\index{単位}
 
-%��ۤɤϲ��餫�Υѥ�᡼���˿��ͤ���������
+%先ほどは何らかのパラメータに数値を代入する
 %\begin{InTeX}
 %\parindent=0pt 
 %\end{InTeX}
-%�Τ褦�ʵ��Ҥ�����ޤ���������ˤϥݥ����
-%\qu{pt}�Ȥ���ñ�̤��Ȥ��Ƥ��ޤ���
-%{\LaTeX}�ˤ����ƻ��ѤǤ���\zindind{Ĺ��}{��ñ��}Ĺ����ñ��
-%\pp{\tabref{latexunit1}}�Ͽ�������ޤ�����
-%����Ȥ�����Ū��Ĺ���ǤϤʤ��Τǥ��饹�ե���
-%��ˤ�ä��Ѥ�ä���ץ������ˤ�äƤ�㴳
-%�ΰ㤤������ޤ���
+%のような記述がありました．これにはポイント
+%\qu{pt}という単位が使われています．
+%{\LaTeX}において使用できる\zindind{長さ}{の単位}長さの単位
+%\pp{\tabref{latexunit1}}は色々あります．ポ
+%イントは絶対的な長さではないのでクラスファイ
+%ルによって変わったりプログラムによっても若干
+%の違いがあります．
 %\begin{table}[htbp]
-%\begin{center}\indindz{��}{M�λ���}\indindz{�⤵}{x�λ���}%
-%\caption{{\LaTeX}�ǻ��ѤǤ�����ñ��}\tablab{latexunit1}
+%\begin{center}\indindz{幅}{Mの字の}\indindz{高さ}{xの字の}%
+%\caption{{\LaTeX}で使用できる主な単位}\tablab{latexunit1}
 %\begin{tabular}{cll}
 %\TR
-%\Th{ñ��}& \Th{�ɤ�}&  \Th{��­}\pp{���ͤϳ���}\\
+%\Th{単位}& \Th{読み}&  \Th{補足}\pp{数値は概算}\\
 %\MR
-%in& �������            & 1\,in $=$ 25.4\,mm $=$ 72.27\,pt \\
-%cm& ������᡼�ȥ�      & 1\,cm $=$ 10\,mm $=$ 28.3\,pt \\
-%mm& �ߥ�᡼�ȥ�        & 1\,mm $=$ 2.83\,pt \\
-%pt& �ݥ���ȡ�          & 1\,pt $=$ 0.35\,mm\\
-%em& M�λ�������Ʊ����  & ������Υե���Ȥ˰�¸ \\
-%ex& x�λ��ι⤵��Ʊ����  & ������Υե���Ȥ˰�¸  \\
-%zw& ���ܸ�ΰ�ʸ��������& ������Υե���Ȥ˰�¸  \\
+%in& インチ　            & 1\,in $=$ 25.4\,mm $=$ 72.27\,pt \\
+%cm& センチメートル      & 1\,cm $=$ 10\,mm $=$ 28.3\,pt \\
+%mm& ミリメートル        & 1\,mm $=$ 2.83\,pt \\
+%pt& ポイント　          & 1\,pt $=$ 0.35\,mm\\
+%em& Mの字の幅と同じ．  & 使用中のフォントに依存 \\
+%ex& xの字の高さと同じ．  & 使用中のフォントに依存  \\
+%zw& 日本語の一文字の幅．& 使用中のフォントに依存  \\
 %\BR
 %\end{tabular}
 %\end{center}
 %\end{table}
-%\Hito{��¼}{��ɧ}��\cls{jsclasses}�Ǥϥ��饹���ץ�����
-%\Option{10pt}�ʳ��Υե���ȥ��������꤬����Ƥ������
-%���̤γ���̾���ȤäƤ��ޤ��Τ�ñ�̤�����ޤ�������ˤ�
-%��ñ�̤�\qu{\str{true}}���դ���Ĺ������ꤷ�ޤ����㤨��
-%\qu{\str{cm}}�ʤ��\qu{\str{truecm}}�Τ褦�ˤ��ޤ���
-%%���Τ褦�ˤ����\Cmd{magstep}�αƶ�������ޤ���
-%%���Ϥ���ʤ���ʤ���
+%\Hito{奥村}{晴彦}の\cls{jsclasses}ではクラスオプションに
+%\Option{10pt}以外のフォントサイズ指定がされている場合は
+%版面の拡大縮小を使っていますので単位がずれます．これには
+%各単位に\qu{\str{true}}を付けて長さを指定します．例えば
+%\qu{\str{cm}}ならば\qu{\str{truecm}}のようにします．
+%%このようにすると\Cmd{magstep}の影響がありません．
+%%↑はいらないよなぁ．
 
-\subsection{\LaTeX �Ǥ�ñ�̤μ����}
-\latexno{�ˤ�����ñ��}
-\index{���ͤ�����}%
+\subsection{\LaTeX での単位の取り決め}
+\latexno{における単位}
+\index{数値の代入}%
 
-\index{=@\str{=}!�����Ȥ��Ƥ�\zdash}%
+\index{=@\str{=}!代入としての\zdash}%
 \index{=@\str{=}}%
-��ۤɤϲ��餫��\Z{�ѿ�}��\Z{�ѥ�᡼��}�ˤ˿��ͤ������������
+先ほどは何らかの\Z{変数}（\Z{パラメータ}）に数値を代入する時に
 `\verb|\parindent=0pt |'
-�Ȥ������Ҥ�����ޤ���������ˤϥݥ����
-\qu{pt}�Ȥ���ñ�̤��Ȥ��Ƥ��ޤ���
-{\LaTeX}�ˤ����ƻ��ѤǤ���\zindind{Ĺ��}{��ñ��}Ĺ����ñ��
-\pp{\tabref{latexunit1}}�Ͽ�������ޤ����ݥ���Ȥ�%
-\indindz{Ĺ��}{����Ū��}%
-\Z{����Ū��Ĺ��}�ǤϤʤ��Τǥ��饹�ե�����ˤ�ä��Ѥ�ä�
-��ץ������ˤ�äƤ�㴳�ΰ㤤������ޤ���
+という記述がありました．これにはポイント
+\qu{pt}という単位が使われています．
+{\LaTeX}において使用できる\zindind{長さ}{の単位}長さの単位
+\pp{\tabref{latexunit1}}は色々あります．ポイントは%
+\indindz{長さ}{絶対的な}%
+\Z{絶対的な長さ}ではないのでクラスファイルによって変わった
+りプログラムによっても若干の違いがあります．
 \begin{table}[htbp]
 \begin{center}
-\indindz{��}{M�λ���}%
-\indindz{�⤵}{x�λ���}%
-\zindind{���ܸ�}{����}%
-\caption{{\LaTeX}�ǻ��ѤǤ�����ñ��}\label{tab:latexunit1}
+\indindz{幅}{Mの字の}%
+\indindz{高さ}{xの字の}%
+\zindind{日本語}{の幅}%
+\caption{{\LaTeX}で使用できる主な単位}\label{tab:latexunit1}
 \begin{tabular}{c*3l}
 \TR
-\Th{ñ��}& \Th{�ɤ�}&  \Th{��­\pp{���ͤϳ���}} & \Th{�ºݤ�Ĺ��}\\
+\Th{単位}& \Th{読み}&  \Th{補足\pp{数値は概算}} & \Th{実際の長さ}\\
 \MR
-in& \Z{�����}  &1\,in $=$ 25.4\,mm $=$ 72.27\,pt & \demowidth{1truein}\\
-cm& \Z{������᡼�ȥ�} &1\,cm $=$ 10\,mm $=$ 28.3\,pt    & \demowidth{1truecm}\\
-mm& \Z{�ߥ�᡼�ȥ�}   &1\,mm $=$ 2.83\,pt           & \demowidth{1truemm}\\
-pt& \Z{�ݥ����}��     &1\,pt $=$ 0.35\,mm           & \demowidth{1truept}\\
-em& M�λ�������Ʊ���� &������Υե���Ȥ˰�¸    & \demowidth{1em}\\
-ex& x�λ��ι⤵��Ʊ����&������Υե���Ȥ˰�¸  & \demowidth{1ex}\\
-zw& ���ܸ�ΰ�ʸ��������&������Υե���Ȥ˰�¸   & \demowidth{1zw}\\
+in& \Z{インチ}  &1\,in $=$ 25.4\,mm $=$ 72.27\,pt & \demowidth{1truein}\\
+cm& \Z{センチメートル} &1\,cm $=$ 10\,mm $=$ 28.3\,pt    & \demowidth{1truecm}\\
+mm& \Z{ミリメートル}   &1\,mm $=$ 2.83\,pt           & \demowidth{1truemm}\\
+pt& \Z{ポイント}　     &1\,pt $=$ 0.35\,mm           & \demowidth{1truept}\\
+em& Mの字の幅と同じ． &使用中のフォントに依存    & \demowidth{1em}\\
+ex& xの字の高さと同じ．&使用中のフォントに依存  & \demowidth{1ex}\\
+zw& 日本語の一文字の幅．&使用中のフォントに依存   & \demowidth{1zw}\\
 \BR
 \end{tabular}
 \end{center}
 \end{table}
-\hito{��¼}{��ɧ}��\cls{jsclasses}�Ǥϥ��饹���ץ�����
-\Option{10pt}�ʳ��Υե���ȥ��������꤬����Ƥ������%
-\zindind{����}{�γ���̾�}%
-\zindind{ñ��}{�Τ���}%
-���̤γ���̾���ȤäƤ��ޤ��Τ�ñ�̤�����ޤ�������ˤ�
-��ñ�̤�\qu{\str{true}}���դ���Ĺ������ꤷ�ޤ����㤨��
-\qu{\str{cm}}�ʤ��\qu{\str{truecm}}�Τ褦�ˤ��ޤ���
-%���Τ褦�ˤ���� \Cmd{magstep}�αƶ�������ޤ���
-%���Ϥ���ʤ���ʤ���
+\hito{奥村}{晴彦}の\cls{jsclasses}ではクラスオプションに
+\Option{10pt}以外のフォントサイズ指定がされている場合は%
+\zindind{紙面}{の拡大縮小}%
+\zindind{単位}{のずれ}%
+紙面の拡大縮小を使っていますので単位がずれます．これには
+各単位に\qu{\str{true}}を付けて長さを指定します．例えば
+\qu{\str{cm}}ならば\qu{\str{truecm}}のようにします．
+%このようにすると \Cmd{magstep}の影響がありません．
+%↑はいらないよなぁ．
 
-\subsection{ñ�̤λȤ���}
-\indindz{����}{ñ��}%
-\Z{ñ��}�ϴ���Ū��\Z{���ñ��}\Z{SI}�˽��������ޥ��Ρ�
-����ϥ�����å��Τ�ɽ�����ޤ���\zindind{ñ��}{����Ƭ��}%
-ñ�̤�\Z{��Ƭ��}�Ȥ���\tabref{SI:prefix}��\Z{������}��
-���ѤǤ��ޤ�\footnote{����¾�ˤ�$10^{24}$����$10^{-24}$�ޤ�
- (Y Z P T G M k m \textmu\ n p f a z y) ����ޤ��������ˤ��Ѥ��������
- �������Ҥ�����Ǻܤ��ޤ�����}��
+\subsection{単位の使い方}
+\indindz{記号}{単位}%
+\Z{単位}は基本的に\Z{国際単位}\Z{SI}に従いローマン体，
+記号はイタリック体で表記します．\zindind{単位}{の接頭語}%
+単位の\Z{接頭語}として\tabref{SI:prefix}の\Z{修飾子}が
+使用できます\footnote{この他にも$10^{24}$から$10^{-24}$まで
+ (Y Z P T G M k m \textmu\ n p f a z y) ありますが，頻繁に用いられるだろ
+ う修飾子だけを掲載しました．}．
 
 \begin{table}[htbp]
  \begin{center}
-  \caption{SI�δ���ñ��}\label{tab:SI:base}
+  \caption{SIの基本単位}\label{tab:SI:base}
  \begin{tabular}{llllll}
  \TR
- \Th{̾��} & \Th{�Ѹ�̾��} & \Th{����} & \Th{ñ��} & \Th{�ɤ�} & \Th{�Ѹ��ɤ�}\\
+ \Th{名称} & \Th{英語名称} & \Th{記号} & \Th{単位} & \Th{読み} & \Th{英語読み}\\
  \MR
- \Z{Ĺ��}  & \Z{length}& $l$  & m    & \Z{�᡼�ȥ�}  & \Z{meter}\\
- \Z{����}  & \Z{mass}  & $m$  & kg   & \Z{���������}& \Z{kilogram}\\
- \Z{����}  & \Z{time}  & $t$  & s    & \Z{��}        & \Z{second}\\
- \Z{ʪ����}& \Z{amount of substance} & $n$ & mol  & \Z{���}      &\Z{mole}\\
- \Z{��ή}  & \Z{electric current}    & $I$ & A    & \Z{����ڥ�}  &\Z{ampere}\\
- \Z{Ǯ�ϳز���}& {thermodynamic} 
-      &$T$&K & \Z{����ӥ�}  &\Z{kelvin}\\
+ \Z{長さ}  & \Z{length}& $l$  & m    & \Z{メートル}  & \Z{meter}\\
+ \Z{質量}  & \Z{mass}  & $m$  & kg   & \Z{キログラム}& \Z{kilogram}\\
+ \Z{時間}  & \Z{time}  & $t$  & s    & \Z{秒}        & \Z{second}\\
+ \Z{物理量}& \Z{amount of substance} & $n$ & mol  & \Z{モル}      &\Z{mole}\\
+ \Z{電流}  & \Z{electric current}    & $I$ & A    & \Z{アンペア}  &\Z{ampere}\\
+ \Z{熱力学温度}& {thermodynamic} 
+      &$T$&K & \Z{ケルビン}  &\Z{kelvin}\\
           &  temperature & & & \\
- \Z{����} & \Z{luminous intensity}  & $I$ & cd   & 
-      \Z{����ǥ�}  &\Z{candela}\\
+ \Z{光度} & \Z{luminous intensity}  & $I$ & cd   & 
+      \Z{カンデラ}  &\Z{candela}\\
  \BR
  \end{tabular}
  \end{center}
@@ -872,50 +872,50 @@ zw& ���ܸ�ΰ�ʸ��������&������Υե���Ȥ˰�¸   & \demowidth{1zw}\\
 \begin{table}[htbp]
 \newcommand*\DP[1]{$10^{#1}$}
  \begin{center}
-  \caption{$10^n$�ν�����}\label{tab:SI:prefix}
+  \caption{$10^n$の修飾子}\label{tab:SI:prefix}
   \begin{tabular}{*{15}{l}}
 \TR
 $10^n$&\DP{12}&\DP{9}&\DP{6}&\DP{3}&\DP{-3}&\DP{-6}&\DP{-9}&\DP{-12}\\
 \MR
-����  & T & G & M & k & m & \textmu & n & p \\
-̾��  & \Z{�ƥ�} & \Z{����} & \Z{�ᥬ} & \Z{����} & \Z{�ߥ�} & \Z{�ޥ�����}{*} & \Z{�ʥ�} & \Z{�ԥ�} \\
-�Ѹ�̾��& \Z{tera} & \Z{giga} & \Z{mega} & \Z{kilo} & \Z{milli} & \Z{micro} & \Z{nano} & \Z{pico} \\
+記号  & T & G & M & k & m & \textmu & n & p \\
+名称  & \Z{テラ} & \Z{ギガ} & \Z{メガ} & \Z{キロ} & \Z{ミリ} & \Z{マイクロ}{*} & \Z{ナノ} & \Z{ピコ} \\
+英語名称& \Z{tera} & \Z{giga} & \Z{mega} & \Z{kilo} & \Z{milli} & \Z{micro} & \Z{nano} & \Z{pico} \\
 \BR
   \end{tabular}
 \par\vskip1ex
 \begin{footnotesize}
-{*} �����ޥ��ΤΥޥ����� (\textmu) ����Ϥ���ˤ�
-\Y{textcomp}�ѥå������� \cmd{textmu} ���ޥ�ɤ�Ȥ��ޤ���
+{*} ローマン体のマイクロ (\textmu) を出力するには
+\Y{textcomp}パッケージの \cmd{textmu} コマンドを使います．
 \end{footnotesize}
  \end{center}
 \end{table}
 %
 \begin{InOut}
-���ͤ�ñ�̤δ֤ˤ�Ⱦ�����٤ζ��������
-���ޤ���3\,mkg��3�ߥꥭ�������ˤʤɡ�
-�����Ҥ�ʣ��ɽ�����ƤϤ����ޤ���
-3\,mkg (��) ����������3\,g�Ȥʤ�ޤ���
+数値と単位の間には半角程度の空白を挿入
+します．3\,mkg（3ミリキログラム）など，
+修飾子を複数表記してはいけません．
+3\,mkg (×) は正しくは3\,gとなります．
 \end{InOut}
-\indindz{����}{���ͤ�ñ�̤�}%
-���ͤ�ñ�̤δ֤ˤ�\K{Ⱦ�����٤ζ�����������ޤ�}��
-ñ�̤Ȥ��ν����Ҥ�\K{�����ʤ���Ǥ�����ޥ��ΤȤ��ޤ�}��
-\zindind{��Ĵ}{�����ñ��}%
-��Ĵ��ʬ��ñ�̤��ޤޤ����Ǥ�Ʊ�ͤǤ���
+\indindz{空白}{数値と単位の}%
+数値と単位の間には\K{半角程度の空白を挿入します}．
+単位とその修飾子は\K{いかなる場合でもローマン体とします}．
+\zindind{強調}{の中の単位}%
+強調部分に単位が含まれる場合でも同様です．
 
 
-\section{������}
-\indindz{��}{����}%
+\section{句読点}
+\indindz{点}{句読}%
 
-�������ϡ�ʸ����ڤ뤿���ʸ�֤��������뵭��Ǥ���
-\index{.@\verb+.+�ʶ�����}\index{,@\verb+,+��������}%
-\KY{������} (\Z{punctuation}) ���Ȥ�������Ľ񤭤ˤ��뤫���񤭤�
-���뤫�Ǥ�㤤�ޤ���%�Ľ񤭤ΤȤ��ϲ����¤鷺�����Ѥ�\Z{����}\yo{��}
-%��\Z{����}\yo{��}���Ѥ��ޤ���
-\indindz{�����}{���Ѥ�}%
-\indindz{�ԥꥪ��}{���Ѥ�}%
-��ݡ��ȡ���ʸ��¿���ϲ��񤭤ξ��Ǥ����顤���Ѥ�
-�����`��'�ȥԥꥪ��`��'��Ȥ����ɤ��Ǥ��礦����������
-��ʸ�濴��ʸ������ˤϤ��٤�Ⱦ�Ѥζ��������̤�Ȥ��ޤ���
+句読点は，文を区切るために文間に挿入する記号です．
+\index{.@\verb+.+（句点）}\index{,@\verb+,+（読点）}%
+\KY{句読点} (\Z{punctuation}) は組み方向を縦書きにするか横書きに
+するかでも違います．%縦書きのときは何も迷わずに全角の\Z{読点}\yo{、}
+%と\Z{句点}\yo{。}を用います．
+\indindz{コンマ}{全角の}%
+\indindz{ピリオド}{全角の}%
+レポート・論文の多くは横書きの場合ですから，全角の
+コンマ`，'とピリオド`．'を使うと良いでしょう．ただし，
+欧文中心の文や段落にはすべて半角の句読点や括弧を使います．
 \begin{InOut}
 The length of a pen should be 
 comrotable to write with: too long 
@@ -924,164 +924,164 @@ and it\ldots.\par Prof.~Albert
 Einstein (1897--1955) was born in 
 German (see fig.~3).
 \end{InOut}
-��ʸ�ˤ����ơ�\Z{������}��\Z{���ߥ�����}�ʤɤε����\Z{�����}��
-\Z{�ԥꥪ��}��Ʊ�ͤˡ���������˶���ʶ����ˤ����줺�������Ⱦ��
-�ζ�����������Ƥ��ޤ���
+欧文において，\Z{コロン}，\Z{セミコロン}などの記号は\Z{コンマ}，
+\Z{ピリオド}と同様に，記号の前に空白（空き）を入れず，後ろに半角
+の空白を挿入しています．
 \index{:@\str{:}}
 \index{;@\str{;}}
 
-\Z{�ݳ��}��\Z{�ѡ����}�ˤκ�¦��\Z{������}�ˤ˶��������Ƥ��ޤ�����
-��¦��\Z{����}�ˤˤ�����Ƥ��ޤ���
+\Z{丸括弧}（\Z{パーレン}）の左側（\Z{起こし}）に空白を入れていますが，
+右側（\Z{受け}）には入れていません．
 
 %\index{.@\verb+.+}\index{,@\verb+,+}%
-%\Z{������}�ˤĤ��ƤǤ������Ľ񤭤ˤ��뤫���񤭤ˤ��뤫��
-%�㤤�ޤ����Ľ񤭤ΤȤ��ϲ����¤鷺�����Ѥ�\Z{����}\yo{��}
-%��\Z{����}\yo{��}���Ѥ��ޤ���
+%\Z{句読点}についてですが，縦書きにするか横書きにするかで
+%違います．縦書きのときは何も迷わずに全角の\Z{読点}\yo{，}
+%と\Z{句点}\yo{．}を用います．
 
-���񤭤ΤȤ��϶�������\K{Ⱦ��}�Υ���ޤȥԥꥪ�ɤ�Ȥ��Τ��٥���
-���Ȼפ��ޤ������ξ��϶������θ�ˤ�Ⱦ�ѤΥ��ڡ���������Ƥ���������
-���񤭤����Ѥζ�������Ȥ��Ȥ���
+横書きのときは句読点は\K{半角}のコンマとピリオドを使うのがベスト
+だと思います．その場合は句読点の後には半角のスペースを入れてください．
+横書きで全角の句読点を使うときは
 \begin{OutText}
-�����Τ������Τդ��ˤ�``I wish I could.''�Ȥ���ʸ�礬�񤫤�Ƥ�����
+今日のお弁当のふたには``I wish I could.''という文句が書かれていた。
 \end{OutText}
-�Τ褦����Ĥ�ʸ��˰ۤʤ�����������ߤ�����ˤʤ�ޤ���
-�ʤ�٤������������줷���ۤ������������ɤ��Ǥ��礦��
-��������
+のように二つの文書に異なる句読点が混在する事になります．
+なるべく句読点は統一したほうが気持ちが良いでしょう．
+ただし，
 \begin{OutText}
-�����Τ������Τդ��ˤϡ�I wish I could���פȤ���ʸ�礬�񤫤�Ƥ�����
+今日のお弁当のふたには「I wish I could。」という文句が書かれていた。
 \end{OutText}
-�ʤɤȤ���ΤϤȤäƤⵤ���������ΤǤ�᤿�ۤ���̵��Ǥ���
-���񤭤ΤȤ���ʸ�Ϥ����Ƥ����̤��ƶ���������Ƥ���������
+などとするのはとっても気持ち悪いのでやめたほうが無難です．
+横書きのときは文章の内容と相談して句読点を決めてください．
 
-������������������������������Ǥ���
+句読点が少し気持ち悪く見える例です．
 \begin{InOut}
-�ϵ�ϡ��Ĥ��ä��� 10\,m���⤫�ä���
+地球は，青かった． 10\,m，高かった．
 \end{InOut}
 
-�ɤΤ褦�ˤ���Τ��ɤ����Ϥ���ʬ��Ƚ�Ǥ��Ƥ�����������ɤ��ΤǤ�����
-�ܽ�Ǥ����θ����Ф��Ƥ����ޤ����ޤ��ϲ�ʸ�����ξ���ͤ�
-�ޤ�����ʸ�Τߤ�ʸ��Ǥϰʲ��ε�§�˽����������ɤ��Ǥ��礦��
+どのようにするのが良いかはご自分で判断していただければ良いのですが，
+本書でも一応の見解を出しておきます．まずは欧文だけの場合を考え
+ます．欧文のみの文書では以下の規則に従うだけで良いでしょう．
 \begin{itemize}
- \item ��������Ⱦ�ѤΥ����\yo{\str,}�ȥԥꥪ��\yo{\str.}��Ȥ���
- \item ñ���\Z{����}�ϥ��󥰥륯������\yo{\str{`'}}��
-   ��ʸ�ΰ��Ѥϥ��֥륯������\yo{\str{`{}`{}'{}'}}��Ȥ���
+ \item 句読点は半角のコンマ\yo{\str,}とピリオド\yo{\str.}を使う．
+ \item 単語の\Z{引用}はシングルクオート\yo{\str{`'}}，
+   一文の引用はダブルクオート\yo{\str{`{}`{}'{}'}}を使う．
 \end{itemize}
-��ʸ�Τߤξ���
+和文のみの場合は
 \begin{itemize}
- \item ������������\qu{��}�ȶ���\qu{��}��Ȥ���
- \item ñ��ΰ��Ѥ�\Z{�������}\qu{�֡�}��
-   ʸ�ΰ��Ѥ�\Z{���֥륯������}\qu{�ء�}��Ȥ���
+ \item 句読点は読点\qu{，}と句点\qu{．}を使う．
+ \item 単語の引用は\Z{かぎ括弧}\qu{「」}，
+   文の引用は\Z{ダブルクオート}\qu{『』}を使う．
 \end{itemize}
-�Ȥʤ�Ǥ��礦���Ǥ�����ʸ�Ȳ�ʸ�����ߤ���ʸ��ǤϤɤΤ褦
-�˼���᤿���ɤ��ΤǤ��礦��������ʤ�Фޤ��������ΤĤ�
-������Ѥλ������Ĥ�ʸ���������줹��Τ���§�Ǥ������Τ���
-��ʸ�Ȳ�ʸ�����ߤ�����ϲ�ʸ�ε�§�˽����Ȥ������Ǥ���
+となるでしょう．ですが和文と欧文が混在する文書ではどのよう
+に取り決めたら良いのでしょうか．本来ならばまず句読点のつけ
+方も引用の仕方も一つの文書の中で統一するのが規則です．そのため
+和文と欧文が混在する場合は欧文の規則に従うという事です．
 %
-�Ǥ���������������̤����꤬�ФƤ��ޤ������ܸ����Ǥ�
-\yo{��������1ʸ��ʬ�����������Ƥ�}�Ȥ�����§��ȿ��
-���������ޤ�������ˤ����ѤΥ����\yo{��}�ȥԥꥪ��
-\yo{��}��Ȥ��褦�ˤ���Ȳ����Ǥ��ޤ���
-%�������̯�ʤȤ����ʤΤǡ��ä˻��꤬�ʤ����
-%��Ĳ�λפ��ǲ�ʸ�ε�§�˽����Τ�̵��Ǥ���
+ですが，そうすると別の問題が出てきます．日本語組版で
+\yo{句読点は1文字分の幅を割り当てる}という規則に反す
+る事があります．これには全角のコンマ\yo{，}とピリオド
+\yo{．}を使うようにすると我慢できます．
+%これは微妙なところなので，特に指定がなければ
+%断腸の思いで欧文の規則に従うのが無難です．
 
 
 
-\section{����}
-%\Z{����}�Ȥ�ʸ�Ϥ���ǽФƤ������դ��٤������������뤿���
-%�դ����ΤǤ���������ɼԤ��ɤޤʤ��Ƥ��ɤ�����ʸ�Ȥϴط��Τʤ������
-%��������˻Ȥ��ޤ���{\LaTeX}�Ǥ�2������������ϤǤ��ޤ���
-%��Ĥϥڡ��������˽��Ϥ���\KY{����}\pp{\Cmd{footnote}}��
-%�⤦��Ĥ������β��˽��Ϥ���\KY{˵��}%
-%\marginpar{���Τ褦��\K{˵��}�����Ϥ���ޤ�}
-%\pp{\Cmd{marginpar}}�Ǥ���
-%���̤β�ü��ɽ�����������ˤ� \Cmd{footnote} ̿���Ȥ��ޤ���
+\section{注釈}
+%\Z{注釈}とは文章の中で出てきた注意すべき語句を説明するために
+%付けるものです．注釈は読者が読まなくても良い，本文とは関係のない情報を
+%示すために使われます．{\LaTeX}では2種類の注釈を出力できます．
+%一つはページ下部に出力する\KY{脚注}\pp{\Cmd{footnote}}，
+%もう一つは注釈語の横に出力する\KY{傍注}%
+%\marginpar{このように\K{傍注}が出力されます}
+%\pp{\Cmd{marginpar}}です．
+%紙面の下端に表示される脚注には \Cmd{footnote} 命令を使います．
 %\begin{Syntax}
-%�����\cmd{footnote}\pa{��������}
+%注釈語\cmd{footnote}\pa{注釈内容}
 %\end{Syntax}
-%����̿�����Ѥ����{\LaTeX}�����ǻ��˼�ưŪ�� \Cmd{footnote} ���̤��ֹ�
-%���դ��ޤ�\footnote{���Τ褦�����᤬ʸ�Ϥ��Ǥβ�ü�˽��Ϥ���ޤ�}��
-%�����ν��Ϥϻ��Ѥ��Ƥ��륯�饹�ե�����ˤ�äư㤦�Τǳ�ǧ���Ƥߤ��
-%�ɤ��Ǥ��礦��
+%この命令を使用すると{\LaTeX}は組版時に自動的に \Cmd{footnote} で通し番号
+%を付けます\footnote{このように注釈が文章の頁の下端に出力されます}．
+%脚注の出力は使用しているクラスファイルによって違うので確認してみると
+%良いでしょう．
 %\begin{InOut}
-%��ץ饹�Ѵ���ա��ꥨ�Ѵ�\footnote{Fourier 
-%Translation}���̾������Ϥ���ؤʤ��ɬ����
-%...�Ȼפ��롥
+%ラプラス変換やフーリエ変換\footnote{Fourier 
+%Translation}は通常理工系の大学ならば必修で
+%...と思われる．
 %\end{InOut}
 
-\zindind{����}{�����}%
-\Z{����} (\Z{note}) �Ȥ�ʸ�Ϥ���ǽФƤ������դ��٤�����
-�������뤿����դ����ΤǤ���������ɼԤ��ɤޤʤ��Ƥ��ɤ���
-��ʸ�Ȥϴط��Τʤ�����򼨤�����˻Ȥ��ޤ���{\LaTeX}�Ǥ�
-2������������ϤǤ��ޤ���
-\zindind{����}{�ΰ���}%
-��Ĥϥڡ��������˽��Ϥ���\KY{����}\pp{\Cmd{footnote}}��
-�⤦��Ĥ������β��˽��Ϥ���\KY{˵��}%
-%\marginpar{���Τ褦��\K{˵��}�����Ϥ���ޤ�}
-\pp{\Cmd{marginpar}}�Ǥ���
-���̤β�ü��ɽ�����������ˤ� \Cmd{footnote} ̿���Ȥ��ޤ���
+\zindind{注釈}{の役割}%
+\Z{注釈} (\Z{note}) とは文章の中で出てきた注意すべき語句を
+説明するために付けるものです．注釈は読者が読まなくても良い，
+本文とは関係のない情報を示すために使われます．{\LaTeX}では
+2種類の注釈を出力できます．
+\zindind{注釈}{の位置}%
+一つはページ下部に出力する\KY{脚注}\pp{\Cmd{footnote}}，
+もう一つは注釈語の横に出力する\KY{傍注}%
+%\marginpar{このように\K{傍注}が出力されます}
+\pp{\Cmd{marginpar}}です．
+紙面の下端に表示される脚注には \Cmd{footnote} 命令を使います．
 \begin{Syntax}
-�����\cmd{footnote}\pa{��������}
-%�����\cmd{marginpar}\pa{��������}
+注釈語\cmd{footnote}\pa{注釈内容}
+%注釈語\cmd{marginpar}\pa{注釈内容}
 \end{Syntax}
-��ݡ��ȡ���ʸ�ξ�硤\K{˵����Ȥ鷺�˵����Τߤ�Ȥ��褦�ˤ��Ƥ�����
-��}��
+レポート・論文の場合，\K{傍注を使わずに脚注のみを使うようにしてくださ
+い}．
 
-����̿�����Ѥ����{\LaTeX}�����ǻ��˼�ưŪ�� \Cmd{footnote} ���̤��ֹ�
-���դ��ޤ�\footnote{���Τ褦�����᤬ʸ�Ϥ��Ǥβ�ü�˽��Ϥ���ޤ���}��
-�����ν��Ϥϻ��Ѥ��Ƥ��륯�饹�ե�����ˤ�äư㤦�Τǳ�ǧ���Ƥߤ��
-�ɤ��Ǥ��礦��
+この命令を使用すると{\LaTeX}は組版時に自動的に \Cmd{footnote} で通し番号
+を付けます\footnote{このように注釈が文章の頁の下端に出力されます．}．
+脚注の出力は使用しているクラスファイルによって違うので確認してみると
+良いでしょう．
 \begin{InOut}
-��ץ饹�Ѵ���ա��ꥨ�Ѵ�\footnote
-{Fourier Translation}���̾������Ϥ�
-��ؤʤ��ɬ����\ldots �Ȼפ��롥
+ラプラス変換やフーリエ変換\footnote
+{Fourier Translation}は通常理工系の
+大学ならば必修で\ldots と思われる．
 \end{InOut}
 
 
 
 
-\section{ʸ���ζ�Ĵ}
-\zindind{����}{�ΰ�̣}
+\section{文字の強調}
+\zindind{下線}{の意味}
 
-�ӥ��ͥ�ʸ�����ǤϽ��פ�ʸ��\Z{����} (\Z{underline}) �������
-\Z{��Ĵ} (\Z{emphasis}) ��ɽ���Ƥ����Τ�����ޤ���
-��ʸ����Ҥξ���\K{��ʸ�򥤥���å���}��\K{��ʸ�ϥ����å���}�ˤ��ޤ���
-\indindz{��Ĵ}{��ʸ��}\indindz{��Ĵ}{ʸ�����}%
-{\LaTeX}�Ǥ�ʸ����ζ�Ĵ�Τ���� \C{emph} ̿�᤬�Ȥ��ޤ���
-%�⤷����������Ѥ��Ƥ���
-%���饹�ե�����ˤ�äƤ���ʸ�������å��Τˤʤ�
-%�ʤ����⤷��ޤ���
+ビジネス文書等では重要な文に\Z{下線} (\Z{underline}) を引いて
+\Z{強調} (\Z{emphasis}) を表しているものがあります．
+論文や書籍の場合は\K{欧文をイタリック体}，\K{和文はゴシック体}にします．
+\indindz{強調}{和文の}\indindz{強調}{文字列の}%
+{\LaTeX}では文字列の強調のために \C{emph} 命令が使えます．
+%もしかしたら使用している
+%クラスファイルによっては和文がゴシック体になら
+%ないかもしれません．
 \begin{InOut}
-��ʸ�ζ�Ĵ�ˤ�\emph{English 
-Emphasize}�Ȥ��ơ���ʸ�ζ�Ĵ��
-\emph{ʸ����ζ�Ĵ}�Τ褦�ˤ��ޤ���
+欧文の強調には\emph{English 
+Emphasize}として，和文の強調は
+\emph{文字列の強調}のようにします．
 \end{InOut}
 
-%�Ƕ�Υ�ץ�ʸ��ǤϽ��פ�ʸ�����\Z{����}�������
-%\Z{��Ĵ}��ɽ�����Ƥ���褦�Ǥ�����ʸ����ҤǤ�
-%\K{��ʸ}��\K{������å���}��\K{��ʸ}�ξ���
-%\K{�����å���}�ˤ���ۤ����ɤ��Ȼפ��ޤ���
-%\indindz{��Ĵ}{��ʸ��}\indindz{��Ĵ}{ʸ�����}%
-%{\LaTeX}�Ǥ�ʸ����ζ�Ĵ�Τ���� \cmd{emph} 
-%���Ȥ��ޤ����⤷����������Ѥ��Ƥ���
-%���饹�ե�����ˤ�äƤ���ʸ�������å��Τˤʤ�
-%�ʤ����⤷��ޤ���
+%最近のワープロ文書では重要な文字列に\Z{下線}を引いて
+%\Z{強調}を表現しているようです．論文や書籍では
+%\K{欧文}を\K{イタリック体}，\K{和文}の場合は
+%\K{ゴシック体}にするほうが良いと思われます．
+%\indindz{強調}{和文の}\indindz{強調}{文字列の}%
+%{\LaTeX}では文字列の強調のために \cmd{emph} 
+%が使えます．もしかしたら使用している
+%クラスファイルによっては和文がゴシック体になら
+%ないかもしれません．
 %\begin{InOut}
-%��ʸ�ζ�Ĵ�ˤ�\emph{English Emphasize}�Ȥ��ơ�
-%��ʸ�ζ�Ĵ��\emph{ʸ����ζ�Ĵ}�Τ褦�ˤ��ޤ���
+%欧文の強調には\emph{English Emphasize}として，
+%和文の強調は\emph{文字列の強調}のようにします．
 %\end{InOut}
 
-���ˤ�äƤ� \Cmd{em} ���ޥ�ɤ��Ȥ��ޤ��������
-\KY{��������ޥ��}\pp{\secref{ml:command}}��
-�ƤФ���Τǡ����ϰϤ�������Ĵ�˻Ȥ������Ǥ��ޤ���
-���������Υ��ޥ�ɤ�Ȥ��ʤ��\KY{������å�����}��
-���������礬����ޤ���������å������Ȥϥ�����å��Τ�
-ʸ����ľ��˥����ޥ��Τʤɤ��̤Υե���Ȥ��褿����
-�������٤�����λ��Ǥ���{\LaTeX}���Ѱդ��Ƥ��� \Cmd{emph} 
-�� \Cmd{textit}�ʤɤϤ��Υ�����å�����
-��Ŭ�ڤ����������褦�ˤʤäƤ��ޤ���������ζ�
-Ĵ���ޥ�� \Cmd{em}��Ȥ�����%
+場合によっては \Cmd{em} コマンドが使えます．これは
+\KY{宣言型コマンド}\pp{\secref{ml:command}}と
+呼ばれるもので，広範囲な論理強調に使う事ができます．
+ただしこのコマンドを使うならば\KY{イタリック補正}を
+挿入する場合があります．イタリック補正とはイタリック体の
+文字の直後にローマン体などの別のフォントが来た場合に
+挿入すべき空白の事です．{\LaTeX}が用意している \Cmd{emph} 
+や \Cmd{textit}などはこのイタリック補正
+が適切に挿入されるようになっています．宣言型の強
+調コマンド \Cmd{em}を使う場合は%
 \glossary{"/@\hspace*{-1.2ex}\verb+"\/+}%"
-��ʬ���������ޤ����� \cmd{/} ̿���Ȥ����ˤʤ�ޤ���%"
+自分で挿入しますから \cmd{/} 命令を使う事になります．%"
 \begin{InOut}
 \emph{Future University-Hakodate} 
 is interesting.\par 
@@ -1090,15 +1090,15 @@ is interesting.\par
 \end{InOut}
 
 
-\section{���Τޤ޽��ϤǤ��ʤ�����}
-{\LaTeX}�ǤϤ����Ĥ���Ⱦ�Ѥε����ľ�ܽ��Ϥ�������Ǥ��ޤ���
-�����\Z{ͽ��ʸ��}�ȸƤФ���Τǡ�\qu{\texttt\bs}�˻���
-̿��ΰ����ȻפäƤ������������ϤǤ��ʤ������
+\section{そのまま出力できない記号}
+{\LaTeX}ではいくつかの半角の記号を直接出力する事ができません．
+これは\Z{予約文字}と呼ばれるもので，\qu{\texttt\bs}に似た
+命令の一種だと思ってください．出力できない記号は
 \begin{quote}
  \verb+\ { } $ & # ^ _ ~ % < > |+
 \end{quote}
-��13�ĤǤ��ꡤ�����ε������Ϥ���ˤ�\secref{chui}
-�򻲾Ȥ��Ƥ���������
+の13個であり，それらの記号を出力するには\secref{chui}
+を参照してください．
 %%\glossary{?3@\hspace*{-1.2ex}\texttt{\protect\bs\#}\hskip1em(\#)}%\#
 %%\glossary{?4@\hspace*{-1.2ex}\texttt{\protect\bs\%}\hskip1em(\%)}%\%
 %%\glossary{?5@\hspace*{-1.2ex}\texttt{\protect\bs\$}\hskip1em(\$)}%\$
@@ -1107,7 +1107,7 @@ is interesting.\par
 %%\glossary{?8@\hspace*{-1.2ex}\texttt{\protect\bs\_}\hskip1em(\_)}%\_
 %\begin{table}[htpb]
 %\begin{center}
-%\caption{ľ�ܽ��ϤǤ��ʤ�Ⱦ�ѵ���}\tablab{tokusyumoji}
+%\caption{直接出力できない半角記号}\tablab{tokusyumoji}
 %\begin{tabular}{ll|ll|ll}
 %\{ & \verb|\{| & 
 %\& & \verb|\&| & 
@@ -1125,30 +1125,30 @@ is interesting.\par
 %\T{textless} & 
 %   & \\
 %\end{tabular}
-%\\ {\small*\Sty{okumacro}���ɤ߹��ߤޤ���}
+%\\ {\small*\Sty{okumacro}を読み込みます．}
 %\end{center}
 %\end{table}
 
-\subsection{�ü쵭��}
-\indindz{����}{�ü��}%
-%\KY{�̲�ʸ��}�ʤɤ���Ϥ��뤿���
-%\Z{�ü�ʸ��}���Ѱդ���Ƥ��ꡤ
-%��������Ϥ���ˤ�\tabref{tokusyukigou}��
-%̿����Ѥ��ޤ���ɽ��Υ������ꥹ��\qu{\str*}�դ��ε����\Sty{fontenc}
-%�ѥå�������\qu{\Option{T1}}�Ȥ������ץ�����դ���
-%�ɤ߹���Ƚ��ϤǤ��ޤ�������Ū�ˤϼ��Τ褦�ˤ��ޤ���
-\Z{��������ȵ���}�ʤɤ���Ϥ��뤿���\Z{�ü�ʸ��}���Ѱդ���Ƥ��ꡤ
-��������Ϥ���ˤ�\tabref{tokusyukigou}��
-̿����Ѥ��ޤ���ɽ��Υ������ꥹ��\qu{\str*}�դ��ε����\Sty{fontenc}
-�ѥå�������\qu{\Option{T1}}�Ȥ������ץ�����դ���
-�ɤ߹���Ƚ��ϤǤ��ޤ���%����Ū�ˤϼ��Τ褦�ˤ��ޤ���
+\subsection{特殊記号}
+\indindz{記号}{特殊な}%
+%\KY{北欧文字}などを出力するための
+%\Z{特殊文字}も用意されており，
+%それらを出力するには\tabref{tokusyukigou}の
+%命令を用います．表中のアスタリスク\qu{\str*}付きの記号は\Sty{fontenc}
+%パッケージを\qu{\Option{T1}}というオプション付きで
+%読み込むと出力できます．具体的には次のようにします．
+\Z{アクセント記号}などを出力するための\Z{特殊文字}も用意されており，
+それらを出力するには\tabref{tokusyukigou}の
+命令を用います．表中のアスタリスク\qu{\str*}付きの記号は\Sty{fontenc}
+パッケージを\qu{\Option{T1}}というオプション付きで
+読み込むと出力できます．%具体的には次のようにします．
 %\begin{InText}
 %\usepackage[T1]{fontenc}
 %\end{InText}
-\Z{���������}�����Ϥ���ˤ�\tabref{accent}��
-̿���Ȥ��ޤ���
-\qu{i}��\qu{j}�˥�������Ȥ��դ���ˤ�\tabref{tokusyukigou}���
-���Τʤ�\qu{\cmd{i}}��\qu{\cmd{j}}��Ȥ��ޤ���
+\Z{アクセント}類を出力するには\tabref{accent}の
+命令を使います．
+\qu{i}と\qu{j}にアクセントを付けるには\tabref{tokusyukigou}中の
+点のない\qu{\cmd{i}}と\qu{\cmd{j}}を使います．
 %
 %\begin{InTeX}
 %\usepackage[T1]{fontenc}
@@ -1156,22 +1156,22 @@ is interesting.\par
 
 \begin{table}[htbp]
 \begin{scenter}
-%\index{����餯������@�����\hskip1em(\P)}\indindz{����}{����}%
-%\index{���Ĥ�����@�ᵭ��\hskip1em(\S)}\indindz{����}{��}%
-\index{������}\index{û����}%
-\index{���֥������}\index{���û����}%
-\index{���������}\index{��ɸ}%
-\index{�ѥ饰���}\index{��ɸ}%
-\index{�ݥ��}%
-\index{���!OE��\zdash}%
-\index{���!AE��\zdash}%
-%\index{���A}%
-\index{����å����դ�O}%
-\index{����L}%
-\index{���㡼��S}%
+%\index{たんらくきこう@段落記号\hskip1em(\P)}\indindz{記号}{段落}%
+%\index{せつきこう@節記号\hskip1em(\S)}\indindz{記号}{節}%
+\index{ダガー}\index{短剣符}%
+\index{ダブルダガー}\index{二重短剣符}%
+\index{セクション}\index{章標}%
+\index{パラグラフ}\index{段標}%
+\index{ポンド}%
+\index{合字!OEの\zdash}%
+\index{合字!AEの\zdash}%
+%\index{リングA}%
+\index{スラッシュ付きO}%
+\index{伏字L}%
+\index{シャープS}%
 %
-\caption{�ü쵭��}\tablab{tokusyukigou}\indindz{����}{�ü��}%
-\zindind{��}{�Τʤ�i}\zindind{��}{�Τʤ�j}%
+\caption{特殊記号}\tablab{tokusyukigou}\indindz{記号}{特殊な}%
+\zindind{点}{のないi}\zindind{点}{のないj}%
 %\ifusehtml\Picture+[]{}\fi
 %\begin{multicols}{5}
 %\parindent=0pt
@@ -1215,13 +1215,13 @@ is interesting.\par
 %\ifusehtml\EndPicture\fi
 \end{scenter}
 \end{table}
-%\Z{���������}�����Ϥ���ˤ�\tabref{accent}��
-%̿���Ȥ��ޤ���
+%\Z{アクセント}類を出力するには\tabref{accent}の
+%命令を使います．
 \begin{table}[htbp]
 \begin{scenter}%
-%\indindz{����}{���������}\index{��������ȵ���}%
-%\indindz{���������}{ʸ���}%
-%\caption{��������ȵ���}\tablab{accent}
+%\indindz{記号}{アクセント}\index{アクセント記号}%
+%\indindz{アクセント}{文中の}%
+%\caption{アクセント記号}\tablab{accent}
 %%\ifusehtml\Picture+[]{}\fi
 %\glossary{""@\hspace*{-1.2ex}\verb+\""+\hskip1em(\""u)}%"
 %\glossary{"~@\hspace*{-1.2ex}\verb+\~+\hskip1em(\~n)}%"
@@ -1232,28 +1232,28 @@ is interesting.\par
 %\B{.}{a} & \^o&\verb|\^{o}| & \B{c}{o} & \B{u}{\i} & \B{t}{oo}&& \\
 %\end{tabular}
 %\ifusehtml\EndPicture\fi%}
-\indindz{����}{���������}\index{��������ȵ���}%
-\indindz{���������}{ʸ���}%
-\caption{��������ȵ���}\label{tab:accent}
+\indindz{記号}{アクセント}\index{アクセント記号}%
+\indindz{アクセント}{文中の}%
+\caption{アクセント記号}\label{tab:accent}
 \glossary{""@\hspace*{-1.2ex}\verb+\""+\hskip1em(\""u)}%"
 \glossary{"~@\hspace*{-1.2ex}\verb+\~+\hskip1em(\~n)}%"
 \glossary{"^@\hspace*{-1.2ex}\verb+\^+\hskip1em(\^o)}%"
-\index{�ǥ����쥷��}\index{ʬ����}%\"
-\index{�����塼��}\index{�Ȳ���}%\'
-\index{����}%       \index{����}%\.
-\index{Ĺ����}\index{����}%\=
-\index{�����}\index{��������}\index{�Ȳ���}%\~
-\index{��������ե�å���}\index{���Ȳ���}%\^
-\index{���졼��}\index{�Ȳ���}% \`
-\zindind{����}{���������}%\index{}% \b
-\index{�������������}%\index{}% \d
-\index{���ǥ���}\index{�÷���}%%���������� \c
-\index{û����}\index{���硼��}%\u
-\index{�ϥ����å�}\index{������}%\v
-\zindind{����}{�ϥ󥬥ꥢ��}\index{����饦��}\index{ʬ����}%\H
-\index{����}\index{����}%\t
-\index{���}%     \index{����}%\r
-\index{�����ͥ�}%   \index{����}%\k
+\index{ディエレシス}\index{分音符}%\"
+\index{アキュート}\index{揚音符}%\'
+\index{符点}%       \index{不明}%\.
+\index{長音符}\index{ロング}%\=
+\index{チルダ}\index{ウェーブ}\index{波音符}%\~
+\index{サーカムフレックス}\index{抑揚音符}%\^
+\index{グレーブ}\index{揚音符}% \`
+\zindind{下線}{アクセント}%\index{}% \b
+\index{下点アクセント}%\index{}% \d
+\index{セディラ}\index{鈎形符}%%こうけいふ \c
+\index{短音符}\index{ショート}%\u
+\index{ハチェック}\index{くさび}%\v
+\zindind{ロング}{ハンガリアン}\index{ウムラウト}\index{分音符}%\H
+\index{合線}\index{タイ}%\t
+\index{リング}%     \index{不明}%\r
+\index{オゴネク}%   \index{不明}%\k
 \begin{tabular}{LCCCCC}
 \"u&\verb|\"u| & \B{=}{a} & \B{`}{a} & \B{d}{a} & \B{v}{a} & \B{r}{o}\\%"
 \B{'}{e} & \B{H}{a} & \B{b}{a} & \B{k}{o} & \~n&\verb|\~{n}|&& \\
@@ -1262,207 +1262,207 @@ is interesting.\par
 \end{scenter}
 \end{table}
 
-%\qu{i}��\qu{j}��\tabref{tokusyukigou}���\qu{\cmd{i}}��
-%\qu{\cmd{j}}��Ȥ��ޤ���
+%\qu{i}や\qu{j}は\tabref{tokusyukigou}中の\qu{\cmd{i}}と
+%\qu{\cmd{j}}を使います．
 
 \begin{InOut}
 J\"org {mu\ss} ein Gel\"ande f\"ur
    seine Fabrik erwerben.
 \end{InOut}
 %Ich {mu\ss} gehen Gel\"ande in k\"uhl.
-%�����������꤬�Ȥ��������ޤ���
-%����Ƽ�/ ��������
-%�������/ 2004/04/04(Sun) 13:32:25
+%永田先生ありがとうございます．
+%□投稿者/ 永田善久
+%□投稿日/ 2004/04/04(Sun) 13:32:25
 %> ``Ich {mu\ss} gehen Gel\"ande in k\"uhl. ''
-%> �Ȥ���1ʸ��ʸˡŪ�˴ְ㤤�Ǥ��礦���������Ѹ줷���������μ���
-%> ����ޤ���Τǡ����ä�ɽ���򤷤Ƥ����ǽ��������ޤ���
-%��ǰ�ʤ����̣�����Ǥ� (^^; ʸˡŪ�ˤ����äȥإ�Ǥ���
+%> という1文は文法的に間違いでしょうか。当方英語しか外国語の知識が
+%> ありませんので、誤った表現をしている可能性があります。
+%残念ながら意味不明です (^^; 文法的にもちょっとヘンです。
 %# Ich {mu\ss} in einem k\"uhlen Gel\"ande gehen.
-%# ��Ϥ����鴨�����Ϥ����Ԥ��ʤ��ƤϤʤ�ʤ���
-%# �ȤǤ⤹���ʸˡŪ�ˤ��������ʤꡤ�����̣���̤�褦�ˤʤ�Ȼפ��ޤ���
-%����ˡ��ɥ��ĸ��ü�ʸ�������ƴޤ�褦����ʸ�Ȥ��Ƥϡ����Τ褦��
-%��Τ��ͤ����ޤ���
+%# 私はうすら寒い土地の中を行かなくてはならない。
+%# とでもすれば文法的には正しくなり，一応意味も通るようになると思います。
+%代わりに，ドイツ語特殊文字を全て含むような例文としては，次のような
+%ものが考えられます。
 %J\"org {mu\ss} ein Gel\"ande f\"ur seine Fabrik erwerben.
-%�����륯����̾�ˤϼ��ҹ���Τ�������ϡ����ϡˤ����ꤻ�ͤФʤ�ʤ���
+%イェルク（男名）は自社工場のための土地（敷地）を入手せねばならない。
 %"
 
 \begin{comment}
 
-\subsection{���ܤ��̲ߵ���}\indindz{����}{��}
-\Z{�ߵ���}\qu{\texttt{\yen}}��ɸ��ǤϽ��Ϥ������
-�Ǥ��ޤ��󡥲��餫�Υѥå��������ɤ߹��ߤޤ���
-\Sty{okumacro}��\Sty{ascmac}��
-\Sty{textcomp}�ʤɤδ�¸�Υޥ����ǤϤ����Ƥ� \cmd{yen} 
-�� \cmd{textyen}�ʤɤ�̿����������Ƥ��ޤ������⤽��ʤ�
-�ߵ��椬{\LaTeX}�ǤϽ��ϤǤ��ʤ��Τ��򤳤��ǤϤä����
-�����Ƥ����ޤ��礦��
+\subsection{日本の通貨記号}\indindz{記号}{円}
+\Z{円記号}\qu{\texttt{\yen}}を標準では出力する事が
+できません．何らかのパッケージを読み込みます．
+\Sty{okumacro}や\Sty{ascmac}，
+\Sty{textcomp}などの既存のマクロではたいてい \cmd{yen} 
+か \cmd{textyen}などの命令で定義されています．そもそもなぜ
+円記号が{\LaTeX}では出力できないのかをここではっきりと
+させておきましょう．
 
-Windows�桼����{\LaTeX}��Ȥ��Ϥ᤿�ͤ��ޤ�����˻פ�
-���ΰ�Ĥ˱ߵ��椬����ޤ������ʼ�ʬ�λȤäƤ��륨��
-���å����ɥץ����å��Ǥϱߵ��������ʤ����Ϥ���
-�Ƥ���Τˡ�{\LaTeX}�ǥ����ץ��åȤ���Ȥʤ���
-\yo{�Хå�����å���}�Ȥ����뵭����֤�����äƤ��ޤ��ޤ���
-\yo{���줬�ߵ���������λѤʤ����}�Ȥ䤵���������Ƥ����Ƥ⡤
-�ܿͤδ���Τۤ���ͥ�褵���Τ�Ǽ�����Ƥ���ޤ���
-\indindz{������}{ASCII}
-���ä����Τ��äʤΤǤ���ASCII�����ɤ�������ΰ�ˤ�
-���줾��ι��ȼ��ε���������ƤƤ��ɤ��Ȥ���ή�줬
-���ä��Τǡ����ܤ�\qu{\str{0x80}}�ʹߤΥ����ɤ�Ⱦ�ѥ�������
-�ʤɤ������Ƥ��ꡤ\qu{\str{0x7E}}��\K{�Хå�����å���}��\K{�ߵ���}��
-������Ƥޤ����������ܡ��ɤ˱ߵ��椬���뤱��ɼºݤ�
-���Ϥ���{\LaTeX}�ǽ��Ϥ���ȥХå�����å���ˤʤ�Ȥ���
-���꤬�����Ƥ��ޤ�����������ȱߵ��椬�ǤƤʤ��Ȥ���
-����ˤʤ�櫓�Ǥ���Ⱦ�ѥ������ʤ�������Ƥ��Ƥ���ڵ��
-���뤿��ˤ�Unix��OS������\Prog{ascii}�Ȥ����ץ�������
-���󥽡��뤫��
+Windowsユーザで{\LaTeX}を使い始めた人がまず疑問に思う
+事の一つに円記号があります．普段自分の使っているエデ
+ィッタやワードプロセッサでは円記号は問題なく出力され
+ているのに，{\LaTeX}でタイプセットするとなぜか
+\yo{バックスラッシュ}といわれる記号に置き換わってしまいます．
+\yo{これが円記号の本当の姿なんだよ}とやさしく教えてあげても，
+本人の慣れのほうが優先されるのか納得してくれません．
+\indindz{コード}{ASCII}
+けっこう昔の話なのですがASCIIコードの特定の領域には
+それぞれの国が独自の記号を割り当てても良いという流れが
+あったので，日本は\qu{\str{0x80}}以降のコードに半角カタカナ
+などを割り当てたり，\qu{\str{0x7E}}の\K{バックスラッシュ}を\K{円記号}に
+割り当てました．キーボードに円記号があるけれど実際に
+入力して{\LaTeX}で出力するとバックスラッシュになるという
+問題が起きています．そうすると円記号が打てないという
+問題になるわけです．半角カタカナが割り当てられている証拠を
+見るためにはUnix系OSの方は\Prog{ascii}というプログラムを
+コンソールから
 \begin{InTerm}
   \type{ascii}
 \end{InTerm}
-�Ȥ����8�ӥå�����ΰ�˲��ε��椬������Ƥ��Ƥ���Τ���
-ʬ����ޤ���{\LaTeX}�Ǥ⤳�������Ǻ�ޤ���Ƥ��ꡤ�����ܡ��ɤ���
-�ߵ���\qu{\texttt{\yen}}�����Ϥ��Ƥ�פ��ä���Хå�����å���
-\qu{\texttt\bs}�����Ϥ���ޤ���
+とすると8ビット中の領域に何の記号が割り当てられているのかが
+分かります．{\LaTeX}でもこの問題に悩まされており，キーボードから
+円記号\qu{\texttt{\yen}}を入力しても思いっきりバックスラッシュ
+\qu{\texttt\bs}が出力されます．
 \begin{quote}
-\yo{����ޤ������Ѥ衪�Ҷ����������äƱߤ���Хå�����å����
-�ʤä���ä����}
+\yo{あらまぁ，大変よ！子供がぐれちゃって円からバックスラッシュに
+なっちゃったわ！！}
 \end{quote}
-�Ȥ��ä����ǡ��Ҷ������ɹ԰٤ˤʤ�Ƥ��ʤ��ƤΤ褦��
-����𤷤Ƥ��ޤ��ͤ�³�Ф��Ƥ��ޤ��ޤ������Τ褦�ʻҶ���
+といった具合で，子供の不良行為になれていない親のように
+取り乱してしまう人も続出してしまいます．そのような子供は
 \begin{quote}
-\yo{����Unix�Ȥ������鵤�ˤʤ�ͤ��䡥}
+\yo{俺はUnix使いだから気にならねぇや．}
 \end{quote}
-�ȸ����ΤǤ���������{\LaTeX}�ǥ����ץ��åȤ��Ƥ����
+と言うのですが，いざ{\LaTeX}でタイプセットしていると
 \begin{quote}
-\yo{�ʤ�����Υ���å���Τؤ�Ƥ����ʤ�Ĥϡ�
-����ʤ󤸤����ϼ������󡪽�ľ�����褤����}
+\yo{なんだこのスラッシュのへんてこりんなやつは，
+こんなんじゃ書類は受け取らん！出直して来い！！}
 \end{quote}
-�������Թ�ǥХå�����å���ǤϤɤ��ˤ�ʤ�ʤ��Ȥ�����
-���Ф��Ф���ޤ���
+と相手の都合でバックスラッシュではどうにもならないときが，
+しばしばあります．
 
-���Τ���¿����������{\LaTeX}�Ǳߵ������Ϥ�����ˡ
-���Ϻ����Ƥ����ޤ����������Ĥ���ˡ������ΤǤ���
-��ñ����Ȥ��Ƽ��Τ褦��������ޤ���
+そのため多くの方々が{\LaTeX}で円記号を出力する方法
+を模索しておられました．いくつも方法があるのですが
+簡単な例として次のように定義します．
 
 \begin{InTeX}
 \newcommand{\yen}{Y\llap=}
 \end{InTeX}
 
-������ˡ�Ǥ�\qu{Y\llap=}�Τ褦�ʽ��Ϥˤʤ�ޤ�����������
-������ˡ���Ȥ����Ȥ�������ޤ��Τ�
+この方法では\qu{Y\llap=}のような出力になります．ただし，
+この方法だとずれるときがありますので
 
 \begin{InTeX}
 \newcommand{\yen}{\ooalign{Y\crcr\hss=\hss}}
 \end{InTeX}
 
-�Ȥ�������ͤ����ޤ����ʾ����Ĥ��㤫���ʬ�����̤�
-Ⱦ�ѱѻ���\qu{Y}�ȿ��ؤΥ�������\qu{=}����Ĥ�Ť͹�碌��
-�ʤ�Ȥʤ��ߵ�����äƤ��ޤ������Τ������äȥ��������
-�ۤ������˹Ԥ��᤮�Ƥ���Τǡ����������˰�ư���ޤ���
+という事も考えられます．以上の二つの例からも分かる通り
+半角英字の\qu{Y}と数学のイコール\qu{=}の二つを重ね合わせて
+なんとなく円記号を作っています．そのためちょっとイコールの
+ほうが下に行き過ぎているので，少しうえに移動します．
 
 \begin{InTeX}
 \newcommand{\yen}{\ooalign{Y\crcr\raise.1ex\hbox{\hss=\hss}}}
 \end{InTeX}
 
-�ʾ�Τ褦�ʶ�ϫ�򤷤ʤ��Ȥ�\Sty{textcomp}��\Sty{fontenc}
-��Ȥ���⤢��ޤ���
+以上のような苦労をしなくとも\Sty{textcomp}と\Sty{fontenc}
+を使う手もあります．
 
 \begin{InTeX}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \end{InTeX}
 
-\indindz{�ե����}{�ӥåȥޥå�}%
-�Ȥ�������Ǥϥӥåȥޥåץե���Ȥ������ޤ�뤫�⤷���
-����ΤǤ����ߤ�
+\indindz{フォント}{ビットマップ}%
+という設定ではビットマップフォントが埋め込まれるかもしれま
+せんのでお好みで
 
 \begin{InTeX}
-\usepackage{txfonts}% mathpazo, pxfonts�ʤɤǤ��ɤ�
+\usepackage{txfonts}% mathpazo, pxfontsなどでも良い
 \end{InTeX}
 
-��1�Ԥ��ɲä��Ƥ����������\qu{\cmd{textyen}}�ȻȤ���
-�ɤ��Ǥ��礦��
+の1行を追加しておき原稿中で\qu{\cmd{textyen}}と使うと
+良いでしょう．
 
 \end{comment} 
 
-\section{������Ǥζ���ΰ���}\zindind{����}{��ζ���}%
-%{\LaTeX}�Ǥ�Ⱦ�ѥ��ڡ����ȥ��֤�
-%�ɤ���⥹�ڡ����Ȥ��ư����ޤ�����İʾ��
-%���ڡ������¤�Ǥ���Ȥ��ϰ�ĤΥ��ڡ����Ȥ��ư����ޤ���%
-%\index{����!LaTeX�Ƥ�@{\LaTeX}�Ǥ�\zdash}%
+\section{原稿中での空白の扱い}\zindind{原稿}{中の空白}%
+%{\LaTeX}では半角スペースとタブは
+%どちらもスペースとして扱われます．二つ以上の
+%スペースが並んでいるときは一つのスペースとして扱われます．%
+%\index{改行!LaTeXての@{\LaTeX}での\zdash}%
 %\index{" @\verb*+ +}%"
-%�ޤ�����Ĥ�����\Z{����}�⥹�ڡ����Ȥ��ư����ޤ���
-%���Ԥ����Ϣ³���Ƥ���Ȥ��������ζ��ڤ��Ƚ�Ǥ��ޤ���
+%また，一つだけの\Z{改行}もスペースとして扱われます．
+%改行が二つ連続しているとそれを段落の区切りと判断します．
 %\begin{InOut}
-%Ⱦ�Ѥζ��� �Ϥ��Τ褦��  ��  �İʾ�
-%���äƤ�    ��ĤȤߤʤ���ޤ���
+%半角の空白 はこのように  ２  つ以上
+%あっても    一つとみなされます．
 %\end{InOut}
 
-\zindind{����}{��ζ���}%
-\indindz{����}{�������}%
-{\LaTeX}�Ǥ�Ⱦ�ѥ��ڡ����ȥ��֤�
-�ɤ���⥹�ڡ��� (\Z{white space}) �Ȥ��ư����ޤ�����İʾ��
-���ڡ������¤�Ǥ���Ȥ��ϰ�ĤΥ��ڡ����Ȥ��ư����ޤ���%
-\index{����!LaTeX�Ƥ�@{\LaTeX}�Ǥ�\zdash}%
+\zindind{原稿}{中の空白}%
+\indindz{空白}{原稿中の}%
+{\LaTeX}では半角スペースとタブは
+どちらもスペース (\Z{white space}) として扱われます．二つ以上の
+スペースが並んでいるときは一つのスペースとして扱われます．%
+\index{改行!LaTeXての@{\LaTeX}での\zdash}%
 \index{" @\verb*+ +}%"
-�ޤ�����Ĥ�����{����}�⥹�ڡ����Ȥ��ư����ޤ���
-\indindz{����}{Ϣ³����}%"#$%&"@
-���Ԥ����Ϣ³���Ƥ����\Z{����}��¸�ߤ���ˤȤ��������ζ��ڤ��Ƚ�Ǥ�
-�ޤ���
+また，一つだけの{改行}もスペースとして扱われます．
+\indindz{改行}{連続した}%"#$%&"@
+改行が二つ連続している（\Z{空行}が存在する）とそれを段落の区切りと判断し
+ます．
 
 
 \begin{InOut}
-Ⱦ�Ѥζ��� �Ϥ��Τ褦��  ��  �İʾ�
-���äƤ�    ��ĤȤߤʤ���ޤ���
+半角の空白 はこのように  二  つ以上
+あっても    一つとみなされます．
 
-���ԤϤ��Τ褦������ζ��ڤ�ˤʤ�ޤ�.
-����              ���ڡ����ϰ�ĤǤ���
+空行はこのように段落の区切りになります.
+この              スペースは一つです．
 \end{InOut}
 
-\section{�����Ȥ�����}
-�ե�����Ρ�����ԤΤɤ�����Ǥ�`\texttt{\%}'������Ȥ���ʹߤ�
-\KY{������}���ư����ޤ���%
-\zindind{������}{������}%
+\section{コメントの挿入}
+ファイルの，ある行のどこからでも`\texttt{\%}'があるとそれ以降を
+\KY{コメント}して扱います．%
+\zindind{コメント}{アウト}%
 \index{%@\verb+%+}\glossary{%@\verb+%+}%
-��Ƭ��\qu{\texttt{\%}}���֤��Ф�����������ޤǤ��٤Ƥ�
-\K{�����ȥ�����}����ޤ���ʣ���ԤΥ����Ȥ�����������
-�Ȥ���\Env{comment}�Ķ���Ȥ��ޤ����������Ѥ��뤿��ˤ�
-\Person{Victor}{Eijkhout}�ˤ��\Sty{comment}�ѥå��������ɤ߹��ߤޤ���
+行頭に\qu{\texttt{\%}}を置けばそこから行末まですべてが
+\K{コメントアウト}されます．複数行のコメントを挿入したい
+ときは\Env{comment}環境を使います．これを使用するためには
+\Person{Victor}{Eijkhout}による\Sty{comment}パッケージを読み込みます．
 \begin{InOut}
 \usepackage{comment}
-�����Ͻ��Ϥ���ޤ���%�����Ϥ���ʤ���
+ここは出力されますが%ここはされない．
 \begin{comment}
-���δĶ�����⥳���Ȥˤʤ�Τ�
+この環境の中もコメントになるので
 \end{comment}
-���Ϥ���ޤ��󤫡�
+出力されませんか？
 \end{InOut}
 %$"
-\section{�٤���}\index{�񤤤��ޤ޽��Ϥ���}\index{�����̤��ʸ���ν���}
+\section{べた書き}\index{書いたまま出力する}\index{入力通りの文字の出力}
 
-%�ƥ����Ȥ򤽤Τޤ޽��Ϥ���Ȥ�������Ȼפ��ޤ���
-%�㤨�Хץ������ꥹ�Ȥ�ܤ������Ȥ���\Z{�ü쵭��}
-%�ʤɤ����ꡤ���ΤޤޤǤ�ĥ�����ʤ��Ǥ��礦��
-%���Τ褦�ʤȤ���\Z{�٤���}����ǽ�Ǥ���û��ʸ
-%����ξ���
-�ƥ����Ȥ򤽤Τޤ޽��Ϥ���Ȥ�������Ȼפ��ޤ���
-�㤨��\Z{�ץ������ꥹ��}��ܤ������Ȥ���\Z{�ü쵭��}
-�ʤɤ����ꡤ���ΤޤޤǤϵ��Ҥ���Τ�����Ǥ���
-���Τ褦�ʤȤ���\KY{�٤���} (\Z{verbatim}) ����ǽ�Ǥ���
-û��ʸ����ξ��� \cmd{verb}̿���Ȥ��ޤ���
+%テキストをそのまま出力するときがあると思います．
+%例えばプログラムリストを載せたいときは\Z{特殊記号}
+%などが入り，そのままでは張り込めないでしょう．
+%そのようなときは\Z{べた書き}が可能です．短い文
+%字列の場合は
+テキストをそのまま出力するときがあると思います．
+例えば\Z{プログラムリスト}を載せたいときは\Z{特殊記号}
+などが入り，そのままでは記述するのが困難です．
+そのようなときは\KY{べた書き} (\Z{verbatim}) が可能です．
+短い文字列の場合は \cmd{verb}命令を使います．
 \begin{Syntax}
-% \Cmd{verb}\string+\mbox{}ʸ����\mbox{}\string+
-\Cmd{verb}\verb|+|\mbox{}\va{ʸ����}\mbox{}\verb|+|
+% \Cmd{verb}\string+\mbox{}文字列\mbox{}\string+
+\Cmd{verb}\verb|+|\mbox{}\va{文字列}\mbox{}\verb|+|
 \end{Syntax}
 
-ʣ���Ԥˤʤ�Ȥ���\Env{verbatim}�Ķ���Ȥ��ޤ���
+複数行になるときは\Env{verbatim}環境を使います．
 \begin{Syntax}
  \verb+\begin{verbatim}+\\
- \va{�����ˤ٤��񤭤�����ʣ���Ԥ�ʸ������������ޤ�}\\
+ \va{ここにべた書きしたい複数行の文字列を挿入します}\\
  \verb+\end{verbatim}+
 \end{Syntax}
 
 \begin{InOut}
-\verb|#include<stdio.h>|�ϥץ�ץ�
-���å��Ȥ�Ф�...
+\verb|#include<stdio.h>|はプリプロ
+セッサとよばれ...
 \begin{verbatim}
 int main( void ){
    int foo = 0x7E;
@@ -1471,11 +1471,11 @@ int main( void ){
 \end{verbatim}
 \end{InOut}
 
-%\cmd{verb}̿���\env{verbatim}�Ķ��ˤ�
-%�������ꥹ�����դ��뤳�Ȥ��Ǥ��ޤ�������� \cmd{verb} ̿���
-%����\va{ʸ����}������ڤ국��ϥ������ꥹ���ʳ��ʤ��
-%���Ǥ��ɤ����ȤˤʤäƤ��ޤ���%\cmd{verb}̿���Ϳ����줿
-%%����ܤζ��ڤ꤫������ܤζ��ڤ��
+%\cmd{verb}命令や\env{verbatim}環境には
+%アスタリスクを付けることができます．さらに \cmd{verb} 命令の
+%場合は\va{文字列}を括る区切り記号はアスタリスク以外ならば
+%何でも良いことになっています．%\cmd{verb}命令に与えられた
+%%一つ目の区切りから二つ目の区切りに
 %\begin{InOut}
 %\verb|134|, \verb+456+, \verb9|()|9.\par
 %\verb*|1 3 5|, \verb*9ok? ok?9.\par
@@ -1484,11 +1484,11 @@ int main( void ){
 %\end{verbatim*}
 %\end{InOut}
 
-\cmd{verb}̿���\env{verbatim}�Ķ��ˤ�
-�������ꥹ�����դ�������Ǥ��ޤ�������� \cmd{verb}̿���
-����\va{ʸ����}������ڤ국��ϥ������ꥹ��`\str*'�ʳ��ʤ��
-���Ǥ��ɤ����ˤʤäƤ��ޤ���% \cmd{verb}̿���Ϳ����줿
-%����ܤζ��ڤ꤫������ܤζ��ڤ��
+\cmd{verb}命令や\env{verbatim}環境には
+アスタリスクを付ける事ができます．さらに \cmd{verb}命令の
+場合は\va{文字列}を括る区切り記号はアスタリスク`\str*'以外ならば
+何でも良い事になっています．% \cmd{verb}命令に与えられた
+%一つ目の区切りから二つ目の区切りに
 \begin{InOut}
 \verb|2323 ^_^;|, \verb9|()|9.
 \verb*|1 3 5|, \verb*9ok? ok?9.
@@ -1500,11 +1500,11 @@ int main( void ){
 \end{InOut}
 
 
-\subsection{�ü�ʤ٤��񤭤���1\zdash\Y{alltt}}
-\Person{Johannes}{Braams}�����������٤��񤭤Τ⤦���������������Ķ���
-�Ȥ���\Sty{alltt}�ѥå�����������ޤ������Υѥå������Ǥ�`\verb|\|'��
-`\verb|{|'��`\verb|}|' ���̾��̤��̿��Ȥ��ƻȤ���\Env{alltt}�Ķ�����
-���Ƥ��ޤ���
+\subsection{特殊なべた書きその1\zdash\Y{alltt}}
+\Person{Johannes}{Braams}が作成したべた書きのもう少し気の利いた環境が
+使える\Sty{alltt}パッケージがあります．このパッケージでは`\verb|\|'，
+`\verb|{|'，`\verb|}|' が通常通りの命令として使える\Env{alltt}環境を提供
+しています．
 \begin{InOut}
 \usepackage{alltt} 
 \begin{alltt}
@@ -1514,21 +1514,21 @@ Dollar $x$ is not allowed, but
 \(\int f(x)dx\) is OK!!
 \end{alltt}
 \end{InOut}
-%���δĶ���ɤΤ褦�˻Ȥ����ϻ��ѼԼ�����Ȼפ��ޤ���
+%この環境をどのように使うかは使用者次第だと思います．
 
-\subsection{�ü�ʤ٤��񤭤���2\zdash\Y{cmtt}}
-\Cmd{texttt} �� \Cmd{ttfamily} �ǽ��Τ�\Z{�����ץ饤���ե��ߥ꡼}��
-�ѹ������Ȥ��Ƥ⡤�ȳ�̤�\Z{�Хå�����å���}�Ϥ��ΤޤޤǤϽ��Ϥ�
-���ޤ��󤷡����Τ������ޥ�ե��ߥ꡼�ˤʤ�ޤ���\Cmd{verb}̿���Ȥ���
-�ɤ��ǤϤʤ����Ȼפ��ޤ�������������ǤϻȤ��ʤ������ڤ�˻ȤäƤ���
-����ϻȤ��ʤ��ʤɤ����Թ礬����ޤ������ξ���
-\Person{Mark}{Wooding}�ˤ��\Sty{cmtt}��Ȥ����ɤ��Ǥ��礦��
+\subsection{特殊なべた書きその2\zdash\Y{cmtt}}
+\Cmd{texttt} や \Cmd{ttfamily} で書体を\Z{タイプライタファミリー}に
+変更したとしても，波括弧や\Z{バックスラッシュ}はそのままでは出力で
+きませんし，書体がローマンファミリーになります．\Cmd{verb}命令を使えば
+良いではないかと思われますが，引数の中では使えない，区切りに使っている
+記号は使えないなどの不都合があります．この場合は
+\Person{Mark}{Wooding}による\Sty{cmtt}を使うと良いでしょう．
 \begin{Syntax}
-\Cmd{textmtt}\pa{ʸ����}\\
-\Cmd{mttfamily}��\pp{������Υ��ޥ��}\\
-\Cmd{mtt}\pa{ʸ����}
+\Cmd{textmtt}\pa{文字列}\\
+\Cmd{mttfamily}　\pp{宣言型のコマンド}\\
+\Cmd{mtt}\pa{文字列}
 \end{Syntax}
-\Cmd{mtt}̿�����{\LaTeX}��ͽ��ʸ������Ϥ���ˤϼ��Τ褦�ˤ��ޤ���
+\Cmd{mtt}命令中で{\LaTeX}の予約文字を出力するには次のようにします．
 \begin{scenter}
  \begin{tabular}{LCCCCCC}
  \verb|\| & \verb|\\| & \verb|{| & \verb|\{| & \verb|}| & \verb|\}| & 
@@ -1549,262 +1549,262 @@ Dollar $x$ is not allowed, but
 \end{InOut}
 
 
-\section{���Ѥ�ʸ�ζ��ڤ�}\seclab{quote}
+\section{引用や文の区切り}\seclab{quote}
 %\index{`@\verb+`+}\index{'@\verb+'+}%"
-%\indindz{����}{ñ���}\index{ñ��ΰ���}\indindz{���ڤ�}{ʸ��}%%
-%ʸ�������ʸ����Ѥ��롤�������Ѥ���Ȥ������̤������
-%�פ��ޤ����ޤ�\K{ñ��ΰ���}�ˤ�\Z{���󥰥륯��
-%����}`'��Ȥ��ޤ������󥰥륯�����Ȥ�2���ढ�꺸���󥰥�
-%��������\pp{\str`}�ϥ����ܡ��ɤ�\keytop{Shift}�򲡤��ʤ���
-%\keytop{@}�򲡤��������󥰥륯������\pp{\str'}��
-%\keytop{Shift}�򲡤��ʤ���\keytop{7}�򲡤������ϤǤ����
-%�פ��ޤ���{\LaTeX}�ǤϤ�������̤��Ƶ��Ҥ��ޤ���
+%\indindz{引用}{単語の}\index{単語の引用}\indindz{区切り}{文の}%%
+%文献から一文を引用する，段落を引用するという場面があると
+%思います．まず\K{単語の引用}には\Z{シングルクオ
+%ート}`'を使います．シングルクオートも2種類あり左シングル
+%クオート\pp{\str`}はキーボードの\keytop{Shift}を押しながら
+%\keytop{@}を押し，右シングルクオート\pp{\str'}は
+%\keytop{Shift}を押しながら\keytop{7}を押すと入力できると
+%思います．{\LaTeX}ではこれらを区別して記述します．
 %
-%\indindz{����}{ʸ��}\index{ʸ�ΰ���}%
-%\K{ʸ�ΰ���}�Ǥϥ��֥륯�����Ȥ�Ȥ��ޤ���{Word}�ʤɤ�
-%���֥륯�����Ȥ���������м�ưŪ��\qq{��ʸ}�Τ褦���Ѵ�
-%����ޤ���{\LaTeX}���Կ��ڤ����ҤΥ��󥰥륯�����Ȥ�
-%�ޤ��Ȥ߹�碌�ư��Ѥ��ޤ�������Ϻ����󥰥륯�����Ȥ�
-%��Ĥȱ����󥰥륯�����Ȥ���Ĥǳ�뤳�Ȥˤʤ�ޤ���
-%¾��1ʸ�Ѥ�\Env{quote}�Ķ�������Ȱ��Ѥ��뤿���
-%\Env{quotation}�Ķ�������ޤ���
+%\indindz{引用}{文の}\index{文の引用}%
+%\K{文の引用}ではダブルクオートを使います．{Word}などで
+%ダブルクオートを挿入すれば自動的に\qq{一文}のように変換
+%されますが{\LaTeX}は不親切で前述のシングルクオートをう
+%まく組み合わせて引用します．これは左シングルクオートを
+%二つと右シングルクオートを二つで括ることになります．
+%他に1文用の\Env{quote}環境や段落ごと引用するための
+%\Env{quotation}環境があります．
 %\begin{Syntax}
-%\verb|`ñ��ϥ��󥰥륯�����ȤǰϤ�'|\\
-%\verb|``ʸ�ϥ��֥륷�󥰥륯�����ȤǰϤ�''|
+%\verb|`単語はシングルクオートで囲む'|\\
+%\verb|``文はダブルシングルクオートで囲む''|
 %\end{Syntax}
-%���������Ȱ��Ѥ����������κ�¦�����������
-%���Ϥ��ޤ������ˤ�äƤ�ʸ���򾮤������ޤ���
-%��Ƭ�λ������򤷤ʤ��Ȥ���\Env{quote}�Ķ���
-%����������Ȥ���\Env{quotation}�Ķ���Ȥ��ޤ���
+%さらに段落ごと引用する場合は段落の左側を字下げして
+%出力します．場合によっては文字を小さくします．
+%行頭の字下げをしないときは\Env{quote}環境を，
+%字下げするときは\Env{quotation}環境を使います．
 %\begin{Syntax}
-%\verb|\begin{quote}| ������Ѥ�\env{quote}�Ķ��ǰϤ�%
+%\verb|\begin{quote}| 段落引用は\env{quote}環境で囲む%
 %   \verb|\end{quote}|\\
-%\verb|\begin{quotation}| ������Ѥ�\env{quotation}�Ķ��ǰϤ�%
+%\verb|\begin{quotation}| 段落引用は\env{quotation}環境で囲む%
 %   \verb|\end{quotation}|
 %\end{Syntax}
-%����Ū�˰ʲ��Τ褦�ʻȤ����ˤʤ�ޤ���
+%一般的に以下のような使い方になります．
 %\begin{InOut}
-%`ñ��'�ΰ��Ѥϥ��󥰥륯�����Ȥ�``ʸ�Ϥΰ�ʸ''
-%�ΰ��ѤϺ����󥰥륯��������Ĥȱ����󥰥륯��
-%������ĤǤ���
+%`単語'の引用はシングルクオートで``文章の一文''
+%の引用は左シングルクオート二つと右シングルクオ
+%ート二つです．
 %\end{InOut} 
 %\begin{InOut}
-%�������Ѥ���quote�Ķ���¾�ˤ�
-%  \begin{quote}  ��Ƭ�λ������򤹤�
-%    ������Ѥ�quotation�Ķ������롥
+%段落を引用するquote環境の他にも
+%  \begin{quote}  行頭の字下げをする
+%    段落引用のquotation環境がある．
 %  \end{quote}
-%�Ȥ����Ƥ��롥
+%といわれている．
 %\end{InOut}
 
-\index{`@\verb+`+}\index{'@\verb+'+}\indindz{���ڤ�}{ʸ��}
+\index{`@\verb+`+}\index{'@\verb+'+}\indindz{区切り}{文の}
 %
-ʸ�������ʸ����Ѥ��롤�������Ѥ���Ȥ������̤������
-�פ��ޤ������Ѥˤ����Ƥϡ֤����Ĥ���ñ��ס���ʸ�ס�������ס�
-��ʣ��������פλͤĤΰ��ѷ��֤�����ޤ���
+文献から一文を引用する，段落を引用するという場面があると
+思います．引用においては「いくつかの単語」，「文」，「段落」，
+「複数の段落」の四つの引用形態があります．
 \begin{description}
 
-\indindz{����}{ñ���}\zindind{ñ��}{�ΰ���}
- \item[ñ��ΰ���]
-   ��ʸ��\Z{���󥰥륯������} `~' ��Ȥ���
-   ��ʸ��\Z{�������} ��~�פ�Ȥ���
+\indindz{引用}{単語の}\zindind{単語}{の引用}
+ \item[単語の引用]
+   欧文は\Z{シングルクオート} `~' を使い，
+   和文は\Z{かぎ括弧} 「~」を使う．
 
-\indindz{����}{ʸ��}\zindind{ʸ}{�ΰ���}
- \item[ʸ�ΰ���]  
-   ��ʸ��\Z{���֥륯������} ``~'' ��Ȥ���
-   ��ʸ��\Z{�������} ��~�פ�Ȥ���
+\indindz{引用}{文の}\zindind{文}{の引用}
+ \item[文の引用]  
+   欧文は\Z{ダブルクオート} ``~'' を使い，
+   和文は\Z{かぎ括弧} 「~」を使う．
 
-\indindz{����}{�����}\zindind{����}{�ΰ���}
- \item[����ΰ���]  
-   \E{quote}�Ķ���Ȥ�����������Ȥࡥ
-   ʣ������򵭽Ҥ��Ƥ⡤���������Ԥʤ��ʤ���
+\indindz{引用}{段落の}\zindind{段落}{の引用}
+ \item[段落の引用]  
+   \E{quote}環境を使い，別段落に組む．
+   複数段落を記述しても，字下げが行なわれない．
 
-\index{ʣ������ΰ���}\indindz{����}{ʣ�������}
- \item[ʣ������ΰ���]  
-   \E{quotation}�Ķ���Ȥ�����������Ȥࡥ
-   ������Ǥϻ��������Ԥʤ��롥
-\zindind{����}{�ΰ���}
- \item[���Ѥΰ���]
-   ���Ǥ˰��Ѥ��Ƥ���ʸ�򤵤�˰��Ѥ���ʤ�С�
-  ��ʸ��`\,``~''\,'�Τ褦�ˤ���
-  ��ʸ�ϡ�~��~��~�פȤ��롥
+\index{複数段落の引用}\indindz{引用}{複数段落の}
+ \item[複数段落の引用]  
+   \E{quotation}環境を使い，別段落に組む．
+   各段落では字下げが行なわれる．
+\zindind{引用}{の引用}
+ \item[引用の引用]
+   すでに引用している文をさらに引用するならば，
+  欧文は`\,``~''\,'のようにし，
+  和文は「~『~』~」とする．
 \end{description}
 
-���󥰥륯�����Ȥ�2���ढ�꺸���󥰥륯������\pp{\str`}�ϥ����ܡ��ɤ�\keytop{Shift}�򲡤��ʤ���
-\keytop{@}�򲡤��������󥰥륯������\pp{\str'}��
-\keytop{Shift}�򲡤��ʤ���\keytop{7}�򲡤������ϤǤ����
-�פ��ޤ���{\LaTeX}�ǤϤ�������̤��Ƶ��Ҥ��ޤ���
-���Ф�\key{Shift,2}�򲡤���\K{���֥륯������` \str" '��%"
-����������Ѥ��ƤϤ����ޤ���}��
+シングルクオートも2種類あり左シングルクオート\pp{\str`}はキーボードの\keytop{Shift}を押しながら
+\keytop{@}を押し，右シングルクオート\pp{\str'}は
+\keytop{Shift}を押しながら\keytop{7}を押すと入力できると
+思います．{\LaTeX}ではこれらを区別して記述します．
+絶対に\key{Shift,2}を押して\K{ダブルクオート` \str" 'で%"
+引用符を代用してはいけません}．
 
-\indindz{����}{ʸ��}\zindind{ʸ}{�ΰ���}%
-\K{ʸ�ΰ���}�Ǥϥ��֥륯�����Ȥ�Ȥ��ޤ���{Word}�ʤɤ�
-���֥륯�����Ȥ���������м�ưŪ��\qq{��ʸ}�Τ褦���Ѵ�
-����ޤ���{\LaTeX}�Ǥϥ��󥰥륯�����Ȥ򤦤ޤ��Ȥ߹�碌
-�Ƶ��Ҥ��ޤ�������Ϻ����󥰥륯�����Ȥ�
-��Ĥȱ����󥰥륯�����Ȥ���Ĥǳ����ˤʤ�ޤ���
-¾��1ʸ�Ѥ�\Env{quote}�Ķ�������Ȱ��Ѥ��뤿���
-\Env{quotation}�Ķ�������ޤ���
+\indindz{引用}{文の}\zindind{文}{の引用}%
+\K{文の引用}ではダブルクオートを使います．{Word}などで
+ダブルクオートを挿入すれば自動的に\qq{一文}のように変換
+されますが{\LaTeX}ではシングルクオートをうまく組み合わせ
+て記述します．これは左シングルクオートを
+二つと右シングルクオートを二つで括る事になります．
+他に1文用の\Env{quote}環境や段落ごと引用するための
+\Env{quotation}環境があります．
 \begin{Syntax}
-\verb|`ñ��ϥ��󥰥륯�����ȤǰϤ�'|\\
-\verb|``ʸ�ϥ��֥륷�󥰥륯�����ȤǰϤ�''|
+\verb|`単語はシングルクオートで囲む'|\\
+\verb|``文はダブルシングルクオートで囲む''|
 \end{Syntax}
-���������Ȱ��Ѥ����������κ�¦�����������
-���Ϥ��ޤ������ˤ�äƤ�ʸ���򾮤������ޤ���
-��Ĥ������������Ѥ������\Env{quote}�Ķ���
-ʣ�����������Ѥ���ʤ��\Env{quotation}�Ķ���Ȥ��ޤ���
+さらに段落ごと引用する場合は段落の左側を字下げして
+出力します．場合によっては文字を小さくします．
+一つの段落だけを引用する場合は\Env{quote}環境を，
+複数の段落を引用するならば\Env{quotation}環境を使います．
 
 \begin{Syntax}
-\verb|\begin{quote}| \va{������Ѥ�\env{quote}�Ķ��ǰϤ�}
+\verb|\begin{quote}| \va{段落引用は\env{quote}環境で囲む}
    \verb|\end{quote}|\\
-\verb|\begin{quotation}| \va{������Ѥ�\env{quotation}�Ķ��ǰϤ�}
+\verb|\begin{quotation}| \va{段落引用は\env{quotation}環境で囲む}
    \verb|\end{quotation}|
 \end{Syntax}
-����Ū�˰ʲ��Τ褦�ʻȤ����ˤʤ�ޤ���
+一般的に以下のような使い方になります．
 \begin{InOut}
-`ñ��'�ΰ��Ѥϥ��󥰥륯�����Ȥ�``ʸ��
-�ΰ�ʸ''�ΰ��ѤϺ����󥰥륯���������
-�ȱ����󥰥륯��������ĤǤ���"���֥륯
-������"�ǰ������ɽ���ƤϤ����ޤ���
+`単語'の引用はシングルクオートで``文章
+の一文''の引用は左シングルクオート二つ
+と右シングルクオート二つです．"ダブルク
+オート"で引用符を表してはいけません．
 \end{InOut} 
 \begin{InOut}
-�������Ѥ���quote�Ķ���¾�ˤ�
-  \begin{quote}  ��Ƭ�λ������򤹤�
-    ������Ѥ�quotation�Ķ������롥
-  \end{quote}  �Ȥ����Ƥ��롥
+段落を引用するquote環境の他にも
+  \begin{quote}  行頭の字下げをする
+    段落引用のquotation環境がある．
+  \end{quote}  といわれている．
 \end{InOut}
 
-��ʸ�ΰ��Ѥˤ�����\KY{������}��\K{���Ѥ�\Z{�������}}\str{�֡�}��
-�Ȥ�����ʸ�ξ��ΰ�����ˤ�\K{Ⱦ�ѤΥ�������}\str{`'}��Ȥ��ޤ���
-��ʸ�ΰ��Ѥ���ΰ��Ѥˤ�\Z{��ų��}���Ѥ��ޤ�����ʸ�ξ�硤
-\K{��̤���˶���������ƤϤ����ޤ���}��
+和文の引用における\KY{引用符}は\K{全角の\Z{かぎ括弧}}\str{「」}を
+使い，欧文の場合の引用符には\K{半角のクオート}\str{`'}を使います．
+和文の引用の中の引用には\Z{二重括弧}を用います．和文の場合，
+\K{括弧の中に句点を入れてはいけません}．
 \begin{InOut}
 ``FUN: Future University-Hakodate''
-�϶��餯`FUNNIST'�Ȥ�̩�ܤʴؤ�꤬��
-�ꡤ���դˤ��ȡ�̤���ˤ���
-��FUNNIST��FUN�ˤ����ȿ��Ǥ���٤Ȥ���
-�⤬����פȹͻ����Ƥ��롥
+は恐らく`FUNNIST'との密接な関わりがあ
+り，渡辺によると「未来らによると
+『FUNNISTはFUNにある組織である』という
+説がある」と考察している．
 \end{InOut}
 
-�ɤ��餫���������줹��Τ�������¦�ˤ��ɼԤˤ�
-����Ͼ��ʤ��Ǥ��礦��{\LaTeX}�ǰ��ѤȤ������
-��⤦������Ψ�ɤ��Ԥ��ˤϼ��Τ褦��������ޤ���
+どちらか一方に統一するのが作成者側にも読者にも
+混乱は少ないでしょう．{\LaTeX}で引用というもの
+をもう少し効率良く行うには次のように定義します．
 
 \begin{InTeX}
-\newcommand{\qu}[1]{`#1'}%   ñ��β�ʸ���� 
-\newcommand{\qq}[1]{``#1''}% 1 ʸ�β�ʸ���� 
-\newcommand{\yo}[1]{��#1��}% ñ�����ʸ���� 
-\newcommand{\yy}[1]{��#1��}% 1 ʸ����ʸ���� 
+\newcommand{\qu}[1]{`#1'}%   単語の欧文引用 
+\newcommand{\qq}[1]{``#1''}% 1 文の欧文引用 
+\newcommand{\yo}[1]{「#1」}% 単語の和文引用 
+\newcommand{\yy}[1]{『#1』}% 1 文の和文引用 
 \end{InTeX}
 
-�������Ƥ����С��夫������������Ǥ��ޤ����嵭�� \cmd{yo} �� \cmd{yy}
-�򼡤Τ褦���ѹ����������ʸ����ΰ�������礷��
-�ѹ��Ǥ���櫓�Ǥ���
+こうしておけば，後から引用符を統一できます．上記の \cmd{yo} と \cmd{yy}
+を次のように変更するだけで文章中の引用符を一括して
+変更できるわけです．
 
 \begin{InTeX}
-\newcommand{\yo}[1]{`#1'}% ñ�����ʸ���� 
-\newcommand{\yy}[1]{``#1''}% 1 ʸ����ʸ���� 
+\newcommand{\yo}[1]{`#1'}% 単語の和文引用 
+\newcommand{\yy}[1]{``#1''}% 1 文の和文引用 
 \end{InTeX}
 
 \begin{InOut}
-��������դ�ˤ���\yo{�ǥ���Ȥ�̾��
-��\qu{I think, therefore I am.}����
-��}�Ȥ���Ĵ����̤�¸�ߤ��롥
+それは渡辺らによれば\yo{デカルトの名言
+に\qu{I think, therefore I am.}があ
+る}という調査結果が存在する．
 \end{InOut}
 
-\subsection{����̾�仨��̾�ΰ���}
+\subsection{書籍名や雑誌名の引用}
 
-\indindz{����}{����̾��}\indindz{����}{����̾��}%
-\indindz{����}{�ܤ�̾����}%
-\zindind{����̾}{�ΰ���}\zindind{����̾}{�ΰ���}%
-\indindz{���}{���ѤΤ����}%
-\indindz{���}{����̾�Τ����}%
-\index{�ܤ�̾���ΰ���}%
-\K{����̾�仨��̾�����}������Ϥ���̾����
-\K{������å��Τˤ��ޤ�}����ʸ�ξ��� \Cmd{emph} ̿���Ȥ��ޤ���
-��ʸ��\K{����̾�����}�������\Z{��Ť������}��~�٤�
-\K{����̾�����}������Ϥ�����̡�~�פ�Ȥ��ޤ���
+\indindz{引用}{書籍名の}\indindz{引用}{雑誌名の}%
+\indindz{引用}{本の名前の}%
+\zindind{書籍名}{の引用}\zindind{雑誌名}{の引用}%
+\indindz{括弧}{引用のための}%
+\indindz{括弧}{書籍名のための}%
+\index{本の名前の引用}%
+\K{書籍名や雑誌名を引用}する場合はその名前を
+\K{イタリック体にします}．欧文の場合は \Cmd{emph} 命令を使います．
+和文の\K{書籍名を引用}する場合は\Z{二重かぎ括弧}『~』を，
+\K{雑誌名を引用}する場合はかぎ括弧「~」を使います．
 \begin{Syntax}
-\indindz{����}{��ʸ��}%
-\indindz{����}{��ʸ��}%
-\C{emph}\pa{��ʸ��ʸ��̾}       \\
-��\va{����̾}��\pp{��ʸ�ν���}\\
-��\va{����̾}��\pp{��ʸ�λ���}
+\indindz{書籍}{和文の}%
+\indindz{雑誌}{和文の}%
+\C{emph}\pa{欧文の文献名}       \\
+『\va{書籍名}』\pp{和文の書籍}\\
+「\va{雑誌名}」\pp{和文の雑誌}
 \end{Syntax}
-�ʾ�Τ褦����ˡ��ȤäƲ����̤�ʸ��򼨤����Ϥ���ʸ��̾
-��Ĵɽ�����ޤ���
+以上のような方法を使って何か別の文書を示す場合はその文書名
+を強調表示します．
 \begin{InOut}
-���դ�2004ǯ��\emph{Natural}�����
-������ʸ����ʸ�����Τ����ϡפ�̤��
-���Ǥ������ʸ�����μ�����٤˲���
-����ƽ��Ǥ���Ƥ��롥
+渡辺が2004年に\emph{Natural}に投稿
+した論文「論文作成のいろは」は未来
+出版から『論文作成の手引き』に改題
+されて出版されている．
 \end{InOut}
 
 \begin{Trick}
-���Τ褦��¾��ʸ��ΰ��ѤˤϿ����˲�ʸ�Ѥ�
-����̿�� \cmd{yousyo} �䡤��ʸ�Ѥ� \cmd{wasyo} �ʤɤ�
-���Ȥ��Ȥ����줷�����Ȥ��ˤ������Ǥ��礦��
+このような他の文書の引用には新たに欧文用の
+引用命令 \cmd{yousyo} や，和文用の \cmd{wasyo} などを
+作るとあとで統一したいときには便利でしょう．
 
 \begin{InTeX}
-\newcommand{\yousyo}[1]{\emph{#1}}%��ʸ
-\newcommand{\wasyo}[1]{��#1��}%��ʸ
+\newcommand{\yousyo}[1]{\emph{#1}}%欧文
+\newcommand{\wasyo}[1]{『#1』}%和文
 \end{InTeX}
 
 \end{Trick}
 
 
-\subsection{���å���}
+\subsection{ダッシュ}
 
-\Z{���å���}�ˤ���ʸ�Ȳ�ʸ�Τ�Τ�ʻ�����4����ۤɤ���ޤ���%
-\indindz{���ڤ�}{ñ���}%%
-�ҤȤޤȤ�ˤ�����ñ��ζ��ڤ�䡤ʸ�����Ǥʤɤ˻Ȥ��ޤ���
+\Z{ダッシュ}には和文と欧文のものを併せると4種類ほどあります．%
+\indindz{区切り}{単語の}%%
+ひとまとめにしたい単語の区切りや，文の中断などに使います．
 \begin{description}
 \index{"-"-@\verb+--+}%
  \item[\Z{en-dash} \qu{--}] 
-\index{������!��\zdash}%
-   ���ͤ��ϰϤʤɤ�ɽ���ޤ�����ʸ�ξ���\Z{�ȥ�����} `��' ��
-   �Ȥ���⸫���ޤ�������10��30�͡פȤ���ɽ�����򤱤�����
-   ̵��Ǥ���
+\index{ダーシ!波\zdash}%
+   数値の範囲などを表します．和文の場合は\Z{波ダーシ} `〜' を
+   使う例も見られますが，「10〜30人」という表記は避けた方が
+   無難です．
 \index{"-"-"-@\verb+---+}%%"
  \item[\Z{em-dash} \qu{---}] 
-   ʸ�����Ǥ�ɽ���ޤ���
-\index{������!����\zdash}%
- \item[\Z{���ѥ�����} \qu{��}]
-   ��ʸ��en-dash�˶ᤤ��̣��ɽ���ޤ�����
-   �㴳�⤵���㤤�ޤ���
-\index{������!�ܳ�\zdash}%
- \item[\Z{�ܳѥ�����} \qu{\zdash}]
-   ��ʸ�Ǥ�ʸ�����Ǥʤɤ�ɽ���ޤ���
+   文の中断を表します．
+\index{ダーシ!全角\zdash}%
+ \item[\Z{全角ダーシ} \qu{—}]
+   欧文のen-dashに近い意味を表しますが，
+   若干高さが違います．
+\index{ダーシ!倍角\zdash}%
+ \item[\Z{倍角ダーシ} \qu{\zdash}]
+   和文での文の中断などを表します．
 \end{description}
-�����\Z{���å���}�˻�����Τ�\Z{�ϥ��ե�}��\Z{�ޥ��ʥ�}������ޤ���
+さらに\Z{ダッシュ}に似たものに\Z{ハイフン}と\Z{マイナス}があります．
 \begin{description}
-\index{�ϥ��ե�}%%
-\index{-@\verb+-+!�ϥ��ե�Ȥ��Ƥ�\zdash}%
- \item[�ϥ��ե� \qu{-}] \index{-@\verb+-+}
-   ��ʸ��ñ��������\Z{�ϥ��ե͡������}�Ȥ�����������롥
-\index{-@\verb+-+!�ޥ��ʥ��Ȥ��Ƥ�\zdash}%
-\index{�ޥ��ʥ�}%%
- \item[�ޥ��ʥ� \qu{$-$}]
-   ���ص������ο��ͤ�ɽ����%$
+\index{ハイフン}%%
+\index{-@\verb+-+!ハイフンとしての\zdash}%
+ \item[ハイフン \qu{-}] \index{-@\verb+-+}
+   欧文で単語の途中に\Z{ハイフネーション}として挿入される．
+\index{-@\verb+-+!マイナスとしての\zdash}%
+\index{マイナス}%%
+ \item[マイナス \qu{$-$}]
+   数学記号で負の数値を表す．%$
 \end{description}
 
-\indindz{����}{������}%
-�ʾ�ε����Ʊ������ʤ��������Ȥ��Τ����ޤ����Ǥ���
-�ܳѥ���������Ϥ��뤿��ˤ�\Sty{okumacro}�ѥå�������
-�ɤ߹��ߤޤ���������ˡ��\tabref{dash}���̤�Ǥ��� 
+\indindz{記号}{横棒の}%
+以上の記号を混同する事なく正しく使うのが好ましいです．
+倍角ダーシを出力するためには\Sty{okumacro}パッケージを
+読み込みます．出力方法は\tabref{dash}の通りです． 
 %
 \begin{table}[htbp]
 \begin{center}
- \caption{���å���ʤ�}\tablab{dash}
+ \caption{ダッシュなど}\tablab{dash}
  \begin{tabular}{llll}
  \TR
- \Th{����μ���}   & \Th{����}  & \Th{���ϡ�̿��}   & \Th{����}\\
+ \Th{記号の種類}   & \Th{出力}  & \Th{入力・命令}   & \Th{説明}\\
  \MR
- en-dash      & --    & \verb|--|    &�ϥ��ե�����\\
- em-dash      & ---   & \verb|---|   &�ϥ��ե�򻰤�\\
- ���ѥ�����   & ��    & \verb|��|    &���ѤΥ��å���\\
- �ܳѥ�����   & \���� & \verb|\����| &\qu{\texttt\bs}�����ѥ��������\\
- �ϥ��ե�     & -     & \verb|-|     &���Τޤ�\\
- �ޥ��ʥ�     & $-$   & \verb|$-$|   &������ǥϥ��ե���\\
+ en-dash      & --    & \verb|--|    &ハイフンを二つ\\
+ em-dash      & ---   & \verb|---|   &ハイフンを三つ\\
+ 全角ダーシ   & —    & \verb|—|    &全角のダッシュ\\
+ 倍角ダーシ   & \—— & \verb|\——| &\qu{\texttt\bs}と全角ダーシ二つ\\
+ ハイフン     & -     & \verb|-|     &そのまま\\
+ マイナス     & $-$   & \verb|$-$|   &数式中でハイフン一つ\\
  \BR
 \end{tabular}
 \end{center}
@@ -1815,29 +1815,29 @@ dog---I could read about 100--200
 books in a day. This is a just 
 fairy-tale.''
 \end{InOut}
-�̾�ϥ��ե����å����ξ�٤ˤ϶��������ޤ���
-�ϥ��ե�ˤ�ä�ñ������ˤ��Ƥ�����ϡ��ϥ��ե�������
-���Ԥ��ƤϤ����ޤ��󡥤�����̾��1ñ��Υϥ��ե͡�������
-��ʣ�����ǽ�������뤫��Ǥ���
+通常ハイフンやダッシュの両隣には空白を入れません．
+ハイフンによって単語を一塊にしている語句は，ハイフンの途中で
+改行してはいけません．これは通常の1単語のハイフネーションと
+重複する可能性があるからです．
 \begin{InOut}
-{\TeX}��\mbox{for-each}ʸ��Perl�ˤ�
-����\mbox{foreach}ʸ�Ȥ��������ۤʤ�
-���ᡤ\mbox{X-ray}�αƶ��������
+{\TeX}の\mbox{for-each}文はPerlにお
+ける\mbox{foreach}文とは性質が異なる
+ため，\mbox{X-ray}の影響を受けた
 Future \mbox{University-Hakodate}
-��\mbox{if-then}ʸ��Ȥ������ˤ��롥
+は\mbox{if-then}文を使う傾向にある．
 \end{InOut}
 
-\subsection{�ϥ��ե͡������}
-������Ĺ��ñ�줬������ˤ���ñ��Υϥ��ե͡�������
-���ä����԰��֤򸫤Ĥ���{\LaTeX}�ϲ��Ԥ�Ԥ��ޤ����桼��������Ū��
-���԰��֤���ꤹ�����Ǥ��ޤ���\index{����!�Τ���@\zdash �ΰ���}
+\subsection{ハイフネーション}
+行末に長い単語がある場合にその単語のハイフネーションに
+あった改行位置を見つけて{\LaTeX}は改行を行います．ユーザが明示的に
+改行位置を指定する事もできます．\index{改行!のいち@\zdash の位置}
 \begin{Syntax}
-\Cmd{hyphenation}\pa{ʣ���θ��} \\
-\Cmd{-} \pp{���ֻ���}
+\Cmd{hyphenation}\pa{複数の語句} \\
+\Cmd{-} \pp{位置指定}
 \end{Syntax}
-\cmd{-} ̿���ʸ�����ľ��\qu{\str{Ghost\bs-script}}�Τ褦�˻Ȥ��ޤ���
-\cmd{hyphenation}�ξ��ϥץꥢ��֥�ʤɤ�
-���Τ褦�ʵ��Ҥ򤷤Ƥ����ޤ���
+\cmd{-} 命令は文章中で直接\qu{\str{Ghost\bs-script}}のように使います．
+\cmd{hyphenation}の場合はプリアンブルなどに
+次のような記述をしておきます．
 
 \begin{InTeX}
 \hyphenation{Ghost-script Post-Script} 
@@ -1853,164 +1853,164 @@ Robert sometimes say \mbox
 {supercalifragilisticexpialidocious}.
 \end{InOut}
 
-\qu{super����}�ΰ���ܡ�����ܤǤϲ��Ԥΰ��֤���
-���ޤ���\Cmd{mbox}̿���Ȥ��Ȳ��Ԥ�����ޤ���%
-\index{����!�Τ���@{\zdash}�ζػ�}
-%�ϥ��ե͡�������
+\qu{super云々}の一つ目，二つ目では改行の位置が違
+います．\Cmd{mbox}命令を使うと改行を許しません．%
+\index{改行!のきんし@{\zdash}の禁止}
+%ハイフネーションを
 %
 %\begin{InTeX}
 % \hyphenation{su-per-cali-frag-ilis-tic-ex-pi-ali-doci-ous}
 %\end{InTeX}
-%�Ȥ���Ȥ�
+%とするとか
 %\begin{InTeX}
 % \hyphenation{super-cali-fragilistic-expiali-docious}
 %\end{InTeX}
-%�Ȥ��뤫�ϡ�����ˤ�äƤ�ϥ��ե͡������Υѥ�����
-%�㤦�Τ����դ�ɬ�פǤ���
-% [supercalifragilisticexpialidocious]�Ȥ�
-% ���٤˶���Ǥ����ü�����٤����������������
-% (super-Ķ,cali-��,fragilistic-���٤�,
-% expiali-����,docious����Ǥ���)
-% �ǲ�Mary Poppins(1964)�Ѥ�ȯ�����줿�� 
+%とするかは，言語によってもハイフネーションのパターンが
+%違うので注意が必要です．
+% [supercalifragilisticexpialidocious]とは
+% 高度に教育できる極端で繊細な美しさを償うこと
+% (super-超,cali-美,fragilistic-繊細な,
+% expiali-償う,docious教育できる)
+% 映画Mary Poppins(1964)用に発明された語 
 
-\subsection{����}
-%\Z{����}�ϥХå�����å���\qu{\texttt\bs}%
-%\pp{Windows�ʤɤǤϱ�\qu\yen}������¤٤�\qu{\texttt{\bs\bs}}
-%�Τ褦�ˤ��������뤳�Ȥ���ǽ�Ǥ�����ʸ�Ϥ���˲��Ԥ�
-%�����Ȥ��Ͽ��Ť��������ʤ���Ф����ޤ��󡥤Ǥ��뤳��
-%�ʤ�Х桼��¦�ζ���Ū�ʲ��Ԥ��������ʤ��ۤ����ɤ��Ǥ��礦��
-%Ʊ������Ȥ���ʸ�������̤������Ȥ��ϲ��ԤǤϤʤ�
-%����\pp{\secref{quote}����}��Ȥ��Τ��ɤ��Ǥ��礦��
+\subsection{改行}
+%\Z{改行}はバックスラッシュ\qu{\texttt\bs}%
+%\pp{Windowsなどでは円\qu\yen}を二つ並べて\qu{\texttt{\bs\bs}}
+%のようにすれば入れることが可能ですが，文章の中に改行を
+%入れるときは慎重に挿入しなければいけません．できること
+%ならばユーザ側の強制的な改行は挿入しないほうが良いでしょう．
+%同じ段落とある文字列を区別したいときは改行ではなく
+%引用\pp{\secref{quote}参照}を使うのが良いでしょう．
 %\begin{Syntax}
-%\verb|\\*|\opa{Ĺ��}\\
+%\verb|\\*|\opa{長さ}\\
 %\Cmd{newline} \\
 %\Cmd{par}
 %\end{Syntax}
-%Ǥ�հ����˲��Ԥ�Ԥ��Ȥ��νĤ�Ĺ�������Ǥ��ޤ���
-%�ڡ�������Ƭ�Ǥβ��Ԥ�Ԥ����ȤϤǤ��ޤ��󡥥������ꥹ��
-%���դ���Ȳ���ľ��˥ڡ��������뤳�Ȥ�ػߤ��ޤ���
-%\Cmd{newline}��\qu{\str{\bs\bs}}�Ȥۤ�Ʊ����̿��Ǥ���
-%\Cmd{par}�ϲ��ԤǤϤʤ�\KY{������}��
-%���ʤ���ʤν����򼨤��ޤ�������ľ���ʸ����
-%�ϻ���������ޤ���
+%任意引数に改行を行うときの縦の長さを指定できます．
+%ページの先頭での改行を行うことはできません．アスタリスク
+%を付けると改行直後にページを改めることを禁止します．
+%\Cmd{newline}は\qu{\str{\bs\bs}}とほぼ同時の命令です．
+%\Cmd{par}は改行ではなく\KY{改段落}，
+%すなわち段の終わりを示します．その直後の文字列
+%は字下げされます．
 %\begin{InOut}
-%���Ԥ�\verb|\\| �Τ褦��\\�Хå�����å���
-%�����³���ƽ񤯤�\\[1cm]�桼���ˤ�붯��Ū
-%�ʲ��Ԥ���������ޤ���\par
-%����ʸ�ϤϿ�����������Ȥޤ�\newline
-%������������礬����ޤ���
+%改行は\verb|\\| のように\\バックスラッシュ
+%を二つ続けて書くと\\[1cm]ユーザによる強制的
+%な改行が挿入されます．\par
+%この文章は新しい段落から組まれ\newline
+%字下げされる場合があります．
 %\end{InOut}
 
-\indindz{����}{ʸ�����}%%
-\Z{����} (\Z{line break}) �ϥХå�����å���\qu{\texttt\bs}%
-\pp{Windows�ʤɤǤϱ�\qu\yen}������¤٤�\qu{\texttt{\bs\bs}}
-�Τ褦�ˤ��������������ǽ�Ǥ�����ʸ�Ϥ���˲��Ԥ�
-�����Ȥ��Ͽ��Ť��������ʤ���Ф����ޤ��󡥤Ǥ����
-�ʤ�Х桼��¦�ζ���Ū�ʲ��Ԥ��������ʤ��ۤ����ɤ��Ǥ��礦��
-Ʊ������Ȥ���ʸ�������̤������Ȥ��ϲ��ԤǤϤʤ�
-����\pp{\secref{quote}����}��Ȥ��Ȥ��ޤ��Ԥ�����¿���Ǥ���
+\indindz{改行}{文章中の}%%
+\Z{改行} (\Z{line break}) はバックスラッシュ\qu{\texttt\bs}%
+\pp{Windowsなどでは円\qu\yen}を二つ並べて\qu{\texttt{\bs\bs}}
+のようにすれば入れる事が可能ですが，文章の中に改行を
+入れるときは慎重に挿入しなければいけません．できる事
+ならばユーザ側の強制的な改行は挿入しないほうが良いでしょう．
+同じ段落とある文字列を区別したいときは改行ではなく
+引用\pp{\secref{quote}参照}を使うとうまく行く事が多いです．
 \begin{Syntax}
-\verb|\\*|\opa{Ĺ��}\\
+\verb|\\*|\opa{長さ}\\
 \Cmd{newline} \\
 \Cmd{par}
 \end{Syntax}
-Ǥ�հ����˲��Ԥ�Ԥ��Ȥ��νĤ�Ĺ�������Ǥ��ޤ���
-�ڡ�������Ƭ�Ǥβ��Ԥ�Ԥ����ϤǤ��ޤ��󡥥������ꥹ��
-���դ���Ȳ���ľ��˥ڡ������������ػߤ��ޤ���
-  \Cmd{newline} ��\qu{\texttt{\bs\bs}}�Ȥۤ�Ʊ����̿��Ǥ���
-  \Cmd{par} �ϲ��ԤǤϤʤ�\KY{������}��
-���ʤ���ʤλϤޤ�򼨤��ޤ�������ľ���ʸ����
-�� \C{parindent} ���ͤ˱����ƻ���������ޤ���
+任意引数に改行を行うときの縦の長さを指定できます．
+ページの先頭での改行を行う事はできません．アスタリスク
+を付けると改行直後にページを改める事を禁止します．
+  \Cmd{newline} は\qu{\texttt{\bs\bs}}とほぼ同時の命令です．
+  \Cmd{par} は改行ではなく\KY{改段落}，
+すなわち段の始まりを示します．その直後の文字列
+は \C{parindent} の値に応じて字下げされます．
 \begin{InOut}
-���Ԥ�\verb|\\| �Τ褦��\\�Хå������
-��������³���ƽ񤯤�\\[1cm]�桼����
-��붯��Ū�ʲ��Ԥ���������ޤ���\par
-����ʸ�ϤϿ�����������Ȥޤ�
-\newline ������������礬����ޤ���
+改行は\verb|\\| のように\\バックスラッ
+シュを二つ続けて書くと\\[1cm]ユーザに
+よる強制的な改行が挿入されます．\par
+この文章は新しい段落から組まれ
+\newline 字下げされる場合があります．
 \end{InOut}
 
 
 
-\section{����ΰ���}
-%��������Ǥ����Ǥ���ڤ뤿��˻Ȥ��ޤ���
-%\KY{����}�ι����ˤ�äư�̣��
-%�㤤�ޤ����������̤ζ�����������ʤ���а�
-%̣���Ѥ�äƤ��ޤ��ޤ���
-\indindz{����}{�������̤�}%
-��������Ǥ����Ǥ���ڤ뤿��˻Ȥ��ޤ���
-\KY{����} (space) �ι����ˤ�äư�̣��
-�㤤�ޤ����������̤ζ�����������ʤ���а�
-̣���Ѥ�äƤ��ޤ��ޤ���
+\section{空白の扱い}
+%空白は要素と要素を区切るために使われます．
+%\KY{空き}の広さによって意味が
+%違います．正しい量の空白を挿入しなければ意
+%味が変わってしまいます．
+\indindz{空白}{正しい量の}%
+空白は要素と要素を区切るために使われます．
+\KY{空き} (space) の広さによって意味が
+違います．正しい量の空白を挿入しなければ意
+味が変わってしまいます．
 
-\subsection{ʸ�Ϥ���ζ���}
-%\indindz{����}{ʸ���֤�}%
-%�ޤ���Ĥ�������Τ��������μ����ͤ��Ƥߤޤ��礦��
-%���ܸ�ξ��Ϥ���ʸ���Ȥ�������ܤ���ʸ���Τ����������������
-%\KY{ʸ���ֶ���}�Ȥ�����Τ�¸�ߤ��ޤ��������ȴ�����
-%���夦���夦�˵ͤ���Ƥ��Ƥϡ������ɤߤŤ餤�Ǥ��礦��
-%���ν������̾����ܸ�{\TeX}����ưŪ�˹Ԥ��ޤ�����ʸ�Ǥ⤳���
-%�Τ�ʤ����������ѹ�����Ƥ��ޤ����㤨��\KY{���}��
-%\KY{���ͤ�}�ʤɤȸƤФ���Τ�����ޤ���
-%�ʲ��������Ϥ���٤Ƥ���������
+\subsection{文章の中の空白}
+%\indindz{空き}{文字間の}%
+%まず一つの段落内のおける空白の種類を考えてみましょう．
+%日本語の場合はある文字とそれに隣接する文字のあいだに挿入される
+%\KY{文字間空白}というものが存在します．漢字と漢字が
+%ぎゅうぎゅうに詰められていては，非常に読みづらいでしょう．
+%この処理は通常日本語{\TeX}が自動的に行います．欧文でもこれは
+%知らないあいだに変更されています．例えば\KY{合字}や
+%\KY{字詰め}などと呼ばれるものがあります．
+%以下の入出力を見比べてください．
 %\begin{InOut}
 %Fifth files were found in a folder and 
 %were shuffled by anyone.\par
 %Fifth f{}iles were found in a folder and 
 %were shuf{}f{}led by anyone.
 %\end{InOut}
-%�����Ǥ�\qu{\texttt{f{}l}}��\qu{\texttt{f{}f{}l}}�ʤɤ�������Ǥ���
-\indindz{����}{ʸ���֤�}%
-\zindind{ʸ��}{�ֶ���}%
-�ޤ���Ĥ�������ˤ��������μ����ͤ��Ƥߤޤ��礦��
-���ܸ�ξ��Ϥ���ʸ���Ȥ�������ܤ���ʸ���Τ����������������
-\K{ʸ���ֶ���}��\Z{����}�ˤȤ�����Τ�¸�ߤ��ޤ��������ȴ�����
-���夦���夦�˵ͤ���Ƥ��Ƥϡ������ɤߤŤ餤�Ǥ��礦��
-���ν������̾����ܸ�{\TeX}����ưŪ�˹Ԥ��ޤ�����ʸ�Ǥ⤳���
-�Τ�ʤ��������˽�������Ƥ��ޤ����㤨��\KY{���} (\Z{ligature}) ��
-\KY{���ͤ�} (\Z{kerning}) �ʤɤȸƤФ���Τ�����ޤ���
-�ʲ��������Ϥ���٤Ƥ���������
+%ここでは\qu{\texttt{f{}l}}や\qu{\texttt{f{}f{}l}}などがその例です．
+\indindz{空き}{文字間の}%
+\zindind{文字}{間空白}%
+まず一つの段落内における空白の種類を考えてみましょう．
+日本語の場合はある文字とそれに隣接する文字のあいだに挿入される
+\K{文字間空白}（\Z{字間}）というものが存在します．漢字と漢字が
+ぎゅうぎゅうに詰められていては，非常に読みづらいでしょう．
+この処理は通常日本語{\TeX}が自動的に行います．欧文でもこれは
+知らないあいだに処理されています．例えば\KY{合字} (\Z{ligature}) や
+\KY{字詰め} (\Z{kerning}) などと呼ばれるものがあります．
+以下の入出力を見比べてください．
 \begin{InOut}
 The files were found in a folder 
 and were shuffled by anyone.\par
 The f{}iles were found in a folder 
 and were shuf{}f{}led by anyone.
 \end{InOut}
-�����Ǥ�\qu{\texttt{f{}l}}��\qu{\texttt{f{}f{}l}}�ʤɤ�������Ǥ���
+ここでは\qu{\texttt{f{}l}}や\qu{\texttt{f{}f{}l}}などがその例です．
 
 
-\indindz{����}{ñ��֤�}%
-��ʸ�ξ�硤ñ���ñ��Τ������˶�����������ޤ��������
-\KY{ñ��ֶ���}�Ȥ�\KY{ñ��֥��ڡ���}�ȸƤӤޤ���
-����Ͽʹ֤��տ�Ū��ñ��ζ��ڤ�Ȥ���`\verb*|My name is Thor.|'��
-�褦���������ޤ���
+\indindz{空き}{単語間の}%
+欧文の場合，単語と単語のあいだに空白を挿入します．これを
+\KY{単語間空白}とか\KY{単語間スペース}と呼びます．
+これは人間が意図的に単語の区切りとして`\verb*|My name is Thor.|'の
+ように挿入します．
 
-\indindz{����}{ʸ�֤�}%
-�����ʸ��ʸ�Ȥ���ڤ뤿���\KY{ʸ�ֶ���}������ޤ���
-�����ʸ�ν����򼨤���Τǡ�ñ��ֶ����ʸ���ֶ�����⹭��
-����ˤʤ�ޤ���{\LaTeX}�Ǥ�
+\indindz{空き}{文間の}%
+さらに文と文とを区切るための\KY{文間空白}があります．
+これは文の終わりを示すもので，単語間空白や文字間空白よりも広い
+空白になります．{\LaTeX}では
 \begin{itemize}
- \item �ԥꥪ�ɤ�����ʸ����\K{��ʸ��}�ʤ��\K{ñ���}������������롥
- \item �ԥꥪ�ɤ�����ʸ����\K{��ʸ��}�ʤ��\K{ʸ��}������������롥
+ \item ピリオドの前の文字が\K{大文字}ならば\K{単語間}空白を挿入する．
+ \item ピリオドの前の文字が\K{小文字}ならば\K{文間}空白を挿入する．
 \end{itemize}
-�Ȥ�����ĤΥ롼�뤷�����äƤ��ޤ���
+という二つのルールしか持っていません．
 
-����������ˤʤ�Τ���ʸ���ǽ����ñ��侮ʸ����ޤ�ʸ�Ǥ���
+そこで問題になるのが大文字で終わる単語や小文字を含む文です．
 \begin{InOut}
 I want to be a Mr. Right and go to
  N.Y. I wish I could.
 \end{InOut}
-%ʬ����Ť餤�Ǥ���
-%\qu{Mr.}��\qu{Right}�Τ������ζ���Τۤ���\qu{N.Y.}��\qu{I}�Τ�������
-%�������㴳�������Ȥ�ʬ����Ǥ��礦��
-%����������������ˤ��뤿��ˤϿʹ֤�����Ū����Ĥ�̿���Ȥ��ޤ���
-%ñ��ֶ�����������뤿��ˤ�\verb*|\ |̿���ʸ�ֶ���ˤ�\verb|\@|
-%̿���Ȥ��ޤ���%
-\qu{Mr.}��\qu{Right}�Τ������ζ���Τۤ���\qu{N.Y.}��\qu{I}�Τ�������
-�������㴳�����ʤ�ޤ�����̾��`N.Y.'�ξ�硤�ԥꥪ�ɤ˶�����
-����ޤ��󤬡���̾��`D.~E.'�ˤ϶���������ޤ�������������������
-�ˤ��뤿��ˤϿʹ֤�����Ū����Ĥ�̿���Ȥ��ޤ���
-ñ��ֶ�����������뤿��ˤ� \verb*|\ | ̿���ʸ�ֶ����
-�� \verb|\@| ̿���Ȥ��ޤ���%
+%分かりづらいですが
+%\qu{Mr.}と\qu{Right}のあいだの空白のほうが\qu{N.Y.}と\qu{I}のあいだの
+%空白よりも若干広いことが分かるでしょう．
+%これらを正しい空白にするためには人間が明示的に二つの命令を使います．
+%単語間空白を挿入するためには\verb*|\ |命令を，文間空白には\verb|\@|
+%命令を使います．%
+\qu{Mr.}と\qu{Right}のあいだの空白のほうが\qu{N.Y.}と\qu{I}のあいだの
+空白よりも若干広くなります．地名の`N.Y.'の場合，ピリオドに空きは
+ありませんが，人名の`D.~E.'には空きを入れます．これらを正しい空白
+にするためには人間が明示的に二つの命令を使います．
+単語間空白を挿入するためには \verb*|\ | 命令を，文間空白に
+は \verb|\@| 命令を使います．%
 \glossary{" @\hspace*{-1.2ex}"\verb*+"\" +}%"
 \glossary{"@" @\hspace*{-1.2ex}"\verb+"\"@+}%"
 \begin{InOut}
@@ -2019,32 +2019,32 @@ to N.Y. Let me do.\par
 I want to be a Mr.\ Right and go 
 to N.Y\@. Let me do.
 \end{InOut}
-\indindz{����}{�Դ֤�}\indindz{����}{����֤�}%"
-�����ƹԤȹԤΤ�������\KY{�Դֶ���}������ޤ�����
-���������Τ�������\KY{����ֶ���}�⤢��ޤ���
-������{\LaTeX}����Ŭ�ʶ�����̤�Ĵ�ᤷ�Ƥ���Ƥ���Τǡ�
-���ʤϵ��ˤ�����Ϥʤ��Ǥ��礦��
+\indindz{空白}{行間の}\indindz{空白}{段落間の}%"
+そして行と行のあいだの\KY{行間空白}がありますし，
+段落と段落のあいだの\KY{段落間空白}もあります．
+これらは{\LaTeX}が最適な空白の量を調節してくれているので，
+普段は気にする事はないでしょう．
 
-%�Ǹ��ʸ�Ϥˤ���������ޤȤ���
+%最後に文章における空白をまとめると
 %\begin{description}
-% \item[ʸ���ֶ���] ʸ���֤�������������
-% \item[ñ��ֶ���] ñ��֤�������������
-%\verb*|\ |̿�������Ū�������Ǥ��롥
-% \item[ʸ�ֶ���]   ʸ�֤�������������
-%\verb*|\@|̿�������Ū�������Ǥ��롥
-% \item[�Դֶ���]   �Դ֤�������������
-% \item[����ֶ���] ����֤�������������\Cmd{par}̿�������Ū��
-%����ν�λ��𤲤뤳�Ȥ��Ǥ��롥
+% \item[文字間空白] 文字間に挿入される空白．
+% \item[単語間空白] 単語間に挿入される空白．
+%\verb*|\ |命令で明示的に挿入できる．
+% \item[文間空白]   文間に挿入される空白．
+%\verb*|\@|命令で明示的に挿入できる．
+% \item[行間空白]   行間に挿入される空白．
+% \item[段落間空白] 段落間に挿入される空白．\Cmd{par}命令で明示的に
+%段落の終了を告げることができる．
 %\end{description}
-%�θޤĤ�����Ȥ������ȤǤ���
-\indindz{����}{�Դ֤�}\indindz{����}{����֤�}%"
-\zindind{ñ��}{�֤ζ���}\zindind{����}{�֤ζ���}%
-�����ƹԤȹԤΤ�������\K{�Դֶ���}��\Z{�Դ�}�ˤ�����ޤ�����
-���������Τ�������\K{����ֶ���}�⤢��ޤ���
-������{\LaTeX}����Ŭ�ʶ�����̤�Ĵ�ᤷ�Ƥ���Ƥ���Τǡ�
-���ʤϵ��ˤ�����Ϥʤ��Ǥ��礦��
+%の五つがあるということです．
+\indindz{空白}{行間の}\indindz{空白}{段落間の}%"
+\zindind{単語}{間の空白}\zindind{段落}{間の空白}%
+そして行と行のあいだの\K{行間空白}（\Z{行間}）がありますし，
+段落と段落のあいだの\K{段落間空白}もあります．
+これらは{\LaTeX}が最適な空白の量を調節してくれているので，
+普段は気にする事はないでしょう．
 
-�Ǹ��ʸ�Ϥˤ���������ޤȤ��ȼ��θޤĤ�����Ȥ������ˤʤ�ޤ���
+最後に文章における空白をまとめると次の五つがあるという事になります．
 \index{space}%
 \indindz{space}{letter}%
 \indindz{space}{word}%
@@ -2052,34 +2052,34 @@ to N.Y\@. Let me do.
 \zindind{letter}{space}%
 \zindind{sentence}{space}%
 \begin{description}
- \item[ʸ���ֶ��� ({letter space})] 
-   ʸ���֤�������������
- \item[ñ��ֶ��� ({word space})] \zindind{word}{space}
-  ñ��֤�������������\verb*|\ | ̿�������Ū�������Ǥ��롥
- \item[ʸ�ֶ��� ({sentence space})]   
-   ʸ�֤�������������\verb*|\@| ̿�������Ū�������Ǥ��롥
- \item[�Դֶ��� (\Z{leading})]  
-   �Դ֤�������������
+ \item[文字間空白 ({letter space})] 
+   文字間に挿入される空白．
+ \item[単語間空白 ({word space})] \zindind{word}{space}
+  単語間に挿入される空白．\verb*|\ | 命令で明示的に挿入できる．
+ \item[文間空白 ({sentence space})]   
+   文間に挿入される空白．\verb*|\@| 命令で明示的に挿入できる．
+ \item[行間空白 (\Z{leading})]  
+   行間に挿入される空白．
 \index{paragraph!skip@\zdash skip}%
- \item[����ֶ��� (paragraph skip)] 
-   ����֤������������� \Cmd{par}̿�������Ū��
-   ����ν�λ��𤲤�����Ǥ��롥
+ \item[段落間空白 (paragraph skip)] 
+   段落間に挿入される空白． \Cmd{par}命令で明示的に
+   段落の終了を告げる事ができる．
 \end{description}
 
 
-\subsection{����¾���դ��뤳��}
-\zindind{����}{������}
-����餬�¤�Ǥ�����ǰ�Ĥΰ�̣�����ñ��֤ˤϲ��Ԥ�����
-�ʤ��褦�ˤ��ޤ����㤨�п�̾��ڡ����ֹ桤ά��ʤɤϤҤȤ�
-�Ȥ�ˤ��ޤ�������ˤϥ����\qu{\str{~}}��Ȥ��ޤ���
+\subsection{その他注意すること}
+\zindind{改行}{の抑制}
+それらが並んでいる事で一つの意味を持つ単語間には改行を入れ
+ないようにします．例えば人名やページ番号，略語などはひとま
+とめにします．これにはチルダ\qu{\str{~}}を使います．
 \index{"~@\verb+~+}\glossary{"~@\verb+~+}%
 \begin{InOut}
 Mr.~Sato read page~10 and looked 
 at fig.~3 and table~2 in the book.
 \end{InOut}
 
-\Z{������}���٤�礦�Ȥ��ˤϡ�������Ȱ�����Τ������˾����ʶ����������
-�ޤ���
+\Z{引用符}が隣り合うときには，引用符と引用符のあいだに小さな空白を挿入し
+ます．
 
 \begin{InOut}
 ```Hello' is a fine greeting and I 
@@ -2090,227 +2090,227 @@ always say `Hello.''' \par
 
 
 
-\subsection{��ʸ�Ȳ�ʸ�Τ������ζ���}
-\index{����!��ʬ����}
-���ܸ�{\TeX}�Ǥ���ʸ�Ȳ�ʸ�Τ������ˤ϶������������
-���ޤ����������ʸ�Ȳ�ʸ��{\KY{��ʬ����}}�ȸƤӤޤ���
-��ʬ�����Ȥ����Ѷ����4ʬ1�ζ���λ��Ǥ��������
-��ʸ���Ǥε�§���������٤�����Ǥ��äơ����������ۤ���
-������������ȸ����Ƥ��ޤ����ʲ�����򸫤���ɤ�ʬ��
-��Ǥ��礦����Ǥ� \cmd{mbox} �ǻ�ʬ������̵���ˤ��Ƥ��ޤ���
+\subsection{和文と欧文のあいだの空白}
+\index{空白!四分空き}
+日本語{\TeX}では和文と欧文のあいだには空白が挿入されて
+います．これを和文と欧文の{\KY{四分空き}}と呼びます．
+四分空きとは全角空白の4分1の空白の事です．これは
+和文組版の規則で挿入すべき空白であって，挿入したほうが
+美しく見えると言われています．以下の例を見ると良く分か
+るでしょう．例では \cmd{mbox} で四分空きを無効にしています．
 \begin{InOut}
-���ܸ��good�Τ������ˤϻ�ʬ����
-��\par �����\mbox{}good\mbox{}�Ǥ�.
+日本語とgoodのあいだには四分空き
+が\par あると\mbox{}good\mbox{}です.
 \end{InOut}
 
-���ʤϲ���ռ������˶�����������Ƥ���Τ�����ʤ��ΤǤ�����
-���Ƥε��Ҥλ����ˤ�äƤ��ζ��򤬻�ʬ�������⹭���ʤ�ޤ���
-�տ�Ū������ʸ����Ⱦ��ʸ���Τ�������Ⱦ�Ѷ�������������
-������ʬ�ϻ�ʬ�������⹭��\K{ñ��ֶ���}�ˤʤ�Ȥ���
-����ޤ������Ǥε�§�˽����Ȥ��ζ�������줹�٤��Ǥ��Τ�
-���Ϥ��ʳ��Ǥ����˵����դ��ޤ���
-��Ȥ���{\LaTeX}�Ȥ������������ʸ���ν����򼨤��ޤ���
-���ܸ�{\TeX}�ϼ�ưŪ���٤�礦ʸ����Ⱦ��ʸ��������ʸ������
-Ƚ�̤��Ƥ���ޤ����Ϥ�����ܸ�{\TeX}�ˤ��ν�����Ǥ���ơ�
-����Ƥ����鼫ʬ�Ǥ��ζ����Ĵ�᤹��Ф褤�Ǥ��礦��
-�ºݤ����Ϥ��ƻ�Ƥ���������
+普段は何も意識せずに空白が挿入されているので問題ないのですが，
+原稿の記述の仕方によってその空白が四分空きよりも広くなります．
+意図的に全角文字と半角文字のあいだに半角空白を挿入すると
+その部分は四分空きよりも広い\K{単語間空白}になるときが
+あります．組版の規則に従うとこの空白は統一すべきですので
+入力の段階でそれらに気を付けます．
+例として{\LaTeX}という記号と全角文字の書き方を示します．
+日本語{\TeX}は自動的に隣り合う文字が半角文字か全角文字かを
+判別してくれます．始めは日本語{\TeX}にその処理を任せて，
+慣れてきたら自分でその空白を調節すればよいでしょう．
+実際に入力して試してください．
 \C*{TeX}%
 \C*{LaTeX}%
 \begin{InOut}
-\LaTeX �����ܸ�\TeX     \\
-\LaTeX\ �����ܸ� \TeX   \\
-{\LaTeX}�����ܸ�{\TeX}  \\
-{\LaTeX} �����ܸ� {\TeX}\\
+\LaTeX と日本語\TeX     \\
+\LaTeX\ と日本語 \TeX   \\
+{\LaTeX}と日本語{\TeX}  \\
+{\LaTeX} と日本語 {\TeX}\\
 \end{InOut}
-�ȤäƤ��벤ʸ���Τμ���ˤ�äƤ�㤤�ޤ�����
-���ߤ�����⤢��ΤǤ�������Ǹ��Ǥ��ޤ��󤬡�
-���Ϥ��뤦���Ǥκ�Ȥ�ͤ���Ȼ����ܤ����ּ�ڤ��Ȼפ��ޤ���
+使っている欧文書体の種類によっても違いますし，
+好みの問題もあるのでこれだと断言できませんが，
+入力するうえでの作業を考えると三つ目が一番手軽だと思います．
 
-���������ˡ�ˤ����ƤⲤʸƱ�Τζ�������դ��ޤ���
+いずれの方法においても欧文同士の空白に注意します．
 \begin{InOut}
 \TeX and \LaTeX are famous.\\
 {\TeX} and {\LaTeX} are popular.
 \end{InOut}
-���ϥե�����Ǥ�\qu{\cmd{TeX}}�θ�˶�����������Ƥ���Ĥ��
-�Ǥ⡤���Ϥˤ����ƶ����`\verb|\TeX|'�˵ۼ�����Ƥ��ޤ��ޤ���
+入力ファイルでは\qu{\cmd{TeX}}の後に空白を挿入しているつもり
+でも，出力において空白は`\verb|\TeX|'に吸収されてしまいます．
 
-���Τ褦�ʶ�����Ĵ�����Ф��Ƥ�\secref{xspace}�ǲ��⤷�Ƥ���\sty{xspace}
-�ѥå�������ͭ�ѤǤ���
+このような空きの調整に対しては\secref{xspace}で解説している\sty{xspace}
+パッケージが有用です．
 
 
-\section{��·��}
-%���ܿͤϹ�·�����ɤ��Ȥ������뤽���Ǥ���
-��·���ˤϻ��ĤδĶ��Ȼ��Ĥ�������Υ��ޥ�ɤ�Ȥ������Ǥ��ޤ�
-\pp{\tabref{hss}}��
+\section{行揃え}
+%日本人は行揃えを良く使いたがるそうです．
+行揃えには三つの環境と三つの宣言型のコマンドを使う事ができます
+\pp{\tabref{hss}}．
 \begin{table}[htbp]%{l}{21zw}
 \begin{center}
-   \caption{·����̿������}\tablab{hss}
+   \caption{揃えの命令と宣言}\tablab{hss}
   \begin{tabular}{*3l}
    \TR
-   \Th{����}     &\Th{�Ķ�} & \Th{���}\\   
+   \Th{種類}     &\Th{環境} & \Th{宣言}\\   
    \MR
-   ��·��   &\Env{flushleft}  & \Cmd{raggedright} \\
-   ���·�� &\Env{center}     & \Cmd{centering} \\
-   ��·��   &\Env{flushright} & \Cmd{raggedleft} \\   
+   左揃え   &\Env{flushleft}  & \Cmd{raggedright} \\
+   中央揃え &\Env{center}     & \Cmd{centering} \\
+   右揃え   &\Env{flushright} & \Cmd{raggedleft} \\   
    \BR
   \end{tabular}
 \end{center}
 \end{table}
-�Ķ����Υ��ޥ�ɤϹ����ϰϤ˻Ȥ���������Υ��ޥ�ɤ�
-��Ĥ����Ǥ��̤δĶ�����ǻȤ������Ǥ��ޤ���
-\Z{���·��}�ˤ�\Env{center}�Ķ��Ǥ���
-1�Ԥ⤷���Ϥ���ʾ��ʸ����ɽ���ޤʤɤ�����˴󤻤뤳%
-\index{����!���褦�������ˤ�����@��·���ˤ�����\zdash}%
-�Ȥ���ǽ�Ǥ�����Ƭ��ǽ��Ԥ˲��Ԥ�����ޤ���
-\Z{��·��}�ˤ�\Env{flushright}�Ķ��Ǥ���ʸ����򱦴�
-�ˤ��ޤ���\Z{��·��}�ˤ�\Env{flushleft}�Ķ��Ǥ���
-��������Ԥ鷺�˺��˴󤻤ޤ���
+環境型のコマンドは広い範囲に使い，宣言型のコマンドは
+一つの要素や別の環境の中で使う事ができます．
+\Z{中央揃え}には\Env{center}環境です．
+1行もしくはそれ以上の文字列，表，図などを中央に寄せるこ%
+\index{改行!きようそろえにおける@行揃えにおける\zdash}%
+とが可能です．行頭や最終行に改行は入れません．
+\Z{右揃え}には\Env{flushright}環境です．文字列を右寄せ
+にします．\Z{左揃え}には\Env{flushleft}環境です．
+字下げを行わずに左に寄せます．
  \begin{InOut}
-�ӥ��ͥ�ʸ������������Ǥ��礦��
+ビジネス文書で大活躍するでしょう．
 \begin{flushleft} 
-����λ�������Ԥ鷺�� \\ ʸ����򺸤�·���ޤ���
+段落の字下げを行わずに \\ 文字列を左に揃えます．
 \end{flushleft}
 \end{InOut}
 \begin{InOut}
-�ӥ��ͥ�ʸ������������Ǥ��礦��
+ビジネス文書で大活躍するでしょう．
 \begin{center}
-ʸ�Ϥ�\\ ���·���� \\ ���ޤ���
+文章を\\ 中央揃えに \\ します．
 \end{center}
 \end{InOut}
 \begin{InOut}
-�ӥ��ͥ�ʸ������������Ǥ��礦��
+ビジネス文書で大活躍するでしょう．
 \begin{flushright}
-�ӥ��ͥ�ʸ��ǳ������\\ flushright
-�Ķ��Ǥ���
+ビジネス文書で活躍中の\\ flushright
+環境です．
 \end{flushright}
 \end{InOut}
 
-%���ơ����λ��Ĥι�·���Υ��ޥ�ɤ�Ȥä�
-%���꤬���ʥӥ��ͥ�ʸ��κ����򤷤ޤ��礦��
-���λ��Ĥι�·���Υ��ޥ�ɤ�Ȥäƥӥ��ͥ�ʸ����ɤ�������
-�񼰤�����Ǥ��ޤ���\indindz{ʸ��}{�ӥ��ͥ�}
+%さて，この三つの行揃えのコマンドを使って
+%ありがちなビジネス文書の作成をしましょう．
+この三つの行揃えのコマンドを使ってビジネス文書に良く見られる
+書式を作成できます．\indindz{文書}{ビジネス}
 
 \begin{InText}
 \begin{flushright} 
-   �۵�Ϣ�� \\    2004ǯ3��31��
+   緊急連絡 \\    2004年3月31日
 \end{flushright}
 \begin{flushleft} 
-   ���ա�Ű��
+   渡辺　徹殿
 \end{flushleft}
 \begin{flushright} 
-   ̤����\\    �ͻ���
+   未来会社\\    人事課
 \end{flushright}
 \begin{center}
-   �ͻ���ư�Τ��Τ餻
+   人事異動のお知らせ
 \end{center}
-���ʤ���2004ǯ�٤����ػ����̤���°����ޤ���
-\begin{flushright}  �ʾ�  \end{flushright}
+あなたは2004年度から檜山方面に配属されます．
+\begin{flushright}  以上  \end{flushright}
 \end{InText}
 
-���Τ褦�ˤ���ȡ��ʲ��Τ褦�ʽ��ϤȤʤ�ޤ���
+このようにすると，以下のような出力となります．
 
 
 \begin{OutText}
-\begin{flushright} �۵�Ϣ�� \\ 2004ǯ3��31��\end{flushright}
-\begin{flushleft}  ���� Ű��                \end{flushleft}
-\begin{flushright} ̤����\\ �ͻ���    \end{flushright}
-\begin{center}     �ͻ���ư�Τ��Τ餻       \end{center}
-���ʤ���2004ǯ�٤����ػ����̤���°����ޤ���
-\begin{flushright} �ʾ�                     \end{flushright}
+\begin{flushright} 緊急連絡 \\ 2004年3月31日\end{flushright}
+\begin{flushleft}  渡辺 徹殿                \end{flushleft}
+\begin{flushright} 未来会社\\ 人事課    \end{flushright}
+\begin{center}     人事異動のお知らせ       \end{center}
+あなたは2004年度から檜山方面に配属されます．
+\begin{flushright} 以上                     \end{flushright}
 \end{OutText}
 
-\section{�վ��} 
+\section{箇条書き} 
 
-\Z{�վ��}�ˤϼ��λ��ĤδĶ����Ѥ�������Ǥ��ޤ���
+\Z{箇条書き}には次の三つの環境を用いる事ができます．
 
 \begin{comment}
-���� list �� trivlist �Ķ���Ȥ���ΤǤ��礦��������Ԥ����Ƥ�
-�ޤ��ɬ������ʤ��Ȼפ���������ޤ�����
+勿論 list や trivlist 環境も使えるのでしょうが，初級編の内容に
+含める必要性もないと思い，削除しました．
 \end{comment}
 
 \begin{description}
-\item[ \Env{itemize}�Ķ�]\indindz{�վ��}{�����դ���}
-  ���ܤ���Ƭ�˵���\pp{��٥�}���դ�\K{�����դ�}�վ�񤭴Ķ���
-  �Ķ��ο����ˤ�äƵ��椬\qu{$\bullet$��$-$��$*$��$\cdot$}
-  �Τ褦�˼�ưŪ���Ѥ�롥
-\item[ \Env{enumerate}�Ķ�]\indindz{�վ��}{�ֹ��դ���}%
-\indindz{�ֹ�}{�վ�񤭤�}%
-  ���ܤ���Ƭ���̤��ֹ椬�դ�\K{�ֹ��դ�}�վ�񤭴Ķ���
-  �����ˤ�ä��̤��ֹ椬\qu{1��(a)��i��A}
-  �Τ褦�˼�ưŪ���Ѥ�롥
-\item[ \Env{description}�Ķ�]\indindz{�վ��}{�����դ���}
-  ���ܤ����������� \cmd{item} ��Ǥ�հ����ǻ��ꤹ��
-  \K{�����դ�}�վ�񤭴Ķ���
+\item[ \Env{itemize}環境]\indindz{箇条書き}{記号付きの}
+  項目の先頭に記号\pp{ラベル}が付く\K{記号付き}箇条書き環境．
+  環境の深さによって記号が\qu{$\bullet$，$-$，$*$，$\cdot$}
+  のように自動的に変わる．
+\item[ \Env{enumerate}環境]\indindz{箇条書き}{番号付きの}%
+\indindz{番号}{箇条書きの}%
+  項目の先頭に通し番号が付く\K{番号付き}箇条書き環境．
+  深さによって通し番号が\qu{1，(a)，i，A}
+  のように自動的に変わる．
+\item[ \Env{description}環境]\indindz{箇条書き}{説明付きの}
+  項目の前に説明を \cmd{item} の任意引数で指定する
+  \K{説明付き}箇条書き環境．
 \end{description}
 
 
-%��ݡ��Ȥ���ʸ�ξ��Ϥʤ�٤��վ�񤭤��򤱤ơ�
-%ʸ�Ϥˤ�뵭�Ҥ�˾�ޤ����褦�Ǥ�������Τ�
-%�䤹����ͤ���вվ�񤭤�Ȥ��٤��Ǥ��礦��
-%�����δĶ�������Ҥˤ��뤳�Ȥ���ǽ�Ǥ���\Z{�����}��
-%�Ǥ�����ܤο������̾�ͤĤޤǤǤ���\texttt{itemize}�Ķ�
-%����Ƭ�ε��������Ҥˤ�����缫ưŪ���ѹ�����ޤ���
-%�ƴĶ��ˤ����Ƥι��ܤ� \Cmd{item} ̿���Ȥ��ޤ���
-%\texttt{itemize}�ˤ����Ƥ�\verb|\item[\#]|�Ȥ��뤳�Ȥ���
-%Ƭ�Υ�٥�ε������ꤹ�뤳�Ȥ���ǽ�Ǥ���
-��ݡ��Ȥ���ʸ�ξ��Ϥʤ�٤��վ�񤭤��򤱤ơ�
-ʸ�Ϥˤ�뵭�Ҥ�˾�ޤ����褦�Ǥ�������Τ�
-�䤹����ͤ���вվ�񤭤�Ȥ��٤��Ǥ��礦��
-�����δĶ���\KY{�����} (\Z{nest}) �ˤ��������ǽ�Ǥ���
-\Z{�����}�ˤǤ�����ܤο������̾�\K{�ͤĤޤ�}�Ǥ���
-\texttt{itemize}�Ķ�
-����Ƭ�ε��������Ҥˤ�����缫ưŪ���ѹ�����ޤ���
-�ƴĶ��ˤ����Ƥι��ܤ� \Cmd{item} ̿���Ȥ��ޤ���
-\texttt{itemize}�ˤ����Ƥ�`\verb|\item[\#]|'�Ȥ��������
-Ƭ�Υ�٥�ε������ꤹ�������ǽ�Ǥ���
+%レポートや論文の場合はなるべく箇条書きは避けて，
+%文章による記述が望ましいようです．理解のし
+%やすさを考えれば箇条書きを使うべきでしょう．
+%これらの環境は入れ子にすることが可能です．\Z{入れ子}に
+%できる項目の深さは通常四つまでです．\texttt{itemize}環境
+%の先頭の記号は入れ子にした場合自動的に変更されます．
+%各環境においての項目は \Cmd{item} 命令を使います．
+%\texttt{itemize}においては\verb|\item[\#]|とすることで先
+%頭のラベルの記号を指定することが可能です．
+レポートや論文の場合はなるべく箇条書きは避けて，
+文章による記述が望ましいようです．理解のし
+やすさを考えれば箇条書きを使うべきでしょう．
+これらの環境は\KY{入れ子} (\Z{nest}) にする事が可能です．
+\Z{入れ子}にできる項目の深さは通常\K{四つまで}です．
+\texttt{itemize}環境
+の先頭の記号は入れ子にした場合自動的に変更されます．
+各環境においての項目は \Cmd{item} 命令を使います．
+\texttt{itemize}においては`\verb|\item[\#]|'とする事で先
+頭のラベルの記号を指定する事が可能です．
 
 
 \begin{InOut}
 \begin{itemize}
-  \item ����Ҥˤ�����.
-  \item[*]  ����Ҥˤʤ�.
+  \item 入れ子にしたい.
+  \item[*]  入れ子になる.
   \begin{itemize}
-     \item ����ҤǤ�.
+     \item 入れ子です.
     \end{itemize}
 \end{itemize}
 \end{InOut}
 \begin{InOut}
 \begin{enumerate}
-  \item �Ϥ���ι���.
-  \item ���ι���.
+  \item はじめの項目.
+  \item 次の項目.
   \begin{description}
-    \item[����1] ����1.
-    \item[����2] ����2.
+    \item[項目1] 説明1.
+    \item[項目2] 説明2.
   \end{description}
 \end{enumerate} 
 \end{InOut}
 
-%\env{itemize}�Ķ���\env{enumerate}�Ķ��Υ�٥��
-%���줾�쿼���˱�����
+%\env{itemize}環境と\env{enumerate}環境のラベルは
+%それぞれ深さに応じて
 %\begin{description}
 % \item[] 
 %\end{description}
 %\Cmd{labelenumi} \Cmd{labelenumii}\Cmd{labelenumiii}
 %\Cmd{labelenumiv} 
-%\qu{$\bullet$��$-$��$*$��$\cdot$}
-%�ƥ�٥�Υ����ƥ��٥�ν񼰤� 
+%\qu{$\bullet$，$-$，$*$，$\cdot$}
+%各レベルのアイテムラベルの書式は 
 %\labelenumi, \labelenumii ...
-%�ǻ��ꤵ��롥
+%で指定される．
 %\alpha{\c@enumii}
-%\qu{1��(a)��i��A}
-%�վ�񤭴Ķ������ƥꥹ�Ȥ�\item���ޥ�ɤǻϤ�롥
-%�վ�񤭤���Ƭ�˥ɥåȤ�Ĥ��롥
-%��Ƭ�ˤĤ������ƥ��٥�ν񼰤� 
+%\qu{1，(a)，i，A}
+%箇条書き環境１．各リストは\itemコマンドで始める．
+%箇条書きの先頭にドットをつける．
+%先頭につくアイテムラベルの書式は 
 %\labelitemi, \labeleitemii ...
-%�ǻ��ꤵ���ʽ���ͤϥɥåȡˡ�
+%で指定される（初期値はドット）．
 
 
-\subsection{�ֹ��ղվ�񤭴Ķ��γ�ĥ\zdash\Y{enumerate}}\seclab{enumerate}
+\subsection{番号付箇条書き環境の拡張\zdash\Y{enumerate}}\seclab{enumerate}
 
-�ֹ��դβվ�񤭴Ķ� \E{enumerate} �γ�ĥ�� \Person{David}{Carlisle}���Ԥ�
-��������� \Y{enumerate} �ѥå������Ȥ����Ѥ�������Ǥ��ޤ���
-\C{Alph}, \C{alph}, \C{Roman}, \C{roman}, \C{arabic} �Ȥ���̿����Ѥ��
-�ˡ�����ʸ�� (�ȡ�����) �ˤ�äƥ����󥿤Ȥ��٤�\Z{������}����ޤ���
+番号付の箇条書き環境 \E{enumerate} の拡張を \Person{David}{Carlisle}が行な
+い，これを \Y{enumerate} パッケージとして用いる事ができます．
+\C{Alph}, \C{alph}, \C{Roman}, \C{roman}, \C{arabic} という命令の変わり
+に，次の文字 (トークン) によってカウンタとすべき\Z{修飾子}を決めます．
 
 \begin{Syntax}
 \begin{tabular}{LCCCC}
@@ -2319,30 +2319,30 @@ always say `Hello.''' \par
 % &    & & & \\
 \end{tabular}
 \end{Syntax}
-�����ҤȤ�����ʸ�������Ф� �ȳ�� \{ \} �ǥ��롼�ԥ󥰤��ޤ��󡥵դ�
-�����Ҥȶ��̤��դ��ʤ�ʸ���� (Exmaple, A �ʤɤʤ�) �ϥ��롼�ԥ󥰤��ޤ���
-�ޤ��ϡ���������̣���Ƥ���������
+修飾子としたい文字は絶対に 波括弧 \{ \} でグルーピングしません．逆に
+修飾子と区別が付かない文字列 (Exmaple, A などなど) はグルーピングします．
+まずは，使用例を吟味してください．
 
 \begin{InOut}
 \usepackage{okumacro,graphicx}
 \usepackage{enumerate}
-\begin{enumerate}[{����} 1]
-  \item\label{exe:a} ̤��Ǥ���
-   \begin{enumerate}[{���� 
+\begin{enumerate}[{例題} 1]
+  \item\label{exe:a} 未来です．
+   \begin{enumerate}[{問題 
       \ref{exe:a}}-1]
-    \item ����Ϥɤ�����
-    \item ����Ϥɤ��Ǥ���
+    \item これはどうか．
+    \item それはどうです．
    \end{enumerate}
-  \item ����ϱ�����
-  \item ����ϱ�����
+  \item あれは云々．
+  \item これは云々．
 \end{enumerate}
 \end{InOut}
 
 \begin{Trick}
-\Z{�ݿ���}���ֹ��դ��򤷤����Ȥ����� \Y{okumacro} �ѥå������� \C{MARU} ̿��
-��Ȥ��ޤ������Τ褦���ü�ʥ������� \Y{enumerate} �ѥå�������Ȥ鷺��ľ
-�� \C{labelenumi} �ʤɤΥ�٥���ʬ����������������ľ�ˤǤ�����⤢
-��ޤ���
+\Z{丸数字}で番号付けをしたいとき等は \Y{okumacro} パッケージの \C{MARU} 命令
+を使います．このような特殊なケースは \Y{enumerate} パッケージを使わずに直
+接 \C{labelenumi} などのラベル部分を再定義した方が素直にできる場合もあ
+ります．
 
 \begin{InTeX}
 \begin{enumerate}
@@ -2355,157 +2355,157 @@ always say `Hello.''' \par
 \end{InTeX}
 \end{Trick}
 
-\section{����ޤǤ�����}
+\section{これまでの復習}
 
 \begin{Prob}
-�����ޤǤ�����ɤ�������Ǥ⡤�������٤ε��Ϥ�ʸ�������������
-�Ǥ��ޤ������Τ褦��\Va{file}{tex}����������ºݤ˥����ץ���
-�Ȥ�Ԥ������ν��Ϸ�̤��̣���Ƥ������������������ܼ������
-���뤿���2��ۤɥ����ץ��åȤ�Ԥʤ��ޤ���
+ここまでの節を読んだだけでも，ある程度の規模の文書を作成する事が
+できます．次のような\Va{file}{tex}を作成し，実際にタイプセッ
+トを行い，その出力結果を吟味してください．ただし，目次も出力
+するためは2回ほどタイプセットを行ないます．
 
 \begin{InText}
 \documentclass[a4j]{jsarticle}
-\title{�Ϥ���Ƥ�\LaTeX}% ��̾
-\author{��ʬ��̾��}%      ����
-\date{\today}%            ����
-\begin{document}%         ��ʸ
-\maketitle%               ɽ��
-\tableofcontents%         �ܼ�
-\section{�ḫ�Ф�}%       �ḫ�Ф�
-�ḫ�Ф���\verb|\section|���ޥ�ɤ�Ȥ��ޤ���
-\subsection{���ḫ�Ф�}%  ���ḫ�Ф�
-���ḫ�Ф���\verb|\subsection|��Ȥ��ޤ���
+\title{はじめての\LaTeX}% 題名
+\author{自分の名前}%      著者
+\date{\today}%            日付
+\begin{document}%         本文
+\maketitle%               表紙
+\tableofcontents%         目次
+\section{節見出し}%       節見出し
+節見出しは\verb|\section|コマンドを使います。
+\subsection{小節見出し}%  小節見出し
+小節見出しは\verb|\subsection|を使います。
 %
-\section{ʸ�Ϥε���}
-������Ǥ�ʸ�Ϥε��ҤˤĤ��������ޤ���
-\subsection{����}
-��ʸ����Ѥ�����ϥ�����̤�Ȥ��ޤ�������ˤ���
-�֥�����̤ϰ��Ѥ˻Ȥ��פȸ����Ƥ��롣
-����Ȱ��Ѥ���Ȥ������Ȥϼ��Τ褦�ˤʤäƤ��롣
+\section{文章の記述}
+この節では文章の記述について論じます。
+\subsection{引用}
+一文を引用する場合はカギ括弧を使います。一説によると
+「カギ括弧は引用に使う」と言われている。
+段落ごと引用するということは次のようになっている。
 \begin{quote}
-����Ȥΰ��Ѥξ���\verb|quotation|�Ķ���Ȥ���\emph{��Ƭ
-����������ʤ�}��ʣ������ΰ��Ѥξ���\verb|quotation|�Ķ�
-��Ȥ�����Ƭ����������롣
+段落ごとの引用の場合は\verb|quotation|環境を使い、\emph{行頭
+を字下げしない}。複数段落の引用の場合は\verb|quotation|環境
+を使い、行頭を字下げする。
 \end{quote}
-\subsection{�վ��}
-�վ�񤭤ˤϰʲ��λ��Ĥ��Ѱդ���Ƥ��롣
+\subsection{箇条書き}
+箇条書きには以下の三つが用意されている。
 \begin{description}
- \item[�����ղվ��] ��٥����Ƭ�˵��椬�Ĥ����վ�񤭡�
- \item[�ֹ��ղվ��] ��٥����Ƭ���ֹ椬�Ĥ����վ�񤭡�
- \item[�����ղվ��] ��٥����Ƭ���������Ĥ����վ�񤭡�
+ \item[記号付箇条書き] ラベルの先頭に記号がついた箇条書き。
+ \item[番号付箇条書き] ラベルの先頭に番号がついた箇条書き。
+ \item[説明付箇条書き] ラベルの先頭に説明がついた箇条書き。
 \end{description}
 \end{document}	
 \end{InText}
 
-�������Ϥν�����Ͽ�~\ref{fig:sample}�Τ褦�ˤʤ�ޤ���
+この入力の出力例は図~\ref{fig:sample}のようになります．
 
 \begin{figure}[htbp]
  \noindent\IOmargin\makebox[0pt][l]{%
  \fbox{\includegraphics[clip,bb={0 0 595 842},width=\ffullwidth]
    {images/sample}\IOlabel}}
-\caption{�ƥ��������Ϥν�����}\label{fig:sample}
+\caption{テキスト入力の出力例}\label{fig:sample}
 \end{figure}
 
 \end{Prob}
 
 
 
-\section{���ΤˤĤ���}\seclab{font}
+\section{書体について}\seclab{font}
 
-%ʸ���ϰջ���ã���ʤǤ��ä�Ĺ����������
-%�������줿���ΤǤ����ܤ�ΰջפ򶯤�
-%���᤿���ʤ�пͤϹӡ�����ʸ�����
-%�Ǥ��礦����ͥ��������᤿���ʤ��
-%�ݤߤ��ӤӤ������ˤʤ�Ǥ��礦����
-%��Τ褦��ʸ���η�����Τȸ����ޤ���
-%%���ξϤǤ�{\LaTeX}�ǽ��Τ�ɤΤ褦��
-%%���äƤ���Τ����������ޤ���
-%%ʸ���ϥ��ߥ�˥��������ġ���Ǥ����н�
-%%�ʤɤθĿ�Ū��ʸ�Ϥ������ʸ������
-%%��˲����������뤿��˻Ȥ�������
-%%�������ƻ��Ǥ�������Ū��ʸ���Ȥ�
-%%��ƻ���ȤäƤ���䤿���Ǥ�������
-%%�ʤϲ��������դˤ����ã��ľ��Ū��
-%%���ᡤʸ���Ȥ���ƻ��λȤ��������
-%%�Ȥ�������ޤ���
+%文字は意思伝達手段であって長いあいだに
+%洗練された媒体です．怒りの意思を強く
+%込めたいならば人は荒々しく文字を書く
+%でしょうし，優しさを込めたいならば
+%丸みを帯びた書き方になるでしょう．以
+%上のような文字の形を書体と言います．
+%%この章では{\LaTeX}で書体をどのように
+%%扱っているのかを説明します．
+%%文字はコミュニケーションツールです．覚書
+%%などの個人的な文章を除き，文字は相
+%%手に何かを伝えるために使われる媒体
+%%，いわば道具です．日常的に文字とい
+%%う道具を使っている私たちですが，普
+%%段は音声，言葉による伝達が直感的な
+%%ため，文字という道具の使い方を誤る
+%%ときがあります．
 %
-%%�ܤäƤ���Ȥ��Ϲӡ�����ʸ����񤯤�
-%%���ΤȤ��δ��������䤹���Ǥ��礦��
-%%������������Ȥ����Ǥ����ܤäƤ����
-%%���˼塹����ʸ����񤤤Ƥ������Ϥ���
-%%��ޤ��󡥤���Ϥ��ޤ����Ū�ʻȤ���
-%%�Ȥϸ����ޤ���
+%%怒っているときは荒々しい文字を書くと
+%%そのときの感情が伝わりやすいでしょう，
+%%これは正しい使い方です．怒っていると
+%%きに弱々しい文字を書いても説得力があ
+%%りません．これはあまり効果的な使い方
+%%とは言えません．
 %
-%������ˤϤ�������ΤȤ����ҤȤĤ�
-%���Ȥߤ��������Ƥ��ޤ������Τ��ɼԤ�
-%�Ф��Ʋ��餫�Υ�å�������ʬ����䤹
-%�������뤿����ѹ�������礬�����
-%�����Ǥ�������Τ��ѹ�����Ȥ�������
-%�ˤ�ɬ����̣������٤��ʤΤǤ������
-%�ߤ䤿��˽��Τ��ѹ����Ƥ�դ��ɼԤ�
-%���𤵤��ޤ����ޤ���ʬ�����Υ롼���
-%���Τ��ѹ����Ƥ��ɼԤˤϲ��ΰ�̣�ʤ�
-%����ʬ����ޤ���Τǡ�����Ū�˻Ȥ��
-%�Ƥ�����Τ˴ؤ���롼�����Τ��
-%�ʡ��Ǥ���
+%世の中にはこれらを書体というひとつの
+%枠組みで整理しています．書体は読者に
+%対して何らかのメッセージを分かりやす
+%く伝えるために変更される場合がありま
+%す．ですから書体を変更するということ
+%には必ず意味があるべきなのです．むや
+%みやたらに書体を変更しても逆に読者を
+%混乱させます．また自分だけのルールで
+%書体を変更しても読者には何の意味なの
+%かが分かりませんので，一般的に使われ
+%ている書体に関するルールを守るのもマ
+%ナーです．
 %
-%{\LaTeX}��\Z{�ޡ������å�}���Υ����ƥ��
-%�Τǥ桼����ľ�ܽ����ѹ��Ѥ�̿
-%���Ȥ����Ȥ�����ʤ��ɬ�פΤʤ���
-%�Ȥ��Ȼפ��ޤ����ʲ��Υ��ޥ�ɤ�ľ
-%�ܻȤ��ΤǤϤʤ������˴Ķ����������
-%�Ѥ���Τ�˾�ޤ����Ǥ��礦��
+%{\LaTeX}は\Z{マークアップ}型のシステムな
+%のでユーザが直接書体変更用の命
+%令を使うことは本来ならば必要のないこ
+%とだと思われます．以下のコマンドは直
+%接使うのではなく新規に環境を定義して
+%用いるのが望ましいでしょう．
 
-\KY{ʸ��} (\Z{character}) ��\Z{�ջ���ã����}�Ǥ��äơ�
-Ĺ�����������������줿\Z{����}�Ǥ����ܤ�ΰջפ򶯤���
-�᤿���ʤ�пͤϹӡ�����ʸ����񤯤Ǥ��礦����ͥ������
-���᤿���ʤ�дݤߤ��ӤӤ������ˤʤ�Ǥ��礦���ʾ��
-�褦��ʸ���η���\KY{����} (\Z{typeface}) �ȸƤӤޤ���
+\KY{文字} (\Z{character}) は\Z{意思伝達手段}であって，
+長いあいだに洗練された\Z{媒体}です．怒りの意思を強く込
+めたいならば人は荒々しく文字を書くでしょうし，優しさを
+込めたいならば丸みを帯びた書き方になるでしょう．以上の
+ような文字の形を\KY{書体} (\Z{typeface}) と呼びます．
 
-������ǤϤ�������ΤȤ����ҤȤĤ����Ȥߤ��������Ƥ�
-�ޤ������Τ��ɼԤ��Ф��Ʋ��餫�Υ�å�������ʬ����䤹
-�������뤿����ѹ�������礬����ޤ����Ǥ�������Τ�
-�ѹ�����Ȥ������ˤ�ɬ����̣������٤��ʤΤǤ������
-�ߤ䤿��˽��Τ��ѹ����Ƥ�դ��ɼԤ��𤵤��ޤ����ޤ�
-��ʬ�����Υ롼��ǽ��Τ��ѹ����Ƥ��ɼԤˤϲ��ΰ�̣�ʤ�
-����ʬ����ޤ���Τǡ�����Ū�˻Ȥ��Ƥ�����Τ˴ؤ���
-�롼�����Τ�ޥʡ��Ǥ���
+世の中ではこれらを書体というひとつの枠組みで整理してい
+ます．書体は読者に対して何らかのメッセージを分かりやす
+く伝えるために変更される場合があります．ですから書体を
+変更するという事には必ず意味があるべきなのです．むや
+みやたらに書体を変更しても逆に読者を混乱させます．また
+自分だけのルールで書体を変更しても読者には何の意味なの
+かが分かりませんので，一般的に使われている書体に関する
+ルールを守るのもマナーです．
 
-{\LaTeX}��\Z{�ޡ������å�}���Υ����ƥ�ʤΤǥ桼����
-ľ�ܽ����ѹ��Ѥ�̿���Ȥ���������ʤ��ɬ�פΤʤ���
-���Ȼפ��ޤ����ʲ��Υ��ޥ�ɤ�ľ�ܻȤ��ΤǤϤʤ���
-���˴Ķ�����������Ѥ���Τ�˾�ޤ����Ǥ��礦��
+{\LaTeX}は\Z{マークアップ}型のシステムなのでユーザが
+直接書体変更用の命令を使う事は本来ならば必要のない事
+だと思われます．以下のコマンドは直接使うのではなく新
+規に環境を定義して用いるのが望ましいでしょう．
 
 
-\subsection{ʸ�����礭�����ѹ�}
-{\LaTeX}�ˤ����Ƥ����Ū��ñ��ʸ�����礭�����Ѥ���
-������ǽ�Ǥ�����ʸ����ʸ�񥯥饹���ץ����ǻ���
-��������ʸ�����礭���˱������ѹ�����ޤ� ��ʸ��
-���礭�����ѹ��������Ȥ���\tabref{mojinookisa}
-��������Υ��ޥ�ɡ�\secref{ml:command}�򻲾ȡˤ�
-���Τ褦�˻��Ѥ��ޤ���
+\subsection{文字の大きさの変更}
+{\LaTeX}においては比較的簡単に文字の大きさを変える
+事が可能ですが，文字は文書クラスオプションで指定
+した基準の文字の大きさに応じて変更されます ．文字
+の大きさを変更したいときは\tabref{mojinookisa}
+の宣言型のコマンド（\secref{ml:command}を参照）を
+次のように使用します．
 
 \begin{Syntax}
-\texttt{\lb}\va{���} \va{ʸ�����礭�����Ѥ�����ʸ����}\texttt{\rb}
+\texttt{\lb}\va{宣言} \va{文字の大きさを変えたい文字列}\texttt{\rb}
 \end{Syntax}
 
 \begin{table}[htbp]
 \begin{center}
-\caption{ʸ�����礭�����ѹ�}\tablab{mojinookisa}
+\caption{文字の大きさの変更}\tablab{mojinookisa}
 \begin{tabular}{lll}
 \TR
-\Th{�礭��}       & \Th{̿��}                 & \Th{������}\\
+\Th{大きさ}       & \Th{命令}                 & \Th{出力例}\\
 \MR
-�ȤƤ⾮���� & \Cmd{tiny}         & {\tiny ��Ļ}\\
-���ʤ꾮���� & \Cmd{scriptsize}   & {\scriptsize ��Ļ}\\
-������       & \Cmd{footnotesize} & {\footnotesize ��Ļ}\\
-��侮����   & \Cmd{small}        & {\small ��Ļ}\\
-����         & \Cmd{normalsize}   & {\normalsize ��Ļ}\\
-����礭��   & \Cmd{large}        & {\large ����礦}\\
-�礭��       & \Cmd{Large}        & {\Large �����礦}\\
-���ʤ��礭�� & \Cmd{LARGE}        & {\LARGE �餤���礦}\\
-�ȤƤ��礭�� & \Cmd{huge}         & {\huge �Ϥ����礦 }\\
-����         & \Cmd{Huge}         & {\Huge �Ҥ��礦}\\
+とても小さい & \Cmd{tiny}         & {\tiny 野鳥}\\
+かなり小さい & \Cmd{scriptsize}   & {\scriptsize 花鳥}\\
+小さい       & \Cmd{footnotesize} & {\footnotesize 雷鳥}\\
+やや小さい   & \Cmd{small}        & {\small 白鳥}\\
+普通         & \Cmd{normalsize}   & {\normalsize 飛鳥}\\
+やや大きい   & \Cmd{large}        & {\large やちょう}\\
+大きい       & \Cmd{Large}        & {\Large かちょう}\\
+かなり大きい & \Cmd{LARGE}        & {\LARGE らいちょう}\\
+とても大きい & \Cmd{huge}         & {\huge はくちょう }\\
+特大         & \Cmd{Huge}         & {\Huge ひちょう}\\
 \BR
 \end{tabular}
 \end{center}
@@ -2513,152 +2513,152 @@ always say `Hello.''' \par
 %
 \begin{table}[htbp]
 \begin{center}
-\caption{����ʸ�����礭���ˤ�륳�ޥ�ɤε�ư�ΰ㤤}
+\caption{基準の文字の大きさによるコマンドの挙動の違い}
 \tablab{moji:ookisatte}
  \begin{tabular}{lrrrl}
  \TR
- \Th{���ޥ��}\texttt\bs \Th{�����礭��}& 10\,pt  & 11\,pt   & 12\,pt &
- \Th{���Ѥ��٤�����}${}^{*}$\\
+ \Th{コマンド}\texttt\bs \Th{基準の大きさ}& 10\,pt  & 11\,pt   & 12\,pt &
+ \Th{使用すべき要素}${}^{*}$\\
 \MR
-\Cmd{tiny}        & 5\,pt  & 6\,pt  &  6\,pt & ���겾̾\\
+\Cmd{tiny}        & 5\,pt  & 6\,pt  &  6\,pt & 振り仮名\\
 \Cmd{scriptsize}  & 7\,pt  & 8\,pt  &  8\,pt & \\
-\Cmd{footnotesize}& 8\,pt  & 9\,pt  & 10\,pt & ������\Z{����}\\
-\Cmd{small}       & 9\,pt  & 10\,pt & 11\,pt & ��ɽ���Ф�\\
-\Cmd{normalsize}  & 10\,pt & 11\,pt & 12\,pt & �����ḫ�Ф�����ʸ\\
-\Cmd{large}       & 12\,pt & 12\,pt & 14\,pt & ���ḫ�Ф�\\
-\Cmd{Large}       & 14\,pt & 14\,pt & 17\,pt & �ḫ�Ф�\\
+\Cmd{footnotesize}& 8\,pt  & 9\,pt  & 10\,pt & 索引・\Z{脚注}\\
+\Cmd{small}       & 9\,pt  & 10\,pt & 11\,pt & 図表見出し\\
+\Cmd{normalsize}  & 10\,pt & 11\,pt & 12\,pt & 小小節見出し・本文\\
+\Cmd{large}       & 12\,pt & 12\,pt & 14\,pt & 小節見出し\\
+\Cmd{Large}       & 14\,pt & 14\,pt & 17\,pt & 節見出し\\
 \Cmd{LARGE}       & 17\,pt & 17\,pt & 20\,pt & \\
-\Cmd{huge}        & 20\,pt & 20\,pt & 25\,pt & �����ϸ��Ф��ֹ�\\
-\Cmd{Huge}        & 25\,pt & 25\,pt & 25\,pt & �����ϸ��Ф�\\
+\Cmd{huge}        & 20\,pt & 20\,pt & 25\,pt & 部・章見出し番号\\
+\Cmd{Huge}        & 25\,pt & 25\,pt & 25\,pt & 部・章見出し\\
 \BR
  \end{tabular}
-\\ {\small ${}^{*}$���Ѥ��٤����Ǥ�1���ȤǤξ��Ǥ���}
+\\ {\small ${}^{*}$使用すべき要素は1段組での場合です．}
 \end{center}
 \end{table}
 %
 \begin{InOut}
-���������С�{\scriptsize ����}�Ͼ�����
-ʸ�������ɡ�{\Large ���ä�}���礭��
-ʸ���ˤʤäƤ�͡�
+そういえば，{\scriptsize これ}は小さい
+文字だけど，{\Large こっち}は大きい
+文字になってるね．
 \end{InOut}
-���Τ褦�ʽ��Τ��礭�����ѹ����륳�ޥ�ɤ�
-ľ�ܻȤ��ΤϹ��ޤ����ʤ����������\Z{�ޡ������å�}�դ�
-�򤹤�٤��Ǥ����㤨��\Z{��Ĵ}�Τ����ʸ�����礭��
-�������ΤǤ���п����� \cmd{kyocho} ̿�����ޤ���
+このような書体の大きさを変更するコマンドを
+直接使うのは好ましくなく，きちんと\Z{マークアップ}付け
+をするべきです．例えば\Z{強調}のために文字を大きく
+したいのであれば新規に \cmd{kyocho} 命令を作ります．
 \begin{InOut}
 \newcommand\kyocho[1]{{\Large#1}}
 \newcommand\Kyocho[1]{{\LARGE#1}}
-������\kyocho{����������Ǥ�}�������
-\Kyocho{�����Ϥ�ä����}�Ǥ���
+だから\kyocho{ここは大事です}．それに
+\Kyocho{ここはもっと大事}です．
 \end{InOut}
 
-\subsection{���Τ��ѹ�}\seclab{ouyou:font}
-%{\LaTeX}�ˤ����ƽ��Τμ����
+\subsection{書体の変更}\seclab{ouyou:font}
+%{\LaTeX}において書体の種類は
 %\begin{description}
-%\item[\Z{�ե��ߥ꡼}] �ǥ������η����μ��ࡥ
-%\item[\Z{���꡼��}]   ����������ʸ�����ΰ㤤�ˤ����ࡥ
-%\item[\Z{��������}]   �������Ѳ��ΰ㤤�ˤ����ࡥ
-%\item[\Z{������}]     �ե���Ȥ��礭����\zindind{�ե����}{���礭��}%
+%\item[\Z{ファミリー}] デザイン上の系統の種類．
+%\item[\Z{シリーズ}]   線の太さと文字幅の違いによる種類．
+%\item[\Z{シェイプ}]   形状の変化の違いによる種類．
+%\item[\Z{サイズ}]     フォントの大きさ．\zindind{フォント}{の大きさ}%
 %\end{description}
-%�λͤĤ�ʬ�����ޤ����������˴ؤ��Ƥ����Ҥ��̤�Ǥ���
+%の四つに分けられます．サイズに関しては前述の通りです．
 
-{\LaTeX}�ˤ����ƽ��Τμ���ϼ��λͤĤ�ʬ�����ޤ���
-�������˴ؤ��Ƥ����Ҥ��̤�Ǥ���
+{\LaTeX}において書体の種類は次の四つに分けられます．
+サイズに関しては前述の通りです．
 \begin{description}
-\item[\Z{�ե��ߥ꡼}] �ǥ������η����μ��ࡥ
-\item[\Z{���꡼��}]   ����������ʸ�����ΰ㤤�ˤ����ࡥ
-\indindz{��}{ʸ����}%
-\item[\Z{��������}]   �������Ѳ��ΰ㤤�ˤ����ࡥ
-\item[\Z{������}]     �ե���Ȥ��礭����\zindind{�ե����}{���礭��}%
+\item[\Z{ファミリー}] デザイン上の系統の種類．
+\item[\Z{シリーズ}]   線の太さと文字幅の違いによる種類．
+\indindz{幅}{文字の}%
+\item[\Z{シェイプ}]   形状の変化の違いによる種類．
+\item[\Z{サイズ}]     フォントの大きさ．\zindind{フォント}{の大きさ}%
 \end{description}
 
-ʸ�����礭������Τμ������ɬ�פ��ѹ�������ϡ�
-�դ��ɼԤ��𤵤�������Ǥ�����ʬ�Ϥ�����ȻȤ�ʬ
-��������Ǥ��롤�Ȥ�������\tabref{font:family}
-�ΰ�������Ŭ�ڤʽ��Τ�����ǡ�������ʸ���������Ƥ�
-��������%
-\index{�����ޥ���}%
-\index{���󥻥����}%
-\index{�����ץ饤����}%
-\index{�ߥǥ�������}%
-\index{�ܡ������}%
-\index{������å���}%
-\index{��������}%
-\index{���⡼�륭��ԥ�����}%
-\index{�ե��ߥ꡼!�����ץ饤��\zdash}%
-\index{�ե��ߥ꡼!���󥻥��\zdash}%
-\index{�ե��ߥ꡼!�����ޥ�\zdash}%
-\index{��������!���⡼�륭��ԥ���\zdash}%
-\index{��������!������\zdash}%
-\index{��������!������å�\zdash}%
-\index{���꡼��!�ߥǥ�����\zdash}%
-\index{���꡼��!�ܡ����\zdash}%
+文字の大きさや書体の種類を不必要に変更する事は，
+逆に読者を混乱させるだけです．自分はきちんと使い分
+ける事ができる，という方は\tabref{font:family}
+の一覧から適切な書体を選んで，美しい文書を作成してく
+ださい．%
+\index{ローマン体}%
+\index{サンセリフ体}%
+\index{タイプライタ体}%
+\index{ミディアム体}%
+\index{ボールド体}%
+\index{イタリック体}%
+\index{スラント体}%
+\index{スモールキャピタル体}%
+\index{ファミリー!タイプライタ\zdash}%
+\index{ファミリー!サンセリフ\zdash}%
+\index{ファミリー!ローマン\zdash}%
+\index{シェイプ!スモールキャピタル\zdash}%
+\index{シェイプ!スラント\zdash}%
+\index{シェイプ!イタリック\zdash}%
+\index{シリーズ!ミディアム\zdash}%
+\index{シリーズ!ボールド\zdash}%
 %
-% \textnormal, \normalfont ����ĤˤĤ��Ƥ�����
-% ���󥳡��ǥ��󥰤ȥե��ߥꡤ���꡼�����������פ�ɸ���
+% \textnormal, \normalfont の二つについての説明
+% エンコーディングとファミリ，シリーズ，シェイプを標準に
 %
 \begin{table}[htbp]
 \begin{center}
-\caption{���Τ��ѹ����륳�ޥ��}\tablab{font:family}
+\caption{書体を変更するコマンド}\tablab{font:family}
 \begin{tabular}{llll}
 \TR
-\Th{����} & \Th{̿��} & \Th{���} & \Th{����} \\
+\Th{種類} & \Th{命令} & \Th{宣言} & \Th{出力} \\
 \MR
-�����ޥ�ե��ߥ꡼     & \Cmd{textrm} & \Cmd{rmfamily} &
+ローマンファミリー     & \Cmd{textrm} & \Cmd{rmfamily} &
   \textrm{ABCabc}\\
-���󥻥�եե��ߥ꡼   & \Cmd{textsf} & \Cmd{sffamily} &
+サンセリフファミリー   & \Cmd{textsf} & \Cmd{sffamily} &
   \textsf{ABCabc}\\
-�����ץ饤���ե��ߥ꡼& \Cmd{texttt} & \Cmd{ttfamily} &
+タイプライタファミリー& \Cmd{texttt} & \Cmd{ttfamily} &
   \texttt{ABCabc}\\
 \hline
-�ߥǥ����ॷ�꡼��     & \Cmd{textmd} & \Cmd{mdseries} &
+ミディアムシリーズ     & \Cmd{textmd} & \Cmd{mdseries} &
   \textmd{ABCabc}\\
-�ܡ���ɥ��꡼��       & \Cmd{textbf} & \Cmd{bfseries} &
+ボールドシリーズ       & \Cmd{textbf} & \Cmd{bfseries} &
   \textbf{ABCabc}\\
 \hline
-������å���������     & \Cmd{textit} & \Cmd{itshape} &
+イタリックシェイプ     & \Cmd{textit} & \Cmd{itshape} &
   \textit{ABCabc}\\
-�����ȥ�������       & \Cmd{textsl} & \Cmd{slshape} &
+スラントシェイプ       & \Cmd{textsl} & \Cmd{slshape} &
   \textsl{ABCabc}\\
-���⡼�륭��ԥ��륷������ & \Cmd{textsc} & \Cmd{scshape} &
+スモールキャピタルシェイプ & \Cmd{textsc} & \Cmd{scshape} &
   \textsc{ABCabc}\\
 \BR
 \end{tabular}
 \end{center}
 \end{table}
 
-%�ե��ߥ꡼�ȥ��꡼���ȥ������פϤ��줾��
-%�Ȥ߹�碌�ƻȤ����Ȥ��Ǥ��ޤ����㤨��
-%\yo{����դ��ʤ��������Ʒ������ե����}�Ȥ���ʸ����
-%���Ϥ�������м��Τ褦�ˤ��ޤ���
+%ファミリーとシリーズとシェイプはそれぞれ
+%組み合わせて使うことができます．例えば
+%\yo{セリフがなくて太くて傾いたフォント}という文字を
+%出力したければ次のようにします．
 %\begin{InOut}
 %\textsf{\textbf{\textit{I like sushi.}}} 
 %{\sffamily\bfseries\itshape I like sushi.} 
 %\end{InOut}
-%���Ѥ��Ƥ�����ܽ��Τˤ�äƤϽ��ϤǤ��ʤ�
-%�����פ⤢��ޤ���
+%使用している基本書体によっては出力できない
+%タイプもあります．
 %\begin{InOut}
 %\texttt{\textbf{Type writer and bold 
 % extended?}} I like \textsc{small caps} and
 %\textit{\textbf{bold italic}}. {\ttfamily
 %\bfseries type writer and bold extended}
 %\end{InOut}
-%\K{���ΤΥե��ߥ꡼�䥷�����פʤɤ���˻��ꤷ�Ƥ���}
-%�礭�����ѹ����ޤ���%������Ū�ˤǤ��ʤ��Τ������Τ��ȤǤ���
+%\K{書体のファミリーやシェイプなどを先に指定してから}
+%大きさを変更します．%幾何学的にできないので当然のことです．
 %\begin{InOut}
-%{\Large\textbf Large Bold?} ������\\
-%{\textbf\Large Bold Large?} ���ԡ�
+%{\Large\textbf Large Bold?} 成功．\\
+%{\textbf\Large Bold Large?} 失敗．
 %\end{InOut}
-�ե��ߥ꡼�ȥ��꡼���ȥ������פϤ��줾��
-�Ȥ߹�碌�ƻȤ������Ǥ��ޤ����㤨��
-\yo{����դ��ʤ��������ե����}�Ȥ���ʸ����
-���Ϥ�������м��Τ褦�ˤ��ޤ���
+ファミリーとシリーズとシェイプはそれぞれ
+組み合わせて使う事ができます．例えば
+\yo{セリフがなくて太いフォント}という文字を
+出力したければ次のようにします．
 \begin{InOut}
 \textsf{\textbf{Typeface}}
 {\sffamily\bfseries Typeface} 
 \end{InOut}
-���Ѥ��Ƥ�����ܽ��Τˤ�äƤϽ��ϤǤ��ʤ�
-�����פ⤢��ޤ���
+使用している基本書体によっては出力できない
+タイプもあります．
 \begin{InOut}
 \texttt{\textit{Typewriter bold 
 extended?}} \textsc{Small Caps}. 
@@ -2666,200 +2666,200 @@ extended?}} \textsc{Small Caps}.
 {\ttfamily \itshape typewriter 
 bold extended.}
 \end{InOut}
-\emph{���ΤΥե��ߥ꡼�䥷�����פʤɤ���˻��ꤷ�Ƥ���
-�礭�����ѹ����ޤ�}��
+\emph{書体のファミリーやシェイプなどを先に指定してから
+大きさを変更します}．
 \begin{InOut}
-{\Large\textbf Large Bold?} ����\\
-{\textbf\Large Bold Large?} ����
+{\Large\textbf Large Bold?} 成功\\
+{\textbf\Large Bold Large?} 失敗
 \end{InOut}
 
-��ʸ�ν��Τϴ���Ū�ˤ�\Z{��ī��}��
-\Z{�����å���}����Ĥ����Ѱդ���Ƥ�
-�ޤ���\pp{\tabref{font:wa}}�������
-�������ʸ���Ǥ���Ĥν��Τ����Ȥ���
-���ä�̾�ĤǤ������ߤ�{\pLaTeX}����ʸ
-��¿���Τ�ޤ���Ϥ������񤷤�����
-�ޤ��󡥤������Ѱդ���ʸ��¿���Τˤ���
-���ɼԤ�����˴���Ƥ��ʤ��Ȼפ��ޤ�
-�Τǡ��̤˹Ԥ�ʤ��ۤ����ɤ����⤷��ޤ���
+和文の書体は基本的には\Z{明朝体}と
+\Z{ゴシック体}の二つしか用意されてい
+ません\pp{\tabref{font:wa}}．これは
+従来の和文組版で二つの書体しか使われな
+かった名残です．現在の{\pLaTeX}で和文
+の多書体を図る事はそれ程難しくあり
+ません．ただ不用意に和文を多書体にして
+も読者がそれに慣れていないと思われます
+ので，徒に行わないほうが良いかもしれません．
 \begin{table}[htbp]
 \begin{center}
-\caption{��ʸ���ΤΥե��ߥ꡼}\tablab{font:wa}
+\caption{和文書体のファミリー}\tablab{font:wa}
   \begin{tabular}{llll}
 \TR
- \Th{����} & \Th{̿��} & \Th{���} & \Th{����}\\
+ \Th{種類} & \Th{命令} & \Th{宣言} & \Th{出力}\\
 \MR
-% ��ī�ե��ߥ꡼& \Cmd{textmc} & 
-%   \Cmd{mcfamily} & \textmc{�ʻ�Ȭˡ�äƲ��Ǥ�����}\\
-% �����å��ե��ߥ꡼&\Cmd{textgt} & 
-%   \Cmd{gtfamily} & \textgt{�ʻ�Ȭˡ�äƲ��Ǥ�����}\\
- ��ī�ե��ߥ꡼& \Cmd{textmc} & 
-   \Cmd{mcfamily} & \textmc{�ʻ�Ȭˡ�Ȥϲ��Ǥ�����}\\
- �����å��ե��ߥ꡼&\Cmd{textgt} & 
-   \Cmd{gtfamily} & \textgt{�ʻ�Ȭˡ�Ȥϲ��Ǥ�����}\\
+% 明朝ファミリー& \Cmd{textmc} & 
+%   \Cmd{mcfamily} & \textmc{永字八法って何ですか？}\\
+% ゴシックファミリー&\Cmd{textgt} & 
+%   \Cmd{gtfamily} & \textgt{永字八法って何ですか？}\\
+ 明朝ファミリー& \Cmd{textmc} & 
+   \Cmd{mcfamily} & \textmc{永字八法とは何ですか？}\\
+ ゴシックファミリー&\Cmd{textgt} & 
+   \Cmd{gtfamily} & \textgt{永字八法とは何ですか？}\\
 \BR
  \end{tabular}
 \end{center}
 \end{table}
-\indindz{��Ĵ}{���Ф���}\indindz{��Ĵ}{��ʸ��}%%
+\indindz{強調}{見出しの}\indindz{強調}{和文の}%%
 \begin{InOut}
-��ʸ���Ǥˤ�������ī�Τ��̾��ʸ�Ϥ���
-�ǡ������å��Τ�\textgt{ʸ�Ϥζ�Ĵ��}
-�Ȥ��ޤ���{\gtfamily ���Ф��⶯Ĵ��
-�٤����ǤʤΤǥ����å��Τˤ���Τ�����
-�Ǥ�}��
+和文組版において明朝体は通常の文章の組
+版，ゴシック体は\textgt{文章の強調に}
+使われます．{\gtfamily 見出しも強調す
+べき要素なのでゴシック体にするのが普通
+です}．
 \end{InOut}
 
 
-\subsection{���ܽ��Τ��ѹ�}
-�ե���Ȥ��礭����ե��ߥ꡼�ʤɤ���ꤹ��̿���
-ʬ����ޤ�������������ʸ��˻Ȥ��Ƥ������
-���Τ�Τ��ѹ�����ˤϤɤ�������ɤ��ΤǤ��礦����
-�¤����ʲ����ʤ�{\LaTeX}��ʸ������򤷤Ƥ���Ȥ���
-�Ȥ��Ƥ��벤ʸ�Υե���Ȥ�\Person{Donald}{Knuth}��
-�ǥ����󤷤�\Z{Computer Modern}�ȸƤФ��
-\KY{���ܽ���}�ˤʤäƤ��ޤ������δ��ܽ��Τ���
-��Τ��ѹ�����ˤϴ��ܽ��Τ��ѹ�����������ʤ��줿��
-�������ɤ߹��फ����ʬ�ǻ��ꤹ��ɬ�פ�����ޤ���
-�����˻Ȥ���������Τˤ����Ū��{Computer Modern}
-���Ȥ��ޤ����ե���ȤˤĤ��Ƥ�
-\Hito{��¼}{��ɧ}��ʸ��~\cite{bibunsyo3}�ʤɤ򻲾Ȥ��Ƥ�
-���������ܽ�Ǥϼ�갷���ޤ���
-�����Ƹ����ʤ��%
-\Person{Young}{Ryu}����������\Sty{txfonts}��Ȥ��Τ�
-��ڤǤϤʤ����Ȼפ��ޤ���ɸ�����ۤ�Times�Ϥ�
-�ե���Ȥ�Ȥ��褦�ˤ���\Sty{mathptmx}�䡤Palatino��
-�Υե���Ȥ�Ȥ��褦�ˤ���\Sty{mathpazo}����
-\Sty{pxfonts}��\Sty{txfonts}�Ȥ��������⤢��ޤ���\secref{app:typeface}
-�򻲾ȡˡ�
+\subsection{基本書体の変更}
+フォントの大きさやファミリーなどを指定する命令は
+分かりました．しかし，文書に使われている書体
+そのものを変更するにはどうすれば良いのでしょうか．
+実は普段何気なく{\LaTeX}で文書処理をしているときに
+使われている欧文のフォントは\Person{Donald}{Knuth}が
+デザインした\Z{Computer Modern}と呼ばれる
+\KY{基本書体}になっています．この基本書体その
+ものを変更するには基本書体を変更する定義がなされたマ
+クロを読み込むか，自分で指定する必要があります．
+数式に使われる数式書体にも基本的に{Computer Modern}
+が使われます．フォントについては
+\Hito{奥村}{晴彦}の文献~\cite{bibunsyo3}などを参照してく
+ださい．本書では取り扱いません．
+あえて言うならば%
+\Person{Young}{Ryu}が作成した\Sty{txfonts}を使うのが
+手軽ではないかと思います．標準配布のTimes系の
+フォントを使うようにする\Sty{mathptmx}や，Palatino系
+のフォントを使うようにする\Sty{mathpazo}よりも
+\Sty{pxfonts}や\Sty{txfonts}という選択肢もあります（\secref{app:typeface}
+を参照）．
 
 
-\section{ʸ�Ϥν���}
-\zindind{����}{�ι���}%
-%���Τ褦�ˤ��ƴ���Ū��ʸ�Ϲ�¤���Ȥ߾夲�ơ����Ū�˻�ξ�ʤɤ�
-%���Ϥ���櫓�Ǥ�������ȯ�Ǵ�����ʸ��ˤʤ뤳�ȤϤۤȤ�ɤ���ޤ���
-%���٤⽤���Ȳ�ɮ�򷫤��֤����ǽ�Ū����ʸ�˻ž夬���ΤȻפ��ޤ���
+\section{文章の修正}
+\zindind{原稿}{の校正}%
+%このようにして基本的な文章構造を組み上げて，結果的に紙の上などに
+%出力するわけですが，一発で完璧な文書になることはほとんどありません．
+%何度も修正と加筆を繰り返し，最終的な論文に仕上がるものと思います．
 %
-%���ΤȤ���ɬ�פʤΤ�ʸ�Ϥι����˴ؤ����«���Ǥ���
-%{\LaTeX}�ǤϤۤȤ�ɤ�¿���ν�����Ⱦ��ưŪ�˹Ԥ��Τǡ�
-%���ʤϵ��ˤʤ�ʤ���ʬ�Ǥ����㤨��Ⱦ�ѱѿ��������Ѥ�
-%���ܸ�ȤΤ������ˤϻ�ʬ�����Ȥ��äơ����Ѷ����4ʬ��1��
-%���ڡ��������������ꡤ�Ԥ���Ƭ�˶����������äƤϤ����ʤ�
-%�Ȥ�������Ƭ��§�����������{\LaTeX}\pp{{\pTeX}�ˤ�����}��
-%Ⱦ��ư�ǹԤ��ޤ���
+%そのときに必要なのは文章の校正に関わる約束事です．
+%{\LaTeX}ではほとんどの多くの処理を半自動的に行うので，
+%普段は気にならない部分です．例えば半角英数字と全角の
+%日本語とのあいだには四分空きといって，全角空白の4分の1の
+%スペースを挿入したり，行の先頭に句読点があってはいけない
+%という，行頭禁則処理の問題も{\LaTeX}\pp{{\pTeX}において}は
+%半自動で行います．
 %
-%���Τ褦�ʼ�ưŪ�ʽ����ʳ��ˤ�桼��¦�����ϥߥ��ˤ�꽤��
-%��ɬ�פˤʤ��礬����ޤ������ξ���1�ٺ�������ʸ�Ϥ���
-%����~\cite{kumihan3}�ʤɤ�Ȥäƽ�������Τ��ɤ��Ǥ��礦��
+%このような自動的な処理以外にもユーザ側の入力ミスにより修正
+%が必要になる場合があります．その場合は1度作成した文章を校正
+%記号~\cite{kumihan3}などを使って修正するのが良いでしょう．
 %
-%���ߤǤ�ʸ�Ϥϥ���ԥ塼����Ǥ��٤��Ȥळ�Ȥ��Ǥ���Τǡ�
-%�ְ㤤�򸫤Ĥ����餽�ξ�Ǥ����˽�����ǽ�Ǥ��� ��˰�����
-%�ƥ����å�����Ȥ�����Ȥ����ΨŪ���⤷��ޤ��󡥥����
-%�塼���Υ�˥�����Ȱ�����������ξ�Ԥ�������褫����ʸ��
-%�������Ƥ���������
-%ʸ�Ϻ���������դ��٤����Ȥ���
+%現在では文章はコンピュータ上ですべて組むことができるので，
+%間違いを見つけたらその場ですぐに修正可能です． 紙に印刷し
+%てチェックするという作業は非効率的かもしれません．コンピ
+%ュータのモニター上と印刷した紙上の両者の特性を活かして文章
+%を修正してください．
+%文章作成上で注意すべき点として
 %\begin{itemize}
-% \item 1ʸ��Ĺ���������Ƥ��ʤ�����
-% \item �Ǥ���Ĵ�����줵��Ƥ��뤫��
-% \item ������δط���Ϥä��ꤷ�Ƥ��뤫��
-% \item Ʊ���۵���ʤɤδְ㤤�Ϥʤ�����
-% \item ����ζ��ڤꡤ�Ϥζ��ڤ�����Τ���
+% \item 1文を長くしすぎていないか．
+% \item である調で統一されているか．
+% \item 修飾語の関係をはっきりしているか．
+% \item 同音異義語などの間違いはないか．
+% \item 段落の区切り，章の区切りは明確か．
 %\end{itemize}
-%�ʤɤ��󤲤��ޤ���
+%などが挙げられます．
 
-���Τ褦�ˤ��ƴ���Ū��ʸ�Ϥ�������¤���Ȥ߾夲�ơ����Ū�˻�
-�ξ�ʤɤ˽��Ϥ���櫓�Ǥ�������ȯ�Ǵ�����ʸ��ˤʤ���Ϥ�
-�Ȥ�ɤ���ޤ��󡥲��٤⽤���Ȳ�ɮ�򷫤��֤����ǽ�Ū����ʸ��
-�ž夬���ΤȻפ��ޤ���
+このようにして基本的な文章の論理構造を組み上げて，結果的に紙
+の上などに出力するわけですが，一発で完璧な文書になる事はほ
+とんどありません．何度も修正と加筆を繰り返し，最終的な論文に
+仕上がるものと思います．
 
-���ΤȤ���ɬ�פʤΤ�ʸ�Ϥι����˴ؤ����«���Ǥ���{\LaTeX}��
-�ϤۤȤ�ɤ�¿���ν�����Ⱦ��ưŪ�˹Ԥ��Τǡ����ʤϵ��ˤʤ��
-����ʬ�Ǥ����㤨��Ⱦ�Ѥαѿ��������Ѥ����ܸ�ȤΤ������ˤ�
-\Z{��ʬ����}�Ȥ��äơ����Ѷ����4ʬ��1�Υ��ڡ��������������ꡤ
-�Ԥ���Ƭ�˶����������äƤϤ����ʤ��Ȥ�������Ƭ\Z{��§����}��
-�����{\LaTeX}\pp{{\pTeX}�ˤ�����}��Ⱦ��ư�ǹԤ��ޤ���
-% �н褹��Ȥ���ɽ��������Ŭ�ڤǤϤʤ�����������
+そのときに必要なのは文章の校正に関わる約束事です．{\LaTeX}で
+はほとんどの多くの処理を半自動的に行うので，普段は気にならな
+い部分です．例えば半角の英数字と全角の日本語とのあいだには
+\Z{四分空き}といって，全角空白の4分の1のスペースを挿入したり，
+行の先頭に句読点があってはいけないという，行頭\Z{禁則処理}の
+問題も{\LaTeX}\pp{{\pTeX}において}は半自動で行います．
+% 対処するという表現の方が適切ではないだろうか．
 
-\indindz{����}{����}%
-\index{�ְ㤤�ν���}%
-���Τ褦�ʼ�ưŪ�ʽ����ʳ��ˤ�桼��¦�����ϥߥ��ˤ�꽤��
-��ɬ�פˤʤ��礬����ޤ������ξ���1�ٺ�������ʸ�Ϥ�\Z{����}
-����~\cite{NES1999}�ʤɤ�Ȥäƽ�������Τ��ɤ��Ǥ��礦��
+\indindz{記号}{校正}%
+\index{間違いの修正}%
+このような自動的な処理以外にもユーザ側の入力ミスにより修正
+が必要になる場合があります．その場合は1度作成した文章を\Z{校正}
+記号~\cite{NES1999}などを使って修正するのが良いでしょう．
 
 
-���ߤǤ�ʸ�Ϥϥ���ԥ塼����Ǥ��٤��Ȥ�����Ǥ���Τǡ�
-�ְ㤤�򸫤Ĥ����餽�ξ�Ǥ����˽�����ǽ�Ǥ��� ��˰�����
-�ƥ����å�����Ȥ�����Ȥ����ΨŪ���⤷��ޤ��󡥥����
-�塼���Υ�˥�����Ȱ�����������ξ�Ԥ�������褫����ʸ��
-�������Ƥ���������
-ʸ�Ϻ���~\cite{HO2004,HO2002,KK1981}������դ��٤����Ȥ���
-�ʲ��ι��ܤʤɤ��󤲤��ޤ���
+現在では文章はコンピュータ上ですべて組む事ができるので，
+間違いを見つけたらその場ですぐに修正可能です． 紙に印刷し
+てチェックするという作業は非効率的かもしれません．コンピ
+ュータのモニター上と印刷した紙上の両者の特性を活かして文章
+を修正してください．
+文章作成~\cite{HO2004,HO2002,KK1981}上で注意すべき点として
+以下の項目などが挙げられます．
 \begin{itemize}
- \item 1ʸ��Ĺ���������Ƥ��ʤ�����
- \item �Ǥ���Ĵ�����줵��Ƥ��뤫��
- \item ������δط���Ϥä��ꤷ�Ƥ��뤫��
- \item Ʊ���۵���ʤɤδְ㤤�Ϥʤ�����
- \item ����ζ��ڤꡤ�Ϥζ��ڤ�����Τ���
+ \item 1文を長くしすぎていないか．
+ \item である調で統一されているか．
+ \item 修飾語の関係をはっきりしているか．
+ \item 同音異義語などの間違いはないか．
+ \item 段落の区切り，章の区切りは明確か．
 \end{itemize}
 
 
-%\subsection{���ڥ�����å�}
-%��ʸ��ʸ��ξ��ϥ��ڥ�ߥ�������å��Ǥ���ץ�����ब
-%�����Ĥ�����ޤ���
+%\subsection{スペルチェック}
+%欧文の文書の場合はスペルミスをチェックできるプログラムが
+%いくつかあります．
 
-\subsection{��ʸ�����å�\zdash\Y{syntonly}}
-{\LaTeX}�θ��Ƥ�񤤤Ƥ���ȡ����ޥ�ɹ�ʸ�ε��ҥߥ��򤷤�
-���ޤ���������ޤ�����̤�­��ʤ��Ȥ�����ʸ���Ⱦ�ʸ����񤭴ְ㤨�Ƥ���
-�ʤɤǤ���
-\Person{Frank}{Mittelbach}��\Person{Rainer}{Sch\"opf}����������
-\Sty{syntonly}��Ȥ��ȡ���ʬ�ε��Ҥ��ְ�äƤ��ʤ������ºݤν��Ϥ򤻤���
-��ʸ�Υ����å�������Ԥ��褦�ˤǤ��ޤ���
+\subsection{構文チェック\zdash\Y{syntonly}}
+{\LaTeX}の原稿を書いていると，コマンド構文の記述ミスをして
+しまう事があります．括弧が足りないとか，大文字と小文字を書き間違えている
+などです．
+\Person{Frank}{Mittelbach}と\Person{Rainer}{Sch\"opf}が作成した
+\Sty{syntonly}を使うと，自分の記述が間違っていないか，実際の出力をせずに
+構文のチェックだけを行うようにできます．
 %
-\Cmd{syntaxonly}̿���ץꥢ��֥�˵��Ҥ��ޤ���\Sty{syntonly}�ѥå�����
-���ɤ߹���������Ǥϲ��ⵯ����ޤ���
+\Cmd{syntaxonly}命令をプリアンブルに記述します．\Sty{syntonly}パッケージ
+を読み込んだだけでは何も起こりません．
 %
-��ʸ����������å�����Τ��̾��DVI���Ϥ�ȼ�������ץ��åȤ��������®
-���Ȼפ��ޤ���
+構文だけをチェックするので通常のDVI出力を伴うタイプセットよりも処理が速
+いと思います．
 
 \begin{InTeX}
 \documentclass{jarticle}
 \usepackage{syntonly}
 \syntaxonly
 \begin{document}
-I like {\LaTex}.%����ϥ��顼�ˤʤ�ޤ���
+I like {\LaTex}.%これはエラーになります．
 \end{document}
 \end{InTeX}
 
 
-\section{���饹�ȥѥå�����}\seclab{class}
-{\LaTeX}��\Z{�ޡ������å�}��������Ѥ�������ʤΤ�\Z{��}�����Ƥ�
-ʬΥ�����Τ�����Ū�Ǥ���������\Z{���饹}\pp{\Z{class}}��
-\Z{�ѥå�����}\pp{\Z{package}}�Ȥ�����ĤΥե������Ȥ�
-�褦�ˤʤäƤ��ޤ���
+\section{クラスとパッケージ}\seclab{class}
+{\LaTeX}は\Z{マークアップ}方式を採用した言語なので\Z{書式}と内容は
+分離されるのが一般的です．そこで\Z{クラス}\pp{\Z{class}}と
+\Z{パッケージ}\pp{\Z{package}}という二つのファイルを使う
+ようになっています．
 
-%���ơ����饹��ѥå������Ȥ����Ѹ줬�ФƤ��ޤ���������ñ
-%���������ޤ��礦���Τ��ä��֤��Ȥ���\pp{{\LaTeX2.09}}��
-{\LaTeX}�Ǥ�ʸ��ν񼰤���ꤹ�뤿��˥��饹�Ȥ������
-��������ޤ������饹��\Z{�ɥ�����ȥ��饹}�Ȥ�
-\Z{ʸ�񥯥饹}�ʤɤȸƤФ�Ƥ��ޤ����ޤ��������ʵ�ǽ%
-\zindind{�ޥ���}{�ѥå�����}%
-�򽸤᤿��Τ�\K{�ѥå�����}�ȸƤӤޤ����ѥå�������\K{�ޥ����ѥå�����}
-�Ȥ�������ñ��\KY{�ޥ���}�ʤɤȸƤФ�ޤ���
+%さて，クラスやパッケージという用語が出てきましたが，簡単
+%に説明しましょう．昔の話は置いといて\pp{{\LaTeX2.09}}，
+{\LaTeX}では文書の書式を決定するためにクラスというもの
+を宣言します．クラスは\Z{ドキュメントクラス}とか
+\Z{文書クラス}などと呼ばれています．また，便利な機能%
+\zindind{マクロ}{パッケージ}%
+を集めたものを\K{パッケージ}と呼びます．パッケージは\K{マクロパッケージ}
+とか，ただ単に\KY{マクロ}などと呼ばれます．
 
-�������ơ�{\LaTeX}�θ���\pp{\Z{�������ե�����}}�Ǥ�ɬ��ʸ
-�����Ƭ��
+そうして，{\LaTeX}の原稿\pp{\Z{ソースファイル}}では必ず文
+書の先頭に
 \begin{Syntax}
-\cmd{documentclass}\opa{���ץ����$,\ldots$}\pa{���饹}\\ 
-\cmd{usepackage}\opa{���ץ����$,\ldots$}\pa{�ѥå�����}
-%\cmd{documentclass}\opa{���ץ����}\pa{���饹}\\ 
-%\cmd{usepackage}\opa{���ץ����}\pa{�ѥå�����}
+\cmd{documentclass}\opa{オプション$,\ldots$}\pa{クラス}\\ 
+\cmd{usepackage}\opa{オプション$,\ldots$}\pa{パッケージ}
+%\cmd{documentclass}\opa{オプション}\pa{クラス}\\ 
+%\cmd{usepackage}\opa{オプション}\pa{パッケージ}
 \end{Syntax}
-�Τ褦�ʵ��Ҥ򤷤ơ�ʸ��ν񼰤��绨�Ĥ˷��ꤷ�ޤ���
+のような記述をして，文書の書式を大雑把に決定します．
 
-%�㤨�С����ܸ�ξ����Ϥβ�����ޤߡ����Τ��礭����11�ݥ���Ȥ�
-%\Z{2����}�ε�����񤳤��Ȼפ���
-�㤨�С���ʸ�����ܸ�ǲ�����ޤߡ����Τ��礭����11�ݥ���Ȥ�
-\Z{2����}�ε�����񤳤��Ȼפ��м��Τ褦�˸������������ޤ���
+%例えば，日本語の小規模の画像を含み，書体の大きさが11ポイントで
+%\Z{2段組}の記事を書こうと思えば
+例えば，本文が日本語で画像を含み，書体の大きさが11ポイントで
+\Z{2段組}の記事を書こうと思えば次のように原稿中で宣言します．
 
 \begin{InTeX}
 \documentclass[twocolumn,11pt]{jarticle}
@@ -2867,32 +2867,32 @@ I like {\LaTex}.%����ϥ��顼�ˤʤ�ޤ���
 \usepackage[dvips]{graphicx}
 \end{InTeX}
 
-���Ѥ��륯�饹����ˤϥ��ץ����
-¸�ߤ����嵭�Τ褦��2���ȤΤ����\option{twocolumn}��ե���Ȥ�
-�礭������ꤹ�뤿���\option{11pt}�Ȥ������ץ�������ꤷ�ޤ���
-�ޤ����ͤε����ʤ��¤ꡤʣ���Υѥå�������Ȥ�����
-Ʊ��������������Ǥ��ޤ���
+使用するクラスの中にはオプションが
+存在し，上記のように2段組のために\option{twocolumn}やフォントの
+大きさを指定するために\option{11pt}というオプションを指定します．
+また衝突の起きない限り，複数のパッケージを使う事を
+同時に宣言する事もできます．
 
 \begin{InTeX}
 \documentclass[twocolumn,11pt]{jarticle}
 \usepackage[dvips]{graphicx,color}
 \end{InTeX}
 
-���饹�ȥѥå����������Τ˶��̤��뤿���
-���饹��\Z{��ĥ��}�ˤ�\exten{cls}��
-�ѥå������γ�ĥ�Ҥˤ�\exten{sty}���դ���褦�ˤ��ޤ���
+クラスとパッケージを明確に区別するために
+クラスの\Z{拡張子}には\exten{cls}を，
+パッケージの拡張子には\exten{sty}を付けるようにします．
 
-\subsection{ɸ��Ū�ʥ��饹}\seclab{01pregame:sec:classes}
+\subsection{標準的なクラス}\seclab{01pregame:sec:classes}
 
-\indindz{���饹}{ɸ��Ū��}%
-{\LaTeX}��{\pLaTeX}���ϰ�����󶡤���Ƥ���ɸ��Ū�ʥ��饹��
-�Ҳ𤷤ޤ������饹�ե������\Va{classes}{dtx}��
-\Va{classes}{ins}�Ȥ�����ĤΥե���������ۤ�������¿��
-�褦�Ǥ���
+\indindz{クラス}{標準的な}%
+{\LaTeX}や{\pLaTeX}の範囲内で提供されている標準的なクラスを
+紹介します．クラスファイルは\Va{classes}{dtx}と
+\Va{classes}{ins}という二つのファイルで配布される事が多い
+ようです．
 
-���륯�饹�������饤�󥹥ȡ���Ǥ���Τ��ϡ����ǤˤǤ�
-�夬�äƤ��륯�饹�ե�����\Va{classes}{cls}��¸�ߤ����
-���Υե��������Ƭ��ʬ�˼��Τ褦�ʵ��Ҥ�����ޤ���
+あるクラスが何からインストールできるのかは，すでにでき
+上がっているクラスファイル\Va{classes}{cls}が存在すれば
+そのファイルの先頭部分に次のような記述があります．
 
 \begin{InTeX}
 %% This is file `class.cls',
@@ -2901,434 +2901,434 @@ I like {\LaTex}.%����ϥ��顼�ˤʤ�ޤ���
 %% classes.dtx  (with options: `option')
 \end{InTeX}
 
-���ꥸ�ʥ�Υ������ե������
-���ץ�����\option{`option'}����ꤷ�ƥե�����̾��
-\Va{classes}{dtx}�Ǥ������������Ƥ���Ƥ��ޤ��Τ�
-Unix��OS�ʤ��
+オリジナルのソースファイルは
+オプションに\option{`option'}を指定してファイル名が
+\Va{classes}{dtx}です，と説明してくれていますので
+Unix系OSならば
 \begin{InTerm}
   \type{find /usr/local/share/texmf/ -name classes.dtx}
 \end{InTerm}
-�ʤɤǤ��Υե�����򸡺��Ǥ���Ǥ��礦��Windows��Macintosh
-�ϥե�����θ����ε�ǽ������Ȼפ��ޤ��Τǡ��������Ȥ���
-�ɤ��Ǥ��礦�����Τ褦�ˤ��Ƹ�����������\Va{classes}{dtx}��
-\Va{classes}{ins}��¸�ߤ��ޤ������Υե����뤬������˰�ư����
+などでそのファイルを検索できるでしょう．WindowsやMacintosh
+はファイルの検索の機能があると思いますので，そちらを使えば
+良いでしょう．そのようにして検索した場所に\Va{classes}{dtx}や
+\Va{classes}{ins}が存在します．そのファイルがある場所に移動して
 %\begin{InTerm}
   \type{platex classes.dtx}
 %\end{InTerm}
-�Ȥ���Ф��Υ��饹�λ��ͽ�򸫤�����Ǥ��ޤ��������
+とすればそのクラスの仕様書を見る事ができます．さらに
 %\begin{InTerm}
   \type{platex classes.ins}
 %\end{InTerm}
-�Ȥ���Ȥ��Υ��饹��Ƴ����������Ǥ��ޤ������Τ褦�����򤹤��
-\Sty{DocStrip}�Ȥ����ޥ�����Ŭ�ڤ˥ե������������ޤ���
-�㤨�Хե�����\Fl{classes.ins}�򤳤Τ褦�˽�������ȡ�
-\Fl{article.cls}��\Fl{report.cls}��\Fl{book.cls}��\Fl{bk10.clo}��
-\Fl{bk11.clo}��\Fl{bk12.clo}��\Fl{size10.clo}��\Fl{size11.clo}��
-\Fl{size12.clo}�Ȥ�����ĤΥե����뤬��������ޤ���
+とするとそのクラスを導入する事ができます．このような操作をすると
+\Sty{DocStrip}というマクロが適切にファイルを処理します．
+例えばファイル\Fl{classes.ins}をこのように処理すると，
+\Fl{article.cls}，\Fl{report.cls}，\Fl{book.cls}，\Fl{bk10.clo}，
+\Fl{bk11.clo}，\Fl{bk12.clo}，\Fl{size10.clo}，\Fl{size11.clo}，
+\Fl{size12.clo}という九つのファイルが生成されます．
 
-���ܸ��ޤޤʤ��褦��ʸ��ˤϲ�ʸ���ѤΥ��饹�����ѤǤ��ޤ���
-���줾��ɤΤ褦��ʸ���������������ˤ�äƲ����Ѥ��뤫��
-ʬ����ޤ���ɸ��Ǥϰʲ��β�ʸ�ѤΥ��饹���Ȥ��ޤ���
+日本語を含まないような文書には欧文専用のクラスが使用できます．
+それぞれどのような文書を作成したいかによって何を用いるかが
+分かれます．標準では以下の欧文用のクラスが使えます．
 \begin{namelist}{xxxx}
-\item[\Cls{article}] �����Ϥε�����������뤿��Υ��饹��
-	\Fl{classes.dtx}��{\COMP}�˾ܤ������ͤ��񤫤�Ƥ��롥
-\item[\Cls{report}]  �����������뤿��Υ��饹��
-	Ʊ����\Fl{classes.dtx}��{\COMP}�˾ܤ������ͤ��񤫤�Ƥ��롥
-\item[\Cls{book}]    ���Ҥ�������뤿��Υ��饹��
-	Ʊ����\Fl{classes.dtx}��{\COMP}�˾ܤ������ͤ��񤫤�Ƥ��롥
-\item[\Cls{slides}]  ���饤�ɤ�������뤿��Υ��饹��
-	\Fl{slides.dtx}�˾ܤ������ͤ��񤫤�Ƥ��롥
-\item[\Cls{proc}]    \cls{article}��١����˵Ļ�Ͽ�ʤɤ�%
-	�������뤿��Υ��饹��
-	\Fl{proc.dtx}�˾ܤ������ͤ��񤫤�Ƥ��롥
-%\item[\cls{ltxdoc}��\cls{ltxguide}��\cls{ltnews}] 
-%	��ȯ���ѤΥ��饹�ե����롥���̥桼���ˤϤ��ޤ��Τʤ���Ρ�
-%	���줾�졤\fl{ltxdoc.dtx}��\fl{ltxguide.dtx}��
-%	\fl{ltnews.dtx}�˾ܤ������ͤ��񤫤�Ƥ��롥
-%\item[\cls{minimal}] {\LaTeX}���갷����ǺǾ��¤������
-%�������饹�ե����롥���Υ��饹�򸵤˼�ʬή�Υ��饹�򿷤���
-%��ȯ���뤳�Ȥ�Ǥ��롥
+\item[\Cls{article}] 小規模の記事を作成するためのクラス．
+	\Fl{classes.dtx}や{\COMP}に詳しい仕様が書かれている．
+\item[\Cls{report}]  報告書を作成するためのクラス．
+	同じく\Fl{classes.dtx}や{\COMP}に詳しい仕様が書かれている．
+\item[\Cls{book}]    書籍を作成するためのクラス．
+	同じく\Fl{classes.dtx}や{\COMP}に詳しい仕様が書かれている．
+\item[\Cls{slides}]  スライドを作成するためのクラス．
+	\Fl{slides.dtx}に詳しい仕様が書かれている．
+\item[\Cls{proc}]    \cls{article}をベースに議事録などを%
+	作成するためのクラス．
+	\Fl{proc.dtx}に詳しい仕様が書かれている．
+%\item[\cls{ltxdoc}，\cls{ltxguide}，\cls{ltnews}] 
+%	開発者用のクラスファイル．一般ユーザにはあまり縁のないもの．
+%	それぞれ，\fl{ltxdoc.dtx}，\fl{ltxguide.dtx}，
+%	\fl{ltnews.dtx}に詳しい仕様が書かれている．
+%\item[\cls{minimal}] {\LaTeX}を取り扱う上で最小限の定義を
+%したクラスファイル．このクラスを元に自分流のクラスを新たに
+%開発することもできる．
 \end{namelist}
-�ʾ��\cls{article}��\cls{report}��\cls{book}�λ��Ĥ�ޤȤ��
-\Cls{classes}�ȸƤֻ�������ޤ���
+以上の\cls{article}，\cls{report}，\cls{book}の三つをまとめて
+\Cls{classes}と呼ぶ事があります．
 
-���ܸ��ʸ��Ǥϡ�ɸ��ǰʲ��Υ��饹���Ȥ��ޤ���
+日本語の文書では，標準で以下のクラスが使えます．
 \begin{namelist}{xxxxx}
-\indindz{���饹}{�����Ϥ�ʸ���Ѥ�}
-\item[\Cls{jarticle}] �����Ϥ����ܸ�ε�����������뤿��Υ��饹��
-\indindz{���饹}{�����Ѥ�}
-\item[\Cls{jreport}]  ���ܸ�������������뤿��Υ��饹��
-\indindz{���饹}{�����Ѥ�}
-\item[\Cls{jbook}]    ���ܸ�ν��Ҥ�������뤿��Υ��饹��
-\item[\Cls{tarticle}] �Ľ񤭤ξ����Ϥ����ܸ�ε�����������뤿��Υ��饹��
-\item[\Cls{treport}]  �Ľ񤭤����ܸ�������������뤿��Υ��饹��
-\item[\Cls{tbook}]    �Ľ񤭤����ܸ�ν��Ҥ�������뤿��Υ��饹��
+\indindz{クラス}{小規模な文書用の}
+\item[\Cls{jarticle}] 小規模の日本語の記事を作成するためのクラス．
+\indindz{クラス}{報告書用の}
+\item[\Cls{jreport}]  日本語の報告書を作成するためのクラス．
+\indindz{クラス}{書籍用の}
+\item[\Cls{jbook}]    日本語の書籍を作成するためのクラス．
+\item[\Cls{tarticle}] 縦書きの小規模の日本語の記事を作成するためのクラス．
+\item[\Cls{treport}]  縦書きの日本語の報告書を作成するためのクラス．
+\item[\Cls{tbook}]    縦書きの日本語の書籍を作成するためのクラス．
 \end{namelist}
-�ʾ��\cls{jarticle}��\cls{jreport}��\cls{jbook}�λ��Ĥ�ޤȤ��
-\Cls{jclasses}�ȸƤֻ�������ޤ���
+以上の\cls{jarticle}，\cls{jreport}，\cls{jbook}の三つをまとめて
+\Cls{jclasses}と呼ぶ事があります．
 
-\subsection{���饹���ץ����}\seclab{classopt}
-�ɥ�����ȥ��饹\pp{ʸ�񥯥饹}�ˤϤ⤦�����ܺ٤�
-�����Ԥ������Ǥ��ޤ���\cmd{documentclass}��Ǥ�հ����Ȥ���
-���Ҥ��ޤ���¿���Υ��饹�ե�����Ǥϼ���\Z{���饹���ץ����}��
-�Ȥ���Ȼפ��ޤ���
+\subsection{クラスオプション}\seclab{classopt}
+ドキュメントクラス\pp{文書クラス}にはもう少し詳細な
+設定を行う事ができます．\cmd{documentclass}の任意引数として
+記述します．多くのクラスファイルでは次の\Z{クラスオプション}が
+使えると思います．
 %\begin{description}
 %
-%\item[\Z{ʸ��������}\av{\Optionlist{10pt,11pt,12pt}}]
-%���ƤǴ��ܤȤʤ�ʸ�����礭������ޤ�������ʸ����������
-%���Ȥ��Ƥ��ޤ��ޤʥѥ�᡼�������ꤵ��ޤ���ɸ���
-%\option{10pt}��
+%\item[\Z{文字サイズ}\av{\Optionlist{10pt,11pt,12pt}}]
+%原稿で基本となる文字の大きさを決めます．この文字サイズを
+%基準としてさまざまなパラメータが設定されます．標準は
+%\option{10pt}．
 %
-%\item[\Z{�ѻ極����}\av{\Optionlist{a4paper,a5paper,b5paper,letterpaper}}]
-%���Ƥ��ѻ���礭������ꤷ�ޤ���\index{�ѻ�!\zdash �Υ�����}%
-%\index{�ѻ�!\zdash ���礭��}%
-%��ʸ�ξ��Ϥ���¾��\Optionlist{b4paper,a4j,a5j,b4j,b5j}�ʤɤǤ���
-%\sty{geometry}�ѥå�������\cls{jsclasses}��Ȥ������������
-%������ޤ���
+%\item[\Z{用紙サイズ}\av{\Optionlist{a4paper,a5paper,b5paper,letterpaper}}]
+%原稿の用紙の大きさを指定します．\index{用紙!\zdash のサイズ}%
+%\index{用紙!\zdash の大きさ}%
+%和文の場合はこの他に\Optionlist{b4paper,a4j,a5j,b4j,b5j}などです．
+%\sty{geometry}パッケージや\cls{jsclasses}を使うと選択の幅が
+%広がります．
 %
-%\item[\Z{�ѻ�����}\av{\Option{landscape}}]
-%�ѻ���֤��ˤ��ޤ���ɸ��Ͻ��֤��Ǥ���\index{�ѻ�!\zdash ������}
+%\item[\Z{用紙方向}\av{\Option{landscape}}]
+%用紙を横置きにします．標準は縦置きです．\index{用紙!\zdash の方向}
 %
-%\item[\Z{������}\av{\Optionlist{oneside,twoside}}]
-%�ѻ������\pp{\option{oneside}}�����˰������뤫
-%����Ȥ�ξ��\pp{\option{twoside}}�˰������뤫����ꤷ�ޤ���
-%\item[\Z{����}\av{\Optionlist{onecolumn,twocolumn}}]
-%%\ex{����}{1����}\index{����}{2����}%
-%\Z{1����}\pp{\option{onecolumn}}�ˤ��뤫\Z{2����}\pp{\option{twocolumn}}
-%�ˤ��뤫����ꤷ�ޤ���
+%\item[\Z{印刷面}\av{\Optionlist{oneside,twoside}}]
+%用紙の片面\pp{\option{oneside}}だけに印刷するか
+%それとも両面\pp{\option{twoside}}に印刷するかを指定します．
+%\item[\Z{段組}\av{\Optionlist{onecolumn,twocolumn}}]
+%%\ex{段組}{1段組}\index{段組}{2段組}%
+%\Z{1段組}\pp{\option{onecolumn}}にするか\Z{2段組}\pp{\option{twocolumn}}
+%にするかを指定します．
 %
-%\indindz{ɽ��}{��Ω�ڡ�����}\indindz{ɽ��}{Ʊ�ڡ�����}\indindz{�ڡ���}{ɽ��}
-%\item[\Z{ɽ��}\av{\Optionlist{titlepage,notitlepage}}]
-%ɽ�����Ω���ƽ��Ϥ���\pp{\option{titlepage}}����
-%Ʊ���ڡ����˽��Ϥ���\pp{\option{notitlepage}}���Ȥ���ɽ���
-%�쥤�����Ȥ���ꤷ�ޤ���
+%\indindz{表題}{独立ページの}\indindz{表題}{同ページの}\indindz{ページ}{表題}
+%\item[\Z{表題}\av{\Optionlist{titlepage,notitlepage}}]
+%表題を独立して出力する\pp{\option{titlepage}}か，
+%同じページに出力する\pp{\option{notitlepage}}かという表題の
+%レイアウトを指定します．
 %
-%\item[{�����ΰ���}\av{\Option{fleqn}}]
-%\zindind{����}{�ΰ���}%	   
-%�̹Կ����ΰ��֤�·���˻��ꤷ�ޤ���ɸ������·���Ǥ���
+%\item[{数式の位置}\av{\Option{fleqn}}]
+%\zindind{数式}{の位置}%	   
+%別行数式の位置を左揃えに指定します．標準は中央揃えです．
 %	
-%\item[{�����ֹ�ΰ���}\av{\Option{leqno}}]
-%\zindind{����}{�ֹ�ΰ���}%
-%�����ֹ�ΰ��֤�¦�˻��ꤷ�ޤ���ɸ��ϱ�¦�Ǥ���
+%\item[{数式番号の位置}\av{\Option{leqno}}]
+%\zindind{数式}{番号の位置}%
+%数式番号の位置を左側に指定します．標準は右側です．
 %	
-%\item[\Z{�ɥ�ե�}\av{\Optionlist{draft,final}}]
-%ʸ����ΰ��Ϥ߽Ф��Ƥ��ޤä��ս�˰���Ĥ��뤫�ɤ�����
-%��ɮ����ǰ�������Ȥ��ˤϥɥ�եȥ⡼�ɤˤ��롥
-%�ɥ�եȥ⡼�ɤ�\option{draft}��
-%���Ƥ�����������\option{final}���ѹ����롥
-%ɸ���\option{final}��
+%\item[\Z{ドラフト}\av{\Optionlist{draft,final}}]
+%文書の領域をはみ出してしまった箇所に印をつけるかどうか．
+%執筆途中で印刷するときにはドラフトモードにする．
+%ドラフトモードの\option{draft}，
+%原稿が完成したら\option{final}に変更する．
+%標準は\option{final}．
 %
-%\item[\Z{��������}\av{\Optionlist{openright,openany}}]
-%\cls{(j)report}��\cls{(j)book}�ˤ����ƾϤʤɤγ��ϥڡ�����
-%����򤹤롥��˴���ڡ����ǵ�����\pp{\option{openright}}����
-%�ɤ��餫��Ǥⵯ����\pp{\option{openany}}�������ꤹ�롥
-%\cls{(j)report}��ɸ���\option{openany}��
-%\cls{(j)book}��ɸ���\option{openright}��
+%\item[\Z{左右起し}\av{\Optionlist{openright,openany}}]
+%\cls{(j)report}や\cls{(j)book}において章などの開始ページの
+%指定をする．常に奇数ページで起こす\pp{\option{openright}}か，
+%どちらからでも起こす\pp{\option{openany}}かを設定する．
+%\cls{(j)report}の標準は\option{openany}．
+%\cls{(j)book}の標準は\option{openright}．
 %\end{description}
 
 \begin{description}
-\item[{ʸ��������}\av{\Optionlist{10pt,11pt,12pt}}] 
-\zindind{ʸ��}{������}%
-\zindind{����}{��ʸ��������}%
-���ƤǴ��ܤȤʤ�ʸ�����礭������ޤ�������ʸ����������
-���Ȥ��Ƥ��ޤ��ޤʥѥ�᡼�������ꤵ��ޤ���ɸ���
-\option{10pt}��
+\item[{文字サイズ}\av{\Optionlist{10pt,11pt,12pt}}] 
+\zindind{文字}{サイズ}%
+\zindind{原稿}{の文字サイズ}%
+原稿で基本となる文字の大きさを決めます．この文字サイズを
+基準としてさまざまなパラメータが設定されます．標準は
+\option{10pt}．
 
-\item[{�ѻ極����}\av{\Optionlist{a4paper,a5paper,b5paper,letterpaper}}]
-���Ƥ��ѻ���礭������ꤷ�ޤ���
-\index{�ѻ�!\zdash �Υ�����}%
-\index{�ѻ�!\zdash ���礭��}%
-\zindind{����}{���ѻ極����}%
-��ʸ�ξ��Ϥ���¾��\Optionlist{b4paper,a4j,a5j,b4j,b5j}�ʤɤǤ���
-\sty{geometry}�ѥå�������\cls{jsclasses}��Ȥ������������
-������ޤ���
+\item[{用紙サイズ}\av{\Optionlist{a4paper,a5paper,b5paper,letterpaper}}]
+原稿の用紙の大きさを指定します．
+\index{用紙!\zdash のサイズ}%
+\index{用紙!\zdash の大きさ}%
+\zindind{原稿}{の用紙サイズ}%
+和文の場合はこの他に\Optionlist{b4paper,a4j,a5j,b4j,b5j}などです．
+\sty{geometry}パッケージや\cls{jsclasses}を使うと選択の幅が
+広がります．
 
-\item[{�ѻ�����}\av{\Option{landscape}}]
-�ѻ���֤��ˤ��ޤ���ɸ��Ͻ��֤��Ǥ���\index{�ѻ�!\zdash ������}
+\item[{用紙方向}\av{\Option{landscape}}]
+用紙を横置きにします．標準は縦置きです．\index{用紙!\zdash の方向}
 
-\item[\Z{������}\av{\Optionlist{oneside,twoside}}]
-�ѻ������\pp{\option{oneside}}�����˰������뤫
-����Ȥ�ξ��\pp{\option{twoside}}�˰������뤫����ꤷ�ޤ���
-\item[\Z{����}\av{\Optionlist{onecolumn,twocolumn}}]
-\indindz{����}{1}\indindz{����}{2}%
-\Z{1����}\pp{\option{onecolumn}}�ˤ��뤫\Z{2����}\pp{\option{twocolumn}}
-�ˤ��뤫����ꤷ�ޤ���
+\item[\Z{印刷面}\av{\Optionlist{oneside,twoside}}]
+用紙の片面\pp{\option{oneside}}だけに印刷するか
+それとも両面\pp{\option{twoside}}に印刷するかを指定します．
+\item[\Z{段組}\av{\Optionlist{onecolumn,twocolumn}}]
+\indindz{段組}{1}\indindz{段組}{2}%
+\Z{1段組}\pp{\option{onecolumn}}にするか\Z{2段組}\pp{\option{twocolumn}}
+にするかを指定します．
 
-\indindz{ɽ��}{��Ω�ڡ�����}\indindz{ɽ��}{Ʊ�ڡ�����}\indindz{�ڡ���}{ɽ��}
-\item[{ɽ��}\av{\Optionlist{titlepage,notitlepage}}]
-ɽ�����Ω���ƽ��Ϥ���\pp{\option{titlepage}}����
-Ʊ���ڡ����˽��Ϥ���\pp{\option{notitlepage}}���Ȥ���ɽ���
-�쥤�����Ȥ���ꤷ�ޤ���
+\indindz{表題}{独立ページの}\indindz{表題}{同ページの}\indindz{ページ}{表題}
+\item[{表題}\av{\Optionlist{titlepage,notitlepage}}]
+表題を独立して出力する\pp{\option{titlepage}}か，
+同じページに出力する\pp{\option{notitlepage}}かという表題の
+レイアウトを指定します．
 
-\item[{�����ΰ���}\av{\Option{fleqn}}]
-\zindind{����}{�ΰ���}%	   
-�̹Կ����ΰ��֤�·���˻��ꤷ�ޤ���ɸ������·���Ǥ���
+\item[{数式の位置}\av{\Option{fleqn}}]
+\zindind{数式}{の位置}%	   
+別行数式の位置を左揃えに指定します．標準は中央揃えです．
 	
-\item[{�����ֹ�ΰ���}\av{\Option{leqno}}]
-\zindind{����}{�ֹ�ΰ���}%
-�����ֹ�ΰ��֤�¦�˻��ꤷ�ޤ���ɸ��ϱ�¦�Ǥ���
+\item[{数式番号の位置}\av{\Option{leqno}}]
+\zindind{数式}{番号の位置}%
+数式番号の位置を左側に指定します．標準は右側です．
 	
-\item[\Z{�ɥ�ե�}\av{\Optionlist{draft,final}}]
-\indindz{����}{�ɥ�ե��ʳ���}%
-\indindz{����}{��ɮ�ʳ���}%
-��ɮ����ǰ�������Ȥ���\option{draft}���ץ������դ���ȡ�
-ʸ�������ΰ��Ϥ߽Ф��Ƥ��ޤä��ս�˰����դ��Ƥ���ޤ���
-���Ƥ�����������\option{final}���ѹ����ޤ���ɸ���\option{final}�Ǥ���
+\item[\Z{ドラフト}\av{\Optionlist{draft,final}}]
+\indindz{原稿}{ドラフト段階の}%
+\indindz{原稿}{執筆段階の}%
+執筆途中で印刷するときに\option{draft}オプションを付けると，
+文書幅の領域をはみ出してしまった箇所に印が付いてくれます．
+原稿が完成したら\option{final}に変更します．標準は\option{final}です．
 
-\item[\Z{��������}\av{\Optionlist{openright,openany}}]
-\cls{(j)report}��\cls{(j)book}�ˤ����ƾϤʤɤγ��ϥڡ�����
-����򤷤ޤ�����˴���ڡ����ǵ�����\pp{\option{openright}}����
-�ɤ��餫��Ǥⵯ����\pp{\option{openany}}�������ꤷ�ޤ���
-\cls{(j)report}��ɸ���\option{openany}��
-\cls{(j)book}��ɸ���\option{openright}��
+\item[\Z{左右起し}\av{\Optionlist{openright,openany}}]
+\cls{(j)report}や\cls{(j)book}において章などの開始ページの
+指定をします．常に奇数ページで起こす\pp{\option{openright}}か，
+どちらからでも起こす\pp{\option{openany}}かを設定します．
+\cls{(j)report}の標準は\option{openany}．
+\cls{(j)book}の標準は\option{openright}．
 \end{description}
 
 
-�Ƕ�Ǥϡ�\Hito{��¼}{��ɧ}���������Ƥ���
-\Cls{jsclasses}�Ȥ������饹�ե����뷲����ɾ������ޤ�\footnote{\webJsclasses}��
-���Υ��饹����Ƴ�������
+最近では，\Hito{奥村}{晴彦}が管理している
+\Cls{jsclasses}というクラスファイル群に定評があります\footnote{\webJsclasses}．
+このクラス群を導入すると
 \begin{namelist}{xxxxxx}
-\item[\Cls{jsarticle}]	�����Ϥ����ܸ�ε�����������뤿��Υ��饹��
-\item[\Cls{jsbook}]	���ܸ�ν��Ҥ������������뤿��Υ��饹��
-\item[\Cls{jspf}]	˿�ز���ѤΥ��饹��
+\item[\Cls{jsarticle}]	小規模の日本語の記事を作成するためのクラス．
+\item[\Cls{jsbook}]	日本語の書籍や報告書を作成するためのクラス．
+\item[\Cls{jspf}]	某学会誌用のクラス．
 \end{namelist}
-�λ��Ĥ����ѤǤ��ޤ��������Υ��饹�ǻ���Ǥ���
-���饹���ץ����\cls{jclasses}���ɲä����
-���ޤ�\footnote{\cls{(j)classes}���������Ƥ��������Ĥ���
-���饹���ץ���󤬼�������Ƥ��ޤ���}��
-�ʾ��\cls{jsarticle}��\cls{jsbook}��\cls{jspf}�λ��Ĥ�ޤȤ��
-\Cls{jsclasses}�ȸƤӤޤ���
+の三つが使用できます．これらのクラスで指定できる
+クラスオプションが\cls{jclasses}に追加されて
+います\footnote{\cls{(j)classes}で定義されていたいくつかの
+クラスオプションが実装されていません．}．
+以上の\cls{jsarticle}，\cls{jsbook}，\cls{jspf}の三つをまとめて
+\Cls{jsclasses}と呼びます．
 
 \begin{description}
-\item[\Z{ʸ��������}]\av{\Optionlist%
+\item[\Z{文字サイズ}]\av{\Optionlist%
    {9pt,10pt,11pt,12pt,14pt,17pt,20pt,21pt,25pt,30pt,36pt,43pt,12Q,14Q}}
-\item[\Z{�ѻ極����}]\av{\Optionlist%
+\item[\Z{用紙サイズ}]\av{\Optionlist%
    {a4paper,a5paper,a6paper,b5paper,b4paper,a4j,a5j,b4j,b5j,a4var,b5var}}
-\item[����λ���]\av{\Option{english}}
-  ��ʸ�Ѥθ��Ф�������ȹ�����ˤʤ�ޤ���
-\item[�ѻ極��������] \av{\Option{papersize}} 
-  �ѻ極�����ξ����ǥХ����ɥ饤�Ф��Ϥ��褦�ˤ��ޤ���
-\item[��ݡ��Ⱥ���] \av{\Option{report}} 
-  \Z{��ݡ��Ⱥ���}�Ѥ� \cmd{chapter} ̿���Ȥ������Ǥ��ޤ���
-  \cls{jsbook} �ǤϺ����������˴ؤ������꤬�Ѥ��ޤ���
+\item[言語の指定]\av{\Option{english}}
+  欧文用の見出しの定義と行送りになります．
+\item[用紙サイズ情報] \av{\Option{papersize}} 
+  用紙サイズの情報をデバイスドライバに渡すようにします．
+\item[レポート作成] \av{\Option{report}} 
+  \Z{レポート作成}用に \cmd{chapter} 命令を使う事ができます．
+  \cls{jsbook} では左右起し等に関する設定が変わります．
 \end{description}
 
-\subsection{ɸ��ǻ��ѤǤ���ѥå�����}\seclab{01pregame:sec:stdmacro}
-{\LaTeX}��Ƴ������Ȱ���ź�դ����ɸ��Ū�ʥѥå�����������ޤ���
-�����ϥץꥢ��֥���ʬ�˼��Τ褦�ˤ���Ȼ��Ѳ�ǽ�ˤʤ�ޤ���
+\subsection{標準で使用できるパッケージ}\seclab{01pregame:sec:stdmacro}
+{\LaTeX}を導入すると一緒に添付される標準的なパッケージがあります．
+これらはプリアンブル部分に次のようにすると使用可能になります．
 \begin{Syntax}
-\C{usepackage}\opa{���ץ����}\pa{�ѥå�����}
+\C{usepackage}\opa{オプション}\pa{パッケージ}
 \end{Syntax}
 
-�ƥѥå������ξܺ٤��������ɤߤ����Ȥ���
+各パッケージの詳細な説明書が読みたいときは
 \begin{InTerm}
    \type{platex filename.dtx}
 \end{InTerm}
-�Ȥ����\Va{filename}{dvi}����������ޤ�\footnote{�Ƕ��\TeX �Ķ�
-�Ǥ� \underline{\str{texdoc }\va{�ѥå�����̾}}���Ȥ���Хޥ˥奢��
-��ɽ������ޤ���}�������κ�����
-�ܼ��κ�������߻��Ȥβ��ʤɤ򤹤�д�����DVI�ե����뤬
-�������ޤ����ƥ������ե�����ؤθ����ѥ����ʤ����
-��������\Va{filename}{dtx}�򸡺�������ϤǤ��ޤ���
-{Windows}�ʤ�Хե�����θ�����Unix��OS�ʤ��\prog{find}���ޥ��
-�ʤɤ�õ���Ƥ��������������{\LaTeX}�򥤥󥹥ȡ��뤷��
-�ǥ��쥯�ȥ�\pp{�ե����}�β�\qu{\fl{\$texmf/tex/latex/base}}�ˤ���ޤ���
+とすれば\Va{filename}{dvi}が作成されます\footnote{最近の\TeX 環境
+では \underline{\str{texdoc }\va{パッケージ名}}等とすればマニュアル
+が表示されます．}．索引の作成や
+目次の作成，相互参照の解決などをすれば完全なDVIファイルが
+完成します．各ソースファイルへの検索パスがなければ
+該当する\Va{filename}{dtx}を検索する事はできません．
+{Windows}ならばファイルの検索，Unix系OSならば\prog{find}コマンド
+などで探してください．大抵は{\LaTeX}をインストールした
+ディレクトリ\pp{フォルダ}の下\qu{\fl{\$texmf/tex/latex/base}}にあります．
 %\begin{namelist}{xxxxxx}
-%\item[\Sty{alltt}]	\Env{alltt}�Ķ����󶡤��뤿��Υޥ�����
-%���δĶ���Ǥ�\verb|\|��\verb|{|��\verb|}|���̾��̤��̿��Ȥ���
-%��ᤵ�졤{\LaTeX}�Υ��ޥ�ɤʤɤ��Ȥ��롥\Fl{alltt.dtx}����
-%��������롥
-%\item[\Sty{doc}]	�ѥå������ե����뤬ɬ�פȤ���ޥ�����
-%\Fl{doc.dtx}������������롥
+%\item[\Sty{alltt}]	\Env{alltt}環境を提供するためのマクロ．
+%この環境内では\verb|\|，\verb|{|，\verb|}|が通常通りの命令として
+%解釈され，{\LaTeX}のコマンドなどが使える．\Fl{alltt.dtx}から
+%生成される．
+%\item[\Sty{doc}]	パッケージファイルが必要とするマクロ．
+%\Fl{doc.dtx}から生成される．
 %\item[\Sty{exscale}]	\Fl{exscale.dtx}
 %\item[\Sty{fontenc}]	\Fl{fontenc.dtx}
 %\item[\Sty{graphpap}]	\Fl{graphpap.dtx}
 %\item[\Sty{ifthen}]	\Fl{ifhten.dtx}
 %\item[\Sty{inputenc}]	\Fl{inputenc}
 %\item[\Sty{latexsym}]	\Fl{latexsym}
-%\item[\Sty{makeidx}]	���������ѤΥޥ�����
-%\Fl{makeindx.dtx}������������롥
+%\item[\Sty{makeidx}]	索引作成用のマクロ．
+%\Fl{makeindx.dtx}から生成される．
 %\item[\Sty{newlfont}]	\Fl{newlfont.dtx}
 %\item[\Sty{oldlfont}]	\Fl{oldlfont.dtx}
-%\item[\Sty{syntonly}]	�ºݤν��Ϥ򤻤��ˡ���ʸ���ϤΤߤ�Ԥ��ޥ�����
-%\Fl{syntonly.dtx}������������롥
-%\item[\Sty{tracefnt}]	ʸ����ǻ��Ѥ������Τξ����ܤ���
-%ɽ�����뤿��Υޥ�����\Fl{ltfsstrc.dtx}������������롥
+%\item[\Sty{syntonly}]	実際の出力をせずに，構文解析のみを行うマクロ．
+%\Fl{syntonly.dtx}から生成される．
+%\item[\Sty{tracefnt}]	文書中で使用される書体の情報を詳しく
+%表示するためのマクロ．\Fl{ltfsstrc.dtx}から生成される．
 %\end{namelist}
-%�����Υե�����ˤĤ��ƾܤ�����\wasyo{\LMANUAL}��
-%\wasyo{\COMP}�򸫤Ƥ����������������Ǥ����ޤ�����������Ǥ�
-%�����䤷���Τǡ�����ͭ�פ�{\LaTeX}��
-%�ؤ��륦���֥ڡ������ʤ���õ�����Ȥˤʤ�櫓�Ǥ�����
-%\wasyo{\LMANUAL}��
-%Ķ�����Τ�¸�ߤ��ʤ��Τ������Ǥ���\yo{��Ԥ��ܤ�����ʬ����䤹��
-%ʸ�񤬥����֥ڡ�����¸�ߤ�����ޯ��ˤʤ��嵐��}�Ȥ������դ���
-%�ޤ��ɤ�����Ȥ�ʤ�ʹ�����Ƥ����ΤǤ����դ������򽪤��ޤ���
+%これらのファイルについて詳しくは\wasyo{\LMANUAL}や
+%\wasyo{\COMP}を見てください，だそうです．まあ，それだけでは
+%少し寂しいので，何か有益な{\LaTeX}に
+%関するウェブページがないか探すことになるわけですが，
+%\wasyo{\LMANUAL}を
+%超えるものは存在しないのが現状です．\yo{作者より詳しくて分かりやすい
+%文書がウェブページに存在したら洒落にならんわぁ．}という言葉が，
+%またどこからともなく聞こえてきたのでこの辺で説明を終わります．
 
-{\LaTeX}������ԥ塼����Ƴ������Ƥ���ʤ�аʲ��α���Ū��
-�ޥ����䥽�եȥ�������Ʊ������Ƥ�����Ǥ��礦��
-�����Υե�����ϲ�ʸ��ʸ���������뤦���Ǥ�ɬ�ܤΤ�Τ�
-����Ƥ��ޤ���%���ܸ��ʸ��Τߤ��������ʤ�С�
-%�����Ĥ��Υޥ����䥽�եȥ�������ɬ�פʤ��Ǥ��礦��
+{\LaTeX}がコンピュータに導入されているならば以下の応用的な
+マクロやソフトウェアが同封されている事でしょう．
+これらのファイルは欧文の文書を作成するうえでは必須のものと
+されています．%日本語の文書のみを作成するならば，
+%いくつかのマクロやソフトウェアは必要ないでしょう．
 
 \begin{description}
 \item[{\Prog[AmSLaTeX]{\AmSLaTeX}}] 
-  \Z{�ƹ���ز�}\pp{\Z{American Mathematical Society}}��
-  �󶡤��Ƥ��륽�եȥ������¤Ӥ˥ѥå�������
-  \Prog[AmSTeX]{\AmSTeX}�Ȥ���\prog{\TeX}�Ѥ�{\LaTeX}�Ǥ�Ȥ���褦��
-  ������Ρ��ޥ������ե���Ȥʤɤ����Τ����Ƥ�̾��
-  {\AmSLaTeX}�ǡ�\LaTeX �ǤΥѥå�������̾����\Sty{amsmath}�ȸ����ޤ���
-  \secref{amsmath}�ǾҲ𤷤Ƥ��ޤ���
-  \indindz{�ޥ���}{���طϤ�}%
+  \Z{米国数学会}\pp{\Z{American Mathematical Society}}が
+  提供しているソフトウェア並びにパッケージ．
+  \Prog[AmSTeX]{\AmSTeX}という\prog{\TeX}用を{\LaTeX}でも使えるように
+  したもの．マクロ，フォントなどを総称した呼び名が
+  {\AmSLaTeX}で，\LaTeX でのパッケージの名前は\Sty{amsmath}と言います．
+  \secref{amsmath}で紹介しています．
+  \indindz{マクロ}{数学系の}%
 
-\item[\Sty{babel}] ¿�����{\LaTeX}�ǰ�������Υޥ�����
-  ���Υޥ��������ܸ�ȶ�¸�����뤿��ˤϾ������פ�ɬ�ס�
-  �ܤ��������\appref{webpage}�򻲾Ȥ��Ƥ���������
+\item[\Sty{babel}] 多言語を{\LaTeX}で扱うためのマクロ．
+  このマクロを日本語と共存させるためには少々工夫が必要．
+  詳しい情報は\appref{webpage}を参照してください．
 
-%\item[\Sty{cyrillic}] �����ե���Ȥ�ʸ����������Ȥ���ɬ�פˤʤ�ޥ�������
+%\item[\Sty{cyrillic}] キリルフォントで文書を作成するときに必要になるマクロ群．
 
-\item[\Sty{graphicx}] ������������ù��ʤɤ�ô���ޥ�����
-Ʊ����\Sty{color}�Ȥ����ޥ�����ޤޤ�ޤ�������ϥǥХ�����¸��
-��ǽ�ǴĶ��ˤ����Ϥ��ۤʤ��������ޤ���
-\secref{gazou}�ǾҲ𤷤Ƥ��ޤ���
+\item[\Sty{graphicx}] 画像の挿入や加工などを担うマクロ．
+同時に\Sty{color}というマクロも含まれます．これはデバイス依存の
+機能で環境により出力が異なる事があります．
+\secref{gazou}で紹介しています．
 
-%\item[\Sty{psnfss}] Everything you need for typesetting with a large range of Type 1 fonts��
-\item[\Sty{tools}] {\LaTeX\,3}�ץ��������ȥ�����ˤ�ä��󶡤����
-ɸ�फ��Ϥ��ܤ줿�ޥ�����
+%\item[\Sty{psnfss}] Everything you need for typesetting with a large range of Type 1 fonts．
+\item[\Sty{tools}] {\LaTeX\,3}プロジェクトチームによって提供される
+標準からはこぼれたマクロ．
 
 \end{description}
 
-%�����Υޥ����ˤĤ��ƤϾ��ʤ��Ȥ�{\COMP}��{\LMANUAL}
-%�˵��Ҥ���Ƥ��뤳�Ȥ��ݾڤ���Ƥ��ޤ���
+%これらのマクロについては少なくとも{\COMP}か{\LMANUAL}
+%に記述されていることが保証されています．
 
-{\LaTeX\,3}�ץ��������ȥ�����ˤ�ä��󶡤����\sty{tools}
-��\qu{\fl{\$texmf/tex/latex/tools}}���֤���Ƥ��ꡤ
-���������ϰʲ��ΤȤ���Ǥ���
+{\LaTeX\,3}プロジェクトチームによって提供される\sty{tools}
+は\qu{\fl{\$texmf/tex/latex/tools}}に置かれており，
+その内訳は以下のとおりです．
 %\begin{namelist}{xxxxxxxx}
-%\item[\Y{array}] 	\Env{array}��\Env{tabular}��\Env{tabular*}
-%�Τ褦��ɽ�������ĥ�����Ķ���Ȥ����Ȥ��Ǥ���ޥ�����
-%\item[\Y{calc}] 		{\LaTeX}�Ǥη׻���ڤˤ���ޥ�����
-%\item[\Y{dcolumn}] 	ɽ�����δĶ���\Z{������}�ʤɤ�·���뤿��Υޥ�����
-%\item[\Y{delarray}] 	����ǳ���դ����ưפˤ��뤿��Υޥ�����
-%\item[\Y{hhline}] 	ɽ������ʣ���ʷ������ñ�˰������Ȥ��Ǥ���
-%�ޥ�����
-%\item[\Y{longtable}] �ڡ�����ޤ����褦��Ĺ���ʤ�����ɽ��
-%���Ȥ��˻Ȥ��ޥ�����
-%\item[\Y{tabularx}] 	�̾��\env{tabular}�Ķ��������˴ؤ���
-%�����ɽ���뤿��Υޥ�����
-%\item[\Y{afterpage}] \Cmd{clearpage}�γ�ĥ�ǤΤ褦��
-%\Cmd{afterpage}���Ȥ���ޥ�����
-%\item[\Y{bm}] 		��������������ñ�˻Ȥ��褦�ˤ��뤿��Υޥ�����
-%\item[\Y{enumerate}] \Env{enumerate}�Ķ����ĥ���뤿��Υޥ�����
-%\item[\Y{fontsmpl}] 	Ǥ�դΥե���Ȥΰ�����ɽ�����뤿��Υޥ�����
-%\item[\Y{ftnright}] 	2���Ȥ����Ƥ�{����}��¦��ɽ������ޥ�����
-%\indindz{����}{2���ȤǤ�}
-%\item[\Y{indentfirst}] \Cls{jarticle}��\Cls{jreport}�ʤɤ�
-%ɸ��Ū�ʥ��饹�ǡ���\pp{\Cmd{chapter}}����\pp{\Cmd{section}}��ľ�������Ǥ�
-%��������Ԥ��褦�ˤ���ޥ������̾�ϻ��������ʤ��褦�����ꤵ��Ƥ���
-%�Τǡ���ʸʸ���������Ƥ���Ȥ��Ϥ��ĤǤ��ɤ߹���褦�ˤ�����ɤ���
-%\indindz{������}{���Ф�ľ���}%
-%\zindind{���Ф�}{��ľ��}%%
-%\item[\Y{layout}] 	���ߤ�ʸ��Υڡ����쥤�����Ȥ�ɽ������ޥ�����
-%\item[\Y{multicol}] 	¾���Ȥ�¸����뤿��Υޥ�����
+%\item[\Y{array}] 	\Env{array}や\Env{tabular}，\Env{tabular*}
+%のような表や行列を拡張した環境を使うことができるマクロ．
+%\item[\Y{calc}] 		{\LaTeX}での計算を楽にするマクロ．
+%\item[\Y{dcolumn}] 	表や行列の環境で\Z{小数点}などを揃えるためのマクロ．
+%\item[\Y{delarray}] 	行列で括弧付けを容易にするためのマクロ．
+%\item[\Y{hhline}] 	表や行列で複雑な罫線を簡単に引くことができる
+%マクロ．
+%\item[\Y{longtable}] ページをまたぐような長いなが〜い表を
+%作るときに使うマクロ．
+%\item[\Y{tabularx}] 	通常の\env{tabular}環境よりも幅に関して
+%柔軟な表を作るためのマクロ．
+%\item[\Y{afterpage}] \Cmd{clearpage}の拡張版のような
+%\Cmd{afterpage}が使えるマクロ．
+%\item[\Y{bm}] 		数式中で太字を簡単に使うようにするためのマクロ．
+%\item[\Y{enumerate}] \Env{enumerate}環境を拡張するためのマクロ．
+%\item[\Y{fontsmpl}] 	任意のフォントの一覧を表示するためのマクロ．
+%\item[\Y{ftnright}] 	2段組で全ての{脚注}を右側に表示するマクロ．
+%\indindz{脚注}{2段組での}
+%\item[\Y{indentfirst}] \Cls{jarticle}や\Cls{jreport}などの
+%標準的なクラスで，章\pp{\Cmd{chapter}}や節\pp{\Cmd{section}}の直後の段落でも
+%字下げを行うようにするマクロ．通常は字下げしないように設定されている
+%ので，和文文書を作成しているときはいつでも読み込むようにすれば良い．
+%\indindz{字下げ}{見出し直後の}%
+%\zindind{見出し}{の直後}%%
+%\item[\Y{layout}] 	現在の文書のページレイアウトを表示するマクロ．
+%\item[\Y{multicol}] 	他段組を実現するためのマクロ．
 %%\item[\Y{rawfonts}] 	
 %%\item[\Y{somedefs}] 	
-%\zindind{��߻���}{�Υ�٥��ɽ��}%
-%\item[\Y{showkeys}] 	\Cmd{label}��\Cmd{ref}��\Cmd{cite}�ʤɤ�
-%��߻��ȤΥ�٥�̾\pp{keys}��ɽ�����뤿��Υޥ�����
-%\item[\Y{theorem}] 	������Ķ����ñ��������뤿��Υޥ�����
-%\item[\Y{varioref}] 	��߻��Ȥ򤷤䤹�����뤿��Υޥ�����
-%\item[\Y{verbatim}] 	\Env{verbatim}�Ķ����ĥ���뤿��Υޥ�����
-%\indindz{��߻���}{�̤�ʸ��Ȥ�}%
-%\item[\Y{xr}] 		�̤�ʸ��ȤǤ���߻��ȤǤ���褦�ˤ��뤿��Υޥ�����
-%\item[\Y{xspace}] 	ʸ��ǻȤ���褦�ʥޥ�����Ŭ�ڤ�
-%			����������ʤɤ�Ԥ��ޥ�����
+%\zindind{相互参照}{のラベルの表示}%
+%\item[\Y{showkeys}] 	\Cmd{label}，\Cmd{ref}，\Cmd{cite}などの
+%相互参照のラベル名\pp{keys}を表示するためのマクロ．
+%\item[\Y{theorem}] 	定義型環境を簡単に宣言するためのマクロ．
+%\item[\Y{varioref}] 	相互参照をしやすくするためのマクロ．
+%\item[\Y{verbatim}] 	\Env{verbatim}環境を拡張するためのマクロ．
+%\indindz{相互参照}{別の文書との}%
+%\item[\Y{xr}] 		別の文書とでも相互参照できるようにするためのマクロ．
+%\item[\Y{xspace}] 	文中で使われるようなマクロに適切な
+%			空白の挿入などを行うマクロ．
 %\end{namelist}		
 \begin{namelist}{xxxxxxxx}
 \item[\Sty{array}] 
-  \Env{array}��\Env{tabular}��\Env{tabular*}
-  �Τ褦��ɽ�������ĥ�����Ķ���Ȥ������Ǥ���ޥ�����
+  \Env{array}や\Env{tabular}，\Env{tabular*}
+  のような表や行列を拡張した環境を使う事ができるマクロ．
 \item[\Sty{calc}]
-  \latexno{�Ǥη׻�}
-  {\LaTeX}�Ǥη׻���ڤˤ���ޥ�����
-  \secref{calc}�ǾҲ𤷤Ƥ��ޤ���
+  \latexno{での計算}
+  {\LaTeX}での計算を楽にするマクロ．
+  \secref{calc}で紹介しています．
 \item[\Sty{dcolumn}] 
-  \zindind{����}{��ξ�����}%
-  \zindind{ɽ}{��ξ�����}%
-  ɽ�����δĶ���\Z{������}�ʤɤ�·���뤿��Υޥ�����
-  \secref{dcolumn}�ǾҲ𤷤Ƥ��ޤ���
+  \zindind{行列}{中の小数点}%
+  \zindind{表}{中の小数点}%
+  表や行列の環境で\Z{小数点}などを揃えるためのマクロ．
+  \secref{dcolumn}で紹介しています．
 \item[\Sty{delarray}] 
-  \zindind{����}{���դ�����}%
-  \zindind{���}{�Τ������}%
-  ����ǳ���դ����ưפˤ��뤿��Υޥ�����
-  \secref{math:array}�ǾҲ𤷤Ƥ��ޤ���
+  \zindind{行列}{に付ける括弧}%
+  \zindind{括弧}{のある行列}%
+  行列で括弧付けを容易にするためのマクロ．
+  \secref{math:array}で紹介しています．
 \item[\Sty{hhline}] 
-  \zindind{ɽ}{�η���}%
-  \zindind{����}{�η���}%
-  ɽ������ʣ���ʷ������ñ�˰��������Ǥ���ޥ�����
+  \zindind{表}{の罫線}%
+  \zindind{行列}{の罫線}%
+  表や行列で複雑な罫線を簡単に引く事ができるマクロ．
 \item[\Sty{longtable}] 
-  \indindz{ɽ}{Ĺ��}
-  \indindz{ɽ}{�ڡ�����٤�}
-  �ڡ�����ޤ����褦�ʡ�\Z{����Ĺ��ɽ}����Ȥ��˻Ȥ��ޥ�����
-  \secref{longtable}�ǾҲ𤷤Ƥ��ޤ���
+  \indindz{表}{長い}
+  \indindz{表}{ページを跨ぐ}
+  ページをまたぐような，\Z{非常に長い表}を作るときに使うマクロ．
+  \secref{longtable}で紹介しています．
 \item[\Sty{tabularx}] 	
-\indindz{��}{ɽ��}%
-  �̾��\env{tabular}�Ķ��������˴ؤ���
-  �����ɽ���뤿��Υޥ�����
- \secref{tabularx}�ǾҲ𤷤Ƥ��ޤ���
+\indindz{幅}{表の}%
+  通常の\env{tabular}環境よりも幅に関して
+  柔軟な表を作るためのマクロ．
+ \secref{tabularx}で紹介しています．
 \item[\Sty{afterpage}] 
- \C{clearpage}�γ�ĥ�ǤΤ褦�� \C{afterpage}���Ȥ���ޥ�����
-%����ϥڡ�������­��ʤ��ä������ݸ��Ȥ���
+ \C{clearpage}の拡張版のような \C{afterpage}が使えるマクロ．
+%これはページ数が足りなかった時の保険として
 \item[\Sty{bm}] 
-  \zindind{����}{�������}%
-  \indindz{����}{�������}%
-  ��������������ñ�˻Ȥ��褦�ˤ��뤿��Υޥ�����
-  \secref{bm}�ǾҲ𤷤Ƥ��ޤ���
+  \zindind{数式}{中の太字}%
+  \indindz{太字}{数式中の}%
+  数式中で太字を簡単に使うようにするためのマクロ．
+  \secref{bm}で紹介しています．
 \item[\Sty{enumerate}] 
-  \Env{enumerate}�Ķ����ĥ���뤿��Υޥ�����
-  \secref{enumerate}�ǾҲ𤷤Ƥ��ޤ���
+  \Env{enumerate}環境を拡張するためのマクロ．
+  \secref{enumerate}で紹介しています．
 %\item[\Sty{fontsmpl}] 	
-%  Ǥ�դΥե���Ȥΰ�����ɽ�����뤿��Υޥ�����
+%  任意のフォントの一覧を表示するためのマクロ．
 \item[\Sty{ftnright}]
-  2���Ȥ����Ƥ�{����}��¦��ɽ������ޥ�����
-  \indindz{����}{2���ȤǤ�}
-\item[\Sty{indentfirst}] \Cls{jarticle}��\Cls{jreport}�ʤɤ�
-ɸ��Ū�ʥ��饹�ǡ���\pp{\cmd{chapter}}����\pp{\cmd{section}}��ľ�������Ǥ�
-��������Ԥ��褦�ˤ���ޥ������̾�ϻ��������ʤ��褦�����ꤵ��Ƥ���
-�Τǡ���ʸʸ���������Ƥ���Ȥ��Ϥ��ĤǤ��ɤ߹���褦�ˤ�����ɤ���
-\indindz{������}{���Ф�ľ���}%
-\zindind{���Ф�}{��ľ��}%%
-\secref{indentfirst}�ǾҲ𤷤Ƥ��ޤ���
+  2段組で全ての{脚注}を右側に表示するマクロ．
+  \indindz{脚注}{2段組での}
+\item[\Sty{indentfirst}] \Cls{jarticle}や\Cls{jreport}などの
+標準的なクラスで，章\pp{\cmd{chapter}}や節\pp{\cmd{section}}の直後の段落でも
+字下げを行うようにするマクロ．通常は字下げしないように設定されている
+ので，和文文書を作成しているときはいつでも読み込むようにすれば良い．
+\indindz{字下げ}{見出し直後の}%
+\zindind{見出し}{の直後}%%
+\secref{indentfirst}で紹介しています．
 \item[\Sty{layout}]
-  \zindind{ʸ��}{�Υڡ����쥤������}
-  ���ߤ�ʸ���{�ڡ����쥤������}��ɽ������ޥ�����
-  \secref{layout}�ǾҲ𤷤Ƥ��ޤ���
+  \zindind{文書}{のページレイアウト}
+  現在の文書の{ページレイアウト}を表示するマクロ．
+  \secref{layout}で紹介しています．
 \item[\Sty{multicol}] 	
-  \Z{¿����}��������뤿��Υޥ�����
-  \secref{multicol}�ǾҲ𤷤Ƥ��ޤ���
+  \Z{多段組}を実装するためのマクロ．
+  \secref{multicol}で紹介しています．
 %\item[\Sty{rawfonts}] 	
 %\item[\Sty{somedefs}] 	
 \item[\Sty{showkeys}]
-  \zindind{��߻���}{�Υ�٥��ɽ��}%
-  \Cmd{label}�� \Cmd{ref}�� \Cmd{cite}�ʤɤ�
-  ��߻��ȤΥ�٥�̾\pp{keys}��ɽ�����뤿��Υޥ�����
-  \secref{showkeys}�ǾҲ𤷤Ƥ��ޤ���
+  \zindind{相互参照}{のラベルの表示}%
+  \Cmd{label}， \Cmd{ref}， \Cmd{cite}などの
+  相互参照のラベル名\pp{keys}を表示するためのマクロ．
+  \secref{showkeys}で紹介しています．
 \item[\Sty{theorem}] 	
-  \Z{����}���Ķ����ñ��������뤿��Υޥ�����
-  \secref{theorem}�ǾҲ𤷤Ƥ��ޤ���
+  \Z{定理}型環境を簡単に宣言するためのマクロ．
+  \secref{theorem}で紹介しています．
 \item[\Sty{varioref}] 	
- \zindind{��߻���}{�δ�ά��}%
-  ��߻��Ȥ򤷤䤹�����뤿��Υޥ�����
+ \zindind{相互参照}{の簡略化}%
+  相互参照をしやすくするためのマクロ．
 \item[\Sty{verbatim}] 	
-  \Env{verbatim}�Ķ����ĥ���뤿��Υޥ�����
-% ����Ƥ��ɤ��������뤬��
+  \Env{verbatim}環境を拡張するためのマクロ．
+% 入れても良い気がするが．
 \item[\Sty{xr}]
-  \indindz{��߻���}{�̤�ʸ��Ȥ�}%
-  �̤�ʸ��ȤǤ���߻��ȤǤ���褦�ˤ��뤿��Υޥ�����
-% ����Ϥ��뤫�ʤ���
+  \indindz{相互参照}{別の文書との}%
+  別の文書とでも相互参照できるようにするためのマクロ．
+% これはあるかなぁ．
 \item[\Sty{xspace}]
-  \zindind{���ޥ��}{�θ�ζ���ʸ��}
-  ʸ��ǻȤ���褦�ʥޥ�����Ŭ�ڤʶ���������ʤɤ�Ԥ��ޥ�����
-  \secref{xspace}�ǾҲ𤷤Ƥ��ޤ���
+  \zindind{コマンド}{の後の空白文字}
+  文中で使われるようなマクロに適切な空白の挿入などを行うマクロ．
+  \secref{xspace}で紹介しています．
 \end{namelist}		
 
 

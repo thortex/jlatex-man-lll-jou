@@ -1,12 +1,12 @@
 lethead_flag            1
-symhead_positive	"¿ô»ú/µ­¹æ"
+symhead_positive	"æ•°å­—/è¨˜å·"
 letter_head		2
 delim_0			" \\dotfill\\ "
 delim_1			" \\dotfill\\ "
 delim_2			" \\dotfill\\ "
 lethead_prefix "\n\\underline{\\hbox to \\linewidth{\\large{\\sffamily\\bfseries "
 lethead_suffix "\\hfill}}}\\nopagebreak\n"
-%¡úµ­¹æ
+%â˜…è¨˜å·
 %\index{"@@\verb+"@+}%@
 %\index{" @\verb*+" +}
 %\index{"#@\verb+#+} 
@@ -23,7 +23,7 @@ lethead_suffix "\\hfill}}}\\nopagebreak\n"
 %\index{"!@verb+"!+}
 %% {, }, @ | ! " 
 %
-%¡úÌ¿Îá
+%â˜…å‘½ä»¤
 %\glossary{"#@\hspace*{-1.2ex}\verb+"\#+}%"
 %\glossary{"_@\hspace*{-1.2ex}\verb+"\_+}%"
 %\glossary{"$@\hspace*{-1.2ex}\verb+"\$+}%"

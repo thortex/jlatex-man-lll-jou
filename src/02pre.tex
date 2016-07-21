@@ -1,169 +1,169 @@
 %#!platex jou.tex
-\chapter{\LaTeX �δ���}
+\chapter{\LaTeX の基本}
 
 \begin{abstract}
 % commented out 2006/03/08
-%�ޤ��������ˡ�ʤɤ�{\LaTeX}�δ��ܤ������ޤ��礦���ܽ�ǤϤ��ʤ���
-%\yo{����񤯤٤���}�ǤϤʤ�\yo{�ɤ���äƽ񤯤٤���}�Ȥ������Ȥ�������
-%���ʤ����Ȥ�Ϥ���ǤäƤ����ޤ������������Ǥ�����
-�ޤ��������ˡ�ʤɤ�{\LaTeX}�δ��ܤ��������ޤ�������ԥ塼���δ�������
-�ؤ�����ʬ���绨�Ĥˤ������⤷�Ƥ��ޤ���Τǡ�Ŭ�����ͽ�򻲾Ȥ��Ƥ���
-������
+%まずは操作方法などの{\LaTeX}の基本を習得しましょう．本書ではあなたが
+%\yo{何を書くべきか}ではなく\yo{どうやって書くべきか}ということしか説明
+%しないことを始めに断っておきます，当たり前ですが．
+まずは操作方法などの{\LaTeX}の基本を説明します．コンピュータの基本操作に
+関する部分は大雑把にしか解説していませんので，適宜参考書を参照してくだ
+さい．
 \end{abstract}
 
-\section{���ܤδ���}
-\latexno{�δ���}
-\LaTeX �����̤Υ�ץ��Ȥϰ㤤���������٤δ���Ū����������Ƨ�ޤ��ʤ�
-��Фʤ�ޤ��󡥤����Ǥ�\LaTeX �������Ǥδ��ܤδ��ܤ���⤷�ޤ���
+\section{基本の基本}
+\latexno{の基本}
+\LaTeX は普通のワープロとは違い，ある程度の基本的な前提事項を踏まえなけ
+ればなりません．ここでは\LaTeX を操作する上での基本の基本を解説します．
 
 
-\subsection{������ή��}
-\latexno{��ư������}
+\subsection{処理の流れ}
+\latexno{の動かし方}
 
-%���ޥ�ɤ�Ф������ˤޤ���{\LaTeX}�Ǥν�����ή����ޤ��Ƥ����ޤ��礦����
-%�����ȥե������ʸ�Ϥ��Τ�Τ�\K{���ޥ��}�Ȥ�����Τ�񤭡������
-%\LaTeX ��������������̤��ǧ����Ȥ��ä����Ȥ��٤������֤��ƺǽ�Ū��
-%�Ǥ�ž夲�ޤ�\pp{\figref{latexflow}}��
-\Z{���ޥ��}��Ф������ˤޤ���{\LaTeX}�Ǥν�����ή�������������
-\Z{�ƥ����ȥե�����}��ʸ�Ϥ��Τ�Τ�\KY{���ޥ��}�Ȥ�����Τ�
-�񤭡������{\LaTeX}��������������̤��ǧ����Ȥ��ä�����
-���٤������֤��ƺǽ�Ū��\Z{��}��ž夲�ޤ�\pp{\figref{latexflow}}��
+%コマンドを覚える前にまずは{\LaTeX}での処理の流れを抑えておきましょう．テ
+%キストファイルに文章そのものと\K{コマンド}というものを書き，それを
+%\LaTeX 処理し，成形結果を確認するといったことを何度か繰り返して最終的な
+%版を仕上げます\pp{\figref{latexflow}}．
+\Z{コマンド}を覚える前にまずは{\LaTeX}での処理の流れをご覧下さい．
+\Z{テキストファイル}に文章そのものと\KY{コマンド}というものを
+書き，それを{\LaTeX}処理し，成形結果を確認するといった事を
+何度か繰り返して最終的な\Z{版}を仕上げます\pp{\figref{latexflow}}．
 \begin{figure}[htbp]
  \begin{center}
   \input{flow}
   \usebox\graph
-  \caption{������ή��}\figlab{latexflow}
+  \caption{処理の流れ}\figlab{latexflow}
  \end{center}
 \end{figure}
-������\yo{����}�Ȥ���ޤ�����{\LaTeX}�Ǥϸ��Υ������ե����뤽�Τ�Τ���
-����ä���\yo{����}����ΤǤϤʤ����������鿷����\Z{DVI}�ե������
-������Τ���������ΤǤ� \pp{�Ƕ��{\LaTeX}�ե����뤫��ľ��PDF�����
-�������{\PDFLaTeX}�ʤɤ�¸�ߤ��ޤ���\genzai ���ܸ첽�Ϥ���Ƥ��ޤ��󤬡�
-����Ū�ˤ����ܸ��ޤ�ʸ��Ǥ�\PDFLaTeX ����ή�ˤʤ�Ȼפ��ޤ�}��
+ここで\yo{成形}とありますが，{\LaTeX}では元のソースファイルそのものに変
+更を加えて\yo{整形}するのではなく，そこから新規に\Z{DVI}ファイルと
+いうものを成形するのです \pp{最近は{\LaTeX}ファイルから直接PDFを作るプ
+ログラム{\PDFLaTeX}なども存在します．\genzai 日本語化はされていませんが，
+将来的には日本語を含む文書でも\PDFLaTeX が主流になると思われます}．
 
-\index{����}%
-\zindind{����}{���Խ�}%
-\zindind{�������ե�����}{���Խ�}%
-\index{�Խ�}%
-\indindz{�Խ�}{���Ƥ�}%
-\indindz{�Խ�}{�������ե������}%
+\index{原稿}%
+\zindind{原稿}{の編集}%
+\zindind{ソースファイル}{の編集}%
+\index{編集}%
+\indindz{編集}{原稿の}%
+\indindz{編集}{ソースファイルの}%
 \begin{enumerate}
-\item ����\pp{�������ե�����}���Խ�\indindz{�ե�����}{������}\\
-{\LaTeX}��Ȥ�����ˤ�ʸ�Ϥ����ǤϤʤ���ʸ�Ϥι�¤��񼰤���ꤹ��%
-{\Z{���ޥ��}}�ȸƤФ���Τ򵭽Ҥ��ޤ��� ���θ��Ƥ�\KY{�������ե�����}
-�ȸƤӤޤ������Ƥ�\Prog{���Ģ}��\Z{Emacs}�ʤɤ�\Z{�ƥ����ȥ��ǥ��å�}����
-�����ޤ�\pp{\laTEX ��ľ�ܥ��󥽡��뤫��ץ�������ƤӽФ���ʸ���ɮ
-��������ǽ�Ǥ�}��\unixos �Ǥ�\Z{���󥽡���}���鼡�Τ褦�����Ϥ����Emacs
-��Ω���夬��Ȼפ��ޤ���
+\item 原稿\pp{ソースファイル}の編集\indindz{ファイル}{ソース}\\
+{\LaTeX}を使うためには文章だけではなく，文章の構造や書式を決定する%
+{\Z{コマンド}}と呼ばれるものを記述します． この原稿を\KY{ソースファイル}
+と呼びます．原稿は\Prog{メモ帳}や\Z{Emacs}などの\Z{テキストエディッタ}で編
+集します\pp{\laTEX は直接コンソールからプログラムを呼び出し，文書を執筆
+する事も可能です}．\unixos では\Z{コンソール}から次のように入力するとEmacs
+が立ち上がると思います．
 \begin{InTerm}
    \type{emacs filename.tex &}
 \end{InTerm}
-Emacs�Ǥʤ��Ȥ⡤�������ʥƥ����ȥ��ǥ��å��䡤���餫��\secref{lakulaku}
-�ˤ���褦�ʼ�ɮ�Ķ����ɤ��Ȼפ��ޤ������줬\figref{latexflow}
-�� \MARU{1} ��������б����ޤ���
+Emacsでなくとも，お好きなテキストエディッタや，何らかの\secref{lakulaku}
+にあるような執筆環境で良いと思います．これが\figref{latexflow}
+の \MARU{1} の矢印に対応します．
 
-\item �����ץ��å� \pp{����}\\
-\latexno{�μ¹�}%
-�������ե����뤬�Ǥ����餽���\KY{����}���ޤ���
-���ΤȤ��˻Ȥ��ץ������ϲ�ʸ�Τߤξ���\prog{latex}��
-���ܸ�򰷤��Ȥ���\prog{latex}�����ܸ첽����{platex}�Ǥ���
-%������䥳�ޥ�ɥץ���ץȤʤɤ���
-\Z{������}��\Z{���ޥ�ɥץ���ץ�}�ʤɤ�\Z{�����ߥʥ�}���顤
+\item タイプセット \pp{組版}\\
+\latexno{の実行}%
+ソースファイルができたらそれを\KY{成形}します．
+そのときに使うプログラムは欧文のみの場合は\prog{latex}，
+日本語を扱うときは\prog{latex}を日本語化した{platex}です．
+%シェルやコマンドプロンプトなどから
+\Z{シェル}や\Z{コマンドプロンプト}などの\Z{ターミナル}から，
 \begin{InTerm}
    \type{platex filename.tex}
 \end{InTerm}
-�Ȥ����ʸ����������ޤ������κ�Ȥλ����ɤ�\KY{�����ץ��å�}�Ȥ�
-\KY{����ѥ���}�ȸ����ޤ������줬\figref{latexflow}�� \MARU{2} ����
-�����б����ޤ���
+とすれば文書が成形されます．この作業の事を良く\KY{タイプセット}とか
+\KY{コンパイル}と言います．これが\figref{latexflow}の \MARU{2} の矢
+印に対応します．
 
-\item �ץ�ӥ塼\pp{��ǧ���}\\
-\indindz{ʸ��}{���Ǹ��}%
-���٤ϥ���ԥ塼���β��̾���������줿��̤򸫤ޤ���
-���ΤȤ�\fl{filename.tex}���Τ�Τ����������櫓�ǤϤʤ�
-������\fl{filename.dvi}�Ȥ����ե����뤬
-����ޤ������줬{\LaTeX}�ˤ�����Ǹ��ʸ��ˤʤ�ޤ�������
-���Ǹ�η�̤򥳥�ԥ塼����ǳ�ǧ�����Ȥλ���\KY{�ץ�ӥ塼}����
-�ȸ����ޤ���
-Unix��OS�ʤ��
+\item プレビュー\pp{確認作業}\\
+\indindz{文書}{組版後の}%
+今度はコンピュータの画面上で成形された結果を見ます．
+このとき\fl{filename.tex}そのものが整形されるわけではなく
+新たに\fl{filename.dvi}というファイルが
+作られます．これが{\LaTeX}による組版後の文書になります．この
+組版後の結果をコンピュータ上で確認する作業の事を\KY{プレビュー}する
+と言います．
+Unix系OSならば
 \begin{InTerm}
    \type{xdvi filename.dvi &}
 \end{InTerm}
 %commented out 2006/03/08
-%�ʤɤȤ�����ɤ��Ǥ��礦���Ǹ�Υ���ѥ����\qu{\texttt{\&}}�⤢��������Ǥ���
-%\prog{dviout}�򥤥󥹥ȡ��뤷��Windows�ʤ�Х��֥륯��å�
-%��������Ǹ�����Ǥ��礦�����줬\figref{latexflow}��
-%\MARU{3}��������б����ޤ���
-�ʤɤȤ�����ɤ��Ǥ��礦���Ǹ�Υ���ѥ����\qu{\texttt{\&}}�������
-�ץ�����ब\Z{�Хå����饦���}�ǵ�ư���ޤ��Τ������Ǥ���
-\prog{\Dviout}�򥤥󥹥ȡ��뤷��\Z{Windows}�ʤ��\Z{���֥륯��å�}
-��������Ǹ�����Ǥ��礦�����줬\figref{latexflow}
-�� \MARU{3} ��������б����ޤ���
+%などとすると良いでしょう．最後のアンパサンド\qu{\texttt{\&}}もあると便利です．
+%\prog{dviout}をインストールしたWindowsならばダブルクリック
+%するだけで見られるでしょう．これが\figref{latexflow}の
+%\MARU{3}の矢印に対応します．
+などとすると良いでしょう．最後のアンパサンド\qu{\texttt{\&}}があると
+プログラムが\Z{バックグラウンド}で起動しますので便利です．
+\prog{\Dviout}をインストールした\Z{Windows}ならば\Z{ダブルクリック}
+するだけで見られるでしょう．これが\figref{latexflow}
+の \MARU{3} の矢印に対応します．
 \end{enumerate}
-���Τ褦��ή�줬��������ǧ���Ƽºݤ�ư�����ɤ�������
-�ߤޤ��礦��
+このような流れがある事を確認して実際に動くかどうかを試して
+みましょう．
 
-\subsection{ư�����Ƥߤ�}
-���󥹥ȡ��뤬�Ѥ�Ǥ����{\LaTeX}��ư���ޤ������󥹥ȡ���ޤ�
-�ʤ�Ǥ��ʤ��Ȥ������϶᤯�ξܤ�������ʹ���ƤߤƤ���������
-\yo{{\LaTeX}���ꤿ����Ǥ���}�ȸ����Ф��������{\LaTeX}�桼���Ͽ���
-���б����Ƥ����Ȼפ��ޤ���
+\subsection{動かしてみる}
+インストールが済んでいれば{\LaTeX}が動きます．インストールまで
+進んでいないという方は近くの詳しい方に聞いてみてください．
+\yo{{\LaTeX}をやりたいんですが}と言い出せば大抵の{\LaTeX}ユーザは親切
+に対応してくれると思います．
 
-�Ȥꤢ������ʬ�Τ��Ĥ�ȤäƤ���ƥ����ȥ��ǥ��å�\pp{���Ģ��Emacs��}��
-�ʲ��Τ褦�ʥե�����\Fl{test.tex}��������Ƥ�������%
-\footnote{̵�Ѥʥȥ�֥���򤱤뤿�ᡤ�ե�����̾�ˤ�Ⱦ�ѱѿ���ʸ��������
-�Ȥ�����ǽ�ʸ¤����ܸ�ϻȤ�ʤ��褦�ˤ��Ƥ���������}��Windows �桼����
-���ϥХå�����å���`\texttt{\bs}'��ߵ���`\texttt{\yen}'���ɤ��ؤ��Ƥ�
-��������
+とりあえず自分のいつも使っているテキストエディッタ\pp{メモ帳やEmacs等}で
+以下のようなファイル\Fl{test.tex}を作成してください%
+\footnote{無用なトラブルを避けるため，ファイル名には半角英数の文字だけを
+使い，可能な限り日本語は使わないようにしてください．}．Windows ユーザの
+方はバックスラッシュ`\texttt{\bs}'を円記号`\texttt{\yen}'に読み替えてく
+ださい．
 
 \begin{InTeX}
 \documentclass{jarticle}
 \begin{document}
-����ˤ��� \LaTeX !!
+こんにちは \LaTeX !!
 \end{document}
 \end{InTeX}
 
-\unixos �ʤ��\prog{Emacs}�����ɤ��Ǥ��礦�����ܸ��
-�Ǥ����ि��ˤ�\prog{Emacs}�ξ��Ϥޤ�\prog{Emacs}�Υ�����ɥ�������
-���ܤ��Ƥ���������������ɥ��β�����ɽ���ˤ�
+\unixos ならば\prog{Emacs}等で良いでしょう．日本語を
+打ち込むためには\prog{Emacs}の場合はまず\prog{Emacs}のウィンドウ下部に
+注目してください．ウィンドウの下部の表示には
 \begin{quote}
 \colorbox{black}%
  {\color{white}\str{[--]J.:------Emacs: test.tex (LaTeX)--[L1--All--------|}}
 \end{quote}
-�ȤʤäƤ���Ȼפ��ޤ���
-\index{����}%
-\indindz{����}{Ⱦ��}%
-\indindz{����}{�ѿ�}%
-\indindz{����}{����}%
-\indindz{����}{���ܸ�}%
-���ֱ�¦�� \colorbox{black}{\color{white}{\str{[--]}}} ��
-������ʬ��Ⱦ������\pp{�ѿ�����}����������\pp{���ܸ�����}���ΰ㤤��ɽ���ޤ���
-�����ξ��֤ϱѿ�ʸ�������Ϥ��Ǥ��ޤ���������Ⱦ�ѡ����Ѥ����Ϥ��ڤ��ؤ��뤿��
-�ˤ�\keytop{CTRL}�򲡤��ʤ���\keytop{\yen}�򲡤��ޤ��������
-\colorbox{black}{\color{white}{\str{[--]}}}�Ȥ���ɽ������
-\colorbox{black}{\color{white}{\str{[��]}}}�Ȥ���ɽ���ˤʤ�Ȼפ��ޤ���
-ɽ���ϻȤäƤ���\yo{\Z{���ʴ����Ѵ��ץ������}}�ˤ�äƼ㴳�㤦���⤷��ޤ�
-��\footnote{\key{Shift,Space}���ڤ��ؤ�����⤢��ޤ���}��
-\colorbox{black}{\color{white}{\str{[��]}}}��ɽ���Ǥ������ܸ줬����
-�Ǥ�����֤Ǥ����Ƕ�Υѥ�����ȸƤФ�륳��ԥ塼���ˤ�
-\keytop{Ⱦ��/����}�Ȥ������������ꡤWindows�ξ��Ϥ����
-Ⱦ�Ѥ����Ѥ��ڤ��ؤ���Ԥ��ޤ�����Unix��OS�ϰ㤤�ޤ��Τ����դ��Ƥ�����
-��\footnote{���Ū�������Ȼפ��� \unixos �Ǥ���С�����/Ⱦ�ѡ����Ϥ���
-���ؤ��� \keytop{Ⱦ��/����} �����ǤǤ�����⤢��ޤ���}���ܤ����Ϥ���
-ʬ�Υ��ǥ��å��Υޥ˥奢��򸫤�ʤɤ��б��򤷤Ƥ���������
+となっていると思います．
+\index{入力}%
+\indindz{入力}{半角}%
+\indindz{入力}{英数}%
+\indindz{入力}{全角}%
+\indindz{入力}{日本語}%
+一番右側の \colorbox{black}{\color{white}{\str{[--]}}} と
+いう部分が半角入力\pp{英数入力}か全角入力\pp{日本語入力}かの違いを表します．
+うえの状態は英数文字の入力ができます．ここで半角・全角の入力を切り替えるため
+には\keytop{CTRL}を押しながら\keytop{\yen}を押します．すると
+\colorbox{black}{\color{white}{\str{[--]}}}という表示から
+\colorbox{black}{\color{white}{\str{[あ]}}}という表示になると思います．
+表示は使っている\yo{\Z{かな漢字変換プログラム}}によって若干違うかもしれませ
+ん\footnote{\key{Shift,Space}で切り替える場合もあります．}．
+\colorbox{black}{\color{white}{\str{[あ]}}}の表示ですと日本語が入力
+できる状態です．最近のパソコンと呼ばれるコンピュータには
+\keytop{半角/全角}というキーがあり，Windowsの場合はそれで
+半角と全角の切り替えを行いますが，Unix系OSは違いますので注意してくださ
+い\footnote{比較的新しいと思われる \unixos であれば「全角/半角」入力の切
+り替えが \keytop{半角/全角} キーでできる場合もあります．}．詳しくはご自
+分のエディッタのマニュアルを見るなどの対応をしてください．
 
 
-\zindind{Windows}{�ǤΥ����ץ��å�}%
-���ϥ����ץ��åȺ��\pp{{\LaTeX}�������ޤ��ϥ���ѥ���}�򤷤ޤ���
-Windows�ʤ�� \win{��������} ��˥塼���� \win{�ե�����̾����ꤷ�Ƽ¹�} 
-�Ȥ�����˥塼������Τǡ�������\yo{\str{command}}�����Ϥ���
-\qu{OK}�ܥ���򲡤��Х��ޥ�ɥץ���ץȤ���ư����Ϥ��Ǥ���
-�����ƥ������䥳�ޥ�ɥץ���ץȤǥե����뤬¸�ߤ���
-�ǥ��쥯�ȥ�\pp{Windows�����ϥե����}�˰�ư����
+\zindind{Windows}{でのタイプセット}%
+次はタイプセット作業\pp{{\LaTeX}処理，またはコンパイル}をします．
+Windowsならば \win{スタート} メニューから \win{ファイル名を指定して実行} 
+というメニューがあるので，そこに\yo{\str{command}}と入力して
+\qu{OK}ボタンを押せばコマンドプロンプトが起動するはずです．
+そしてシェル上やコマンドプロンプトでファイルが存在する
+ディレクトリ\pp{Windowsの方はフォルダ}に移動して
 \begin{InTerm}
    \type{platex test.tex}
 \end{InTerm}
-�Ȥ���{�����ץ��å�}���Ƥ�������������ȥ��󥽡���\pp{ü��}�ˤ�
-���Τ褦��ɽ�������Ȼפ��ޤ���
+として{タイプセット}してください．するとコンソール\pp{端末}には
+次のように表示されると思います．
 
 \begin{OutTerm}
 This is pTeX, Version 3.14159-p3.1.5 (euc) (Web2C 7.4.5)
@@ -178,19 +178,19 @@ Output written on test.dvi (1 page, 236 bytes).
 Transcript written on test.log.
 \end{OutTerm}
 
-�Ϥ��\Z{�С���������}��ɽ��\footnote{��
-�� \TeX �ΥС������� \Person{Donald}{Knuth} �λ��ۤˤ��3.14159\ldots ���ͤ�
-$\pi$ �˼�«����褦�ˤʤäƤ��ޤ���}���ƽ����ˤ�\fl{test.dvi}�����Ǹ�
-�Υե��������Ϥ�������������\fl{test.log}�˽񤭽Ф������ˤʤäƤ���
-����\fl{test.tex}�򥿥��ץ��åȤ��ƽ��Ϥ��줿\fl{test.log}�ˤ�
-\Z{���顼��å�����}�ʤɤν��פʾ��󤬽񤫤�Ƥ���Ȥ�������Τ�
-�������꤬ȯ�������Ȥ���į��Ƥߤ���ɤ��Ǥ��礦��
+始めに\Z{バージョン情報}を表示\footnote{実
+は \TeX のバージョンは \Person{Donald}{Knuth} の思想により3.14159\ldots の様に
+$\pi$ に収束するようになっています．}して終わりには\fl{test.dvi}に組版後
+のファイルを出力し，処理状況を\fl{test.log}に書き出した事になっていま
+す．\fl{test.tex}をタイプセットして出力された\fl{test.log}には
+\Z{エラーメッセージ}などの重要な情報が書かれているときがあるので
+何か問題が発生したときは眺めてみると良いでしょう．
 
 \begin{Trick}
-\laTEX �����󥽡����ɽ�������å������ʵڤ�\Va{file}{log}�ˤˤϡ�
-�͡��ʾ��󤬽��Ϥ���ޤ����ݳ�̤θ�˥ե�����̾������褦�ʾ�硤
-�嵭����Ǥ� \str{(./test.tex} �Ȥ����Τϡ��ե����뤬�ɤ߹��ޤ�Ƥ���
-���ؤ�ɽ���Ƥ��ޤ������Ƥ�⤦����ʬ����䤹���񤱤м��Τ褦�ˤʤ�ޤ���
+\laTEX がコンソールに表示するメッセージ（及び\Va{file}{log}）には，
+様々な情報が出力されます．丸括弧の後にファイル名があるような場合，
+上記の例では \str{(./test.tex} というのは，ファイルが読み込まれている
+階層を表しています．内容をもう少し分かりやすく書けば次のようになります．
 
 \begin{InText}
  (./test.tex
@@ -202,79 +202,79 @@ $\pi$ �˼�«����褦�ˤʤäƤ��ޤ���}���ƽ����ˤ�\fl{test.dvi}�����Ǹ�
 \end{InText}
 
 \Exten*{aux}%
-\fl{test.tex}��\fl{jarticle.cls}��\fl{test.aux}��ҥե����롤
-\fl{jarticle.cls}��\fl{jsize10.clo}��ҥե�����Ȥ��ƥե������ɤ߹���
-��ԤäƤ������ʬ����ޤ���
+\fl{test.tex}が\fl{jarticle.cls}と\fl{test.aux}を子ファイル，
+\fl{jarticle.cls}が\fl{jsize10.clo}を子ファイルとしてファイル読み込み
+を行っている事が分かります．
 
-�Ƴ�̤ȿ����ξ�硤�㤨��`\str{[1]}'�ϥڡ����ֹ��ɽ���Ƥ��ޤ���
-���󥽡����`\str{[}'�Τ褦��ɽ���� \LaTeX �ν��������Ǥ����Ȥ���С�
-����ڡ������Ȥ߾夲�Ƥ����ʳ��ǲ��餫��������������������̣���ޤ���
+各括弧と数字の場合，例えば`\str{[1]}'はページ番号を表しています．
+コンソールに`\str{[}'のような表示で \LaTeX の処理が中断したとすれば，
+あるページを組み上げている段階で何らかの問題に遭遇した事を意味します．
 \end{Trick}
 
-\zindind{�����ץ��å�}{��������ե�����}
-�����ץ��åȸ�ˤϤ����Ĥ��Υե����뤬��������Ƥ��ޤ���
-���󥽡��뤫��\prog{ls}\pp{Windows������\prog{dir}}���ޥ�ɤ�
+\zindind{タイプセット}{後の生成ファイル}
+タイプセット後にはいくつかのファイルが生成されています．
+コンソールから\prog{ls}\pp{Windowsの方は\prog{dir}}コマンドで
 \begin{InTerm}
     \type{ls test.*}
 \end{InTerm}
-�Ȥ���ȡ����λͤĤΥե����뤬¸�ߤ�������ǧ���Ƥ���������
+とすると，次の四つのファイルが存在する事を確認してください．
 
 \begin{OutTerm}
 test.aux test.dvi test.log test.tex
 \end{OutTerm}
 
-{\LaTeX}�θ��ƤǤ��륽�����ե�����\fl{test.tex}�򥿥��ץ��åȤ���������
-���Ĥ�ե����뤬��������ޤ�����%����������ǤϤ���ޤ���
-�����Υե����뤬����Ū�ˤɤΤ褦��������äƤ���Τ����������ޤ���
+{\LaTeX}の原稿であるソースファイル\fl{test.tex}をタイプセットしただけで
+三つもファイルが生成されました，%これは只事ではありません．
+これらのファイルが一般的にどのような役割を持っているのかを説明します．
 % commented out 2006/03/08
 %\begin{description}
-%\zindind{��߻���}{��ɬ�פʥե�����}%
-% \item[\fl{test.aux}] ����Υ����ץ��åȤ�ɬ�פˤʤ�\K{���ӥե�����}��
-%    �ܼ��κ�������߻��Ȥ򤹤뤿���ɬ�פʥե����롥
-% \item[\fl{test.dvi}] \fl{test.tex}�򥿥��ץ��åȤ��ƽ���夬�ä�
-%    �����Ǥ���\K{�����ե�����}��DVI�ե�����ȸƤФ�롥%
-%	    \indindz{�ե�����}{DVI}%
-% \item[\fl{test.log}] \fl{test.tex}�򥿥��ץ��åȤ����Ȥ��ν���������
-%    �ɤΤ褦��ή��ǽ����򤷤��Τ����񤤤Ƥ���\K{�����ե�����}��%
-%	    \indindz{�ե�����}{����}%
-% \item[\fl{test.tex}] ������������{\LaTeX}�θ��ƤǤ���%
-%	    \K{�������ե�����}�� 
+%\zindind{相互参照}{に必要なファイル}%
+% \item[\fl{test.aux}] 次回のタイプセットに必要になる\K{中途ファイル}．
+%    目次の作成や相互参照をするために必要なファイル．
+% \item[\fl{test.dvi}] \fl{test.tex}をタイプセットして出来上がった
+%    印刷できる\K{成形ファイル}．DVIファイルと呼ばれる．%
+%	    \indindz{ファイル}{DVI}%
+% \item[\fl{test.log}] \fl{test.tex}をタイプセットしたときの処理状況や
+%    どのような流れで処理をしたのかが書いてある\K{ログファイル}．%
+%	    \indindz{ファイル}{ログ}%
+% \item[\fl{test.tex}] 先程作成した{\LaTeX}の原稿である%
+%	    \K{ソースファイル}． 
 %\end{description}
 %\end{comment}
 \begin{description}
  \item[\normalfont\Va{file}{aux}] 
-  \latexno{�����ӥե�����}%
-  \zindind{��߻���}{��ɬ�פʥե�����}%
-  ����Υ����ץ��åȤ�ɬ�פˤʤ�\KY{���ӥե�����}��
-  �ܼ��κ�������߻��Ȥ򤹤뤿���ɬ�פʥե����롥
+  \latexno{の中途ファイル}%
+  \zindind{相互参照}{に必要なファイル}%
+  次回のタイプセットに必要になる\KY{中途ファイル}．
+  目次の作成や相互参照をするために必要なファイル．
 
  \item[\normalfont\Va{file}{dvi}] 
-  \zindind{����}{�Ǥ���ե�����}%
-  \indindz{�ե�����}{�����Ǥ���}%
-  \indindz{�ե�����}{DVI}%
-  \Va{file}{tex}�򥿥��ץ��åȤ��ƽ���夬�ä�\zindind{����}{�ե�����}%
-  �����Ǥ���\K{�����ե�����}��\Z{DVI}�ե�����ȸƤФ�롥%
+  \zindind{印刷}{できるファイル}%
+  \indindz{ファイル}{印刷できる}%
+  \indindz{ファイル}{DVI}%
+  \Va{file}{tex}をタイプセットして出来上がった\zindind{成形}{ファイル}%
+  印刷できる\K{成形ファイル}．\Z{DVI}ファイルと呼ばれる．%
 
  \item[\normalfont\Va{file}{log}] 
-  \latexno{�Υ����ե�����}%
-  \indindz{�ե�����}{����}%
-  \latexno{��������}%
-  \Va{file}{tex}�򥿥��ץ��åȤ����Ȥ��ν���������
-  �ɤΤ褦��ή��ǽ����򤷤��Τ����񤤤Ƥ���\KY{�����ե�����}��%
+  \latexno{のログファイル}%
+  \indindz{ファイル}{ログ}%
+  \latexno{処理状況}%
+  \Va{file}{tex}をタイプセットしたときの処理状況や
+  どのような流れで処理をしたのかが書いてある\KY{ログファイル}．%
 
  \item[\normalfont\Va{file}{tex}] 
-  \latexno{����}%
-  ������������{\LaTeX}�θ��ƤǤ���\KY{�������ե�����}�� 
+  \latexno{原稿}%
+  先程作成した{\LaTeX}の原稿である\KY{ソースファイル}． 
 \end{description}
 
 
 
-\subsection{���ƺ�������������}\seclab{chui}
-\zindind{����}{������������}%
-����ޤǤκ�Ȥ��Ǥ��Ƥ���п������ɽ��ޤޤʤ���ñ��ʸ���
-�����Ǥ�����Ǥ��礦�������Ƽºݤ�Ĺ��ʸ�Ϥ��Ǥ�����Ǥߤ�
-����������������10�Ĥ�Ⱦ�ѵ�����ü�ʸ���Ȥ���{\LaTeX}���̤λŻ��򤵤���
-����˻Ȥ��ޤ��ΤǤ��Τޤ޻Ȥ������Ǥ��ޤ���
+\subsection{原稿作成時の注意点}\seclab{chui}
+\zindind{原稿}{作成時の注意}%
+これまでの作業ができていれば数式や図表を含まない簡単な文書を
+作成できる事でしょう．そして実際に長い文章を打ち込んでみて
+ください．ただし10個の半角記号は特殊文字として{\LaTeX}に別の仕事をさせる
+ために使いますのでそのまま使う事ができません．
 
 \index{"#@\verb+#+}\glossary{"#@\verb+#+}%
 \index{"$@\verb+$+}\glossary{"$@\verb+$+}%
@@ -295,16 +295,16 @@ test.aux test.dvi test.log test.tex
 \verb|# $ % & _ { } ~ ^ \ |
 \end{quote}
 
-�����3�Ĥε���Ͻ��Ϥ��㤦ʸ������ˤʤ�ޤ���%"
+さらに3個の記号は出力が違う文字記号になります．%"
 \index{"|@\texttt{\symbol{'174}}}%"
 \index{"<@\verb+<+}%"
 \index{">@\verb+>+}%"
 \begin{quote}
-\str| \str< \str> �Ϥ��줾�� --- !` ?`
+\str| \str< \str> はそれぞれ --- !` ?`
 \end{quote}
-�Ȥʤ���Ǥ��礦��
-�ʾ��13�Ĥε����ʸ����ǽ��Ϥ��뤿������ݤǤ�����
-�Хå�����å���\pp{��}�������ä���Ĺ��̿����Ǥ����ߤޤ���%''"
+となる事でしょう．
+以上の13個の記号を文章中で出力するために面倒ですが，
+バックスラッシュ\pp{円}記号を補ったり長い命令を打ち込みます．%''"
 
 \glossary{"#@\hspace*{-1.2ex}\verb+"\#+}%"
 \glossary{"_@\hspace*{-1.2ex}\verb+"\_+}%"
@@ -314,11 +314,11 @@ test.aux test.dvi test.log test.tex
 \glossary{"{2"}@\hspace*{-1.2ex}"{\verb+"\"}+\protect\egroup}
 \glossary{"&@"\hspace*{-1.2ex}"\verb+"\"&+}
 %"
-\index{�ʥ�С�}%
-\index{�ɥ�}%
-\index{�ѡ������}%
-\index{����ѥ����}%
-\index{�ȳ��}%
+\index{ナンバー}%
+\index{ドル}%
+\index{パーセント}%
+\index{アンパサンド}%
+\index{波括弧}%
 %"
 %\begin{center}
 % \begin{tabular}{cc|cc|cc|cc|cc|cc|cc|cc}
@@ -327,19 +327,19 @@ test.aux test.dvi test.log test.tex
 % \end{tabular}
 %\end{center}
 \begin{InOut}
-\#��\$��\%��\&��\_��\{��\}
+\#　\$　\%　\&　\_　\{　\}
 \end{InOut}
 %
-\C*{textasciitilde}\index{�����}%
-\C*{textasciicircum}\index{�ϥå�}%
-\C*{textbackslash}\index{�Хå�����å���}%
-\C*{textbar}\index{����}%
-\C*{textless}\index{���ʤ�}%
-\C*{textgreater}\index{��ʤ�}%
+\C*{textasciitilde}\index{チルダ}%
+\C*{textasciicircum}\index{ハット}%
+\C*{textbackslash}\index{バックスラッシュ}%
+\C*{textbar}\index{縦棒}%
+\C*{textless}\index{小なり}%
+\C*{textgreater}\index{大なり}%
 \begin{InOut}
-\textasciitilde ��\textasciicircum ��
-\textbackslash  ��\textbar ��
-\textless       ��\textgreater
+\textasciitilde 　\textasciicircum 　
+\textbackslash  　\textbar 　
+\textless       　\textgreater
 \end{InOut}
 %\begin{center}
 % \begin{tabular}{cc|cc|ccl}
@@ -348,124 +348,124 @@ test.aux test.dvi test.log test.tex
 % \end{tabular}
 %\end{center}
 
-\begin{Prob} Ⱦ��ʸ��������ʸ���򺮺ߤ����Ƥ������٤��̤�ʸ�Ϥ�
-���Ϥ򤷤Ƥ����������ü쵭���ޤ��褦�ˤ�����ɤ��Ǥ��礦��
+\begin{Prob} 半角文字と全角文字を混在させてある程度の量の文章の
+入力をしてください．特殊記号も含めるようにすると良いでしょう．
 \end{Prob}
 
 
-\subsection{�ե�������ե�����δ���Ū�����}
+\subsection{フォルダ・ファイルの基本的な操作}
 
-%�ǥ��쥯�ȥ�ΰ�ư��ˡ���Τ�ʤ����ե�����κ�������Τ�ʤ��Ȥ���
-%���Τ���˥��ޥ�ɥץ���ץȤ䥷����Ǥμ��פʥ��ޥ�ɤ�Ҳ𤷤ޤ���
-%�ޤ�Windows�Ǥ�\tabref{Windowscommands}�ʤɤδ���Ū�ʥ��ޥ�ɤ�
-%�󶡤���Ƥ��ޤ���
-\zindind{�ǥ��쥯�ȥ�}{�κ����}%
-\zindind{�ե����}{�κ����}%
-\Z{�����ߥʥ�}��Ǥ�\Z{�ǥ��쥯�ȥ�}�ΰ�ư��ˡ���Τ�ʤ���
-\Z{�ե����}�κ�������Τ�ʤ��Ȥ������Τ���ˡ�
-\Z{���ޥ�ɥץ���ץ�}��\Z{������}�Ǥμ��פ�\Z{���ޥ��}��Ҳ𤷤ޤ���
-\zindind{Windows}{�ǤΥե��������}%
-�ޤ�{Windows}�Ǥ�\tabref{Windowscommands}�ʤɤδ���Ū�ʥ��ޥ�ɤ�
-�󶡤���Ƥ��ޤ���
+%ディレクトリの移動方法を知らない，フォルダの作り方を知らないという
+%方のためにコマンドプロンプトやシェルでの主要なコマンドを紹介します．
+%まずWindowsでは\tabref{Windowscommands}などの基本的なコマンドが
+%提供されています．
+\zindind{ディレクトリ}{の作り方}%
+\zindind{フォルダ}{の作り方}%
+\Z{ターミナル}上での\Z{ディレクトリ}の移動方法を知らない，
+\Z{フォルダ}の作り方を知らないという方のために，
+\Z{コマンドプロンプト}や\Z{シェル}での主要な\Z{コマンド}を紹介します．
+\zindind{Windows}{でのファイル操作}%
+まず{Windows}では\tabref{Windowscommands}などの基本的なコマンドが
+提供されています．
 
 \begin{wraptable}[12]{l}{19zw}
-\zindind{�ե����}{�ο�������}%
-\zindind{�ե����}{�ΰ�ư}%
-\zindind{�ե�����}{�ξ���ɽ��}%
-\zindind{�ե�����}{��̾�����ѹ�}%
-\zindind{���ޥ��}{�Υإ�פ�ɽ��}%
- \caption{Windows OS�δ��ܥ��ޥ��}\tablab{Windowscommands}
+\zindind{フォルダ}{の新規作成}%
+\zindind{フォルダ}{の移動}%
+\zindind{ファイル}{の情報表示}%
+\zindind{ファイル}{の名前の変更}%
+\zindind{コマンド}{のヘルプの表示}%
+ \caption{Windows OSの基本コマンド}\tablab{Windowscommands}
  \begin{tabular}{lll}
  \TR
- \Th{���ޥ��̾} & \Th{��̣}             \\ 
+ \Th{コマンド名} & \Th{意味}             \\ 
  \MR
- \Prog{mkdir} & �����˥ե���������      \\
- \Prog{cd}    & �ǥ��쥯�ȥ���ư        \\
- \Prog{dir}   & �ե�����ξ����ɽ��      \\
- \Prog{move}  & �ե�����̾���ѹ��������ư\\
- \Prog{copy}  & �ե�����򥳥ԡ�          \\
- \Prog{del}   & �ե��������            \\
- \Prog{help}  & ���ޥ�ɤΥإ�פ�ɽ��    \\ 
+ \Prog{mkdir} & 新規にフォルダを作成      \\
+ \Prog{cd}    & ディレクトリを移動        \\
+ \Prog{dir}   & ファイルの情報を表示      \\
+ \Prog{move}  & ファイル名を変更したり移動\\
+ \Prog{copy}  & ファイルをコピー          \\
+ \Prog{del}   & ファイルを削除            \\
+ \Prog{help}  & コマンドのヘルプを表示    \\ 
   \BR
  \end{tabular}
 \end{wraptable}
 
-���줾��Υ��ޥ�ɤλȤ���\pp{�إ��}�� \type{mkdir /?} ���Ȥ������ɽ��
-�Ǥ��ޤ����ޤ��� \win{��������} ��˥塼�� \win{�إ��} ���饳�ޥ�ɥץ�
-��ץȤˤĤ���Ĵ�٤ƤߤƤ�Ʊ�ͤλ����Ǥ��ޤ����ɤ��餫�Ȥ�����Windows
-�إ�פ����Ѥ����ۤ����ɤ��Ǥ��礦��
+それぞれのコマンドの使い方\pp{ヘルプ}は \type{mkdir /?} 等とする事で表示
+できます．または \win{スタート} メニューの \win{ヘルプ} からコマンドプロ
+ンプトについて調べてみても同様の事ができます．どちらかというとWindows
+ヘルプを利用したほうが良いでしょう．
 
-\latexno{�θ��Ƽ�ɮ�ٱ�}%
-\zindind{����}{�����ϻٱ�}%
-���ޥ�ɥץ���ץȤʤɤ����˴���Ƥ��ʤ��Ȥ�������\secref{basic:lakulaku}��
-���Ȥ���{\LaTeX}��\Z{���ϻٱ�}�Ķ���Ȥ��Τ��ɤ���ˡ�Ǥ���
+\latexno{の原稿執筆支援}%
+\zindind{原稿}{の入力支援}%
+コマンドプロンプトなどの操作に慣れていないという方は\secref{basic:lakulaku}を
+参照して{\LaTeX}の\Z{入力支援}環境を使うのも良い方法です．
 
-Unix��OS�����ϥ��ޥ�ɤ�Ф��ʤ����%�Ż��ˤʤ�ʤ��Ǥ��礦��
-�������ؤ򴶤���Ȼפ��ޤ��Τǡ�����������Ȥ��褦�˽����դ���
-������ɤ��Ǥ��礦��
-������ȸ��äƤⲿ���फ����ޤ�����������˴ؤ��Ƥ�1�����ܤˤʤ�
-���餤���ο�����ΤʤΤǾܺ٤Ϥ����˾���ޤ��������Ǥϴ���Ū��
-�ե��������Υ��ޥ�ɤ�����\tabref{shcommands}�˾Ҳ𤷤ޤ���
-\indindz{�إ��}{�ʰפ�}%
-���줾��Υ��ޥ�ɤδ�ñ�ʥإ�פ��������Ȥ���
+Unix系OSの方はコマンドを覚えなければ%仕事にならないでしょう．
+操作に不便を感じると思われますので，日ごろから使うように習慣付けを
+すると良いでしょう．
+シェルと言っても何種類かありますし，シェルに関しては1冊の本になる
+くらい奥の深いものなので詳細はそれらに譲ります．ここでは基本的な
+ファイル操作のコマンドだけを\tabref{shcommands}に紹介します．
+\indindz{ヘルプ}{簡易の}%
+それぞれのコマンドの簡単なヘルプが見たいときは
 \begin{InTerm}
    \type{mkdir --help | less}
 \end{InTerm}
-�Τ褦�ˤ����\Prog{less}���ڡ������������ޤ���\par
+のようにすると\Prog{less}がページを整形します．\par
 \begin{wraptable}[10]{r}{23zw}
-\zindind{�ǥ��쥯�ȥ�}{�ο�������}%
-\zindind{�ǥ��쥯�ȥ�}{�ΰ�ư}%
-\zindind{���ޥ��}{�ξ���ɽ��}%
-\indindz{���ޥ��}{����}%
- \caption{Unix��OS�δ��ܥ��ޥ��}\tablab{shcommands}
+\zindind{ディレクトリ}{の新規作成}%
+\zindind{ディレクトリ}{の移動}%
+\zindind{コマンド}{の情報表示}%
+\indindz{コマンド}{内部}%
+ \caption{Unix系OSの基本コマンド}\tablab{shcommands}
  \begin{tabular}{lll}  
   \TR
-  \Th{���ޥ��̾} & \Th{��̣}            \\ 
+  \Th{コマンド名} & \Th{意味}            \\ 
   \MR
- \Prog{mkdir} & �����˥ե���������      \\
- \Prog{cd}    & �ǥ��쥯�ȥ���ư        \\
- \Prog{ls}    & �ե�����ξ����ɽ��      \\
- \Prog{mv}    & �ե�����̾���ѹ��������ư\\
- \Prog{cp}    & �ե�����򥳥ԡ�          \\
- \Prog{rm}    & �ե��������            \\
- \Prog{help}  & �������ޥ�ɤΥإ�פ�ɽ��\\
- \Prog{man}   & ���ޥ�ɤΥإ�פ�ɽ��    \\
+ \Prog{mkdir} & 新規にフォルダを作成      \\
+ \Prog{cd}    & ディレクトリを移動        \\
+ \Prog{ls}    & ファイルの情報を表示      \\
+ \Prog{mv}    & ファイル名を変更したり移動\\
+ \Prog{cp}    & ファイルをコピー          \\
+ \Prog{rm}    & ファイルを削除            \\
+ \Prog{help}  & 内部コマンドのヘルプを表示\\
+ \Prog{man}   & コマンドのヘルプを表示    \\
  \BR
  \end{tabular}
 \end{wraptable}
-�⤦�����ܤ����إ�פ��������Ȥ���
+もう少し詳しいヘルプが見たいときは
 \begin{InTerm}
    \type{man mkdir}
 \end{InTerm}
-�Ȥ��ޤ�����äȾܤ����إ�פ��������Ȥ���
+とします．もっと詳しいヘルプが見たいときは
 \begin{InTerm}
    \type{info mkdir}
 \end{InTerm}
-�Τ褦�ˤ����\Prog{info}���ڡ������������ޤ���
-\prog{less}��\prog{info}�������ˡ�ϼ㴳�ʤ�����ޤ��ΤǴ����ޤ�
-���֤������뤫�⤷��ޤ���Unix��OS�δ���Ū�������ˡ������ɽ����
-�ץ��������ե����롦�ǥ��쥯�ȥ�γ�ǰ�ʤɤˤĤ��Ƥ�\appref{info}
-�λ��ͻ����򻲾Ȥ��Ƥ���������Unix��OS�ʤ��
+のようにすると\Prog{info}がページを整形します．
+\prog{less}や\prog{info}の操作方法は若干癖がありますので慣れるまで
+時間がかかるかもしれません．Unix系OSの基本的な操作方法，正規表現，
+プロセス，ファイル・ディレクトリの概念などについては\appref{info}
+の参考資料を参照してください．Unix系OSならば
 \begin{InTerm}
    \type{emacs file.tex &}
    \type{platex file.tex}
    \type{xdvi file.dvi &}
 \end{InTerm}
-�λ��Ĥ����Ǥ���Фʤ�Ȥ��ʤ�ޤ����ܽ�Ǥ�Unix��OS��
-���ܥġ���ʤɤޤǾܤ������⤷�ʤ��ΤǤ���ʬ��Ĵ�٤ƤߤƤ���������
+の三つの操作ができればなんとかなります．本書ではUnix系OSの
+基本ツールなどまで詳しく解説しないのでご自分で調べてみてください．
 
-\zindind{���ޥ��}{�饤�󥪥ץ����}%
-���ޥ�ɤ��Ф��ƥ������ǰ����Ϥ�ʸ����λ���\KY{����}
-�ȸƤӤޤ���������¿���Υ��ޥ�ɤ�\K{{���ޥ�ɥ饤�󥪥ץ����}}
-�Ȥ��äƥϥ��ե�\qu{\str{-}}���ϥ��ե����\qu{\str-\str-}�ǻϤޤ�
-���������̤ʥ����å��Ȥ��ư����ޤ������Υ����å��ˤ�äƤ��Υ��ޥ�
-�ɤϵ�ư���Ѥ��ޤ������줾��Υ��ޥ�ɤǤɤΤ褦�ʥ��ޥ�ɥ饤��
-�ץ���󤬻Ȥ���Τ��ϳƥץ������Υإ�פ�Ĵ�٤ޤ���
-\indindz{����}{�ϥ��ե�ǻϤޤ�}%
+\zindind{コマンド}{ラインオプション}%
+コマンドに対してシェル上で一緒に渡す文字列の事を\KY{引数}
+と呼びます．そして多くのコマンドは\K{{コマンドラインオプション}}
+といってハイフン\qu{\str{-}}かハイフンが二つ\qu{\str-\str-}で始まる
+引数を特別なスイッチとして扱います．このスイッチによってそのコマン
+ドは挙動を変えます．それぞれのコマンドでどのようなコマンドラインオ
+プションが使えるのかは各プログラムのヘルプを調べます．
+\indindz{引数}{ハイフンで始まる}%
 
-\begin{Prob} �ʲ��κ�Ȥ򥳥󥽡���夫��ԤäƤ���������
-Windows������\prog{mv}��\prog{move}�ˡ�\prog{ls}��\prog{dir}
-�ˡ�����å���\qu{\str/}���\qu{\texttt{\yen}}���֤������Ƥ���������
+\begin{Prob} 以下の作業をコンソール上から行ってください．
+Windowsの方は\prog{mv}を\prog{move}に，\prog{ls}を\prog{dir}
+に，スラッシュ\qu{\str/}を円\qu{\texttt{\yen}}と置き換えてください．
 \begin{InTerm}
   \type{echo message1 >> file.txt}
   \type{echo message2 >> file.txt}
@@ -486,44 +486,44 @@ Windows������\prog{mv}��\prog{move}�ˡ�\prog{ls}��\prog{dir}
 %   \type{ls ../}
 %\end{comment}
 \end{InTerm} 
-�嵭�����ϤɤΤ褦�ʷ�̤�⤿�餷���ȹͤ�����Ǥ��礦����
+上記の操作はどのような結果をもたらしたと考えられるでしょうか．
 %\begin{comment}[2006/03/08 23:25:46]
-%�����˥ǥ��쥯�ȥ�\fl{geho}������������ߤΥǥ��쥯�ȥ��
-%¸�ߤ��Ƥ����ե�����\fl{hoge.txt}��\fl{geho}�ǥ��쥯�ȥ��
-%��ư�����ȹͤ�����Ǥ��礦���Ǹ�����Ǥ����γ��ؤ�
-%�ǥ��쥯�ȥ��\fl{hoge.txt}���ʤ����ȤǤ�����ǧ�Ǥ��ޤ���
+%新規にディレクトリ\fl{geho}を作成し，現在のディレクトリに
+%存在していたファイル\fl{hoge.txt}を\fl{geho}ディレクトリに
+%移動したと考えられるでしょう．最後の操作でうえの階層の
+%ディレクトリに\fl{hoge.txt}がないことでそれを確認できます．
 %\end{comment}
-�����˥ǥ��쥯�ȥ�\fl{anydir}������������ߤΥǥ��쥯�ȥ�%
-\indindz{�ǥ��쥯�ȥ�}{������}%
-��\Z{�����ȥǥ��쥯�ȥ�}�ˤ�¸�ߤ��Ƥ����ե�����
-\fl{file.txt}��\fl{anydir}�ǥ��쥯�ȥ�˰�ư������
-�ͤ�����Ǥ��礦���Ǹ�����Ǥ����γ��ؤΥǥ��쥯�ȥ�%
-\indindz{�ǥ��쥯�ȥ�}{��}%
-��\Z{�ƥǥ��쥯�ȥ�}�ˤ�\fl{file.txt}���ʤ����Ǥ�����ǧ�Ǥ��ޤ���
+新規にディレクトリ\fl{anydir}を作成し，現在のディレクトリ%
+\indindz{ディレクトリ}{カレント}%
+（\Z{カレントディレクトリ}）に存在していたファイル
+\fl{file.txt}を\fl{anydir}ディレクトリに移動したと
+考えられるでしょう．最後の操作でうえの階層のディレクトリ%
+\indindz{ディレクトリ}{親}%
+（\Z{親ディレクトリ}）に\fl{file.txt}がない事でそれを確認できます．
 \end{Prob}
 
-\subsection{���顼����������}
-\latexno{�Υ��顼}%
-{\LaTeX}�����򤷤Ƥ����\Z{���顼}��Ǻ�ޤ���뤫�⤷��ޤ���{\LaTeX}
-��ʸ����˥��ޥ�ɤʤɤ˴ؤ��륨�顼��ȯ������Ȥ����ǽ���������
-���ޤ������������Ǥ���ȥ桼���ˤɤ�������ɤ�����¥���ޤ���
-���ΤȤ�ü���ˤ�\Z{������}\qu{\str?}��ɽ������ޤ���
+\subsection{エラーに遭遇する}
+\latexno{のエラー}%
+{\LaTeX}処理をしていると\Z{エラー}に悩まされるかもしれません．{\LaTeX}
+は文章中にコマンドなどに関するエラーを発見するとそこで処理を中断
+します．処理を中断するとユーザにどうすれば良いかを促します．
+このとき端末には\Z{疑問符}\qu{\str?}が表示されます．
 
 % commented out 2005/xx/xx
-%�������ơ����顼���Ф��Ƥɤν����򤹤���ɤ��Τ���桼��
-%��¥�����ޤ������顼��Ф��ʤ����Ĥϡ��쵤��ʸ
-%���񤭾夲��ΤǤϤʤ������ޤ��{\LaTeX}����������Ǽ¹Ԥ��뤳��
-%�Ǥ�����������ȡ��������ưפˤʤ�ޤ���
+%そうして，エラーに対してどの処理をすれば良いのかをユーザ
+%に促すします．エラーを出さないコツは，一気に文
+%書を書き上げるのではなく，こまめに{\LaTeX}処理を途中で実行すること
+%です．こうすると，修正が容易になります．
 
-%\qu{?}��ɽ������뤳�Ȥ��ɤ�����ޤ��������ʸˡ��θ���ǡ������ץߥ�
-%�ʤɤ��ͤ����ޤ�������������λ���뤿��ˡ�\keytop{X}�򲡤��Ƥ�
-%������������Ǥ����ʤȤ���\keytop{CTRL}�򲡤��ʤ���\keytop{C}��
-%\keytop{D}�򲡤��Ƥ�������������ǽ�λ�Ǥ��ޤ����ְ㤤�Τ�����ֹ�
-%��ɽ�����ޤ��Τǡ����Τ�����ǲ��������ʲս��õ���ޤ��������Ƥ���
-%��̤ο���­��ʤ��Ȥ������ڥ뤬�ְ�äƤ���ʤɤ�ñ��ʤ�ΤǤ���
+%\qu{?}と表示されることが良くあります．これは文法上の誤りで，タイプミス
+%などが考えられます．処理を強制終了するために，\keytop{X}を押してく
+%ださい．それでもだめなときは\keytop{CTRL}を押しながら\keytop{C}か
+%\keytop{D}を押してください．これで終了できます．間違いのある行番号
+%を表示しますので，そのあたりで怪しそうな箇所を探します．たいていは
+%括弧の数が足りないとか，スペルが間違っているなどの単純なものです．
 
-\begin{Exe} �ޤ��ϰʲ��Υ������ե�����\Fl{errortest.tex}�������
-�Ƥ���������
+\begin{Exe} まずは以下のソースファイル\Fl{errortest.tex}を作成し
+てください．
 
 \begin{InTeX}
 \documentclass{jarticle}
@@ -534,11 +534,11 @@ No its' \#. Hello \& Goodbye!!
 \end{document} 
 \end{InTeX}
 
-%���ˤ��Υե�����򥿥��ץ��åȤ��Ƥ��������������ü���ˤ�
-����\fl{error.tex}��\type{platex error}�ǥ����ץ��åȤ��Ƥ���������
-����ȥ����ߥʥ�ˤϼ��Τ褦��ɽ�������Ǥ��礦��
+%次にこのファイルをタイプセットしてください．すると端末には
+次に\fl{error.tex}を\type{platex error}でタイプセットしてください．
+するとターミナルには次のように表示されるでしょう．
 \index{Misplaced alignment tab character@\texttt{Misplaced alignment tab character \&}}%
-\index{���顼!Misplaced alignment tab character@\texttt{Misplaced alignment tab character \&}}%
+\index{エラー!Misplaced alignment tab character@\texttt{Misplaced alignment tab character \&}}%
 
 \begin{OutTerm}
 ! Misplaced alignment tab character  &.
@@ -547,14 +547,14 @@ No its' \#. Hello \& Goodbye!!
 ?
 \end{OutTerm}
 
-�Ǹ�ιԤ˵�����\qu{\str?}��ɽ������Ƥ��ޤ������ξ��֤ϥ桼���˲��餫��
-����¥���Ƥ�����֤Ǥ����ɤ����3���ܤǥ���ѥ����\qu{\texttt\&}�������˻Ȥ�
-�Ƥ���ȸ����Ƥ��ޤ���������\keytop{Enter}�����򲡤��Ȥ���˼��Τ褦��
-ɽ������ޤ���
+最後の行に疑問符\qu{\str?}が表示されています．この状態はユーザに何らかの
+操作を促している状態です．どうやら3行目でアンパサンド\qu{\texttt\&}を不正に使っ
+ていると言われています．ここで\keytop{Enter}キーを押すとさらに次のように
+表示されます．
 
 \index{You can't use `macro parameter character'@\texttt{You can't use
  `macro parameter character \#'}}%
-\index{���顼!You can't use `macro parameter character@\texttt{You can't use
+\index{エラー!You can't use `macro parameter character@\texttt{You can't use
  `macro parameter character \#'}}%
 \begin{OutTerm}
 ! You can't use `macro parameter character #' in math mode.
@@ -562,12 +562,12 @@ l.4 Under_bar is stranger. Is sharp sing #
 ? 
 \end{OutTerm}
 
-���㡼��\qu{\texttt\#}��ְ�ä��Ȥ����򤷤Ƥ���Ȼ�Ŧ����ޤ�����
-�ˤ��դ��ˤ⤦1��\keytop{Enter}�����򲡤��ȼ��Τ褦��ɽ���ˤʤ�ޤ���%
+シャープ\qu{\texttt\#}も間違った使い方をしていると指摘されました．
+極め付けにもう1度\keytop{Enter}キーを押すと次のような表示になります．%
 
 \index{"$@\verb+$+}\glossary{"$@\verb+$+}%
 \index{Missing $ inserted@\texttt{Missing \$ inserted}}%
-\index{���顼!Missing $ inserted@\texttt{Missing \$ inserted}}%
+\index{エラー!Missing $ inserted@\texttt{Missing \$ inserted}}%
 \begin{OutTerm}
 ! Missing $ inserted.
 <inserted text>
@@ -576,13 +576,13 @@ l.6 \end{document}
 ? 
 \end{OutTerm}
 
-���٤ϥɥ�\qu{\texttt\$}��
-�����˻Ȥä��ȸ����ޤ������ʾ�λ�����3���ܤ���
-6���ܤˤ�����Ⱦ�ѵ���λȤ������ְ�äƤ������ʬ
-����ޤ������������ե������⤦1�ٳ�ǧ�����ɤ���
-�ɤ��㤦�Τ���Ƚ�̤��������Ƥ���������
+今度はドル\qu{\texttt\$}を
+不正に使ったと言われました．以上の事から3行目から
+6行目にかけて半角記号の使い方が間違っている事が分
+かりました．ソースファイルをもう1度確認し，どこが
+どう違うのかを判別し修正してください．
 
-������Υե�����ϰʲ��Τ褦�ˤʤ�Ǥ��礦��
+修正後のファイルは以下のようになるでしょう．
 
 \begin{InTeX}
 Hello \& Goodbye! Give me \$100! Give me 100%!
@@ -590,9 +590,9 @@ Under_bar is stranger. Is sharp sing \#?
 No its' \#. Hello \& Goodbye!!  
 \end{InTeX}
 
-3���ܤΥ���ѥ����\qu{\texttt\&}�ȥɥ�\qu{\texttt\$}��
-4���ܤΥ��㡼��\qu{\texttt\#}�˥Хå�����å���\qu{\texttt{\bs}}��
-�դ��ޤ��������Ƥӥ����ץ��åȤ��ƤߤƤ���������
+3行目のアンパサンド\qu{\texttt\&}とドル\qu{\texttt\$}と
+4行目のシャープ\qu{\texttt\#}にバックスラッシュ\qu{\texttt{\bs}}を
+付けます．これを再びタイプセットしてみてください．
 
 \begin{OutTerm}
 ! Missing $ inserted.
@@ -602,14 +602,14 @@ l.4 Under_
 ? 
 \end{OutTerm}
 
-\zindind{����}{���줿ɽ��}%
-���٤ϥɥ�\qu{\texttt\$}�ν�˺�줬����ȸ����Ƥ��ޤ���
-4���ܤΥ��顼��å����������٥�������С�\qu{\texttt\_}
-����ʬ��ɽ�������Ԥ���Ƥ��ޤ����顤������ʬ��
-�ְ㤤���������ʬ����ޤ����ɤ���饢������С���
-�ɥ�\qu{\texttt\$}�ʤɤ�Ʊ���褦�˥Хå�����å��夬ɬ�פʤ褦�Ǥ���
-�����ǤȤꤢ����\keytop{Enter}�����򲡤��ƥ����ץ��åȤ�
-��λ���Ƥ�������������ܤΥ��顼��ɽ������ޤ���
+\zindind{改行}{された表示}%
+今度はドル\qu{\texttt\$}の書き忘れがあると言われています．
+4行目のエラーメッセージで丁度アンダーバー\qu{\texttt\_}
+の部分で表示が改行されていますから，この部分に
+間違いがある事が分かります．どうやらアンダーバーは
+ドル\qu{\texttt\$}などと同じようにバックスラッシュが必要なようです．
+ここでとりあえず\keytop{Enter}キーを押してタイプセットを
+終了してください．一つ目のエラーが表示されます．
 
 \begin{OutTerm}
 ! Missing $ inserted.
@@ -618,7 +618,7 @@ l.6 \end{document}
 ?
 \end{OutTerm}
 
-�����ץ��åȤ����Ǥ��ޤ��󤬡������ѻ���ɽ�����и����ޤ���%$
+タイプセットは中断しませんが，何か煩雑な表示が出現します．%$
 
 \begin{OutTerm}
 Overfull \hbox (152.35132pt too wide) in paragraph at lines 3--6
@@ -630,36 +630,36 @@ Goodbye\OT1/cmr/m/n/10 !!$
 \end{OutTerm}
 
 % commented out 2006/03/08
-%�Ȥ��������㤴���㤷��ɽ�����Ǥޤ��������\dos{Overfull \bs hbox}
-%�Ȥ���\K{�ٹ�}�Ǥ��뤳�Ȥ�ʬ����ޤ��������������DVI�ե�����
-%\fl{errortest.dvi}��ץ�ӥ塼���Ƥ�������������ȹԤ��ڡ���
-%��Ϥ߽Ф��Ƥ��ޤ��������Υ�������С��˴ؤ��륨�顼�ˤ�����
-����� \dos{Overfull \bs hbox}
-�Ȥ���\KY{�ٹ�}�Ǥ������ʬ����ޤ��������������DVI�ե�����
-\fl{error.dvi}��ץ�ӥ塼���Ƥ�������������ȹԤ��ڡ���
-��Ϥ߽Ф��Ƥ��ޤ��������Υ�������С��˴ؤ��륨�顼�ˤ�����
-���Τ褦��ɽ��������ޤ�����
+%というごちゃごちゃした表示がでます．これは\dos{Overfull \bs hbox}
+%という\K{警告}であることが分かります．次に成形後のDVIファイル
+%\fl{errortest.dvi}をプレビューしてください．すると行がページ
+%をはみ出しています．先程のアンダーバーに関するエラーにおいて
+これは \dos{Overfull \bs hbox}
+という\KY{警告}である事が分かります．次に成形後のDVIファイル
+\fl{error.dvi}をプレビューしてください．すると行がページ
+をはみ出しています．先程のアンダーバーに関するエラーにおいて
+次のような表示がありました．
 
 \begin{OutTerm}
 <inserted text>  $
 \end{OutTerm}
 
-�ɤ����{\LaTeX}�ϼ�ưŪ��%$
-�ɥ�\qu{\texttt\$}�����������褦�Ǥ���\qu{b}�Ȥ���ʸ����\qu{r}��
-���դ���ź�����ˤʤäƤ��ޤ��������\qu{Give me 100Under$_b$}
-�ȤʤäƤ������Ϥ��줿�ѡ������\qu{\texttt\%}��
-��ò��\qu{\texttt!}�����Ϥ���Ƥ��餺�����ιԤ�
-\qu{Under}�Ȥ��äĤ��Ƥ��ޤ���
+どうやら{\LaTeX}は自動的に%$
+ドル\qu{\texttt\$}を挿入したようです．\qu{b}という文字が\qu{r}の
+下付きの添え字になっています．さらに\qu{Give me 100Under$_b$}
+となっており入力されたパーセント\qu{\texttt\%}と
+感嘆符\qu{\texttt!}が出力されておらず，次の行の
+\qu{Under}とくっついています．
 % commented out 2006/03/08
-%�ɤ���������Τ����㤴����
-%�����ٹ�Ϥ��ιԤ��ڡ�����Ϥ߽Ф��Ƥ��뤳�Ȥ���äƤ���
-%�褦�Ǥ����Ǥ�����ե�����\fl{errortest.tex}�Ϥ���˼��Τ褦
-%�˽�������ޤ���
-\indindz{�ٹ�}{�ѻ���}%
-�ɤ�����������ѻ��ʷٹ�Ϥ��ιԤ��ڡ�����Ϥ߽Ф���
-��������̣���Ƥ���褦�Ǥ���
-�Ǥ�����ե�����\Fl{errortest.tex}�Ϥ���˼��Τ褦
-�˽���������ˤʤ�ޤ���
+%どうやら先程のごちゃごちゃ
+%した警告はこの行がページをはみ出していることを言っている
+%ようです．ですからファイル\fl{errortest.tex}はさらに次のよう
+%に修正されます．
+\indindz{警告}{煩雑な}%
+どうやら先程の煩雑な警告はこの行がページをはみ出して
+いる事を意味しているようです．
+ですからファイル\Fl{errortest.tex}はさらに次のよう
+に修正する事になります．
 
 \begin{InTeX}
 Hello \& Goodbye! Give me \$100! Give me 100\%!
@@ -667,18 +667,18 @@ Under\_bar is stranger. Is sharp sing \#?
 No its' \#. Hello \& Goodbye!!   
 \end{InTeX}
 
-�����˾���̤ꤦ�ޤ����������Ǥ����ºݤ˾嵭�Υե������
-�����ץ��åȤ������η�̤��̣���Ƥ���������
+これで望み通りうまくいきそうです．実際に上記のファイルを
+タイプセットし，その結果を吟味してください．
 \end{Exe}
 
 % commented out on 2006/03/08 
-%{\LaTeX}�θ��Ƥ򥿥��ץ��åȤ����Ȥ���ü���˵�����\qu{\str?}
-%��ɽ������ƽ��������Ǥ��ޤ����������ʳ��Ǥ�����⵿����\qu{\str?}
-%���ֻ����֤���
-\zindind{����}{������}%
-{\LaTeX}�θ��Ƥ򥿥��ץ��åȤ����Ȥ���ü����\Z{������}\qu{\str?}
-��ɽ������ƽ��������Ǥ��ޤ����������ʳ��Ǥ�����⵿����\qu{\str?}
-���ֻ����֤��ȼ��Τ褦��ɽ������ޤ���
+%{\LaTeX}の原稿をタイプセットしたときに端末に疑問符\qu{\str?}
+%が表示されて処理が中断しますが，この段階でこちらも疑問符\qu{\str?}
+%で返事を返すと
+\zindind{処理}{の中断}%
+{\LaTeX}の原稿をタイプセットしたときに端末に\Z{疑問符}\qu{\str?}
+が表示されて処理が中断しますが，この段階でこちらも疑問符\qu{\str?}
+で返事を返すと次のように表示されます．
 
 \begin{OutTerm}
 Type <return> to proceed, S to scroll future error messages,
@@ -689,591 +689,591 @@ H for help, X to quit.
 ? 
 \end{OutTerm}
 
-������\qu{\str?}��ɽ������Ƥ����ʳ���
-�嵭�˵󤲤�褦�ʥ��������Ϥ򤹤�Ȳ��餫���н褬
-�Ǥ���褦�Ǥ���
+疑問符\qu{\str?}が表示されている段階で
+上記に挙げるようなキーの入力をすると何らかの対処が
+できるようです．
 \begin{description}
  \item[\keytop{Enter}] 
-   ���顼���Ф���{\LaTeX}��Ŭ�����н�򤷤���˥�����
-   ���åȤ�³�Ԥ��ޤ���
- \item[\keytop{S}] \keytop{Enter}�����򲡤�³����
-����Ʊ��ư��򤷤ޤ���
- \item[\keytop{R}] ���顼�����Ф���Ƥ���ߤ�����
-�Υ󥹥ȥåפǥ����ץ��åȤ��ޤ��� 
- \item[\keytop{Q}] \keytop{Q}�򲡤�������
-\KY{�Хå��⡼��}�����������³���ޤ��� 
- \item[\keytop{I} \va{ʸ����}]  ʸ������������ƥ���
-�ץ��åȤ�³���ޤ������θ��Ƥ˽����ϲä����ޤ���
- \item[\keytop{H}] ���Υ��顼���Ф���Ѹ�Υإ�פ�
-ü����ɽ�����ޤ���
- \item[\keytop{X}] �������λ���ޤ��� 
+   エラーに対して{\LaTeX}が適当な対処をした後にタイプ
+   セットを続行します．
+ \item[\keytop{S}] \keytop{Enter}キーを押し続けた
+事と同じ動作をします．
+ \item[\keytop{R}] エラーが検出されても停止せずに
+ノンストップでタイプセットします． 
+ \item[\keytop{Q}] \keytop{Q}を押した場合は
+\KY{バッチモード}に入り処理が続きます． 
+ \item[\keytop{I} \va{文字列}]  文字列を挿入してタイ
+プセットを続けます．元の原稿に修正は加えられません．
+ \item[\keytop{H}] そのエラーに対する英語のヘルプを
+端末に表示します．
+ \item[\keytop{X}] ゲームを終了します． 
 \end{description}
 
-\zindind{���}{��­��ʤ�����}%
-\keytop{X}������;�겡���ƤϤ����ޤ��󡥳�̤�­��ʤ�
-�Ȥ������顼�ξ��ϤȤꤢ����\keytop{Enter}������
-�����Ф��Τޤ޽�����³�ԤǤ��ޤ���
+\zindind{括弧}{の足りない状態}%
+\keytop{X}キーは余り押してはいけません．括弧が足りない
+というエラーの場合はとりあえず\keytop{Enter}キーを
+押せばそのまま処理を続行できます．
 
-�����ץ��åȤ򤷤ƥ������ꥹ��\qu{\str{*}}��ɽ�������
-���������Ǥ���Ȥ�������ޤ���\keytop{Enter}������
-�����Ƥ�Ʊ����å�������ɽ������Ƥɤ��ˤ�
-�ʤ�ʤ��ʤ�ޤ���\index{*@\verb+*+}%"
+タイプセットをしてアスタリスク\qu{\str{*}}が表示されて
+処理が中断するときがあります．\keytop{Enter}キーを
+押しても同じメッセージが表示されてどうにも
+ならなくなります．\index{*@\verb+*+}%"
 
 \begin{OutTerm}
 *
 (Please type a command or say `\end')
 \end{OutTerm}
 
-���ξ�祳�󥽡��뤫��`\verb|\end{document}|'�����Ϥ��ƽ�
-������λ���ʤ��ä����϶���Ū�˥ץ�������λ���Ƥ������������������
-�����ߥ��򤷤Ƥ���Ȼפ��ޤ�\footnote{����ʤ������Ϥɤ��˵��Ҵְ㤤��
-����Τ��򸫤Ĥ���Τ��񤷤��Ȼפ��ޤ����顤Ŭ���ʾ���ʬ����䤹����
-����\Z{�֥쥤���ݥ����}�ʥ����ץ��åȤ���ߤ��������ˤ��ߤ���Τ����Ȼפ�
-�ޤ���}��
+この場合コンソールから`\verb|\end{document}|'と入力して処
+理が終了しなかった場合は強制的にプログラムを終了してください．ソース中で
+何かミスをしていると思われます\footnote{慣れないうちはどこに記述間違いが
+あるのかを見つけるのが難しいと思われますから，適当な場所に分かりやすいよ
+うに\Z{ブレイクポイント}（タイプセットが停止する地点）を設けるのも手だと思い
+ます．}．
 
-\subsection{�ץ�ӥ塼�������}
+\subsection{プレビューアの操作}
 %commented out 2006/03/08
-%�ץ�ӥ塼��Ԥ��ץ������Τ��Ȥ�\KY{�ץ�ӥ塼��}�ȸ����ޤ���
-%OS�ˤ�äƻ��Ѳ�ǽ�ʥץ�ӥ塼�����ۤʤ�ޤ���Windows�ʤ��
-%\Hito{����}{��ͺ}��\Prog{dviout}��\unixos �ʤ��\Prog{xdvi}��
-%Red Hat�ʤ��\Prog{pxdvi}�ʤɤ�Ȥ�\fl{hoge.dvi}��ƥ��ץꥱ��
-%�����ǳ����ޤ���Windows�ξ���\prog{dviout}�˴ؤ���˭�٤�
-%�إ�פ�ޥ˥奢�뤬�Ѱդ���Ƥ���ΤǤ�������ɤ�ǤߤƤ���������
-%�����Ǥ�Unix��OS�ǹ����Ȥ��Ƥ���\prog{xdvi}����������ˡ��
-%�������ޤ����ޤ���������\fl{hoge.dvi}��¸�ߤ���ǥ��쥯�ȥ��
-%��ư����\prog{xdvi}���Ф��ƥե�����̾����ꤷ��
-\zindind{Windows}{�Υץ�ӥ塼��}%
-�ץ�ӥ塼��Ԥ��ץ������λ���\KY{�ץ�ӥ塼��}�ȸ����ޤ���
-OS�ˤ�äƻ��Ѳ�ǽ�ʥץ�ӥ塼�����ۤʤ�ޤ���
-\indindz{�ץ�ӥ塼}{Windows�Ǥ�}%
-Windows�ʤ��\Hito{����}{��ͺ}��\Prog[dviout]{\Dviout}��
-\indindz{�ץ�ӥ塼}{Unix��OS�Ǥ�}%
-\unixos �ʤ��\Prog{xdvi}��
-\indindz{�ץ�ӥ塼}{Red Hat�Ǥ�}%
-\Z{Red Hat}����\Z{Fedora Core}�ʤ��\Prog{pxdvi}�ʤɤ�Ȥ�
-\Va{file}{dvi}��ƥ��ץꥱ�������ǳ����ޤ���
-Windows�ξ���\prog{\Dviout}�˴ؤ���˭�٤ʥإ�פ�ޥ˥奢�뤬
-�Ѱդ���Ƥ���ΤǤ�������ɤ�ǤߤƤ���������
-�����Ǥ�\unixos �ǹ����Ȥ��Ƥ���\prog{xdvi}����������ˡ��
-�������ޤ����ޤ������ߥʥ���\Va{file}{dvi}��¸�ߤ���ǥ��쥯�ȥ��
-��ư����\prog{xdvi}���Ф��ƥե�����̾����ꤷ��
+%プレビューを行うプログラムのことを\KY{プレビューア}と言います．
+%OSによって使用可能なプレビューアが異なります．Windowsならば
+%\Hito{大島}{利雄}の\Prog{dviout}，\unixos ならば\Prog{xdvi}，
+%Red Hatならば\Prog{pxdvi}などを使い\fl{hoge.dvi}を各アプリケー
+%ションで開きます．Windowsの場合は\prog{dviout}に関する豊富な
+%ヘルプやマニュアルが用意されているのでそちらを読んでみてください．
+%ここではUnix系OSで広く使われている\prog{xdvi}を例に操作方法を
+%説明します．まずシェル上で\fl{hoge.dvi}の存在するディレクトリに
+%移動し，\prog{xdvi}に対してファイル名を指定し，
+\zindind{Windows}{のプレビューア}%
+プレビューを行うプログラムの事を\KY{プレビューア}と言います．
+OSによって使用可能なプレビューアが異なります．
+\indindz{プレビュー}{Windowsでの}%
+Windowsならば\Hito{大島}{利雄}の\Prog[dviout]{\Dviout}，
+\indindz{プレビュー}{Unix系OSでの}%
+\unixos ならば\Prog{xdvi}，
+\indindz{プレビュー}{Red Hatでの}%
+\Z{Red Hat}又は\Z{Fedora Core}ならば\Prog{pxdvi}などを使い
+\Va{file}{dvi}を各アプリケーションで開きます．
+Windowsの場合は\prog{\Dviout}に関する豊富なヘルプやマニュアルが
+用意されているのでそちらを読んでみてください．
+ここでは\unixos で広く使われている\prog{xdvi}を例に操作方法を
+説明します．まずターミナル上で\Va{file}{dvi}の存在するディレクトリに
+移動し，\prog{xdvi}に対してファイル名を指定し，
 \begin{InTerm}
    \type{xdvi }\Va{file}{dvi} \str &
 \end{InTerm}
-�Τ褦�ˤ��ޤ���Unix��OS�ʤ�Х���ѥ����\qu{\texttt\&}��Ĥ���
-\KY{�Хå����饦���}�ǵ�ư���ޤ���%\pp{\figref{xdvisample}}
-��������ȥ����ץ��åȤ���٤����Ȥ��˼�ưŪ��DVI�ե������
-��ɽ�����ޤ���\Dviout �Ǥ�Ʊ�ͤκ�ɽ����ǽ������ޤ���
+のようにします．Unix系OSならばアンパサンド\qu{\texttt\&}をつけて
+\KY{バックグラウンド}で起動します．%\pp{\figref{xdvisample}}
+こうするとタイプセットを再度したときに自動的にDVIファイルを
+再表示します．\Dviout でも同様の再表示機能があります．
 %\begin{figure}[hbtp]
 % \begin{center}
 %  \includegraphics[bb={0 0 875 701},scale=.4]{images/xdvi}
-%  \caption{{xdvi}�ε�ư��}\figlab{xdvisample}
+%  \caption{{xdvi}の起動例}\figlab{xdvisample}
 % \end{center}
 %\end{figure}
 
-\prog{xdvi}�δ���Ū�������ˡ���������ޤ�����¦���ȤǰϤޤ줿
-ʸ�����ܥ���ˤʤäƤ��ޤ����ܥ���Τ褦�˸����ޤ��󤬰�������ޤ���
-����˥ܥ���α�¦�ˤϥڡ����ֹ椬���ꡤ�ڡ����ֹ�򥯥�å������
-��������ڡ�����ɽ�����ޤ���
+\prog{xdvi}の基本的な操作方法を説明します．右側に枠で囲まれた
+文字がボタンになっています．ボタンのように見えませんが一応押せます．
+さらにボタンの右側にはページ番号があり，ページ番号をクリックすると
+該当するページを表示します．
 
-\prog{xdvi}�ǤΥޥ����Υ���å��ϳ���ε�ǽ����äƤ��ޤ������줾��
-\begin{namelist}{�������å�}
- \item[������å�]   �������硥
- \item[�������å�] ���̤˳��硥
- \item[������å�]   ���ʤ���硥
+\prog{xdvi}でのマウスのクリックは拡大の機能を持っています．それぞれ
+\begin{namelist}{中央クリック}
+ \item[左クリック]   少し拡大．
+ \item[中央クリック] 普通に拡大．
+ \item[右クリック]   かなり拡大．
 \end{namelist}
-�ȤʤäƤ��ޤ����ޤ�����¦�ˤ���\qu{\str{Quit}}�Ȥ�\qu{\str{Abort}}�ʤɤ�
-�ܥ���ǡ���ʥܥ���ε�ǽ�ϰʲ��ΤȤ���ȤǤ���
+となっています．また，右側にある\qu{\str{Quit}}とか\qu{\str{Abort}}などは
+ボタンで，主なボタンの機能は以下のとおりとです．
 \begin{namelist}{View PS}
 \item[\str{Quit}]
-	    xdvi��λ���롥
+	    xdviを終了する．
 \item[\str{Reread}]
-	    �����ɤ߹�����ե�����\Va{file}{dvi}������褹�롥
+	    一度読み込んだファイル\Va{file}{dvi}を再描画する．
 \item[\str{First}]
-	    ��Ƭ�ڡ����˰�ư���롥
+	    先頭ページに移動する．
 \item[\str{Prev}]
-	    ���ڡ����˰�ư���롥
+	    前ページに移動する．
 \item[\str{Next}]
-	    ���ڡ����˰�ư���롥
+	    次ページに移動する．
 \item[\str{Last}]
-	    �ǽ��ڡ����˰�ư���롥 
+	    最終ページに移動する． 
 \item[\str{View PS}]
-	    {\PS}�ե�����򸫤롥
+	    {\PS}ファイルを見る．
 \item[\str{File}]
-	    DVI�ե�������̤˳�����
+	    DVIファイルを別に開く．
 \end{namelist}
 
-��λ����ˤ�\qu{\str{Quit}}�ܥ���򲡤��ޤ��� 
+終了するには\qu{\str{Quit}}ボタンを押します． 
 
 
-%\subsection{����äȵٷ�}
+%\subsection{ちょっと休憩}
 \begin{Trick}
 
-����ޤ����ƾ�����줿�Ǥ��礦���顤�����ǵٷƤ򤷤ޤ��礦��
-DVI�ե�����ȸ����Ƥ�ʤ��ߤ������ե�����������⤷��ޤ���
-�����Ǥ���DVI�ե�������̤Υե�����������Ѵ����Ƥߤޤ��礦��
+これまで操作して少し疲れたでしょうから，ここで休憩をしましょう．
+DVIファイルと言われてもなじみの薄いファイル形式かもしれません．
+そこでこのDVIファイルを別のファイル形式に変換してみましょう．
 
-�㤨��\PS ���Ѵ�����ˤ�\pp{Windows������\prog{dvipsk}}
+例えば\PS に変換するには\pp{Windowsの方は\prog{dvipsk}}
 \begin{InTerm}
   \type{dvips -o test.ps test.dvi}
 \end{InTerm}
-�Ȥ����\fl{test.dvi}����\fl{test.ps}����������ޤ�������\fl{test.ps}��
+とすると\fl{test.dvi}から\fl{test.ps}が生成されます．この\fl{test.ps}を
 \begin{InTerm}
   \type{ps2pdf test.ps test.pdf}
 \end{InTerm}
-�Ȥ���PDF�ե�����\fl{test.pdf}�������������Ǥ��ޤ���Postscript
-�ե�����\fl{test.ps}��ץ�󥿤˽��Ϥ���ˤ�
+としてPDFファイル\fl{test.pdf}を生成する事もできます．Postscript
+ファイル\fl{test.ps}をプリンタに出力するには
 \begin{InTerm}
-  \type{lpr -P} \va{�ץ��̾} \fl{test.ps}
+  \type{lpr -P} \va{プリンタ名} \fl{test.ps}
 \end{InTerm}
-�Ȥ�����ǰ����׵�������Ǥ��ޤ���\va{�ץ��̾}�ˤĤ��Ƥ�
-�����ƥ�δ����Ԥ�ʹ���ʤɤ��Ƥ���������
+とする事で印刷要求を送信できます．\va{プリンタ名}については
+システムの管理者に聞くなどしてください．
 
-�����ץ��åȻ��˳�ĥ��\exten{tex}���ά����
+タイプセット時に拡張子\exten{tex}を省略して
 \begin{InTerm}
   \type{platex test}
 \end{InTerm}
-�Ȥ��ƤߤƤ����������ʾ�Τ褦����Ǥ�{\LaTeX}�ץ�������
-\fl{test.tex}��õ���Ф��ƥ����ץ��åȤ��Ƥ����Ǥ��礦��
+としてみてください．以上のような例でも{\LaTeX}プログラムは
+\fl{test.tex}を探し出してタイプセットしてくれるでしょう．
 
-����� \LaTeX �ǻȤ��Ƥ���ե����븡���λ��Ȥߤ˴ط����Ƥ��ޤ���
-\LaTeX �Ǥ� \Prog{Kpathsearch}�Ȥ����ե����븡����������Ѥ��Ƥ��ޤ���
-�ޤ��嵭����Ǥ�\fl{test.tex}������Ȥ��� \type{platex test} �Ȥ����
-\prog{Kpathsearch}����ưŪ�˳�ĥ�Ҥ�Ĥ��ƥե������õ���ޤ���
-���λ��ɤΥǥ��쥯�ȥ�\pp{�ե����}����õ���Ф����Ȥ�������ɬ�פˤʤ��
-�������ξ��󤬵��ܤ��줿�ե������\Fl{texmf.cnf}�Ȥ����ե�����Ǥ���
-�ۤȤ�ɤδĶ��ǥǥ��쥯�ȥ� \fl{\$texmf/web2c/} �ʲ��ˤ���ޤ���%
+これは \LaTeX で使われているファイル検索の仕組みに関係しています．
+\LaTeX では \Prog{Kpathsearch}というファイル検索機構を採用しています．
+まず上記の例では\fl{test.tex}があるときに \type{platex test} とすると
+\prog{Kpathsearch}が自動的に拡張子をつけてファイルを探します．
+この時どのディレクトリ\pp{フォルダ}から探し出すかという情報が必要になりま
+す．この情報が記載されたファイルは\Fl{texmf.cnf}というファイルです．
+ほとんどの環境でディレクトリ \fl{\$texmf/web2c/} 以下にあります．%
 \index{"$texmf@\texttt{\$texmf}}%
-\index{�ե�����!"$texmf@\texttt{\$texmf}}%
-������ \fl{\$texmf} ��{\LaTeX}�Υե�������Ǽ���٤����־�Υǥ��쥯�ȥ��
-�����ޤ���Unix��OS�ʤ�� \fl{/usr/local/share/texmf/} 
-�ʤɤ��ä���Windows�ʤ�� \fl{C:\yen usr\yen local\yen share\yen 
-texmf\yen} ���ä��ꤹ��Ǥ��礦��
+\index{ファイル!"$texmf@\texttt{\$texmf}}%
+ここで \fl{\$texmf} は{\LaTeX}のファイルを格納すべき一番上のディレクトリを
+示します．Unix系OSならば \fl{/usr/local/share/texmf/} 
+などだったりWindowsならば \fl{C:\yen usr\yen local\yen share\yen 
+texmf\yen} だったりするでしょう．
 \begin{InTerm}
   \type{kpsewhich texmf.cnf}
 \end{InTerm}
-�Ȥ���ȡ��ɤ���\fl{texmf.cnf}��¸�ߤ���Τ���ʬ����ޤ���
+とすると，どこに\fl{texmf.cnf}が存在するのかが分かります．
 \end{Trick}
 
 \begin{Trick}
-�Ƕ�� \LaTeX �ץ�������\prog{Kpathsearch}���б����Ƥ���Τ�
-����ռ����ʤ��Ƥ�Ŭ�ڤ�����ե�����䥯�饹�ե�����ʤɤ򸡺�
-���Ƥ���ޤ�����������ư�Ǹ����������Ȥ��⤢��Ȼפ��ޤ���
-���Τ褦�ʾ���\Prog{kpsewhich}�Ȥ����ץ�������Ȥä�
+最近の \LaTeX プログラムは\prog{Kpathsearch}に対応しているので
+何も意識しなくても適切に設定ファイルやクラスファイルなどを検索
+してくれます．しかし手動で検索したいときもあると思います．
+このような場合は\Prog{kpsewhich}というプログラムを使って
   \type{less `kpsewhich  book.cls`}
-�Ȥ����\Fl{book.cls}�Ȥ����ե����뤬\fl{\$texmf}�ʲ���
-����Υǥ��쥯�ȥ꤫�鸡�����졤\Prog{less}���ե������
-�������ޤ����¤�Kpathsearch �Ǥϥץ��������˥ե������
-��������������Ǥ��ޤ������Τ��ᡤ\Fl{jarticle.cls}
-�Ȥ����ե������\type{kpsewhich jarticle.cls}�Ȥ���������
-�ϸ�����̤�ɽ������ޤ���\copt{-progname}�Ȥ������ޥ�ɥ饤��
-���ץ������դ���\type{kpsewhich -progname=platex jarticle.cls}
-�ȼ¹Ԥ���ȡ�\pLaTeX �� \Fl{jarticle.cls} �Ȥ����ե������
-���Ĥ�������ˤʤ�ޤ�������ˤ��ʣ���Υץ�������Ʊ��̾���Υե�����
-̾��¸�ߤ��Ƥ⡤�ǥ��쥯�ȥ���Ѥ��Ƥ����о��ͤ��ޤ��󤷡��ե�����򸡺�
-����ǥ��쥯�ȥ꤬���ʤ��ƺѤߤޤ��Τǽ���®�٤����夷�ޤ���
+とすると\Fl{book.cls}というファイルが\fl{\$texmf}以下の
+特定のディレクトリから検索され，\Prog{less}がファイルを
+整形します．実はKpathsearch ではプログラム毎にファイルを
+検索する場所を指定できます．そのため，\Fl{jarticle.cls}
+というファイルを\type{kpsewhich jarticle.cls}としただけで
+は検索結果に表示されません．\copt{-progname}というコマンドライン
+オプションを付けて\type{kpsewhich -progname=platex jarticle.cls}
+と実行すると，\pLaTeX が \Fl{jarticle.cls} というファイルを
+見つけられる事になります．これにより複数のプログラムで同じ名前のファイル
+名が存在しても，ディレクトリを変えておけば衝突しませんし，ファイルを検索
+するディレクトリが少なくて済みますので処理速度が向上します．
 \end{Trick}
 
 
 
-\subsection{���ޥ��}
+\subsection{コマンド}
 
-\zindind{����}{�ι���}%
-\zindind{����}{����Ƭ��ʬ}%
-{\LaTeX}�Ǥϸ��Ƥ򻰤ĤΥѡ��Ȥ�ʬ�䤹������Ǥ��ޤ���
-�����ȼ�������Ĥ��Υ��ޥ�ɤϡ�����Υѡ��ȤǤ�������
-�Ǥ��ޤ���
+\zindind{原稿}{の構成}%
+\zindind{原稿}{の先頭部分}%
+{\LaTeX}では原稿を三つのパートに分割する事ができます．
+それに伴いいくつかのコマンドは，特定のパートでしか使用
+できません．
 \begin{Syntax}
-\verb|������Ƭ��ʬ (���˥���륳�ޥ�ɤ򵭽�)|\\
-\cmd{documentclass}\opa{���ץ����,$\ldots$}%
-	\pa{���饹}\opa{��꡼��}\\
-\va{������ʬ} (�ץꥢ��֥륳�ޥ�ɤ򵭽�)\\
+\verb|原稿先頭部分 (イニシャルコマンドを記述)|\\
+\cmd{documentclass}\opa{オプション,$\ldots$}%
+	\pa{クラス}\opa{リリース}\\
+\va{前書き部分} (プリアンブルコマンドを記述)\\
 \verb|\begin{document}|\\
-\va{��ʸ} (�ܥǥ�)\\
+\va{本文} (ボディ)\\
 \verb|\end{document}|
 \end{Syntax}
-������� \Cmd{documentclass}��\Env{document}�Ķ���ɬ�ܤǤ��ꡤ
-���Ф�ɬ�פʵ��ҤǤ���
+この中で \Cmd{documentclass}，\Env{document}環境は必須であり，
+絶対に必要な記述です．
 
-\indindz{���ޥ��}{���˥����}\indindz{���ޥ��}{�ץꥢ��֥�}%
-\zindind{�ץꥢ��֥�}{���ޥ��}%
-������Ƭ\pp{���˥����}��ʬ�ˤ�\KY{���˥���륳�ޥ��}��
-�ƤФ�륳�ޥ�ɤ򵭽Ҥ�������Ǥ���
-Ʊ���褦������\pp{�ץꥢ��֥�}��ʬ�ˤ�%
-\K{�ץꥢ��֥륳�ޥ��}������ʤɤ�
-���Ҥ�������Ǥ��ޤ��������ơ�\env{document}�Ķ�
-�ˤ�äƶ��ޤ줿��ʸ��ʬ�ˤϥ��ޥ�ɤ�����������ѤΥ��ޥ�ɤ�
-���Ҥ��ޤ������줾��Υ��ޥ�ɤ�����줿���ǻȤ��褦��
-�����Ƥ��ޤ����桼�����ץꥢ��֥륳�ޥ�ɤ���ʸ�ǻȤ�����
-�Ǥ��ʤ��褦��{\LaTeX}�������Ǻٹ����ܤ���Ƥ��ޤ���
+\indindz{コマンド}{イニシャル}\indindz{コマンド}{プリアンブル}%
+\zindind{プリアンブル}{コマンド}%
+原稿先頭\pp{イニシャル}部分には\KY{イニシャルコマンド}と
+呼ばれるコマンドを記述する事ができ，
+同じように前書き\pp{プリアンブル}部分には%
+\K{プリアンブルコマンド}や定義などを
+記述する事ができます．そして，\env{document}環境
+によって挟まれた本文部分にはコマンドの定義や組版用のコマンドを
+記述します．それぞれのコマンドは定められた場所で使うように
+決められています．ユーザがプリアンブルコマンドを本文で使う事が
+できないように{\LaTeX}の内部で細工が施されています．
 
-�����Ǹ��դ�����򤷤ޤ��礦�����ޥ�ɡ�̿�ᡤ�Ķ������������ץ����ʤ�
-�θ��դ�Ʊ�������Ǥ�����\K{�ܽ�Ǥ�}�ʲ��Τ褦�˼����ޤ�
-\footnote{���ޥ�ɤˤĤ��Ƥ������Ȥ��Ƥ��Խ�ʬ�ʤΤǤ���������̿��ȴĶ�
-������Ȳ�ᤷ�Ƥ���������}��
+ここで言葉の定義をしましょう．コマンド，命令，環境，引数，オプションなど
+の言葉を混同しがちですが，\K{本書では}以下のように取り決めます
+\footnote{コマンドについての説明としては不十分なのですが，今は命令と環境
+があると解釈してください．}．
 
-\begin{description}%{���ޥ��}
-\item[\Z{���ޥ��}] 
-  \indindz{����}{��}%
-   \Z{�Хå�����å���}%
-   \pp{Windows������\Z{�ߵ���}}�ȶ����Ѥ�����ʸ����
-   \begin{description}%{̿��}
-    \item[\Z{̿��}]
-       ñ�Ȥǻ��Ѥ��륳�ޥ�ɡ�
-       ������������Ǥ��롥
-    \begin{quote}�㡧\verb|\alpha|��\verb|\maketitle|
+\begin{description}%{コマンド}
+\item[\Z{コマンド}] 
+  \indindz{記号}{円}%
+   \Z{バックスラッシュ}%
+   \pp{Windowsの方は\Z{円記号}}と共に用いられる文字列．
+   \begin{description}%{命令}
+    \item[\Z{命令}]
+       単独で使用するコマンド．
+       引数を取る事ができる．
+    \begin{quote}例：\verb|\alpha|，\verb|\maketitle|
           \end{quote}
-    \item[\Z{�Ķ�}] 
-       \qu{\C{begin}\pa{����}}��
-       \qu{\C{end}\pa{����}}�ǰϤޤ�Ƥ���
-     �ΰ衤�ޤ��Ϥ����Ϥि��Υ��ޥ�ɡ�
-       �������뤳�Ȥ��Ǥ��롥
-     \begin{quote}�㡧\verb|\begin{center}| \va{ʸ����} \verb|\end{center}|
+    \item[\Z{環境}] 
+       \qu{\C{begin}\pa{何々}}と
+       \qu{\C{end}\pa{何々}}で囲まれている
+     領域，またはそれを囲むためのコマンド．
+       引数を取ることができる．
+     \begin{quote}例：\verb|\begin{center}| \va{文字列} \verb|\end{center}|
     \end{quote}
    \end{description}
- \item[\Z{����}] 
-\zindind{���ޥ��}{�ΰ���}%
-\indindz{����}{���ޥ�ɤ�}%
-   ���ޥ�ɤ˼����Ϥ�ʸ����
-   \begin{description}%{ɬ�ܰ���}
-    \item[\Z{ɬ�ܰ���}] 
-\indindz{����}{�ȳ�̤Ƕ��ޤ줿}%
-\indindz{����}{ɬ�ܤ�}%
-\zindind{�ȳ��}{�ǰϤޤ줿����}%
-\zindind{�ȳ��}{�����}%
-       {�ȳ��}\qu{\texttt{\char'173~\char'175}}�ǰϤޤ줿���ǡ�
-       ���ޥ�ɤ�ɬ�ܰ�������Ȥ���ɬ�������Ϥ���
-           \begin{quote}�㡧\verb|\section|\pa{���Ф���}\end{quote}
-   \item[\Z{Ǥ�հ���}] 
-\indindz{����}{�ѳ�̤Ƕ��ޤ줿}%
-\indindz{����}{Ǥ�դ�}%
-\zindind{�ѳ��}{�ǰϤޤ줿����}%
-       ���ץ����Ȥ������\Z{�ѳ��}\qu{\texttt{[~]}}�ǰϤޤ줿���ǡ�
-       ���ޥ�ɤ�Ǥ�հ�������Ȥ���Ǥ�դ˼����Ϥ���
-          \begin{quote}�㡧\verb|\documentclass|\opa{Ǥ�հ���}\pa{���饹̾}
+ \item[\Z{引数}] 
+\zindind{コマンド}{の引数}%
+\indindz{引数}{コマンドの}%
+   コマンドに受け渡す文字列．
+   \begin{description}%{必須引数}
+    \item[\Z{必須引数}] 
+\indindz{引数}{波括弧で挟まれた}%
+\indindz{引数}{必須の}%
+\zindind{波括弧}{で囲まれた引数}%
+\zindind{波括弧}{の役割}%
+       {波括弧}\qu{\texttt{\char'173~\char'175}}で囲まれた要素．
+       コマンドが必須引数を取るときは必ず受け渡す．
+           \begin{quote}例：\verb|\section|\pa{見出し語}\end{quote}
+   \item[\Z{任意引数}] 
+\indindz{引数}{角括弧で挟まれた}%
+\indindz{引数}{任意の}%
+\zindind{角括弧}{で囲まれた引数}%
+       オプションとも言う．\Z{角括弧}\qu{\texttt{[~]}}で囲まれた要素．
+       コマンドが任意引数を取るときは任意に受け渡す．
+          \begin{quote}例：\verb|\documentclass|\opa{任意引数}\pa{クラス名}
     \end{quote}
    \end{description}
 \end{description}
 % commented out 2006/03/09 
-%\begin{description}%{���ޥ��}
-%\item[\Z{���ޥ��}] 
-%	   \Z{�Хå�����å���}%
-%	   \pp{Windows������\Z{�ߵ���}}�ȶ����Ѥ�����ʸ����
-%	   \begin{description}%{̿��}
-%	    \item[\Z{̿��}]
-%		       ñ�Ȥǻ��Ѥ��륳�ޥ�ɡ�
-%		       �������뤳�Ȥ��Ǥ��롥
-%	    \begin{quote}�㡧\verb|\alpha|��\verb|\maketitle|
+%\begin{description}%{コマンド}
+%\item[\Z{コマンド}] 
+%	   \Z{バックスラッシュ}%
+%	   \pp{Windowsの方は\Z{円記号}}と共に用いられる文字列．
+%	   \begin{description}%{命令}
+%	    \item[\Z{命令}]
+%		       単独で使用するコマンド．
+%		       引数を取ることができる．
+%	    \begin{quote}例：\verb|\alpha|，\verb|\maketitle|
 %            \end{quote}
-%	    \item[\Z{�Ķ�}] 
-%		       \qu{\Cmd{begin}\pa{�ʤ�Ȥ�}}��
-%		       \qu{\Cmd{end}\pa{�ʤ�Ȥ�}}�ǰϤޤ�Ƥ���
-%		       �ΰ衤�ޤ��Ϥ����Ϥि��Υ��ޥ�ɡ�
-%		       �������뤳�Ȥ��Ǥ��롥
-%            \begin{quote}�㡧\verb|\begin{center}ʸ����\end{center}|
+%	    \item[\Z{環境}] 
+%		       \qu{\Cmd{begin}\pa{なんとか}}と
+%		       \qu{\Cmd{end}\pa{なんとか}}で囲まれている
+%		       領域，またはそれを囲むためのコマンド．
+%		       引数を取ることができる．
+%            \begin{quote}例：\verb|\begin{center}文字列\end{center}|
 %	    \end{quote}
 %	   \end{description}
-% \item[\Z{����}] 
-%	   ���ޥ�ɤ˼����Ϥ�ʸ����
-%	   \begin{description}%{ɬ�ܰ���}
-%	    \item[\Z{ɬ�ܰ���}] 
-%		       �ȳ��\qu{\texttt{\{\}}}�ǰϤޤ줿���ǡ�
-%		       ���ޥ�ɤ�ɬ�ܰ�����Ȥ�Ȥ���ɬ�������Ϥ���
-%            \begin{quote}�㡧\verb|\section{����}|\end{quote}
-%	    \item[\Z{Ǥ�հ���}] 
-%		       ���ץ����Ȥ�������ѳ��\qu{\texttt{[]}}�ǰϤޤ줿���ǡ�
-%		       ���ޥ�ɤ�Ǥ�հ�����Ȥ�Ȥ���Ǥ�դ˼����Ϥ���
-%            \begin{quote}�㡧\verb|\documentclass[Ǥ�հ���]{jbook}|
+% \item[\Z{引数}] 
+%	   コマンドに受け渡す文字列．
+%	   \begin{description}%{必須引数}
+%	    \item[\Z{必須引数}] 
+%		       波括弧\qu{\texttt{\{\}}}で囲まれた要素．
+%		       コマンドが必須引数をとるときは必ず受け渡す．
+%            \begin{quote}例：\verb|\section{引数}|\end{quote}
+%	    \item[\Z{任意引数}] 
+%		       オプションとも言う．角括弧\qu{\texttt{[]}}で囲まれた要素．
+%		       コマンドが任意引数をとるときは任意に受け渡す．
+%            \begin{quote}例：\verb|\documentclass[任意引数]{jbook}|
 %	    \end{quote}
 %	   \end{description}
 %\end{description}
 
 
-\subsection{��̤ˤĤ���}
+\subsection{括弧について}
 
-%���ơ�{\LaTeX}�δ��ܤ��Τä����\KY{���}��
-%�Ĥ��Ƥμ���򤷤����Ȼפ��ޤ�����̤ˤĤ��ƤϿ����ʸ�
-%����������褦�Ǥ�����������򤱤뤿���\K{�ܽ�Ǥ�}
-%�ʲ��Τ褦��������ޤ���
+%さて，{\LaTeX}の基本を知った所で\KY{括弧}に
+%ついての取決めをしたいと思います．括弧については色々な呼
+%び方があるようですが，誤解を避けるために\K{本書では}
+%以下のように定義します．
 %\begin{description}
-% \item[\Z{�������} \qu{�֡�}] 
-%	    ���Ѥ����ʸ�ʤɤ˻Ȥ���
-% \item[\Z{2�Ť������} \qu{�ء�}] 
-%	    ��̾�����Ѥ���ΰ��Ѥʤɤ˻Ȥ���
-% \item[\Z{������} \qu{�ơ�}] ���󥰥륯�����ȤȤ��������¦��
-%	    ����ۤ��򺸥��󥰥륯�����ȡ���¦�ˤ���ۤ���
-%	    �����󥰥륯�����Ȥȸ��������Ѥ˻Ȥ���
-% \item[\Z{2�Ű�����} \qu{�ȡ�}] 
-%	    ���֥륯�����ȤȤ��������¦�ˤ���ۤ��򺸥��֥륯�����ȡ�
-%	    ��¦�ˤ���ۤ��򱦥��֥륯�����ȤȤ�����
-%	    Ĺ�����Ѥ˻Ȥ���
-% \item[\Z{�ݳ��} \qu{�ʡ�}] ����̡��ѡ����Ȥ������
-%	    ������­�����˻Ȥ���
-% \item[\Z{�ȳ��} \qu{�С�}] ���̤Ȥ������
-%	    ���ޥ�ɤ��Ф���ɬ�ܰ������Ϥ��Τ�
-%	    �Ȥ�줿�ꡤ���Ǥ��ĤΥ��롼�פˤޤȤ�뤿���
-%	    �Ȥ���
-% \item[\Z{�ѳ��} \qu{�Ρ�}] ���̤Ȥ������
-%	    ���ޥ�ɤ��Ф���Ǥ�հ������Ϥ��Ȥ��˻Ȥ���
-% \item[\Z{�����} \qu{���}] 
-%	    ���γ�̤˰Ϥޤ줿ʸ����ϲ����̤�ʸ�����
-%	    �񤭴������롥�㤨�С�\va{�ե�����̾}�ʤɤ�����С�
-%	    �����Ǥ�դ�ʸ����\fl{filename.tex}��
-%	    \fl{test.foo}�ʤɤ��֤��������롥
+% \item[\Z{かぎ括弧} \qu{「」}] 
+%	    引用や会話文などに使う．
+% \item[\Z{2重かぎ括弧} \qu{『』}] 
+%	    書名，引用の中の引用などに使う．
+% \item[\Z{引用符} \qu{‘’}] シングルクオートとも言う．左側に
+%	    あるほうを左シングルクオート，右側にあるほうを
+%	    右シングルクオートと言う．引用に使う．
+% \item[\Z{2重引用符} \qu{“”}] 
+%	    ダブルクオートとも言う．左側にあるほうを左ダブルクオート，
+%	    右側にあるほうを右ダブルクオートという．
+%	    長い引用に使う．
+% \item[\Z{丸括弧} \qu{（）}] 小括弧，パーレンとも言う．
+%	    語句の補足説明に使う．
+% \item[\Z{波括弧} \qu{｛｝}] 中括弧とも言う．
+%	    コマンドに対して必須引数を渡すのに
+%	    使われたり，要素を一つのグループにまとめるために
+%	    使う．
+% \item[\Z{角括弧} \qu{［］}] 大括弧とも言う．
+%	    コマンドに対して任意引数を渡すときに使う．
+% \item[\Z{山括弧} \qu{＜＞}] 
+%	    この括弧に囲まれた文字列は何か別の文字列に
+%	    書き換えられる．例えば，\va{ファイル名}などがあれば，
+%	    これは任意の文字列\fl{filename.tex}，
+%	    \fl{test.foo}などに置き換えられる．
 %\end{description}
-%�����ǰ�����ȸ����Τ��о줷�ޤ���������ʸ�ΰ������
-%���󥰥륯������\pp{`'}�Ǥ��ꡤ��ʸ�ΰ�����Ϥ������\pp{�֡�}��
-%�ʤ�ޤ�����Ĥ���̤��뤿��˲�ʸ�ѤΤ�Τ�
-%\K{���󥰥륯������}����ʸ�Τ�Τ�\K{�������}�ȸ���
-%���Ȥˤ��ޤ���ʸ��˽ФƤ��������Ȥ������դ�
-%���Τɤ���⼨�����Ȥˤʤ�ޤ���
-���ơ�{\LaTeX}�δ��ܤ��Τä����\KY{���}��
-�Ĥ��Ƥμ���򤷤����Ȼפ��ޤ�����̤ˤĤ��ƤϿ����ʸ�
-����������褦�Ǥ�����������򤱤뤿���\K{���κ��ҤǤ�}
-�ʲ��Τ褦��������ޤ���
+%ここで引用符と言うのが登場しましたが，欧文の引用符は
+%シングルクオート\pp{`'}であり，和文の引用符はかぎ括弧\pp{「」}と
+%なります．二つを区別するために欧文用のものを
+%\K{シングルクオート}，和文のものを\K{かぎ括弧}と言う
+%ことにします．文中に出てくる引用符という言葉は
+%そのどちらも示すことになります．
+さて，{\LaTeX}の基本を知った所で\KY{括弧}に
+ついての取決めをしたいと思います．括弧については色々な呼
+び方があるようですが，誤解を避けるために\K{この冊子では}
+以下のように定義します．
 \begin{description}
- \item[\Z{�������}---��~��] 
-	    \Z{����}��\Z{����ʸ}�ʤɤ˻Ȥ���
- \item[\Z{��Ť������}---��~��] 
-	    \Z{��̾}�����Ѥ���ΰ��Ѥʤɤ˻Ȥ���
- \item[\Z{������}---��~��] ���󥰥륯�����ȤȤ��������¦��
-	    ����ۤ��򺸥��󥰥륯�����ȡ���¦�ˤ���ۤ���
-	    �����󥰥륯�����Ȥȸ��������Ѥ˻Ȥ���
- \item[\Z{��Ű�����}---��~��] 
-	    ���֥륯�����ȤȤ��������¦�ˤ���ۤ��򺸥��֥륯�����ȡ�
-	    ��¦�ˤ���ۤ��򱦥��֥륯�����ȤȤ�����
-	    Ĺ�����Ѥ˻Ȥ���
- \item[\Z{�ݳ��}---��~��] \Z{�����}��\Z{�ѡ����}�Ȥ������
-	    ����\Z{��­����}�˻Ȥ���
- \item[\Z{�ȳ��}---��~��] \Z{����}�Ȥ������
-	    ���ޥ�ɤ��Ф���ɬ�ܰ������Ϥ��Τ�
-	    �Ȥ�줿�ꡤ���Ǥ��ĤΥ��롼�פˤޤȤ�뤿���
-	    �Ȥ���
- \item[\Z{�ѳ��}---��~��] \Z{����}�Ȥ������
-	    ���ޥ�ɤ��Ф���Ǥ�հ������Ϥ��Ȥ��˻Ȥ���
- \item[\Z{�����}---��~��] 
-	    ���γ�̤˰Ϥޤ줿ʸ����ϲ����̤�ʸ�����
-	    �񤭴������롥�㤨�С�\va{�ե�����̾}�ʤɤ�����С�
-	    �����Ǥ�դ�ʸ����\fl{file.tex}��
-	    \fl{input.foo}��\fl{output.bar}�ʤɤ��֤��������롥
+ \item[\Z{かぎ括弧}---「~」] 
+	    \Z{引用}や\Z{会話文}などに使う．
+ \item[\Z{二重かぎ括弧}---『~』] 
+	    \Z{書名}，引用の中の引用などに使う．
+ \item[\Z{引用符}---‘~’] シングルクオートとも言う．左側に
+	    あるほうを左シングルクオート，右側にあるほうを
+	    右シングルクオートと言う．引用に使う．
+ \item[\Z{二重引用符}---“~”] 
+	    ダブルクオートとも言う．左側にあるほうを左ダブルクオート，
+	    右側にあるほうを右ダブルクオートという．
+	    長い引用に使う．
+ \item[\Z{丸括弧}---（~）] \Z{小括弧}，\Z{パーレン}とも言う．
+	    語句の\Z{補足説明}に使う．
+ \item[\Z{波括弧}---｛~｝] \Z{中括弧}とも言う．
+	    コマンドに対して必須引数を渡すのに
+	    使われたり，要素を一つのグループにまとめるために
+	    使う．
+ \item[\Z{角括弧}---［~］] \Z{大括弧}とも言う．
+	    コマンドに対して任意引数を渡すときに使う．
+ \item[\Z{山括弧}---＜~＞] 
+	    この括弧に囲まれた文字列は何か別の文字列に
+	    書き換えられる．例えば，\va{ファイル名}などがあれば，
+	    これは任意の文字列\fl{file.tex}，
+	    \fl{input.foo}，\fl{output.bar}などに置き換えられる．
 \end{description}
-\indindz{������}{��ʸ��}%
-\indindz{������}{��ʸ��}%
-\zindind{��ʸ}{�ΰ�����}%
-\zindind{��ʸ}{�ΰ�����}%
-������\Z{������}�ȸ����Τ��о줷�ޤ���������ʸ�ΰ������
-���󥰥륯������\pp{`~'}�Ǥ��ꡤ��ʸ�ΰ�����Ϥ������\pp{��~��}��
-�ʤ�ޤ�����Ĥ���̤��뤿��˲�ʸ�ѤΤ�Τ�
-\KY{���󥰥륯������}����ʸ�Τ�Τ�\KY{�������}�ȸ���
-���Ȥˤ��ޤ���ʸ��˽ФƤ��������Ȥ������դ�
-���Τɤ���⼨�����Ȥˤʤ�ޤ���
+\indindz{引用符}{欧文の}%
+\indindz{引用符}{和文の}%
+\zindind{欧文}{の引用符}%
+\zindind{和文}{の引用符}%
+ここで\Z{引用符}と言うのが登場しましたが，欧文の引用符は
+シングルクオート\pp{`~'}であり，和文の引用符はかぎ括弧\pp{「~」}と
+なります．二つを区別するために欧文用のものを
+\KY{シングルクオート}，和文のものを\KY{かぎ括弧}と言う
+ことにします．文中に出てくる引用符という言葉は
+そのどちらも示すことになります．
 
 
-\section{{\protect\LaTeX}�˴ؤ��ե��������}
-�����ץ��åȻ��˺�����������ӥե�����ʳ��ˤ�{\LaTeX}�Ǥ�¿��
-�Υե����������¸�ߤ��뤳�Ȥ�и�����Ǥ��礦�����̤˥ե���
-�������\KY{��ĥ��}�ˤ�äƼ�����̤��ޤ���
+\section{{\protect\LaTeX}に関わるファイル形式}
+タイプセット時に作成される中途ファイル以外にも{\LaTeX}では多く
+のファイル形式が存在することを経験するでしょう．一般にファイ
+ル形式は\KY{拡張子}によって種類を識別します．
 
 \begin{Syntax}
-\Va{�ե�����̾}{��ĥ��}
+\Va{ファイル名}{拡張子}
 \end{Syntax}
 
-�嵭�Τ褦�˥ԥꥪ�ɤθ��ʸ���Ƕ��̤���ޤ���
+上記のようにピリオドの後の文字で区別されます．
 
-�ѥå������򥤥󥹥ȡ��뤹��Ȥ��˸��������Τϰʲ����̤�Ǥ���
+パッケージをインストールするときに見かけるものは以下の通りです．
 \begin{namelist}{xxxx}
-%\item[\Exten{dtx}] �ѥå����������줿�ޥ�����ʣ���Υ��饹
-%\Va{���饹1}{cls}��\Va{���饹2}{cls},\ldots\, \Va{���饹n}{cls}��
-%\Va{���饹}{dtx}��ˤޤȤޤäƤ��뤳�Ȥ�¿�����ޤ���
-%\Va{�ޥ���}{sty}��ʣ���ޤȤޤäƤ���Ȥ��⤢�롥
-%\item[\Exten{ins}] �ѥå����������줿�ޥ�����
-%    ���Ф�����Υե����롥\Va{classes}{dtx}��
-%    �Ȥ�����ۤ���Ƥ��롥
-%\item[\Exten{sty}] �����ʵ�ǽ�򤦤ޤ��ޤȤ᤿��Ρ�
-%    \emph{�ޥ���}��\emph{�ޥ����ѥå�����}��\emph{�ѥå�����}��
-%    \emph{��������ե�����}\pp{���ȸŤ�������}�Ȥ������
-%\item[\Exten{cls}] ���Ƥν񼰤���ꤹ��ե����롥
-%    \emph{���饹}��\emph{���饹�ե�����}��\emph{ʸ�񥯥饹�ե�����}��
-%    \emph{�ɥ�����ȥ��饹�ե�����}�Ȥ������
-%\item[\Exten{clo}] ���饹�Υ��ץ����˱���������򵭽Ҥ����ե����롥
-%\item[\Exten{fd}]  �ե���Ȥ�°������������ե����롥�桼�����ռ�����
-%		    �Ȥ����ȤϤʤ���
-\indindz{�ޥ���}{�ѥå����������줿}%
-\item[\Exten{dtx}] �ѥå����������줿�ޥ�����ʣ���Υ��饹
-\Va{���饹1}{cls}��\Va{���饹2}{cls},\ldots\, \Va{���饹n}{cls}��
-\Va{���饹}{dtx}��ˤޤȤޤäƤ��뤳�Ȥ�¿�����ޤ���
-\Va{�ޥ���}{sty}��ʣ���ޤȤޤäƤ���Ȥ��⤢�롥
-\item[\Exten{ins}] �ѥå����������줿�ޥ�����
-    ���Ф�����Υե����롥\Va{classes}{dtx}��
-    �Ȥ�����ۤ���Ƥ��롥
-\item[\Exten{sty}] �����ʵ�ǽ�򤦤ޤ��ޤȤ᤿��Ρ�
-    \KY{�ޥ���}��\KY{�ޥ����ѥå�����}��\KY{�ѥå�����}��
-    \KY{��������ե�����}�Ȥ������
+%\item[\Exten{dtx}] パッケージ化されたマクロ．複数のクラス
+%\Va{クラス1}{cls}，\Va{クラス2}{cls},\ldots\, \Va{クラスn}{cls}が
+%\Va{クラス}{dtx}中にまとまっていることも多い．または
+%\Va{マクロ}{sty}が複数まとまっているときもある．
+%\item[\Exten{ins}] パッケージ化されたマクロを
+%    取り出すためのファイル．\Va{classes}{dtx}と
+%    ともに配布されている．
+%\item[\Exten{sty}] 便利な機能をうまくまとめたもの．
+%    \emph{マクロ}，\emph{マクロパッケージ}，\emph{パッケージ}，
+%    \emph{スタイルファイル}\pp{ちと古い言い方}とも言う．
+%\item[\Exten{cls}] 原稿の書式を決定するファイル．
+%    \emph{クラス}，\emph{クラスファイル}，\emph{文書クラスファイル}，
+%    \emph{ドキュメントクラスファイル}とも言う．
+%\item[\Exten{clo}] クラスのオプションに応じた設定を記述したファイル．
+%\item[\Exten{fd}]  フォントの属性を定義したファイル．ユーザが意識して
+%		    使うことはない．
+\indindz{マクロ}{パッケージ化された}%
+\item[\Exten{dtx}] パッケージ化されたマクロ．複数のクラス
+\Va{クラス1}{cls}，\Va{クラス2}{cls},\ldots\, \Va{クラスn}{cls}が
+\Va{クラス}{dtx}中にまとまっていることも多い．または
+\Va{マクロ}{sty}が複数まとまっているときもある．
+\item[\Exten{ins}] パッケージ化されたマクロを
+    取り出すためのファイル．\Va{classes}{dtx}と
+    ともに配布されている．
+\item[\Exten{sty}] 便利な機能をうまくまとめたもの．
+    \KY{マクロ}，\KY{マクロパッケージ}，\KY{パッケージ}，
+    \KY{スタイルファイル}とも言う．
 \item[\Exten{cls}] 
-\indindz{��}{���Ƥ�}%
-\zindind{����}{�ν�}%
-\zindind{���饹}{�ե�����}%
-\indindz{�ե�����}{ʸ�񥯥饹}%
-\indindz{�ե�����}{�ɥ�����ȥ��饹}%
-  ���Ƥ�\Z{��}����ꤹ��ե����롥
-  \KY{���饹}��\K{���饹�ե�����}��\K{ʸ�񥯥饹�ե�����}��%
-  \zindind{�ɥ�����ȥ��饹}{���ץ����}%
-  \K{�ɥ�����ȥ��饹�ե�����}�Ȥ������
+\indindz{書式}{原稿の}%
+\zindind{原稿}{の書式}%
+\zindind{クラス}{ファイル}%
+\indindz{ファイル}{文書クラス}%
+\indindz{ファイル}{ドキュメントクラス}%
+  原稿の\Z{書式}を決定するファイル．
+  \KY{クラス}，\K{クラスファイル}，\K{文書クラスファイル}，%
+  \zindind{ドキュメントクラス}{オプション}%
+  \K{ドキュメントクラスファイル}とも言う．
 \item[\Exten{clo}] 
-  ���饹�Υ��ץ����˱���������򵭽Ҥ����ե����롥
+  クラスのオプションに応じた設定を記述したファイル．
 \item[\Exten{fd}]  
-  \zindind{����}{��°��}%
-  ���Τ�°������������ե����롥�桼�����ռ����ƻȤ����ȤϤʤ���
+  \zindind{書体}{の属性}%
+  書体の属性を定義したファイル．ユーザが意識して使うことはない．
 \end{namelist}
 
-���Ƥ��������Ȥ��˸��������Τϰʲ����̤�Ǥ���
+原稿を作成するときに見かけるものは以下の通りです．
 \begin{namelist}{xxxx}
 \item[\Exten{tex}] 
-  {\LaTeX}������������դ��븶�ơ�\KY{������}��\KY{�������ե�����}�Ȥ������
+  {\LaTeX}が処理を受け付ける原稿．\KY{ソース}，\KY{ソースファイル}とも言う．
 \item[\Exten{bib}] 
-  ʸ�������ץ������{\BibTeX}�������Ǥ��뻲��ʸ���ե����롥
-  \K{����ʸ���ǡ����١���}�ȸ�����
+  文献成形プログラム{\BibTeX}が処理できる参考文献ファイル．
+  \K{参考文献データベース}と言う．
 \item[\Exten{bst}] 
-  ����ʸ����ɽ������������Ρ�\K{����ʸ����������}�ȸ�����
-  \indindz{��������}{����ʸ��}%
+  参考文献の表示形式を決めるもの．\K{参考文献スタイル}と言う．
+  \indindz{スタイル}{参考文献}%
 \item[\Exten{eps}] 
- Adobe�Ҥ���ȯ�����ڡ������Ҹ���{\PS}�ǽ񤫤줿�ե����롥
- \zindind{����}{�٥��ȥ�}%
- ���ñ��ڡ����Υ٥��ȥ�����ʤɤ˻Ȥ��롥\zindind{�ڡ���}{���Ҹ���}
+ Adobe社が開発したページ記述言語{\PS}で書かれたファイル．
+ \zindind{画像}{ベクトル}%
+ 主に単一ページのベクトル画像などに使われる．\zindind{ページ}{記述言語}
 \item[\Exten{ist}] 
- �����ν񼰤����ե����롥\K{������������}�ȸ�����\indindz{��������}{����}%
+ 索引の書式を決めるファイル．\K{索引スタイル}と言う．\indindz{スタイル}{索引}%
 
 \end{namelist}
 
-���Ƥ򥿥��ץ��åȤ�����˸��������Τϰʲ����̤�Ǥ���
-�������������ӥե�����Ǥ��ꡤ{\LaTeX}�����Ƥ��������뤿
-���ɬ�פʤ�ΤǤ���
+原稿をタイプセットした後に見かけるものは以下の通りです．
+これらは全て中途ファイルであり，{\LaTeX}が原稿を完成させるた
+めに必要なものです．
 \begin{namelist}{xxxx}
-\item[\Exten{log}] {\LaTeX}�����Ƿ�̤ξܺپ���
-		    \KY{�����ե�����}�ȸ�����
-\item[\Exten{aux}] ��߻��Ȥʤɤξ��󤬽񤫤줿�ե����롥
-		    1���ܰʹߤν�����ɬ�פȤ���롥
-\item[\Exten{dvi}] ���Ƥ�{\LaTeX}�ǥ����ץ��åȤ�����˺��������
-		    ������̤˸¤�ʤ��ᤤ�ե����롥���Υե������
-		    �ץ�ӥ塼�����ꡤ�ޤ���¾��{�ǥХ����ɥ饤��}%
-		    �ˤ�ä��̤η������Ѵ��Ǥ��롥
-\item[\Exten{toc}] \zindind{�ܼ�}{�Ѥ����ӥե�����}
-    \yo{�ܼ�}����Ϥ��뤿����ܼ����󤬽񤭽Ф��줿�ե����롥
+\item[\Exten{log}] {\LaTeX}の組版結果の詳細情報．
+		    \KY{ログファイル}と言う．
+\item[\Exten{aux}] 相互参照などの情報が書かれたファイル．
+		    1度目以降の処理に必要とされる．
+\item[\Exten{dvi}] 原稿を{\LaTeX}でタイプセットした後に作成される
+		    印刷結果に限りなく近いファイル．このファイルを
+		    プレビューしたり，または他の{デバイスドライバ}%
+		    によって別の形式に変換できる．
+\item[\Exten{toc}] \zindind{目次}{用の中途ファイル}
+    \yo{目次}を出力するための目次情報が書き出されたファイル．
 \item[\Exten{lof}] 
-    \yo{���ܼ�}����Ϥ��뤿��ο��ܼ����󤬽񤭽Ф��줿�ե����롥
+    \yo{図目次}を出力するための図目次情報が書き出されたファイル．
 \item[\Exten{lot}] 
-    \yo{ɽ�ܼ�}����Ϥ��뤿���ɽ�ܼ����󤬽񤭽Ф��줿�ե����롥
-\item[\Exten{bbl}] {\BibTeX}�ˤ�ä��¤��ؤ��򤷤����
-    ����ʸ���ꥹ�ȡ�\Env{thebibliography}�Ķ����Ѥ��Ƶ��Ҥ���Ƥ��롥
-\item[\Exten{blg}] {\BibTeX}�μ¹Է�̤����Ϥ��������ե����롥
-\item[\Exten{idx}] �¤��ؤ��������κ����θ�礬�񤭽Ф��줿�ե����롥
-    \Prog{MakeIndex}��\Prog{mendex}�ʤɤ�
-    �ץ��������¤��ؤ��򤹤롥
-\item[\Exten{ind}] \prog{makeindex}�ʤɤˤ�ä�
-    �¤��ؤ���줿�����ե����롥ɸ��Ū�ˤ�\Env{theindex}
-    �Ķ����Ѥ��Ƶ��Ҥ���Ƥ��롥
-\item[\Exten{ilg}] \prog{makeindex}�ʤɤ�¹Ԥ����Ȥ��ν�����̤�
-   ���Ϥ��������ե����롥
+    \yo{表目次}を出力するための表目次情報が書き出されたファイル．
+\item[\Exten{bbl}] {\BibTeX}によって並べ替えをした後の
+    参考文献リスト．\Env{thebibliography}環境を用いて記述されている．
+\item[\Exten{blg}] {\BibTeX}の実行結果が出力されるログファイル．
+\item[\Exten{idx}] 並べ替えられる前の索引の語句が書き出されたファイル．
+    \Prog{MakeIndex}，\Prog{mendex}などの
+    プログラムで並べ替えをする．
+\item[\Exten{ind}] \prog{makeindex}などによって
+    並べ替えられた索引ファイル．標準的には\Env{theindex}
+    環境を用いて記述されている．
+\item[\Exten{ilg}] \prog{makeindex}などを実行したときの処理結果が
+   出力されるログファイル．
 \end{namelist}
 
-����¾���������˴ؤ���ĥ�ҤȤ��ơ���˰ʲ��Τ�Τ�����ޤ���
-\indindz{����}{�ե륫�顼}%
-\indindz{����}{̵����}%
-\indindz{����}{�ĵհ���}%
-\indindz{�ӥåȥޥåײ���}{�ե륫�顼}%
-\indindz{�ӥåȥޥåײ���}{̵����}%
-\indindz{�ӥåȥޥåײ���}{�ĵհ���}%
+その他画像形式に関わる拡張子として，主に以下のものがあります．
+\indindz{画像}{フルカラー}%
+\indindz{画像}{無圧縮}%
+\indindz{画像}{可逆圧縮}%
+\indindz{ビットマップ画像}{フルカラー}%
+\indindz{ビットマップ画像}{無圧縮}%
+\indindz{ビットマップ画像}{可逆圧縮}%
 \begin{namelist}{jpeg}
 \item[\Exten{jpg}] 
-  �̿��ʤɤΥե륫�顼��Ŭ�����ӥåȥޥåײ�����
+  写真などのフルカラーに適したビットマップ画像．
 \item[\Exten{bmp}] 
-  Windows ɸ���̵���̥ӥåȥޥåײ�����
+  Windows 標準の無圧縮ビットマップ画像．
 \item[\Exten{png}]
-  �ĵհ��̤�\prog{\Dvipdfm}��ɸ����б����Ƥ���ӥåȥޥåײ�����
+  可逆圧縮で\prog{\Dvipdfm}が標準で対応しているビットマップ画像．
 \item[\Exten{bb}]
-  \LaTeX �������ΥХ���ǥ��󥰥ܥå�����������뤿���ɬ�פȤ���
-  �ե����롥\Prog{ebb}��\Prog{CreateBB}�Ǻ����Ǥ��롥
+  \LaTeX が画像のバウンディングボックス情報を得るために必要とする
+  ファイル．\Prog{ebb}や\Prog{CreateBB}で作成できる．
 \item[\Exten{mp}] 
-  \Prog[MetaPost]{\MP}�����褵�줿\Z{�٥��ȥ����}��
+  \Prog[MetaPost]{\MP}で描画された\Z{ベクトル画像}．
 \end{namelist}
 
 
-\section{���ޥ�ɤδ���}
-{\LaTeX}�Ǥ������ʥ��ޥ�ɤ����餫�����Ѱդ���Ƥ��ޤ���
-������ɤΤ褦���Ѥ��뤫���ޤ�ɬ�פʵ�ǽ���ʤ��Ȥ���
-�ɤ�������ɤ��Τ����������ޤ���
+\section{コマンドの基本}
+{\LaTeX}では便利なコマンドがあらかじめ用意されています．
+それらをどのように用いるか，また必要な機能がないときは
+どうすれば良いのかを説明します．
 
-\subsection{���Ƥ���Ƭ�ǤΥ��ޥ��}
-\zindind{����}{�Υץꥢ��֥�}%
+\subsection{原稿の先頭でのコマンド}
+\zindind{原稿}{のプリアンブル}%
 
-�������֤���Ĺ���ʤ�ޤ�����{\LaTeX}�θ��Ƥι�¤��⤦����
-���Ƥ����ޤ��礦��
+少し前置きが長くなりましたが{\LaTeX}の原稿の構造をもう一度
+見ておきましょう．
 \begin{Syntax}
-\cmd{documentclass}\opa{���ץ����,\,$\ldots$}%
-	\pa{���饹}\opa{��꡼��}\\
-\va{������ʬ} (�ץꥢ��֥륳�ޥ��)\\
+\cmd{documentclass}\opa{オプション,\,$\ldots$}%
+	\pa{クラス}\opa{リリース}\\
+\va{前書き部分} (プリアンブルコマンド)\\
 \verb|\begin{document}|\\
-\va{��ʸ} (�ܥǥ�)\\
+\va{本文} (ボディ)\\
 \verb|\end{document}|
 \end{Syntax}
-\zindind{����}{����Ƭ}%%
-���ơ����Ƥ���Ƭ��ʬ��\cmd{documentclass}���Ϥޤ�����
-���˥���륳�ޥ�ɤˤ�\Env{filecontents}�Ķ����Ȥ��ޤ���
+\zindind{原稿}{の先頭}%%
+さて，原稿の先頭部分，\cmd{documentclass}が始まる前の
+イニシャルコマンドには\Env{filecontents}環境が使えます．
 \begin{Syntax}
-\verb|\begin{filecontents}|\pa{�ե�����̾}\\
-\va{����}\\
+\verb|\begin{filecontents}|\pa{ファイル名}\\
+\va{内容}\\
 \verb|\end{filecontents}|
 \end{Syntax}
-����\env{filecontents}�Ķ������ĵ�ǽ�Ǥ��������ꤷ��
-\va{�ե�����̾}��\va{����}��񤭽Ф��Ƥ���ޤ���
-�㤨�и��Ƥ��ĤΥե�����Ȥ��Ƥ������ۤǤ��ʤ�����
-EPS�����ʤɤ�Ʊ���˴ޤ��ʤ�С�������ʬ��EPS������
-�������򵭽Ҥ��ޤ������������δĶ��Ͻ񤭽Ф��ե�����
-����Ƭ�˥����Ȥ��������ޤ��Τǡ��������ꥹ��\qu{\str*}��
-�դ���ȼ�ưŪ���ղä����;ʬ�ʥ����Ȥ�����ޤ���
+この\env{filecontents}環境が持つ機能ですが，指定した
+\va{ファイル名}に\va{内容}を書き出してくれます．
+例えば原稿を一つのファイルとしてしか配布できない場合に
+EPS画像などを同時に含めるならば，この部分にEPS画像の
+ソースを記述します．ただしこの環境は書き出すファイル
+の先頭にコメントを挿入しますので，アスタリスク\qu{\str*}を
+付けると自動的に付加される余分なコメントが入りません．
 
 \begin{InTeX}
-\begin{filecontents*}{<�ե�����̾>}
-%!PS-Adobe-2.0�ʤ�Ȥ�����Ȥ�...
+\begin{filecontents*}{<ファイル名>}
+%!PS-Adobe-2.0なんとかかんとか...
 \end{filecontents*}
 \end{InTeX}
 
 
-\subsection{�ץꥢ��֥�ǤΥ��ޥ��}
-���Ƥ���Ƭ�ˤ�\env{filecontents}�Ķ����Ȥ��뤳�Ȥ�ʬ����ޤ��������˽�
-�٤����ޥ�ɤ� \C{documentclass} ̿��Ǥ���
+\subsection{プリアンブルでのコマンド}
+原稿の先頭には\env{filecontents}環境が使えることは分かりました．次に書く
+べきコマンドは \C{documentclass} 命令です．
 \begin{Syntax}
-\cmd{documentclass}\opa{���ץ����,\,$\ldots$}\pa{���饹̾}\opa{��꡼��}
+\cmd{documentclass}\opa{オプション,\,$\ldots$}\pa{クラス名}\opa{リリース}
 \end{Syntax}
-����̿���\yo{���줫��ʸ��ǻȤ�̿�����������񤭤�
-�񤭤ޤ�}�Ȥ�����̣�礤����äƤ��ꡤ
-����̿���񤤤���ϸ��Ƥ�\Z{������ʬ}
-\pp{\Z{�ץꥢ��֥�}}�Ȥ��Ʋ�ᤵ��ޤ���
+この命令は\yo{これから文書で使う命令の定義や前書きを
+書きます}という意味合いを持っており，
+この命令を書いた後は原稿の\Z{前書き部分}
+\pp{\Z{プリアンブル}}として解釈されます．
 
-\va{���饹̾}�ˤ�\secref{01pregame:sec:classes}��
-�Ҳ𤹤��Τ��Ȥ��ޤ���\va{���ץ����}�ˤϤ��줾���
-���饹���Ѱդ��Ƥ���Ǥ�հ������Ϥ����Ȥ��Ǥ��ޤ���
-���Υ��ץ����Τ��Ȥ��ä�\K{ʸ�񥯥饹���ץ����}�Ȥ�%
-\zindind{�ɥ�����ȥ��饹}{���ץ����}%
-\zindind{ʸ�񥯥饹}{���ץ����}%
-\K{�ɥ�����ȥ��饹���ץ����}�ȸ����ޤ���
-\va{��꡼��}�ˤϼ�ʬ�λȤäƤ��륯�饹�ե����뤬
-�������ۤ��줿�Τ���񤭤ޤ���
+\va{クラス名}には\secref{01pregame:sec:classes}で
+紹介するものが使えます．\va{オプション}にはそれぞれの
+クラスが用意している任意引数を渡すことができます．
+このオプションのことを特に\K{文書クラスオプション}とか%
+\zindind{ドキュメントクラス}{オプション}%
+\zindind{文書クラス}{オプション}%
+\K{ドキュメントクラスオプション}と言います．
+\va{リリース}には自分の使っているクラスファイルが
+いつ配布されたのかを書きます．
 
-\va{��꡼��}�ˤϥ��饹�����ۤ��줿���դ�\va{YYYY/MM/DD}
-�Ȥ����񼰤ǵ��ҤǤ��ޤ����㤨�С�2003ǯ12��31���˸������줿
-���ܸ�Υ��饹\Cls{jarticle}�ʤ�Ф�����Ͱʲ��Τ褦�ˤʤ�ޤ���
+\va{リリース}にはクラスの配布された日付を\va{YYYY/MM/DD}
+という書式で記述できます．例えば，2003年12月31日に公開された
+日本語のクラス\Cls{jarticle}ならばおおむね以下のようになります．
 
 \begin{InTeX}
 \documentclass[11pt,a4j]{jarticle}[2003/12/31]
 \end{InTeX}
 
-�⤷�⡤���饹�ե����뤬2003ǯ12��31�������Τ�Τ�
-�׵ᤵ��Ƥ���С���������Ť���С�
-{\LaTeX}�ϥ����ץ��åȻ��˼��Τ褦��\Z{�ٹ�}\pp{\Z{warning}}��Ф��ޤ���
+もしも，クラスファイルが2003年12月31日以前のもので
+要求されているバージョンよりも古ければ，
+{\LaTeX}はタイプセット時に次のような\Z{警告}\pp{\Z{warning}}を出します．
 
 \index{You have requested, on input line n@\texttt{You have requested, on input line n}}%
-\index{�ٹ�!You have requested, on input line n@\texttt{You have requested, on input line n}}%
+\index{警告!You have requested, on input line n@\texttt{You have requested, on input line n}}%
 \begin{OutTerm}
 LaTeX Warning: You have requested, on input line 1, version
                `2003/12/31' of document class jarticle,
@@ -1282,68 +1282,68 @@ LaTeX Warning: You have requested, on input line 1, version
                is available.
 \end{OutTerm}
 
-¾�ˤ�\secref{01pregame:sec:stdmacro}�ǾҲ𤷤Ƥ���褦��
-�ѥå�������Ȥ����ϥץꥢ��֥���ʬ�� \Cmd{usepackage} ��
-�Ȥ��ޤ���
+他にも\secref{01pregame:sec:stdmacro}で紹介しているような
+パッケージを使う場合はプリアンブル部分に \Cmd{usepackage} を
+使います．
 \begin{Syntax}
-\cmd{usepackage}\opa{���ץ����,\,$\ldots$}%
- \pa{�ѥå�����̾}\opa{��꡼��}
+\cmd{usepackage}\opa{オプション,\,$\ldots$}%
+ \pa{パッケージ名}\opa{リリース}
 \end{Syntax}
-����ϥץꥢ��֥�ΤߤǤ����Ȥ��ޤ���
-\cmd{usepackage}̿��� \cmd{documentclass}̿���Ʊ���褦�ˡ�
-���Υѥå��������󶡤��륪�ץ�������ꤷ���ꡤ��꡼���ˤ�
-���Υѥå������ΥС����������Ǥ��ޤ���
-\zindind{�ǥХ���}{�ɥ饤��}%
-�㤨�С������ե�����ʤɤ�{\LaTeX}�ǰ��������Ȼפ���
-�ǥХ����ɥ饤�ФȤ���\prog{\Dvipdfmx}��Ȥ�����
-���Τ褦��\str{graphicx}�ѥå�������Ȥ����Ȥ�\K{�ץꥢ��֥��}
-������ޤ���
+これはプリアンブルのみでしか使えません．
+\cmd{usepackage}命令は \cmd{documentclass}命令と同じように，
+そのパッケージが提供するオプションを指定したり，リリースには
+そのパッケージのバージョンを指定できます．
+\zindind{デバイス}{ドライバ}%
+例えば，画像ファイルなどを{\LaTeX}で扱いたいと思い，
+デバイスドライバとして\prog{\Dvipdfmx}を使う場合は
+次のように\str{graphicx}パッケージを使うことを\K{プリアンブルで}
+宣言します．
 
 \begin{InTeX}
 \usepackage[dvipdfmx]{graphicx}[2001/01/01]
 \end{InTeX}
 
-Ʊ���ѥå�������2�٤�3�ٰʾ��ɤ߹��⤦�Ȥ��Ƥ⡤
-1���ɤ߹��ޤ�Ƥ���ʤ�����ɤ߹��⤦�Ȥ��ޤ���
-�ѥå��������Ϥ����ץ����\pp{��꡼�������}���ä�
-\zindind{�ѥå�����}{���ץ����}\K{�ѥå��������ץ����}
-�ȸƤӤޤ���
+同じパッケージを2度や3度以上読み込もうとしても，
+1度読み込まれているなら再度読み込もうとしません．
+パッケージに渡すオプション\pp{リリースを除く}を特に
+\zindind{パッケージ}{オプション}\K{パッケージオプション}
+と呼びます．
 
-ʸ�񥯥饹���ץ�����ѥå��������ץ����Τ�����ˤ��Ƥ⡤
-�����Ƥ�\yo{̿��}��\yo{ɬ�ܰ���}�Τ�������\va{���ץ����}\pp{Ǥ�հ���}
-��\K{ʣ�����Ϥ����Ȥ��Ǥ��ޤ�}��
+文書クラスオプションやパッケージオプションのいずれにしても，
+たいてい\yo{命令}と\yo{必須引数}のあいだの\va{オプション}\pp{任意引数}
+は\K{複数個渡すことができます}．
 
 \begin{InTeX}
 \documentclass[10pt,a4paper,twocolumn]{article}
 \end{InTeX}
 
-�㤨��\option{10pt}��\option{a4paper}��\option{twocolumn}��
-�������ĤΥ��ץ�����\Z{�����}\qu{\str,}����ڤ�Ȥ��ƽ񤱤��ɤ��ΤǤ���
+例えば\option{10pt}，\option{a4paper}，\option{twocolumn}と
+いう三つのオプションは\Z{コンマ}\qu{\str,}を区切りとして書けば良いのです．
 
-Ʊ����ʣ���Υѥå�������Ȥ����Ȥ�����Ǥ��ޤ���
-\sty{graphicx}��\sty{amsmath}��\sty{makeidx}�ʤɤ�
-���Τ褦������Ǥ��ޤ�������������ȥѥå��������ץ����򤽤줾��Υѥ�
-���������Ф����Ϥ����ȤϤǤ��ޤ���
+同時に複数のパッケージを使うことも宣言できます．
+\sty{graphicx}，\sty{amsmath}，\sty{makeidx}などを
+次のように宣言できますが，そうするとパッケージオプションをそれぞれのパッ
+ケージに対して渡すことはできません．
 
 \begin{InTeX}
 \usepackage{graphicx,amsmath,makeidx}
 \end{InTeX}
 
-����Ū�ʥ������ե�����ι����ϼ��Τ褦�ˤʤ�ޤ���
+基本的なソースファイルの構成は次のようになります．
 
 \begin{InTeX}
 \documentclass[a4j]{jarticle} 
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx,usenames]{color}
 \begin{document}
-������ʸ�Ϥ򵭽Ҥ��ޤ���
+ここに文章を記述します．
 \end{document}
 \end{InTeX}
 
 \begin{Trick}
- ��ҤΥǥХ����ɥ饤�Фλ���˴ؤ��Ƥϡ��嵭�Τ褦��
- ���ҤǤϤʤ����ɥ�����ȥ��饹���ץ����ˡ����Ѥ���
- �ǥХ����ɥ饤�Ф��ɲä���Τ������Ǥ���
+ 後述のデバイスドライバの指定に関しては，上記のような
+ 記述ではなく，ドキュメントクラスオプションに，使用する
+ デバイスドライバを追加するのが安全です．
 
 \begin{InText}
 \documentclass[dvipdfmx,a4j]{jarticle} 
@@ -1351,24 +1351,24 @@ LaTeX Warning: You have requested, on input line 1, version
 \usepackage[usenames]{color}
 \end{InText}
 
-����ˤ��ɥ�����ȥ��饹���ץ����\KY{�������Х륪�ץ����}
-�Ȥ��Ƥε�ǽ��̤�����\cmd{usepackage}���ɤ߹��ޤ��ޥ����ѥå�����
-���Ƥ��Ϥ������ˤʤ�ޤ���
+これによりドキュメントクラスオプションが\KY{グローバルオプション}
+としての機能を果たし，\cmd{usepackage}で読み込まれるマクロパッケージ
+全てに渡される事になります．
 \end{Trick}
 
 
-{\LaTeX}������¹Ԥ������ƤΥץꥢ��֥�˰ʲ��򵭽Ҥ��ޤ���
+{\LaTeX}処理を実行した原稿のプリアンブルに以下を記述します．
 
 \begin{Syntax}
 \cmd{listfiles}
 \end{Syntax}
 
-\Cmd{listfiles}̿��򵭽Ҥ���С���ʬ���������Ƥ���
-���Ƥ˲��Υե����뤬���Ѥ���Ƥ���Τ���ü����
-\Va{file}{log}�˽񤭽Ф��ޤ���
+\Cmd{listfiles}命令を記述すれば，自分が処理している
+原稿に何のファイルが使用されているのかを端末と
+\Va{file}{log}に書き出します．
 
 \begin{Prob}
-�ºݤ˰ʲ��Υե�����\Fl{listfile.tex}������������ץ��åȤ��Ƥ���������
+実際に以下のファイル\Fl{listfile.tex}を作成，タイプセットしてください．
 
 \begin{InTeX}
 \documentclass{jbook}
@@ -1378,7 +1378,7 @@ LaTeX Warning: You have requested, on input line 1, version
 \end{document}
 \end{InTeX}
 
-%\prog{platex}�ǥ����ץ��åȤ����ʤ�м��Τ褦��ɽ�����Ф�Ǥ��礦��
+%\prog{platex}でタイプセットしたならば次のような表示が出るでしょう．
 
 %\begin{OutTerm}
 %This is pTeX  Version 3.141592-p3.1.2 (sjis)(Web2C 7.5.2) 
@@ -1391,7 +1391,7 @@ LaTeX Warning: You have requested, on input line 1, version
 %   jbook.cls    2001/10/04 v1.3 Standard pLaTeX class
 %   jbk10.clo    2001/10/04 v1.3 Standard pLaTeX file
 % ***********
-%Output written on listfile.dvi (1 page��216 bytes).
+%Output written on listfile.dvi (1 page，216 bytes).
 %Transcript written on listfile.log.
 %\end{OutTerm}
 \begin{comment}
@@ -1422,77 +1422,77 @@ Transcript written on filetest.log.
 \end{OutTerm}
 \end{comment} 
 
-���Ϸ�̤���ɤΤ褦�ʻ���ʬ����Ǥ��礦����
-�����Ǿ�������˻פäƤ��������������Ȥϡ�\yo{���Ƥˤ�\Cls{jbook}��Ȥ�
-���Ȥ���������Ƥ��ʤ��Τ˲����̤Υե����������ɤ߹��ޤ�Ƥ���}��
-�������ȤǤ���������Ǥ�\Fl{pldefs.ltx}��Ϥ���Ȥ��ơ�\Fl{kinsoku.tex}
-��\Fl{jsize10.clo}���Υե����뤬�ɤ߹��ޤ�Ƥ��ޤ���
+出力結果からどのような事が分かるでしょうか．
+ここで少し疑問に思っていただきたいことは，\yo{原稿には\Cls{jbook}を使う
+ことしか宣言していないのに何か別のファイルも一緒に読み込まれている}と
+いうことです．この例では\Fl{pldefs.ltx}をはじめとして，\Fl{kinsoku.tex}
+や\Fl{jsize10.clo}等のファイルが読み込まれています．
 \end{Prob}
 
 
-\section{��ɮ�Ķ��ˤ��������}\seclab{basic:lakulaku}
-\zindind{����}{�����λٱ�}%
+\section{執筆環境における基本}\seclab{basic:lakulaku}
+\zindind{原稿}{作成の支援}%
 
-\TeX �ϥƥ����ȥ��ǥ��å��ˤ�äƸ��Ƥ�ɮ����Ȥ�����ˡ���뤿�ᡤ����
-���μ�ɮ�Ķ���ɬ�פȤ��ޤ��������μ�ɮ�Ķ�����ˤϺ�Ȥδ�ά������Ū��
-������Τ��¿������ޤ���
-\TeX �ˤ���������Ū�� (\Z{obsolete}) \Z{��ɮ�Ķ�}�ˤϼ��Τ褦�ʤ�Τ�
-�󤲤��ޤ���
+\TeX はテキストエディッタによって原稿を執筆するという方法を取るため，何ら
+かの執筆環境を必要とします．それらの執筆環境の中には作業の簡略化を目的と
+したものも数多くあります．
+\TeX における伝統的な (\Z{obsolete}) \Z{執筆環境}には次のようなものが
+挙げられます．
 \begin{description}
  \item[\unixos] 
- \TeX �Ȥ��μ��դΥץ���������Ѥ��褦�Ȼפ��С�\unixos
- ��Ȥ��ȡʿͤˤ�äƤϡ˲�Ŭ�ʼ�ɮ�Ķ�����������Ǥ��ޤ���\Prog{Vine Linux}���ä� \TeX ����
- �����ܸ�Ķ������äƤ���Ȼפ��ޤ�\footnote\webVineLinux ��
+ \TeX とその周辺のプログラムを活用しようと思えば，\unixos
+ を使うと（人によっては）快適な執筆環境を得る事ができます．\Prog{Vine Linux}は特に \TeX 周辺
+ の日本語環境が整っていると思われます\footnote\webVineLinux ．
  \item[\Prog{Emacs}] 
- \LaTeX �θ��ƤȤʤ륽�����ե�������Խ�����������Ω�ĥƥ����ȥ��ǥ��å��Ǥ���
+ \LaTeX の原稿となるソースファイルを編集する時に役に立つテキストエディッタです．
  \item[{\Prog[yatex]\YaTeX}]
- �嵭Emacs���ư���\Hito{����}{ͺ��}\footnote\webYaTeX �ˤ�� \LaTeX
- ��ɮ�ٱ祷���ƥ�Ǥ���
+ 上記Emacs上で動作する\Hito{広瀬}{雄二}\footnote\webYaTeX による \LaTeX
+ 執筆支援システムです．
  \item[\Prog{Tgif}] 
- \zindind{����}{�Խ�}%
- \unixos �ǹ����Ȥ��Ƥ���٥����������Խ��ץ������Ǥ���
+ \zindind{画像}{編集}%
+ \unixos で広く使われているベクター画像編集プログラムです．
   \item[\Prog{Gnuplot}] 
- \unixos �ǹ����Ȥ��Ƥ��륰��դ����褷���ꡤ�ǡ�����ץ��åȤ��뤿��
- �Υץ������Ǥ���
+ \unixos で広く使われているグラフを描画したり，データをプロットするため
+ のプログラムです．
  \item[\Prog{Make}]
-  \zindind{����}{�κƥ���ѥ���}%
-  ���Ƥκƥ���ѥ����ٱ礹�뤿��Υץ������Ǥ���\Fl{Makefile}�Ȥ�
-  �����̤ʥե�������Ѱդ�����ǡ��ƥ���ѥ���ˤ������֤�ڸ��������
-  �ʤ�ޤ���
+  \zindind{原稿}{の再コンパイル}%
+  原稿の再コンパイルを支援するためのプログラムです．\Fl{Makefile}とい
+  う特別なファイルを用意する事で，再コンパイルにおける手間を軽減する事に
+  なります．
 \end{description}
 
-�Ķ��˰�¸���ƤϤ����ΤΡ��ʲ��˵󤲤�褦�� \LaTeX �Ǥ��ѻ��ʺ�Ȥ��
-���Ǥ���ͭ�פʸ��Ƽ�ɮ�ٱ�Ķ�����¿��¸�ߤ��ޤ���
+環境に依存してはいるものの，以下に挙げるように \LaTeX での煩雑な作業を軽
+減できる有益な原稿執筆支援環境が数多く存在します．
 \begin{description}
-\zindind{Windows}{�μ�ɮ�ٱ�Ķ�}%
+\zindind{Windows}{の執筆支援環境}%
 % \item[\Prog{WinShell} (Windows)]
-% \Person{Ingo H. de}{Boer}��ˤ�����缹ɮ�ٱ�Ķ��Ǥ�\footnote
-% \webWinShell �����ޥ�ɥ饤�󤫤�
-% ���ѻ������ʤ��˥����ץ��å������Ǥ���褦�ˤʤ�ޤ���
- \item[{\Prog[EasyTeX]{Easy\TeX}}] \Hito{����}{��}�ˤ��Windows�Ѥμ�
- ɮ�ٱ�Ķ��Ǥ�\footnote\webEasyTeX ��
- \LaTeX �˴���ʤ�������Easy\TeX ��Ȥ��Τ�˾�ޤ����Ǥ��礦��
- Ƴ����ˡ�������ˡ�˴ؤ��Ƥ�\Hito{��ͧ}{����}�ˤ�����%
- \footnote{\url{http://www.klavis.info/etexinst.html}}��
+% \Person{Ingo H. de}{Boer}らによる統合執筆支援環境です\footnote
+% \webWinShell ．コマンドラインから
+% の煩雑な操作なしにタイプセット等ができるようになります．
+ \item[{\Prog[EasyTeX]{Easy\TeX}}] \Hito{中川}{仁}によるWindows用の執
+ 筆支援環境です\footnote\webEasyTeX ．
+ \LaTeX に慣れないうちはEasy\TeX を使うのが望ましいでしょう．
+ 導入方法や操作方法に関しては\Hito{大友}{康寛}による解説%
+ \footnote{\url{http://www.klavis.info/etexinst.html}}や
  \TeX~Wiki\footnote{\url{http://cise.edu.mie-u.ac.jp/~okumura/texwiki/?EasyTeX}}%
- ���򻲾Ȥ��Ƥ���������
+ 等を参照してください．
 
 
-\zindind{Mac OS X}{�μ�ɮ�ٱ�Ķ�}%
+\zindind{Mac OS X}{の執筆支援環境}%
  \item[{\Prog[TeXShop]{\TeX Shop}}] 
-  Mac~OS~X �ǻ��ѤǤ���\Person{Richard}{Koch}��ˤ�뼹ɮ�ٱ�Ķ���
-  ��\footnote{\webTeXShop}��PDF �ǤΥץ�ӥ塼����ǽ�ǥǥ����ץ쥤�ˤ���
-  ��ɽ�������줤�Ǥ���
+  Mac~OS~X で使用できる\Person{Richard}{Koch}らによる執筆支援環境で
+  す\footnote{\webTeXShop}．PDF でのプレビューが可能でディスプレイにおけ
+  る表示がきれいです．
 \end{description}
 
-����Ū�˥ե꡼�������ǺѤޤ������Τǡ��嵭�Τ褦�������ˤʤ�ͤ�
-¿�����Ǥ��礦��Easy\TeX �� \TeX Shop �Ǥϥ��ޥ�ɤ����Ϥ��䴰
-�����ꡤ�ץ������μ¹������ñ�ˤǤ���Ķ�����������Ƥ��ޤ���
-�ޤ��ǽ�Ϥ��Τ褦�ʥץ�������Ȥä���ɮ��������٤⾯�ʤ��Ȼפ��ޤ���
+基本的にフリーウェアで済ませたいので，上記のような選択肢になる人も
+多い事でしょう．Easy\TeX や \TeX Shop ではコマンドの入力を補完
+したり，プログラムの実行等も簡単にできる環境が整備されています．
+まず最初はこのようなプログラムを使った執筆の方が負荷も少ないと思われます．
 
-������󡤥��������������������ݡ��Ȥ⤢��ޤ������С�����󥢥åפ�μ�
-����ʬ������Ȼפ��ޤ���������ˤ��Ƥ⤽�οͤˤȤä�Ŭ�ڤ��Ȼפ���ġ�
-���¿���ʤ�Ȥ�ۤʤ�Ȼפ��ޤ��Τǡ������Ĥ����Ѥ��ƤߤƤ���������
+もちろん，シェアウェアの方がサポートもありますし，バージョンアップも確実
+な部分があると思います．いずれにしてもその人にとって適切だと思われるツー
+ルは多少なりとも異なると思われますので，いくつか試用してみてください．
 
-\input{05output}%     ���Ϸ���
+\input{05output}%     出力形式
 

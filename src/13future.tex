@@ -1,81 +1,81 @@
 %#!platex jou.tex
-\chapter{�Ƕ��ư��}\applab{future}
+\chapter{最近の動向}\applab{future}
 
 % Many thanks to *crazy* TeXnicians and TeXperts.
 \begin{abstract}
- \TeX ��������Ǯ��Ū���������ơ��β��ɤ並��򤵤�Ƥ���Τǡ�������
- �⤷�Ƥ��ޤ��������γ�ȯ��ȯŸ��ƨ���Ƥ���ȡ����ä��������ʥץ������
- ��ѥå���������������Ƥ��ʤ����ä����ʤ����ˤʤ꤫�ͤޤ��󡥤Ǥ����顤
- ���Υڡ����Ǥϼ��\genzai  \TeX ���դ�ȯŸ���Ƥ��������ʥġ����ѥ�
- ��������Ҳ𤷤ޤ���
+ \TeX の世界も熱狂的な方々が各々の改良や研究をされているので，日々進
+ 歩しています．それらの開発・発展を見逃していると，せっかく便利なプログラム
+ やパッケージが公開されていながらもったいない事になりかねません．ですから，
+ このページでは主に\genzai  \TeX 周辺で発展している便利なツールやパッ
+ ケージを紹介します．
 \end{abstract}
 
 
-\section{PDF ��\TeX}
+\section{PDF と\TeX}
 
-\TeX �Ȥ����Τ� \Person{Donald}{Knuth} �Ȥ���\Z{�׻����ʳؼ�}������ǯ����
-�˳�ȯ�����ץ������Ǥ��Τǡ���ʬ����ˤ�����ʤ���ʬ������Ȼפ��ޤ���
-������ \TeX ����ɤ��� \Prog[eTeX]{\eTeX} �ʤ��Τ���ȯ����Ƥ��ޤ���
-\TeX �Υ쥸�����������䤷���ꡤ�����ȿ��������ޥ�ɤ��ɲä��Ƥ��������
-���ʤΤǤ�����\genzai ���ܸ첽����Ƥ��ޤ���\footnote{�����Ĥ��Υ��ץ���
-�������ܸ�򰷤���ߤϤ��Ǥˤ���ޤ����������ʳ��ˤޤ�ã���Ƥ��ʤ��Τ�����
-�Ǥ���}��
+\TeX というのは \Person{Donald}{Knuth} という\Z{計算機科学者}が何十年も前
+に開発したプログラムですので，幾分時代にそぐわない部分があると思います．
+そこで \TeX を改良して \Prog[eTeX]{\eTeX} なるものが開発されています．
+\TeX のレジスタ数を増やしたり，色々と新しいコマンドを追加していたりと便
+利なのですが，\genzai 日本語化されていません\footnote{いくつかのアプロー
+チで日本語を扱う試みはすでにありますが，実用段階にまで達していないのが現状
+です．}．
 
-% H\`an Th\'{\^e} Th\`anh �ʥϥ󡦥���������ˡ��٥ȥʥ�� TeXnician
+% H\`an Th\'{\^e} Th\`anh （ハン・タ・タイン）．ベトナムの TeXnician
 %\url{http://www.tug.org/tug2003/bulletin/souvenirs/photos/TUG2003-Day4-WednesdayJuly23/TUG2003-Day4-WednesdayJuly23-Images/11.jpg}
-����� \TeX ����ľ�� PDF �ե����������������Ȥ����Τ���˾�Ȥ��Ƥ���Τ�
-�������ºݤ� \Person{H\`an Th\'{\^e}}{Th\`anh}��ˤ�� \Prog[PDFTeX]{\PDFTeX} ��
-\Prog[PDFlatex]{\PDFLaTeX} �Ȥ����ץ�����ब¸�ߤ��ޤ�������ϥե����
-��ȥꥯ���ȼ¥ե���ȡʤޤ��ϲ��ۥե���ȡˤ�ξ���˥�������������ǰ쵤
-�� PDF ���������Ȥ�����ΤǤ���\genzai ���ܸ첽����Ƥ��ޤ���
+さらに \TeX から直接 PDF ファイルを作成したいというのが希望としてあるので
+すが，実際に \Person{H\`an Th\'{\^e}}{Th\`anh}らによる \Prog[PDFTeX]{\PDFTeX} や
+\Prog[PDFlatex]{\PDFLaTeX} というプログラムが存在します．これはフォント
+メトリクスと実フォント（または仮想フォント）の両方にアクセスする事で一気
+に PDF を作成するというものです．\genzai 日本語化されていません．
 
 \index{LaTeX 3@\LaTeX\,3}%
-����� \eTeX �� \PDFTeX ��ޡ������� \Prog[PDFeTeX]{\PDFeTeX} �Ȥ����Τ�
-���ޤ�Ƥ��ޤ���������� \Prog[PDFeLaTeX]{\PDFeLaTeX} �⤢��ޤ����ᤤ��
-�� \LaTeXe �θ�ѥС������Ǥ��� \LaTeX\,3 ���о줹��Ǥ��礦����
-\eTeX/\PDFTeX �����ܸ첽���������ᤤ�Ȼפ��ޤ���
+さらに \eTeX と \PDFTeX をマージして \Prog[PDFeTeX]{\PDFeTeX} というのも
+生まれています．もちろん \Prog[PDFeLaTeX]{\PDFeLaTeX} もあります．近い将
+来 \LaTeXe の後継バージョンである \LaTeX\,3 も登場するでしょうし，
+\eTeX/\PDFTeX が日本語化される日も近いと思われます．
 
-\zindind{Mac OS X}{��ATSUI}%
-\Z{Mac OS X}�δĶ��˰�¸���ޤ�����\PDFeTeX ��١����ˤ���
-\Prog[XeTeX]{\XeTeX}\footnote{\webXeTeX}�Ȥ����ץ������⤢��ޤ�������� Mac~OS~X ��
-\Z{ATSUI}: Apple Type Services for Unicode Imaging ��ľ�ܥ�����������
-�����ƥ�Υե���Ȥ����ѤǤ���褦�ˤʤ��ΤǤ���
+\zindind{Mac OS X}{のATSUI}%
+\Z{Mac OS X}の環境に依存しますが，\PDFeTeX をベースにして
+\Prog[XeTeX]{\XeTeX}\footnote{\webXeTeX}というプログラムもあります．これは Mac~OS~X の
+\Z{ATSUI}: Apple Type Services for Unicode Imaging に直接アクセスし，
+システムのフォントを利用できるようになるものです．
 
-\section{ʸ���Ƚ���}\seclab{app:typeface}
+\section{文字と書体}\seclab{app:typeface}
 
-% Young U. Ryu. utdallas��ؤ� TeXnician. PXFonts/TXFonts �Ϥ⤦�����Ϥ�
-% ����Ȥ��ơ����γ�ȯ����Ϥ��Ǥ˼������Ƥ��롥�����Ĥ��ΥХ����Ĥ����
-% ����Τ����ˤʤ롥
-\TeX �Ǥ�ɸ��Ū��\person{Donald}{Knuth}�ˤ��\Z{Computer Modern}�ե����
-�Τߤʤ餺���͡��ʽ��Τ�Ȥ������Ǥ���褦�ˤʤäƤ��Ƥ��ޤ���Computer
-Modern�ե���Ȥ�\PS\ Type 1 ������ PDF �� \PS �������ߤǤ���
-\Y{type1cm} �ѥå�����������ޤ��������\Z{�衼���åѸ��}��\Z{��������
-�ȵ���}��ޤ� \Y{type1ec} �ѥå�������ͭ�ѤǤ���
-\Z{Times} �Ϥν��Ρ�\Prog{Word} ��ɸ��Ǥ⤢��ˤ���ʸ�˻Ȥ������ʤ��
-\Person{Young}{Ryu}�ˤ��\Y{txfonts}��\Z{Palatino}�Ϥν��Τʤ��
-\Y{pxfonts}���Υѥå������������Ǥ���\figref{basic:font:change}�ˡ�
+% Young U. Ryu. utdallas大学の TeXnician. PXFonts/TXFonts はもう完成系で
+% あるとして，その開発からはすでに手を引いている．いくつかのバグが残されて
+% いるのが気になる．
+\TeX では標準的な\person{Donald}{Knuth}による\Z{Computer Modern}フォント
+のみならず，様々な書体を使う事ができるようになってきています．Computer
+Modernフォントを\PS\ Type 1 形式で PDF や \PS に埋め込みできる
+\Y{type1cm} パッケージがあります．さらに\Z{ヨーロッパ語圏}の\Z{アクセン
+ト記号}も含む \Y{type1ec} パッケージも有用です．
+\Z{Times} 系の書体（\Prog{Word} の標準でもある）を本文に使いたいならば
+\Person{Young}{Ryu}による\Y{txfonts}，\Z{Palatino}系の書体ならば
+\Y{pxfonts}等のパッケージが便利です（\figref{basic:font:change}）．
 
 \begin{table}[htbp]
  \begin{center}
-  \caption{�ե���ȴ�Ϣ�Υѥå���������}\tablab{fontpac}
+  \caption{フォント関連のパッケージ一覧}\tablab{fontpac}
   \begin{tabular}{lp{65pt}llll} 
    \TR
-   \Th{�ѥå�����}  & \Th{�����ޥ�}   & \Th{���󥻥��}   & \Th{�����ץ饤��} 
-    & \Th{����}\\
+   \Th{パッケージ}  & \Th{ローマン}   & \Th{サンセリフ}   & \Th{タイプライタ} 
+    & \Th{数式}\\
    \MR
    % European Computer Modern: cm-super ec tc tt2001
    % European Modern: EM (PS)
    % Latin Modern LM (PS)
    % cm blue sky (PS), cm bakoma (PS, trutype), cm (Metafont)
-   % �������ޤ��ͤù��ޤʤ���
-   ����ʤ�    & CM~Roman & CM~Sans~Serif & CM~Typewriter & CM~Roman\\
-   \Y{pxfonts} & Palatino�� & Helvetica��  & Monospaced��   & Palatino��\\
-   \Y{txfonts} & Times��    & Helvetica��  & Monospaced��   & Times��\\
+   % ↑ここまで突っ込まない．
+   指定なし    & CM~Roman & CM~Sans~Serif & CM~Typewriter & CM~Roman\\
+   \Y{pxfonts} & Palatino風 & Helvetica風  & Monospaced風   & Palatino風\\
+   \Y{txfonts} & Times風    & Helvetica風  & Monospaced風   & Times風\\
    \Y{lmodern} & LM~Roman & LM~Sans~Serif & LM~Typewriter & \\
    % Latin modern fonts in type 1 format based on the Computer Modern fonts
-   % ��������\usepackage[T1]{fontenc}ɬ��
+   % ただし，\usepackage[T1]{fontenc}必要
    \Y{type1cm} & CM~Roman & CM~Sans~Serif & CM~Typewriter & \\
-   % ��������\usepackage[T1]{fontenc}�λ��� type1ec �ߴ�
+   % ただし，\usepackage[T1]{fontenc}の時は type1ec 互換
    \Y{type1ec} & EC~Roman & EC~Sans~Serif & EC~Typewriter & \\
    % Computer modern fonts in T1 and TS1 encodings.
    \MR
@@ -103,7 +103,7 @@ Modern�ե���Ȥ�\PS\ Type 1 ������ PDF �� \PS �������ߤǤ���
 % \begin{center}
 \newcommand*\mathimage[2][clip]{%
   \noindent\hbox{%
-    \fbox{\includegraphics[#1]{mathFontTest/smpl-#2-crop}}\space
+    \fbox{\includegraphics[#1]{mathFontTest/smpl-#2-crop.pdf}}\space
     {\sty{#2}}%
   }\par%
 }%
@@ -112,13 +112,13 @@ Modern�ե���Ȥ�\PS\ Type 1 ������ PDF �� \PS �������ߤǤ���
   \mathimage[bb=0 0 169 86]{mathptmx}%
   \mathimage[bb=0 0 173 96]{pxfonts}%
   \mathimage[bb=0 0 166 93]{txfonts}%
- \caption{���ܽ��Τ��ѹ���}\figlab{basic:font:change}
+ \caption{基本書体の変更例}\figlab{basic:font:change}
 % \end{center}
 \end{figure}
 
 
-\Y{lmodern}�ѥå���������Ȥ��ǧ���Ƥߤ�ȡ��ºݤ� \Fl{lmodern.sty}����
-�Ǥϼ��Τ褦��ɸ��Υե��ߥ꡼�����������Ƥ��ޤ���
+\Y{lmodern}パッケージの中身を確認してみると，実際に \Fl{lmodern.sty}の中
+では次のように標準のファミリーが再定義されています．
 
 \C*{\rmdefault}%
 \C*{\sfdefault}%
@@ -132,39 +132,39 @@ Modern�ե���Ȥ�\PS\ Type 1 ������ PDF �� \PS �������ߤǤ���
 \end{InTeX}
 
 
-ʸ��˻Ȥ�����ܽ��Τ��ѹ�����ˤϡ�����Ū�ˤϴ�¸�Υѥå�������
-�ɤ߹��फ���⤷�����������Ƥ���ե��ߥ꡼��������ѹ����ޤ���
+文書に使われる基本書体を変更するには，基本的には既存のパッケージを
+読み込むか，もしくは宣言されているファミリーの設定を変更します．
 
-�㤨�С�Computer Modern �ե���Ȥ����Ū�˻Ȥ����ϼ��Τ褦��
-���Ĥ�̿����������ޤ���
+例えば，Computer Modern フォントを基本的に使う場合は次のように
+三つの命令を再定義します．
 
 \begin{InTeX}
 \renewcommand \rmdefault {cmr}
 \renewcommand \sfdefault {cmss}
 \renewcommand \ttdefault {cmtt}
-\normalfont % ���ޤ��ʤ�
+\normalfont % おまじない
 \end{InTeX}
 
-\Z{Times}, \Z{Helvetica}, \Z{Courier} �����Ū�˻Ȥ��ΤǤ����
-���Τ褦�ˤ��ޤ���
+\Z{Times}, \Z{Helvetica}, \Z{Courier} を基本的に使うのであれば
+次のようにします．
 
 \begin{InTeX}
 \renewcommand \rmdefault {ptm}% Postscript TiMes
 \renewcommand \sfdefault {phv}% Postscript HelVetica
 \renewcommand \ttdefault {pcr}% Postscript CouRier
-\normalfont % ���ޤ��ʤ�
+\normalfont % おまじない
 \end{InTeX}
 
-%������ Helvetica ��ɸ��Ǥ�¾�ν��Τ���٤�Ⱦ����礭����
-%�����뤳�Ȥ����뤿�ᡤ\Y{helvet}�ѥå������ǽ̾��Ǥ��ޤ���
+%しかし Helvetica は標準では他の書体と比べると少し大きいと
+%感じることがあるため，\Y{helvet}パッケージで縮小できます．
 
 %\begin{InTeX}
 %\usepackage[scaled]{helvet}
 %\end{InTeX}
 
 
-�ºݤ˥ѥå�������Ȥ����� \Y{type1ec}�ѥå�������Ȥ��ˤϼ��Τ褦�ˤ�
-��Τ��ɤ��Ǥ��礦��
+実際にパッケージを使う時， \Y{type1ec}パッケージを使うには次のようにす
+るのが良いでしょう．
 
 \begin{InTeX}
 \usepackage[T1]{fontenc}
@@ -172,11 +172,11 @@ Modern�ե���Ȥ�\PS\ Type 1 ������ PDF �� \PS �������ߤǤ���
 \usepackage{type1ec}
 \end{InTeX}
 
-\Y{fontenc}�ѥå�������\Y{textcomp}��\kenten{���ޤ��ʤ�}Ū��
-���Ҥ��������ɤ��Ǥ��礦��
+\Y{fontenc}パッケージと\Y{textcomp}は\kenten{おまじない}的に
+記述した方が良いでしょう．
 
 \begin{Exe}
-��¸�θ��Ƥ˰ʲ��ε��Ҥ��ɲä��������ץ��åȤμ¹Է�̤��̣���Ƥ���������
+既存の原稿に以下の記述を追加し，タイプセットの実行結果を吟味してください．
 
 \begin{InTeX}
 \usepackge[T1]{fontenc}
@@ -184,28 +184,28 @@ Modern�ե���Ȥ�\PS\ Type 1 ������ PDF �� \PS �������ߤǤ���
 \usepackage{type1ec}
 \end{InTeX}
 
-�ޤ���`\verb|\usepackage{type1ec}|'�ȤʤäƤ���ս��
+また，`\verb|\usepackage{type1ec}|'となっている箇所を，
 \Y{type1cm}, \Y{lmodern}, \Y{txfonts}, \Y{pxfonts}
-���Ǥ��ƤߤƤ���������
+等でも試してみてください．
 \end{Exe}
 
 
-\Y{helvet}�� \Z{Times} ������٤Ƽ㴳�礭���Τǡ�\option{scaled}���ץ�����
-����̾�������ɤ��Ǥ��礦��
+\Y{helvet}は \Z{Times} 等に比べて若干大きいので，\option{scaled}オプションで
+拡大縮小すると良いでしょう．
 
 \begin{InTeX}
 \usepackage[scaled=.92]{helvet}
 \end{InTeX}
 
-ñ�� \Option{scaled} ���ץ��������򵭽Ҥ������� 0.95 �ܤ���ޤ���
+単に \Option{scaled} オプションだけを記述した場合は 0.95 倍されます．
 
 \begin{InTeX}
-\usepackage[scaled]{helvet} % ɸ��� 0.95 ��
+\usepackage[scaled]{helvet} % 標準は 0.95 倍
 \end{InTeX}
 
 
 \begin{Exe}
-�ʲ��Υե�����򥿥��ץ��åȤ����¹Է�̤��̣���Ƥ���������
+以下のファイルをタイプセットし，実行結果を吟味してください．
 
 \begin{InTeX}
 \documentclass{jsarticle}
@@ -229,14 +229,14 @@ Modern�ե���Ȥ�\PS\ Type 1 ������ PDF �� \PS �������ߤǤ���
 \end{document}
 \end{InTeX} 
 
-����� \cmd{usepackage} �� \str{lmodern} �� \str{pxfonts} �� 
-\str{txfonts}�ˤ��ƻ�ƤߤƤ���������
+さらに \cmd{usepackage} の \str{lmodern} を \str{pxfonts} や 
+\str{txfonts}にして試してみてください．
 \end{Exe}
 
 \begin{Prob}
-\Z{Palatino}, Helvetica, Courier�����Ū���Ѥ���褦
-������ϼ��Τ褦�ˤʤ�ޤ����ºݤ˥����ץ��åȤ������ν��Ϸ�̤��̣���Ƥ�
-��������
+\Z{Palatino}, Helvetica, Courierを基本的に用いるよう
+な設定は次のようになります．実際にタイプセットし，その出力結果を吟味してく
+ださい．
 
 \begin{InTeX}
 \usepackage{mathpazo}% palatino
@@ -244,14 +244,14 @@ Modern�ե���Ȥ�\PS\ Type 1 ������ PDF �� \PS �������ߤǤ���
 \usepackage{courier}% Courier
 \end{InTeX} 
 
-��������� \Y{pxfonts} �ѥå�������Ȥä����ν��Ϥ�
-�ɤΤ褦�˰ۤʤ�Τ����ºݤ˥����ץ��åȤ��Ƴ�ǧ���ƤߤƤ���������
+この設定と \Y{pxfonts} パッケージを使った場合の出力は
+どのように異なるのか，実際にタイプセットして確認してみてください．
 \end{Prob}
 
 
 \begin{Prob}
-Times, Helvetica, Courier�����Ū���Ѥ���褦�ˤ��������
-���Τ褦�ˤʤ�ޤ���
+Times, Helvetica, Courierを基本的に用いるようにする設定は
+次のようになります．
  
 \begin{InTeX}
 \usepackage{mathptmx}% Times
@@ -259,24 +259,24 @@ Times, Helvetica, Courier�����Ū���Ѥ���褦�ˤ��������
 \usepackage{courier}% Courier
 \end{InTeX}
 
-��������� \Y{txfonts} �ѥå�������Ȥä����ν��Ϥ�
-�ɤΤ褦�˰ۤʤ�Τ����ºݤ˥����ץ��åȤ��Ƴ�ǧ���ƤߤƤ���������
+この設定と \Y{txfonts} パッケージを使った場合の出力は
+どのように異なるのか，実際にタイプセットして確認してみてください．
 
-% mathptm �Ǥ� mathcal �� Zapf Chancery ���Ȥ��Ƥ�����
-% AMSFonts �� eucal �Ϥ��θŤ���Τ�Ȥ���褦�ˤʤäƤ��롥
-% psamsfonts ���ץ�����Ȥ��ȥե꡼�� Type 1 �ե���Ȥ�����
-% �Ȥ��褦�����ꤵ��롥
+% mathptm では mathcal に Zapf Chancery が使われていた，
+% AMSFonts の eucal はこの古いものを使えるようになっている．
+% psamsfonts オプションを使うとフリーの Type 1 フォントだけを
+% 使うように設定される．
 \end{Prob}
 
 
 
 \begin{Trick}
-\Person{Donald}{Knuth}�����������ʷݽѺ��ʤǤ����Computer Modern �ե���
-�Ȥδ����٤����˹⤯�������륱���������ꤷ���߷פ���Ƥ��ޤ���
-�ܤ����ϡع�������\LaTeXe �����ԡ٤ǲ��⤹����ˤʤ�Ȼפ��ޤ�����
-�ɤΤ褦����θ������Ƥ���Τ��������ҳ������Ǥ�Ҳ𤷤Ƥ����ޤ���
-�ޤ��ϰʲ��Υե����� \fl{cmtest.tex} �򥿥��ץ��åȤ���\Dvipdfmx ����
- PDF �Ȥ��ƺ�������\fl{cmtest.pdf}�Υե���Ⱦ�����̣���Ƥ���������
+\Person{Donald}{Knuth}が作成した（芸術作品である）Computer Modern フォン
+トの完成度は非常に高く，あらゆるケースを想定して設計されています．
+詳しくは『好き好き\LaTeXe 書体編』で解説する事になると思いますが，
+どのような配慮がされているのか，その片割れだけでも紹介しておきます．
+まずは以下のファイル \fl{cmtest.tex} をタイプセットし，\Dvipdfmx 等で
+ PDF として作成し，\fl{cmtest.pdf}のフォント情報を吟味してください．
 
 \begin{InTeX}
 \documentclass[a4j,papersize,english]{jsarticle}
@@ -294,38 +294,38 @@ is a sample footnote.}.
 \end{document}
 \end{InTeX}
 
-���󥽡��뤫�� \type{pdfinfo cmtest.pdf}�Ȥ���С��ե���Ⱦ���
-ɽ���������ˤʤ�ޤ����������ñ��ʥե�����Ǥ������Ȥ��Ƥ�����Τ�
-���ʤ��Ȥ� \str{cmr6}, \str{cmr7}, \str{cmr8}, \str{cmr10}, \str{cmr12}, 
-\str{cmr17}, \str{cmss10}, \str{cmss12} �μ��ĤϤ���ޤ�\footnote{����
-¾����ʸ���Τ� \str{GothicBBB-Medium} �� \str{Ryumin-Light}����Ĥ�
-�Ȥ��Ƥ��ޤ���}��
+コンソールから \type{pdfinfo cmtest.pdf}とすれば，フォント情報が
+表示される事になります．これだけ単純なファイルですが，使われている書体は
+少なくとも \str{cmr6}, \str{cmr7}, \str{cmr8}, \str{cmr10}, \str{cmr12}, 
+\str{cmr17}, \str{cmss10}, \str{cmss12} の七つはあります\footnote{この
+他に和文書体の \str{GothicBBB-Medium} と \str{Ryumin-Light}の二つが
+使われています．}．
 
 %\begin{table}[htbp]
 %\begin{center}
-%  \caption{CM�ե���ȤλȤ����}\tablab{CMFonts}
+%  \caption{CMフォントの使われ方}\tablab{CMFonts}
 %  \begin{tabular}{llll}
 %    \TR
-%    \Th{�ե����̾}  & \Th{�ե���Ȥμ���} & \Th{����} & \Th{���ޥ��}\\
+%    \Th{フォント名}  & \Th{フォントの種類} & \Th{用途} & \Th{コマンド}\\
 %    \MR
-%    \str{cmr6}     & CM�����ޥ� 6\,pt   & & \\
-%    \str{cmr7}     & CM�����ޥ� 7\,pt   & & \\
-%    \str{crm8}     & CM�����ޥ� 8\,pt   & & \\
-%    \str{cmr10}    & CM�����ޥ� 10\,pt  & ��ʸ & \cmd{normalsize}\\
-%    \str{cmr12}    & CM�����ޥ� 12\,pt  & ����̾���ḫ�Ф������� & \cmd{large}\\
-%    \str{cmr17}    & CM�����ޥ� 17\,pt  & �����ȥ�& \cmd{LARGE}\\
-%    \str{cmss10}   & CM���󥻥�� 10\,pt & & \\
-%    \str{cmss12}   & CM���󥻥�� 12\,pt & & \\
+%    \str{cmr6}     & CMローマン 6\,pt   & & \\
+%    \str{cmr7}     & CMローマン 7\,pt   & & \\
+%    \str{crm8}     & CMローマン 8\,pt   & & \\
+%    \str{cmr10}    & CMローマン 10\,pt  & 本文 & \cmd{normalsize}\\
+%    \str{cmr12}    & CMローマン 12\,pt  & 著者名，節見出し，日付 & \cmd{large}\\
+%    \str{cmr17}    & CMローマン 17\,pt  & タイトル& \cmd{LARGE}\\
+%    \str{cmss10}   & CMサンセリフ 10\,pt & & \\
+%    \str{cmss12}   & CMサンセリフ 12\,pt & & \\
 %    \BR
 %  \end{tabular}
 %\end{center}
 %\end{table}
 
-���λ��¤���ͤ�������ϡ����ʤ��Ȥ� \Y{type1cm} �ѥå�������ȤäƤ�
-��ե�����Ǥ�`Computer Modern'�� Roman �Τ�6, 7, 8, 10, 12, 17\,pt���
-�Ѱդ���Ƥ��ơ����줬��������˻Ȥ����꤬�㤦�Ȥ������Ǥ���
+この事実から考えられる事は，少なくとも \Y{type1cm} パッケージを使ってい
+るファイルでは`Computer Modern'の Roman 体が6, 7, 8, 10, 12, 17\,pt毎に
+用意されていて，それがサイズ毎に使われる場所が違うという事です．
 
-�ºݤ� \Y{type1cm} �ѥå������ˤϼ��Τ褦�ʵ��Ҥ�¸�ߤ��ޤ���
+実際に \Y{type1cm} パッケージには次のような記述が存在します．
 
 \begin{InTeX}
 \DeclareFontShape{OT1}{cmr}{m}{n}{%
@@ -334,161 +334,161 @@ is a sample footnote.}.
  <12-17> cmr12        <17->   cmr17}{}
 \end{InTeX}
 
-���ߡ��ݥԥ�顼�˻��Ѥ���Ƥ��� \PS �ե���Ȥϡ����������
-Ŭ�ڤʽ��Τ����Ф��褦�˥ǥ����󤵤�Ƥ��ʤ�����¿���Ǥ��礦��
+現在，ポピュラーに使用されている \PS フォントは，サイズ毎に
+適切な書体が選ばれるようにデザインされていない場合も多いでしょう．
 
 
 %\begin{table}[htbp]
 %\begin{center}
-%  \caption{TX�ե���ȤλȤ����}\tablab{TXFonts}
+%  \caption{TXフォントの使われ方}\tablab{TXFonts}
 %  \begin{tabular}{llll}
 %    \TR
-%    \Th{�ե����̾}  & \Th{�ե���Ȥμ���} & \Th{����} & \Th{���ޥ��}\\
+%    \Th{フォント名}  & \Th{フォントの種類} & \Th{用途} & \Th{コマンド}\\
 %    \MR
-%    \str{Times-Roman}    & Times�����ޥ�  & ���Ƥ� \cmd{rmfamily}& \\
-%    \str{Helvetica}   & Helvetica  & ���Ƥ� \cmd{sffamily} &\\
+%    \str{Times-Roman}    & Timesローマン  & 全ての \cmd{rmfamily}& \\
+%    \str{Helvetica}   & Helvetica  & 全ての \cmd{sffamily} &\\
 %    \BR
 %  \end{tabular}
 %\end{center}
 %\end{table}
 
-%�դ�Ķ����Τ��񤷤��Ǥ���
+%師を超えるのは難しいです．
 \end{Trick}
 
-% AMS euler �ե����: Knth \& Zapf �ˤ�����ʿ�������
+% AMS euler フォント: Knth \& Zapf による偉大な数式書体
 % 
 
 
-\subsection{���ܸ�ȥ�˥����ɼ���}
+\subsection{日本語とユニコード周辺}
 
-% �ƣ����Ϻ. ʸ�����ᤫ��Ƥ���Ȼפ��� TeX User �ΰ��.
-% OTF/UTF �������Ф����Ǯ�ˤ϶����Ǥ�����ʬ��¿����
+% 齋藤修三郎. 文字に憑かれていると思われる TeX User の一人.
+% OTF/UTF や活字に対する情熱には共感できる部分が多い．
 \index{JIS X 0208@JIS~X~0208}%
-\pTeX/\pLaTeX ��ɸ��Ū�ˤ� JIS X 0208��\Z{JIS ���ܴ���}�ˤޤǤ�\Z{ʸ��
-����}�������������Ǥ��ޤ��󡥤�������˴ؤ��Ƥ�\Hito{�ƣ}{����Ϻ}�ˤ��
-\Y{UTF}�ѥå��������н�Ǥ��ޤ���\Y{UTF}�Ǥ� \Z{��˥�����} ʸ������ޤ�
-���������Ǥ��ޤ��������\Z{Adobe-Japan1-6}�ޤǤ�ʸ��������б�����
-\Y{OTF}�ѥå������Ⳬȯ����Ƥ��ޤ���
+\pTeX/\pLaTeX は標準的には JIS X 0208（\Z{JIS 基本漢字}）までの\Z{文字
+集合}しか扱う事ができません．この問題に関しては\Hito{齋藤}{修三郎}による
+\Y{UTF}パッケージで対処できます．\Y{UTF}では \Z{ユニコード} 文字集合まで
+扱う事ができます．さらに\Z{Adobe-Japan1-6}までの文字集合に対応した
+\Y{OTF}パッケージも開発されています．
 
-\TeX ���ĥ����\Z{¿��������}���ǽ�ˤ����ߤȤ��Ƥ�
-\Person{John}{Plaice}��\Person{Yannis}{Haralambous}�ˤ��
-\Prog{Omega}, \LaTeX �ѤǤ� \Prog{Lambda}�Ȥ����Τ�����ޤ���
-���θ�ѤȤ��Ƥ� \eTeX ��١����Ȥ��� \Prog{Aleph}�ȡ�\LaTeX �Ѥ�
-\Prog{Lamed}��������ޤ�����\genzai ��ȯ����Υ����ƥ�Ǥ���
+\TeX を拡張して\Z{多言語組版}を可能にする試みとしては
+\Person{John}{Plaice}と\Person{Yannis}{Haralambous}による
+\Prog{Omega}, \LaTeX 用では \Prog{Lambda}というのがあります．
+この後継としては \eTeX をベースとした \Prog{Aleph}と，\LaTeX 用の
+\Prog{Lamed}等がありますが，\genzai 開発途中のシステムです．
 
-\section{���ܸ쥯�饹�ե�����}
+\section{日本語クラスファイル}
 
-�Ƕ�ޤǤ� \Z{ASCII} �����ܸ첽���� \pTeX ��Ʊ������Ƥ���
-\Y{jarticle}, \Y{jreport}, \Y{jbook} ��ȤäƤ����ΤǤ��������ߤ�\Hito{��
-¼}{��ɧ}����������Ƥ��� \Y{jsclasses} ��Ȥ��Τ��ɤ��Ǥ��礦\footnote{
-���5��ۤɥХ�����ԤäƤ���Τǡ��ܴۤ������˶ᤤ�Ǥ���}������ˤ�
-\Y{jsarticle}, \Y{jsbook}, \Y{okumacro}, \Y{okuverb}, \Y{morisawa} �ʤ�
-�Υ��饹�ȥޥ�����Ʊ������Ƥ��ޤ�����ݡ��Ȥ���ʸ����������Ǥ⤳���
-�Υ��饹���ޥ��������˴����٤��⤤���ᡤɸ��Ū��\Y{jsclasses}��Ȥ���
-�򶯤��侩���ޤ���%�Ȥ����������ȿ��Ū�� \Y{jsclasses}��Ȥ������ɤ���
+最近までは \Z{ASCII} が日本語化した \pTeX に同封されている
+\Y{jarticle}, \Y{jreport}, \Y{jbook} を使っていたのですが，現在は\Hito{奥
+村}{晴彦}が管理されている \Y{jsclasses} を使うのが良いでしょう\footnote{
+私も5回ほどバグ取りを行っているので，ほぼ完成形に近いです．}．これには
+\Y{jsarticle}, \Y{jsbook}, \Y{okumacro}, \Y{okuverb}, \Y{morisawa} など
+のクラスとマクロが同封されています．レポートや論文を作成する上でもこれら
+のクラス・マクロは非常に完成度が高いため，標準的に\Y{jsclasses}を使う事
+を強く推奨します．%というか，条件反射的に \Y{jsclasses}を使う方が良い．
 \begin{description}
  \item[\sty{jsarticle}] 
-  \sty{jarticle} �����ѤȤʤ��Ρ�\Option{english} ���ץ������դ����
-  �ǡ���ʸ�Ȥλ��ι�����ˤʤ롥����¾¿���β����������롥
+  \sty{jarticle} の代用となるもの．\Option{english} オプションを付ける事
+  で，欧文組の時の行送りになる．その他多くの改良点がある．
  \item[\sty{jsbook}]
-  \str{jbook} ������Ȥʤ��Τǽ��Ҥ���ʸ�����ѤΥ��饹�Ȥ����Ѥ��롥
-  \Option{report} ���ץ�����\sty{jreport}�����ѤȤʤ롥
+  \str{jbook} の代わりとなるもので書籍や論文作成用のクラスとして用いる．
+  \Option{report} オプションで\sty{jreport}の代用となる．
  \item[okuverb]
-  \E{verbatim} �Ķ������äȲ���ˤ��뤿��Υѥå�������
+  \E{verbatim} 環境をちょっと華麗にするためのパッケージ．
 \item[okumacro]
-  ��¼�᤬��ʸ������������������ɮ���뤿���ɬ�פˤʤä��ޥ����򽸤�
-  ����Ρ�
+  奥村氏が美文書作成入門等の著書を執筆するために必要になったマクロを集め
+  たもの．
 \item[morisawa]
-  ��ꥵ����� 5 ���Υѥå�������Ȥ�����Υޥ������ե��������ˤĤ���
-  �ϱ�¼��ιͤ��ʹ��ߡˤ����äƤ���Τǡ��²�ʸ�ν�������������ʤɤ˴�
-  ���Ƥ�����꤬������Ϥ��줾�쥫�����ޥ�������ɬ�פ�����Ǥ��礦��
+  モリサワ基本 5 書体パッケージを使うためのマクロ．フォント選択について
+  は奥村氏の考え（好み）が入っているので，和欧文の書体選択の相性などに関
+  してこだわりがある場合はそれぞれカスタマイズする必要があるでしょう．
 \end{description}
-�����������饹�ե�����Ȥ�����Τ�¿���ʤ������Ԥι������ˤ��
-�κۤ�Ĵ������Ƥ����礬����ޤ��Τǡ���ʬ�ε����κۤȺ��ۤ�������
-�ϡ�Ŭ����������ս����������ˤʤ�Ȼפ��ޤ���
+ただし，クラスファイルというものは多少なりと製作者の好み等により
+体裁が調整されている場合がありますので，自分の求める体裁と差異がある場合
+は，適宜該当する箇所を修正する事になると思われます．
 
 
-\section{�����䥰��ե��å�������}
+\section{画像やグラフィックス周辺}
 
-\zindind{�ǥХ���}{�ɥ饤��}%
-��ǯ�ޤǲ����� EPS �������������դ��ʤ��褦�ʥǥХ����ɥ饤�Ф�����
-�ޤ����������Ǥ� PDF (\Z{EPDF}) ��ľ�ܰ��������Ǥ��� \Dvipdfm�����θ��
-�� \Dvipdfmx �⤢��ޤ��Τǡ������Ϥ��ʤ��Ѥ�äƤ��ޤ���\genzai ��
-������ͤ��ޤ��ȡ����ܸ�Ķ��Ǥ�\Dvipdfmx ��Ȥ��Τ����ɤ��Ȼפ��ޤ���
-BMP, PNG, JPEG, PDF, EPS �����β�����ĥ����ߤ��б����Ƥ��ޤ���
+\zindind{デバイス}{ドライバ}%
+近年まで画像は EPS 形式しか受け付けないようなデバイスドライバがあり
+ましたが，今では PDF (\Z{EPDF}) を直接扱う事ができる \Dvipdfm，その後継
+の \Dvipdfmx もありますので，状況はかなり変わっています．\genzai の
+状況を考えますと，日本語環境では\Dvipdfmx を使うのが最良だと思われます．
+BMP, PNG, JPEG, PDF, EPS 形式の画像の張り込みに対応しています．
 
-\section{����ˤĤ���}
+\section{今後について}
 
-\TeX ��ʸ�����Ǥ˴ؤ��Ƥ�����ͥ���ʥ����ƥ�Ǥ��ꡤ���Υϥ��ե͡������
-���르�ꥺ�ࡤ�ץ����������󲽤Ⱥ�Ŭ��������®�١���ʬ�䡤�ڡ���ʬ�䡤
-�ե���ȥ����ƥ�ʤɤˤ����Ƥϡ���¸�������Ū�����ǥ����ƥ���餱�ʤ���
-�ʼ��ʵ�ǽ��������Ƥ��ޤ����������������ΰ������˴�Ϣ������ʬ�ϤۤȤ��
-��������Ƥ��ʤ����ᡤ�����Υץ������˰�¸���Ƥ���Τ������Ǥ��������
-\TeX �Ȥ��μ��դϲ��ɡ�ȯŸ��³����ͽ�ۤ���ޤ��Τǡ����μ��վ���˴ؤ�
-�Ƥϥ��ݡ��ȥڡ���\footnote{\webThorTypo}�򻲾Ȥ��Ƥ���������
+\TeX は文字組版に関しては相当優秀なシステムであり，そのハイフネーション
+アルゴリズム，プログラムの並列化と最適性，処理速度，行分割，ページ分割，
+フォントシステムなどにおいては，現存する一般的な組版システムに負けない高
+品質な機能を実装しています．ただし，画像の扱い等に関連した部分はほとんど
+実装されていないため，外部のプログラムに依存しているのが現状です．今後も
+\TeX とその周辺は改良・発展が続くと予想されますので，その周辺情報に関し
+てはサポートページ\footnote{\webThorTypo}を参照してください．
 
 \newcommand*\ptetex{ptetex\xspace}
 
 \subsection{\ptetex}
 
-\Hito{��¼}{ŸǷ}�θ��ӤΤ������������������ܸ� \TeX �ǥ����ȥ�ӥ塼�����
-��꡼������Ƥ��ޤ������� Vine Linux (4.0) �� \TeX �Ķ��Ȥ��ƺ��Ѥ�����ä⤢��
-�ޤ���
-���ޤޤǤ����ܸ�\TeX �Ķ����������������te\TeX �ȸƤФ��ǥ����ȥ�ӥ塼
-���������ܸ첽�ѥå���¿��Ŭ�Ѥ���Ȥ����ѻ��ʺ�Ȥ�ȼ���ޤ�������������
-��¼���\ptetex �ˤ�����ܸ첽���줿\TeX, xdvi, dvips, \Dvipdfmx ����
-���Ū��ñ�˥��󥹥ȡ��뤹������Ǥ��ޤ���
+\Hito{土村}{展之}の功績のお陰で非常に便利な日本語 \TeX ディストリビューションが
+リリースされています．次期 Vine Linux (4.0) の \TeX 環境として採用される話もあり
+ます．
+いままでは日本語\TeX 環境を整備したければte\TeX と呼ばれるディストリビュー
+ションに日本語化パッチを多数適用するという煩雑な作業を伴いました．しかし，
+土村氏の\ptetex により日本語化された\TeX, xdvi, dvips, \Dvipdfmx 等を
+比較的簡単にインストールする事ができます．
 
-�ǥ����ȥ�ӥ塼�����ΰ㤤���ˤ��ܤ������󥹥ȡ�����ˡ����¼��Υ���
-�֥ڡ��������������������Ǥ� Vine Linux ����˴Ķ����ۤ���򼨤��ޤ���
+ディストリビューションの違い等による詳しいインストール方法は土村氏のウェ
+ブページをご覧下さい．ここでは Vine Linux を例に環境構築の例を示します．
 
-���� Linux �� Adobe-Japan-1-6 ���٤ޤ��б����Ƥ��� PDF �ӥ塼���� Adobe
-Reader 7.0 �̤��Ȼפ��ޤ��Τǡ��ǿ��Ǥ� Adobe Reader �򥤥󥹥ȡ���
-���Ƥ����ޤ���Adobe Reader �˰�¸���Ƥ��� OpenLDAP\footnote{\url{http://www.openldap.org/}}��
-�󥹥ȡ��뤷�Ƥ����ޤ��������� Adobe �ҤΥ����Ȥ��� Adobe Reader ��
-Linux �Ѥκǿ��� RPM �����������ɤ���\str{rpm} ���ޥ�ɤǥ��󥹥ȡ���
-���ޤ���
+現在 Linux で Adobe-Japan-1-6 程度まで対応している PDF ビューアは Adobe
+Reader 7.0 位だと思いますので，最新版の Adobe Reader をインストール
+しておきます．Adobe Reader に依存している OpenLDAP\footnote{\url{http://www.openldap.org/}}をイ
+ンストールしておきます．そして Adobe 社のサイトから Adobe Reader の
+Linux 用の最新版 RPM をダウンロードし，\str{rpm} コマンドでインストール
+します．
 \begin{InTerm}
  \type[#]{apt-get install openldap openldap-devel}
  \type[#]{rpm -ivh AdobeReader_jpn-7.0.5-1.i386.rpm}
 \end{InTerm}
-��¼���\ptetex ��OS��°�� \TeX �ȶ�¸����Τ��򤱤������ɤ���
-�פ��ޤ��Τǡ�`\str{tetex}'�Υѥå������������ޤ���
+土村氏の\ptetex はOS付属の \TeX と共存するのは避けた方が良いと
+思われますので，`\str{tetex}'のパッケージを削除します．
 \begin{InTerm}
  \type[#]{apt-get --purge remove tetex}
 \end{InTerm}
-����� \ptetex �˰�¸������­�ѥå�������ʲ��Τ褦�ˤ���
-���󥹥ȡ��뤷�ޤ���
+さらに \ptetex に依存する不足パッケージを以下のようにして
+インストールします．
 \begin{InTerm}
  \type[#]{apt-get install build-essential bison flex ed}
  \type[#]{apt-get install zlib-devel libpng-devel ncurses-devel}
  \type[#]{apt-get install XOrg-devel openMotif-devel}
 \end{InTerm}
-³������¼�᤬���Ǥ��Ѱդ��Ƥ������äƤ��� RPM ��
-\footnote{\url{http://tutimura.ath.cx/~nob/tex/ptetex/ptetex3/rpm/}}����
-�ꤷ�ޤ���\type{date=20060330}�Ȥ�����ʬ��Ŭ���ѹ����Ƥ���������
+続いて土村氏がすでに用意してくださっている RPM 版
+\footnote{\url{http://tutimura.ath.cx/~nob/tex/ptetex/ptetex3/rpm/}}を入
+手します．\type{date=20060330}という部分は適宜変更してください．
 \begin{InTerm}
  \type[#]{baseurl=http://tutimura.ath.cx/~nob/tex/ptetex/ptetex3/rpm}
  \type[#]{date=20060330; ver=3.0}
  \type[#]{wget $baseurl/Vine3-ptetex3-$date-1.i386.rpm.bz2}
  \type[#]{wget $baseurl/tetex-texmf-$ver-1.noarch.rpm.bz2}
 \end{InTerm}
-���������֤����������ˡ�\str{bunzip2}�ʤޤ��� \type{bzip2 -d}�ˤ�
-�ե��������ष��\str{rpm}���ޥ�ɤ� RPM ��ʥ��åץ��졼�ɡ˥��󥹥ȡ�
-�뤷�ޤ���
+アーカイブを取得した後に，\str{bunzip2}（または \type{bzip2 -d}）で
+ファイルを解凍し，\str{rpm}コマンドで RPM を（アップグレード）インストー
+ルします．
 \begin{InTerm}
  \type[#]{bunzip2 *.bz2}
  \type[#]{rpm -Uvh tetex-texmf-$ver-1.noarch.rpm}%$
  \type[#]{rpm -Uvh Vine3-ptetex3-$date-1.i386.rpm}%$
 \end{InTerm}
-����������ե�å�������ܸ� \TeX �Ķ����ۤ��������ǽ�Ǥ�\footnote{
-Vine Linux �ξ�硤OS��°��te\TeX ���������Ȥ���
+これで相当フレッシュな日本語 \TeX 環境を構築する事が可能です\footnote{
+Vine Linux の場合，OS付属のte\TeX を削除したときに
 \str{R-devel}, \str{bibtex2html}, \str{dvipdfmx}, \str{dvipng},
 \str{hevea}, \str{jvf}, \str{latex2html}, \str{task-tetex}, 
 \str{task-texmacro-info}, \str{tetex}, \str{tetex-doc}, \str{tetex-extra},
 \str{tetex-macros}, \str{texmacro-otf}, \str{xdvik}, \str{xdvik-search}
-��������������ˤʤ뤿�ᡤ���ˤ�äƤϰ�¸�ط���̵�뤷�ƥѥå�������
-����ľ�����ˤʤ뤫�⤷��ޤ���}��
+等が削除される事になるため，場合によっては依存関係を無視してパッケージを
+入れ直す事になるかもしれません．}．
 
 \begin{InTeX}
 \ifnum 42146=\euc"A4A2 %"
@@ -503,286 +503,286 @@ Vine Linux �ξ�硤OS��°��te\TeX ���������Ȥ���
 \usepackage{graphicx}[1999/02/16]
 \usepackage{color}[1999/02/16]
 \begin{document}
-\title{ptetex �������餷��!!!}
-\author{̵̾����ʼ��}
+\title{ptetex は素晴らしい!!!}
+\author{名無し権兵衛}
 \date \today
 \maketitle
 \tableofcontents
-\section{ptetex3 �������餷��!!!!}
-��¼��\footnote{\url{http://www.nn.iij4u.or.jp/~tutimura/}}
-�Τ��������ܸ� \TeX �Ķ������Ū��ñ�˹��ۤ�������Ǥ���褦��
-�ʤ�ޤ����������ˤ��꤬�Ȥ�!
-\section{otf�Υƥ���}
-�ڵȡ�\CID{13706}�\par
-���ҹ⡧\UTF{9AD9}�粰
-\section{otf�Υƥ��� ����2}
-�ե����ƥ��Х�\CID{20654}\par
-����\CID{20556}\par
-\CID{15728} �����򲡤���\par
-\CID{16314} �򿴤����褦��
+\section{ptetex3 は素晴らしい!!!!}
+土村氏\footnote{\url{http://www.nn.iij4u.or.jp/~tutimura/}}
+のお陰で日本語 \TeX 環境を比較的簡単に構築する事ができるように
+なりました．本当にありがとう!
+\section{otfのテスト}
+土吉：\CID{13706}野屋\par
+梯子高：\UTF{9AD9}島屋
+\section{otfのテスト その2}
+フェスティバル\CID{20654}\par
+番組\CID{20556}\par
+\CID{15728} キーを押す．\par
+\CID{16314} を心がけよう．
 \end{document} 
 \end{InTeX}
-�ʾ�Υ���ץ�� \Va{file}{tex} �Ȥ���\footnote{\Hito{��¼}{��ɧ}�Υ���
-�ץ�򻲹ͤˤ��Ƥ��ޤ���}��\type{platex file}�Ȥ����
-\Va{file}{dvi}����������ޤ�������� \type{xdvi file}�Ȥ���ȡ�
- \dos{FT2: Open Font Error} �Ȥ���
-���顼��ɽ��������ˤʤ�Ȼפ��ޤ�\footnote{FreeType2�饤�֥��
-�Υ��顼���Ȼפ��ޤ���}��
+以上のサンプルを \Va{file}{tex} として\footnote{\Hito{奥村}{晴彦}のサン
+プルを参考にしています．}，\type{platex file}とすれば
+\Va{file}{dvi}が生成されます．これを \type{xdvi file}とすると，
+ \dos{FT2: Open Font Error} という
+エラーを表示する事になると思われます\footnote{FreeType2ライブラリ
+のエラーだと思われます．}．
 %\begin{OutTerm}
 % (/usr/share/texmf/dvipdfm/CIDFont/HiraminPro-W3.otf)
 %\end{OutTerm}
 
-����ˤ�� xdvi �ǤϤʤ�\Dvipdfmx �ʤɤ� PDF ���Ѵ����ƥץ�ӥ塼���Ƥߤޤ���
+これにより xdvi ではなく\Dvipdfmx などで PDF に変換してプレビューしてみます．
 \begin{InTerm}
  \type{dvipdfmx }\va{file}
  \type{xpdf }\Va{file}{pdf}
 \end{InTerm}
-�ޤ���\Xpdf �ǥץ�ӥ塼���Ƥߤޤ���\Y{OTF}�ѥå������Τ����Ĥ���ʸ����
-ɽ������Ƥ��ʤ��褦�Ǥ�\footnote{\Y{OTF}�ѥå�������\Option{expert}����
-�������դ���ȡ�����˥ץ�ӥ塼�����꤬��������Ǥ��礦��}��
+まずは\Xpdf でプレビューしてみます．\Y{OTF}パッケージのいくつかの文字が
+表示されていないようです\footnote{\Y{OTF}パッケージに\Option{expert}オプ
+ションを付けると，さらにプレビューで問題が起きる事でしょう．}．
 
-������ \type{acroread hoge.pdf &}���Ȥ��� Adobe Reader �ǥץ�ӥ塼����
-�ߤޤ�������ˤ����ۤɤޤ�ɽ������Ƥ��ʤ��ä�����դ�ɽ���Ǥ��Ƥ����
-���Ǥ���Vine Linux �˴ޤޤ�Ƥ��� \str{xpdfopen}�Ȥ����ѥå�������
-\type{apt-get install xpdfopen}�Ȥ��ƥ��󥹥ȡ��뤹��С�
+そこで \type{acroread hoge.pdf &}等として Adobe Reader でプレビューして
+みます．これにより先ほどまで表示されていなかったグリフも表示できているよ
+うです．Vine Linux に含まれている \str{xpdfopen}というパッケージを
+\type{apt-get install xpdfopen}としてインストールすれば，
 \begin{InTerm}
  \type{F=file}
  \type{pdfcolose --file $F.pdf}%$
  \type{platex $F; dvipdfmx $F}
  \type{pdfopen --file $F.pdf}%$
 \end{InTerm}
-�Ȥ���С�Adobe Reader �� PDF �ե������ưŪ���Ĥ��������ץ��åȸ�˺�
-�ӥե�����򳫤��褦�ˤʤ�ޤ�\footnote{DVI �ե������ xdvi �ǥץ�ӥ塼
-���Ƥ��Ƥ�ե����������Ĥ��Ƥ��饿���ץ��åȤ���ɬ�פϤ���ޤ���Ǥ���
-����PDF�ξ��ϥե����������Ĥ��Ƥ��饿���ץ��åȤ���ɬ�פ����뤿�ᡤ
-PDF ��ץ�ӥ塼���ʤ���κ�Ȥ��ѻ��ʺ�Ȥ�ɬ�פǤ���������
-\str{xpdfopen}�������PDF�ե�����ǥץ�ӥ塼���ʤ��饿���ץ��åȤ�
-�Ǥ���褦�ˤʤ�Ǥ��礦�����ܰʳ��Ǥ� \PDFTeX �Ѥ˻Ȥ��Ƥ����礬¿
-���褦�Ǥ���}���嵭�Τ褦�ʽ�����ɬ�פ˱����ƥ����륹����ץȤȤ��ƺ���
-���Ƥ����������Ǥ���
+とすれば，Adobe Reader の PDF ファイルを自動的に閉じ，タイプセット後に再
+びファイルを開くようになります\footnote{DVI ファイルを xdvi でプレビュー
+していてもファイルを一度閉じてからタイプセットする必要はありませんでした
+が，PDFの場合はファイルを一度閉じてからタイプセットする必要があるため，
+PDF をプレビューしながらの作業に煩雑な作業が必要でした．この
+\str{xpdfopen}があればPDFファイルでプレビューしながらタイプセットが
+できるようになるでしょう．日本以外では \PDFTeX 用に使われている場合が多
+いようです．}．上記のような処理を必要に応じてシェルスクリプトとして作成
+しておけば便利です．
 
 
-\section{�Ķ���¸����}
+\section{環境依存の話}
 
 
 %\subsection{Windows}
 
 \subsection{Vine Linux}\seclab{vinelinux}
 
-\TeX �Ȥ��μ��դλȤ������ͤ���С�\genzai �ˤ����Ƽ�ʬ�� Vine Linux
-����Ŭ���ȴ����Ƥ���ޤ�\footnote{\genzai ��Vine Linux ��������꡼����
-3.2�ȤʤäƤ��ޤ���}������¾�ˤ��ɤ��ǥ����ȥ�ӥ塼������о줹��
-��ǽ��������Ȼפ��ޤ��Τǡ��Ƕ��ư�����ܤ�����ƤߤƤ���������
+\TeX とその周辺の使い勝手を考えれば，\genzai において自分は Vine Linux
+が最適だと感じております\footnote{\genzai のVine Linux の正式リリースは
+3.2となっています．}．今後他にも良いディストリビューションが登場する
+可能性があると思いますので，最近の動向に目を向けてみてください．
 
 \newcommand*\aptmac[1]{\textsf{#1}}
 \newcommand*\aptitem[1]{\item[\aptmac{#1}]}
 \newcommand*\rpmpac[1]{\item[\textsf{#1}]}
 \newenvironment{rpmlist}{\begin{description}}{\end{description}}
 
-����Ū�� Vine Linux �ξ��ϥ��󥽡���ġ���\Prog{APT}�Ǥ⡤GUI��
-\Prog{Synaptic}����Ǥ⥽�եȥ������Υ��󥹥ȡ��������������
-��ǽ�Ǥ������󥽡���ξ��ϴ����Ը��¤� \type{apt-get update} �Ȥ��Ƥ�
-��
+基本的に Vine Linux の場合はコンソールツール\Prog{APT}でも，GUIの
+\Prog{Synaptic}からでもソフトウェアのインストールや削除，更新が
+可能です．コンソールの場合は管理者権限で \type{apt-get update} としてか
+ら
 \begin{InTerm}
- \type[#]{apt-get install }\va{�ѥå�����̾}
+ \type[#]{apt-get install }\va{パッケージ名}
 \end{InTerm}
-�Ȥ�������ǥѥå����������줿���եȥ�������Ƴ����ǽ�Ǥ���
-�����˥��եȥ������򥤥󥹥ȡ��뤹��Ȥ��ˡ����Υ��եȥ�������
-��¸�������եȥ�������Ƴ�����������礬����ޤ��Τǡ����ξ���
-\key{y}�������򲡤��ƥ��󥹥ȡ����Ȥ�ʤ�Ƥ���������
-���Ǥ�Ƴ������Ƥ��륽�եȥ������򹹿�����ˤ�
+とするだけでパッケージ化されたソフトウェアを導入可能です．
+新規にソフトウェアをインストールするときに，そのソフトウェアに
+依存したソフトウェアの導入も迫られる場合がありますので，その場合は
+\key{y}キー等を押してインストール作業を進めてください．
+すでに導入されているソフトウェアを更新するには
 \begin{InTerm}
  \type[#]{apt-get update}
  \type[#]{apt-get upgrade}
 \end{InTerm}
-��2�Ԥ��Ǥ���������ǽ����Ǥ���
+の2行を打ち込むだけで終わりです．
 
-�ʲ���\TeX �Ȥ��μ��դ˴�Ϣ����ѥå�������Ҳ𤷤ޤ���
-����Ū�ʥ��եȥ�������Ƴ����������Х��󥽡��뤫������Ը��¤�
-\type{apt-get install task-tetex}�Ȥ�������Ǥ���%\footnote{������
-%Vine Linux �ϡ֤��硼���������������פȶ��Ӥ����ʤ���ʬ�Ǥ���}
+以下に\TeX とその周辺に関連するパッケージを紹介します．
+基本的なソフトウェアを導入したければコンソールから管理者権限で
+\type{apt-get install task-tetex}とするだけです．%\footnote{ここが
+%Vine Linux は「ちょー気持ちいいー！」と叫びたくなる部分です．}
 
-\TeX �˴�Ϣ�������餫�Υ��եȥ������򥤥󥹥ȡ��뤷�����\Prog{texhash}
-���ޥ�ɤ�\kenten{���ޤ��ʤ�}�Ȥ��ƴ����Ը��¤�\type{texhash}�Ȥ���ȡ�
-\Prog{mktexlsr}���¹Ԥ���\Fl{ls-R}�ե����뤬��������ޤ���
+\TeX に関連した何らかのソフトウェアをインストールした後は\Prog{texhash}
+コマンドを\kenten{おまじない}として管理者権限で\type{texhash}とすると，
+\Prog{mktexlsr}が実行され\Fl{ls-R}ファイルが更新されます．
 
 \begin{rpmlist}
  \aptitem{task-tetex}
-   te\TeX ��ޤȤ�ƥ��󥹥ȡ��뤹�뤿��Υѥå�������
+   te\TeX をまとめてインストールするためのパッケージ．
   \aptmac{jvf}, \aptmac{tetex}, \aptmac{tetex-extra}, \aptmac{xdvik}, 
-  \aptmac{dvipdfmx}, \aptmac{VFlib}, \aptmac{freetype}�μ��ĤΥѥå�����
-   ����˥��󥹥ȡ��뤵��ޤ���
+  \aptmac{dvipdfmx}, \aptmac{VFlib}, \aptmac{freetype}の七つのパッケージ
+   が主にインストールされます．
 
  \aptitem{task-texmacro-info}
-   \Z{���󹩳�}�˴ؤ��� te\TeX �ޥ������ޤȤ�ƥ��󥹥ȡ��뤵���
-   �ѥå�������\aptmac{texmacro-his}, \aptmac{texmacro-ieice},
-   \aptmac{texmacro-ipsj}�λ��Ĥ����󥹥ȡ��뤵��ޤ���
+   \Z{情報工学}に関する te\TeX マクロがまとめてインストールされる
+   パッケージ．\aptmac{texmacro-his}, \aptmac{texmacro-ieice},
+   \aptmac{texmacro-ipsj}の三つがインストールされます．
 
  \aptitem{task-texmacro-phys}
-   \Z{ʪ����}�˴ؤ��� te\TeX �ޥ�����ޤȤ�ƥ��󥹥ȡ��뤹�뤿��Υѥ�
-   ��������\aptmac{task-tetex}, \aptmac{texmacro-jps}����Ĥ���˥���
-   �ȡ��뤵��ޤ���
+   \Z{物理学}に関する te\TeX マクロをまとめてインストールするためのパッ
+   ケージ．\aptmac{task-tetex}, \aptmac{texmacro-jps}の二つが主にインス
+   トールされます．
  
  \aptitem{tetex}
-   \Person{Thomas}{Esser}�ˤ�� \TeX �ǥ����ȥ�ӥ塼�����
-   \Prog[teTeX]{te\TeX}��
+   \Person{Thomas}{Esser}による \TeX ディストリビューション
+   \Prog[teTeX]{te\TeX}．
  
  \aptitem{tetex-doc}
-   te\TeX �Υޥ˥奢������ʸ��\fl{/usr/share/texmf/doc/} �ʲ���Ÿ��
-   ���졤Ÿ����Υե����륵������ 60\,MB���٤������礭������������
-   \TeX �Υɥ�����Ȥ�ɽ������ \Prog{texdoc}���ޥ�ɤˤ��
-   \type{texdoc verbatim}�Ȥ����\Y{verbatim}�ѥå������Υޥ˥奢�뤬��
-   ưŪ�˳�����뤿�����������Ǥ���
+   te\TeX のマニュアルや周辺文書．\fl{/usr/share/texmf/doc/} 以下に展開
+   され，展開後のファイルサイズが 60\,MB程度と非常に大きい．しかし，
+   \TeX のドキュメントを表示する \Prog{texdoc}コマンドにより
+   \type{texdoc verbatim}とすると\Y{verbatim}パッケージのマニュアルが自
+   動的に開かれるため大変便利です．
  
  \aptitem{tetex-extra}
-   te\TeX ��Ϣ���ɲå��եȥ������ȥե���ȡ�\Y{txfonts}, 
-   \Y{pxfonts}�������󥹥ȡ��뤵��ޤ���
+   te\TeX 関連の追加ソフトウェアとフォント．\Y{txfonts}, 
+   \Y{pxfonts}等がインストールされます．
 
  \aptitem{tetex-macros}
-   te\TeX �ǻȤ��ޥ����ѥå���������\aptmac{jsclasses-041229},
+   te\TeX で使うマクロパッケージ集．\aptmac{jsclasses-041229},
    \aptmac{prosper-1.00.4}, \aptmac{kanjifonts-3.0}, \Fl{epsbox.sty},
-   \Fl{eclepsf.sty} �θޤĤ����󥹥ȡ��뤵��ޤ���
+   \Fl{eclepsf.sty} の五つがインストールされます．
 
  \aptitem{xdvik}
-   \Person{Paul}{Vojta}��ˤ�� DVI �ץ�ӥ塼����\Prog{xdvik}�����ܸ첽
-   �ѥץ�����ࡥ���󥽡��뤫���\Prog{xdvi}�Ȥ������ޥ��̾�Ǽ¹ԤǤ���
-   ����
+   \Person{Paul}{Vojta}らによる DVI プレビューアー\Prog{xdvik}の日本語化
+   済プログラム．コンソールからは\Prog{xdvi}というコマンド名で実行できま
+   す．
 \end{rpmlist}
 
-�Ƽ�ز�Υޥ����ѥå����������ñ��Ƴ���Ǥ��ޤ���
-�ޥ˥奢�����ϰʲ��Υǥ��쥯�ȥ�ˤ���ޤ��� 
+各種学会のマクロパッケージ等も簡単に導入できます．
+マニュアル等は以下のディレクトリにあります． 
 \begin{quote}
-  \fl{/usr/share/doc/texmacro-}\va{�ѥå�����̾}\str-\va{�С������}\str/
+  \fl{/usr/share/doc/texmacro-}\va{パッケージ名}\str-\va{バージョン}\str/
 \end{quote}
 %
 \begin{rpmlist}
  \aptitem{texmacro-his}
-\index{�ز�}
- \index{�����ʸ}
- \indindz{��ʸ}{���}
- \zindind{��ʸ}{����}
-    \indindz{�ز�}{�ҥ塼�ޥ󥤥󥿥ե�����}
-    \Z{�ҥ塼�ޥ󥤥󥿥ե������ز�}��ʸ���ƺ����ѥޥ����ѥå����� ��
-    ��ʸ�� \Y{his}����ʸ�� \Y{ehis}�ѥå���������ꤷ�ޤ���
+\index{学会}
+ \index{投稿論文}
+ \indindz{論文}{投稿}
+ \zindind{論文}{原稿}
+    \indindz{学会}{ヒューマンインタフェース}
+    \Z{ヒューマンインタフェース学会}論文原稿作成用マクロパッケージ ．
+    和文は \Y{his}，欧文は \Y{ehis}パッケージを指定します．
 
   \aptitem{texmacro-ieice}
-    \indindz{�ز�}{�ŻҾ����̿�}
-    \Z{�ŻҾ����̿��ز�}�ѥޥ����ѥå�������
-    ��ʸ�� \Cls{ieicej}����ʸ�� \Cls{ieice} ���饹����ꤷ�ޤ���
+    \indindz{学会}{電子情報通信}
+    \Z{電子情報通信学会}用マクロパッケージ．
+    和文は \Cls{ieicej}，欧文は \Cls{ieice} クラスを指定します．
 
   \aptitem{texmacro-ipsj}
-    \indindz{�ز�}{�������}
-    \Z{��������ز�}��ʸ���ƺ����ѥޥ����ѥå�������
+    \indindz{学会}{情報処理}
+    \Z{情報処理学会}論文原稿作成用マクロパッケージ．
 
   \aptitem{texmacro-jps}
-    \indindz{�ز�}{����ʪ��}
-    \Z{����ʪ���ز�}��ʸ���ƺ����ѥޥ����ѥå�������
-    \Cls{jpsj2} ���饹����ꤷ�ޤ���
+    \indindz{学会}{日本物理}
+    \Z{日本物理学会}論文原稿作成用マクロパッケージ．
+    \Cls{jpsj2} クラスを指定します．
 
   \aptitem{texmacro-otf}
-    \Hito{�ƣ}{����Ϻ} �ˤ��OpenType Font�Ѥβ��ۥե���Ȥȥޥ�����
+    \Hito{齋藤}{修三郎} によるOpenType Font用の仮想フォントとマクロ．
 
 \end{rpmlist}
 
-����¾�ˤ�
-\Z{IEEE}, \index{�ز�!IEEE}
-\Z{�͹���ǽ�ز�}, \indindz{�ز�}{�͹���ǽ}
-\Z{���եȥ������ʳز�}, \indindz{�ز�}{���եȥ�������}
-\Z{ǧ�βʳز�}\indindz{�ز�}{ǧ�β�}
-���Υ����֥ڡ�����\LaTeX ���饹���ޥ�����������Ƥ��ޤ���
+この他にも
+\Z{IEEE}, \index{学会!IEEE}
+\Z{人工知能学会}, \indindz{学会}{人工知能}
+\Z{ソフトウェア科学会}, \indindz{学会}{ソフトウェア科}
+\Z{認知科学会}\indindz{学会}{認知科}
+等のウェブページで\LaTeX クラス・マクロを公開しています．
 
-����¾�������Ȼפ���ѥå�������Ҳ𤷤ޤ���
+その他便利だと思われるパッケージを紹介します．
 
 \begin{description}
-  \item[����] �ɲäǰʲ��ν��Τ�Ƴ����ǽ�Ǥ���
+  \item[書体] 追加で以下の書体も導入可能です．
  \begin{rpmlist}
-%  \rpmpac{latex-xft-fonts}   xft-compatible \LaTeX\ fonts for math symbols��
-  \rpmpac{mathabx}           \TeX �Ѥο����������ե���ȡ�
-  \rpmpac{ec-fonts-mftraced} \Person{J\"org}{Knappen}�ˤ�� Type1 \PS ��
-    ����EC�ե���ȡ�������� \Y{type1ec}�ѥå���������ꤹ��Ȼ��ѤǤ��ޤ���
-  \rpmpac{tipa}              \Hito{ʡ��}{��}�ˤ��\LaTeX �Ѥ�\Z{��ݲ�ɸ
-    ʸ��}��\Z{IPA}: \Z{International Phonetic Alphabet}�˥ե����
-    \textsc{Tipa}��\index{��������}\indindz{����}{����}
+%  \rpmpac{latex-xft-fonts}   xft-compatible \LaTeX\ fonts for math symbols．
+  \rpmpac{mathabx}           \TeX 用の新しい数式フォント．
+  \rpmpac{ec-fonts-mftraced} \Person{J\"org}{Knappen}による Type1 \PS 形
+    式のECフォント．原稿中で \Y{type1ec}パッケージを指定すると使用できます．
+  \rpmpac{tipa}              \Hito{福井}{玲}による\LaTeX 用の\Z{国際音標
+    文字}（\Z{IPA}: \Z{International Phonetic Alphabet}）フォント
+    \textsc{Tipa}．\index{音声記号}\indindz{記号}{音声}
  \end{rpmlist}
- \item[Emacs] (\gnu) Emacs �� \unixos ������Ū�˻Ȥ��Ƥ���ƥ����ȥ��ǥ���
- ���Ǥ����ʲ��γ�ĥ��ǽ����Ƴ�����Ƥ�»�Ϥ���ޤ���
+ \item[Emacs] (\gnu) Emacs は \unixos で伝統的に使われているテキストエディッ
+ タです．以下の拡張機能等を導入しても損はありません．
  \begin{rpmlist}
-  \rpmpac{emacs}          �ƥ����ȥ��ǥ���\Prog{Emacs}��
-  \rpmpac{color-mate}     Emacsen��ǥʥ����ʥ��顼ɽ���򤹤뤿���
-  \Z{elisp}��
-  \rpmpac{yatex}          \Hito{����}{ͺ��}�ˤ��\Emacs �Ѥ�\LaTeX ��ɮ
-     �ٱ�Ķ� \Z{��Ļ} (\Prog[yatex]\YaTeX)��
-  \rpmpac{xdvik-search}   \TeX\ \Z{src-special} �� Emacsen��ǻ��Ѥ��뤿
-  ��� \Z{elisp}��
+  \rpmpac{emacs}          テキストエディタ\Prog{Emacs}．
+  \rpmpac{color-mate}     Emacsen上でナイスなカラー表示をするための
+  \Z{elisp}．
+  \rpmpac{yatex}          \Hito{広瀬}{雄二}による\Emacs 用の\LaTeX 執筆
+     支援環境 \Z{野鳥} (\Prog[yatex]\YaTeX)．
+  \rpmpac{xdvik-search}   \TeX\ \Z{src-special} を Emacsen上で使用するた
+  めの \Z{elisp}．
  \end{rpmlist} 
-\item[���ǥ��å�] ñ�ʤ륨�ǥ��å���\Z{WYSIWYG}�Υ�ץ����եȤ⤢��ޤ���
+\item[エディッタ] 単なるエディッタや\Z{WYSIWYG}のワープロソフトもあります．
 \begin{rpmlist}
-  \rpmpac{winefish} \LaTeX �ѤΥƥ����ȥ��ǥ�����
-  \rpmpac{lyx}       \LaTeX �����Ǥ���¸�Ǥ���ʰץ�ץ�\Prog{LyX}��
-  \rpmpac{TeXmacs}   WYSIWYG��ץ�\Prog[TeXmacs]{\TeX macs}��
+  \rpmpac{winefish} \LaTeX 用のテキストエディタ．
+  \rpmpac{lyx}       \LaTeX 形式でも保存できる簡易ワープロ\Prog{LyX}．
+  \rpmpac{TeXmacs}   WYSIWYGワープロ\Prog[TeXmacs]{\TeX macs}．
 \end{rpmlist} 
-\item[PDF] �ʲ���PDF��Ϣ�Υġ����Ƴ�����Ƥ����������Ǥ���
+\item[PDF] 以下のPDF関連のツールも導入しておくと便利です．
 \begin{rpmlist}
-  \rpmpac{dvipdfmx} DVI \textto PDF �Ѵ�\Prog[dvipdfmx]{\Dvipdfmx}   ��
-  \rpmpac{xpdf}     X������ɥ������ƥ��� PDF�ե�����ӥ塼��\Xpdf��
-  \rpmpac{pdftk}    \Person{Sid}{Steward}�ˤ��PDF���ġ��륭�å�\Prog{PDFtk}��
-  \rpmpac{ps2jpdf}  �����������ޤ��� \PS \textto PDF ���Ѵ�����
-    \Prog{ps2jpdf}��
-  \rpmpac{xpdfopen} \Prog{Adobe Reader}�� \win{�ե�����} �� 
-     \win{����}/\win{�Ĥ���} ���ޥ�ɤ�������
+  \rpmpac{dvipdfmx} DVI \textto PDF 変換\Prog[dvipdfmx]{\Dvipdfmx}   ．
+  \rpmpac{xpdf}     Xウィンドウシステム用 PDFファイルビューア\Xpdf．
+  \rpmpac{pdftk}    \Person{Sid}{Steward}によるPDF操作ツールキット\Prog{PDFtk}．
+  \rpmpac{ps2jpdf}  漢字を埋め込まずに \PS \textto PDF に変換する
+    \Prog{ps2jpdf}．
+  \rpmpac{xpdfopen} \Prog{Adobe Reader}に \win{ファイル} を 
+     \win{開く}/\win{閉じる} コマンドを送信．
 \end{rpmlist} 
-\item[\BibTeX] \BibTeX ��Ϣ�Υġ���Ǥ���
+\item[\BibTeX] \BibTeX 関連のツールです．
 \begin{rpmlist}
-  \rpmpac{bibtex2html} \Person{Jean-Christophe}{Filli\^atre}��
-    \Person{Claude}{March\'e}�ˤ�� \Va{ʸ������}{bib}\textto HTML�Ѵ�
-    \Prog[BibTeX2HTML]{\BibTeX2HTML}��
-  \rpmpac{bibcheck}    \Person{Nelson}{Beebe}�ˤ��\BibTeX �ե���
-     ���������������å���
-  \rpmpac{bibclean}    \person{Nelson}{Beebe}�ˤ��\BibTeX �ե������ʸ
-      ˡ�����å��ȼ�ư�����ġ��롥
-  \rpmpac{bibutils}    ʸ���ǡ����Ѵ��桼�ƥ���ƥ���
-    \Prog{bib2xml}, \Prog{xml2bib}�������󥹥ȡ��뤵��롥
+  \rpmpac{bibtex2html} \Person{Jean-Christophe}{Filli\^atre}と
+    \Person{Claude}{March\'e}による \Va{文献一覧}{bib}\textto HTML変換
+    \Prog[BibTeX2HTML]{\BibTeX2HTML}．
+  \rpmpac{bibcheck}    \Person{Nelson}{Beebe}による\BibTeX ファイ
+     ルの整合性をチェック．
+  \rpmpac{bibclean}    \person{Nelson}{Beebe}による\BibTeX ファイルの文
+      法チェックと自動整形ツール．
+  \rpmpac{bibutils}    文献データ変換ユーティリティ．
+    \Prog{bib2xml}, \Prog{xml2bib}等がインストールされる．
 \end{rpmlist} 
-\item[�ե������Ѵ�] ��\va{���ϸ�} \textto \va{������}�׷ϤΥġ���Ǥ���
+\item[ファイル変換] 「\va{入力元} \textto \va{出力先}」系のツールです．
 \begin{rpmlist}
-  \rpmpac{detex}      \Person{Daniel}{Trinkle}�ˤ�븶�Ƥ��� \TeX ���ޥ�
-  �ɤ�������ץ������  \Prog[detex]{De\TeX}��
-  \rpmpac{dvipng}     \Person{Jan-Ake}{Larsson}�ˤ��DVI\textto PNG���Ѵ���
-  \rpmpac{latex2rtf}  \LaTeX \textto RTF�������Ѵ�
-        \Prog[latex2rtf]{\LaTeX2RTF}��
-  \rpmpac{pstoedit}   \PS/PDF \textto ¿��¿�ͤʥ٥��ȥ�������Ѵ���
-  \rpmpac{latex2html} \Person{Nikos}{Drakos}�ˤ��\LaTeX \textto HTML ��
-  �����Ѵ�����ġ��� \Prog[latex2html]{\LaTeX2HTML}��
+  \rpmpac{detex}      \Person{Daniel}{Trinkle}による原稿から \TeX コマン
+  ドを取り除くプログラム  \Prog[detex]{De\TeX}．
+  \rpmpac{dvipng}     \Person{Jan-Ake}{Larsson}によるDVI\textto PNGへ変換．
+  \rpmpac{latex2rtf}  \LaTeX \textto RTF形式に変換
+        \Prog[latex2rtf]{\LaTeX2RTF}．
+  \rpmpac{pstoedit}   \PS/PDF \textto 多種多様なベクトル形式に変換．
+  \rpmpac{latex2html} \Person{Nikos}{Drakos}による\LaTeX \textto HTML 形
+  式に変換するツール \Prog[latex2html]{\LaTeX2HTML}．
 \end{rpmlist} 
-\item[�ʳط�] ���ؤ䡤�ʳ�ʬ��ǳ�������ġ���Ǥ���
+\item[科学系] 数学や，科学分野で活躍するツールです．
 \begin{rpmlist}
-  \rpmpac{ngraph}  \Hito{�к�}{��}�ˤ��2��������պ����ץ������
-     \Prog{Ngraph}��
-  \rpmpac{octave}  \Person{John}{Eaton}�ˤ��\Z{����黻}�����դȤ���
-     \Z{���ͱ黻}�ץ������  \Prog{Octave}.
-  \rpmpac{scilab}  \Z{INRIA} ��\Z{�ե�󥹹�Ω����ԥ塼���ʳء����渦��
-     ��}�ˤˤ��\Z{�����}�����դȤ�����ͱ黻�ץ������\SciLab��
-  \rpmpac{R}       \Z{���ײ���}�����դȤ�����ͱ黻�ץ������\Prog{R}��
-  \rpmpac{gnuplot} \Person{Thomas}{Williams}��\Person{Colin}{Kelley}���
-     ���\Z{���������}�ץ������\Prog{Gnuplot}��\index{�ץ��åƥ���}
+  \rpmpac{ngraph}  \Hito{石坂}{智}による2次元グラフ作成プログラム
+     \Prog{Ngraph}．
+  \rpmpac{octave}  \Person{John}{Eaton}による\Z{行列演算}を得意とする
+     \Z{数値演算}プログラム  \Prog{Octave}.
+  \rpmpac{scilab}  \Z{INRIA} （\Z{フランス国立コンピュータ科学・制御研究
+     所}）による\Z{制御系}を得意とする数値演算プログラム\SciLab．
+  \rpmpac{R}       \Z{統計解析}を得意とする数値演算プログラム\Prog{R}．
+  \rpmpac{gnuplot} \Person{Thomas}{Williams}と\Person{Colin}{Kelley}らに
+     よる\Z{グラフ描画}プログラム\Prog{Gnuplot}．\index{プロッティング}
 \end{rpmlist} 
-\item[����������] \Z{�����Խ�}���������ù���Ԥ��ġ���Ǥ���
+\item[画像／閲覧] \Z{画像編集}，閲覧，加工を行うツールです．
 \begin{rpmlist}
-  \rpmpac{gimp}        \gnu �β����ù��ץ������\Prog{GIMP}��
-  \rpmpac{dia}         \Person{Alexander}{Larsson}��ˤ��\Z{GTK+}�١����Υ�
-  �������������ץ������\Prog{Dia}��
-  \rpmpac{ImageMagick} �����ե������ɽ��/������Ԥ��ġ��뷲��
-  \rpmpac{xfig}        \Person{Brian}{Smith}��ˤ��٥��ȥ��������
-    �ѥץ�����ࡥ
-  \rpmpac{tgif}  \Person{William Chia-Wei}{Cheng}�ˤ��2��������ץ�����
-    ��\Prog{Tgif}��
-  \rpmpac{tgif2tex}    Tgif �ο����ʸ����� \TeX �ǽ��������Ѵ��ץ�����ࡥ
-  \rpmpac{ghostscript} ���ܸ� \PS ���󥿥ץ꥿�������顦�ץ�ӥ塼����
-  \rpmpac{gv}          \PS ���󥿡��ץ꥿�Ǥ��� \GS �γ�ĥ�ե���ȥ���ɡ�
+  \rpmpac{gimp}        \gnu の画像加工プログラム\Prog{GIMP}．
+  \rpmpac{dia}         \Person{Alexander}{Larsson}らによる\Z{GTK+}ベースのダ
+  イアグラム作成プログラム\Prog{Dia}．
+  \rpmpac{ImageMagick} 画像ファイルの表示/処理を行うツール群．
+  \rpmpac{xfig}        \Person{Brian}{Smith}らによるベクトル画像作成
+    用プログラム．
+  \rpmpac{tgif}  \Person{William Chia-Wei}{Cheng}による2次元描画プログラ
+    ム\Prog{Tgif}．
+  \rpmpac{tgif2tex}    Tgif の図中の文字列を \TeX で処理する変換プログラム．
+  \rpmpac{ghostscript} 日本語 \PS インタプリタ・レンダラ・プレビューア．
+  \rpmpac{gv}          \PS インタープリタである \GS の拡張フロントエンド．
 \end{rpmlist}
 \end{description}
 
-%\section{��������}
+%\section{さらに先へ}
 
 %\begin{description}
 % \item[e-TeX]

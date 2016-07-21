@@ -53,8 +53,8 @@
 %</driver>
 % \fi
 %
-% \title{¡Ø¹¥¤­¹¥¤­{\LaTeXe}¡ÙÍÑ¥Ş¥¯¥í½¸}
-% \author{ÅÏÊÕÅ°}
+% \title{ã€å¥½ãå¥½ã{\LaTeXe}ã€ç”¨ãƒã‚¯ãƒ­é›†}
+% \author{æ¸¡è¾ºå¾¹}
 % \date{\number\year/\number\month/\number\day}
 % \maketitle
 % \StopEventually{}
@@ -64,8 +64,8 @@
 %
 % \DescribeMacro{\FileDatej}
 % \DescribeMacro{\FileVerjou}
-% ºı»Ò¤ÎÇÛÉÛÆü¤È¥Ğ¡¼¥¸¥ç¥ó¾ğÊó¤òÊİ»ı¤¹¤ë|\FileDatej|¤È
-% |\FileVerjou|¤òÄêµÁ¤·¤Ş¤¹¡¥
+% å†Šå­ã®é…å¸ƒæ—¥ã¨ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±ã‚’ä¿æŒã™ã‚‹|\FileDatej|ã¨
+% |\FileVerjou|ã‚’å®šç¾©ã—ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand* \FileDatej{\number\year/\two@digits\month/\two@digits\day}
 \FileVerjou{0.3d}
@@ -74,25 +74,25 @@
 % \DescribeMacro{\author}
 % \DescribeMacro{\title}
 % \DescribeMacro{\date}
-% |\author|¤È|\title|¤È|\date|¤Ï¸ÇÄê¤Ç¤¹¡¥
+% |\author|ã¨|\title|ã¨|\date|ã¯å›ºå®šã§ã™ï¼
 %    \begin{macrocode}
-\author {ÅÏÊÕÅ°}
-\title  {¹¥¤­¹¥¤­ \LaTeXe ½éµéÊÔ}
+\author {æ¸¡è¾ºå¾¹}
+\title  {å¥½ãå¥½ã \LaTeXe åˆç´šç·¨}
 \date   \today
 %    \end{macrocode}
 %
 % \DescribeMacro{\RequirePackage}
-% ¡Ø¹¥¤­¹¥¤­¡Ù¤¬É¬Í×¤È¤¹¤ë¥Ş¥¯¥í¤¿¤Á¤Ç¤¹¡¥
-% ¥Ş¥¯¥í¤òÆÉ¤ß¹ş¤à¤È¤­¤Ë|\ifusedvipdfm|Åù¤Î¥Ö¡¼¥ëÃÍ¤ò
-% »È¤Ã¤Æ¥Ñ¥Ã¥±¡¼¥¸¥ª¥×¥·¥ç¥ó¤òÈ½Äê¤·¤Ş¤¹¡¥¤³¤ì¤Ï¼ç¸¶¹Æ
-% ¤ÇÄêµÁ¤µ¤ì¤Æ¤¤¤Ş¤¹¡¥\textsf{listings}¤ÏÍÍ¡¹¤Ê¾ìÌÌ¤Ç
-% »È¤ï¤ì¤Ş¤¹¡¥\textsf{jlisting}¤ÏÄÌ¾Î¤·¤Ã¤İ°¦¹¥²È»á¤è¤ê
-% Äº¤¤¤¿¤â¤Î¤Ç¤¹¡¥\textsf{okumacro}¤«¤é¤Ï|\ruby|¡¤
-% |\yen|¡¤|\key|¡¤|\return|¡¤|\MARU|¡¤
-% |\JTeX|¡¤|\JLaTeX|¡¤|screen|´Ä¶­¤Ê¤É¤ò
-% ¼ÚÍÑ¤·¤Æ¤¤¤Ş¤¹¡¥²Õ¾ò½ñ¤­ÍÑ¤Î|namelist|´Ä¶­¤ä
-% Ê¸¸¥°ìÍ÷¤ò½ĞÎÏ¤¹¤ë|mybibliography|´Ä¶­¤â»È¤Ã¤Æ¤¤¤Ş¤¹¡¥
-% \textsf{url}¥Ñ¥Ã¥±¡¼¥¸¤«¤é¤Ï|\url|Ì¿Îá¤Ê¤É¤ò»È¤Ã¤Æ¤¤¤Ş¤¹¡¥
+% ã€å¥½ãå¥½ãã€ãŒå¿…è¦ã¨ã™ã‚‹ãƒã‚¯ãƒ­ãŸã¡ã§ã™ï¼
+% ãƒã‚¯ãƒ­ã‚’èª­ã¿è¾¼ã‚€ã¨ãã«|\ifusedvipdfm|ç­‰ã®ãƒ–ãƒ¼ãƒ«å€¤ã‚’
+% ä½¿ã£ã¦ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’åˆ¤å®šã—ã¾ã™ï¼ã“ã‚Œã¯ä¸»åŸç¨¿
+% ã§å®šç¾©ã•ã‚Œã¦ã„ã¾ã™ï¼\textsf{listings}ã¯æ§˜ã€…ãªå ´é¢ã§
+% ä½¿ã‚ã‚Œã¾ã™ï¼\textsf{jlisting}ã¯é€šç§°ã—ã£ã½æ„›å¥½å®¶æ°ã‚ˆã‚Š
+% é ‚ã„ãŸã‚‚ã®ã§ã™ï¼\textsf{okumacro}ã‹ã‚‰ã¯|\ruby|ï¼Œ
+% |\yen|ï¼Œ|\key|ï¼Œ|\return|ï¼Œ|\MARU|ï¼Œ
+% |\JTeX|ï¼Œ|\JLaTeX|ï¼Œ|screen|ç’°å¢ƒãªã©ã‚’
+% å€Ÿç”¨ã—ã¦ã„ã¾ã™ï¼ç®‡æ¡æ›¸ãç”¨ã®|namelist|ç’°å¢ƒã‚„
+% æ–‡çŒ®ä¸€è¦§ã‚’å‡ºåŠ›ã™ã‚‹|mybibliography|ç’°å¢ƒã‚‚ä½¿ã£ã¦ã„ã¾ã™ï¼
+% \textsf{url}ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‹ã‚‰ã¯|\url|å‘½ä»¤ãªã©ã‚’ä½¿ã£ã¦ã„ã¾ã™ï¼
 % 
 %    \begin{macrocode}
 \RequirePackage[usenames]{color}[1999/02/16]%
@@ -138,22 +138,22 @@
 \RequirePackage[T1]{fontenc}\relax%
 \RequirePackage{textcomp}\relax% TODO
 \RequirePackage{emathN}[1991/01/01]% http://emath.s40.xrea.com/
-\resettagform % ¤³¤ì¤ÏÉ¬Í×
+\resettagform % ã“ã‚Œã¯å¿…è¦
 %    \end{macrocode}
 %
 % \DescribeMacro{\lstset}
 % \DescribeMacro{\lstlistlistingname}
 % \DescribeMacro{\lstlistingname}
-% \textsf{listings}ÍÑ¤ÎÀßÄê¤Ç¤¹¡¥|\lstset|¤Ç¤¹¤Ù¤Æ¤Î
-% \textsf{listings}¤Î´Ä¶­¤ÎÀßÄê¤ò¤·¤Ş¤¹¡¥
+% \textsf{listings}ç”¨ã®è¨­å®šã§ã™ï¼|\lstset|ã§ã™ã¹ã¦ã®
+% \textsf{listings}ã®ç’°å¢ƒã®è¨­å®šã‚’ã—ã¾ã™ï¼
 %    \begin{macrocode}
 \lstset{breaklines=true,columns=[l]{fullflexible},%
    numbers=left,numberstyle={\scriptsize},%
    stepnumber=1,numbersep=1zw,%
    lineskip=-0.5ex}%
-\def\lstlistlistingname{¥½¡¼¥¹¥³¡¼¥ÉÌÜ¼¡}
-\def\lstlistingname{¥½¡¼¥¹¥³¡¼¥É}
-% wrapfig ÍÑ¤ÎÀßÄê (\fullwidth¤ÇÆş¤ì¤ë)
+\def\lstlistlistingname{ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ç›®æ¬¡}
+\def\lstlistingname{ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰}
+% wrapfig ç”¨ã®è¨­å®š (\fullwidthã§å…¥ã‚Œã‚‹)
 \setlength{\wrapoverhang}{\fullwidth}
 \addtolength{\wrapoverhang}{-\textwidth}
 \addtolength{\wrapoverhang}{\marginparsep}
@@ -161,8 +161,8 @@
 %    \end{macrocode}
 %
 % \DescribeMacro{\contact}
-% ºı»Ò¤ÎºîÀ®¼Ô¤Ø¤ÎÏ¢ÍíÀè¤òÄêµÁ¤·¤Ş¤¹¡¥¤³¤ì¤Ï
-% É½»æ¤Ë»È¤ï¤ì¤Ş¤¹¡¥
+% å†Šå­ã®ä½œæˆè€…ã¸ã®é€£çµ¡å…ˆã‚’å®šç¾©ã—ã¾ã™ï¼ã“ã‚Œã¯
+% è¡¨ç´™ã«ä½¿ã‚ã‚Œã¾ã™ï¼
 %    \begin{macrocode}
 \contact{%
    Th\'or Watanabe\\%
@@ -176,31 +176,31 @@
 % \DescribeMacro{\makeglossary}
 % \DescribeMacro{\indexname}
 % \DescribeMacro{\glossaryname}
-% º÷°ú¤ÈÌ¿Îáº÷°ú¤òºî¤ë¤¿¤á¤Ë|\makeindex|¤È|\makeglossary|
-% ¤·¤Æ¤¤¤Ş¤¹¡£¤½¤ì¤Ë°ø¤ó¤Ç|\indexname|¤È|\glossaryname|¤ò
-% ¤½¤ì¤¾¤ì¡Öº÷ °ú¡×¤È¡ÖÌ¿ Îá º÷ °ú¡×¤Ë·è¤á¤Æ¤¤¤Ş¤¹¡¥
+% ç´¢å¼•ã¨å‘½ä»¤ç´¢å¼•ã‚’ä½œã‚‹ãŸã‚ã«|\makeindex|ã¨|\makeglossary|
+% ã—ã¦ã„ã¾ã™ã€‚ãã‚Œã«å› ã‚“ã§|\indexname|ã¨|\glossaryname|ã‚’
+% ãã‚Œãã‚Œã€Œç´¢ å¼•ã€ã¨ã€Œå‘½ ä»¤ ç´¢ å¼•ã€ã«æ±ºã‚ã¦ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \makeindex
 \makeglossary
-\def\indexname{º÷ °ú}
-\def\glossaryname{Ì¿ Îá º÷ °ú}
+\def\indexname{ç´¢ å¼•}
+\def\glossaryname{å‘½ ä»¤ ç´¢ å¼•}
 %    \end{macrocode}
 %
 % \DescribeMacro{\bs}
-% ¥Ğ¥Ã¥¯¥¹¥é¥Ã¥·¥å¤Ë¥¢¥¯¥»¥¹¤¹¤ë¤¿¤á¤Ë|\bs|Ì¿Îá¤òÄêµÁ¤·¤Ş¤¹¡¥
-% ÍÍ¡¹¤Ê¾ìÌÌ¤Ç»È¤ï¤ì¤Ş¤¹¤¬¥¿¥¤¥×¥é¥¤¥¿ÂÎ¤Ç¤Î½ĞÎÏ¤Î¤È¤­¤Ë¤·¤«
-% »È¤¤¤Ş¤»¤ó¡¥
+% ãƒãƒƒã‚¯ã‚¹ãƒ©ãƒƒã‚·ãƒ¥ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ãŸã‚ã«|\bs|å‘½ä»¤ã‚’å®šç¾©ã—ã¾ã™ï¼
+% æ§˜ã€…ãªå ´é¢ã§ä½¿ã‚ã‚Œã¾ã™ãŒã‚¿ã‚¤ãƒ—ãƒ©ã‚¤ã‚¿ä½“ã§ã®å‡ºåŠ›ã®ã¨ãã«ã—ã‹
+% ä½¿ã„ã¾ã›ã‚“ï¼
 %    \begin{macrocode}
 \newcommand{\bs}{\symbol{'134}}
 %    \end{macrocode}
 %
 % \DescribeMacro{\cmd}
-% Ê¸½ñÃæ¤Ç{\LaTeX}¤Î¥³¥Ş¥ó¥É¤ò»²¾È¤¹¤ë¤È¤­¤Ë»È¤ï¤ì¤ëÌ¿Îá¤Ç¤¹¡¥
-% |\cmd{newcommand}|¤Î¤è¤¦¤Ë»È¤¤¤Ş¤¹¡¥ÀèÆ¬¤Ë¥Ğ¥Ã¥¯¥¹¥é¥Ã
-% ¥·¥å¤¬ÉÕ²Ã¤µ¤ì¤Ş¤¹¡¥¤³¤ì¤ÏÁ°½Ò¤Î|\bs|Ì¿Îá¤¬»È¤ï¤ì¤Ş¤¹¡¥
+% æ–‡æ›¸ä¸­ã§{\LaTeX}ã®ã‚³ãƒãƒ³ãƒ‰ã‚’å‚ç…§ã™ã‚‹ã¨ãã«ä½¿ã‚ã‚Œã‚‹å‘½ä»¤ã§ã™ï¼
+% |\cmd{newcommand}|ã®ã‚ˆã†ã«ä½¿ã„ã¾ã™ï¼å…ˆé ­ã«ãƒãƒƒã‚¯ã‚¹ãƒ©ãƒƒ
+% ã‚·ãƒ¥ãŒä»˜åŠ ã•ã‚Œã¾ã™ï¼ã“ã‚Œã¯å‰è¿°ã®|\bs|å‘½ä»¤ãŒä½¿ã‚ã‚Œã¾ã™ï¼
 % \DescribeMacro{\Cmd}
-% {\LaTeX}¤Î¥³¥Ş¥ó¥É¤ò¡Öº÷°ú¡×¤ËÄÉ²Ã¤¹¤ë¾ì¹ç¤Ï|\cmd|¤Ç¤Ï¤Ê¤¯
-% |\Cmd|Ì¿Îá¤ò»È¤¦¤è¤¦¤Ë¤·¤Ş¤¹¡¥
+% {\LaTeX}ã®ã‚³ãƒãƒ³ãƒ‰ã‚’ã€Œç´¢å¼•ã€ã«è¿½åŠ ã™ã‚‹å ´åˆã¯|\cmd|ã§ã¯ãªã
+% |\Cmd|å‘½ä»¤ã‚’ä½¿ã†ã‚ˆã†ã«ã—ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\cmd}[1]{\texttt{\bs#1}}
 \newcommand{\Cmd}[1]{%
@@ -209,34 +209,34 @@
 %    \end{macrocode}
 %
 % \DescribeMacro{\env}
-% {\LaTeX}¤Î´Ä¶­·¿¤Î¥³¥Ş¥ó¥É¤òÊ¸½ñÃæ¤Ç»²¾È¤¹¤ë¤È¤­¤Ï
-% |\env|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% {\LaTeX}ã®ç’°å¢ƒå‹ã®ã‚³ãƒãƒ³ãƒ‰ã‚’æ–‡æ›¸ä¸­ã§å‚ç…§ã™ã‚‹ã¨ãã¯
+% |\env|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\Env}
-% ¤½¤Î´Ä¶­¤òº÷°ú¤ËÄÉ²Ã¤·¤¿¤±¤ì¤Ğ|\Env|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ãã®ç’°å¢ƒã‚’ç´¢å¼•ã«è¿½åŠ ã—ãŸã‘ã‚Œã°|\Env|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\env}[1]{\texttt{#1}}%
 \newcommand{\Env}[1]{%
-   \index{´Ä¶­!#1@\texttt{#1}}%
-   \glossary{´Ä¶­!#1@\texttt{#1}}%
-   \glossary{#1¤«¤ó¤­¤è¤¦@\texttt{#1}´Ä¶­}%
+   \index{ç’°å¢ƒ!#1@\texttt{#1}}%
+   \glossary{ç’°å¢ƒ!#1@\texttt{#1}}%
+   \glossary{#1ã‹ã‚“ãã‚ˆã†@\texttt{#1}ç’°å¢ƒ}%
    \texttt{#1}}%
 %    \end{macrocode}
 %
 % \DescribeMacro{\word}
-% ¸ì¶ç¤Ï|\word|Ì¿Îá¤ÎÃæ¤ËÆş¤ì¤Ş¤¹¡¥
+% èªå¥ã¯|\word|å‘½ä»¤ã®ä¸­ã«å…¥ã‚Œã¾ã™ï¼
 % \DescribeMacro{\Word}
-% ¸ì¶ç¤òº÷°ú¤ËÄÉ²Ã¤¹¤ë¤È¤­¤Ï|\Word|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% èªå¥ã‚’ç´¢å¼•ã«è¿½åŠ ã™ã‚‹ã¨ãã¯|\Word|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\word}[1]{#1}
 \newcommand{\Word}[1]{\index{#1}#1}
 %    \end{macrocode}
 %
 % \DescribeMacro{\zdash}
-%  º÷°úÃæ¤ËÁŞÆş¤¹¤ëÇÜ³Ñ¥À¥Ã¥·¥å¤ò|\protect|¤¹¤ë¤¿¤á¤Ë
-%  |\zdash|Ì¿Îá¤òÄêµÁ¤·¤Æ¤¤¤Ş¤¹¡¥
+%  ç´¢å¼•ä¸­ã«æŒ¿å…¥ã™ã‚‹å€è§’ãƒ€ãƒƒã‚·ãƒ¥ã‚’|\protect|ã™ã‚‹ãŸã‚ã«
+%  |\zdash|å‘½ä»¤ã‚’å®šç¾©ã—ã¦ã„ã¾ã™ï¼
 % \DescribeMacro{\indindz}
 % \DescribeMacro{\zindind}
-%  ³¬ÁØÅª¤Êº÷°ú¤Ë¤Ï¡Ö¿Æ¡×¤È¡Ö»Ò¡×¤ò»ØÄê¤·¤Æ¥¨¥ó¥È¥ê¤µ¤»¤Ş¤¹¡¥
+%  éšå±¤çš„ãªç´¢å¼•ã«ã¯ã€Œè¦ªã€ã¨ã€Œå­ã€ã‚’æŒ‡å®šã—ã¦ã‚¨ãƒ³ãƒˆãƒªã•ã›ã¾ã™ï¼
 %    \begin{macrocode} 
 \DeclareRobustCommand\zdash{\char\jis"213D\kern-.5zw%
    \char\jis"213D\kern-.5zw\char\jis"213D\relax}
@@ -245,109 +245,109 @@
 %    \end{macrocode}
 %
 % \DescribeMacro{\prog}
-% ¥×¥í¥°¥é¥àÌ¾¤ò»²¾È¤¹¤ë¾ì¹ç¤Ï|\prog|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ãƒ—ãƒ­ã‚°ãƒ©ãƒ åã‚’å‚ç…§ã™ã‚‹å ´åˆã¯|\prog|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\Prog}
-% ¥×¥í¥°¥é¥àÌ¾¤òº÷°ú¤ËÄÉ²Ã¤¹¤ë¾ì¹ç¤Ï|\Prog|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ãƒ—ãƒ­ã‚°ãƒ©ãƒ åã‚’ç´¢å¼•ã«è¿½åŠ ã™ã‚‹å ´åˆã¯|\Prog|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\prog}{\@ifnextchar[{\yomi@prog}{\@prog}}%]
 \newcommand{\@prog}[1]{#1}
 \newcommand{\yomi@prog}[2][]{#2}
 \newcommand{\Prog}{\@ifnextchar[{\yomi@Prog}{\@Prog}}
 \newcommand{\@Prog}[1]{%
-   \index{¥×¥í¥°¥é¥à!#1}\index{#1}#1}
+   \index{ãƒ—ãƒ­ã‚°ãƒ©ãƒ !#1}\index{#1}#1}
 \newcommand{\yomi@Prog}[2][]{%
-   \index{¥×¥í¥°¥é¥à!#1@\protect#2}%
+   \index{ãƒ—ãƒ­ã‚°ãƒ©ãƒ !#1@\protect#2}%
    \index{#1@\protect#2}#2}
 %    \end{macrocode}
 %
 % \DescribeMacro{\fl}
-% ¥Õ¥¡¥¤¥ëÌ¾¤ò»²¾È¤¹¤ë¾ì¹ç¤Ï|\fl|¤ò»È¤¤¤Ş¤¹¡¥
+% ãƒ•ã‚¡ã‚¤ãƒ«åã‚’å‚ç…§ã™ã‚‹å ´åˆã¯|\fl|ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\Fl}
-% ¥Õ¥¡¥¤¥ëÌ¾¤ò»²¾È¤·º÷°ú¤ËÄÉ²Ã¤¹¤ë¤È¤­¤Ï|\Fl|¤ò»È¤¤¤Ş¤¹¡¥
+% ãƒ•ã‚¡ã‚¤ãƒ«åã‚’å‚ç…§ã—ç´¢å¼•ã«è¿½åŠ ã™ã‚‹ã¨ãã¯|\Fl|ã‚’ä½¿ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\fl}[1]{\texttt{#1}}
 \newcommand{\Fl}[1]{%
-   \index{¥Õ¥¡¥¤¥ë!#1@\texttt{#1}}%
+   \index{ãƒ•ã‚¡ã‚¤ãƒ«!#1@\texttt{#1}}%
    \index{#1@\texttt{#1}}\texttt{#1}}
 %    \end{macrocode}
 %
 % \DescribeMacro{\cls}
-% ¤·¤Ä¤³¤¤¤è¤¦¤Ç¤¹¤¬¡¤¥É¥­¥å¥á¥ó¥È¥¯¥é¥¹¤ò»²¾È¤¹¤ë¤È¤­¤Ï
-% |\cls|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡£
+% ã—ã¤ã“ã„ã‚ˆã†ã§ã™ãŒï¼Œãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚¯ãƒ©ã‚¹ã‚’å‚ç…§ã™ã‚‹ã¨ãã¯
+% |\cls|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ã€‚
 % \DescribeMacro{\Cls}
-% ¥¯¥é¥¹¤òº÷°ú¤Ë¤âÄÉ²Ã¤¹¤ë¤È¤­¤Ï|\Cls|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ã‚¯ãƒ©ã‚¹ã‚’ç´¢å¼•ã«ã‚‚è¿½åŠ ã™ã‚‹ã¨ãã¯|\Cls|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\cls}[1]{\textsf{#1}}
 \newcommand{\Cls}[1]{%
-   \index{¥¯¥é¥¹!#1@\textsf{#1}}%
+   \index{ã‚¯ãƒ©ã‚¹!#1@\textsf{#1}}%
    \index{#1@\textsf{#1}}\textsf{#1}}
 %    \end{macrocode}
 %
 % \DescribeMacro{\sty}
-% ¥Ş¥¯¥í¥Ñ¥Ã¥±¡¼¥¸¤Ï|\sty|¤Ç»²¾È¤·¤Ş¤¹¡¥
+% ãƒã‚¯ãƒ­ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã¯|\sty|ã§å‚ç…§ã—ã¾ã™ï¼
 % \DescribeMacro{\Sty}
-% ¤µ¤é¤Ëº÷°ú¤Ë¤âÄÉ²Ã¤¹¤ë¤Ë¤Ï|\Sty|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ã•ã‚‰ã«ç´¢å¼•ã«ã‚‚è¿½åŠ ã™ã‚‹ã«ã¯|\Sty|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\sty}[1]{\textsf{#1}}
 \newcommand{\Sty}[1]{%
-   \index{¥Ñ¥Ã¥±¡¼¥¸!#1@\textsf{#1}}%
+   \index{ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸!#1@\textsf{#1}}%
    \index{#1@\textsf{#1}}\textsf{#1}}%
 %    \end{macrocode}
 %
 % \DescribeMacro{\bst}
-% Ê¸¸¥¥¹¥¿¥¤¥ë¤ò»²¾È¤¹¤ë¤È¤­¤Ï|\bst|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% æ–‡çŒ®ã‚¹ã‚¿ã‚¤ãƒ«ã‚’å‚ç…§ã™ã‚‹ã¨ãã¯|\bst|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\Bst}
-% º÷°úÄÉ²Ã¤Ï|\Bst|¤Ç¤¹¡£
+% ç´¢å¼•è¿½åŠ ã¯|\Bst|ã§ã™ã€‚
 %    \begin{macrocode}
 \newcommand{\bst}[1]{\textsf{#1}}
 \newcommand{\Bst}[1]{%
-	\index{Ê¸¸¥¥¹¥¿¥¤¥ë!#1@\textsf{#1}}%
+	\index{æ–‡çŒ®ã‚¹ã‚¿ã‚¤ãƒ«!#1@\textsf{#1}}%
 	\index{#1@\textsf{#1}}\textsf{#1}}%
 %    \end{macrocode}
 %
 % \DescribeMacro{\hito}
-% ¿ÍÌ¾¤ò½ñ¤¯¤È¤­¤Ï|\hito|Ì¿Îá¤ò»È¤¤·É¾Î¤ò¾ÊÎ¬¤·¤Ş¤¹¡¥
-% ·É¾Î¤Ï|\hito|Ì¿ÎáÂ¦¤ÇÅı°ì¤·¤Ş¤¹¡¥
+% äººåã‚’æ›¸ãã¨ãã¯|\hito|å‘½ä»¤ã‚’ä½¿ã„æ•¬ç§°ã‚’çœç•¥ã—ã¾ã™ï¼
+% æ•¬ç§°ã¯|\hito|å‘½ä»¤å´ã§çµ±ä¸€ã—ã¾ã™ï¼
 % \DescribeMacro{\Hito}
-% º÷°ú¤ËÄÉ²Ã¤¹¤ë¾ì¹ç¤Ï|\Hito|Ì¿Îá¤Ç¤¹¡¥ÆÉ¤ß¤¬¤¢¤ë¾ì¹ç¤Ï
-% Ç¤°Õ°ú¿ô¤Ç»ØÄê¤·¤Ş¤¹¡¥
+% ç´¢å¼•ã«è¿½åŠ ã™ã‚‹å ´åˆã¯|\Hito|å‘½ä»¤ã§ã™ï¼èª­ã¿ãŒã‚ã‚‹å ´åˆã¯
+% ä»»æ„å¼•æ•°ã§æŒ‡å®šã—ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\hito}{\@ifnextchar[{\yomi@hito}{\@hito}}
-\newcommand{\yomi@hito}[2][]{#2»á}
-\newcommand{\@hito}[1]{#1»á}
+\newcommand{\yomi@hito}[2][]{#2æ°}
+\newcommand{\@hito}[1]{#1æ°}
 \newcommand{\Hito}{\@ifnextchar[{\yomi@Hito}{\@Hito}}
 \newcommand{\yomi@Hito}[2][]{%
-	\index{¿ÍÌ¾!#1@\protect{#2}}%
-	\index{#1@\protect{#2}}#2»á}
-\newcommand{\@Hito}[1]{\index{¿ÍÌ¾!#1}\index{#1}#1»á}
+	\index{äººå!#1@\protect{#2}}%
+	\index{#1@\protect{#2}}#2æ°}
+\newcommand{\@Hito}[1]{\index{äººå!#1}\index{#1}#1æ°}
 \newcommand{\HITO}{\@ifnextchar[{\yomi@HITO}{\@HITO}}
 \newcommand{\yomi@HITO}[2][]{%
-   \index{¿ÍÌ¾!#1@\protect{#2}}%
+   \index{äººå!#1@\protect{#2}}%
    \index{#1@\protect{#2}}#2}%
-\newcommand{\@HITO}[1]{\index{¿ÍÌ¾!#1}\index{#1}#1}
+\newcommand{\@HITO}[1]{\index{äººå!#1}\index{#1}#1}
 %    \end{macrocode}
 %
 % \DescribeMacro{\kount}
-% {\LaTeX}¤Î¥«¥¦¥ó¥¿Ì¾¤ò»²¾È¤¹¤ë¾ì¹ç¤Ï|\kount|¤ò»È¤¤¤Ş¤¹¡¥
+% {\LaTeX}ã®ã‚«ã‚¦ãƒ³ã‚¿åã‚’å‚ç…§ã™ã‚‹å ´åˆã¯|\kount|ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\Kount}
-% °Æ¤ÎÄêº÷°ú¤ËÄÉ²Ã¤¹¤ë¤Ë¤Ï|\Kount|¤ò»È¤¤¤Ş¤¹¡¥
+% æ¡ˆã®å®šç´¢å¼•ã«è¿½åŠ ã™ã‚‹ã«ã¯|\Kount|ã‚’ä½¿ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\kount}[1]{\texttt{#1}}
 \newcommand{\Kount}[1]{%
-  \index{#1@\texttt{#1}\pp{¥«¥¦¥ó¥¿}}\index{¥«¥¦¥ó¥¿!#1@\texttt{#1}}%
+  \index{#1@\texttt{#1}\pp{ã‚«ã‚¦ãƒ³ã‚¿}}\index{ã‚«ã‚¦ãƒ³ã‚¿!#1@\texttt{#1}}%
   \texttt{#1}}
 %    \end{macrocode}
 %
 % \DescribeMacro{\exten}
-% ³ÈÄ¥»Ò¤ò¼¨¤¹¾ì¹ç¤Ï|\exten|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥°ú¿ô¤Ë¥Ô¥ê¥ª¥É¤Ï
-% ¾ÊÎ¬¤·¤Ş¤¹¡£
+% æ‹¡å¼µå­ã‚’ç¤ºã™å ´åˆã¯|\exten|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼å¼•æ•°ã«ãƒ”ãƒªã‚ªãƒ‰ã¯
+% çœç•¥ã—ã¾ã™ã€‚
 % \DescribeMacro{\Exten}
-% º÷°ú¤Ë¤âÄÉ²Ã¤¹¤ë¾ì¹ç¤Ï|\Exten|¤ò»È¤¤¤Ş¤¹¡¥
+% ç´¢å¼•ã«ã‚‚è¿½åŠ ã™ã‚‹å ´åˆã¯|\Exten|ã‚’ä½¿ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\exten}[1]{\texttt{.#1}}
 \newcommand{\Exten}[1]{%
-  \index{³ÈÄ¥»Ò!#1@\texttt{\protect\hspace*{-1ex}.#1}}%
-  \index{#1@\texttt{\protect\hspace*{-1ex}.#1} (³ÈÄ¥»Ò)}%
+  \index{æ‹¡å¼µå­!#1@\texttt{\protect\hspace*{-1ex}.#1}}%
+  \index{#1@\texttt{\protect\hspace*{-1ex}.#1} (æ‹¡å¼µå­)}%
   \texttt{.#1}}
 %    \end{macrocode}
 %
@@ -359,15 +359,15 @@
 %    \end{macrocode}
 % 
 % \DescribeMacro{\va}
-% °ìÈÌÅª¤Ê¡ÖÊÑ¿ô¡×¤È¸Æ¤Ğ¤ì¤ëÍ×ÁÇ¤ËÂĞ¤·¤Æ¤Ï|\va|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ä¸€èˆ¬çš„ãªã€Œå¤‰æ•°ã€ã¨å‘¼ã°ã‚Œã‚‹è¦ç´ ã«å¯¾ã—ã¦ã¯|\va|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\Va}
-% |\Va|Ì¿Îá¤Ï2¤Ä¤Î°ú¿ô¤ò¼è¤ê¤Ş¤¹¡£1¤ÄÌÜ¤Ë¤ÏÇ¤°Õ¤ÎÊ¸»úÎó¡¢2¤ÄÌÜ¤Ë¤Ï
-% ³ÈÄ¥»Ò¤ò½ñ¤­¤Ş¤¹¤«¤é¡¤¤³¤ì¤ÏÇ¤°Õ¤Î¥Õ¥¡¥¤¥ë¤ò³ÈÄ¥»ÒÉÕ¤­¤Ç
-% ¼¨¤¹¾ì¹ç¤Ë»È¤¤¤Ş¤¹¡¥
+% |\Va|å‘½ä»¤ã¯2ã¤ã®å¼•æ•°ã‚’å–ã‚Šã¾ã™ã€‚1ã¤ç›®ã«ã¯ä»»æ„ã®æ–‡å­—åˆ—ã€2ã¤ç›®ã«ã¯
+% æ‹¡å¼µå­ã‚’æ›¸ãã¾ã™ã‹ã‚‰ï¼Œã“ã‚Œã¯ä»»æ„ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ‹¡å¼µå­ä»˜ãã§
+% ç¤ºã™å ´åˆã«ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\str}
-% ¥½¡¼¥¹¥³¡¼¥É¤ÎÆşÎÏ¤ä¤½¤ÎÂ¾É¬Í×¤È»×¤ï¤ì¤ë¡ÖÊ¸»úÎó¡×¤ËÂĞ¤·¤Æ¤Ï
-% |\str|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥¤³¤ì¤ÏÀèÆ¬¤ÎÊ¸»úÎó¤¬|\string|¤Ç
-% ¥«¥Æ¥´¥ê¡¼¤¬Ìµ¸ú¤Ë¤Ê¤ê¤Ş¤¹¡¥
+% ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã®å…¥åŠ›ã‚„ãã®ä»–å¿…è¦ã¨æ€ã‚ã‚Œã‚‹ã€Œæ–‡å­—åˆ—ã€ã«å¯¾ã—ã¦ã¯
+% |\str|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼ã“ã‚Œã¯å…ˆé ­ã®æ–‡å­—åˆ—ãŒ|\string|ã§
+% ã‚«ãƒ†ã‚´ãƒªãƒ¼ãŒç„¡åŠ¹ã«ãªã‚Šã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\va}[1]{{\normalfont$\langle$\mbox{}#1\mbox{}$\rangle$}}
 \newcommand{\av}[1]{{\normalfont$\langle$\mbox{}#1\mbox{}$\rangle$}}
@@ -377,11 +377,11 @@
 %    \end{macrocode}
 %
 % \DescribeMacro{\pa}
-% {\LaTeX}¥³¥Ş¥ó¥É¤ÎÉ¬¿Ü°ú¿ô¤ò¼¨¤¹¤¿¤á¤Ë|\pa|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% {\LaTeX}ã‚³ãƒãƒ³ãƒ‰ã®å¿…é ˆå¼•æ•°ã‚’ç¤ºã™ãŸã‚ã«|\pa|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\opa}
-% Ç¤°Õ°ú¿ô¤Î¾ì¹ç¤Ï|\opa|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ä»»æ„å¼•æ•°ã®å ´åˆã¯|\opa|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\xy}
-% ºÂÉ¸·Ï¤Î¾ì¹ç¤Ï|\xy|¤ò»È¤¤¡¤$x$¤È$y$¤Î2¤Ä¤Î°ú¿ô¤òÅÏ¤·¤Ş¤¹¡¥
+% åº§æ¨™ç³»ã®å ´åˆã¯|\xy|ã‚’ä½¿ã„ï¼Œ$x$ã¨$y$ã®2ã¤ã®å¼•æ•°ã‚’æ¸¡ã—ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\pa}[1]{{\ttfamily\string{}\va{#1}{\ttfamily\string}}}%
 \newcommand{\opa}[1]{{\ttfamily[}\va{#1}{\ttfamily]}}%
@@ -389,85 +389,85 @@
 %    \end{macrocode}
 %
 % \DescribeMacro{\func}
-% ¼ç¤ËC¸À¸ì¤Ë¤ª¤±¤ë´Ø¿ô¤ò¼¨¤¹¤È¤­¤Ï|\func|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ä¸»ã«Cè¨€èªã«ãŠã‘ã‚‹é–¢æ•°ã‚’ç¤ºã™ã¨ãã¯|\func|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\Func}
-% ´Ø¿ô¤òº÷°ú¤Ë¤âÄÉ²Ã¤¹¤ë¤È¤­¤Ï|\Func|¤ò»È¤¤¤Ş¤¹¡¥
+% é–¢æ•°ã‚’ç´¢å¼•ã«ã‚‚è¿½åŠ ã™ã‚‹ã¨ãã¯|\Func|ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\res}
-% Í½Ìó¸ì¤Ï|\res|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% äºˆç´„èªã¯|\res|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\ope}
-% ±é»»»Ò¤Ï|\ope|¤Ç¤¹¡£
+% æ¼”ç®—å­ã¯|\ope|ã§ã™ã€‚
 % \DescribeMacro{\Ope}
-% ±é»»»Ò¤òº÷°ú¤Ë¤âÄÉ²Ã¤¹¤ë¤Ê¤é¤Ğ|\Ope|¤Ç¤¹¡¥
+% æ¼”ç®—å­ã‚’ç´¢å¼•ã«ã‚‚è¿½åŠ ã™ã‚‹ãªã‚‰ã°|\Ope|ã§ã™ï¼
 % \DescribeMacro{\bun}
-% C¸À¸ì¤Ë¤ª¤±¤ë¡ÖÊ¸¡×¤Ï|\bun|¤ò»È¤¤¤Ş¤¹¡¥
+% Cè¨€èªã«ãŠã‘ã‚‹ã€Œæ–‡ã€ã¯|\bun|ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\Bun}
-% ¡ÖÊ¸¡×¤òº÷°ú¤ËÄÉ²Ã¤¹¤ë¤È¤­¤Ï|\Bun|¤Ç¤¹¡¥
+% ã€Œæ–‡ã€ã‚’ç´¢å¼•ã«è¿½åŠ ã™ã‚‹ã¨ãã¯|\Bun|ã§ã™ï¼
 %    \begin{macrocode}
 \newcommand{\func}[1]{{\ttfamily#1}}
-\newcommand{\Func}[1]{\index{´Ø¿ô!#1@{\ttfamily#1}}%
-   \index{#1@{\ttfamily#1}´Ø¿ô}{\ttfamily#1}}
+\newcommand{\Func}[1]{\index{é–¢æ•°!#1@{\ttfamily#1}}%
+   \index{#1@{\ttfamily#1}é–¢æ•°}{\ttfamily#1}}
 \newcommand{\res}[1]{{\normalfont\bfseries#1}}
 \newcommand{\ope}[1]{{\ttfamily#1}}
-\newcommand{\Ope}[1]{\index{±é»»»Ò!#1@{\ttfamily#1}}
-   \index{#1@{\ttfamily#1}±é»»»Ò}{\ttfamily#1}}
+\newcommand{\Ope}[1]{\index{æ¼”ç®—å­!#1@{\ttfamily#1}}
+   \index{#1@{\ttfamily#1}æ¼”ç®—å­}{\ttfamily#1}}
 \newcommand{\bun}[1]{{\ttfamily#1}}
-\newcommand{\Bun}[1]{\index{C¸À¸ì!#1@{\ttfamily#1}Ê¸}%
-   \index{#1@{\ttfamily#1}Ê¸}{\ttfamily#1}}
+\newcommand{\Bun}[1]{\index{Cè¨€èª!#1@{\ttfamily#1}æ–‡}%
+   \index{#1@{\ttfamily#1}æ–‡}{\ttfamily#1}}
 %    \end{macrocode}
 %
 % \DescribeMacro{\option}
-% ¥Ñ¥Ã¥±¡¼¥¸¥ª¥×¥·¥ç¥ó¤ä¥¯¥é¥¹¥ª¥×¥·¥ç¥ó¤Ë¤Ï|\option|Ì¿Îá¤ò»È¤¦¡¥
-% ¤³¤ì¤Ï¥¹¥é¥ó¥ÈÂÎ¤ËÊÑ¹¹¤µ¤ì¤ë¡¥
+% ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚„ã‚¯ãƒ©ã‚¹ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã«ã¯|\option|å‘½ä»¤ã‚’ä½¿ã†ï¼
+% ã“ã‚Œã¯ã‚¹ãƒ©ãƒ³ãƒˆä½“ã«å¤‰æ›´ã•ã‚Œã‚‹ï¼
 % \DescribeMacro{\Option}
-% ¥ª¥×¥·¥ç¥ó¤òº÷°ú¤ËÄÉ²Ã¤¹¤ë¾ì¹ç¤Ë¤Ï|\Option|Ì¿Îá¤ò»È¤¦¡¥
+% ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ç´¢å¼•ã«è¿½åŠ ã™ã‚‹å ´åˆã«ã¯|\Option|å‘½ä»¤ã‚’ä½¿ã†ï¼
 % \DescribeMacro{\copt}
-% ÆÃÊÌ¤Ë¥×¥í¥°¥é¥à¤Î¥³¥Ş¥ó¥É¥é¥¤¥ó¥ª¥×¥·¥ç¥ó¤Î¾ì¹ç¤Ï|\copt|
-% Ì¿Îá¤ò»È¤¦¤è¤¦¤Ë¤¹¤ì¤ĞÎÉ¤¤¡¥¤³¤ì¤Ïº÷°ú¤ËÄÉ²Ã¤¹¤ëÉ¬Í×¤Ï¤Ê¤¤¡¥
+% ç‰¹åˆ¥ã«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®å ´åˆã¯|\copt|
+% å‘½ä»¤ã‚’ä½¿ã†ã‚ˆã†ã«ã™ã‚Œã°è‰¯ã„ï¼ã“ã‚Œã¯ç´¢å¼•ã«è¿½åŠ ã™ã‚‹å¿…è¦ã¯ãªã„ï¼
 %    \begin{macrocode}
 \newcommand{\option}[1]{\textsl{#1}}
 \newcommand{\Option}[1]{%
 	\index{#1@\textsl{#1}}%
-	\index{¥ª¥×¥·¥ç¥ó!#1@\textsl{#1}}%
+	\index{ã‚ªãƒ—ã‚·ãƒ§ãƒ³!#1@\textsl{#1}}%
 	\textsl{#1}}
 \newcommand{\copt}[1]{\texttt{#1}}
 %    \end{macrocode}
 %
 % \DescribeMacro{\qu}
 % \DescribeMacro{\qq}
-% ²¤Ê¸¤Î°úÍÑ¤Ë¤Ï|\qu|¤È|\qq|¤ò»È¤¤¤Ş¤¹¡¥Ã±¸ì¤Î°úÍÑ¤Ï|\qu|¤Ç¡¤
-% Ê¸¤Î°úÍÑ¤Ë¤Ï|\qq|¤ò»È¤¦¤è¤¦¤Ë¤·¤Ş¤¹¡¥
+% æ¬§æ–‡ã®å¼•ç”¨ã«ã¯|\qu|ã¨|\qq|ã‚’ä½¿ã„ã¾ã™ï¼å˜èªã®å¼•ç”¨ã¯|\qu|ã§ï¼Œ
+% æ–‡ã®å¼•ç”¨ã«ã¯|\qq|ã‚’ä½¿ã†ã‚ˆã†ã«ã—ã¾ã™ï¼
 % \DescribeMacro{\yo}
 % \DescribeMacro{\yy}
-% ÏÂÊ¸¤Î°úÍÑ¤Ë¤Ï|\yo|¤È|\yy|¤ò»È¤¤¤Ş¤¹¡¥¤³¤ì¤âÆ±¤¸¤è¤¦¤Ë
-% Ã±¸ì¤Ë¤Ï|\yo|¤Ç¡¤Ê¸¤Ë¤Ï|\yy|¤Ç¤¹¡¥
+% å’Œæ–‡ã®å¼•ç”¨ã«ã¯|\yo|ã¨|\yy|ã‚’ä½¿ã„ã¾ã™ï¼ã“ã‚Œã‚‚åŒã˜ã‚ˆã†ã«
+% å˜èªã«ã¯|\yo|ã§ï¼Œæ–‡ã«ã¯|\yy|ã§ã™ï¼
 % \DescribeMacro{\pp}
-% ´İ³ç¸Ì¤Ç³ç¤ë¾ì¹ç¤Ï|\pp|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥Á´³Ñ´İ³ç¸Ì¤¬»È¤ï¤ì¤Ş¤¹¡¥
+% ä¸¸æ‹¬å¼§ã§æ‹¬ã‚‹å ´åˆã¯|\pp|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼å…¨è§’ä¸¸æ‹¬å¼§ãŒä½¿ã‚ã‚Œã¾ã™ï¼
 % \DescribeMacro{\wasyo}
 % \DescribeMacro{\yousyo}
-% »¨»ïÌ¾¤ä½ñÀÒÌ¾¤ò»²¾È¤¹¤ë¤È¤­¤Ï|\wasyo|¤È|\yousyo|Ì¿Îá¤ò
-% »È¤¤¤Ş¤¹¡¥ÏÂ½ñ¤Î¾ì¹ç¤Ï|\wasyo|¡¤ÍÎ½ñ¤Î¾ì¹ç¤Ï|\yousyo|¤Ç¤¹¡¥
-% ¤ï¤«¤ê¤ä¤¹¤¤¤Ç¤·¤ç¤¦¡©
+% é›‘èªŒåã‚„æ›¸ç±åã‚’å‚ç…§ã™ã‚‹ã¨ãã¯|\wasyo|ã¨|\yousyo|å‘½ä»¤ã‚’
+% ä½¿ã„ã¾ã™ï¼å’Œæ›¸ã®å ´åˆã¯|\wasyo|ï¼Œæ´‹æ›¸ã®å ´åˆã¯|\yousyo|ã§ã™ï¼
+% ã‚ã‹ã‚Šã‚„ã™ã„ã§ã—ã‚‡ã†ï¼Ÿ
 %    \begin{macrocode}
 \newcommand{\qu}[1]{`#1'}
 \newcommand{\qq}[1]{``#1''}
-\newcommand{\yo}[1]{¡Ö#1¡×}
-\newcommand{\yy}[1]{¡Ø#1¡Ù}
-\newcommand{\pp}[1]{¡Ê#1¡Ë}
-\newcommand{\wasyo}[1]{¡Ø#1¡Ù}
+\newcommand{\yo}[1]{ã€Œ#1ã€}
+\newcommand{\yy}[1]{ã€#1ã€}
+\newcommand{\pp}[1]{ï¼ˆ#1ï¼‰}
+\newcommand{\wasyo}[1]{ã€#1ã€}
 \newcommand{\yousyo}[1]{\emph{#1}}
 %    \end{macrocode}
 %
 % \DescribeMacro{\optionlist}
-% ¥¯¥é¥¹¥ª¥×¥·¥ç¥ó¤ä¥Ñ¥Ã¥±¡¼¥¸¥ª¥×¥·¥ç¥ó¤òÊ£¿ô¸ÄÆ±»ş¤Ë
-% ÊÂ¤Ù¤ë¤È¤­¤Ï|\optionlist|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ã‚¯ãƒ©ã‚¹ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚„ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¤‡æ•°å€‹åŒæ™‚ã«
+% ä¸¦ã¹ã‚‹ã¨ãã¯|\optionlist|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\Optionlist}
-% ¤½¤ì¤é¤òº÷°ú¤ËÄÉ²Ã¤¹¤ë¾ì¹ç¤Ï|\Optionlist|¤Ë¤Ê¤ê¤Ş¤¹¡¥
+% ãã‚Œã‚‰ã‚’ç´¢å¼•ã«è¿½åŠ ã™ã‚‹å ´åˆã¯|\Optionlist|ã«ãªã‚Šã¾ã™ï¼
 %    \begin{macrocode}
 \def\optionlist#1{\@tempcnta=\z@ \@tempcntb=\z@%
  \@for\member:=#1\do{\advance\@tempcnta\@ne}%
  \@for\member:=#1\do{\advance\@tempcntb\@ne%
    \ifnum\@tempcntb<\@tempcnta%
-         \textsl{\member}¡¤%
+         \textsl{\member}ï¼Œ%
  \else%
   \ifnum\@tempcntb=\@tempcnta%
     \textsl{\member}%
@@ -478,36 +478,36 @@
  \@for\member:=#1\do{\advance\@tempcntb\@ne%
    \ifnum\@tempcntb<\@tempcnta%
 	\index{\member @\textsl{\member}}%
-	\index{¥ª¥×¥·¥ç¥ó!\member @\textsl{\member}}%
-	\textsl{\member}¡¤%
+	\index{ã‚ªãƒ—ã‚·ãƒ§ãƒ³!\member @\textsl{\member}}%
+	\textsl{\member}ï¼Œ%
  \else%
   \ifnum\@tempcntb=\@tempcnta%
 	\index{\member @\textsl{\member}}%
-	\index{¥ª¥×¥·¥ç¥ó!\member @\textsl{\member}}%
+	\index{ã‚ªãƒ—ã‚·ãƒ§ãƒ³!\member @\textsl{\member}}%
 	\textsl{\member}%
   \fi%
 \fi}}
 %    \end{macrocode}
 %
 % \DescribeMacro{\win}
-% Windows¤Î¥Ä¡¼¥ë¥Ğ¡¼¤ä¥á¥Ë¥å¡¼¥Ğ¡¼¤ò»²¾È¤¹¤ë¤È¤­¤Ë
-% |\win|¤ò»È¤¤¤Ş¤¹¡¥ÅÓÃæ¤Ç²ş¹Ô¤¬µ¯¤³¤ê¤Ş¤»¤ó¤Î¤Ç|Overfull|
-% ¤Ë¤Ê¤ë¤Î¤ÇÃí°Õ¤¬É¬Í×¤Ç¤¹¡¥
+% Windowsã®ãƒ„ãƒ¼ãƒ«ãƒãƒ¼ã‚„ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒãƒ¼ã‚’å‚ç…§ã™ã‚‹ã¨ãã«
+% |\win|ã‚’ä½¿ã„ã¾ã™ï¼é€”ä¸­ã§æ”¹è¡ŒãŒèµ·ã“ã‚Šã¾ã›ã‚“ã®ã§|Overfull|
+% ã«ãªã‚‹ã®ã§æ³¨æ„ãŒå¿…è¦ã§ã™ï¼
 %    \begin{macrocode}
 \newcommand{\win}[1]{{%
    \fboxsep0pt\fboxrule0pt\colorbox[gray]{.8}{[#1]}}} 
 %    \end{macrocode}
 %
 % \begin{environment}{myquote}
-% jsclassesÅù¤Ç¤Ï±¦Â¦¤¬»ú²¼¤²¤µ¤ì¤Ş¤»¤ó¤¬¡¤
-% ±¦Â¦¤â»ú²¼¤²¤¹¤ë°úÍÑ´Ä¶­¤Ç¤¹¡¥
+% jsclassesç­‰ã§ã¯å³å´ãŒå­—ä¸‹ã’ã•ã‚Œã¾ã›ã‚“ãŒï¼Œ
+% å³å´ã‚‚å­—ä¸‹ã’ã™ã‚‹å¼•ç”¨ç’°å¢ƒã§ã™ï¼
 %    \begin{macrocode}
 \newenvironment{myquote}%
   {\list{}{\rightmargin\leftmargin}\item\relax}{\endlist}
 %    \end{macrocode}
 % \end{environment}
 % \begin{environment}{myquotation}
-% ¤³¤Á¤é¤ÏÃÊÍî¤Î¹ÔÆ¬¤¬»ú²¼¤²¤µ¤ì¤Ş¤¹¡¥
+% ã“ã¡ã‚‰ã¯æ®µè½ã®è¡Œé ­ãŒå­—ä¸‹ã’ã•ã‚Œã¾ã™ï¼
 %    \begin{macrocode}
 \newenvironment{myquotation}{%
   \list{}{%
@@ -519,9 +519,9 @@
 % \end{environment}
 %
 % \begin{environment}{InText}
-% ¥æ¡¼¥¶¤¬ÆşÎÏ¤¹¤Ù¤­¥Æ¥­¥¹¥È¤ò¼¨¤¹¤Ë¤Ï|InText|´Ä¶­¤ò
-% »È¤¤¤Ş¤¹¡¥¤³¤ì¤Ï|verbatim|´Ä¶­¤Ë|\small|¤Èº¸Â¦¤Î»ú²¼¤²¤ò¤·¤¿
-% ¤À¤±¤Ç¡¤»ê¤Ã¤Æ¥·¥ó¥×¥ë¤Ç¤¹¡¥
+% ãƒ¦ãƒ¼ã‚¶ãŒå…¥åŠ›ã™ã¹ããƒ†ã‚­ã‚¹ãƒˆã‚’ç¤ºã™ã«ã¯|InText|ç’°å¢ƒã‚’
+% ä½¿ã„ã¾ã™ï¼ã“ã‚Œã¯|verbatim|ç’°å¢ƒã«|\small|ã¨å·¦å´ã®å­—ä¸‹ã’ã‚’ã—ãŸ
+% ã ã‘ã§ï¼Œè‡³ã£ã¦ã‚·ãƒ³ãƒ—ãƒ«ã§ã™ï¼
 %    \begin{macrocode}
 \newenvironment{InText}{%
   \list{}{\leftmargin=2zw \rightmargin=0zw}
@@ -530,8 +530,8 @@
 % \end{environment}
 %
 % \begin{environment}{OutText}
-% ¥½¡¼¥¹¥³¡¼¥É¤ò¥¿¥¤¥×¥»¥Ã¥È¤·¤¿¤¢¤È¤ÎÉ½¼¨¤ò¼¨¤¹¤Ë¤Ï
-% |OutText|´Ä¶­¤ò»È¤¤¤Ş¤¹¡¥¤³¤ì¤ÏÆşÎÏ¤Î|InText|¤ÈÂĞ¤Ë¤Ê¤ê¤Ş¤¹¡¥
+% ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã‚’ã‚¿ã‚¤ãƒ—ã‚»ãƒƒãƒˆã—ãŸã‚ã¨ã®è¡¨ç¤ºã‚’ç¤ºã™ã«ã¯
+% |OutText|ç’°å¢ƒã‚’ä½¿ã„ã¾ã™ï¼ã“ã‚Œã¯å…¥åŠ›ã®|InText|ã¨å¯¾ã«ãªã‚Šã¾ã™ï¼
 %    \begin{macrocode}
 \newenvironment{OutText}{\unitlength=1pt
 	\begin{screen}}{\end{screen}}
@@ -539,10 +539,10 @@
 % \end{environment}
 %
 % \begin{environment}{InTerm}
-% ¥³¥ó¥½¡¼¥ë¤«¤é¤ÎÊ¸»úÎó¤ÎÆşÎÏ¤Ë¤Ï|InTerm|´Ä¶­¤ò
-% »È¤¤¤Ş¤¹¡¥Ê£¿ô¹Ô¤ÎÆşÎÏ¤Ë¤Ï|\item|Ì¿Îá¤òÀèÆ¬¤Ë¤ª¤­¤Ş¤¹¡¥
-% ÆÃ¼ìÊ¸»ú¤ÎÁ°¤Ë¤ÏÅ¬µ¹¥Ğ¥Ã¥¯¥¹¥é¥Ã¥·¥å¤òÉÕ¤±¤Ê¤±¤ì¤Ğ
-% ¤Ê¤ê¤Ş¤»¤ó¡¥
+% ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã‹ã‚‰ã®æ–‡å­—åˆ—ã®å…¥åŠ›ã«ã¯|InTerm|ç’°å¢ƒã‚’
+% ä½¿ã„ã¾ã™ï¼è¤‡æ•°è¡Œã®å…¥åŠ›ã«ã¯|\item|å‘½ä»¤ã‚’å…ˆé ­ã«ãŠãã¾ã™ï¼
+% ç‰¹æ®Šæ–‡å­—ã®å‰ã«ã¯é©å®œãƒãƒƒã‚¯ã‚¹ãƒ©ãƒƒã‚·ãƒ¥ã‚’ä»˜ã‘ãªã‘ã‚Œã°
+% ãªã‚Šã¾ã›ã‚“ï¼
 %    \begin{macrocode}
 \newenvironment{InTerm}%
    {\list{\rule[-.2em]{1ex}{1em}}{\ttfamily
@@ -552,9 +552,9 @@
 % \end{environment}
 %
 % \begin{environment}{OutTerm}
-% ¥³¥ó¥½¡¼¥ë¤Ë½ĞÎÏ¤µ¤ì¤ëÊ¸»úÎó¤ò¼¨¤¹¾ì¹ç¤Ï|OutTerm|´Ä¶­¤ò
-% »È¤¤¤Ş¤¹¡£draft¥ª¥×¥·¥ç¥ó¤¬Í­¸ú¤Î¤È¤­¤Ï|verbatim|¤ËÆş¤ì¤Ş¤¹¡¥
-% ¤½¤¦¤Ç¤Ê¤¤»ş¤Ïlistings¥Ñ¥Ã¥±¡¼¥¸¤ò»È¤¤¤Ş¤¹¡¥
+% ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã«å‡ºåŠ›ã•ã‚Œã‚‹æ–‡å­—åˆ—ã‚’ç¤ºã™å ´åˆã¯|OutTerm|ç’°å¢ƒã‚’
+% ä½¿ã„ã¾ã™ã€‚draftã‚ªãƒ—ã‚·ãƒ§ãƒ³ãŒæœ‰åŠ¹ã®ã¨ãã¯|verbatim|ã«å…¥ã‚Œã¾ã™ï¼
+% ãã†ã§ãªã„æ™‚ã¯listingsãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’ä½¿ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \ifdraft
 \newenvironment{OutTerm}{%
@@ -580,7 +580,7 @@
 % \end{environment}
 %
 % \begin{environment}{C}
-% C¤Î¥½¡¼¥¹¥³¡¼¥É¤òµ­½Ò¤¹¤ë¤Ë¤Ï¤º¤Ğ¤ê|C|´Ä¶­¤ò»È¤¤¤Ş¤¹¡¥
+% Cã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã‚’è¨˜è¿°ã™ã‚‹ã«ã¯ãšã°ã‚Š|C|ç’°å¢ƒã‚’ä½¿ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \lstnewenvironment{C}{%
   \lstset{%
@@ -595,7 +595,7 @@
 % \end{environment}
 %
 % \begin{macro}{\lstbash}
-% listings¤ÎbashÍÑ¤ÎÀßÄê¤Ç¤¹¤¬»È¤Ã¤Æ¤¤¤Ş¤»¤ó¡¥
+% listingsã®bashç”¨ã®è¨­å®šã§ã™ãŒä½¿ã£ã¦ã„ã¾ã›ã‚“ï¼
 %    \begin{macrocode}
 %\newcommand{\lstbash}{%
 %\lstset{%
@@ -614,9 +614,9 @@
 % \end{macro}
 %
 % \begin{environment}{Syntax}
-% {\LaTeX}¤Ê¤É¤Ë¤ª¤±¤ë½ÅÍ×¤Ê¹½Ê¸¤Ï|Syntax|´Ä¶­Ãæ¤ËÆş¤ì¤Ş¤¹¡¥
-% ²ş¹Ô¤Ê¤É¤Ï¹Ô¤ï¤ì¤º¡¤¤¿¤ÀÃ±¤ËÍ×ÁÇ¤òÊ¸¾ÏÉı¤¤¤Ã¤Ñ¤¤¤ÎÏÈÉÕ¤­¤Î
-% È¢¤ËÁŞÆş¤¹¤ë¤À¤±¤Ç¤¹¤«¤é¡¤¥Ú¡¼¥¸¶èÀÚ¤ê¤Ë¤Ïµ¤¤ò¤Ä¤±¤Æ¤¯¤À¤µ¤¤¡¥
+% {\LaTeX}ãªã©ã«ãŠã‘ã‚‹é‡è¦ãªæ§‹æ–‡ã¯|Syntax|ç’°å¢ƒä¸­ã«å…¥ã‚Œã¾ã™ï¼
+% æ”¹è¡Œãªã©ã¯è¡Œã‚ã‚Œãšï¼ŒãŸã å˜ã«è¦ç´ ã‚’æ–‡ç« å¹…ã„ã£ã±ã„ã®æ ä»˜ãã®
+% ç®±ã«æŒ¿å…¥ã™ã‚‹ã ã‘ã§ã™ã‹ã‚‰ï¼Œãƒšãƒ¼ã‚¸åŒºåˆ‡ã‚Šã«ã¯æ°—ã‚’ã¤ã‘ã¦ãã ã•ã„ï¼
 %    \begin{macrocode}
 \newenvironment{Syntax}%
   {\bgroup \parindent=0pt%
@@ -630,35 +630,35 @@
 % \end{environment}
 %
 % \DescribeMacro{\pref}
-% ¥Ú¡¼¥¸¤ò»²¾È¤¹¤ë¾ì¹ç¤Ï|\pageref|¤Ç¤Ï¤Ê¤¯|\pref|¤ò»È¤¤¤Ş¤¹¡¥
-% ¤³¤Î¾ì¹ç|\pref|Â¦¤Ç¡Ö¡û¥Ú¡¼¥¸¡×¤Î¡Ö¥Ú¡¼¥¸¡×¤Ë³ºÅö¤¹¤ë
-% Ê¸»ú¤òÅı°ì¤·¤Ş¤¹¡¥
+% ãƒšãƒ¼ã‚¸ã‚’å‚ç…§ã™ã‚‹å ´åˆã¯|\pageref|ã§ã¯ãªã|\pref|ã‚’ä½¿ã„ã¾ã™ï¼
+% ã“ã®å ´åˆ|\pref|å´ã§ã€Œâ—‹ãƒšãƒ¼ã‚¸ã€ã®ã€Œãƒšãƒ¼ã‚¸ã€ã«è©²å½“ã™ã‚‹
+% æ–‡å­—ã‚’çµ±ä¸€ã—ã¾ã™ï¼
 % \DescribeMacro{\chapref}
-% ¾Ï¤ò»²¾È¤¹¤ë¤È¤­¤Ï|\ref|¤Ç¤Ï¤Ê¤¯|\chapref|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ç« ã‚’å‚ç…§ã™ã‚‹ã¨ãã¯|\ref|ã§ã¯ãªã|\chapref|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\secref}
-% Æ±¤¸¤è¤¦¤ËÀá¤â|\secref|¤ò»È¤¤¤Ş¤¹¡¥%
+% åŒã˜ã‚ˆã†ã«ç¯€ã‚‚|\secref|ã‚’ä½¿ã„ã¾ã™ï¼%
 % \DescribeMacro{\fullref}
-% ¥Ú¡¼¥¸ÈÖ¹æ¤ÈÀáÈÖ¹æ¤ÎÎ¾Êı¤ò¡Ö¡û¥Ú¡¼¥¸¡ûÀá¡×¤È¤·¤Æ
-% »²¾È¤¹¤ë¤Ë¤Ï|\fullref|¤ò»È¤¤¤Ş¤¹¡¥
+% ãƒšãƒ¼ã‚¸ç•ªå·ã¨ç¯€ç•ªå·ã®ä¸¡æ–¹ã‚’ã€Œâ—‹ãƒšãƒ¼ã‚¸â—‹ç¯€ã€ã¨ã—ã¦
+% å‚ç…§ã™ã‚‹ã«ã¯|\fullref|ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\figref}
-% ¿Ş¤Ï|\figref|¤Ç¤¹¡¥
+% å›³ã¯|\figref|ã§ã™ï¼
 % \DescribeMacro{\tabref}
-% É½¤Ï|\tabref|¤Ç¤¹¡¥
+% è¡¨ã¯|\tabref|ã§ã™ï¼
 % \DescribeMacro{\eqref}
-% ¼°¤ò»²¾È¤¹¤ë¤¿¤á¤Î|\eqref|¤Ï¤¹¤Ç¤Ëamsmath¤«²¿¤«¤ÇÄêµÁ¤µ¤ì¤Æ¤¤¤ë¤Î¤Ç
-% |\def|¤ò»È¤Ã¤Æ¤¤¤Ş¤¹¡¥
+% å¼ã‚’å‚ç…§ã™ã‚‹ãŸã‚ã®|\eqref|ã¯ã™ã§ã«amsmathã‹ä½•ã‹ã§å®šç¾©ã•ã‚Œã¦ã„ã‚‹ã®ã§
+% |\def|ã‚’ä½¿ã£ã¦ã„ã¾ã™ï¼
 %    \begin{macrocode}
-\newcommand{\pref}[1]{\pageref{#1}~¥Ú¡¼¥¸}
-\newcommand{\chapref}[1]{\ref{#1}~¾Ï}
-\newcommand{\secref}[1]{\ref{#1}~Àá}
-\newcommand{\fullref}[1]{\pref{#1}\secref{#1}~»²¾È}
+\newcommand{\pref}[1]{\pageref{#1}~ãƒšãƒ¼ã‚¸}
+\newcommand{\chapref}[1]{\ref{#1}~ç« }
+\newcommand{\secref}[1]{\ref{#1}~ç¯€}
+\newcommand{\fullref}[1]{\pref{#1}\secref{#1}~å‚ç…§}
 \newcommand{\figref}[1]{\figurename~\ref{#1}}
 \newcommand{\tabref}[1]{\tablename~\ref{#1}}
-\def\eqref#1{¼°~(\ref{#1})}
+\def\eqref#1{å¼~(\ref{#1})}
 %    \end{macrocode}
 %
 % \DescribeMacro{\Xy}
-% ³Æ¼ï¥í¥´¤òÄêµÁ¤·¤Ş¤¹¡¥
+% å„ç¨®ãƒ­ã‚´ã‚’å®šç¾©ã—ã¾ã™ï¼
 % \DescribeMacro{\PIC}
 % \DescribeMacro{\Tpic}
 % \DescribeMacro{\JLaTeXe}
@@ -667,11 +667,11 @@
 % \DescribeMacro{\eLaTeX}
 % \DescribeMacro{\AmsLaTeX}
 % \DescribeMacro{\dvipdfmx}
-% dvipdfm$x$¤Î¥í¥´¤ÏÀµ¼°¤Ê¤â¤Î¤Ç¤Ï¤Ê¤¤¤«¤â¤·¤ì¤Ş¤»¤ó¡¥
-% |\kterm|¤ÏLinux·ÏOS¤Ç¹­¤¯»È¤ï¤ì¤Æ¤¤¤ë´Á»ú¤âÆşÎÏ¤Ç¤­¤ë
-% Ã¼Ëö¥¨¥ß¥å¥ì¡¼¥¿¤Ç¤¹¡¥
-% |\TtH|¤Î¥í¥´¤âÀµ¼°¤Ç¤Ï¤¢¤ê¤Ş¤»¤ó¡¥º÷°úÄÉ²Ã¤Ë¤ª¤¤¤Æ
-% ÉÔÅÔ¹ç¤¬¤¢¤ë¤Î¤Ç¤³¤Î¥¹¥¿¥¤¥ë¤Ë¤Ê¤Ã¤Æ¤¤¤Ş¤¹¡¥
+% dvipdfm$x$ã®ãƒ­ã‚´ã¯æ­£å¼ãªã‚‚ã®ã§ã¯ãªã„ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“ï¼
+% |\kterm|ã¯Linuxç³»OSã§åºƒãä½¿ã‚ã‚Œã¦ã„ã‚‹æ¼¢å­—ã‚‚å…¥åŠ›ã§ãã‚‹
+% ç«¯æœ«ã‚¨ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚¿ã§ã™ï¼
+% |\TtH|ã®ãƒ­ã‚´ã‚‚æ­£å¼ã§ã¯ã‚ã‚Šã¾ã›ã‚“ï¼ç´¢å¼•è¿½åŠ ã«ãŠã„ã¦
+% ä¸éƒ½åˆãŒã‚ã‚‹ã®ã§ã“ã®ã‚¹ã‚¿ã‚¤ãƒ«ã«ãªã£ã¦ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \DeclareRobustCommand{\Xy}{\leavevmode%
    \hbox{\kern-.1em X\kern-.3em\lower.4ex\hbox{Y\kern-.15em}}}
@@ -691,16 +691,16 @@
 %    \end{macrocode}
 %
 % \DescribeMacro{\kterm}
-% ÍÑ¸ì¤ÎÅı°ì¤Î¤¿¤á¤Ë¤¤¤¯¤Ä¤«¤Î½ñÀÒÌ¾¤äÍÑ¸ì¤òÅĞÏ¿¤·¤Æ¤¤¤Ş¤¹¡¥
-% |\LMANUAL|¡¤|\COMP|¡¤|\GCOMP|¡¤|\WCOMP|¤Î4ºı¤Ï¶â»úÅã¤ÎºîÉÊ¡¥
-% |\TEXBOOK|¤È|\METAFONTBOOK|¤ÏKnuth»á¤Î¥Ğ¥¤¥Ö¥ë¡¥
+% ç”¨èªã®çµ±ä¸€ã®ãŸã‚ã«ã„ãã¤ã‹ã®æ›¸ç±åã‚„ç”¨èªã‚’ç™»éŒ²ã—ã¦ã„ã¾ã™ï¼
+% |\LMANUAL|ï¼Œ|\COMP|ï¼Œ|\GCOMP|ï¼Œ|\WCOMP|ã®4å†Šã¯é‡‘å­—å¡”ã®ä½œå“ï¼
+% |\TEXBOOK|ã¨|\METAFONTBOOK|ã¯Knuthæ°ã®ãƒã‚¤ãƒ–ãƒ«ï¼
 %    \begin{macrocode}
-\newcommand{\LMANUAL}{Ê¸½ñ½èÍı¥·¥¹¥Æ¥à{\LaTeXe}}
-\newcommand{\COMP}{{\LaTeX}¥³¥ó¥Ñ¥Ë¥ª¥ó}
-\newcommand{\GCOMP}{{\LaTeX}¥°¥é¥Õ¥£¥Ã¥¯¥¹¥³¥ó¥Ñ¥Ë¥ª¥ó}
-\newcommand{\WCOMP}{{\LaTeX} Web¥³¥ó¥Ñ¥Ë¥ª¥ó}
-\newcommand{\TEXBOOK}{\TeX book}% ¸¶Ãø
-\newcommand{\METAFONTBOOK}{\MF ¥Ö¥Ã¥¯} % ÌõÃø
+\newcommand{\LMANUAL}{æ–‡æ›¸å‡¦ç†ã‚·ã‚¹ãƒ†ãƒ {\LaTeXe}}
+\newcommand{\COMP}{{\LaTeX}ã‚³ãƒ³ãƒ‘ãƒ‹ã‚ªãƒ³}
+\newcommand{\GCOMP}{{\LaTeX}ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ‘ãƒ‹ã‚ªãƒ³}
+\newcommand{\WCOMP}{{\LaTeX} Webã‚³ãƒ³ãƒ‘ãƒ‹ã‚ªãƒ³}
+\newcommand{\TEXBOOK}{\TeX book}% åŸè‘—
+\newcommand{\METAFONTBOOK}{\MF ãƒ–ãƒƒã‚¯} % è¨³è‘—
 \newcommand{\ANOTHERMANUAL}{Another Manual}
 \newcommand{\PS}{PostScript}
 \newcommand{\IM}{ImageMagick}
@@ -713,21 +713,21 @@
 %    \end{macrocode}
 %
 % \DescribeMacro{\m}
-% °Ê²¼|\m|¡¤|\M|¡¤|\T|¡¤|\KM|¡¤|\A|¡¤|\B|¡¤|\W|¤Ï
-% ¤¹¤Ù¤ÆÉ½Ãæ¤Ç»È¤¤¤Ş¤¹¡¥¤³¤ì¤Ïº¸Â¦¤ÎÍ×ÁÇ¤Ëµ­¹æ¤ò½ĞÎÏ¤·
-% ±¦Â¦¤ÎÍ×ÁÇ¤Ë¥½¡¼¥¹¤ò½ĞÎÏ¤·¤Ş¤¹¡¥Í×¤¹¤ë¤Ëµ­¹æ¤Î
-% Æş½ĞÎÏ¤ÎÂĞ¤ò¼¨¤¹¤¿¤á¤Ë²¿ÅÙ¤â»È¤ï¤ì¤Æ¤¤¤Ş¤¹¡¥
-% ¾åµ­¤ÎÌ¿Îá¤Ç¤Ï¥Ğ¥Ã¥¯¥¹¥é¥Ã¥·¥å¤Ï¾ÊÎ¬¤·¤Ş¤¹¡¥
-% ·ë²ÌÅª¤Ëµ­¹æ¤¬½ĞÎÏ¤µ¤ì¤Æ¤¤¤Ê¤¤¾ì¹ç¤â¤¢¤ë¤Î¤Ç
-% ¥¿¥¤¥×¥ß¥¹¤ËÃí°Õ¤·¤Æ¤¯¤À¤µ¤¤¡¥
+% ä»¥ä¸‹|\m|ï¼Œ|\M|ï¼Œ|\T|ï¼Œ|\KM|ï¼Œ|\A|ï¼Œ|\B|ï¼Œ|\W|ã¯
+% ã™ã¹ã¦è¡¨ä¸­ã§ä½¿ã„ã¾ã™ï¼ã“ã‚Œã¯å·¦å´ã®è¦ç´ ã«è¨˜å·ã‚’å‡ºåŠ›ã—
+% å³å´ã®è¦ç´ ã«ã‚½ãƒ¼ã‚¹ã‚’å‡ºåŠ›ã—ã¾ã™ï¼è¦ã™ã‚‹ã«è¨˜å·ã®
+% å…¥å‡ºåŠ›ã®å¯¾ã‚’ç¤ºã™ãŸã‚ã«ä½•åº¦ã‚‚ä½¿ã‚ã‚Œã¦ã„ã¾ã™ï¼
+% ä¸Šè¨˜ã®å‘½ä»¤ã§ã¯ãƒãƒƒã‚¯ã‚¹ãƒ©ãƒƒã‚·ãƒ¥ã¯çœç•¥ã—ã¾ã™ï¼
+% çµæœçš„ã«è¨˜å·ãŒå‡ºåŠ›ã•ã‚Œã¦ã„ãªã„å ´åˆã‚‚ã‚ã‚‹ã®ã§
+% ã‚¿ã‚¤ãƒ—ãƒŸã‚¹ã«æ³¨æ„ã—ã¦ãã ã•ã„ï¼
 % \DescribeMacro{\M}
-% |\m|¤Î¾ì¹ç¤Ïº÷°ú¤ËÄÉ²Ã¤·¤Ê¤¤¿ô³Øµ­¹æ¤Ç¤¢¤ê¡¤
-% |\M|Ì¿Îá¤Ï¿ô³Øµ­¹æ¤È¤·¤ÆÌ¿Îáº÷°ú¤ËÄÉ²Ã¤·¤Ş¤¹¡¥
+% |\m|ã®å ´åˆã¯ç´¢å¼•ã«è¿½åŠ ã—ãªã„æ•°å­¦è¨˜å·ã§ã‚ã‚Šï¼Œ
+% |\M|å‘½ä»¤ã¯æ•°å­¦è¨˜å·ã¨ã—ã¦å‘½ä»¤ç´¢å¼•ã«è¿½åŠ ã—ã¾ã™ï¼
 % \DescribeMacro{\T}
-% Ê¸»úµ­¹æ¤Ï|\T|¤È¤·¤ÆÌ¿Îáº÷°ú¤ËÄÉ²Ã¤·¤Ş¤¹¡¥
+% æ–‡å­—è¨˜å·ã¯|\T|ã¨ã—ã¦å‘½ä»¤ç´¢å¼•ã«è¿½åŠ ã—ã¾ã™ï¼
 % \DescribeMacro{\KM}
-% ¡Öµ­¹æ¡¡Ì¿Îá¡×¤Ï²¿ÅÙ¤â»È¤ï¤ì¤ë¤«¤â¤·¤ì¤Ê¤¤¤Î¤Ç|\KM|
-% ¤È¤·¤Æ¤¢¤ê¤Ş¤¹¡¥
+% ã€Œè¨˜å·ã€€å‘½ä»¤ã€ã¯ä½•åº¦ã‚‚ä½¿ã‚ã‚Œã‚‹ã‹ã‚‚ã—ã‚Œãªã„ã®ã§|\KM|
+% ã¨ã—ã¦ã‚ã‚Šã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\m}[1]{$#1$&\texttt{\string#1}}
 \newcommand{\M}[1]{%
@@ -742,17 +742,17 @@
    \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs\string#1}%
 	\hskip1em(\csname#1\endcsname)}%
    \csname#1\endcsname&\texttt{\bs\string#1}}
-\newcommand{\KM}{µ­¹æ&Ì¿Îá}
+\newcommand{\KM}{è¨˜å·&å‘½ä»¤}
 %    \end{macrocode}
 %
 % \DescribeMacro{\A}
-% Ê¸¾ÏÃæ¤ÎÆÃ¼ìµ­¹æ¤Ë¤Ï|\A|¤ò»È¤¤¤Ş¤¹¡¥
+% æ–‡ç« ä¸­ã®ç‰¹æ®Šè¨˜å·ã«ã¯|\A|ã‚’ä½¿ã„ã¾ã™ï¼
 % \DescribeMacro{\B}
-% Ê¸Ä¹Ãæ¤Î¥¢¥¯¥»¥ó¥È¤Ë¤Ï|\B|Ì¿Îá¤ò»È¤¤¡¤1¤ÄÌÜ¤Î°ú¿ô¤Ë
-% Ì¿Îá¤ò¡¤2¤ÄÌÜ¤Î°ú¿ô¤Ë¥¢¥¯¥»¥ó¥È¤Ä¤±¤é¤ì¤ëÊ¸»ú¤ò½ñ¤­¤Ş¤¹¡¥
+% æ–‡é•·ä¸­ã®ã‚¢ã‚¯ã‚»ãƒ³ãƒˆã«ã¯|\B|å‘½ä»¤ã‚’ä½¿ã„ï¼Œ1ã¤ç›®ã®å¼•æ•°ã«
+% å‘½ä»¤ã‚’ï¼Œ2ã¤ç›®ã®å¼•æ•°ã«ã‚¢ã‚¯ã‚»ãƒ³ãƒˆã¤ã‘ã‚‰ã‚Œã‚‹æ–‡å­—ã‚’æ›¸ãã¾ã™ï¼
 % \DescribeMacro{\W}
-% ¿ô¼°Ãæ¤Î¥¢¥¯¥»¥ó¥È¤Ë¤Ï|\W|Ì¿Îá¤Ç¡¤1¤ÄÌÜ¤Î°ú¿ô¤Ë
-% Ì¿Îá¤ò¡¤2¤ÄÌÜ¤Î°ú¿ô¤Ë¥¢¥¯¥»¥ó¥È¤ò¤Ä¤±¤é¤ì¤ëµ­¹æ¤ò½ñ¤­¤Ş¤¹¡¥
+% æ•°å¼ä¸­ã®ã‚¢ã‚¯ã‚»ãƒ³ãƒˆã«ã¯|\W|å‘½ä»¤ã§ï¼Œ1ã¤ç›®ã®å¼•æ•°ã«
+% å‘½ä»¤ã‚’ï¼Œ2ã¤ç›®ã®å¼•æ•°ã«ã‚¢ã‚¯ã‚»ãƒ³ãƒˆã‚’ã¤ã‘ã‚‰ã‚Œã‚‹è¨˜å·ã‚’æ›¸ãã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\A}[1]{%
    \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs#1}%
@@ -763,7 +763,7 @@
       \hskip1em(\csname#1\endcsname{#2}\relax)}%
    \csname#1\endcsname{#2}&%
     \texttt{\protect\bs\string#1\string{#2\string}}}
-% \W{#1}{#2} ¿ô¼°Ãæ¤Î¥¢¥¯¥»¥ó¥È
+% \W{#1}{#2} æ•°å¼ä¸­ã®ã‚¢ã‚¯ã‚»ãƒ³ãƒˆ
 \newcommand{\W}[2]{%
   \glossary{#1@\hspace*{-1.2ex}\texttt{\bs#1}%
     \hskip1em($\csname#1\endcsname{#2}$)}%
@@ -772,44 +772,44 @@
 %    \end{macrocode}
 %
 % \DescribeMacro{\demowidth}
-% Ê¸¾ÏÃæ¤ÇÀş¤ÎÄ¹¤µ¤ò¼¨¤¹¤Ë¤Ï|\demowidth|¤ò»È¤¤¤Ş¤¹¡¥¤³¤ì¤Ï
-% lshort¤«¤é¤Î²şÊÑ¤Ç¤¹¡¥Ä¹¤µ¤¬Éé¤Î¾ì¹ç¤Î½èÍı¤òÄÉ²Ã¤·¤¿Êı¤¬
-% ÎÉ¤¤¤«¤â¤·¤ì¤Ş¤»¤ó¡¥
+% æ–‡ç« ä¸­ã§ç·šã®é•·ã•ã‚’ç¤ºã™ã«ã¯|\demowidth|ã‚’ä½¿ã„ã¾ã™ï¼ã“ã‚Œã¯
+% lshortã‹ã‚‰ã®æ”¹å¤‰ã§ã™ï¼é•·ã•ãŒè² ã®å ´åˆã®å‡¦ç†ã‚’è¿½åŠ ã—ãŸæ–¹ãŒ
+% è‰¯ã„ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“ï¼
 %    \begin{macrocode}
 \newcommand{\demowidth}[1]{%
    \rule{0.3pt}{1.3ex}\rule{#1}{0.3pt}\rule{0.3pt}{1.3ex}}
 %    \end{macrocode}
-% ¤É¤³¤«¤Ç|hoge|¥«¥¦¥ó¥¿¤¬»È¤ï¤ì¤Æ¤¤¤Ş¤¹¡¥¤È¤¤¤¦¤«ÍÍ¡¹¤Ê
-% ¤È¤³¤í¤Ç¤³¤Î|hoge|¥«¥¦¥ó¥¿¤¬ÍğÍÑ¤µ¤ì¤Æ¤¤¤Ş¤¹¡¥
+% ã©ã“ã‹ã§|hoge|ã‚«ã‚¦ãƒ³ã‚¿ãŒä½¿ã‚ã‚Œã¦ã„ã¾ã™ï¼ã¨ã„ã†ã‹æ§˜ã€…ãª
+% ã¨ã“ã‚ã§ã“ã®|hoge|ã‚«ã‚¦ãƒ³ã‚¿ãŒä¹±ç”¨ã•ã‚Œã¦ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \newcounter{hoge}
-\newcommand{\bool}{¥Ö¡¼¥ëÃÍ}%?
+\newcommand{\bool}{ãƒ–ãƒ¼ãƒ«å€¤}%?
 %    \end{macrocode}
 %
 % \begin{environment}{Prob}
-% ¡ÖÌäÂê¡×·¿¤Î´Ä¶­¤Ç¤¹¡¥\textsf{theorem}¥Ñ¥Ã¥±¡¼¥¸¤ò»È¤Ã¤Æ
-% ÄêµÁ¤·¤Æ¤¤¤Ş¤¹¡¥
+% ã€Œå•é¡Œã€å‹ã®ç’°å¢ƒã§ã™ï¼\textsf{theorem}ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’ä½¿ã£ã¦
+% å®šç¾©ã—ã¦ã„ã¾ã™ï¼
 %    \begin{macrocode}
 {\theoremstyle{plain}
    \theorembodyfont{\normalfont\rmfamily}
    \theoremheaderfont{\normalfont\bfseries}
-   \newtheorem{Prob}{{\manfnt \char'170}ÌäÂê}[chapter]}
+   \newtheorem{Prob}{{\manfnt \char'170}å•é¡Œ}[chapter]}
 %    \end{macrocode}
 % \end{environment}
 %
 % \begin{environment}{Exe}
-% ¡ÖÎãÂê¡×·¿¤Î´Ä¶­¤Ç¤¹¡¥
+% ã€Œä¾‹é¡Œã€å‹ã®ç’°å¢ƒã§ã™ï¼
 %    \begin{macrocode}
 {\theoremstyle{plain}
    \theorembodyfont{\normalfont\rmfamily}
    \theoremheaderfont{\normalfont\bfseries}
-   \newtheorem{Exe}[Prob]{$\triangleright$ÎãÂê}}
+   \newtheorem{Exe}[Prob]{$\triangleright$ä¾‹é¡Œ}}
 %    \end{macrocode}
 % \end{environment}
 %
 % \DescribeMacro{\ifusehyperref}
-% \textsf{hyperref}¤ò»È¤Ã¤Æ¤¤¤¿¾ì¹ç¤Ë¤ÏPDFÊ¸½ñ¾ğÊó¤äPDF¤·¤ª¤ê
-% Åù¤ÎÀßÄê¤¬É¬Í×¤Ë¤Ê¤ê¤Ş¤¹¤Î¤Ç¡¤|\ifusehyperref|¤ÇÈ½ÃÇ¤·¤Æ¤¤¤Ş¤¹¡¥
+% \textsf{hyperref}ã‚’ä½¿ã£ã¦ã„ãŸå ´åˆã«ã¯PDFæ–‡æ›¸æƒ…å ±ã‚„PDFã—ãŠã‚Š
+% ç­‰ã®è¨­å®šãŒå¿…è¦ã«ãªã‚Šã¾ã™ã®ã§ï¼Œ|\ifusehyperref|ã§åˆ¤æ–­ã—ã¦ã„ã¾ã™ï¼
 %    \begin{macrocode}
 \ifusehyperref
 	\usepackage[dvipdfm,bookmarks=true,hyperindex=true%
@@ -861,12 +861,12 @@
 %    \end{macrocode}
 %
 % \DescribeMacro{\dos}
-% Ã¼Ëö¤ËÉ½¼¨¤µ¤ì¤ë·Ù¹ğ¤Ê¤É¤ò¼¨¤¹¤¿¤á¤Ë|\dos|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
-% ¤³¤ì¤ÏÇØ·Ê¤¬¹õ¡¤Ê¸»ú¿§¤¬Çò¤Ë¤Ê¤ê¤Ş¤¹¤Î¤Ç¡¤¤Ş¤ë¤Ç¥×¥í¥ó¥×¥È¤Î
-% ¤è¤¦¤Ê¥¹¥¿¥¤¥ë¤Ë¤Ê¤ê¤Ş¤¹¡¥
+% ç«¯æœ«ã«è¡¨ç¤ºã•ã‚Œã‚‹è­¦å‘Šãªã©ã‚’ç¤ºã™ãŸã‚ã«|\dos|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
+% ã“ã‚Œã¯èƒŒæ™¯ãŒé»’ï¼Œæ–‡å­—è‰²ãŒç™½ã«ãªã‚Šã¾ã™ã®ã§ï¼Œã¾ã‚‹ã§ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã®
+% ã‚ˆã†ãªã‚¹ã‚¿ã‚¤ãƒ«ã«ãªã‚Šã¾ã™ï¼
 % \DescribeMacro{\dosh}
-% |\dosh|¤ò»È¤¦¤ÈÊ¸¾ÏÉı¤¤¤Ã¤Ñ¤¤¤Î¥¹¥¿¥¤¥ë¤Ë¤Ê¤ê¤Ş¤¹¡£¼«Ê¬¤Ç
-% Å¬µ¹²ş¹Ô¤ò¤·¤Ş¤¹¡¥
+% |\dosh|ã‚’ä½¿ã†ã¨æ–‡ç« å¹…ã„ã£ã±ã„ã®ã‚¹ã‚¿ã‚¤ãƒ«ã«ãªã‚Šã¾ã™ã€‚è‡ªåˆ†ã§
+% é©å®œæ”¹è¡Œã‚’ã—ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\dos}[1]{%
    \colorbox{black}{\color{white}{%
@@ -879,15 +879,15 @@
 
 % \DescribeMacro{\IOmargin}
 % \DescribeMacro{\IOlabel}
-% Ê¸¾ÏÉı¤«¤é¤Ï¤ß½Ğ¤ëÍ×ÁÇ¤Ï°ì±şÈÇÌÌ¤¤¤Ã¤Ñ¤¤¤Ş¤Ç¤Ê¤éµöÍÆ¤µ¤ì¤ë¡¥
-% ¤³¤Î¤È¤­¡¤´ñ¿ô¥Ú¡¼¥¸¤«¶ö¿ô¥Ú¡¼¥¸¤«¤Ç¥Ş¡¼¥¸¥ó¤òÊÑ¹¹¤¹¤ë¡¥
-% ¤³¤ì¤Ë¤Ï|\IOmargin|¤È|\IOlabel|¤ò¹ç¤ï¤»¤Æ»È¤¦¤è¤¦¤Ë¤¹¤ë¤È
-% ²ÄÇ½¤Ç¤¹¡¥Ê¸¾ÏÉı¤òÈô¤Ó½Ğ¤ëÍ×ÁÇ¤ÎÄ¾Á°¤Ë|\IOmargin|Ì¿Îá¤ò½ñ¤­
-% Í×ÁÇ¤ÎÄ¾¸å¤Ë|\IOlabel|¤ò½ñ¤­¤Ş¤¹¡¥¤¢¤é¤«¤¸¤áÍ×ÁÇ¤Ï|\makebox|
-% Ì¿Îá¤Ê¤É¤ÇÉı¤ò0pt¤Ë¸«¤»¤«¤±¤ë½èÍı¤¬É¬Í×¤Ë¤Ê¤ê¤Ş¤¹¡¥\par
-% Æş½ĞÎÏ¤ÎÂĞ¤òÈÇÌÌ¤¤¤Ã¤Ñ¤¤¤ËÉ½¼¨¤¹¤ë¤¿¤á¤Ë|InOut|´Ä¶­¤òÄêµÁ¤·¤Ş¤¹¡¥
-% ¤³¤ì¤âlshort¤ÎÄêµÁ¤ò¾¯¤·ÊÑ¹¹¤·¤¿¤À¤±¤Ç¤¹¡¥\textsf{fancybox}¤Î
-% ¥Ş¥¯¥í¤ò»È¤¨¤Ğ¤â¤¦¾¯¤·´ÊÃ±¤Ë¤Ê¤ë¡©
+% æ–‡ç« å¹…ã‹ã‚‰ã¯ã¿å‡ºã‚‹è¦ç´ ã¯ä¸€å¿œç‰ˆé¢ã„ã£ã±ã„ã¾ã§ãªã‚‰è¨±å®¹ã•ã‚Œã‚‹ï¼
+% ã“ã®ã¨ãï¼Œå¥‡æ•°ãƒšãƒ¼ã‚¸ã‹å¶æ•°ãƒšãƒ¼ã‚¸ã‹ã§ãƒãƒ¼ã‚¸ãƒ³ã‚’å¤‰æ›´ã™ã‚‹ï¼
+% ã“ã‚Œã«ã¯|\IOmargin|ã¨|\IOlabel|ã‚’åˆã‚ã›ã¦ä½¿ã†ã‚ˆã†ã«ã™ã‚‹ã¨
+% å¯èƒ½ã§ã™ï¼æ–‡ç« å¹…ã‚’é£›ã³å‡ºã‚‹è¦ç´ ã®ç›´å‰ã«|\IOmargin|å‘½ä»¤ã‚’æ›¸ã
+% è¦ç´ ã®ç›´å¾Œã«|\IOlabel|ã‚’æ›¸ãã¾ã™ï¼ã‚ã‚‰ã‹ã˜ã‚è¦ç´ ã¯|\makebox|
+% å‘½ä»¤ãªã©ã§å¹…ã‚’0ptã«è¦‹ã›ã‹ã‘ã‚‹å‡¦ç†ãŒå¿…è¦ã«ãªã‚Šã¾ã™ï¼\par
+% å…¥å‡ºåŠ›ã®å¯¾ã‚’ç‰ˆé¢ã„ã£ã±ã„ã«è¡¨ç¤ºã™ã‚‹ãŸã‚ã«|InOut|ç’°å¢ƒã‚’å®šç¾©ã—ã¾ã™ï¼
+% ã“ã‚Œã‚‚lshortã®å®šç¾©ã‚’å°‘ã—å¤‰æ›´ã—ãŸã ã‘ã§ã™ï¼\textsf{fancybox}ã®
+% ãƒã‚¯ãƒ­ã‚’ä½¿ãˆã°ã‚‚ã†å°‘ã—ç°¡å˜ã«ãªã‚‹ï¼Ÿ
 %    \begin{macrocode}
 \newlength{\IOm}
 \setlength{\IOm}{\textwidth}
@@ -938,7 +938,7 @@
 %    \end{macrocode}
 %
 % \DescribeMacro{LRArrow}
-% ºî¤ê¤«¤±¤Î¥Ş¥¯¥í¤Ç¤¹¡¥»È¤Ã¤Æ¤Ş¤»¤ó¡¥
+% ä½œã‚Šã‹ã‘ã®ãƒã‚¯ãƒ­ã§ã™ï¼ä½¿ã£ã¦ã¾ã›ã‚“ï¼
 %    \begin{macrocode}
 %\newcount\al
 %\newcount\posX
@@ -965,14 +965,14 @@
 %}
 %    \end{macrocode}
 % \DescribeMacro{\image}
-% °Ê²¼¤Î¥Ş¥¯¥í¤Ï¤Û¤È¤ó¤É»È¤ï¤ì¤Æ¤¤¤Ê¤¤¤Ï¤º¡¥
-% ¥×¥í¥°¥é¥à¤ä¥Ş¥¯¥í¤ÎºîÀ®¼Ô¤Ê¤É¤Î´é¼Ì¿¿¤ò¾Ò²ğ¤¹¤ë¤Ë¤Ï
-% |\authorpict|Ì¿Îá¤ò»È¤¤¤Ş¤¹¡¥
+% ä»¥ä¸‹ã®ãƒã‚¯ãƒ­ã¯ã»ã¨ã‚“ã©ä½¿ã‚ã‚Œã¦ã„ãªã„ã¯ãšï¼
+% ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚„ãƒã‚¯ãƒ­ã®ä½œæˆè€…ãªã©ã®é¡”å†™çœŸã‚’ç´¹ä»‹ã™ã‚‹ã«ã¯
+% |\authorpict|å‘½ä»¤ã‚’ä½¿ã„ã¾ã™ï¼
 % \begin{quote}
-%    |\authorpict||{bb=x0 y0 x1 y1}||{¥Õ¥¡¥¤¥ëÌ¾}||{¿ÍÌ¾}| 
+%    |\authorpict||{bb=x0 y0 x1 y1}||{ãƒ•ã‚¡ã‚¤ãƒ«å}||{äººå}| 
 % \end{quote}
-% ¤³¤ì¤ÏÉ¸½à¤Ç¤ÏËµÃí¤Ë½ĞÎÏ¤µ¤ì¤Ş¤¹¡¥²èÁü¤ÏJPEG·Á¼°¤Ç¤¢¤ë¤È
-% ²şÄû¤Î¸µ¤Ç¼è¤ê¹ş¤Ş¤ì¤Ş¤¹¤Î¤Ç¡¤²èÁü¤Î³ÈÄ¥»Ò¤Ï¾ÊÎ¬¤·¤Ş¤¹¡¥
+% ã“ã‚Œã¯æ¨™æº–ã§ã¯å‚æ³¨ã«å‡ºåŠ›ã•ã‚Œã¾ã™ï¼ç”»åƒã¯JPEGå½¢å¼ã§ã‚ã‚‹ã¨
+% æ”¹è¨‚ã®å…ƒã§å–ã‚Šè¾¼ã¾ã‚Œã¾ã™ã®ã§ï¼Œç”»åƒã®æ‹¡å¼µå­ã¯çœç•¥ã—ã¾ã™ï¼
 %    \begin{macrocode}
 \newcommand{\image}[4][]{%
 \begin{figure}[htbp]
@@ -986,10 +986,10 @@
    \begin{Sbox}\begin{minipage}{%
   (\linewidth-2\fboxrule-2\fboxsep)}}%
   {\end{minipage}\end{Sbox}\fbox{\TheSbox}\end{table}} 
-\newcommand{\cc}[2]{{#1} & \color{#1}{¢£} &{#2}}
-\newcommand{\kutiref}[1]{¸ı³¨~\ref{kuti:#1}}
+\newcommand{\cc}[2]{{#1} & \color{#1}{â– } &{#2}}
+\newcommand{\kutiref}[1]{å£çµµ~\ref{kuti:#1}}
 \newcommand{\kuti}[1]{\refstepcounter{enumi}%
-  ¸ı³¨\theenumi~#1}
+  å£çµµ\theenumi~#1}
 \newcommand{\authorpict}[3]{%
    \marginpar{%
      \ifusedvipdfm%
@@ -997,11 +997,11 @@
      \else
       \includegraphics[#1,width=\linewidth]{images/#2.eps}%
      \fi
-   {\small\\\hfil#3\hfil\\\hfil(HP¤è¤ê)\hfil\par}}}%
-\newenvironment{column}{\begin{small}\paragraph*{¥³¥é¥à}}{\end{small}}
+   {\small\\\hfil#3\hfil\\\hfil(HPã‚ˆã‚Š)\hfil\par}}}%
+\newenvironment{column}{\begin{small}\paragraph*{ã‚³ãƒ©ãƒ }}{\end{small}}
 \newcommand{\okumura}{\url{http://oku.edu.mie-u.ac.jp/~okumura/}}
-\newcommand{\joukuten}{¡£}
-\newcommand{\joutouten}{¡¢}
+\newcommand{\joukuten}{ã€‚}
+\newcommand{\joutouten}{ã€}
 %    \end{macrocode}
 %
 %    \begin{macrocode}

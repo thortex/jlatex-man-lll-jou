@@ -1,22 +1,21 @@
-%\documentclass[a4j,11pt,dvipdfmx,papersize]{jsbook}[2006/01/21]%
-%\documentclass[b5bar,dvipdfmx,papersize]{jsbook}[2006/01/21]%
-%\documentclass[a5j,dvipdfmx,papersize]{jsbook}[2006/01/21]%
-\documentclass[dvipdfmx,a5j,papersize]{jsbook}[2006/01/21]%
-\usepackage[phiragino,hyper]{joumac}[20006/03/02]% + hyper
+\input{dvipdfmx.pre}
+\documentclass[9pt,a5j,dvipdfmx,papersize]{jsbook}[2006/01/21]%
+\usepackage[phiragino]{joumac}[20006/03/02]% + hyper
 %\includeonly{10apply}
+\setlength \overfullrule {5pt}
 \begin{document}%
-\author          {ÅÏÊÕÅ°}%
-\title           {¹¥¤­¹¥¤­\LaTeXe ½éµéÊÔ}%
+\author          {æ¸¡è¾ºå¾¹}%
+\title           {å¥½ãå¥½ã\LaTeXe åˆç´šç·¨}%
 \date            {\today}%
-\def\genzai      {2006Ç¯4·î¸½ºß}%
+\def\genzai      {2006å¹´4æœˆç¾åœ¨}%
 \FileVersion     {1.13}%
-\copyrightAuthor {ÅÏÊÕÅ°}%
+\copyrightAuthor {æ¸¡è¾ºå¾¹}%
 \copyrightYear   {2004, 2005, 2006}%
 \eauthor         {Thor Watanabe}%
 \etitle          {Love Love LaTeX 2e}%
 \esubject        {for beginners}%
 \ekeywords       {TeX, LaTeX, LaTeX2e, pTeX, pLaTeX, pLaTeX2e, FUNNIST, thesis}%
-\contact         {Th\'or Watanabe\\% Ï¢ÍíÀè
+\contact         {Th\'or Watanabe\\% é€£çµ¡å…ˆ
                   Graduate School of System Information Science\\%
                   Future University-Hakodate\\%
                   thor at tex dot dante dot jp\\%
@@ -24,36 +23,36 @@
 \input{settings}%
 \maketitle%
 \frontmatter%
-\include{002preface}% ¤Ş¤¨¤¬¤­
-\include{003thanx}%   ¼Õ¼­
-%\include{004fwfm}% ËÜÅö¤Ï¤³¤³¤Ë¤³¤ì¤¬Æş¤ë¤ó¤À¤í¤¦¤Ê¤¡¡¥
+\include{002preface}% ã¾ãˆãŒã
+\include{003thanx}%   è¬è¾
+%\include{004fwfm}% æœ¬å½“ã¯ã“ã“ã«ã“ã‚ŒãŒå…¥ã‚‹ã‚“ã ã‚ã†ãªãï¼
 \tableofcontents%
 \par \vskip 2\cvs%
 \listoffigures%
 \listoftables%
 \mainmatter%
-\include{01pregame}% 1 ¼¹É®¤ò»Ï¤á¤ëÁ°¤Ë
-\include{02pre}%      2 LaTeX ¤Î´ğËÜ
-\include{03text}%     3 Ê¸¾Ï¤Î½ñ¤­Êı
-\include{06ml}%       4 ¥³¥Ş¥ó¥É¤È¥Ş¡¼¥¯¥¢¥Ã¥×
-\include{07math}%     5 ¿ô¼°¤Î½ñ¤­Êı
-\include{08graphic}%  6 ¿ŞÉ½¤Î¹½À®
-\include{04biblio}%   7 Ê¸¸¥°ìÍ÷¤ÎºîÀ®
-\include{10apply}%    8 LaTeX ¤Î±şÍÑ
-\include{14sample}%   9 ½ñ¼°¤Î¥µ¥ó¥×¥ë
+\include{01pregame}% 1 åŸ·ç­†ã‚’å§‹ã‚ã‚‹å‰ã«
+\include{02pre}%      2 LaTeX ã®åŸºæœ¬
+\include{03text}%     3 æ–‡ç« ã®æ›¸ãæ–¹
+\include{06ml}%       4 ã‚³ãƒãƒ³ãƒ‰ã¨ãƒãƒ¼ã‚¯ã‚¢ãƒƒãƒ—
+\include{07math}%     5 æ•°å¼ã®æ›¸ãæ–¹
+\include{08graphic}%  6 å›³è¡¨ã®æ§‹æˆ
+\include{04biblio}%   7 æ–‡çŒ®ä¸€è¦§ã®ä½œæˆ
+\include{10apply}%    8 LaTeX ã®å¿œç”¨
+\include{14sample}%   9 æ›¸å¼ã®ã‚µãƒ³ãƒ—ãƒ«
 \appendix%
 \begin{small}%
-\include{13future}%    ºÇ¶á¤ÎÆ°¸ş
-\include{15info}%      »²¹Í»ñÎÁ
-\include{16changelog}% ÊÑ¹¹ÍúÎò
+\include{13future}%    æœ€è¿‘ã®å‹•å‘
+\include{15info}%      å‚è€ƒè³‡æ–™
+\include{16changelog}% å¤‰æ›´å±¥æ­´
 \include{fdl}%         GNU FDL
 \end{small}%
 \backmatter%
 \ifdraft \else
 \makeatletter%
-\printglossary%       Ì¿Îáº÷°ú
-\printindex%          º÷°ú
+\printglossary%       å‘½ä»¤ç´¢å¼•
+\printindex%          ç´¢å¼•
 \makeatother%
-\printokuduke%        ±üÉÕ
+\printokuduke%        å¥¥ä»˜
 \fi
 \end{document}%

@@ -3,13 +3,13 @@
 %% E-mail  : thor@tex.dante.jp
 %% Date    : 2006/04/20
 \ProvidesPackage{mygs}[2006/04/20 First Family]
-\RequirePackage{txfonts}% Times·Ï¤Î¥Õ¥©¥ó¥È¤ò»È¤¦
-\RequirePackage{indentfirst}% jreport¤ÏÉ¬Í×
-% ¥Ú¡¼¥¸¥ì¥¤¥¢¥¦¥È¤ÎÄ´À°
-\setlength \textwidth      {40zw}% 1 ¹Ô 40 Ê¸»ú
-\setlength \fullwidth      {\textwidth}% jsbook ¤Ç¤ÏÉ¬Í×
-\setlength \textheight     {40\baselineskip}% 1 ¥Ú¡¼¥¸ 40 ¹Ô
-\setlength \hoffset        {13\p@}% \p@ ¤Ï pt ¤Î¤³¤È
+\RequirePackage{txfonts}% Timesç³»ã®ãƒ•ã‚©ãƒ³ãƒˆã‚’ä½¿ã†
+\RequirePackage{indentfirst}% jreportã¯å¿…è¦
+% ãƒšãƒ¼ã‚¸ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®èª¿æ•´
+\setlength \textwidth      {40zw}% 1 è¡Œ 40 æ–‡å­—
+\setlength \fullwidth      {\textwidth}% jsbook ã§ã¯å¿…è¦
+\setlength \textheight     {40\baselineskip}% 1 ãƒšãƒ¼ã‚¸ 40 è¡Œ
+\setlength \hoffset        {13\p@}% \p@ ã¯ pt ã®ã“ã¨
 \setlength \voffset        {0\p@}
 \setlength \evensidemargin {0\p@}
 \setlength \oddsidemargin  {\evensidemargin}
@@ -19,8 +19,8 @@
 \setlength \marginparwidth {0\p@}
 \setlength \marginparpush  {0\p@}
 \setlength \marginparsep   {0\p@}
-\setlength \footskip       {2\baselineskip}% É¬Í×¤Ë±ş¤¸¤Æ
-% ¥Õ¥Ã¥¿¡¼¤Ë `-- ¥Ú¡¼¥¸ÈÖ¹æ --' ¤È¤·¤¿¤¤¤È¤­
+\setlength \footskip       {2\baselineskip}% å¿…è¦ã«å¿œã˜ã¦
+% ãƒ•ãƒƒã‚¿ãƒ¼ã« `-- ãƒšãƒ¼ã‚¸ç•ªå· --' ã¨ã—ãŸã„ã¨ã
 \def \ps@foot {%
  \let \@mkboth   = \@gobbletwo
  \let \@oddhead  = \@empty
@@ -28,10 +28,10 @@
  \def \@oddfoot    {\normalfont\hfil-- \thepage\ --\hfil}%
  \let \@evenfoot = \@oddfoot
 }
-\pagestyle {plainfoot}% jsbook ¤Ê¤é¤Ğ
-%\pagestyle {plain}% jreport ¤Ê¤é¤Ğ
-% ¸«½Ğ¤·¤Î½ñÂÎ
+\pagestyle {plainfoot}% jsbook ãªã‚‰ã°
+%\pagestyle {plain}% jreport ãªã‚‰ã°
+% è¦‹å‡ºã—ã®æ›¸ä½“
 \def \headfont {\normalfont \bfseries}
-% ÌÜ¼¡¤Î¿¼¤µ = subsection
+% ç›®æ¬¡ã®æ·±ã• = subsection
 \setcounter {tocdepth} {2}
 \endinput

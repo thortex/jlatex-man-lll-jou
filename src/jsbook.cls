@@ -336,10 +336,10 @@
   \reDeclareMathAlphabet{\mathbf}{\@mathbf}{\@mathgt}
   \jfam\symmincho
 \fi
-\prebreakpenalty\jis"2147=10000      % 5000   $B!G(B
-\postbreakpenalty\jis"2148=10000     % 5000   $B!H(B
-\prebreakpenalty\jis"2149=10000      % 5000   $B!I(B
-\inhibitxspcode`$B")(B=2
+\prebreakpenalty\jis"2147=10000      % 5000   ’
+\postbreakpenalty\jis"2148=10000     % 5000   “
+\prebreakpenalty\jis"2149=10000      % 5000   ”
+\inhibitxspcode`〒=2
 \xspcode`+=3
 \xspcode`\%=3
 \def\@{\spacefactor3000\space}
@@ -763,10 +763,10 @@
         \ifnum #2>\c@secnumdepth \else
           \protect\numberline{\csname the#1\endcsname}%
         \fi
-        #7}}% $BL\<!$K%U%k%M!<%`$r:\$;$k$J$i(B #8
+        #7}}% 目次にフルネームを載せるなら #8
   \else
     \begingroup
-      \interlinepenalty \@M % $B2<$+$i0\F0(B
+      \interlinepenalty \@M % 下から移動
       #6{%
         \@hangfrom{\hskip #3\relax\@svsec}%
         #8\@@par}%
@@ -776,7 +776,7 @@
       \ifnum #2>\c@secnumdepth \else
         \protect\numberline{\csname the#1\endcsname}%
       \fi
-      #7}% $BL\<!$K%U%k%M!<%`$r:\$;$k$J$i$3$3$O(B #8
+      #7}% 目次にフルネームを載せるならここは #8
   \fi
   \@xsect{#5}}
 \def\@xsect#1{%
@@ -865,7 +865,7 @@
   \else
     \clearpage
   \fi
-  \thispagestyle{empty}% $B2$J8MQI8=`%9%?%$%k$G$O(B plain
+  \thispagestyle{empty}% 欧文用標準スタイルでは plain
   \if@twocolumn
     \onecolumn
     \@restonecoltrue
@@ -909,7 +909,7 @@
   \fi}
 \newcommand{\chapter}{%
   \if@openright\cleardoublepage\else\clearpage\fi
-  \plainifnotempty % $B85(B: \thispagestyle{plain}
+  \plainifnotempty % 元: \thispagestyle{plain}
   \global\@topnum\z@
   \secdef\@chapter\@schapter}
 \def\@chapter[#1]#2{%
@@ -933,18 +933,18 @@
     \@afterheading
   \fi}
 \def\@makechapterhead#1{%
-  \vspace*{2\Cvs}% $B2$J8$O(B50pt
+  \vspace*{2\Cvs}% 欧文は50pt
   {\parindent \z@ \raggedright \normalfont
     \ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
         \huge\headfont \@chapapp\thechapter\@chappos
         \par\nobreak
-        \vskip \Cvs % $B2$J8$O(B20pt
+        \vskip \Cvs % 欧文は20pt
       \fi
     \fi
     \interlinepenalty\@M
     \Huge \headfont #1\par\nobreak
-    \vskip 3\Cvs}} % $B2$J8$O(B40pt
+    \vskip 3\Cvs}} % 欧文は40pt
 \def\@schapter#1{%
   \chaptermark{#1}%
   \if@twocolumn
@@ -953,12 +953,12 @@
     \@makeschapterhead{#1}\@afterheading
   \fi}
 \def\@makeschapterhead#1{%
-  \vspace*{2\Cvs}% $B2$J8$O(B50pt
+  \vspace*{2\Cvs}% 欧文は50pt
   {\parindent \z@ \raggedright
     \normalfont
     \interlinepenalty\@M
     \Huge \headfont #1\par\nobreak
-    \vskip 3\Cvs}} % $B2$J8$O(B40pt
+    \vskip 3\Cvs}} % 欧文は40pt
 \if@twocolumn
   \newcommand{\section}{%
     \@startsection{section}{1}{\z@}%
@@ -968,8 +968,8 @@
   \newcommand{\section}{%
     \if@slide\clearpage\fi
     \@startsection{section}{1}{\z@}%
-    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% $BA0%"%-(B
-    {.5\Cvs \@plus.3\Cdp}% $B8e%"%-(B
+    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% 前アキ
+    {.5\Cvs \@plus.3\Cdp}% 後アキ
     {\normalfont\Large\headfont\raggedright}}
 \fi
 \if@twocolumn
@@ -978,8 +978,8 @@
     {\normalfont\normalsize\headfont}}
 \else
   \newcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
-    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% $BA0%"%-(B
-    {.5\Cvs \@plus.3\Cdp}% $B8e%"%-(B
+    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% 前アキ
+    {.5\Cvs \@plus.3\Cdp}% 後アキ
     {\normalfont\large\headfont}}
 \fi
 \if@twocolumn
@@ -994,13 +994,13 @@
 \fi
 \if@twocolumn
   \newcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
-    {\z@}{-1zw}% $B2~9T$;$:(B 1zw $B$N%"%-(B
-    {\normalfont\normalsize\headfont $B"#(B}}
+    {\z@}{-1zw}% 改行せず 1zw のアキ
+    {\normalfont\normalsize\headfont ■}}
 \else
   \newcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
     {0.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
-    {-1zw}% $B2~9T$;$:(B 1zw $B$N%"%-(B
-    {\normalfont\normalsize\headfont $B"#(B}}
+    {-1zw}% 改行せず 1zw のアキ
+    {\normalfont\normalsize\headfont ■}}
 \fi
 \newcommand{\subparagraph}{\@startsection{subparagraph}{5}{\z@}%
    {\z@}{-1zw}%
@@ -1064,11 +1064,11 @@
 \renewcommand{\theenumiii}{\@roman\c@enumiii}
 \renewcommand{\theenumiv}{\@Alph\c@enumiv}
 \newcommand{\labelenumi}{\theenumi.}
-\newcommand{\labelenumii}{\inhibitglue$B!J(B\theenumii$B!K(B\inhibitglue}
+\newcommand{\labelenumii}{\inhibitglue（\theenumii）\inhibitglue}
 \newcommand{\labelenumiii}{\theenumiii.}
 \newcommand{\labelenumiv}{\theenumiv.}
 \renewcommand{\p@enumii}{\theenumi}
-\renewcommand{\p@enumiii}{\theenumi\inhibitglue$B!J(B\theenumii$B!K(B}
+\renewcommand{\p@enumiii}{\theenumi\inhibitglue（\theenumii）}
 \renewcommand{\p@enumiv}{\p@enumiii\theenumiii}
 \newcommand\labelitemi{\textbullet}
 \newcommand\labelitemii{\normalfont\bfseries \textendash}
@@ -1091,10 +1091,10 @@
   \let \\=\@centercr
   \list{}{%
     \itemsep \z@
-    \itemindent -2zw % $B85(B: -1.5em
+    \itemindent -2zw % 元: -1.5em
     \listparindent\itemindent
     \rightmargin \z@
-    \advance\leftmargin 2zw}% $B85(B: 1.5em
+    \advance\leftmargin 2zw}% 元: 1.5em
   \item\relax}{\endlist}
 \newenvironment{quotation}{%
   \list{}{%
@@ -1167,8 +1167,8 @@
                {\end@dblfloat}
 \newlength\abovecaptionskip
 \newlength\belowcaptionskip
-\setlength\abovecaptionskip{5\p@} % $B85(B: 10\p@
-\setlength\belowcaptionskip{5\p@} % $B85(B: 0\p@
+\setlength\abovecaptionskip{5\p@} % 元: 10\p@
+\setlength\belowcaptionskip{5\p@} % 元: 0\p@
 \long\def\@makecaption#1#2{{\small
   \advance\leftskip1cm
   \advance\rightskip1cm
@@ -1297,7 +1297,7 @@
    \endlist}
 \newcommand{\newblock}{\hskip .11em\@plus.33em\@minus.07em}
 \let\@openbib@code\@empty
-\newenvironment{theindex}{% $B:w0z$r(B3$BCJAH$G=PNO$9$k4D6-(B
+\newenvironment{theindex}{% 索引を3段組で出力する環境
     \if@twocolumn
       \onecolumn\@restonecolfalse
     \else
@@ -1334,12 +1334,12 @@
     \fi
     \clearpage
   }
-\newcommand{\@idxitem}{\par\hangindent 4zw} % $B85(B 40pt
-\newcommand{\subitem}{\@idxitem \hspace*{2zw}} % $B85(B 20pt
-\newcommand{\subsubitem}{\@idxitem \hspace*{3zw}} % $B85(B 30pt
+\newcommand{\@idxitem}{\par\hangindent 4zw} % 元 40pt
+\newcommand{\subitem}{\@idxitem \hspace*{2zw}} % 元 20pt
+\newcommand{\subsubitem}{\@idxitem \hspace*{3zw}} % 元 30pt
 \newcommand{\indexspace}{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
-\newcommand\seename{\if@english see\else $B"*(B\fi}
-\newcommand\alsoname{\if@english see also\else $B"*(B\fi}
+\newcommand\seename{\if@english see\else →\fi}
+\newcommand\alsoname{\if@english see also\else →\fi}
 \let\footnotes@ve=\footnote
 \def\footnote{\inhibitglue\footnotes@ve}
 \let\footnotemarks@ve=\footnotemark
@@ -1377,16 +1377,16 @@
 \def\@inhibitglue{%
   \futurelet\@let@token\@@inhibitglue}
 \def\@@inhibitglue{%
-  \ifx\@let@token$B!V(B
+  \ifx\@let@token「
     \inhibitglue
   \else
-    \ifx\@let@token$B!J(B
+    \ifx\@let@token（
       \inhibitglue
     \else
-      \ifx\@let@token$B!X(B
+      \ifx\@let@token『
         \inhibitglue
       \else
-        \ifx\@let@token$B!N(B
+        \ifx\@let@token［
           \inhibitglue
         \fi
       \fi
@@ -1481,12 +1481,12 @@
     \unskip \reserved@e {\reserved@f#1}\nobreak \hfil \break \null
     \inhibitglue \ignorespaces
   \fi}
-\def\$B>.(B#1{\hbox{$\m@th$%
+\def\小#1{\hbox{$\m@th$%
   \csname S@\f@size\endcsname
   \fontsize\sf@size\z@
   \math@fontsfalse\selectfont
   #1}}
-\def\$B>e>.(B#1{{\sbox\z@ T\vbox to\ht0{\$B>.(B{#1}\vss}}}
+\def\上小#1{{\sbox\z@ T\vbox to\ht0{\小{#1}\vss}}}
 \def\cmrTeX{%
   \ifdim \fontdimen\@ne\font >\z@
     T\kern-.25em\lower.5ex\hbox{E}\kern-.125emX\@
@@ -1495,12 +1495,12 @@
   \fi}
 \def\cmrLaTeX{%
   \ifdim \fontdimen\@ne\font >\z@
-    L\kern-.32em\$B>e>.(B{A}\kern-.22em\cmrTeX
+    L\kern-.32em\上小{A}\kern-.22em\cmrTeX
   \else
-    L\kern-.36em\$B>e>.(B{A}\kern-.15em\cmrTeX
+    L\kern-.36em\上小{A}\kern-.15em\cmrTeX
   \fi}
 \def\sfTeX{T\kern-.1em\lower.4ex\hbox{E}\kern-.07emX\@}
-\def\sfLaTeX{L\kern-.25em\$B>e>.(B{A}\kern-.08em\sfTeX}
+\def\sfLaTeX{L\kern-.25em\上小{A}\kern-.08em\sfTeX}
 \def\ptmTeX{%
   \ifdim \fontdimen\@ne\font >\z@
     T\kern-.12em\lower.37ex\hbox{E}\kern-.02emX\@
@@ -1509,9 +1509,9 @@
   \fi}
 \def\ptmLaTeX{%
   \ifdim \fontdimen\@ne\font >\z@
-    L\kern-.2em\$B>e>.(B{A}\kern-.1em\ptmTeX
+    L\kern-.2em\上小{A}\kern-.1em\ptmTeX
   \else
-    L\kern-.3em\$B>e>.(B{A}\kern-.1em\ptmTeX
+    L\kern-.3em\上小{A}\kern-.1em\ptmTeX
   \fi}
 \def\pncTeX{%
   \ifdim \fontdimen\@ne\font >\z@
@@ -1521,9 +1521,9 @@
   \fi}
 \def\pncLaTeX{%
   \ifdim \fontdimen\@ne\font >\z@
-    L\kern-.3em\$B>e>.(B{A}\kern-.1em\pncTeX
+    L\kern-.3em\上小{A}\kern-.1em\pncTeX
   \else
-    L\kern-.3em\$B>e>.(B{A}\kern-.1em\pncTeX
+    L\kern-.3em\上小{A}\kern-.1em\pncTeX
   \fi}
 \def\pplTeX{%
   \ifdim \fontdimen\@ne\font >\z@
@@ -1533,9 +1533,9 @@
   \fi}
 \def\pplLaTeX{%
   \ifdim \fontdimen\@ne\font >\z@
-    L\kern-.27em\$B>e>.(B{A}\kern-.12em\pplTeX
+    L\kern-.27em\上小{A}\kern-.12em\pplTeX
   \else
-    L\kern-.3em\$B>e>.(B{A}\kern-.15em\pplTeX
+    L\kern-.3em\上小{A}\kern-.15em\pplTeX
   \fi}
 \DeclareRobustCommand{\TeX}{%
   \def\@tempa{cmr}%
@@ -1587,10 +1587,10 @@
 \def\pLaTeX{p\LaTeX}
 \def\pLaTeXe{p\LaTeXe}
 \def\AmSTeX{\protect\AmS-\protect\TeX{}}
-\DeclareRobustCommand{\BibTeX}{B\kern-.05em\$B>.(B{I\kern-.025em B}%
+\DeclareRobustCommand{\BibTeX}{B\kern-.05em\小{I\kern-.025em B}%
   \ifx\f@family\cmr\kern-.08em\else\kern-.15em\fi\TeX}
 \DeclareRobustCommand{\SliTeX}{%
-  S\kern-.06emL\kern-.18em\$B>e>.(B{I}\kern -.03em\TeX}
+  S\kern-.06emL\kern-.18em\上小{I}\kern -.03em\TeX}
 \let\ltx@ifnextchar\@ifnextchar
 \def\ProvidesFile#1{%
   \begingroup
@@ -1603,24 +1603,24 @@
     \@makeother\/%
     \@makeother\&%
     \ltx@ifnextchar[{\@providesfile{#1}}{\@providesfile{#1}[]}}
-\newcommand{\prepartname}{\if@english Part~\else $BBh(B\fi}
-\newcommand{\postpartname}{\if@english\else $BIt(B\fi}
-\newcommand{\prechaptername}{\if@english Chapter~\else $BBh(B\fi}
-\newcommand{\postchaptername}{\if@english\else $B>O(B\fi}
-\newcommand{\presectionname}{}%  $BBh(B
-\newcommand{\postsectionname}{}% $B@a(B
-\newcommand{\contentsname}{\if@english Contents\else $BL\<!(B\fi}
-\newcommand{\listfigurename}{\if@english List of Figures\else $B?^L\<!(B\fi}
-\newcommand{\listtablename}{\if@english List of Tables\else $BI=L\<!(B\fi}
-\newcommand{\refname}{\if@english References\else $B;29MJ88%(B\fi}
-\newcommand{\bibname}{\if@english Bibliography\else $B;29MJ88%(B\fi}
-\newcommand{\indexname}{\if@english Index\else $B:w0z(B\fi}
-\newcommand{\figurename}{\if@english Fig.~\else $B?^(B\fi}
-\newcommand{\tablename}{\if@english Table.~\else $BI=(B\fi}
-\newcommand{\appendixname}{\if@english Appendix~\else $BIUO?(B\fi}
-\newif\if$B@>Nq(B \$B@>Nq(Btrue
-\def\$B@>Nq(B{\$B@>Nq(Btrue}
-\def\$BOBNq(B{\$B@>Nq(Bfalse}
+\newcommand{\prepartname}{\if@english Part~\else 第\fi}
+\newcommand{\postpartname}{\if@english\else 部\fi}
+\newcommand{\prechaptername}{\if@english Chapter~\else 第\fi}
+\newcommand{\postchaptername}{\if@english\else 章\fi}
+\newcommand{\presectionname}{}%  第
+\newcommand{\postsectionname}{}% 節
+\newcommand{\contentsname}{\if@english Contents\else 目次\fi}
+\newcommand{\listfigurename}{\if@english List of Figures\else 図目次\fi}
+\newcommand{\listtablename}{\if@english List of Tables\else 表目次\fi}
+\newcommand{\refname}{\if@english References\else 参考文献\fi}
+\newcommand{\bibname}{\if@english Bibliography\else 参考文献\fi}
+\newcommand{\indexname}{\if@english Index\else 索引\fi}
+\newcommand{\figurename}{\if@english Fig.~\else 図\fi}
+\newcommand{\tablename}{\if@english Table.~\else 表\fi}
+\newcommand{\appendixname}{\if@english Appendix~\else 付録\fi}
+\newif\if西暦 \西暦true
+\def\西暦{\西暦true}
+\def\和暦{\西暦false}
 \newcount\heisei \heisei\year \advance\heisei-1988\relax
 \def\today{%
   \if@english
@@ -1629,14 +1629,14 @@
       July\or August\or September\or October\or November\or December\fi
       \space\number\day, \number\year
   \else
-    \if$B@>Nq(B
-      \number\year $BG/(B
-      \number\month $B7n(B
-      \number\day $BF|(B
+    \if西暦
+      \number\year 年
+      \number\month 月
+      \number\day 日
     \else
-      $BJ?@.(B\number\heisei $BG/(B
-      \number\month $B7n(B
-      \number\day $BF|(B
+      平成\number\heisei 年
+      \number\month 月
+      \number\day 日
     \fi
   \fi}
 \hyphenation{ado-be post-script ghost-script phe-nom-e-no-log-i-cal man-u-script}

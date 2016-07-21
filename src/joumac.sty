@@ -44,7 +44,7 @@
   \expandafter \global \expandafter \let \csname @#1\endcsname = \@empty
 }
 \DeclareRobustCommand*\zdash{%
-  \isHyperOrNot{\texorpdfstring{\@zdash}{¡½}}{\@zdash}%
+  \isHyperOrNot{\texorpdfstring{\@zdash}{â€•}}{\@zdash}%
 }
 \newcommand*\@zdash{\char\jis"213D\kern-.5zw%"
    \char\jis"213D\kern-.5zw\char\jis"213D\relax}
@@ -92,8 +92,8 @@
 \RequirePackage{pict2e}[2004/02/19]
 \isNotHyper{\RequirePackage{cite}}
 \def \@default@gray@level {.15}
-\def \lstlistlistingname {¥½¡¼¥¹¥³¡¼¥ÉÌÜ¼¡}
-\def \lstlistingname     {¥½¡¼¥¹¥³¡¼¥É}
+\def \lstlistlistingname {ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ç›®æ¬¡}
+\def \lstlistingname     {ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰}
 \def \lst@font@setting   {\small \narrowbaselines}
 \lstdefinelanguage{plaintext}{}
 \lstloadlanguages{[LaTeX]TeX,[gnu]Make,Gnuplot,R,bash,Perl,Octave,Scilab,MetaPost}
@@ -110,34 +110,34 @@
 \lstdefinestyle{colorback}{backgroundcolor={\color[cmyk]{0,0,0,\@default@gray@level}}}
 \fi
 \lstset{%
-  % ¸À¸ì
+  % è¨€èª
   language=plaintext,%
-  % ÏÈ
+  % æ 
   frame=single,%
   framerule=0pt,%
-  %  Ê¸»úÁÈ
+  %  æ–‡å­—çµ„
   columns=[l]fullflexible,% =[<c|l,r>]{fixed|flexible,fullflexible}
-  %  ¶õ¤­
+  %  ç©ºã
   aboveskip=\medskipamount,%
   belowskip=\medskipamount,%
   lineskip=0pt,%
-  % ¥¹¥¿¥¤¥ë
+  % ã‚¹ã‚¿ã‚¤ãƒ«
   basicstyle={\ttfamily},%
   identifierstyle={\ttfamily},%
   commentstyle={\itshape},%
   stringstyle={\sffamily},%
   keywordstyle={\bfseries},%
-  % Éı
+  % å¹…
   linewidth=\linewidth,%
-  % ¥Ş¡¼¥¸¥ó
+  % ãƒãƒ¼ã‚¸ãƒ³
   xleftmargin={3zw},%
   xrightmargin={0zw},%
-  % ¼«Æ°²ş¹Ô
+  % è‡ªå‹•æ”¹è¡Œ
   breaklines,%
-  prebreak={},% ¼«Æ°Åª¤Ë²ş¹Ô¤ò¤·¤¿¾ì¹ç¡¤²ş¹Ô¤ÎÁ°¤ËÄÉ²Ã¤µ¤ì¤ë¥È¡¼¥¯¥ó
-  postbreak={},% ²ş¹Ô¤Î¸å¤ËÄÉ²Ã¤µ¤ì¤ë¥È¡¼¥¯¥ó
-  breakindent={20pt},% ¼«Æ°²ş¹Ô¸å¤Î»ú²¼¤²
-  % ¹ÔÈÖ¹æ
+  prebreak={},% è‡ªå‹•çš„ã«æ”¹è¡Œã‚’ã—ãŸå ´åˆï¼Œæ”¹è¡Œã®å‰ã«è¿½åŠ ã•ã‚Œã‚‹ãƒˆãƒ¼ã‚¯ãƒ³
+  postbreak={},% æ”¹è¡Œã®å¾Œã«è¿½åŠ ã•ã‚Œã‚‹ãƒˆãƒ¼ã‚¯ãƒ³
+  breakindent={20pt},% è‡ªå‹•æ”¹è¡Œå¾Œã®å­—ä¸‹ã’
+  % è¡Œç•ªå·
   numbers=none,%
 }
 \setlength   \wrapoverhang {\fullwidth}
@@ -170,27 +170,27 @@
 \fi
 \DeclareKanjiFamily{JY1}{rml}{}
 \DeclareKanjiFamily{JT1}{rml}{}
-\ifcase \c@jfont@select % ÉáÄÌ
+\ifcase \c@jfont@select % æ™®é€š
   \DeclareFontShape{JY1}{rml}{m}{n}{<-> s * [0.961] jis}{}
   \DeclareFontShape{JY1}{rml}{bx}{n}{<-> s * [0.961] jisg}{}
   \DeclareFontShape{JT1}{rml}{m}{n}{<-> s * [0.961] tmin10}{}
   \DeclareFontShape{JT1}{rml}{bx}{n}{<-> s * [0.961] tgoth10}{}
-\or % ¥Ò¥é¥®¥Î
+\or % ãƒ’ãƒ©ã‚®ãƒ
   \DeclareFontShape{JY1}{rml}{m}{n}{<-> s * [0.961] hminr-h}{}
   \DeclareFontShape{JT1}{rml}{m}{n}{<-> s * [0.961] hminr-v}{}
   \DeclareFontShape{JY1}{rml}{bx}{n}{<-> s * [0.961] hgothr-h}{}
   \DeclareFontShape{JT1}{rml}{bx}{n}{<-> s * [0.961] hgothr-v}{}
-\or % ¥Ò¥é¥®¥Î OTF
+\or % ãƒ’ãƒ©ã‚®ãƒ OTF
   \DeclareFontShape{JY1}{rml}{m}{n}{<-> s * [0.961] hiramin-w3-h}{}
   \DeclareFontShape{JT1}{rml}{m}{n}{<-> s * [0.961] hiramin-w3-v}{}
   \DeclareFontShape{JY1}{rml}{bx}{n}{<-> s * [0.961] hirakaku-w3-h}{}
   \DeclareFontShape{JT1}{rml}{bx}{n}{<-> s * [0.961] hirakaku-w3-v}{}
-\or % ¥Ò¥é¥®¥Î & ¥×¥í¥İ¡¼¥·¥ç¥Ê¥ë²¾Ì¾
+\or % ãƒ’ãƒ©ã‚®ãƒ & ãƒ—ãƒ­ãƒãƒ¼ã‚·ãƒ§ãƒŠãƒ«ä»®å
   \DeclareFontShape{JY1}{rml}{m}{n}{<-> s * [0.961] phiraminw3-h}{}
   \DeclareFontShape{JT1}{rml}{m}{n}{<-> s * [0.961] phiraminw3-v}{}
   \DeclareFontShape{JY1}{rml}{bx}{n}{<-> s * [0.961] phirakakuw3-h}{}
   \DeclareFontShape{JT1}{rml}{bx}{n}{<-> s * [0.961] phirakakuw3-v}{}
-\or % ¥â¥ê¥µ¥ï
+\or % ãƒ¢ãƒªã‚µãƒ¯
   \DeclareFontShape{JY1}{rml}{m}{n}{<-> s * [0.961] Ryumin-Light-J}{}
   \DeclareFontShape{JY1}{rml}{bx}{n}{<-> s * [0.961] GothicBBB-Medium-J}{}
   \DeclareFontShape{JT1}{rml}{m}{n}{<-> s * [0.961] Ryumin-Light-V}{}
@@ -206,27 +206,27 @@
 \DeclareFontShape{JT1}{rml}{bx}{it}{<->ssub*rml/bx/n}{}
 \DeclareKanjiFamily{JY1}{fma}{}
 \DeclareKanjiFamily{JT1}{fma}{}
-\ifcase \c@jfont@select % ÉáÄÌ
+\ifcase \c@jfont@select % æ™®é€š
   \DeclareFontShape{JY1}{fma}{m}{n}{<-> s * [0.961] jis}{}
   \DeclareFontShape{JY1}{fma}{bx}{n}{<-> s * [0.961] jisg}{}
   \DeclareFontShape{JT1}{fma}{m}{n}{<-> s * [0.961] tmin10}{}
   \DeclareFontShape{JT1}{fma}{bx}{n}{<-> s * [0.961] tgoth10}{}
-\or % ¥Ò¥é¥®¥Î
+\or % ãƒ’ãƒ©ã‚®ãƒ
   \DeclareFontShape{JY1}{fma}{m}{n}{<-> s * [0.961] hminr-h}{}
   \DeclareFontShape{JT1}{fma}{m}{n}{<-> s * [0.961] hminr-v}{}
   \DeclareFontShape{JY1}{fma}{bx}{n}{<-> s * [0.961] hminb-h}{}
   \DeclareFontShape{JT1}{fma}{bx}{n}{<-> s * [0.961] hminb-v}{}
-\or % ¥Ò¥é¥®¥Î OTF
+\or % ãƒ’ãƒ©ã‚®ãƒ OTF
   \DeclareFontShape{JY1}{fma}{m}{n}{<-> s * [0.961] hiramin-w3-h}{}
   \DeclareFontShape{JT1}{fma}{m}{n}{<-> s * [0.961] hiramin-w3-v}{}
   \DeclareFontShape{JY1}{fma}{bx}{n}{<-> s * [0.961] hiramin-w6-h}{}
   \DeclareFontShape{JT1}{fma}{bx}{n}{<-> s * [0.961] hiramin-w6-v}{}
-\or % ¥Ò¥é¥®¥Î & ¥×¥í¥İ¡¼¥·¥ç¥Ê¥ë²¾Ì¾
+\or % ãƒ’ãƒ©ã‚®ãƒ & ãƒ—ãƒ­ãƒãƒ¼ã‚·ãƒ§ãƒŠãƒ«ä»®å
   \DeclareFontShape{JY1}{fma}{m}{n}{<-> s * [0.961] phiraminw3-h}{}
   \DeclareFontShape{JT1}{fma}{m}{n}{<-> s * [0.961] phiraminw3-v}{}
   \DeclareFontShape{JY1}{fma}{bx}{n}{<-> s * [0.961] phiraminw6-h}{}
   \DeclareFontShape{JT1}{fma}{bx}{n}{<-> s * [0.961] phiraminw6-v}{}
-\or % ¥â¥ê¥µ¥ï
+\or % ãƒ¢ãƒªã‚µãƒ¯
   \DeclareFontShape{JY1}{fma}{m}{n}{<-> s * [0.961] FutoMinA101-Bold-J}{}
   \DeclareFontShape{JY1}{fma}{bx}{n}{<-> s * [0.961] GothicBBB-Medium-J}{}
   \DeclareFontShape{JT1}{fma}{m}{n}{<-> s * [0.961] FutoMinA101-Bold-V}{}
@@ -234,27 +234,27 @@
 \fi
 \DeclareKanjiFamily{JY1}{gbm}{}
 \DeclareKanjiFamily{JT1}{gbm}{}
-\ifcase \c@jfont@select % ÉáÄÌ
+\ifcase \c@jfont@select % æ™®é€š
   \DeclareFontShape{JY1}{gbm}{m}{n}{<-> s * [0.961] jisg}{}
   \DeclareFontShape{JY1}{gbm}{bx}{n}{<-> s * [0.961] jisg}{}
   \DeclareFontShape{JT1}{gbm}{m}{n}{<-> s * [0.961] tgoth10}{}
   \DeclareFontShape{JT1}{gbm}{bx}{n}{<-> s * [0.961] tgoth10}{}
-\or % ¥Ò¥é¥®¥Î
+\or % ãƒ’ãƒ©ã‚®ãƒ
   \DeclareFontShape{JY1}{gbm}{m}{n}{<-> s * [0.961] hgothr-h}{}
   \DeclareFontShape{JT1}{gbm}{m}{n}{<-> s * [0.961] hgothr-v}{}
   \DeclareFontShape{JY1}{gbm}{bx}{n}{<-> s * [0.961] hgothb-h}{}
   \DeclareFontShape{JT1}{gbm}{bx}{n}{<-> s * [0.961] hgothb-v}{}
-\or % ¥Ò¥é¥®¥Î OTF
+\or % ãƒ’ãƒ©ã‚®ãƒ OTF
   \DeclareFontShape{JY1}{gbm}{m}{n}{<-> s * [0.961] hirakaku-w3-h}{}
   \DeclareFontShape{JT1}{gbm}{m}{n}{<-> s * [0.961] hirakaku-w3-v}{}
   \DeclareFontShape{JY1}{gbm}{bx}{n}{<-> s * [0.961] hirakaku-w6-h}{}
   \DeclareFontShape{JT1}{gbm}{bx}{n}{<-> s * [0.961] hirakaku-w6-v}{}
-\or % ¥Ò¥é¥®¥Î & ¥×¥í¥İ¡¼¥·¥ç¥Ê¥ë²¾Ì¾
+\or % ãƒ’ãƒ©ã‚®ãƒ & ãƒ—ãƒ­ãƒãƒ¼ã‚·ãƒ§ãƒŠãƒ«ä»®å
   \DeclareFontShape{JY1}{gbm}{m}{n}{<-> s * [0.961] phirakakuw3-h}{}
   \DeclareFontShape{JT1}{gbm}{m}{n}{<-> s * [0.961] phirakakuw3-v}{}
   \DeclareFontShape{JY1}{gbm}{bx}{n}{<-> s * [0.961] phirakakuw6-h}{}
   \DeclareFontShape{JT1}{gbm}{bx}{n}{<-> s * [0.961] phirakakuw6-v}{}
-\or % ¥â¥ê¥µ¥ï
+\or % ãƒ¢ãƒªã‚µãƒ¯
   \DeclareFontShape{JY1}{gbm}{m}{n}{<-> s * [0.961] GothicBBB-Medium-J}{}
   \DeclareFontShape{JY1}{gbm}{bx}{n}{<-> s * [0.961] FutoGoB101-Bold-J}{}
   \DeclareFontShape{JT1}{gbm}{m}{n}{<-> s * [0.961] GothicBBB-Medium-V}{}
@@ -270,27 +270,27 @@
 \DeclareFontShape{JT1}{gbm}{sbc}{n}{<->ssub*gbm/m/n}{}
 \DeclareKanjiFamily{JY1}{jun}{}
 \DeclareKanjiFamily{JT1}{jun}{}
-\ifcase \c@jfont@select % ÉáÄÌ
+\ifcase \c@jfont@select % æ™®é€š
   \DeclareFontShape{JY1}{jun}{m}{n}{<-> s * [0.961] jisg}{}
   \DeclareFontShape{JY1}{jun}{bx}{n}{<->ssub*jun/m/n}{}
   \DeclareFontShape{JT1}{jun}{m}{n}{<-> s * [0.961] tgoth10}{}
   \DeclareFontShape{JT1}{jun}{bx}{n}{<->ssub*jun/m/n}{}
-\or % ¥Ò¥é¥®¥Î
+\or % ãƒ’ãƒ©ã‚®ãƒ
   \DeclareFontShape{JY1}{jun}{m}{n}{<-> s * [0.961] hmgothr-h}{}
   \DeclareFontShape{JT1}{jun}{m}{n}{<-> s * [0.961] hmgothr-v}{}
   \DeclareFontShape{JY1}{jun}{bx}{n}{<->ssub*jun/m/n}{}
   \DeclareFontShape{JT1}{jun}{bx}{n}{<->ssub*jun/m/n}{}
-\or % ¥Ò¥é¥®¥Î OTF
+\or % ãƒ’ãƒ©ã‚®ãƒ OTF
   \DeclareFontShape{JY1}{jun}{m}{n}{<-> s * [0.961] hiramaru-w4-h}{}
   \DeclareFontShape{JT1}{jun}{m}{n}{<-> s * [0.961] hiramaru-w4-v}{}
   \DeclareFontShape{JY1}{jun}{bx}{n}{<->ssub*jun/m/n}{}
   \DeclareFontShape{JT1}{jun}{bx}{n}{<->ssub*jun/m/n}{}
-\or % ¥Ò¥é¥®¥Î & ¥×¥í¥İ¡¼¥·¥ç¥Ê¥ë²¾Ì¾
+\or % ãƒ’ãƒ©ã‚®ãƒ & ãƒ—ãƒ­ãƒãƒ¼ã‚·ãƒ§ãƒŠãƒ«ä»®å
   \DeclareFontShape{JY1}{jun}{m}{n}{<-> s * [0.961] phiramaruw4-h}{}
   \DeclareFontShape{JT1}{jun}{m}{n}{<-> s * [0.961] phiramaruw4-v}{}
   \DeclareFontShape{JY1}{jun}{bx}{n}{<->ssub*jun/m/n}{}
   \DeclareFontShape{JT1}{jun}{bx}{n}{<->ssub*jun/m/n}{}
-\or % ¥â¥ê¥µ¥ï
+\or % ãƒ¢ãƒªã‚µãƒ¯
   \DeclareFontShape{JY1}{jun}{m}{n}{<-> s * [0.961] Jun101-Light-J}{}
   \DeclareFontShape{JY1}{jun}{bx}{n}{<->ssub*jun/m/n}{}
   \DeclareFontShape{JT1}{jun}{m}{n}{<-> s * [0.961] Jun101-Light-V}{}
@@ -332,6 +332,25 @@
 \setlength   \marginparsep   {0pt}
 \setlength   \marginparwidth {0pt}
 \setlength   \marginparpush  {0pt}
+\setlength   \oddsidemargin  {0pt}
+\setlength   \evensidemargin {0pt}
+\ifnum \@ptsize = -1 % A4 9 pt ã®æ™‚ã®è¨­å®š
+\setlength   \topskip        {\Cvs}
+\setlength   \headheight     {\Cvs}
+\setlength   \headsep        {\Cvs}
+\setlength   \maxdepth       {.5\topskip}
+\setlength   \textwidth      {34zw}
+\setlength   \fullwidth      {\textwidth}
+\addtolength \fullwidth      {5zw}
+\setlength   \textheight     {37\Cvs}
+\setlength   \oddsidemargin  {-1truein}
+\addtolength \oddsidemargin  {16truemm}
+\setlength   \evensidemargin {0pt}
+\setlength   \topmargin      {-1truein}
+\addtolength \topmargin      {17truemm}
+\addtolength \topmargin      {-\headheight}
+\addtolength \topmargin      {-\headsep}
+\else
 \setlength   \oddsidemargin  {-38pt}
 \setlength   \evensidemargin {-32pt}
 \addtolength \oddsidemargin  {2mm}
@@ -344,6 +363,7 @@
 \setlength   \textwidth      {347pt}
 \setlength   \fullwidth      {\textwidth}
 \addtolength \fullwidth      {1pt}
+\fi
 \newlength   \ftextwidth
 \setlength   \ftextwidth {\textwidth}
 \addtolength \ftextwidth {-2\fboxsep}
@@ -359,7 +379,7 @@
  \begin{picture}(0,0)%
    \put(0.4,-\value{chapter}){%
       {\color{black}\rule[-.2\unitlength]%
-       {1.05\unitlength}% ºÛ¤Á¤·¤í¤Ï1.45 + x mm (3mm É¸½à->1.75)
+       {1.05\unitlength}% è£ã¡ã—ã‚ã¯1.45 + x mm (3mm æ¨™æº–->1.75)
        {\unitlength}}}%
    \put(0.6,-\value{chapter}){\makebox(0,.5)[l]{%
       {\color{white}\@tume@number@font \thechapter}}}%
@@ -445,13 +465,13 @@
     \par \vskip 2\Cvs}%
 }
 \def\@makeschapterhead#1{%
-  \vspace*{2\Cvs}% ²¤Ê¸¤Ï50pt
+  \vspace*{2\Cvs}% æ¬§æ–‡ã¯50pt
   {\parindent \z@ \raggedright
     \reset@font
     \interlinepenalty\@M
     \hb@xt@ \fullwidth{\hfill\Huge \headfont #1}\par\nobreak\vskip\fboxsep
     \hrule height 1ex
-    \par\vskip2\Cvs}}% ²¤Ê¸¤Ï40pt
+    \par\vskip2\Cvs}}% æ¬§æ–‡ã¯40pt
 \def\@sect#1#2#3#4#5#6[#7]#8{%
   \ifnum #2>\c@secnumdepth
     \let\@svsec\@empty
@@ -469,10 +489,10 @@
         \ifnum #2>\c@secnumdepth \else
           \protect\numberline{\csname the#1\endcsname}%
         \fi
-        #7}}% ÌÜ¼¡¤Ë¥Õ¥ë¥Í¡¼¥à¤òºÜ¤»¤ë¤Ê¤é #8
+        #7}}% ç›®æ¬¡ã«ãƒ•ãƒ«ãƒãƒ¼ãƒ ã‚’è¼‰ã›ã‚‹ãªã‚‰ #8
   \else
     \begingroup
-      \interlinepenalty \@M % ²¼¤«¤é°ÜÆ°
+      \interlinepenalty \@M % ä¸‹ã‹ã‚‰ç§»å‹•
     \ifnum #2=\@ne
      \ifdim \columnwidth < \textwidth
          #6{\@hangfrom{\hskip #3\relax\@svsec}#8\@@par}%
@@ -495,7 +515,7 @@
       \ifnum #2>\c@secnumdepth \else
         \protect\numberline{\csname the#1\endcsname}%
       \fi
-      #7}% ÌÜ¼¡¤Ë¥Õ¥ë¥Í¡¼¥à¤òºÜ¤»¤ë¤Ê¤é¤³¤³¤Ï #8
+      #7}% ç›®æ¬¡ã«ãƒ•ãƒ«ãƒãƒ¼ãƒ ã‚’è¼‰ã›ã‚‹ãªã‚‰ã“ã“ã¯ #8
   \fi
   \@xsect{#5}}
 \def\@xsect#1{%
@@ -623,7 +643,7 @@
 \renewcommand{\listoffigures}{%
   \if@twocolumn\@restonecoltrue\onecolumn
   \else\@restonecolfalse\fi
-  \section*{\listfigurename % \section* ¥ì¥Ù¥ë
+  \section*{\listfigurename % \section* ãƒ¬ãƒ™ãƒ«
       \@mkboth{\listfigurename}{\listfigurename}%
       \isHyper{\pdfbookmark{\listfigurename}{listoffigures}}}% append
   \@starttoc{lof}%
@@ -632,7 +652,7 @@
 \renewcommand{\listoftables}{%
   \if@twocolumn\@restonecoltrue\onecolumn
   \else\@restonecolfalse\fi
-  \section*{\listtablename % \section* ¥ì¥Ù¥ë
+  \section*{\listtablename % \section* ãƒ¬ãƒ™ãƒ«
   \@mkboth{\listtablename}{\listtablename}%
       \isHyper{\pdfbookmark{\listtablename}{listoftables}}}% append
   \@starttoc{lot}%
@@ -687,7 +707,7 @@
 \@add@title@element {FileVersion}
 \renewcommand{\maketitle}{%
   \def \thepage {front.\arabic{page}}%
-  \isHyper{\pdfbookmark{É½»æ}{titlepage}}%
+  \isHyper{\pdfbookmark{è¡¨ç´™}{titlepage}}%
   \begin{titlepage}%
     \parindent = \z@ \relax
     \let \footnotesize \small%
@@ -700,12 +720,12 @@
     \par \vskip \fboxsep
     \par \vskip .5\cvs
     \hb@xt@ \fullwidth {\hfill{\large \@author\space}}\par
-    \hb@xt@ \fullwidth {\hfill{\large Âè \@FileVersion ÈÇ\space}}\par
+    \hb@xt@ \fullwidth {\hfill{\large ç¬¬ \@FileVersion ç‰ˆ\space}}\par
     \hb@xt@ \fullwidth {\hfill{\large \@date\space}}\par
     \vfill
     \hrule \@height .8pt \@width \fullwidth
     \vskip.5\cvs
-    \hb@xt@ \fullwidth {\hfil\includegraphics{images/story-zapfino-crop}\hfil}\par
+    \hb@xt@ \fullwidth {\hfil\includegraphics{images/story-zapfino-crop.pdf}\hfil}\par
     \vskip.5\cvs
     \hrule \@height .8pt \@width \fullwidth
     \vfill
@@ -732,19 +752,19 @@
           \@secCopyrightAuthor}%
   \fi
   \begin{quotation}%
-    ¤³¤ÎÊ¸½ñ¤ò¥Õ¥ê¡¼¥½¥Õ¥È¥¦¥§¥¢ºâÃÄÈ¯¹Ô¤Î\gnu ¥Õ¥ê¡¼Ê¸½ñ%
-    ÍøÍÑµöÂú·ÀÌó½ñ (¥Ğ¡¼¥¸¥ç¥ó1.2¤«¤½¤ì°Ê¹ß¤«¤é°ì¤Ä¤òÁªÂò) %
-    ¤¬Äê¤á¤ë¾ò·ï¤Î²¼¤ÇÊ£À½¡¤ÈÒÉÛ¡¤¤¢¤ë¤¤¤Ï²şÊÑ¤¹¤ë¤³¤È¤ò%
-    µö²Ä¤·¤Ş¤¹¡¥ÊÑ¹¹ÉÔ²ÄÉôÊ¬¡¤É½¥«¥Ğ¡¼¥Æ¥­¥¹¥È¡¤Î¢¥«¥Ğ¡¼¥Æ¥­%
-    ¥¹¥È¤Ï»ØÄê¤·¤Ş¤»¤ó¡¥¤³¤ÎÍøÍÑµöÂú·ÀÌó½ñ¤ÎÊ£À½Êª¤Ï%
-    \emph{\fdl}\pp{\jfdl}¤È¤¤¤¦¾Ï\pp{\appref{label_fdl}}¤Ë%
-    ´Ş¤Ş¤ì¤Æ¤¤¤Ş¤¹¡¥%
+    ã“ã®æ–‡æ›¸ã‚’ãƒ•ãƒªãƒ¼ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢è²¡å›£ç™ºè¡Œã®\gnu ãƒ•ãƒªãƒ¼æ–‡æ›¸%
+    åˆ©ç”¨è¨±è«¾å¥‘ç´„æ›¸ (ãƒãƒ¼ã‚¸ãƒ§ãƒ³1.2ã‹ãã‚Œä»¥é™ã‹ã‚‰ä¸€ã¤ã‚’é¸æŠ) %
+    ãŒå®šã‚ã‚‹æ¡ä»¶ã®ä¸‹ã§è¤‡è£½ï¼Œé ’å¸ƒï¼Œã‚ã‚‹ã„ã¯æ”¹å¤‰ã™ã‚‹ã“ã¨ã‚’%
+    è¨±å¯ã—ã¾ã™ï¼å¤‰æ›´ä¸å¯éƒ¨åˆ†ï¼Œè¡¨ã‚«ãƒãƒ¼ãƒ†ã‚­ã‚¹ãƒˆï¼Œè£ã‚«ãƒãƒ¼ãƒ†ã‚­%
+    ã‚¹ãƒˆã¯æŒ‡å®šã—ã¾ã›ã‚“ï¼ã“ã®åˆ©ç”¨è¨±è«¾å¥‘ç´„æ›¸ã®è¤‡è£½ç‰©ã¯%
+    \emph{\fdl}\pp{\jfdl}ã¨ã„ã†ç« \pp{\appref{label_fdl}}ã«%
+    å«ã¾ã‚Œã¦ã„ã¾ã™ï¼%
   \end{quotation}%
   \begin{quotation}%
-  ËÜ½ñ¤Ëµ­ºÜ¤µ¤ì¤Æ¤¤¤ë´ë¶È¡¤ÃÄÂÎ¤ÎÌ¾Á°¤äÀ½ÉÊÌ¾Åù¤Ï%
-  ¤½¤ì¤¾¤ì¤Î¸¢Íøµ¢Â°¼Ô¤Î¾¦É¸¤Ş¤¿¤Ï¾¦É¸ÅĞÏ¿¤Ç¤¢¤ê½êÍ­Êª¤Ç¤¹¡¥%
-  ËÜºı»Ò¤Ç¤Ï {\texttrademark} µÚ¤Ó {\textregistered} ¤ÏÌÀµ­¤·%
-  ¤Æ¤¤¤Ş¤»¤ó¡¥%
+  æœ¬æ›¸ã«è¨˜è¼‰ã•ã‚Œã¦ã„ã‚‹ä¼æ¥­ï¼Œå›£ä½“ã®åå‰ã‚„è£½å“åç­‰ã¯%
+  ãã‚Œãã‚Œã®æ¨©åˆ©å¸°å±è€…ã®å•†æ¨™ã¾ãŸã¯å•†æ¨™ç™»éŒ²ã§ã‚ã‚Šæ‰€æœ‰ç‰©ã§ã™ï¼%
+  æœ¬å†Šå­ã§ã¯ {\texttrademark} åŠã³ {\textregistered} ã¯æ˜è¨˜ã—%
+  ã¦ã„ã¾ã›ã‚“ï¼%
   \end{quotation}%
 }
 \newcommand{\printokuduke}{%
@@ -764,9 +784,9 @@
   {\hrule \@width \textwidth \@height 1.5pt}%
   \par \vskip \cvs
   \def\dateFormat##1/##2/##3/{##1/##2/##3}%
-  \def\verFormat##1{ver.~##1\quad ÇÛÉÛ}%
+  \def\verFormat##1{ver.~##1\quad é…å¸ƒ}%
   \begin{tabular}{lrc}
-    È¯¹ÔÆü & \dateFormat2004/04/02/ &  \verFormat{0.10} \\
+    ç™ºè¡Œæ—¥ & \dateFormat2004/04/02/ &  \verFormat{0.10} \\
            & \dateFormat2004/04/16/ &  \verFormat{0.20} \\
            & \dateFormat2004/04/30/ &  \verFormat{0.21} \\
            & \dateFormat2004/08/05/ &  \verFormat{0.30} \\
@@ -823,15 +843,15 @@
 }
 \def\newBibItem{\let \bibitem = \new@bibitem}
 \def\oldBibItem{\let \bibitem = \orig@bibitem}
-\def \indexname    {º÷°ú}
+\def \indexname    {ç´¢å¼•}
 \makeindex
-\def \glossaryname {Ì¿Îáº÷°ú}
+\def \glossaryname {å‘½ä»¤ç´¢å¼•}
 \makeglossary
 \newcommand*\zindind[2]{\index{#1!\zdash#2}}
 \newcommand*\indindz[2]{\index{#1!#2\zdash}}
 \newcommand*\latexno[1]{\index{LaTeX@\LaTeX!\zdash#1}}
-\newcommand*\anobun{³ç¸ÌÆâ¤Îµ­¹æ¤Ï¤½¤ÎÌ¿Îá¤Ç½ĞÎÏ¤¹¤ë¤³¤È¤¬¤Ç¤­¤ëµ­¹æ¤ò%
-°ÕÌ£¤·¤Ş¤¹¡¥³ç¸Ì½ñ¤­¤Î¤Ê¤¤Ì¿Îá¤Ç¤â¡¤µ­¹æ¤ò½ĞÎÏ¤¹¤ë¤â¤Î¤¬¤¢¤ê¤Ş¤¹¡¥}
+\newcommand*\anobun{æ‹¬å¼§å†…ã®è¨˜å·ã¯ãã®å‘½ä»¤ã§å‡ºåŠ›ã™ã‚‹ã“ã¨ãŒã§ãã‚‹è¨˜å·ã‚’%
+æ„å‘³ã—ã¾ã™ï¼æ‹¬å¼§æ›¸ãã®ãªã„å‘½ä»¤ã§ã‚‚ï¼Œè¨˜å·ã‚’å‡ºåŠ›ã™ã‚‹ã‚‚ã®ãŒã‚ã‚Šã¾ã™ï¼}
 \newenvironment{theglossary}{%
     \if@twocolumn
       \onecolumn\@restonecolfalse
@@ -882,7 +902,7 @@
 \newcommand{\authorpict}[3]{%
    \marginpar{%
       \includegraphics[#1,width=\linewidth]{images/#2}%
-   {\small\\\hfil#3\hfil\\\hfil(HP¤è¤ê)\hfil\par}}}
+   {\small\\\hfil#3\hfil\\\hfil(HPã‚ˆã‚Š)\hfil\par}}}
 \newlength   {\IOm}
 \setlength   {\IOm}{\textwidth}
 \addtolength {\IOm}{-\fullwidth}
@@ -941,8 +961,8 @@
 \theoremheaderfont    {\reset@font \headfont}
 \theorembodyfont      {\reset@font \rmfamily}
 \theoremstyle         {plain}
-\newtheorem{Prob}     {\mantriangleright ÌäÂê}[chapter]
-\newtheorem{Exe}[Prob]{$\triangleright$ÎãÂê}
+\newtheorem{Prob}     {\mantriangleright å•é¡Œ}[chapter]
+\newtheorem{Exe}[Prob]{$\triangleright$ä¾‹é¡Œ}
 \newenvironment{Trick}%
   {\begin{list}{\mbox{\normalsize\dbend}}{%
   \leftmargin = 3zw
@@ -963,7 +983,7 @@
    \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs\string#1}%
 \hskip1em(\protect\mynameuse{#1})}%
    \csname#1\endcsname&\texttt{\bs\string#1}}
-\newcommand*{\KM}{µ­¹æ&Ì¿Îá}
+\newcommand*{\KM}{è¨˜å·&å‘½ä»¤}
 \newcommand*{\A}[1]{%
    \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs#1}%
       \hskip1em(\csname#1\endcsname)}%
@@ -978,23 +998,23 @@
     \hskip1em($\csname#1\endcsname{#2}$)}%
   $\csname#1\endcsname{#2}$ & %
   \texttt{\bs#1\lb\string#2\rb}}%
-\newcommand*\chaplab[1]{\label{chap:#1}}%     ¾Ï¤Î¥é¥Ù¥ë
-\newcommand*\chapref[1]{Âè~\ref{chap:#1}~¾Ï}% ¾Ï¤Î»²¾È
-\newcommand*\seclab[1]{\label{sec:#1}}%       Àá¤Î¥é¥Ù¥ë
-\newcommand*\secref[1]{\ref{sec:#1}~Àá}%      Àá¤Î»²¾È
-\newcommand*\figlab[1]{\label{fig:#1}}%       ¿Ş¤Î¥é¥Ù¥ë
-\newcommand*\figref[1]{¿Ş~\ref{fig:#1}}%      ¿Ş¤Î»²¾È
-\newcommand*\tablab[1]{\label{tab:#1}}%       É½¤Î¥é¥Ù¥ë
-\newcommand*\tabref[1]{É½~\ref{tab:#1}}%     É½¤Î»²¾È
-\newcommand*\equlab[1]{\label{equ:#1}}%       ¼°¤Î¥é¥Ù¥ë
-\newcommand*\equref[1]{¼°~\ref{equ:#1}}%     ¼°¤Î»²¾È
-\newcommand*\applab[1]{\label{app:#1}}%       ÉÕÏ¿¤Î¥é¥Ù¥ë
-\newcommand*\appref[1]{ÉÕÏ¿~\ref{app:#1}}%    ÉÕÏ¿¤Î»²¾È
-\newcommand*\pref[1]{\pageref{#1}¥Ú¡¼¥¸}%     ¥Ú¡¼¥¸¤Î»²¾È
-\newcommand*\exelab[1]{\label{exe:#1}}%       ÎãÂê¥é¥Ù¥ë
-\newcommand*\exeref[1]{ÎãÂê~\ref{exe:#1}}%    ÎãÂê»²¾È
-\newcommand*\problab[1]{\label{prob:#1}}%     ÌäÂê¥é¥Ù¥ë
-\newcommand*\probref[1]{ÌäÂê~\ref{prob:#1}}%  ÌäÂê»²¾È
+\newcommand*\chaplab[1]{\label{chap:#1}}%     ç« ã®ãƒ©ãƒ™ãƒ«
+\newcommand*\chapref[1]{ç¬¬~\ref{chap:#1}~ç« }% ç« ã®å‚ç…§
+\newcommand*\seclab[1]{\label{sec:#1}}%       ç¯€ã®ãƒ©ãƒ™ãƒ«
+\newcommand*\secref[1]{\ref{sec:#1}~ç¯€}%      ç¯€ã®å‚ç…§
+\newcommand*\figlab[1]{\label{fig:#1}}%       å›³ã®ãƒ©ãƒ™ãƒ«
+\newcommand*\figref[1]{å›³~\ref{fig:#1}}%      å›³ã®å‚ç…§
+\newcommand*\tablab[1]{\label{tab:#1}}%       è¡¨ã®ãƒ©ãƒ™ãƒ«
+\newcommand*\tabref[1]{è¡¨~\ref{tab:#1}}%     è¡¨ã®å‚ç…§
+\newcommand*\equlab[1]{\label{equ:#1}}%       å¼ã®ãƒ©ãƒ™ãƒ«
+\newcommand*\equref[1]{å¼~\ref{equ:#1}}%     å¼ã®å‚ç…§
+\newcommand*\applab[1]{\label{app:#1}}%       ä»˜éŒ²ã®ãƒ©ãƒ™ãƒ«
+\newcommand*\appref[1]{ä»˜éŒ²~\ref{app:#1}}%    ä»˜éŒ²ã®å‚ç…§
+\newcommand*\pref[1]{\pageref{#1}ãƒšãƒ¼ã‚¸}%     ãƒšãƒ¼ã‚¸ã®å‚ç…§
+\newcommand*\exelab[1]{\label{exe:#1}}%       ä¾‹é¡Œãƒ©ãƒ™ãƒ«
+\newcommand*\exeref[1]{ä¾‹é¡Œ~\ref{exe:#1}}%    ä¾‹é¡Œå‚ç…§
+\newcommand*\problab[1]{\label{prob:#1}}%     å•é¡Œãƒ©ãƒ™ãƒ«
+\newcommand*\probref[1]{å•é¡Œ~\ref{prob:#1}}%  å•é¡Œå‚ç…§
 \def \@ami@gray@default@level{.2}%
 \newenvironment{AMIAMI}[1][\@ami@gray@default@level]{%
    \def \@ami@gray@level{#1}%
@@ -1114,7 +1134,7 @@
 \newcommand*{\option}[1]{\textsl{#1}}
 \newcommand*{\Option}[1]{%
   \index{#1@\textsl{#1}}%
-  \index{¥ª¥×¥·¥ç¥ó!#1@\textsl{#1}}%
+  \index{ã‚ªãƒ—ã‚·ãƒ§ãƒ³!#1@\textsl{#1}}%
   \textsl{#1}%
 }
 \def\optionlist#1{\@tempcnta=\z@ \@tempcntb=\z@
@@ -1133,12 +1153,12 @@
  \@for\member:=#1\do{\advance\@tempcntb\@ne
    \ifnum\@tempcntb<\@tempcnta
    \index{\member @\textsl{\member}}%
-   \index{¥ª¥×¥·¥ç¥ó!\member @\textsl{\member}}%
+   \index{ã‚ªãƒ—ã‚·ãƒ§ãƒ³!\member @\textsl{\member}}%
    \textsl{\member},\space
     \else
       \ifnum\@tempcntb=\@tempcnta
    \index{\member @\textsl{\member}}%
-   \index{¥ª¥×¥·¥ç¥ó!\member @\textsl{\member}}%
+   \index{ã‚ªãƒ—ã‚·ãƒ§ãƒ³!\member @\textsl{\member}}%
    \textsl{\member}%
    \fi
  \fi}%
@@ -1155,10 +1175,10 @@
 \newcommand*{\xy}[2]{\string({\itshape#1}\texttt,{\itshape#2}\string)}
 \newcommand*{\qu}[1]{`#1'}
 \newcommand*{\qq}[1]{``#1''}
-\newcommand*{\yo}[1]{¡Ö#1¡×}
-\newcommand*{\yy}[1]{¡Ø#1¡Ù}
-\newcommand*{\pp}[1]{¡Ê#1¡Ë}
-\newcommand*{\wasyo}[1]{¡Ø#1¡Ù}
+\newcommand*{\yo}[1]{ã€Œ#1ã€}
+\newcommand*{\yy}[1]{ã€#1ã€}
+\newcommand*{\pp}[1]{ï¼ˆ#1ï¼‰}
+\newcommand*{\wasyo}[1]{ã€#1ã€}
 \newcommand*{\yousyo}[1]{\emph{#1}}
 \newenvironment{myquotation}{%
   \list{}{%
@@ -1171,50 +1191,50 @@
   \index{BibTeX@\BibTeX!#1@\texttt{#1}}%
 }
 \newcommand*\bubu[1]{%
-  \index{#1@\texttt{#1}¡ÊÊ¸¸¥¤Î¼ïÎà¡Ë}\texttt{#1}%
-  \index{¤Õ¤ó¤±¤ó¤Î¤·¤å¤ë¤¤@Ê¸¸¥¤Î¼ïÎà!#1@\texttt{#1}}%
+  \index{#1@\texttt{#1}ï¼ˆæ–‡çŒ®ã®ç¨®é¡ï¼‰}\texttt{#1}%
+  \index{ãµã‚“ã‘ã‚“ã®ã—ã‚…ã‚‹ã„@æ–‡çŒ®ã®ç¨®é¡!#1@\texttt{#1}}%
 }
 \newcommand*{\prog}{\@ifnextchar[{\yomi@prog}{\@prog}}%]
 \newcommand*{\@prog}[1]{#1}
 \newcommand*{\yomi@prog}[2][]{#2}
 \newcommand*{\Prog}{\@ifnextchar[{\yomi@Prog}{\@Prog}}
 \newcommand*{\@Prog}[1]{%
-   \index{¥×¥í¥°¥é¥à!#1}\index{#1}#1}
+   \index{ãƒ—ãƒ­ã‚°ãƒ©ãƒ !#1}\index{#1}#1}
 \newcommand*{\yomi@Prog}[2][]{%
-   \index{¥×¥í¥°¥é¥à!#1@\protect#2}%
+   \index{ãƒ—ãƒ­ã‚°ãƒ©ãƒ !#1@\protect#2}%
    \index{#1@\protect#2}#2}
 \newcommand*{\fl}[1]{\texttt{#1}}
 \newcommand*{\Fl}[1]{%
-   \index{¥Õ¥¡¥¤¥ë!#1@\texttt{#1}}%
+   \index{ãƒ•ã‚¡ã‚¤ãƒ«!#1@\texttt{#1}}%
    \index{#1@\texttt{#1}}\texttt{#1}}
 \newcommand*{\cls}[1]{\textsf{#1}}
 \newcommand*{\Cls}[1]{%
-   \index{¥¯¥é¥¹!#1@\textsf{#1}}%
+   \index{ã‚¯ãƒ©ã‚¹!#1@\textsf{#1}}%
    \index{#1@\textsf{#1}}\textsf{#1}}
 \newcommand*{\sty}[1]{\textsf{#1}}
 \newcommand*{\Y}[1]{%
-   \index{¥Ñ¥Ã¥±¡¼¥¸!#1@\textsf{#1}}%
+   \index{ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸!#1@\textsf{#1}}%
    \index{#1@\textsf{#1}}\textsf{#1}}%
 \let \Sty = \Y
 \newcommand*{\bst}[1]{\textsf{#1}}
 \newcommand*{\Bst}[1]{%
-  \index{Ê¸¸¥¥¹¥¿¥¤¥ë!#1@\textsf{#1}}%
+  \index{æ–‡çŒ®ã‚¹ã‚¿ã‚¤ãƒ«!#1@\textsf{#1}}%
   \index{#1@\textsf{#1}}\textsf{#1}}%
 \newcommand*{\kount}[1]{\texttt{#1}}
 \newcommand*{\Kount}[1]{%
-  \index{#1@\texttt{#1}\pp{¥«¥¦¥ó¥¿}}\index{¥«¥¦¥ó¥¿!#1@\texttt{#1}}%
+  \index{#1@\texttt{#1}\pp{ã‚«ã‚¦ãƒ³ã‚¿}}\index{ã‚«ã‚¦ãƒ³ã‚¿!#1@\texttt{#1}}%
   \texttt{#1}}
 \newcommand*{\exten}[1]{\texttt{.#1}}
 \newcommand*{\Exten}{\@ifstar \@sExten \@Exten}
 \newcommand*{\@sExten}[1]{%
-  \index{³ÈÄ¥»Ò!#1@\texttt{\protect\hspace*{-1ex}.#1}}%
-  \index{#1@\texttt{\protect\hspace*{-1ex}.#1} (³ÈÄ¥»Ò)}}
+  \index{æ‹¡å¼µå­!#1@\texttt{\protect\hspace*{-1ex}.#1}}%
+  \index{#1@\texttt{\protect\hspace*{-1ex}.#1} (æ‹¡å¼µå­)}}
 \newcommand*{\@Exten}[1]{\@sExten{#1}\texttt{.#1}}%
-\newcommand*\@hito@keisyo{»á}
+\newcommand*\@hito@keisyo{æ°}
 \newcommand*\hito[2]{#1#2\@hito@keisyo}
-\newcommand*\Hito[2]{\index{¿ÍÌ¾!#1#2}\index{#1#2}#1#2\@hito@keisyo}
+\newcommand*\Hito[2]{\index{äººå!#1#2}\index{#1#2}#1#2\@hito@keisyo}
 \newcommand*\person[2]{#1 #2\@hito@keisyo}%
-\newcommand*\Person[2]{\index{¿ÍÌ¾!#2, #1}\index{#2, #1}#1 #2%
+\newcommand*\Person[2]{\index{äººå!#2, #1}\index{#2, #1}#1 #2%
   \@hito@keisyo}
 \newcommand*\Z[1]{\index{#1}#1}
 \newcommand*\K[1]{{\sffamily\bfseries#1}}
@@ -1238,8 +1258,8 @@
 \newcommand*\out@cmd[1]{\add@cmd@ind{#1}\cmd{#1}}
 \newcommand*\env[1]{\texttt{#1}}%
 \newcommand*\E[1]{%
-   \index{´Ä¶­!#1@\texttt{#1}}%
-   \glossary{#1¤«¤ó¤­¤è¤¦@\texttt{#1}´Ä¶­}%
+   \index{ç’°å¢ƒ!#1@\texttt{#1}}%
+   \glossary{#1ã‹ã‚“ãã‚ˆã†@\texttt{#1}ç’°å¢ƒ}%
    \texttt{#1}}%
 \let \Cmd = \C
 \let \Env = \E
@@ -1261,10 +1281,10 @@
 \newcommand*{\demowidth}[1]{%
    \rule{0.3pt}{1.3ex}\rule{#1}{0.3pt}\rule{0.3pt}{1.3ex}}
 \newcounter{hoge}
-\newcommand{\bool}{¥Ö¡¼¥ëÃÍ}%
+\newcommand{\bool}{ãƒ–ãƒ¼ãƒ«å€¤}%
 \newcommand{\kasane}[2]{{\ooalign{#1\crcr\hss#2\hss}}}
-\newcommand*{\joukuten}{¡£}
-\newcommand*{\joutouten}{¡¢}
+\newcommand*{\joukuten}{ã€‚}
+\newcommand*{\joutouten}{ã€}
 \newcommand\kuchie{%
    \if@openright
      \cleardoublepage
@@ -1274,10 +1294,10 @@
    \@mainmatterfalse
   \pagenumbering{Roman}%
 }
-\newcommand{\cc}[2]{{#1} & \color{#1}{¢£} &{#2}}
-\newcommand{\kutiref}[1]{¸ı³¨~\ref{kuti:#1}}
+\newcommand{\cc}[2]{{#1} & \color{#1}{â– } &{#2}}
+\newcommand{\kutiref}[1]{å£çµµ~\ref{kuti:#1}}
 \newcommand{\kuti}[1]{\refstepcounter{enumi}%
-  ¸ı³¨\theenumi~#1}
+  å£çµµ\theenumi~#1}
 \DeclareRobustCommand*\XeTeX     {\leavevmode
   \setbox0=\hbox{X\lower.5ex\hbox{\kern-.15em\reflectbox{E}}%
   \kern-.1667em \TeX}\dp0=0pt\ht0=0pt\box0\xspace
@@ -1318,17 +1338,17 @@
 \DeclareRobustCommand*\Dvipdfmx  {Dvipdfm{\rmfamily\itshape x}\xspace}
 \newcommand*\TeXbook  {\TeX book\xspace}
 \newcommand*\MFbook   {\MF book\xspace}
-\newcommand*\LMANUAL  {Ê¸½ñ½èÍı¥·¥¹¥Æ¥à \LaTeXe}
-\newcommand*\COMP     {\LaTeX ¥³¥ó¥Ñ¥Ë¥ª¥ó}
-\newcommand*\GCOMP    {\LaTeX ¥°¥é¥Õ¥£¥Ã¥¯¥¹¥³¥ó¥Ñ¥Ë¥ª¥ó}
-\newcommand*\WCOMP    {\LaTeX\ Web¥³¥ó¥Ñ¥Ë¥ª¥ó}
+\newcommand*\LMANUAL  {æ–‡æ›¸å‡¦ç†ã‚·ã‚¹ãƒ†ãƒ  \LaTeXe}
+\newcommand*\COMP     {\LaTeX ã‚³ãƒ³ãƒ‘ãƒ‹ã‚ªãƒ³}
+\newcommand*\GCOMP    {\LaTeX ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ‘ãƒ‹ã‚ªãƒ³}
+\newcommand*\WCOMP    {\LaTeX\ Webã‚³ãƒ³ãƒ‘ãƒ‹ã‚ªãƒ³}
 \newcommand*\PS       {PostScript\xspace}
 \newcommand*\BB       {BoundingBox\xspace}
 \newcommand*\laTEX    {\TeX/\LaTeX\xspace}
 \newcommand*\gnu      {\textsc{Gnu}\xspace}
 \newcommand*\gpl      {\gnu General Public License\xspace}
 \newcommand*\fdl      {\gnu Free Documentation License\xspace}
-\newcommand*\jfdl     {\gnu ¥Õ¥ê¡¼Ê¸½ñÍøÍÑµöÂú·ÀÌó½ñ}
+\newcommand*\jfdl     {\gnu ãƒ•ãƒªãƒ¼æ–‡æ›¸åˆ©ç”¨è¨±è«¾å¥‘ç´„æ›¸}
 \newcommand*\thefdl   {The \gnu Free Documentation License}
 \newcommand*\ascii          {Ascii\xspace}
 \newcommand*\TtH            {TtH\xspace}
@@ -1374,7 +1394,7 @@
 \newcommand*\WinTpic        {WinTpic\xspace}
 \newcommand*\Xfig           {Xfig\xspace}
 \newcommand*\Xpdf           {Xpdf\xspace}
-\newcommand*\unixos         {Unix·ÏOS\xspace}
+\newcommand*\unixos         {Unixç³»OS\xspace}
 \newcommand*\PDFTeX         {pdf\TeX \xspace}
 \newcommand*\PDFLaTeX       {pdf\LaTeX \xspace}
 \newcommand*\Context        {Con{\TeX}t\xspace}

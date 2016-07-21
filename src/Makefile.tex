@@ -2,50 +2,50 @@
 
 \newcommand*\MakeTabSkip{\hbox to 5em{\rightarrowfill}}
 
-{\LaTeX}��{����ѥ��뷿}�θ���Ǥ���
+{\LaTeX}は{コンパイル型}の言語です．
 
-�������ե������{\LaTeX}�ץ��������Ϥ��пʹ֤��ɤ�����Τ��Ѵ����ޤ���
-����{\LaTeX}�Υ������ե�������Ф���\Prog{Make}�ȸƤФ��ץ��������
-�����ȤǸ��Ƥκƥ���ѥ����ٱ礷�Ƥ���ޤ�������ϰ�ĤΥ��롼�פˤʤ�
-���������ե�������¸�ط���Ϥä���Ȥ����ơ��ƥ���ѥ����ư�������
-�������Ǥ���
+ソースファイルを{\LaTeX}プログラムに渡せば人間が読める媒体に変換します．
+この{\LaTeX}のソースファイルに対して\Prog{Make}と呼ばれるプログラムを使
+うことで原稿の再コンパイルを支援してくれます．これは一つのグループになっ
+たソースファイルを依存関係をはっきりとさせて，再コンパイルを自動化するプ
+ログラムです．
 
-Make��\unixos ��ή�Υץ������Ǥ����顤Unix��OS�Ǥʤ���м¹Ԥ�����Τ�
-�񤷤����⤷��ޤ��󡥤��ʤ���OS��GNU Linux�ʤ�д�ñ�˥��󥹥ȡ���Ǥ�
-��Ϥ��Ǥ���Windows������\prog{Cygwin}�ȸƤФ��Windows���ư����뤳
-�Ȥ��Ǥ��뵼��Unix�Ķ�������ޤ��ΤǤ����Ƴ�����ƤߤƤ���������
+Makeは\unixos 主流のプログラムですから，Unix系OSでなければ実行させるのが
+難しいかもしれません．あなたのOSがGNU Linuxならば簡単にインストールでき
+るはずです．Windowsの方は\prog{Cygwin}と呼ばれるWindows上で動作させるこ
+とができる擬似Unix環境がありますのでこれを導入してみてください．
 
-���󥽡���ʤɤ��鼡�Τ褦��
+コンソールなどから次のように
 \begin{InTerm}
    \type{make} 
 \end{InTerm}
-�Ȥ����
+とすれば
 \begin{OutTerm}
 make: *** No targets specified and no makefile found.  Stop.
 \end{OutTerm}
-��ɽ�����Ф�Ǥ��礦���������Ϥ���������
-�äƤ���褦�Ǥ���ɽ������ʤ��ʤ�С��᤯��
-�ܤ����ͤ�ʹ���Ƥߤޤ��礦��
+の表示が出るでしょう．ゲームを始める準備は整
+っているようです．表示されないならば，近くの
+詳しい人に聞いてみましょう．
 
-�ޤ��ϴ�ñ����򼨤��ޤ��Τǡ�\prog{Make}�δ��ܤ򸫤Ƥߤޤ��礦��
+まずは簡単な例を示しますので，\prog{Make}の基本を見てみましょう．
 \begin{Makefile}
 all: file.dvi
 file.dvi: file.tex
 	platex file
 \end{Makefile}
-����ϰʲ��Τ褦��ʸˡ��§�국�Ҥ���Ƥ��ޤ���
+これは以下のような文法に則り記述されています．
 \begin{Syntax}
-\verb|all:| \va{���Ū�˺�ꤿ�����}\\
-\va{��ꤿ�����}: \va{����˰�¸������}\\
-\MakeTabSkip ��������
+\verb|all:| \va{結果的に作りたいもの}\\
+\va{作りたいもの}: \va{それに依存するもの}\\
+\MakeTabSkip 処理内容
 \end{Syntax}
-�嵭�Υ������ˤ�����\qu{\MakeTabSkip}�ϥ���ʸ���򤢤�路�ޤ����������
-��˽��פ����Ǥ���\prog{Make}�Ǥ��ѿ��������ñ���
+上記のソースにおいて\qu{\MakeTabSkip}はタブ文字をあらわします．これは非
+常に重要な点です．\prog{Make}での変数の定義は単純に
 \begin{Syntax}
-\va{�ѿ�}\str=\va{��}
+\va{変数}\str=\va{値}
 \end{Syntax}
-�Ȥ��������ˤʤ�ޤ���Ʊ�����Ҥ����٤ⷫ���֤������Ϥ�����ѿ��Ȥ�
-������Ǥ��ޤ���
+という書き方になります．同じ記述が何度も繰り返される場合はそれを変数とし
+て定義できます．
 \begin{Makefile}
 MENDEX=mendex -d jisyo.dic -g
 TEX=platex 
@@ -53,25 +53,25 @@ DVIPS=dvipsk -Pdl -t a4
 DVIPDFM=dvipdfmx -f dlbase14.map -p a4 -V 4 -z 5
 \end{Makefile}
 
-{\LaTeX}�Ǥϼ�Ȥʤ븶�Ƥ��Ф��ƾϤ��Ȥ�ʬ��
-���줿�ե������ \cmd{include}̿����ɤ߹����
-���뤳�Ȥ�����Ǥ��礦�����ξ��\prog{\LaTeX}
-�ǥ����ץ��åȤ���������������DVI�ե�����
-\Va{file}{dvi}�ϼ�Ȥʤ븶��\Va{file}{tex}��
-ʬ�䤵�줿�ե�����˰�¸���뤳�Ȥˤʤ�ޤ���
-{\LaTeX}�ˤ����ӥե�����Ǥ���
-\Va{file}{aux}���Ȥ��Ƥ��ޤ���{\LaTeX}���Ȥ�
-�����ץ��åȤ����ʤ�Τˤ��뤿���\Va{file}{aux}
-���ѹ����줿���ɤ����򸡺����ޤ�������\Va{file}{aux}
-������Υ����ץ��åȤ����ѹ�����Ƥ��ʤ�����
-�����ץ��åȤ���λ�����Ȥߤʤ���ޤ���
-�Ǥ����顤���ΰ�¸�ط��ϼ��Τ褦�ˤʤ�ޤ���
+{\LaTeX}では主となる原稿に対して章ごとに分割
+されたファイルを \cmd{include}命令で読み込んで
+いることがあるでしょう．この場合\prog{\LaTeX}
+でタイプセットした後に生成されるDVIファイル
+\Va{file}{dvi}は主となる原稿\Va{file}{tex}と
+分割されたファイルに依存することになります．
+{\LaTeX}には中途ファイルである
+\Va{file}{aux}が使われています．{\LaTeX}自身も
+タイプセットを完全なものにするために\Va{file}{aux}
+が変更されたかどうかを検査します．この\Va{file}{aux}
+が前回のタイプセットから変更されていない場合は
+タイプセットが完了したとみなされます．
+ですから，この依存関係は次のようになります．
 \begin{Syntax}
 \Va{file}{dvi}: \Va{file}{aux}\\
 \Va{file}{aux}: \Va{file}{tex}\\
 \MakeTabSkip platex \va{file}
 \end{Syntax}
-����Ū�ˤϼ��Τ褦�˵��Ҥ��ޤ���
+具体的には次のように記述します．
 \begin{Makefile}
 FILE=hoge
 TEX=platex
@@ -82,17 +82,17 @@ $(FILE).aux: $(FILE).tex
 	platex $(FILE)
 \end{Makefile}
 %$
-�ѿ���Ȥ�����\qu{\texttt{\$}}����Ƭ�ˤ�
-�ѿ�̾��ݳ�̤ǳ��ޤ����嵭�Τ褦�����
-����äȤ��ޤ��Ԥ��ޤ���\Va{file}{dvi}��
-��������Τ���󥿥��ץ��åȤ��Ԥ��ޤ���
-�����\Va{file}{log}����߻��Ȥ˴ؤ����ѹ���
-���뤫�ɤ�����Ĵ�٤�����ˤ���ۤ����ɤ��Ǥ��礦��
-���Τ褦��\Fl{Makefile}���������Ȥ⤦�������ޤ��Ԥ��ޤ���
-\fl{Makefile}��ǥ��㡼��\qu{\str{#}}�ʹߤϥ�����
-�ˤʤ�ޤ���
+変数を使う場合は\qu{\texttt{\$}}を先頭にし
+変数名を丸括弧で括ります．上記のような例は
+ちょっとうまく行きません．\Va{file}{dvi}を
+作成するのに毎回タイプセットが行われます．
+これは\Va{file}{log}に相互参照に関する変更が
+あるかどうかを調べるだけにするほうが良いでしょう．
+次のような\Fl{Makefile}を作成するともう少しうまく行きます．
+\fl{Makefile}中でシャープ\qu{\str{#}}以降はコメント
+になります．
 \begin{Makefile}
-#��Ȥʤ븶��
+#主となる原稿
 FILE=hoge
 TEX=platex
 REFGREP=grep "^LaTeX Warning: Label(s) may have changed."
@@ -103,61 +103,61 @@ $(FILE).aux: $(FILE).tex
 	$(TEX) $(FILE)
 \end{Makefile}
 %$
-\prog{Make}�ǻȤ���ե�����ˤ�
-\qu{\Fl{Makefile}}�Ȥ�����ޤä�̾����
-�դ��ޤ�������\qu{\Fl{Makefile}}�򥿥��ץ��å�
-������\Va{file}{tex}��Ʊ�����ˤ����ޤ���
-���ü���ʤɤ���
+\prog{Make}で使われるファイルには
+\qu{\Fl{Makefile}}という決まった名前を
+付けます．この\qu{\Fl{Makefile}}をタイプセット
+したい\Va{file}{tex}と同じ場所におきます．
+後は端末などから
 \begin{InTerm}
    \type{make} 
 \end{InTerm}
-�Ȥ����\Va{file}{dvi}�����������Τ�1��
-��äƤߤ���ɤ��Ǥ��礦��
+とすると\Va{file}{dvi}が作成されるので1度
+やってみると良いでしょう．
 
-���Ƥ�������Ƥ���Ȥ���\Va{file}{aux}�Ȥ�
-\Va{file}{log}��\Va{file}{toc}�ʤɤ����ӥե�����ʤΤ�
-�����ץ��åȸ�ˤ�ɬ�פ���ޤ��󤫤顤��������
-����Ǥ�����ɤ��Ǥ��礦��
+原稿を作成しているときは\Va{file}{aux}とか
+\Va{file}{log}や\Va{file}{toc}などが中途ファイルなので
+タイプセット後には必要ありませんから，これを一括で
+削除できると良いでしょう．
 \begin{Makefile}
 clean:	
 	rm -f $(FILE).aux $(FILE).log $(FILE).toc $(FILE).tex~
 \end{Makefile}
-\Prog{Emacs}�ʤɤ�ȤäƤ���Ȥ���\Va{file}{tex\~}��
-������Ƥ�����ͭ���񤤤Ǥ��礦���嵭��2�Ԥ�
-������\fl{Makefile}���ɲä��ޤ��礦��
+\Prog{Emacs}などを使っているときは\Va{file}{tex\~}も
+削除してくれると有り難いでしょう．上記の2行を
+先程の\fl{Makefile}に追加しましょう．
 
-���Ƥ�ʣ����ʬ�䤵��Ƥ������\Va{file1}{tex}��
-\Va{file2}{tex}��\Va{file3}{tex}��\Va{file4}{tex}�ʤ�
-ʣ������ޤ����餳��򼡤Τ褦��������Ƥ����ޤ���
+原稿が複数に分割されている場合は\Va{file1}{tex}，
+\Va{file2}{tex}，\Va{file3}{tex}，\Va{file4}{tex}など
+複数ありますからこれを次のように定義しておきます．
 \begin{Makefile}
 SRC=file1.tex file2.tex file3.tex file4.tex 
 \end{Makefile}
-�����Υե����뤬\Va{file}{aux}�˰�¸���뤳�Ȥ�
+これらのファイルが\Va{file}{aux}に依存することは
 \begin{Makefile}
 SRC=file1.tex file2.tex file3.tex file4.tex 
 $(FILE).aux: $(FILE).tex $(SRC)
 	      $(TEX) $(FILE)
 \end{Makefile}
-�Ƚ񤯤��Ȥ��Ǥ��ޤ���%$
-����ʸ���ǡ����١�����ʣ���������Ʊ���褦��
-�Ԥ��ޤ��Τ�
+と書くことができます．%$
+参考文献データベースが複数ある場合も同じように
+行いますので
 \begin{Makefile}
 REF=biblio1.bib biblio2.bib biblio3.bib
 $(FILE).aux: $(FILE).tex $(SRC) $(REF)
 	      $(TEX) $(FILE)
 \end{Makefile}
-�Τ褦�ˤ��ޤ���
+のようにします．
 
-�ǽ�Ū�������������ե����뤬DVI�ե�����\Va{file}{dvi}
-�����ǤϤʤ�PDF�ե�����\Va{file}{pdf}��{\PS}�ե�����
-\Va{file}{ps}���������Ȥ���\Va{file}{dvi}�˰�¸�����ơ�
-��������񤭤ޤ�������\Va{file}{pdf}��
-\Va{file}{ps}��\Va{file}{dvi}���������Ƥ���������ޤ���
-\prog{pdf\LaTeX}�ʤɤ�ȤäƤ���ʤ��\Va{file}{tex}����
-\Va{file}{pdf}�ˤ����ʤ��Ѵ�����ޤ����顤���ξ���
-\Va{file}{pdf}��\Va{file}{tex}�˰�¸������Ŭ�ڤ�
-�������Ƥ򵭽Ҥ��ޤ����ǽ�Ū��\Va{file}{ps}��
-\Va{file}{pdf}���������ʤ�аʲ��Τ褦�˵��ҤǤ��ޤ���
+最終的に成形したいファイルがDVIファイル\Va{file}{dvi}
+だけではなくPDFファイル\Va{file}{pdf}や{\PS}ファイル
+\Va{file}{ps}も作成するときは\Va{file}{dvi}に依存させて，
+成形手順を書きます．普通\Va{file}{pdf}や
+\Va{file}{ps}も\Va{file}{dvi}を成形してから作成します．
+\prog{pdf\LaTeX}などを使っているならば\Va{file}{tex}から
+\Va{file}{pdf}にいきなり変換されますから，この場合は
+\Va{file}{pdf}を\Va{file}{tex}に依存させて適切な
+処理内容を記述します．最終的に\Va{file}{ps}と
+\Va{file}{pdf}を作成するならば以下のように記述できます．
 \begin{Makefile}
 TEX =platex 
 DVIPS =dvipsk -Pdl -t a4 -o $(FILE).ps
@@ -170,12 +170,12 @@ $(FILE).ps:  $(FILE).dvi
 \end{Makefile}
 %$
 
-���ޤ��Ȥ��ƴط�����ե�������Ĥ�TAR��ˤ�
-�ޤȤ��\Prog{gzip}�ǰ��̤��뤳�Ȥ�ͤ��ޤ��礦��
-����ˤϽ�ˤ�������뤿��κ���ѤΥǥ��쥯�ȥ�
-\fl{\$(FILE)src/}���������ȴ�ñ�Ǥ����ޥ����ѥå�������
-�����ѤΥ�������ʤɤ�¾�Υե������\qu{\str{OTHERS}}��
-˺�줺�ˤޤȤ�Ƥ����ޤ��礦��
+おまけとして関係するファイルを一つのTAR書庫に
+まとめて\Prog{gzip}で圧縮することを考えましょう．
+これには書庫を作成するための作業用のディレクトリ
+\fl{\$(FILE)src/}を作成すると簡単です．マクロパッケージや
+索引用のスタイルなどの他のファイルは\qu{\str{OTHERS}}に
+忘れずにまとめておきましょう．
 \begin{Makefile}
 #SRC=file1.tex file2.tex file3.tex file4.tex 
 #OTHERS=mymacro.sty
@@ -187,49 +187,49 @@ tar: $(FILE).tex $(SRC) $(OTHERS) $(REF) Makefile
 	 tar czf $(FILE)src.tgz $(FILE)src/
 	 rm -fr $(FILE)src
 \end{Makefile}
-�ط��������ƤΥե������\fl{\$(file)src}�ǥ��쥯�ȥ��%$
-���ԡ����ޤ������Τ��Υǥ��쥯�ȥ���Ф���\prog{tar}��
-�Ȥä�\fl{\$(file)src.tgz}��������ޤ�������������ä��ʤ��
-����ѤΥǥ��쥯�ȥ��������ƺ�����ƴ�λ�Ǥ������������
-\fl{\$(file)src.tgz}���ǥ��쥯�ȥ��դ��ν�ˤȤ��ƺ�������ޤ���
+関係する全てのファイルを\fl{\$(file)src}ディレクトリに%$
+コピーします．次のそのディレクトリに対して\prog{tar}を
+使って\fl{\$(file)src.tgz}を作成します．処理が終わったならば
+作業用のディレクトリの中を全て削除して完了です．こうすると
+\fl{\$(file)src.tgz}がディレクトリ付きの書庫として作成されます．
 
-�ʾ�Τ褦�ʤ��Ȥ��ݡ��ȡ���ʸ�������ˤ���Ѥ��ޤ���
-����Ĺ���ΤǤ����ʲ��ε��Ҥ�\fl{Makefile}�ˤޤȤ�ޤ���
-���Υե������\Fl{Makefile.gz}�Ȥ��ƻ�Υ����֥ڡ�����
-�֤����Ȥˤ��ޤ���
+以上のようなことをレポート・論文作成時にも活用します．
+少々長いのですが以下の記述を\fl{Makefile}にまとめます．
+このファイルは\Fl{Makefile.gz}として私のウェブページに
+置くことにします．
 \begin{Makefile}
 # Title: Makefile
 # Date:  2004/03/28
 # Name:  Thor Watanabe
 # Mail:  thor@tex.dante.jp
-# ��Ȥʤ븶��
+# 主となる原稿
 FILE	=sample
-# ʬ�䤵�졤���󥯥롼�ɤ���Ƥ���ե�����
+# 分割され，インクルードされているファイル
 SRC	=#chap1.tex chap2.tex,..., chap<n>.tex
-#��������ե�����䥯�饹�ե�����ʤ�
+#スタイルファイルやクラスファイルなど
 OHTERS	=#funthesis.cls mymacro.sty
-# �����ʤɤΥХ��ʥ�ե�����
+# 画像などのバイナリファイル
 IMG	=#hoge.eps capture1.jpg
-#ʸ���ǡ����١���������ʤ��.
+#文献データベース，あるならば.
 REF	=biblio.bib
-#���餻��TeX�ץ������
+#走らせるTeXプログラム
 TEX=platex
-# Red Hat �ξ��
+# Red Hat の場合
 #DVIPS	=pdvips -Ppdf
 #XDVI	=pxdvi
-# GNU Linux �ξ��
+# GNU Linux の場合
 #DVIPS	=dvips -Ppdf
 #XDVI	=xdvik
-# Windows�ξ��
+# Windowsの場合
 DVIPS	=dvipsk -Pdl -t a4
 XDVI	=dviout 
 # dvipdfmx
 DVIPDF  =dvipdfmx -p a4 -f dlbase14.map -o $(FILE).pdf 
-# ��߻��Ȥβ�äΤ���
+# 相互参照の解消のため
 REFGREP=grep "^LaTeX Warning: Label(s) may have changed."
-# �ץ�󥿤�����
+# プリンタの設定
 PRINTER=//server/printername
-# ɸ��Υ������å�
+# 標準のターゲット
 all:	$(FILE).ps $(FILE).pdf 
 printps:  $(FILE).ps
 	 lpr -P$(PRINTER) $(FILE).ps
@@ -254,11 +254,11 @@ tar:
 	 tar czf $(FILE)src.tgz $(FILE)/
 	 rm -fr $(FILE)/
 \end{Makefile}
-Ŭ������ʤɤ˴ؤ��ƤϤ���ʬ�δĶ���ե����������%$
-��碌�Ƥ���������
+適宜設定などに関してはご自分の環境やファイル状況に%$
+合わせてください．
 
-��ݡ��ȤʤɤΤ������絬�ϤǤϤʤ�ʸ��ξ���
-���Τ褦�ˤ��ޤ���
+レポートなどのそれ程大規模ではない文書の場合は
+次のようにします．
 \begin{Makefile}
 FILE=report
 #SRC=file1.eps file2.eps
@@ -279,26 +279,26 @@ tar:
 	 tar czf $(FILE)src.tgz $(FILE)src/
 	 rm -fr $(FILE)src/
 \end{Makefile}
-�嵭�Υե������������Ƥ�����
+上記のファイルを作成しておけば
 \begin{InTerm}
    \type{make view}
 \end{InTerm}
-�Ȥ����\fl{report.tex}���ѹ���ʻ����
-�����ץ��åȤ򤷤Ƥ���\fl{hoge.dvi}��ɽ������
+とすると\fl{report.tex}の変更に併せて
+タイプセットをしてから\fl{hoge.dvi}を表示し，
 \begin{InTerm}
    \type{make tar}
 \end{InTerm}
-�Ȥ���Ȥ��ΤȤ��Υ�ݡ��Ȥ˴�Ϣ����ե������
-\fl{reportsrc.tgz}�Ȥ��ƽ�˲����Ƥ���ޤ�����
-�Τ���ˤϤ��餫����
+とするとそのときのレポートに関連するファイルを
+\fl{reportsrc.tgz}として書庫化してくれます．そ
+のためにはあらかじめ
 \begin{Makefile}
 SRC=file1.eps file2.eps 
 \end{Makefile}
-�Τ褦�˴ط��ե������\str{SRC}�˻��ꤷ�ޤ������٤ⲿ�٤�
+のように関係ファイルを\str{SRC}に指定します．何度も何度も
 \begin{InTerm}
    \type{platex report.tex}
    \type{dvipdfmx reprot.dvi}
 \end{InTerm}
-���Ǥ�����ΤϺ����ǥ��åХ��Ǥ��������ޤǤμ�ʬ�Ȥ�
-�㤦��ʬ�˽в񤨤ޤ���¿ʬ��¿ʬ�Ǥ���
+と打ち込むのは今日でグッバイです．昨日までの自分とは
+違う自分に出会えます，多分，多分です．
 %"
