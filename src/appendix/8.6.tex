@@ -1,0 +1,13 @@
+%#!F=hoge; platex $F.tex && dvipdfmx $F && open $F.pdf
+\documentclass[10pt,dvipdfmx,papersize]{jsarticle}
+\usepackage{type1cm,multicol}
+\usepackage{color}
+\pagestyle{empty}
+\begin{document}
+\renewcommand \DefineNamedColor[4]{%
+\textcolor[#3]{#4}{\rule{2em}{1em}}\space{#2}\\}
+\parindent=0pt
+\begin{multicols}{3}
+\input{dvipsnam.def}
+\end{multicols}
+\end{document}

@@ -1,0 +1,17 @@
+\ProvidesFile{dvipdfmx.pre}[2006/11/24 v1.0 Dvipdfmx configurations]
+\ifnum 42146=\euc"A4A2 
+  \AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}%
+\else
+  \AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}}%"
+\fi
+  \PassOptionsToPackage{dvipdfm}{pict2e}%
+  \PassOptionsToPackage{dvipdfm}{geometry}%
+  \PassOptionsToPackage{dvipdfm}{hyperref}%
+  \PassOptionsToPackage{dvipdfm}{pdflscape}%
+  \PassOptionsToPackage{dvipdfm}{xcolor}%
+\AtBeginDocument{%
+  \makeatletter
+    \input{dvipdfmx.def}%
+  \makeatother
+}
+\endinput
