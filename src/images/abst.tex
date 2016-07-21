@@ -1,0 +1,132 @@
+\documentclass[twocolumn,papersize]{jsarticle}
+\columnseprule 0.5pt% 段間の罫線
+\usepackage{type1cm}
+\usepackage{epic,eepic,amssymb,amsmath,graphicx,url}
+\title{2段組での中間報告のサンプル}
+\author{{\small システム情報科学部 情報アーキテクチャ学科}\\
+m1201234 函館 花子 \\ 指導教員 未来 太郎}
+\date{\today} % \today 命令は文書を作成した日付が代入される
+% 本文開始
+\begin{document}
+\begin{abstract}% 概要
+論文作成においては\LaTeX{}を使用するのが望ましいが，近年では事務処理用の
+Wordがその代わりとなっているように見受けられる．今回は, はこだて未来大学
+においてどの程度Wordや\LaTeX{}が浸透しているのかを2003年度の卒業研究から
+提出される中間レポートを参考に統計を取ってみた．結果は予想通りWord人口が
+圧倒的に多かった．また，この中間報告のサンプルの内容は出たら目であるので，
+あくまで入力例として参考にしてもらいたい．
+\end{abstract}
+\maketitle% 表題
+
+\section{目的}
+当大学では卒業研究の中間報告として中間レポートを提出するようになってい
+る．各自がどのようなアプリケーションを使っているのかを調査することが今
+回の目的である．
+
+\section{方法}
+直接研究生にアンケートをとったわけではなく，ウェブページ上で2003年9月
+10日までに提出されているレポートを調査対象とした．
+
+\section{結果}
+提出されているレポートを大まかに調査した結果が表~\ref{2bansenji}となる．
+これは研究生がどのようなアプリケーションで中間レポートを作成したのかを
+調べた結果である．どうしても判別できないものは\emph{その他}の項目に入れ
+てある．レポートの最終形態ではなく，原稿を作成する段階で使ったアプリケ
+ーションを示している．
+\begin{table}[htbp]
+ \begin{center}
+  \caption{データの集計結果}\label{2bansenji}
+  \begin{tabular}{lrr}
+   \hline
+   項目        & 人数 (人)& 割合 (\%)  \\
+   \hline
+   Word        &  75 & 45.2  \\
+   \LaTeX{}    &  26 & 15.6  \\
+   HTML        &  54 & 32.5  \\
+   Illustrator &   4 &  2.4  \\
+   OpenOffice  &   1 &  0.6  \\
+   その他      &   6 &  3.0  \\\hline
+   合計        & 166 &  100  \\\hline
+  \end{tabular}
+ \end{center}
+\end{table}
+これらの結果は二次的に入手した情報のため，データに若干の誤りがある．直
+接アンケートをとって調べればもっと正確な情報が収集できるが，今回は簡易
+的な形をとった．
+
+\section{考察}
+以上の結果から，現在HTMLで作成している人物はWordを使う事になるだろう．
+結果があくまで中間報告である事を考えれば，Word人口がこれから増えること
+は明白である．今度の働きかけ次第で当大学の\LaTeX{}人口を増加させること
+も可能である．
+
+この現象を天下り的にフーリエ変換で解析する．まず，フーリエ変換で関数
+$f(x)$を定義する．この関数$f(x)$は変換のための区間を必要とするので，
+区間を$[-L,L]$とする．すると以下の式が定義から導出される．
+\begin{eqnarray*}
+f(x)& = & \frac{a_0}{2} + \sum^{\infty}_{n=1} \left( a_n \cos 
+          \frac{n\pi x}{L} + b_n \sin \frac{n\pi x}{L} \right) \\
+a_n & = & \frac{1}{L} \int^{L}_{-L} f(u) \cos \frac{n\pi u}{L} du\\
+b_n & = & \frac{1}{L} \int^{L}_{-L} f(u) \sin \frac{n\pi u}{L} du
+\end{eqnarray*}
+よって，次式~(\ref{eq:fourier1})が新たに得られる．
+\begin{eqnarray}
+f(x) & = & \frac{1}{2L} \int^{L}_{-L} f(u) du \nonumber\\
+     & + & \sum^{\infty}_{n=1} \left[ \frac{1}{L} \int^{L}_{-L}
+           f(u) \cos \frac{n\pi x}{L} du \cdot \cos \frac{n\pi x}{L}
+           \right. \nonumber \\
+     & + & \left. \frac{1}{L} \int^{L}_{-L} f(u) \sin 
+           \frac{n\pi u }{L}du \cdot \sin \frac{n\pi x}{L} \right]
+           \label{eq:fourier1}
+\end{eqnarray}
+式~(\ref{eq:fourier1})を\(L\rightarrow\infty\)にしたりしてフーリエ変
+換は一般に式~(\ref{eq:fourier2})のように書き表すことができる．
+\begin{equation}
+F(\alpha )= \frac{1}{\sqrt{2\pi}} \int^{\infty}_{-\infty} 
+            f(u) e^{-t\alpha u}du \label{eq:fourier2}
+\end{equation}
+式~(\ref{eq:fourier2})を使って今回の結果を解析することは，現段階では非
+常に困難であると容易に考察できる．
+\section{今後の展望}
+今回得られた調査結果を下にGnuplotでデータをプロットする作業が続くもの
+と思われる．また，グラフは主にGnuplotから挿入するのが望ましいとされる．
+Gnuplotから挿入したグラフは図~\ref{fig:sample}となる．
+\begin{figure}[htbp]
+\begin{center}
+%\input{abstgnu.tex} %  ファイルからの読み込み
+\fbox{\rule{0pt}{3zw}\rule{3zw}{0pt}}
+\caption{picture環境で描画した図形}\label{fig:sample}
+\end{center}
+\end{figure}
+\nocite{*}
+\begin{thebibliography}{10}%参考文献
+\bibitem{latexcompanion}
+   Michel Goossens, Frank Mittelbach, and Alexander Samarin.
+   The \LaTeX コンパニオン.
+   東京アスキー, 1998.
+\bibitem{latexgraphics}
+   Michel Goossens, Sebastian Rahtz, and Frank Mittelbach.
+   \LaTeX グラフィックスコンパニオン.
+   株式会社アスキー, 2000.
+\bibitem{bibunsyo}
+   奥村晴彦.
+   [改訂第3版] {\LaTeXe} 美文書作成入門.
+   技術評論社, 2004.
+\bibitem{platex2e}
+   乙部厳己, 江口庄英.
+   {\em {p\LaTeXe} for Windows Another Manual Vol.1 Basic Kit 1999}.
+   ソフトバンク, 1998.
+\bibitem{linuxthesis}
+   臼田昭司, 伊藤敏, 井上祥史.
+   Linux論文作成術.
+   オーム社, 1999.
+\bibitem{metafont}
+   Donald~E. Knuth.
+   \textsf{METAFONT} ブック.
+   アスキー, 1994.
+\bibitem{jtexbook}
+   Donald~E. Knuth.
+   改訂新版{\TeX}ブック.
+   アスキー出版局, 1992.
+\end{thebibliography}
+\end{document}

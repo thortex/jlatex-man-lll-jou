@@ -1,0 +1,37 @@
+%% File: mygs.sty
+%% Copying : Th\'or Watanabe
+%% E-mail  : thor@tex.dante.jp
+%% Date    : 2006/04/20
+\ProvidesPackage{mygs}[2006/04/20 First Family]
+\RequirePackage{txfonts}% Times系のフォントを使う
+\RequirePackage{indentfirst}% jreportは必要
+% ページレイアウトの調整
+\setlength \textwidth      {40zw}% 1 行 40 文字
+\setlength \fullwidth      {\textwidth}% jsbook では必要
+\setlength \textheight     {40\baselineskip}% 1 ページ 40 行
+\setlength \hoffset        {13\p@}% \p@ は pt のこと
+\setlength \voffset        {0\p@}
+\setlength \evensidemargin {0\p@}
+\setlength \oddsidemargin  {\evensidemargin}
+\setlength \topmargin      {0\p@}
+\setlength \headheight     {0\p@}
+\setlength \headsep        {0\p@}
+\setlength \marginparwidth {0\p@}
+\setlength \marginparpush  {0\p@}
+\setlength \marginparsep   {0\p@}
+\setlength \footskip       {2\baselineskip}% 必要に応じて
+% フッターに `-- ページ番号 --' としたいとき
+\def \ps@foot {%
+ \let \@mkboth   = \@gobbletwo
+ \let \@oddhead  = \@empty
+ \let \@evenhead = \@empty
+ \def \@oddfoot    {\normalfont\hfil-- \thepage\ --\hfil}%
+ \let \@evenfoot = \@oddfoot
+}
+\pagestyle {plainfoot}% jsbook ならば
+%\pagestyle {plain}% jreport ならば
+% 見出しの書体
+\def \headfont {\normalfont \bfseries}
+% 目次の深さ = subsection
+\setcounter {tocdepth} {2}
+\endinput

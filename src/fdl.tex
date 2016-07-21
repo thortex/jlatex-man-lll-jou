@@ -1,0 +1,171 @@
+%#!platex jou.tex
+\chapter[\thefdl]{{\LARGE\thefdl}}\applab{label_fdl}
+
+\par \narrowbaselines \par
+
+\newenvironment{anumerate}
+  {\def\theenumi{\Alph{enumi}}%
+   \enumerate}
+  {\endenumerate}
+
+\begin{center}
+ \textbf{Version 1.2, November 2002}
+
+ \textit{Copyright \textcopyright\ 2000, 2001, 2002 Free Software Foundation, Inc.}
+
+ \textit{59 Temple Place, Suite 330, Boston, \textsc{ma} 02111\raise.2ex\hbox{-}1307 \textsc{usa}}
+
+\end{center}
+
+\bgroup
+\footnotesize
+
+\makeatletter
+\def \section {%
+    \@startsection{section}{1}{\z@}%
+    {0.6\Cvs}{0.4\Cvs}%
+    {\normalfont \large \headfont \raggedright}}
+\setlength\columnsep{1.5em}
+\makeatother
+
+\begin{multicols}{3}
+
+\section{Preamble}
+\label{fdl:preamble}
+
+The purpose of this license is to make a manual, textbook, or other functional and useful document \enquote*{free} in the sense of freedom: to assure everyone the effective freedom to copy and redistribute it, with or without modifying it, either commercially or noncommercially. Secondarily, this license preserves for the author and publisher a way to get credit for their work, while not being considered responsible for modifications made by others.
+
+This license is a kind of \enquote*{copyleft}, which means that derivative works of the document must themselves be free in the same sense. It complements the \gpl, which is a copyleft license designed for free software.
+
+We have designed this license in order to use it for manuals for free software, because free software needs free documentation: a free program should come with manuals providing the same freedoms that the software does. But this license is not limited to software manuals; it can be used for any textual work, regardless of subject matter or whether it is published as a printed book. We recommend this license principally for works whose purpose is instruction or reference.
+
+\section{Applicability and definitions}
+\label{fdl:defs}
+
+This license applies to any manual or other work, in any medium, that contains a notice placed by the copyright holder saying it can be distributed under the terms of this license. Such a notice grants a world-wide, royalty-free license, unlimited in duration, to use that work under the conditions stated herein. The \emph{document}, below, refers to any such manual or work. Any member of the public is a licensee, and is addressed as \emph{you}. You accept the license if you copy, modify or distribute the work in a way requiring permission under copyright law.
+
+A \emph{modified version} of the document means any work containing the document or a portion of it, either copied verbatim, or with modifications and\slash or translated into another language.
+
+A \emph{secondary section} is a named appendix or a front-matter section of the document that deals exclusively with the relationship of the publishers or authors of the document to the document's overall subject (or to related matters) and contains nothing that could fall directly within that overall subject. (Thus, if the document is in part a textbook of mathematics, a secondary section may not explain any mathematics.) The relationship could be a matter of historical connection with the subject or with related matters, or of legal, commercial, philosophical, ethical or political position regarding them.
+
+The \emph{invariant sections} are certain secondary sections whose titles are designated, as being those of invariant sections, in the notice that says that the document is released under this license. If a section does not fit the above definition of secondary then it is not allowed to be designated as invariant. The document may contain zero invariant sections. If the document does not identify any invariant sections then there are none.
+
+The \emph{cover texts} are certain short passages of text that are listed, as front-cover texts or back-cover texts, in the notice that says that the document is released under this license. A front-cover text may be at most five words, and a back-cover text may be at most 25 words.
+
+A \emph{transparent} copy of the document means a machine-readable copy, represented in a format whose specification is available to the general public, that is suitable for revising the document straightforwardly with generic text editors or (for images composed of pixels) generic paint programs or (for drawings) some widely available drawing editor, and that is suitable for input to text formatters or for automatic translation to a variety of formats suitable for input to text formatters. A copy made in an otherwise transparent file format whose markup, or absence of markup, has been arranged to thwart or discourage subsequent modification by readers is not transparent. An image format is not transparent if used for any substantial amount of text. A copy that is not \enquote*{transparent} is called \enquote*{opaque}.
+
+\sloppypar Examples of suitable formats for transparent copies include plain \ascii without markup, \texinfo input format, \LaTeX\ input format, \textsc{sgml} or \textsc{xml} using a publicly available \textsc{dtd}, and standard-conforming simple \textsc{html}, \PS or PDF designed for human modification. Examples of transparent image formats include \textsc{png}, \textsc{xcf} and \textsc{jpg}. Opaque formats include proprietary formats that can be read and edited only by proprietary word processors, \textsc{sgml} or \textsc{xml} for which the \textsc{dtd} and\slash or processing tools are not generally available, and the machine-generated \textsc{html}, \PS or PDF produced by some word processors for output purposes only.
+
+The \emph{title page} means, for a printed book, the title page itself, plus such following pages as are needed to hold, legibly, the material this license requires to appear in the title page. For works in formats which do not have any title page as such, \enquote*{title page} means the text near the most prominent appearance of the work's title, preceding the beginning of the body of the text.
+
+A section \emph{entitled \textsc{xyz}} means a named subunit of the document whose title either is precisely \textsc{xyz} or contains \textsc{xyz} in parentheses following text that translates \textsc{xyz} in another language. (Here \textsc{xyz} stands for a specific section name mentioned below, such as \enquote*{Acknowledgements}, \enquote*{Dedications}, \enquote*{Endorsements}, or \enquote*{History}.) To \enquote{preserve the title} of such a section when you modify the document means that it remains a section \enquote{entitled \textsc{xyz}} according to this definition.
+
+The document may include warranty disclaimers next to the notice which states that this license applies to the document. These warranty disclaimers are considered to be included by reference in this license, but only as regards disclaiming warranties: any other implication that these warranty disclaimers may have is void and has no effect on the meaning of this license.
+
+\section{Verbatim copying}
+\label{fdl:verbcopy}
+
+You may copy and distribute the document in any medium, either commercially or noncommercially, provided that this license, the copyright notices, and the license notice saying this license applies to the document are reproduced in all copies, and that you add no other conditions whatsoever to those of this license. You may not use technical measures to obstruct or control the reading or further copying of the copies you make or distribute. However, you may accept compensation in exchange for copies. If you distribute a large enough number of copies you must also follow the conditions in section \ref{fdl:masscopy}.
+
+You may also lend copies, under the same conditions stated above, and you may publicly display copies.
+
+\section{Copying in quantity}
+\label{fdl:masscopy}
+
+If you publish printed copies (or copies in media that commonly have printed covers) of the document, numbering more than 100, and the document's license notice requires cover texts, you must enclose the copies in covers that carry, clearly and legibly, all these cover texts: front-cover texts on the front cover, and back-cover texts on the back cover. Both covers must also clearly and legibly identify you as the publisher of these copies. The front cover must present the full title with all words of the title equally prominent and visible. You may add other material on the covers in addition. Copying with changes limited to the covers, as long as they preserve the title of the document and satisfy these conditions, can be treated as verbatim copying in other respects.
+
+If the required texts for either cover are too voluminous to fit legibly, you should put the first ones listed (as many as fit reasonably) on the actual cover, and continue the rest onto adjacent pages.
+
+If you publish or distribute opaque copies of the document numbering more than 100, you must either include a machine-readable transparent copy along with each opaque copy, or state in or with each opaque copy a computer-network location from which the general network-using public has access to download using public-standard network protocols a complete transparent copy of the document, free of added material. If you use the latter option, you must take reasonably prudent steps, when you begin distribution of opaque copies in quantity, to ensure that this transparent copy will remain thus accessible at the stated location until at least one year after the last time you distribute an opaque copy (directly or through your agents or retailers) of that edition to the public.
+
+It is requested, but not required, that you contact the authors of the document well before redistributing any large number of copies, to give them a chance to provide you with an updated version of the document.
+
+\section{Modifications}
+\label{fdl:mods}
+
+You may copy and distribute a modified version of the document under the conditions of sections \ref{fdl:verbcopy} and \ref{fdl:masscopy} above, provided that you release the modified version under precisely this license, with the modified version filling the role of the document, thus licensing distribution and modification of the modified version to whoever possesses a copy of it. In addition, you must do these things in the modified version:
+
+\begin{anumerate}
+
+\item Use in the title page (and on the covers, if any) a title distinct from that of the document, and from those of previous versions (which should, if there were any, be listed in the history section of the document). You may use the same title as a previous version if the original publisher of that version gives permission.
+
+\item List on the title page, as authors, one or more persons or entities responsible for authorship of the modifications in the modified version, together with at least five of the principal authors of the document (all of its principal authors, if it has fewer than five), unless they release you from this requirement.
+
+\item State on the title page the name of the publisher of the modified version, as the publisher.
+
+\item Preserve all the copyright notices of the document.
+
+\item Add an appropriate copyright notice for your modifications adjacent to the other copyright notices.
+
+\item Include, immediately after the copyright notices, a license notice giving the public permission to use the modified version under the terms of this license.
+
+\item Preserve in that license notice the full lists of invariant sections and required cover texts given in the document's license notice.
+
+\item Include an unaltered copy of this license.
+
+\item Preserve the section entitled \enquote*{History}, preserve its title, and add to it an item stating at least the title, year, new authors, and publisher of the modified version as given on the title page. If there is no section entitled \enquote*{History} in the document, create one stating the title, year, authors, and publisher of the document as given on its title page, then add an item describing the modified version as stated in the previous sentence.
+
+\item Preserve the network location, if any, given in the document for public access to a transparent copy of the document, and likewise the network locations given in the document for previous versions it was based on. These may be placed in the \enquote*{History} section. You may omit a network location for a work that was published at least four years before the document itself, or if the original publisher of the version it refers to gives permission.
+
+\item For any section entitled \enquote*{Acknowledgements} or \enquote*{Dedications}, preserve the title of the section, and preserve in the section all the substance and tone of each of the contributor acknowledgements and\slash or dedications given there\-in.
+
+\item Preserve all the invariant sections of the document, unaltered in their text and in their titles. Section numbers or the equivalent are not considered part of the section titles.
+
+\item Delete any section entitled \enquote*{Endorsements}. Such a section may not be included in the modified version.
+
+\item Do not retitle any existing section to be entitled \enquote*{Endorsements} or to conflict in title with any invariant section.
+
+\item Preserve any warranty disclaimers.
+
+\end{anumerate}
+
+\noindent If the modified version includes new front-matter sections or appendices that qualify as secondary sections and contain no material copied from the document, you may at your option designate some or all of these sections as invariant. To do this, add their titles to the list of invariant sections in the modified version's license notice. These titles must be distinct from any other section titles.
+
+You may add a section entitled \enquote*{Endorsements}, provided it contains nothing but endorsements of your modified version by various parties~-- for example, statements of peer review or that the text has been approved by an organization as the authoritative definition of a standard.
+
+You may add a passage of up to five words as a front-cover text, and a passage of up to 25 words as a back-cover text, to the end of the list of cover texts in the modified version. Only one passage of front-cover text and one of back-cover text may be added by (or through arrangements made by) any one entity. If the document already includes a cover text for the same cover, previously added by you or by arrangement made by the same entity you are acting on behalf of, you may not add another; but you may replace the old one, on explicit permission from the previous publisher that added the old one.
+
+The author(s) and publisher(s) of the document do not by this license give permission to use their names for publicity for or to assert or imply endorsement of any modified version.
+
+\section{Combining documents}
+\label{fdl:combine}
+
+You may combine the document with other documents released under this license, under the terms defined in section \ref{fdl:mods} above for modified versions, provided that you include in the combination all of the invariant sections of all of the original documents, unmodified, and list them all as invariant sections of your combined work in its license notice, and that you preserve all their warranty disclaimers.
+
+The combined work need only contain one copy of this license, and multiple identical invariant sections may be replaced with a single copy. If there are multiple invariant sections with the same name but different contents, make the title of each such section unique by adding at the end of it, in parentheses, the name of the original author or publisher of that section if known, or else a unique number. Make the same adjustment to the section titles in the list of invariant sections in the license notice of the combined work.
+
+In the combination, you must combine any sections entitled \enquote*{History} in the various original documents, forming one section entitled \enquote*{History}; likewise combine any sections entitled \enquote*{Acknowledgements}, and any sections entitled \enquote*{Dedications}. You must delete all sections entitled \enquote*{Endorsements.}
+
+\section{Collections of documents}
+\label{fdl:collect}
+
+You may make a collection consisting of the document and other documents released under this license, and replace the individual copies of this license in the various documents with a single copy that is included in the collection, provided that you follow the rules of this license for verbatim copying of each of the documents in all other respects.
+
+You may extract a single document from such a collection, and distribute it individually under this license, provided you insert a copy of this license into the extracted document, and follow this license in all other respects regarding verbatim copying of that document.
+
+\section{Aggregation with independent works}
+\label{fdl:aggregat}
+
+A compilation of the document or its derivatives with other separate and independent documents or works, in or on a volume of a storage or distribution medium, is called an \enquote*{aggregate} if the copyright resulting from the compilation is not used to limit the legal rights of the compilation's users beyond what the individual works permit. When the document is included in an aggregate, this license does not apply to the other works in the aggregate which are not themselves derivative works of the document.
+
+If the cover text requirement of section \ref{fdl:masscopy} is applicable to these copies of the document, then if the document is less than one half of the entire aggregate, the document's cover texts may be placed on covers that bracket the document within the aggregate, or the electronic equivalent of covers if the document is in electronic form. Otherwise they must appear on printed covers that bracket the whole aggregate.
+
+\section{Translation}
+
+Translation is considered a kind of modification, so you may distribute translations of the document under the terms of section \ref{fdl:mods}. Replacing invariant sections with translations requires special permission from their copyright holders, but you may include translations of some or all invariant sections in addition to the original versions of these invariant sections. You may include a translation of this license, and all the license notices in the document, and any warranty disclaimers, provided that you also include the original English version of this license and the original versions of those notices and disclaimers. In case of a disagreement between the translation and the original version of this license or a notice or disclaimer, the original version will prevail.
+
+If a section in the document is entitled \enquote*{Acknowledgements}, \enquote*{Dedications}, or \enquote*{History}, the requirement (section \ref{fdl:mods}) to preserve its title (section \ref{fdl:defs}) will typically require changing the actual title.
+
+\section{Termination}
+
+You may not copy, modify, sublicense, or distribute the document except as expressly provided for under this license. Any other attempt to copy, modify, sublicense or distribute the document is void, and will automatically terminate your rights under this license. However, parties who have received copies, or rights, from you under this license will not have their licenses terminated so long as such parties remain in full compliance.
+
+\section{Future revisions of this license}
+
+The Free Software Foundation may publish new, revised versions of the \fdl from time to time. Such new versions will be similar in spirit to the present version, but may differ in detail to address new problems or concerns\footnote{\webCopyLeft}.
+
+Each version of the license is given a distinguishing version number. If the document specifies that a particular numbered version of this license \enquote{or any later version} applies to it, you have the option of following the terms and conditions either of that specified version or of any later version that has been published (not as a draft) by the Free Software Foundation. If the document does not specify a version number of this license, you may choose any version ever published (not as a draft) by the Free Software Foundation.
+\par \widebaselines \par
+\end{multicols}
+\egroup
+

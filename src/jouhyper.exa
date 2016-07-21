@@ -1,0 +1,8 @@
+\newcommand\email{\begingroup
+   \urlstyle{rm}\Url}
+\newcommand\directory{\begingroup
+   \urlstyle{tt}\Url}
+\url{http://www.server.com/dir/file.html}に
+アクセスしたら\email{name@server.ac.jp}とい
+うメールアドレスがあったから
+\directory{/usr/local/bin/}のファイルを消した．

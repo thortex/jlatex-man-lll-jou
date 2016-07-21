@@ -1,0 +1,55 @@
+\documentclass[a4j]{jsarticle}
+\makeatletter
+  \def\@maketitle{%
+    \newpage\null\vspace*{-5zw}
+    \begin{center}%
+      \let\footnote\thanks
+      {\LARGE \@title \par}%
+      \vskip 1.5em
+      {\large
+        \lineskip .5em
+        \begin{tabular}[t]{c}%
+          \@author
+        \end{tabular}\par}%
+      \vskip 1em
+      {\large \@date}%
+    \end{center}%
+    \par\vskip 1.5em
+    \ifvoid\@abstractbox\else\centerline{\box\@abstractbox}\vskip1.5em\fi
+  }
+\makeatother
+\title{はじめての\LaTeX}% 題名
+\author{自分の名前}%      著者
+\date{\today}%            日付
+\begin{document}%         本文
+\maketitle%               表紙
+\tableofcontents%         目次
+%
+\section{節見出し}%       節見出し
+節見出しは \verb|\section| コマンドを使います。
+%
+\subsection{小節見出し}%  小節見出し
+小節見出しは \verb|\subsection| を使います。
+%
+\section{文章の記述}
+この節では文章の記述について論じます。
+%
+\subsection{引用}
+一文を引用する場合はカギ括弧を使います。一説によると
+「カギ括弧は引用に使う」と言われている。
+段落ごと引用するということは次のようになっている。
+\begin{quote}
+一つの段落の引用の場合は \verb|quote| 環境を使い、\emph{行頭を字下げしな
+い}のが普通である。複数段落の引用の場合は \verb|quotation| 環境を使い、
+行頭を字下げする。
+\end{quote}
+%
+\subsection{箇条書き}
+箇条書きには以下の三つが用意されている。
+\begin{description}
+ \item[記号付箇条書き] ラベルの先頭に記号がついた箇条書き。
+ \item[番号付箇条書き] ラベルの先頭に番号がついた箇条書き。
+ \item[説明付箇条書き] ラベルの先頭に説明がついた箇条書き。
+\end{description}
+%
+\end{document}	

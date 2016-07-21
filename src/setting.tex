@@ -1,0 +1,52 @@
+\makeatletter
+%\usepackage{listings,jlisting}
+%
+%\lstset{%
+% language={XML},
+% backgroundcolor={\color[gray]{.85}},%
+% basicstyle={\small},%
+% identifierstyle={\small},%
+% commentstyle={\small\itshape},%
+% keywordstyle={\small\bfseries},%
+% ndkeywordstyle={\small},%
+% stringstyle={\small\ttfamily},
+% frame={tb},
+% breaklines=true,
+% columns=[l]{fullflexible},%
+% numbers=left,%
+% xrightmargin=0zw,%
+% xleftmargin=3zw,%
+% numberstyle={\scriptsize},%
+% stepnumber=1,
+% numbersep=1zw,%
+% lineskip=-0.5ex%
+%}
+\newcommand*\zdash{\――}
+% \tgifimage[<オプション>]{<ファイル名>}{<ラベル>}{<見出し>}
+%
+\newcommand \tgifimage {\@ifstar \@tgifimage \@@tgifimage}
+\newcommand \@tgifimage[4][width=\linewidth]{%
+ \begin{figure*}[bth]%
+  \centering \includegraphics [#1]{img5/#2}%
+   \caption {#4}\label {fig:#3}%
+\end{figure*}}%
+\newcommand \@@tgifimage[4][width=\linewidth]{%
+ \begin{figure}[htbp]%
+  \centering \includegraphics [#1]{img5/#2}%
+   \caption {#4}\label {fig:#3}%
+ \end{figure}}%
+%
+% \pictimage[<オプション>]{<ファイル名>}{<ラベル>}{<見出し>}
+\newcommand*\pictimage[4][width=\linewidth]{%
+\begin{figure}[htbp]%
+ \centering \includegraphics [#1]{img5/#2}%
+ \caption {#4}\label {fig:#3}%
+\end{figure}}
+%
+\newcommand \figref[1]{図~\ref {fig:#1}}
+\newcommand \tabref[1]{表~\ref {tab:#1}}
+%
+\makeatother
+%
+\pagestyle{empty}
+%

@@ -1,0 +1,85 @@
+\documentclass[dvipdfmx]{jsarticle}
+\pagestyle{empty}
+\usepackage{graphicx}
+%\usepackage{amsmath,amssymb,amsthm}
+%\usepackage[T1]{fontenc}
+%
+%\usepackage{concmath}
+%\usepackage{euler}
+%\usepackage{concrete}
+%\usepackage{cmbright}
+%\usepackage{type1cm}
+%\usepackage{mathptmx}
+%\usepackage{mathpazo}
+%\usepackage{txfonts}
+%\usepackage{pxfonts}
+%
+%\usepackage{eulervm} % non-standard% x
+\usepackage{fourier}% non-standard% x
+%\usepackage{kerkis,kmath}% non-standard% x
+%
+\begin{document}
+\newcommand*\testmath[3]{%
+  \bgroup
+%  \def\rmdefault{#1}%
+%  \def\sfdefault{#2}%
+%  \def\ttdefault{#3}%
+%  \selectfont \normalfont
+%  \sampletext
+  \samplemath
+  \egroup
+}
+\newcommand*\samplemath{%
+  \newcommand*\suminfn{\sum^\infty_{n = 0}}%
+  \newcommand*\dif{\;\mathrm{d}}%
+%\begin{equation*}% p. 180 
+%  \int \suminfn c_n z_n \dif{z}
+%  = \suminfn c_n \int z^n \dif{z}
+%  = \suminfn\ c_n \frac{1}{n + 1} z^{n + 1} + \alpha
+%\end{equation*}%
+\begin{eqnarray*}% p. 199
+ f(z) & = & \frac{1}{2\pi i} \oint_C \suminfn \frac{(z - a)^n}{(z_0 - a)^{n
+            + 1}} f(z_0) \dif{z_0} \\
+      & = & \suminfn \frac{(z - a)^n}{n!} \frac{n!}{2\pi i}
+            \oint_C \frac{f(z_0)}{(z_0 - a)^{n + 1}} \dif{z_0}\\
+      & = & \suminfn \frac{(z-a)^n}{n!} f^{(n)}(a)
+\end{eqnarray*}%
+}
+\newcommand*\sampletext{
+  \newcommand*\samplepar{%
+     `I'm afraid I haven't got one,' Alice said in a frightened tone: `there
+     wasn't a ticket-office where I came from.'' And again the chorus of
+     voices went on. `There wasn't room for one where she came from. The land
+     there is worth a thousand pounds an inch!'}
+  {\rmfamily \samplepar}\par
+%  {\sffamily \samplepar}\par
+%  {\ttfamily \samplepar}\par
+}
+\twocolumn
+\narrowbaselines
+%\testmath{cmr}{cmss}{cmtt}
+%\testmath{ppl}{phv}{pcr}
+%\testmath{ptm}{phv}{pcr}
+%\testmath{txr}{txss}{txtt}
+%\testmath{pxr}{pxss}{pxtt}
+
+\testmath{}{}{}
+
+\setlength\parindent{0pt}
+
+\newcommand*\image[2][clip]{%
+   \begin{center}%
+    \fbox{\parbox{\linewidth}{\textsf{#2 (#1)}\par
+    \mbox{}\par
+    \includegraphics[scale=1,#1]{smpl-#2-crop}}}%
+   \end{center}%
+}
+
+%\image[bb=0 0 189 95]{type1cm}
+%\image[bb=0 0 187 88]{mathpazo}
+%\image[bb=0 0 169 86]{mathptmx}
+%\image[bb=0 0 173 96]{pxfonts}
+%\image[bb=0 0 166 93]{txfonts}
+%\image[bb=0 0 185 95]{cmbright}
+%\image[bb=0 0 190 96]{concrete}
+\end{document}

@@ -1,0 +1,763 @@
+%#!platex jou.tex
+\chapter{記号一覧}\applab{symbols}
+
+\begin{abstract}
+\LaTeX で使える記号一覧を紹介します．何らかのパッケージを必要とする
+記号はプリアンブルで \cmd{usepackage} 命令を使って該当パッケージを
+読み込みます．
+\end{abstract}
+
+% \LaTeXe ハンドブックや symbols.tex 参照のこと
+\makeatletter
+\renewenvironment{table}[1][htbp]%
+   {\vskip 0pt plus 1pt minus 1pt
+    \def\@captype{table}\vbox\bgroup}%
+   {\egroup\vskip 0pt plus 1pt minus 1pt}
+\makeatother
+
+
+\section{\LaTeX で標準的に使える記号}
+
+
+\subsection{文字記号}
+
+\begin{table}[htbp]
+\begin{center}
+\index{たんらくきこう@段落記号\hskip1em(\P)}\indindz{記号}{段落}%
+\index{せつきこう@節記号\hskip1em(\S)}\indindz{記号}{節}%
+\caption{特殊記号}\tablab{app:tokusyukigou}\indindz{記号}{特殊な}%
+\zindind{点}{のないi}\zindind{点}{のないj}%
+\begin{tabular}{ll|ll|ll|ll|ll}
+\T{aa} & \T{o} & \T{dag}       & 
+  \T{DJ}~${ }^{*}$ &\T{guillemotleft}~${ }^{*}$\\
+\T{AA} & \T{O} & \T{ddag}      &
+  \T{ng}~${ }^{*}$ &\T{guillemotright}~${ }^{*}$\\
+\T{ae} & \T{i} & \T{pounds}    &
+  \T{NG}~${ }^{*}$ &\T{guilsinglleft}~${ }^{*}$\\
+\T{AE} & \T{j} & !`&\verb|!`|  &
+  \T{th}~${ }^{*}$ &\T{guilsinglright}~${ }^{*}$\\
+\T{oe} & \T{ss}& {?`}&\verb|?`|&
+  \T{TH}~${ }^{*}$ &\T{quotedblbase}~${ }^{*}$\\
+\T{OE} & \T{SS}& \T{dh}~${ }^{*}$        &
+  &   &\T{quotesinglbase}~${ }^{*}$\\
+\T{l}  & \T{S} & \T{DH}~${ }^{*}$        &
+  &   &\T{textquotedbl}~${ }^{*}$\\
+\T{L}  & \T{P} & \T{dj}~${ }^{*}$        &
+  & & & \\
+\end{tabular}
+\\\begin{small}`{\str*}'付きの記号は\Sty{fontenc}
+パッケージを\qu{\Option{T1}}というオプション付きで
+読み込むと出力できます．\end{small}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}%
+\indindz{記号}{アクセント}\index{アクセント記号}%
+\indindz{アクセント}{文中の}%
+\caption{アクセント記号}\tablab{app:tab:accent}%}
+\glossary{""@\hspace*{-1.2ex}\verb+\""+\hskip1em(\""u)}%"
+\glossary{"~@\hspace*{-1.2ex}\verb+\~+\hskip1em(\~n)}%"
+\glossary{"^@\hspace*{-1.2ex}\verb+\^+\hskip1em(\^o)}%"
+\begin{tabular}{ll|ll|ll|ll|ll|ll}
+\"u&\verb|\"u| & \B{=}{a} & \B{`}{a} & \B{d}{a} & \B{v}{a} & \B{r}{o}\\%"
+\B{'}{e} & \B{H}{a} & \B{b}{a} & \B{k}{c} & \~n&\verb|\~{n}|&& \\
+\B{.}{a} & \^o&\verb|\^{o}| & \B{c}{o} & \B{u}{\i} & \B{t}{oo}&& \\
+\end{tabular}
+\end{center}
+\end{table}
+
+
+%これ以外の記号についてはCTANの
+%\begin{quote}
+%\fl{CTAN/info/symbols/comprehensive/}
+%\end{quote}
+%に{記号}の見本がありますのでそちらを参照してください．
+
+
+\subsection{数学記号}
+
+
+\begin{table}[htbp]
+\begin{center}
+\caption{ギリシャ小文字}\tablab{app:greek:lower}
+\begin{tabular}{cl|cl|cl|cl}
+\M{alpha}   & \M{eta}    & \M{nu}    & \M{tau}     \\
+\M{beta}    & \M{theta}  & \M{xi}    & \M{upsilon} \\
+\M{gamma}   & \M{iota}   & $o$&o     & \M{phi}     \\
+\M{delta}   & \M{kappa}  & \M{pi}    & \M{chi}     \\
+\M{epsilon} & \M{lambda} & \M{rho}   & \M{psi}     \\
+\M{zeta}    & \M{mu}     & \M{sigma} & \M{omega}   \\
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\caption{ギリシャ大文字}\tablab{app:greek:upper}
+\begin{tabular}{cl|cl|cl|cl}
+$A$&\str A&  $H$&\str{H}& $N$&\str{N}& $T$&\str T\\
+$B$&\str B& \M{Theta}   & \M{Xi}    & \M{Upsilon}\\
+\M{Gamma} & $I$&\str{I} & $O$&\str O& \M{Phi}   \\
+\M{Delta} & $K$&\str{K} & \M{Pi}    & $X$&\str{X}\\
+$E$&\str E& \M{Lambda}  & $P$&\str P& \M{Psi}    \\
+$Z$&\str Z& $M$&\str{M} & \M{Sigma} & \M{Omega}  \\
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+ \begin{center}\zindind{ギリシャ文字}{の変体小文字}%
+\caption{ギリシャ小文字の変体文字}\tablab{app:greek:lower:hen}
+ \begin{tabular}{cl|cl|cl}
+ \M{varepsilon} & \M{vartheta} & \M{varpi} \\
+ \M{varrho}     & \M{varsigma} & \M{varphi}\\
+ \end{tabular}
+ \end{center}
+\end{table}
+
+
+
+\begin{table}[htbp]
+\begin{center}
+\caption{括弧の大きさを指定する例}
+\tablab{app:ookiikakko}
+\index{"/@"\verb+"/+}
+%"
+\begin{tabular}{cl|cl|cl|cl|cl}
+%\newcommand{\m}[1]{$#1$&\texttt{\string#1}}
+\m{/}      & \m{(}       & \m{)}       & \m{|}       &
+  $\|$      & \verb+\|+\\
+\m{\big/}  & \m{\bigl(}  & \m{\bigr)}  & \m{\bigm|}  &
+  $\bigm\|$ & \verb+\bigm\|+\\[4pt]
+\m{\Big/}  & \m{\Bigl(}  & \m{\Bigr)}  & \m{\Bigm|}  &
+  $\Bigm\|$ & \verb+\Bigm\|+\\[5pt]
+\m{\bigg/} & \m{\biggl(} & \m{\biggr)} & \m{\biggm|} &
+  $\biggm\|$&  \verb+\biggm\|+\\[6pt]
+\m{\Bigg/} & \m{\Biggl(} & \m{\Biggr)} & \m{\Biggm|} &
+  $\Biggm\|$&  \verb+\Biggm\|+\\[7pt]
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\caption{主な区切り記号}\tablab{app:brace1}
+\glossary{"{1"}@\hspace*{-1.2ex}\protect\bgroup\verb+"\"{+"}}%
+\glossary{"{2"}@\hspace*{-1.2ex}"{\verb+"\"}+\protect\egroup}%
+\glossary{"|@"\hspace*{-1.2ex}"\verb+"\"|+}%}
+\index{"(@\verb+(+}%"
+\index{")@\verb+)+}%
+\index{"[@\verb+[+}%
+\index{"]@\verb+]+}%
+\index{"|@\texttt{\symbol{'174}}}%""
+\begin{tabular}{cl|cl|cl|cl}
+$($ &\verb+(+ & \M{rfloor}   & \M{updownarrow}& \M{lbrace}\\
+$)$ &\verb+)+ & \M{lfloor}   & \M{Uparrow}&     \M{rceil}\\
+$[$ &\verb+[+ & \M{arrowvert}& \M{Downarrow}&   \M{lceil}\\
+$]$ &\verb+]+ & \M{Arrowvert}& \M{Updownarrow}& 
+ $\big\lmoustache$&\BM{lmoustache}~${}^*$\\
+$\{$&\verb+\{+& \M{Vert}&      \M{backslash}&   
+ $\big\rmoustache$&\BM{rmoustache}~${}^*$\\
+$\}$&\verb+\}+& \M{vert}&      \M{rangle}&      
+ $\big\lgroup$&\BM{lgroup}~${}^*$\\
+$|$ &\verb+|+ & \M{uparrow}&   \M{langle}&      
+ $\big\rgroup$&\BM{rgroup}~${}^*$\\
+$\|$&\verb+\|+& \M{downarrow}& \M{rbrace}&      
+ $\big\bracevert$&\BM{bracevert}~${}^*$
+\end{tabular}
+\\ {\small${}^{*}$\ 大型の区切り記号です．}
+\end{center}
+\end{table}
+%}}}"
+
+\begin{table}[htbp]
+\begin{center}
+ \caption{主な数学関数}\tablab{app:suugakukannsuu}
+ \begin{tabular}{cl|cl|cl|cl|cl}
+ \M{arccos} & \M{cot}  & \M{exp} & \M{liminf} & \M{sec}  \\
+ \M{arcsin} & \M{coth} & \M{gcd} & \M{limsup} & \M{sin}  \\
+ \M{arctan} & \M{csc}  & \M{hom} & \M{log}    & \M{sinh} \\
+ \M{arg}    & \M{deg}  & \M{inf} & \M{max}    & \M{sup}  \\
+ \M{cos}    & \M{det}  & \M{ker} & \M{min}    & \M{tan}  \\
+ \M{cosh}   & \M{dim}  & \M{lim} & \M{Pr}     & \M{tanh} \\
+ \end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\caption{関係子}\tablab{app:kannkeisi}
+\begin{tabular}{cl|cl|cl|cl}
+\M{le}         & \M{in}        & \M{sqsupseteq} & \M{neq}      \\
+\M{prec}       & \M{notin}     & \M{dashv}      & \M{doteq}    \\
+\M{preceq}     & \M{ge}        & \M{ni}         & \M{propto}   \\
+\M{ll}         & \M{succ}      & \M{equiv}      & \M{models}   \\
+\M{subset}     & \M{succeq}    & \M{sim}        & \M{perp}     \\
+\M{subseteq}   & \M{gg}        & \M{simeq}      & \M{mid}      \\
+\M{sqsubseteq} & \M{supset}    & \M{asymp}      & \M{parallel} \\
+\M{vdash}      & \M{supseteq}  & \M{approx}     & \M{bowtie}   \\
+\M{smile}      & \M{frown}     & \M{cong}       &     &        \\
+\end{tabular}
+\\{\small 以下のコマンドの前に\Cmd{not}コマンドを付ければ
+その関係子の否定になります}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\caption{大型演算子}\indindz{演算子}{大型}\index{大型演算子}%
+\begin{tabular}{cl|cl|cl|cl}
+\M{sum}    & \M{oint}     & \M{bigvee}   & \M{bigoplus}  \\
+\M{prod}   & \M{bigcup}   & \M{bigwedge} & \M{bigotimes} \\
+\M{coprod} & \M{bigcap}   &    &          & \M{bigodot}  \\
+\M{int}    & \M{bigsqcup} &    &          & \M{biguplus} \\
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}\indindz{演算子}{2項}%
+\caption{2項演算子}\tablab{app:ennzannsi}
+\begin{tabular}{cl|cl|cl|cl}
+\M{pm}     & \M{cdot}  & \M{setminus}        & \M{ominus} \\
+\M{mp}     & \M{cap}   & \M{wr}              & \M{otimes} \\
+\M{times}  & \M{cup}   & \M{diamond}         & \M{oslash} \\
+\M{div}    & \M{uplus} & \M{bigtriangleup}   & \M{odot}   \\
+\M{ast}    & \M{sqcap} & \M{bigtriangledown} & \M{bigcirc}\\
+\M{star}   & \M{sqcup} & \M{triangleleft}    & \M{dagger} \\
+\M{circ}   & \M{vee}   & \M{triangleright}   & \M{ddagger}\\
+\M{bullet} & \M{wedge} & \M{oplus}           & \M{amalg}  \\
+\end{tabular}
+\end{center}
+\end{table}
+%
+
+\begin{table}[htbp]
+\begin{center}\indindz{アクセント}{数式中の}%
+\caption{小さいアクセント}\tablab{app:smallac}
+\begin{tabular}{cl|cl|cl|cl}
+\W{hat}{a}  & \W{check}{a}& \W{breve}{a}&\W{acute}{a}\\
+\W{grave}{a}& \W{tilde}{a}& \W{bar}{a}  &\W{dot}{a}  \\
+\W{ddot}{a} & \W{vec}{a}  &   &    & &   \\
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+% \overrightarrow, \overbrace, overleftarrow, 
+% \underbrace
+\caption{大きいアクセント}\tablab{app:bigac}
+\begin{tabular}{cl|cl}
+$\overline{m+M}$      &\Cmd{overline}      & 
+  $\overbrace{m+M}$& \Cmd{overbrace}  \rule{0pt}{1.5em}\\
+$\underline{m+M}$     &\Cmd{underline}     &
+  $\underbrace{m+M}$&  \Cmd{underbrace} \rule{0pt}{1.5em}\\
+$\overleftarrow{m+M}$ &\Cmd{overleftarrow} & 
+  $\widehat{m+M}$& \Cmd{widehat} \rule{0pt}{1.5em}\\
+$\overrightarrow{m+M}$&\Cmd{overrightarrow}& 
+  $\widetilde{m+M}$& \Cmd{widetilde}  \rule{0pt}{1.5em}\\
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table}[htbp]
+\begin{center}
+ \caption{矢印}\index{矢印}
+ \begin{tabular}{ll|ll|ll}
+ \M{leftarrow}       & \M{longrightarrow}   &\M{leftrightarrow}    \\
+ \M{Leftarrow}       & \M{Longrightarrow}   &\M{Leftrightarrow}    \\
+ \M{hookleftarrow}   & \M{longmapsto}       &\M{rightleftharpoons} \\
+ \M{leftharpoonup}   & \M{hookrightarrow}   &\M{Longleftrightarrow}\\
+ \M{leftharpoondown} & \M{rightharpoonup}   &\M{updownarrow}       \\
+ \M{longleftarrow}   & \M{rightharpoondown} &\M{Updownarrow}       \\
+ \M{Longleftarrow}   & \M{uparrow}          &\M{nearrow}           \\
+ \M{rightarrow}      & \M{Uparrow}          &\M{swarrow}           \\
+ \M{Rightarrow}      & \M{downarrow}        &\M{searrow}           \\
+ \M{mapsto}          & \M{Downarrow}        &\M{nwarrow}           \\
+ \end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\caption{特殊な数学記号}
+\begin{tabular}{cl|cl|cl|cl}
+\M{aleph} & \M{partial}  & \M{bot}       & \M{natural}     \\
+\M{hbar}  & \M{infty}    & \M{angle}     & \M{sharp}       \\
+\M{imath} & \M{prime}    & \M{triangle}  & \M{clubsuit}    \\
+\M{jmath} & \M{emptyset} & \M{forall}    & \M{diamondsuit} \\
+\M{ell}   & \M{nabla}    & \M{exists}    & \M{heartsuit}   \\
+\M{wp}    & \M{surd}     & \M{neg}       & \M{spadesuit}   \\
+\M{Re}    & $|$&\verb+|+& \M{backslash} &     &           \\
+\M{Im}    & \M{top}      & \M{flat}      &     &           \\
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{\Y{latexsym}}
+
+\begin{table}[htbp]
+ \begin{center}
+\caption{標準ではない数学記号}
+  \begin{tabular}{ll|ll|ll|ll}
+ \M{mho} & \M{Join} & \M{Box} & \M{Diamond} \\
+ \M{leadsto} & \M{sqsubset} & \M{sqsupset} & \M{lhd} \\
+ \M{unlhd} &  \M{rhd} & \M{unrhd} & & \\
+  \end{tabular}
+ \end{center}
+\end{table}
+
+
+\section{\AmS Fonts で拡張された記号}
+
+\begin{table}[htbp]
+\begin{center}
+ \caption{AMSFontsのギリシャ文字とヘブライ文字}
+ \begin{tabular}{ll|ll|ll}
+ \M{digamma}      & \M{beth}    & \M{gimel} \\
+ \M{varkappa}     & \M{daleth}  & \\
+ \end{tabular}
+\end{center}
+\end{table}
+%
+
+\begin{table}[htbp]
+\begin{center}
+ \caption{AMSFontsの2項演算子}
+ \begin{tabular}{ll|ll|ll}
+ \M{dotplus}       & \M{boxtimes}       & \M{curlywedge}\\
+ \M{smallsetminus} & \M{boxdot}         & \M{curlyvee}\\
+ \M{Cap}           & \M{boxplus}        & \M{circleddash}\\
+ \M{Cup}           & \M{divideontimes}  & \M{circledast}\\
+ \M{barwedge}      & \M{ltimes}         & \M{circledcirc}\\
+ \M{veebar}        & \M{rtimes}         & \M{centerdot}\\
+ \M{doublebarwedge}& \M{leftthreetimes} & \M{intercal}\\
+ \M{boxminus}      & \M{rightthreetimes}&      &      \\
+ \end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+ \caption{AMSFontsの否定2項関係子}
+ \begin{tabular}{ll|ll|ll}
+ \M{nless}&     \M{ntriangleleft}&\M{nsucceq}\\
+ \M{nleq}&\M{ntrianglelefteq}    &\M{succnsim}\\
+ \M{nleqslant}&     \M{nsubseteq}&\M{succnapprox}\\
+ \M{nleqq}&         \M{subsetneq}&\M{ncong}\\
+ \M{lneq}&       \M{varsubsetneq}&\M{nshortparallel}\\
+ \M{lneqq}&        \M{subsetneqq}&\M{nparallel}\\
+ \M{lvertneqq}&\M{varsubsetneqq} &\M{nvDash}\\
+ \M{lnsim}&\M{ngtr}              &\M{nVDash}\\
+ \M{lnapprox}&\M{ngeq}           &\M{ntriangleright}\\
+ \M{nprec}&\M{ngeqslant}         &\M{ntrianglerighteq}\\
+ \M{npreceq}& \M{ngeqq}          &\M{nsupseteq}\\
+ \M{precnsim}&\M{gneq}           &\M{nsupseteqq}\\
+ \M{precnapprox}&\M{gneqq}       &\M{supsetneq}\\
+ \M{nsim}&\M{gvertneqq}          &\M{varsupsetneq}\\
+ \M{nshortmid}& \M{gnsim}        &\M{supsetneqq}\\
+ \M{nmid}&\M{gnapprox}           &\M{varsupsetneqq}\\
+ \M{nvdash}&\M{nsucc}            & & \\
+ \M{nvDash}&\M{nsucceq}          & & \\
+ \end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+ \caption{AMSFontsの矢印記号}\index{矢印}
+ \begin{tabular}{ll|ll|ll}
+ \M{dashrightarrow}   &\M{Lsh}              &\M{rightarrowtail}\\
+ \M{dashleftarrow}    &\M{upuparrows}       &\M{looparrowright}\\
+ \M{leftleftarrows}   &\M{upharpoonleft}    &\M{rightleftharpoons}\\
+ \M{leftrightarrows}  &\M{downharpoonleft}  &\M{curvearrowright}\\
+ \M{Lleftarrow}       &\M{multimap}         &\M{circlearrowright}\\
+ \M{twoheadleftarrow} &\M{leftrightsquigarrow}&\M{Rsh}\\
+ \M{leftarrowtail}    &\M{rightrightarrows} &\M{downdownarrows}\\
+ \M{looparrowleft}    &\M{rightleftarrows}  &\M{upharpoonright}\\
+ \M{leftrightharpoons}&\M{rightrightarrows} &\M{downharpoonright}\\
+ \M{curvearrowleft}   &\M{rightleftarrows}  &\M{rightsquigarrow}\\
+ \M{circlearrowleft}  &\M{twoheadrightarrow}&
+ \end{tabular}
+\end{center}
+\end{table}%
+%
+
+\begin{table}[htbp]
+\begin{center}
+ \caption{AMSFontsの否定矢印記号}
+ \begin{tabular}{ll|ll|ll}
+ \M{nleftarrow}  & \M{nleftrightarrow} & \M{nLeftarrow}\\
+ \M{nrightarrow} & \M{nLeftrightarrow} &     &         \\
+ \end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\caption{AMSFontsの区切り記号}
+\begin{tabular}{ll|ll|ll|ll}
+\M{ulcorner} & \M{urcorner} & \M{llcorner} & \M{lrcorner} \\
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table}[htbp]
+\begin{center}
+ \caption{AMSFontsの2項関係子}
+ \begin{tabular}{ll|ll|ll}
+ \M{leqq}       & \M{precapprox}&     \M{thicksim}\\
+ \M{leqslant}   & \M{vartriangleleft}&\M{thickapprox}\\
+ \M{eqslantless}& \M{trianglelefteq}& \M{supseteqq}\\
+ \M{lesssim}    & \M{vDash}&          \M{Supset}\\
+ \M{lessapprox} & \M{Vvdash}&         \M{sqsupset}\\
+ \M{approxeq}   & \M{smallsmile}&     \M{succcurlyeq}\\
+ \M{lessdot}    & \M{smallfrown}&     \M{curlyeqsucc}\\
+ \M{lll}        & \M{bumpeq}&         \M{succsim}\\
+ \M{lessgtr}    & \M{Bumpeq}&         \M{succapprox}\\
+ \M{lesseqgtr}  & \M{geqq}&           \M{vartriangleright}\\
+ \M{lesseqqgtr} & \M{geqslant}&       \M{trianglerighteq}\\
+ \M{doteqdot}   & \M{eqslantgtr}&     \M{Vdash}\\
+ \M{risingdotseq}&\M{gtrsim}&         \M{shortmid}\\
+ \M{fallingdotseq}&\M{gtrapprox}&     \M{shortparallel}\\
+ \M{backsim}    & \M{gtrdot}&         \M{between}\\
+ \M{backsimeq}  & \M{ggg}&            \M{pitchfork}\\
+ \M{subseteqq}  & \M{gtrless}&        \M{varpropto}\\
+ \M{Subset}     & \M{gtreqless}&      \M{blacktriangleleft}\\
+ \M{sqsubset}   & \M{gtreqqless}&     \M{therefore}\\
+ \M{preccurlyeq}& \M{eqcirc}&         \M{backepsilon}\\
+ \M{curlyeqprec}& \M{circeq}&         \M{blacktriangleright}\\
+ \M{precsim}    & \M{triangleq}&      \M{because}\\
+ \end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+ \caption{その他のAMSFonts記号\tablab{app:ams-misc}}
+ \begin{tabular}{ll|ll|ll}
+ \M{hbar}         & \M{nexists}          & \M{blacksquare}\\
+ \M{hslash}       & \M{mho}              & \M{blacklozenge}\\
+ \M{vartriangle}  & \M{Finv}             & \M{bigstar}\\
+ \M{triangledown} & \M{Game}             & \M{sphericalangle}\\
+ \M{square}       & \M{Bbbk}             & \M{complement}\\
+ \M{lozenge}      & \M{backprime}        & \M{eth}\\
+ \M{circledS}     & \M{varnothing}       & \M{diagup}\\
+ \M{angle}        & \M{blacktriangle}    & \M{diagdown}\\
+ \M{measuredangle}& \M{blacktriangledown}&    &        \\
+ \end{tabular}
+\end{center}
+\end{table}
+%
+\begin{table}[htbp]
+ \begin{center}
+  \caption{その他の文字記号\tablab{app:ams-text-symb}}
+  \begin{tabular}{ll|ll|ll|ll}
+    \T{checkmark} & \T{circledR} & \T{maltese} & \T{yen} \\
+  \end{tabular}
+ \end{center}
+\end{table}
+
+
+
+
+\section{\Y{textcomp}で使える記号}
+
+\begin{table}[htbp]\index{著作権記号}
+%\small
+\caption{\textsf{textcomp}で使える記号}\tablab{app:textcomp}
+\begin{tabular}{cl|cl|cl}
+\T{textquotestraightdblbase} & 
+\T{textmarried} &
+\T{textlquill} \\
+\T{texttwelveudash} &
+\T{textmusicalnote} &
+\T{textrquill} \\
+\T{textthreequartersemdash} &
+\T{texttildelow}&
+\T{textcent}\\
+\T{textleftarrow} &
+\T{textdblhyphenchar}&
+\T{textsterling}\\
+\T{textrightarrow}&
+\T{textasciibreve}&
+\T{textcurrency}\\
+\T{textblank}&
+\T{textasciicaron}&
+\T{textyen}\\
+\T{textdollar}&
+\T{textgravedbl}&
+\T{textbrokenbar}\\
+\T{textquotesingle}&
+\T{textacutedbl}&
+\T{textsection}\\
+\T{textasteriskcentered}&
+\T{textdagger}&
+\T{textasciidieresis}\\
+\T{textdblhyphen}&
+\T{textdaggerdbl}&
+\T{textcopyright}\\
+\T{textfractionsolidus}&
+\T{textbardbl}&
+\T{textordfeminine}\\
+\T{textzerooldstyle}&
+\T{textperthousand}&
+\T{textcopyleft}\\
+\T{textoneoldstyle}&
+\T{textbullet}&
+\T{textlnot}\\
+\T{texttwooldstyle}&
+\T{textcelsius}&
+\T{textcircledP}\\
+\T{textthreeoldstyle}&
+\T{textdollaroldstyle}&
+\T{textregistered}\\
+\T{textfouroldstyle}&
+\T{textcentoldstyle}&
+\T{textasciimacron}\\
+\T{textfiveoldstyle}&
+\T{textflorin}&
+\T{textdegree}\\
+\T{textsixoldstyle}&
+\T{textcolonmonetary}&
+\T{textpm}\\
+\T{textsevenoldstyle}&
+\T{textwon}&
+\T{texttwosuperior}\\
+\T{texteightoldstyle}&
+\T{textnaira}&
+\T{textthreesuperior}\\
+\T{textnineoldstyle}&
+\T{textguarani}&
+\T{textasciiacute}\\
+\T{textlangle}&
+\T{textpeso}&
+\T{textmu}\\
+\T{textminus}&
+\T{textlira}&
+\T{textparagraph}\\
+\T{textrangle}&
+\T{textrecipe}&
+\T{textperiodcentered}\\
+\T{textmho}&
+\T{textinterrobang}&
+\T{textreferencemark}\\
+\T{textbigcircle}&
+\T{textinterrobangdown}&
+\T{textonesuperior}\\
+\T{textohm}&
+\T{textdong}&
+\T{textordmasculine}\\
+\T{textlbrackdbl}&
+\T{texttrademark}&
+\T{textsurd}\\
+\T{textrbrackdbl}&
+\T{textpertenthousand}&
+\T{textonequarter}\\
+\T{textuparrow}&
+\T{textpilcrow}&
+\T{textonehalf}\\
+\T{textdownarrow}&
+\T{textbaht}&
+\T{textthreequarters}\\
+\T{textasciigrave}&
+\T{textnumero}&
+\T{texteuro}\\
+\T{textborn}&
+\T{textdiscount}&
+\T{texttimes}\\
+\T{textdivorced}&
+\T{textestimated}&
+\T{textdiv}\\
+\T{textdied}&
+\T{textopenbullet}&
+ \\
+\T{textleaf}&
+\T{textservicemark}&
+ \\
+\end{tabular}
+\end{table}
+%
+
+
+\section{\Y{txfonts}/\Y{pxfonts}での拡張}
+
+\newcommand*\torpxfonts{\sty{txfonts}/\sty{pxfonts}\xspace}
+
+\Person{Young}{Ryu}による\Y{txfonts}/\Y{pxfonts}では\indindz{記号}{数学}%
+\Z{数学記号}に関する拡張が行われています．これらの数学記号を出力する方法
+は\chapref{math}を参照してください．
+
+\begin{Trick}
+何らかの事情により \torpxfonts に含まれる特定の記号だけが必要に
+なった場合は，例えば次のように \C{usefont} と \C{symbol} 命令を
+使う事で\K{その場しのぎ的に}用いる事が出来ます．
+
+\begin{InOut}
+\newcommand*\myTxsyc[1]{\text{%
+  \usefont{U}{txsyc}{m}{n}\symbol{#1}}}
+\newcommand*\multiMapDotBothA{\myTxsyc{"17}}
+\newcommand*\circledDotLeft{\mathrel{\myTxsyc{"93}}}
+\begin{eqnarray*}
+x \multiMapDotBothA y & \neq & x 
+  \mathrel{\multiMapDotBothA} y\\
+x \circledDotLeft y   \\
+\end{eqnarray*}
+\end{InOut}
+
+\cmd{circledDotLeft} の方は \C{mathrel} を明示的に指定しているため，
+適切な関係子の空白が挿入されていますが，\cmd{multiMapDotBothA}の方は
+空きが適切ではありません．一部分だけ関係子として使うような場合には，
+\C{mathrel} を直接記述します．
+
+こうすると，もし本文で（標準の）CMフォントを使っている場合，
+複数のファミリーが混在する事になりますので，積極的に推奨される
+方法とは言えません．
+\end{Trick}
+
+
+
+\begin{table}[htbp]
+ \begin{center}
+ \caption{\torpxfonts で拡張された2項演算子}
+ \tablab{app:txfonts:BinOpe}
+ \begin{tabular}{ll|ll|ll}
+ \M{medcirc}       &  \M{nplus}     & \M{sqcapplus}\\
+ \M{medbullet}     &  \M{boxast}    & \M{rhd}\\
+ \M{invamp}        &  \M{boxbslash} & \M{lhd}\\
+ \M{circledwedge}  &  \M{boxbar}    & \M{unrhd}\\
+ \M{circledvee}    &  \M{boxslash}  & \M{unlhd}\\
+ \M{circledbar}    &  \M{Wr}        &  \\
+ \M{circledbslash} &  \M{sqcupplus} &  \\
+ \end{tabular}
+ \end{center}
+\end{table}
+%
+\begin{table}[htbp]
+ \begin{center}\indindz{記号}{数学}
+ \caption{\torpxfonts で拡張された数学記号}
+ \tablab{app:txfonts:OrdSym}
+ \begin{tabular}{ll|ll|ll}
+ \M{alphaup}   &\M{nuup}      &\M{omegaup}\\
+ \M{betaup}    &\M{xiup}      &\M{Diamond}\\
+ \M{gammaup}   &\M{piup}      &\M{Diamonddot}\\
+ \M{deltaup}   &\M{varpiup}   &\M{Diamondblack}\\
+ \M{epsilonup} &\M{rhoup}     &\M{lambdaslash}\\
+ \M{varepsilonup}&\M{varrhoup}&\M{lambdabar}\\
+ \M{zetaup}    &\M{sigmaup}   &\M{varclubsuit}\\
+ \M{etaup}     &\M{varsigmaup}&\M{vardiamondsuit}\\
+ \M{thetaup}   &\M{tauup}     &\M{varheartsuit}\\
+ \M{varthetaup}&\M{upsilonup} &\M{varspadesuit}\\
+ \M{iotaup}    &\M{phiup}     &\M{Top}\\
+ \M{kappaup}   &\M{varphiup}  &\M{Bot}\\
+ \M{lambdaup}  &\M{chiup}     &\\
+ \M{muup}      &\M{psiup}     &\\
+ \end{tabular}
+ \end{center}
+\end{table}
+%
+\begin{table}[htbp]
+ \caption{\torpxfonts で拡張された大型演算子}
+ \tablab{app:txfonts:LargeOpe}
+ \IOmargin\makebox[0pt][l]{
+ \begin{tabular}{ll|ll|ll}
+ \M{bignplus}        &\M{sqint}&   \M{oiintctrclockwise}\\
+ \M{bigsqcupplus}    &\M{sqiintop}&\M{oiintclockwise}\\
+ \M{bigsqcapplus}   &\M{sqiiintop}&\M{varoiintctrclockwise}\\
+ \M{bigsqcap}        &\M{fint}&    \M{varoiintclockwise}\\
+ \M{bigsqcap}        &\M{iint}&   \M{oiiintctrclockwise}\\
+ \M{varprod}         &\M{iiint}&  \M{oiiintclockwise}\\
+ \M{oiint}           &\M{iiiint}&\M{varoiiintctrclockwise}\\
+ \M{oiiint}          &\M{idotsint}&\M{varoiiintclockwise}\\
+ \M{ointctrclockwise}&    &      &   & \\
+ \M{ointclockwise}   &    &      &   & \\
+ \M{varointctrclockwise}& &      &   & \\
+ \M{varointclockwise}&    &      &   & \\
+ \end{tabular}\IOlabel}
+\end{table}
+%
+\begin{table}[htbp]
+\begin{small}
+\begin{center}
+\caption{\torpxfonts で拡張された2項関係子%
+\tablab{app:txfonts:Bin:Rel}}
+  \begin{tabular}{ll|ll|ll}
+ \M{mappedfrom}&     \M{ngtrless} &\M{Join}\\
+ \M{longmappedfrom}& \M{nlessgtr} &\M{openJoin}\\
+ \M{Mapsto}&         \M{nbumpeq}  &\M{lrtimes}\\
+ \M{Longmapsto}&     \M{nBumpeq}  &\M{opentimes}\\%opMimes
+ \M{Mappedfrom}&     \M{nbacksim} &\M{nsqsubset}\\
+ \M{Longmappedfrom}& \M{nbacksimeq}&\M{nsqsupset}\\
+ \M{mmapsto}&        \M{ne}&      \M{dashleftarrow}\\
+ \M{longmmapsto}&    \M{nasymp}&  \M{dashrightarrow}\\
+ \M{mmappedfrom}&    \M{nequiv}&  \M{dashleftrightarrow}\\
+ \M{longmmappedfrom}&\M{nsim}&    \M{leftsquigarrow}\\
+ \M{Mmapsto}&        \M{napprox}& \M{ntwoheadrightarrow}\\
+ \M{Longmmapsto}&    \M{nsubset}& \M{ntwoheadleftarrow}\\
+ \M{Mmappedfrom}&    \M{nsupset}& \M{Nearrow}\\
+ \M{Longmmappedfrom}&\M{nll}&     \M{Searrow}\\
+ \M{varparallel}&    \M{ngg}&     \M{Nwarrow}\\
+ \M{varparallelinv}& \M{nthickapprox} &\M{Swarrow}\\
+ \M{nvarparallel}&   \M{napproxeq}    & \M{Perp}\\
+ \M{nvarparallelinv}&\M{nprecapprox}  &\M{leadstoext}\\
+ \M{colonapprox}&    \M{nsuccapprox}  &\M{leadsto}\\
+ \M{colonsim}&       \M{npreceqq}     & \M{boxright}\\
+ \M{Colonapprox}&    \M{nsucceqq}     & \M{boxleft}\\
+ \M{Colonsim}&       \M{nsimeq}       & \M{boxdotright}\\
+ \M{doteq}&          \M{notin}        & \M{boxdotleft}\\
+ \M{multimapinv}&    \M{notni}        & \M{Diamondright}\\
+ \M{multimapboth}&   \M{nSubset}      &\M{Diamondleft}\\
+ \M{multimapdot}&    \M{nSupset}      &\M{Diamonddotright}\\
+ \M{multimapdotinv} &\M{nsqsubseteq}  &\M{Diamonddotleft}\\
+ \M{multimapdotboth} &\M{nsqsupseteq} &\M{boxRight}\\
+ \M{multimapdotbothA}&\M{coloneqq}    &\M{boxLeft}\\
+ \M{multimapdotbothB}& \M{eqqcolon}   &\M{boxdotRight}\\
+ \M{VDash}           & \M{coloneq}    &\M{boxdotLeft}\\
+ \M{VvDash}          & \M{eqcolon}    &\M{DiamondRight}\\
+ \M{cong}            & \M{Coloneqq}   &\M{DiamondLeft}\\
+ \M{preceqq}         & \M{Eqqcolon}   &\M{DiamonddotRight}\\
+ \M{succeqq}         & \M{Coloneq}    &\M{DiamonddotLeft}\\
+ \M{nprecsim}        & \M{Eqcolon}    &\M{circleright}\\
+ \M{nsuccsim}        & \M{strictif}   &\M{circleleft}\\
+ \M{nlesssim}        & \M{strictfi}   &\M{circleddotright}\\
+ \M{ngtrsim}         & \M{strictiff}  &\M{circleddotleft}\\
+ \M{nlessapprox}     & \M{circledless}&\M{multimapbothvert}\\
+ \M{ngtrapprox}      & \M{circledgtr} &\M{multimapdotbothvert}\\
+ \M{npreccurlyeq}    & \M{lJoin}      &\M{multimapdotbothAvert}\\
+ \M{nsucccurlyeq}    & \M{rJoin}      &\M{multimapdotbothBvert}\\
+ \end{tabular}%
+\end{center}
+\end{small}
+\end{table}
+%
+\begin{table}[htbp]
+ \begin{center}\indindz{記号}{区切り}
+ \caption{\torpxfonts で拡張された区切り記号}
+ \tablab{app:txfonts:delimi}
+ \begin{tabular}{ll|ll|ll|ll}
+ \M{llbracket} & \M{rrbracket} & \M{lbag} & \M{rbag}\\
+ \end{tabular}
+ \end{center}
+\end{table}
+%
+\begin{table}[htbp]
+ \begin{center}
+\caption{\torpxfonts での変体文字}
+\tablab{app:txfonts:heintai}
+\index{変体文字}%
+ \begin{tabular}{ll|ll|ll|ll}
+ \M{varg} &\M{varv} &\M{varw} &\M{vary}\\
+ \end{tabular}
+ \end{center}
+\end{table}
+%
+
+
+
+%\egroup
+\endinput
+

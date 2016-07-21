@@ -1,0 +1,2285 @@
+%#!platex -src-specials jou.tex
+\chapter{数式の書き方}\chaplab{math}
+\zindind{数式}{の組版}%
+\begin{abstract}
+%{\LaTeX}は{\TeX}をベースにした組版システムなので
+%数式の組版が得意です．この章では基本的な数式の
+%出力の仕方を紹介します．
+{\LaTeX}は{\TeX}をベースにした組版システムなので
+数式の組版が得意です．この章では基本的な数式の出力
+の仕方を紹介します．数式は通常の文章とは異なった組版が
+行なわれます．%そのため，思わぬ部分でミスをしてしまう可能性が
+%ありますので，この章は注意深く読んでください．
+\end{abstract}
+
+\section{はじめに}
+%{\LaTeX}を使用する醍醐味は数式の組版あると言っても
+%過言ではありません．%plain {\TeX}ならば，言語を使う
+%ように数式を組み立てることが可能で，出力結果は世界
+%最高といえるでしょう．
+%{\LaTeX}における数式の組み立
+%てでは{\KY{グルーピング}}が重要です．修飾される要素を明確に
+%区別します．数式は普通の文章とは違い数式環境に記述\indindz{記号}{数学}%
+%します．数式は文章とは異なり，変数，\Z{数学記号}，演算
+%子，分数などの特殊な記述をしなければならないために，
+%明示的に\yo{ここが数式である}と宣言する必要があり%
+%\index{モード}\indindz{モード}{数式}\indindz{モード}{テキスト}%
+%\zindind{数式}{モード}%%
+%ます．文章の部分を{\KY{テキストモード}}，
+%数式を含む部分を{\KY{数式モード}}と呼びます．
+%数式モードはどこから数式をはじめてどこまで数式にす
+%るかという始点と終点を決める必要もあります．
+%数式モードでは以下の制約があります．
+%\begin{itemize}
+%\item  空白や改行は常に一つのスペースとして
+%扱われます．通常は{\LaTeX}側が自動で空白を挿入しますが
+%ユーザが明示的に空白を挿入することもできます．
+%\item  \Z{空行}は作成しません．一つの式に対して一つ
+%の段落を書くことができます．
+%\item  半角英字はすべて指示がない限り数式イタリック体
+%\pp{$math\ italic$}になり，自動的に空白が調節されます．
+%\end{itemize}
+{\LaTeX}における数式の組み立てでは\KY{グルーピング}が
+重要です．修飾される要素を明確に区別します．数式は普通の文章と
+\indindz{記号}{数学}%
+は違い\K{数式環境に記述します}．数式は文章とは異なり，
+変数，\Z{数学記号}，演算子，分数などの特殊な記述をしな
+ければならないために，明示的に\yo{ここが数式である}と%
+\index{モード}%
+\indindz{モード}{数式}%
+\indindz{モード}{テキスト}%
+\zindind{数式}{モード}%
+宣言する必要があります．文章の部分を\KY{テキストモード}，
+数式を含む部分を\KY{数式モード}と呼びます．
+数式モードはどこから数式をはじめてどこまで数式にす
+るかという始点と終点を決める必要もあります．
+数式モードでは以下の制約があります．
+\begin{itemize}
+\indindz{改行}{数式モード中の}%
+\indindz{空白}{数式モード中の}%
+\item  空白や改行は常に一つのスペースとして
+扱われます．通常は{\LaTeX}側が自動で空白を挿入しますが
+ユーザが明示的に空白を挿入する事もできます．
+\item  \Z{空行}は作成しません．一つの式に対して一つ
+の段落を書く事ができます．
+\item  半角英字はすべて指示がない限り数式イタリック体
+\pp{$math\ italic$}になり，自動的に空白が調節されます．
+\end{itemize}
+
+
+\section{数式の出力}
+数式は段落の中に挿入する{\KY{文中数式}}と
+別行に挿入する{\KY{別行数式}}の2種類があ
+ります．
+%例を示すと$\int_{\alpha}^{\beta}f(x)\ 
+%dx={[F(x)]}^{\beta}_{\alpha}=F(\beta )-F(\alpha )$
+%が文中数式であり
+%\[
+%  \int_{\alpha}^{\beta}f(x)\ dx=
+% {[F(x)]}^{\beta}_{\alpha}=F(\beta )-F(\alpha )
+%\]
+%が別行数式です．
+別行数式には番号付きで別行に
+挿入する\env{equation}環境と複数行の番号付き数式
+を出力する\env{eqnarray}環境などがあります．
+
+\subsection{文中数式}\indindz{数式}{文中}
+文中数式の出力には3通りあります．%
+\glossary{"(@\hspace*{-1.2ex}\verb+\(+}%"}
+\glossary{")@\hspace*{-1.2ex}\verb+\)+}%"}
+\index{"$@\verb+$+}%"}
+\glossary{"$@\verb+$+}%"}
+\begin{Syntax}
+%\verb|$数式$|  \\
+%\verb|\(数式\)|\\
+%\verb|\begin{math}|数式\verb|\end{math}|
+\verb|$| \va{数式} \verb|$|  \\
+\cmd{(} \va{数式} \cmd{)}\\
+\verb|\begin{math}| \va{数式} \verb|\end{math}|
+\end{Syntax}
+どれも同じような動作をしますが，\qu{\str{$}\va{数式}\str{$}}
+で囲むものが簡単ですのでこれだけ使えば良いでしょう．
+
+\Env{math}環境などは記述量が増えるので使わなくても
+構いませんが，あまりに数式が長くなり見づらいときには
+\env{math}環境で入れ子にするとすっきりするかも知れ
+ません．
+\index{=@\str{=}!等号としての\zdash}%
+\begin{InOut}
+$a$ の2乗と $b$ の2乗を足したものが
+$c$ の2乗に等しいという事は 
+\( a^2 + b^2 = c^2 \) と表せるが 
+\begin{math}  a^2 + b^2 = c^2
+\end{math} と書く事もできる．
+\end{InOut}
+上記の例においてハット\qu{\string^}は添え字の
+上付きの機能を持っています．
+
+%基本的に数式と普通の文のあいだには半角空白を挿入するのが安全でしょう．
+
+\subsection{グルーピング}
+\indindz{波括弧}{数式モード中の}%
+\indindz{括弧}{数式モード中の}%
+変数$a$の$x+y$乗を出力するために{\LaTeX}では
+一塊の要素を\K{波括弧}で{\KY{グルーピング}}
+します．ここではべき乗を例にとって見てみましょう．
+\begin{InOut}
+\( a^x+y \neq a^{x+y} \)
+\end{InOut}
+グルーピングによって数式の要素を一つのグループにし
+ます．数式環境に限りませんが{\LaTeX}では一つにした
+い要素をグループとして扱い，波括弧でグループ化を
+行います．
+
+
+\subsection{別行数式}\indindz{数式}{別行}%
+
+%数式をを別行に立てる方法は{\LaTeX}では主に3通りあります．2004/04/15
+数式を別行に立てる方法は{\LaTeX}では主に3通りあります．
+\glossary{[@\hspace*{-1.2ex}\verb+\[+}%
+\glossary{]@\hspace*{-1.2ex}\verb+\]+}%
+\index{$$@\verb+$$+}%
+\begin{Syntax}
+%\verb+$$数式$$+ \\
+%\verb+\[数式\]+ \\
+%\verb|\begin{displaymath} 数式\end{displaymath}|
+\verb|$$| \va{数式} \verb|$$| \\
+\verb|\[| \va{数式} \verb|\]| \\
+\verb|\begin{displaymath}| \va{数式} \verb|\end{displaymath}|
+\end{Syntax}
+%これら三つの命令の前後で自動的に改行が入り新しい
+%行から数式が出力されます．両方とも数式を中央揃%
+%\zindind{数式}{の左揃え}\indindz{左揃え}{数式の}%
+%\indindz{ファイル}{文書クラス}%
+%えで表示します．数式を左揃えにしたければ文書クラ
+%スファイルのオプションに\Option{fleqn}を指定します．
+%上記の文中数式と同じで\verb+\[数式\]+だけを使った
+%ほうが簡単です．\Env{displaymath}環境は記述量が増える
+%ので使わなくても構いません．あまりに数式が長くなった
+%ときなどには使えるでしょう．
+これら三つの命令の前後で自動的に改行が入り新しい
+行から数式が出力されます．両方とも数式を中央揃%
+\zindind{数式}{の左揃え}\indindz{左揃え}{数式の}%
+\indindz{ファイル}{文書クラス}%
+えで表示します．数式を左揃えにしたければ文書クラ
+スファイルのオプションに\Option{fleqn}を指定します．
+上記の文中数式と同じで`\cmd{[} \va{数式 }\cmd{]}'だけを使った
+ほうが簡単です．\Env{displaymath}環境は記述量が増える
+ので使わなくても構いません．あまりに数式が長くなった
+ときなどには使えるでしょう．
+%\begin{InOut}
+%別行立て数式は \[ c^2 = a^2 + b^2 \]
+%のように自動的に中央揃えになります．
+%\end{InOut}
+%\begin{InOut}
+%別行立て数式は
+%\begin{displaymath}
+% a^2 + b^2 = c^2
+%\end{displaymath}
+%と書くこともできます．
+%\end{InOut}
+\begin{InOut}
+別行立て数式は \[ 
+        c^2 = a^2 + b^2 
+\] のように自動的に中央揃えになります．
+\end{InOut}
+
+\begin{InOut}
+別行立て数式は
+\begin{displaymath}
+     a^2 + b^2 = c^2
+\end{displaymath}
+と書く事もできます．
+\end{InOut}
+
+
+
+\indindz{番号}{数式の}%
+\subsection{番号付き数式}\indindz{数式}{番号付きの}%
+文書の中で参照するだろうと思われる数式には
+番号を付けます．そのような数式を{\KY{番
+号付き数式}}と呼び，数式が1行の場合は
+\Env{equation}環境で出力する事ができます．
+\begin{Syntax}
+\verb+\begin{equation}+\\
+\va{数式} \C{label}\pa{ラベル}\\
+\verb+\end{equation}+
+\end{Syntax}
+\Env{equation}で囲む事により1行の番号付き
+の数式を出力する事ができます．番号付きの数
+式は基本的にラベルを貼る事ができます．ラ
+ベルの参照の仕方は\secref{xr}を参照してください．
+\begin{InOut}
+\begin{equation}
+ a^2 + b^2 = c^2  \label{eq:equ}
+\end{equation}
+式~(\ref{eq:equ}) より $c^2$ は 
+$a^2+b^2$ に等しい．
+\end{InOut}
+%"
+\subsection{複数行数式}\seclab{eqnarray*}
+
+\index{=@\str{=}!eqnarrayかんきょうちゅの@\texttt{eqnarray}環境中の\zdash}
+\begin{Syntax}
+%\verb|\begin{eqnarray*}| \\
+%\verb|左辺 & (=) & 右辺\\| \\
+%\verb|左辺 & (=) & 右辺| \\
+%\verb|\end{eqnarray*}|
+\verb|\begin{eqnarray*}| \\
+\va{左辺} \str& \va{関係子} \str& \va{右辺} \verb|\\| \\
+\va{左辺} \str& \va{関係子} \str& \va{右辺} \\
+\verb|\end{eqnarray*}|
+\end{Syntax}
+流れのある複数行の数式や証明などで関係子（例えば等号\qu{$=$}）の位置
+を揃えるときは\Env{eqnarray*}環境を使用し，これを
+{\KY{複数行数式}}と呼びます．この環境は
+任意の行数の行列に似ています．1行には\Z{アンパサンド}%
+\index{"&@\verb+&+!eqnarray*@\texttt{eqnarray*}環境の\zdash}%}
+\glossary{"&@\verb+&+!eqnarray*@\texttt{eqnarray*}環境の\zdash}%}
+\index{改行!eqnarrayかんきょうでの@\texttt{eqnarray}環境での\zdash}%}
+\qu{\str{&}}を二つまで，行の終わりには改行\qu{\texttt{\bs\bs}}%}}}%}$"}
+を書きます．ただし最終行には改行を入れません．
+また各列における成分は省略する事が可能です．
+\begin{InOut}
+\begin{eqnarray*}
+f(x)      & = & x^2  \\
+f'(x)     & = & 2x   
+\end{eqnarray*}
+\end{InOut}
+%\int f(x) dx & = & x^3/3+C
+
+
+\begin{Prob}
+次の入出力例を見て，それぞれの用法を確認してください．
+
+\begin{InOut}
+\begin{eqnarray*}
+ 5c = 4g \\
+ 6a + 3c + 7d = 2g \\
+ 3a + 5c = 3g
+\end{eqnarray*}
+\end{InOut}
+%上記の例はアンパサンド\qu{\string&}による区切りがありませんが，
+%おおむね以下の出力例と同じような結果に落ち着いています．
+\begin{InOut}
+\begin{eqnarray*}
+ 5c           &=& 4g \\
+ 6a + 3c + 7d &=& 2g \\
+ 3a + 5c      &=& 3g
+\end{eqnarray*}
+\end{InOut}
+
+\begin{InOut}
+\begin{eqnarray*}
+&& 5c = 4g \\
+&& 6a + 3c + 7d = 2g \\
+&& 3a + 5c = 3g
+\end{eqnarray*}
+\end{InOut}
+
+%\begin{InOut}
+%\begin{eqnarray*}
+%& 5c &= 4g \\
+%& 6a + 3c + 7d &= 2g \\
+%& 3a + 5c &= 3g
+%\end{eqnarray*}
+%\end{InOut}
+
+\begin{InOut}
+\begin{eqnarray*}
+& 5c = 4g &\\
+& 6a + 3c + 7d = 2g &\\
+& 3a + 5c = 3g&
+\end{eqnarray*}
+\end{InOut}
+
+%\begin{InOut}
+%\begin{eqnarray*}
+% 5c&& = 4g \\
+% 6a + 3c + 7d &&= 2g \\
+% 3a + 5c &&= 3g
+%\end{eqnarray*}
+%\end{InOut}
+
+%\begin{InOut}
+%\begin{eqnarray*}
+%& 5c = 4g \\
+%& 6a + 3c + 7d = 2g \\
+%& 3a + 5c = 3g
+%\end{eqnarray*}
+%\end{InOut}
+
+%\begin{InOut}
+%\begin{eqnarray*}
+% 5c           &= 4g &\\
+% 6a + 3c + 7d &= 2g &\\
+% 3a + 5c      &= 3g &
+%\end{eqnarray*}
+%\end{InOut}
+
+\end{Prob}
+
+\begin{Prob}
+次の入力例を処理すると，どのようなエラーが表示されるか確認してください．
+この結果からどのような事が言えるでしょうか．
+
+\begin{InTeX}
+\begin{eqnarray*}
+ & 5c           & = & 4g \\
+ & 6a + 3c + 7d & = & 2g \\
+ & 3a + 5c      & = & 3g
+\end{eqnarray*}
+\end{InTeX}
+
+%! LaTeX Error: Too many columns in eqnarray environment.
+% 要するに 3 列までしか対応していないという事．さらに
+% rcl という揃えになるという事．
+\end{Prob}
+
+\subsection{\Z{複数行番号付き数式}}\seclab{eqnarray}
+\indindz{数式}{複数行の番号付き}%
+\indindz{番号}{複数行の数式の}%
+後から参照するだろう複数行の数式には番号付
+けを行います．これを{\KY{複数行番号付き数式}}
+と呼び，\Env{eqnarray}環境を使って記述します．
+書式は\env{eqnarray*} と同じです．
+ラベルは1行ごとに改行\qu{\texttt{\bs\bs}}の前に貼るこ
+とができます．また番号を出力したくない行は \Cmd{nonumber}命令
+によって番号を振らない事もできます．
+\begin{InOut}
+\begin{eqnarray}
+f(x)       &=& x^2 \label{eq1}\\
+f'(x)      &=& 2x  \label{eq2}\\
+\int f(x)dx&=& x^3/3+C\nonumber
+\end{eqnarray}
+式~(\ref{eq1}) を微分したものが
+式~(\ref{eq2}) である．
+\end{InOut}
+ 
+複数行数式はすでに数式モードになっていますので
+それをさらに数式環境で囲むなどの処理をしないで
+ください．\env{eqnarray*} 環境と同様に最終行に改行を入れないでください．
+
+
+\section{書体の変更}\zindind{数式}{の書体の変更}%
+数式では書体の変更が必要になると思います．
+例えば行列を表すものはボールド体に変更し数式中で
+文字を表示するときがあるでしょう．そのようなときは
+書体変更用のコマンドを使います．数式中では
+通常のテキストモードで使う書体変更コマンドは
+使えませんので，数式の書体変更用のコマンドを
+使います．数式中でしか使用できない書体用コマ
+ンドは\tabref{mathfont}の通りです．
+\begin{table}[htbp]
+\begin{center}
+\caption{数式モードにおける書体の変更}\tablab{mathfont}
+\begin{tabular}{lll}
+\TR
+\Th{書体}          & \Th{命令} & \Th{出力} \\
+\MR
+標準の書体    & \Cmd{mathnormal} & $\mathnormal{ABCabc}$ \\
+ローマン体    & \Cmd{mathrm}     & $\mathrm{ABCabc}$ \\
+サンセリフ体  & \Cmd{mathsf}     & $\mathsf{ABCabc}$ \\
+タイプライタ体& \Cmd{mathtt}     & $\mathtt{ABCabc}$ \\
+ボールド体    & \Cmd{mathbf}     & $\mathbf{ABCabc}$ \\
+イタリック体  & \Cmd{mathit}     & $\mathit{ABCabc}$ \\
+カリグラフィック体& \Cmd{mathcal}& $\mathcal{ABC}$\\
+\BR
+\end{tabular}
+\end{center}
+\end{table}
+\begin{InOut}
+\begin{displaymath}
+\int f(x) dx \neq 
+  \int f(x) \mathrm{d}x
+\end{displaymath}
+\end{InOut} 
+行列を表現するのに\Z{ブラックボードボールド体}\pp{\Z{黒板風書体}}
+を使う事があるそうです．これは文字が白抜きになり
+ボールド体よりも行列である事が分かりやすくなってい
+ます．これを使うには\Sty{amssymb}を読み込みます．
+数式中で通常のテキストを使いたいときは
+\Sty{amsmath}パッケージを読み込み \Cmd{text}命令を
+使います（\tabref{blackboldfamily}）．
+\begin{table}[htbp]
+\begin{center}\zindind{数式}{の中の文章}%
+\caption{\textsf{amssymb}による数式書体の拡張}\tablab{blackboldfamily}
+\begin{tabular}{lll}
+\TR
+\Th{書体} & \Th{命令} & \Th{出力} \\
+\MR
+フラクトゥール体         &
+ \Cmd{mathfrak} & $\mathfrak{ABCabc}$\\
+ブラックボードボールド体 & 
+ \Cmd{mathbb}   & $\mathbb{ABC}$  \\
+数式内テキスト  & 
+ \Cmd{text}   & $\text{ABC数式です}$    \\
+\BR
+\end{tabular}
+\end{center}
+\end{table}
+
+%\[ x\in \mathbf{R} \neq x\in \mathbb{R} \]
+\begin{InOut}
+\usepackage{amssymb}
+$$ x \in \mathbf{R} \neq 
+  x \in \mathbb{R}$$
+$$ f(x) = 1/(1 + g(x)), (x = 3 
+  \text{とする})$$
+\end{InOut}
+
+\begin{Exe}
+以下の入力例の修正点を考えて下さい．
+% URL:   \url{http://www-cs-staff.stanford.edu/~knuth/things.html}.
+% ISBN:  1575863278 (japanese translation: 4434036173).
+% Title: \emp{Things a Computer Scientist Rarely Talks About}.
+% Page:  170.
+
+\begin{InOut}
+\begin{displaymath}
+ \bigotimes^n x \stackrel{\mathrm
+ {def}}{=} \overbrace{x \otimes (x 
+\otimes (\dots \otimes x)\dots)}
+  ^{n copies of x}
+\end{displaymath}
+\end{InOut}
+
+実際には `$n copies of x$' においては `copies of'
+というのは文章になるべきですから，\C{text}コマンドを使うのが
+良いでしょう（ただし $x$ や $n$ は数式になります）．さらに \cmd{dots} に
+よる点の表現をしていますが，明示的にここでは \cmd{cdots} 命令を使う
+方法が考えられます．よって修正後の入出力例は次のようになります．
+
+\begin{InOut}
+\begin{displaymath}
+ \bigotimes^n x \stackrel{\mathrm
+ {def}}{=} \overbrace{x \otimes (x
+ \otimes (\cdots \otimes x) \cdots)}
+   ^{\text{$n$ copies of $x$}}
+\end{displaymath}
+\end{InOut}
+\end{Exe}
+
+
+\section{数式における空白の調節}
+%\zindind{数式}{中の空白の調節}%
+%数式モードでは入力した半角空白が反映されません．
+%{\LaTeX}は数式モードでは自動的に隣り合うから
+%挿入すべき空白を決めています．ですがユーザが空白
+%を調節したほうが綺麗に見える場合があります．%そのようなときは
+%ユーザ側で空白を調節するため\tabref{mathspaces}の
+%コマンドを使います．
+\zindind{数式}{中の空白の調節}%
+\zindind{空白}{の調整}%
+数式モードでは入力した半角空白が反映されません．{\LaTeX}は
+数式モードでは自動的に隣り合う数式要素\pp{アトム}から挿入すべき空白を決
+めています．ですがユーザが空白を調節したほうが正しい表記になると
+きがあります．ユーザ側で空白を調節するため
+\tabref{mathspaces}のコマンドを使います．
+積分\qu{$\int$}や全微分\qu{$dx$}のあいだには
+ユーザが空白を入れると意味的に正しくなります\footnote{本来ならば，
+より詳しく \C{,}, \C{:}, \C{;}, \cmd{!} が
+それぞれ \C{thinmuskip}, \C{medmuskip}, \C{thickmuskip}, 
+負の \C{thinmuskip}という定義と同等であり，数式においては特別な
+単位`mu'が使われているという事を理解するのが良いのでしょうが，
+本書ではその部分まで言及しません．}．
+\begin{table}[htbp]
+\begin{center}
+\caption{数式における空白の制御}\tablab{mathspaces}
+\glossary{" @\hspace*{-1.2ex}\verb*+"\" +}%"
+\glossary{" @\hspace*{-1.2ex}\verb+"\"!+}%"
+\begin{tabular}{*4l}
+\TR
+\Th{空白の大きさ} & \Th{命令} & \Th{入力例} & \Th{出力例}\\
+\MR
+空白なし         & \verb*| |  & \verb*|dx dy|  
+   & $dx dy$ \\
+かなり小さい空白 & \C{,}    & \verb|dx\, dy| 
+   & $dx\, dy$ \\
+小さい空白       & \C{:}    & \verb|dx\: dy| 
+   & $dx\: dy$ \\
+少し小さい空白   & \C{;}    & \verb|dx\; dy| 
+   & $dx\; dy$ \\
+半角の空白       & \verb*+\ + & \verb*|dx\ dy|  % 適切な単語間空白
+   & $dx\ dy$ \\
+全角の空白 (1\,em)      & \C{quad} & \verb|dx\quad dy|
+   & $dx\quad dy$ \\
+全角の2倍の空白 (2\,em)  & \C{qquad}& \verb|dx\qquad dy| 
+   & $dx\qquad dy$ \\
+負の小さい空白   & \cmd{!}     & \verb|dx\!dy|
+   & $dx\! dy$ \\
+\BR
+\end{tabular}
+\end{center}
+\end{table}
+
+積分\qu{$\int$}や全微分\qu{$dx$}のあいだには
+ユーザが空白を入れると見映えがします．
+\begin{InOut}
+\[ \int\int f(x)dxdy \neq 
+   \int\!\!\!\int f(x)\ dx\ dy  \]
+\end{InOut}
+
+
+\begin{Exe}
+複数の式を1行に列挙する場合，次のようにすると
+適切な空白が挿入されません．
+\begin{InOut}
+特性数 $c, v, e$ を考えるとき，
+\[c = f_1 + f_2, v = 3f_2 + 
+      f_3, e = 2f_1 + 3f_3 \]
+\end{InOut}
+
+これを考慮すると，`\verb|$c, v, e$|'の部分には適切な単語間空白
+を挿入するのが望ましいでしょうし， \C{quad} 程度の空きをそれぞれの
+式のあいだに挿入するのが適切だと思われます．
+\begin{InOut}
+特性数 $c$, $v$, $e$ を考えるとき，
+\[c = f_1 + f_2,\quad v = 3f_2
+ + f_3, \quad e = 2f_1 + 3f_3 \]
+\end{InOut}
+
+\end{Exe}
+
+
+\begin{Exe}
+式のすぐ後に条件等を記述するとき，単に丸括弧を後に
+つづけるよりも，\C{quad}程度の空きを挿入するのが
+良いでしょう．
+
+\begin{InOut}
+\[ g = \frac{1}{5}a + \frac{1}{6}b 
+     \quad (a>3,\ b>5) \]
+\end{InOut}
+
+さらに，条件が複数あるときは \verb*+\ + によりある程度の
+空白を挿入するのも良いでしょう．
+\end{Exe}
+
+\section{基本的な数式コマンド}
+数式を書く環境を理解したら実際にそこに記述する
+記号などを覚える事になります．
+%数式環境での命
+%令のすぐ後ろには半角の空白を入れるように心がけ
+%ましょう．思わぬ所でエラーになる可能性があるた
+%めコマンドを挿入したら習慣的に空白を入れるよう
+%にしてください．ただし命令のすぐ後ろにその直前
+%の要素を何らかの形で修飾するときは空白を入力しま
+%せん．
+
+\subsection{添え字}\seclab{soeji}
+\indindz{添え字}{上付きの}\indindz{添え字}{下付きの}%
+{\LaTeX}での\Z{添え字}の入力は簡単です．%"
+\index{"^@\verb+^+}%
+\index{"_@\verb+_+}%
+\glossary{"^@\verb+^+}%
+\glossary{"_@\verb+_+}%
+\begin{Syntax}
+\va{数式要素}\str{^}\pa{上付き文字} \\
+\va{数式要素}\str{_}\pa{下付き文字}
+\end{Syntax}
+添え字には{\KY{上付き}}と{\KY{下付き}}
+の2種類があります．これらの添え字を使うにはグルーピン
+グの必要があります．1文字だけの添え字のときに丸括弧は必
+要ありませんが，添え字にしたいものが複数のときはグルーピ
+ングの処理が必要です．\tabref{soeji}で例を示します
+ので参考にしてください．添え字を付けるときに上付きと下付
+きの順番は関係ありません．
+\begin{table}[htbp]
+\begin{center}
+\caption{添え字の使い方の例}\tablab{soeji}
+\begin{tabular}{lll|lll}
+\TR
+\Th{意味} & \Th{命令} & \Th{出力} & \Th{意味} & \Th{命令} & \Th{出力}\\
+\MR
+右上       & \verb|x^{a+b}|      & $x^{a+b}$       & 
+左上       & \verb|{}^{a+b}x|    & ${}^{a+b}x$     \\
+右下       & \verb|x_{a+b}|      & $x_{a+b}$       & 
+左下       & \verb|{}_{a+b}x|    & ${}_{a+b}x$     \\
+右上と右下 & \verb|x^{a+b}_{c+d}|& $x^{a+b}_{c+d}$ & 
+左上と左下 & \verb|{}^{a}_{b}x|  & ${}^{a}_{b}x$   \\
+右上の右上 & \verb|x^{a^{b}}|    & $x^{a^{b}}$     &
+左下と右下& \verb|{}_{a}x_{b}|  & ${}_{a}x_{b}$   \\%$
+\BR
+\end{tabular}
+\end{center}
+\end{table}
+添え字は何もないものに対しても添える事が可能です．
+\tabref{soeji}でもその方法がとられています．
+\begin{InOut}
+\( {}^{a+b}_{x+y}A^{a+b}_{x+y} \)
+\end{InOut}
+ハット\qu{\string^}やアンダーバー\qu{\string_}は
+別の命令としても用意されています．上付きの \Cmd{sp}
+と下付きの \Cmd{sb}命令を使うと事もできます．
+\begin{InOut}
+\( A^4_3 \neq A\sp4\sb3 \)
+\end{InOut}
+
+以上のような方法では左側に添え字を付けるときに
+うまくいかない場合がありますので，\Person{Harald}{Harders}
+による\Sty{leftidx}パッケージを使います．
+\begin{Syntax}
+\Cmd{leftidx}\pa{左側添え字}\pa{数式}\pa{右側添え字}\\
+\Cmd{ltrans}\pa{数式}
+\end{Syntax}
+
+\Z{置換行列}の上付き添え字は若干空白を抑えるために \Cmd{ltrans}
+命令を使います．
+\begin{InOut}
+\begin{eqnarray*}
+{}_a^b\left(\frac{x}{y}\right)_c^d 
+  &\neq& \leftidx{_a^b}{\left(
+    \frac{x}{y} \right)}{_c^d}\\
+{}^\mathrm{t} A &\neq& \ltrans{A}
+\end{eqnarray*}
+\end{InOut}
+
+
+\subsection{数学関数}
+数式モードでは自動的に英字がイタリック体になります．
+これは変数を表すためです．\qu{$d$}と\qu{$\mathrm{d}$}
+は数式では違う意味を持ちます．\Z{数学関数}や極限などは
+\K{ローマン体}，まっすぐな書体で書くのが慣わしです．
+{\LaTeX}ではあらかじめそのような関数が定義されて
+おり，すぐに使える命令は\tabref{suugakukannsuu}の通りです．
+\begin{table}[htbp]
+\begin{scenter}
+ \caption{主な数学関数}\tablab{suugakukannsuu}
+ \begin{tabular}{LCCCC}
+ \M{arccos} & \M{cot}  & \M{exp} & \M{liminf} & \M{sec}  \\
+ \M{arcsin} & \M{coth} & \M{gcd} & \M{limsup} & \M{sin}  \\
+ \M{arctan} & \M{csc}  & \M{hom} & \M{log}    & \M{sinh} \\
+ \M{arg}    & \M{deg}  & \M{inf} & \M{max}    & \M{sup}  \\
+ \M{cos}    & \M{det}  & \M{ker} & \M{min}    & \M{tan}  \\
+ \M{cosh}   & \M{dim}  & \M{lim} & \M{Pr}     & \M{tanh} \\
+ \end{tabular}
+\end{scenter}
+\end{table}
+%
+\begin{InOut}
+\[cos^2x+sin^2x \neq \cos^2x+\sin^2x\]
+\end{InOut}
+また \Cmd{bmod} のように{\KY{法}}を
+表すための命令もあります．\indindz{演算子}{二項}%
+\begin{Syntax}
+\Cmd{bmod}\pa{文字列} (\Z{二項演算子}として)\\
+\Cmd{pmod}\pa{文字列} 
+\end{Syntax}
+\begin{InOut}
+\( \mathrm M\bmod{\mathrm N} \neq 
+   \mathrm M\pmod{\mathrm N} \)
+\end{InOut}
+
+\subsection{大きさ可変の数学記号}
+数式中では修飾するものによって大きさの
+変わる記号があります．\Z{積分記号}などが\indindz{記号}{積分}%
+それにあたります．主な大きさが可変な記号は\indindz{記号}{大きさが可変の}%
+\tabref{kahensushiki}の通りです．
+\begin{table}[htbp]
+\begin{center}
+\caption{大きさ可変の数学記号}\tablab{kahensushiki}
+\begin{tabular}{lll}
+\TR
+\Th{種類} & \Th{命令} & \Th{出力例}\\
+\MR
+\Z{分数}           & \Cmd{frac}\pa{分子}\pa{分母}&
+  $\displaystyle \frac{\text{分子}}{\text{分母}} $ \\[5pt]
+根号           & \Cmd{sqrt}\pa{値}&
+  $\displaystyle \sqrt{\text{値}} $ \\[5pt]
+添え字付き根号 & \cmd{sqrt}\opa{根}\pa{値}&
+  $\displaystyle \sqrt[\text{根}]{\text{値}}$ \\[5pt]
+添え字付き積分 & \cmd{int}\verb|^|\pa{上付き}%
+  \verb|_|\pa{下付き} &
+  $\displaystyle \int^{\text{上付き}}_{\text{下付き}} $ \\[5pt]
+添え字付き総和 & \cmd{sum}\verb|^|\pa{上付き}%
+  \verb|_|\pa{下付き} &
+  $\displaystyle \sum^{\text{上付き}}_{\text{下付き}} $ \\[5pt]
+\BR
+\end{tabular}
+\end{center}
+\end{table}
+\begin{InOut}
+\begin{displaymath}
+\int^b_a f(x) dx \neq 
+  \sqrt{\frac{1}{f(x)}}
+\end{displaymath}
+\end{InOut}
+\begin{InOut}
+\begin{displaymath}
+\sqrt{\frac{1}{g(x)} + 
+   \sqrt{\int f(x) dx}}
+\end{displaymath} 
+\end{InOut}
+\begin{InOut}
+\begin{displaymath}
+\frac{1}{g(x)} + 
+  \frac{1}{2x^3 + 5x^2 + 8x + 5}
+\end{displaymath} 
+\end{InOut}
+\cmd{sum} や \cmd{int}などの添え字は上下に付く場合と
+右上と右下に付く場合があります．これを
+変更するには \Cmd{limits} と \Cmd{nolimits}を使います．
+\begin{Syntax}
+\begin{tabular}{llll}
+ \cmd{limits} &\pp{上下に付く} & \cmd{nolimits} &\pp{肩に付く}\\
+\end{tabular}
+\end{Syntax}
+\cmd{limits}を添え字を行うコマンドの前に置くと
+添え字をされる記号の上下に添え字を表示します．\indindz{記号}{添え字における}%
+\cmd{nolimits}はその反対の事をします．
+\begin{InOut}
+\begin{eqnarray*}
+\sum\nolimits^n_{k=0}k & \neq & 
+   \sum^n_{k=0}k\\
+\int^b_a dx & \neq &
+   \int\limits^b_a dx
+\end{eqnarray*}
+\end{InOut}
+%
+\begin{InOut}
+\begin{eqnarray*}
+\lim\nolimits_{n\rightarrow0}n 
+  &\neq& \lim_{n\rightarrow0}n \\
+\prod^n_{i=1}n &\neq& 
+   \prod\nolimits^n_{i=1}n
+\end{eqnarray*}
+\end{InOut}
+ 
+\subsection{区切り記号と括弧}\seclab{brace}\index{区切り}
+\indindz{記号}{区切り}\zindind{区切り}{記号}%
+{\LaTeX}における{\KY{区切り記号}} (\Z{括弧}を含む) 
+は何も指定しなければ勝手に大きさが変わりません．
+区切り記号は
+\begin{itemize}
+ \item \Cmd{left}と \Cmd{right}命令を使って大きさを変える．
+ \item 区切り記号の大きさを指定する．
+\end{itemize}
+という二つの方法によって大きさを変更する事もできます．
+\begin{InOut}
+\begin{displaymath}
+\left[ \Big(x+y\Big) \right]
+\end{displaymath} 
+\end{InOut}
+括弧で括られたり，区切られる要素に応じて大きさが
+変更できる区切り記号は\tabref{brace1}と
+なります．
+\begin{table}[htbp]
+\begin{scenter}
+\caption{主な区切り記号}\tablab{brace1}
+\glossary{"{1"}@\hspace*{-1.2ex}\protect\bgroup\verb+"\"{+"}}%
+\glossary{"{2"}@\hspace*{-1.2ex}"{\verb+"\"}+\protect\egroup}%
+\glossary{"|@"\hspace*{-1.2ex}"\verb+"\"|+}%}
+\index{"(@\verb+(+}%"
+\index{")@\verb+)+}%
+\index{"[@\verb+[+}%
+\index{"]@\verb+]+}%
+\index{"|@\texttt{\symbol{'174}}}%""
+\begin{tabular}{LCCC}
+$($ &\verb+(+ & \M{rfloor}   & \M{updownarrow}& \M{lbrace}\\
+$)$ &\verb+)+ & \M{lfloor}   & \M{Uparrow}&     \M{rceil}\\
+$[$ &\verb+[+ & \M{arrowvert}& \M{Downarrow}&   \M{lceil}\\
+$]$ &\verb+]+ & \M{Arrowvert}& \M{Updownarrow}& 
+ $\big\lmoustache$&\BM{lmoustache}~${}^*$\\
+$\{$&\verb+\{+& \M{Vert}&      \M{backslash}&   
+ $\big\rmoustache$&\BM{rmoustache}~${}^*$\\
+$\}$&\verb+\}+& \M{vert}&      \M{rangle}&      
+ $\big\lgroup$&\BM{lgroup}~${}^*$\\
+$|$ &\verb+|+ & \M{uparrow}&   \M{langle}&      
+ $\big\rgroup$&\BM{rgroup}~${}^*$\\
+$\|$&\verb+\|+& \M{downarrow}& \M{rbrace}&      
+ $\big\bracevert$&\BM{bracevert}~${}^*$
+\end{tabular}
+\\ {\small${}^{*}$\ 大型の区切り記号です．}
+\end{scenter}
+\end{table}
+%}}}"
+括弧などは要素を区切るための記号で，要素をきちんと
+括るべきです．{\LaTeX}においては大きさが可変な区切
+り記号を用いてそれらを書き表します．\qu{\Cmd{left}}
+命令と\qu{\Cmd{right}}命令を対で使うと括られた要素
+が適切な大きさの括弧で区切られます．\cmd{left}と \Cmd{right} に
+は\tabref{brace1}から記号を
+選ぶ事によって，左右の区切りの対を自由に組み合わ
+せられます．可変の括弧は修飾する式によって自動的に
+大きさが変更されるのでとても便利です．
+
+\begin{InOut}
+\begin{displaymath}
+\left( \frac{1}{1+\frac{1}{1+x}} \right) 
+\end{displaymath}
+\end{InOut}
+
+%\begin{InOut}
+%\[ \left\lmoustache \left\{ 
+%  \left(\frac{1}{x}+1\right)
+%  +\left(\frac{1}{x^2}+2\right) 
+%\right\} \right\rmoustache \]
+%\end{InOut}
+
+\begin{InOut}
+\begin{displaymath}
+ \left\uparrow \int f(x)dx 
+   \right\downarrow + \left\lgroup 
+     \int g(x)dx \right\rgroup
+\end{displaymath}
+\end{InOut}
+
+\zindind{括弧}{の大きさの調整}%
+自分で括弧の大きさを指定する事もできます．
+大きさを指定した場合はそれ以上括弧の大きさが
+変わりませんので注意が必要です\pp{\tabref{ookiikakko}}．
+\begin{table}[htbp]
+\begin{scenter}
+\caption{括弧の大きさを指定する例}\tablab{ookiikakko}
+%\index{"/@"\verb+"/+}
+\index{"/@"\verb+"/+}%
+\index{"/@"\verb+"/+!区切り記号の\zdash}%
+%"
+\begin{tabular}{LCCCC}
+%\newcommand{\m}[1]{$#1$&\texttt{\string#1}}
+\m{/}      & \m{(}       & \m{)}       & \m{|}       &
+  $\|$      & \verb+\|+\\
+\m{\big/}  & \m{\bigl(}  & \m{\bigr)}  & \m{\bigm|}  &
+  $\bigm\|$ & \verb+\bigm\|+\\[4pt]
+\m{\Big/}  & \m{\Bigl(}  & \m{\Bigr)}  & \m{\Bigm|}  &
+  $\Bigm\|$ & \verb+\Bigm\|+\\[5pt]
+\m{\bigg/} & \m{\biggl(} & \m{\biggr)} & \m{\biggm|} &
+  $\biggm\|$&  \verb+\biggm\|+\\[6pt]
+\m{\Bigg/} & \m{\Biggl(} & \m{\Biggr)} & \m{\Biggm|} &
+  $\Biggm\|$&  \verb+\Biggm\|+\\[7pt]
+\end{tabular}
+\end{scenter}
+\end{table}
+%
+\begin{InOut}
+\begin{displaymath}
+\Biggl\| \Biggl(\int f(x) dx\Biggr) 
+  \Bigg/ \Biggl(\int g(x) dx\Biggr) 
+\Biggr\| 
+\end{displaymath}
+\end{InOut}
+\tabref{ookiikakko}を見ると分かると思い
+ますが，括弧，いわゆる区切り記号に対して \Cmd{big}
+や \Cmd{Big}を付けるとその区切り
+記号を特定の倍率で拡大するという機能があ\indindz{拡大}{区切り記号の}%
+ります．左側を区切るには \Cmd{bigl}類を，
+関係子としての区切り記号は \Cmd{bigm}類を，右
+側を区切る記号には \Cmd{bigr}類を，特に指定
+しないならば \Cmd{big}類を使うようにします．
+上記の \cmd{big}類を使った例と \cmd{left}
+と \cmd{right}による例を見比べてください．
+\begin{InOut}
+\[ \left\| 
+ \left(\int f(x) dx\right) 
+ \Bigg/ \left(\int g(x) dx\right) 
+ \right\| \]
+\end{InOut}
+片方だけに区切り記号があれば良いときはピリオド\qu{\str.}で
+いずれかの記号を省略できます．
+\begin{InOut}
+\[ \left( \left\uparrow 
+   \int f(x)dx + \int g(x)dx
+   \right. \right) \] 
+\end{InOut}
+
+\subsection{行列}\seclab{math:array}
+{\LaTeX}における行列は\Env{array}環境中に
+記述します．\env{array}環境はそのままでは
+数式にはならず\env{math}環境や\verb+\[\]+の
+中に入れたり\verb+$$+の中に入れてあげます．
+\texttt{array}環境の基本的な使い方は
+\begin{Syntax}
+\verb|\begin{array}|\pa{列指定子}\\
+$\begin{array}{cccccc}
+\text{成分}_{11} &\verb+&+ & \dots &\verb+&+ & \text{成分}_{1n}  & \verb+\\+\\
+\vdots &\verb+&+ & \ddots&\verb+&+ & \vdots  & \verb+\\+\\
+\text{成分}_{m1} &\verb+&+ & \dots &\verb+&+ & \text{成分}_{mn}  & 
+\end{array}$\\
+\verb+\end{array}+
+\end{Syntax}
+というように $m$ 行 $n$ 列の行列を書きます．
+\index{"&@\verb+&+!array@\texttt{array}環境の\zdash}%
+\glossary{"&@\verb+&+!array@\texttt{array}環境の\zdash}%
+ここで\Z{アンパサンド}\qu{\texttt\&}は成分\pp{要素}
+の区切りを意味し，\qu{\texttt{\bs\bs}}は行
+の終わりを意味しています．括弧は必要ならば
+前述の区切り記号で括ることもできます．表と
+行列は基本的に同じ構造で，縦の罫線も横の罫
+線も入れることができます．\indindz{罫線}{行列の}
+
+\begin{InTeX}
+\begin{array}{列数と縦罫線の指定}
+\end{InTeX}
+
+この部分では4列あるならば次のようにします．
+
+\begin{InTeX}
+\begin{array}{lc|cr}
+\end{InTeX}
+
+このときの\qu{\str l}，\qu{\str c}，
+\qu{\str r}は行列の中の要素の配置場所を指定するもの
+です．真ん中にはテキストバー\qu{\texttt |}があります，
+これは縦方向の罫線を表しています．このような記号を
+{\KY{列指定子}}と呼びます．
+%\env{array}環境中で指定できる列指定子は
+%\tabref{math:array}となります．
+\indindz{列指定子}{行列における}%
+\env{array}環境中で指定できる列指定子は
+\tabref{math:array}となります．
+\texttt{array}環境は入れ子にする事も，
+行列の中に行列を書いたりする事もできます．
+%\texttt{array}環境は入れ子にすることもできます．
+%行列の中に行列を書いたりすることもできますので便利です．
+
+\begin{table}[htbp]
+\begin{center}
+\indindz{幅}{行列の}%
+\indindz{長さ}{1列の}%
+\zindind{行列}{の幅}%
+\caption{\texttt{array}環境の主な列指定子}
+\tablab{math:array}
+\begin{tabular}{cl}
+\TR
+ \Th{列指定子} & \Th{意味}\\
+\MR
+\str l & 行列の縦1列を左揃えにする\\
+\str c & 行列の縦1列を中央揃えにする\\
+\str r & 行列の縦1列を右揃えにする\\
+\verb+|+ & 縦の罫線を引く\\
+\verb+||+ & 縦の2重罫線を引く\\
+\str @\pa{表現} & 表現を1列追加する\\
+\str p\pa{長さ} & ある列の幅を直接指定する\\
+\str *\pa{回数}\pa{列指定子} &回数分だけ\va{列指定子}を繰り返す\\
+%\verb+l+ & 行列の縦1列を左揃えにする\\
+%\verb+c+ & 行列の縦1列を中央揃えにする\\
+%\verb+r+ & 行列の縦1列を右揃えにする\\
+%\verb+|+ & 縦の罫線を引く\\
+%\verb+||+ & 縦の2重罫線を引く\\
+%\verb+@{表現}+& 表現を縦1列追加します\\
+%\verb+p{長さ}+& ある列の幅の長さを直接指定します\\
+%\verb|*{回数}{項目}|&回数分だけ項目を繰り返す．\\
+\BR
+\end{tabular}
+\end{center}
+\end{table}
+
+%\begin{InOut}
+%\[ \left( \begin{array}{cc} 
+%      a & b \\ c & d 
+%   \end{array} \right) \]
+%\end{InOut}
+
+\index{改行!arrayかんきょうでの@\texttt{array}環境での\zdash}%
+横方向に行列が続く場合があるため\env{array}環境の
+\K{最後の行に改行は入れません}．
+\begin{InOut}
+\[ \left( \begin{array}{*{2}{c}} 
+     a & b \\ c  & d 
+    \end{array} \right) 
+  \left( \begin{array}{c} 
+       m \\ n 
+    \end{array} \right)  =
+  \left( \begin{array}{c} 
+      am+bn \\ cm+dn \\ 
+    \end{array} \right) \]
+\end{InOut}
+\index{場合分け}%
+\env{array}環境には次に示すような場合分けを行う
+使い方もあります．
+\begin{InOut}
+\[ f(x)= \left\{
+\begin{array}{cl}
+  x & (x > 0)\\
+  0 & (x = 0)\\
+ -x & (x < 0) \end{array} 
+\right. \] 
+\end{InOut}
+%
+水平に罫線などを入れたりするときには \Cmd{hline}，
+要素の中で縦の罫線を引くときには \Cmd{vline}など
+を使います\pp{\tabref{array:lines}}．
+罫線などの使い方は以下の例を見て理解してください．
+
+\begin{table}[htbp]
+\caption{\texttt{array}環境中での罫線の命令}\tablab{array:lines}
+\begin{tabular}{ll}
+\TR
+ \Th{命令} & \Th{意味}\\
+\MR
+\Cmd{hline}& 
+   横に引けるだけの罫線を引きます\\
+\cmd{hline}\cmd{hline}&
+  引けるだけの2重の\Z{横罫線}を引きます\\
+\Cmd{vline}& 
+   要素の中で引けるだけの縦罫線を引きます\\
+\Cmd{cline}\pa{範囲}& 
+   要素の罫線を行の\va{範囲}を指定して引きます\\
+\Cmd{multicolumn}\pa{数値} &
+   \multirow{2}*{行をつなげて\va{列指定子}通りに要素を出力します}\\
+\multicolumn{1}{r}{\pa{列指定子}\pa{要素}} & \\
+\BR
+\end{tabular}
+\end{table}
+%
+
+\begin{InOut}
+\begin{displaymath}
+\begin{array}{llc} \hline
+\multicolumn{3}{c}{f(x)} \\ \hline
+g(x) & h(x) & i(x) \\ \cline{2-2}
+j(x)+k(x)+l(x) & o(x) & p(x)\\
+\end{array}
+\end{displaymath} 
+\end{InOut}
+
+%\begin{InOut}
+%\begin{displaymath}
+%\newcommand*\MC{\multicolumn}
+%\begin{array}{ll|ll}
+%a & b & c & d \\ \hline \hline
+%e & g & h & i \\ \cline{3-4}
+%j & \MC{1}{|l}k & l & m\\ \hline
+%n & o & \MC{1}{l|}p & q\\
+%r & s & t & \MC{1}{|l|}u\\
+%v & w & x & y \\ \hline \hline
+%\end{array}
+%\end{displaymath} 
+%\end{InOut}
+
+%悪ふざけが過ぎました，なんか迷路みたいですね．
+
+\indindz{行列}{括弧付きの}
+\env{array}環境の簡易版として行列作成用の \Cmd{matrix}と
+丸括弧を付ける \Cmd{pmatrix}と \cmd{matrix}に
+ラベルも付けられる \Cmd{bordermatrix}などの命令があります．
+ただし \cmd{matrix}命令と \cmd{pmatrix}に関しては\Sty{amsmath}パッケージ
+の\Env{matrix}環境や\Env{pmatrix}環境を使った方が良
+いでしょう．
+\begin{InOut}
+\[ \begin{pmatrix} x \\ y 
+   \end{pmatrix} \begin{pmatrix}
+      a & b & c \end{pmatrix} \]
+\end{InOut}
+
+\cmd{bordermatrix}環境の括弧では各成分を区切るに
+はアンパサンド\qu{\str\&}を使い，行の終わりには
+\qu{\Cmd{cr}}命令を使います．
+\begin{InOut}
+\[ A=\ \bordermatrix{
+     & 1 & 2 \cr
+  1  & a & b \cr
+  2  & c & d }     \] 
+\end{InOut}
+
+
+別の方法として \Person{David}{Carlisle}の \Y{delarray} (\Z{delimiter array})
+ パッケージを用いる事もあります．次のようにすると \C{left(} \C{right)} 
+を補った場合と同様の括弧付けになります．
+\begin{InOut}
+\usepackage{delarray}
+$\begin{array}({cc})
+ a_{11} & a_{12} \\
+ a_{21} & a_{22} \\
+\end{array}$
+\end{InOut}
+次のように場合分けのときにも使えます．\indindz{括弧}{場合分けの}
+\begin{InOut}
+$f(x) = 
+\begin{array}\{{ll}.
+ 1  & \mathrm{if}\  x > 0. \\
+ 0  & \mathrm{if}\  x = 0. \\
+ -1 & \mathrm{if}\  x < 0. \\
+\end{array}$
+\end{InOut}
+上記のようにしなくとも，新たに列指定子を宣言して，次のようにもできます．
+\begin{InOut}
+\usepackage{delarray}
+\newcolumntype{V}{>{$}l<{$}}
+\begin{displaymath}
+ f(x) =
+\begin{array}\{{lV}.
+ 1   & if $x > 0$. \\
+ 0  & if $x = 0$. \\
+ -1 & if $x < 0$. \\
+\end{array}
+\end{displaymath} 
+\end{InOut}
+
+%さらに位置指定を行なう任意引数に関しても，次のような改良が加えられてい
+%ます．
+%\begin{InOut}
+%\usepackage{delarray}
+%\newcommand\hoge[1][]{\begin{array}[#1](c)
+%  1\\2\\3 \end{array}}
+%\newcommand\geho[1][]{\left( \begin{array}
+% [#1]{c} 1\\2\\3 \end{array}\right)}
+% \begin{displaymath}
+%  \hoge[t] \hoge[c] \hoge[b] \neq
+%  \geho[t] \geho[c] \geho[b]
+% \end{displaymath}
+%\end{InOut}
+
+
+\section{表示形式の調整}\zindind{数式}{の表示形式の調整}%
+数式を記述する各環境において自動的に各要素
+の大きさが決められます．文中数式での分数は
+\( \frac{a}{b} \)という出力になりますが，
+これでは少し小さいので$\displaystyle \frac{a}{b}$
+としたいときがあると思います．そのようなときは
+ユーザが表示形式を変更するには\tabref{math:display}の
+命令が使えます．
+\begin{table}[htpb]
+\begin{center}
+\caption{数式の表示形式の変更}\tablab{math:display}
+%あぁ、D, T, S, SS, とか圧縮スタイルについての
+%説明も入れるべきだろう．
+\begin{tabular}{lll}
+\TR
+\Th{命令} & \Th{出力形式} & \Th{例}{$\left(\frac{a}{b}\right)$}\\
+\MR
+\rule{0pt}{1.5zw}\Cmd{displaystyle} & 別行立て形式& 
+ $\displaystyle \frac{a}{b}$\\[5pt]
+\Cmd{textstyle}         & 文中数式形式           & 
+$\textstyle \frac{a}{b}$\\
+\Cmd{scriptstyle}       & 添え字形式             & 
+$\scriptstyle \frac{a}{b}$\\
+\Cmd{scriptscriptstyle} & 添え字の中の添え字形式 & 
+$\scriptscriptstyle \frac{a}{b}$\\
+\BR
+\end{tabular}
+\end{center}
+\end{table}
+あまり多用すると段落のあいだが空きすぎて逆に見栄
+えが悪くなるのである程度長い数式を文中に入れて
+いるときは別行立てにするのが良い方法です．
+\index{"/@"\verb+"/+!分数の\zdash}%"
+また\zindind{分数}{の書き方}%
+文中の数式に限りませんが，分数は$\frac{a}{b}$
+と書くよりも$a/b$とするほうがスマートで見やすいので
+スラッシュによる表記にしたほうが良いでしょう．%
+\index{連分数}\indindz{分数}{連}%%
+\begin{InOut}
+\(f(x)\) の不定積分 \(\int f(x)dx\)
+と\(\displaystyle \int f(x)dx\) は
+\LaTeX では少し違うし，分数は 
+$\frac{a}{b}$ と書くよりも $a/b$ 
+と書くほうがスマートである．
+\end{InOut}
+\begin{InOut}
+\[ 
+ \frac{1}{1+\frac{1}{1+\frac{1}{1+x}}}
+ \neq \frac{1}{\displaystyle 1+
+ \frac{1}{\displaystyle 1+
+ \frac{1}{1+x}}} \]
+\end{InOut}
+%
+\begin{InOut}
+\( \int^b_a f(x)dx \neq 
+   {\displaystyle\int^b_a g(x)dx}
+\) 
+\end{InOut}
+%\begin{InOut}
+%\(\int^\beta_\alpha f(x)\,dx \neq 
+%{\displaystyle\int^\beta_\alpha f(x)\,dx}\)
+%\end{InOut}
+
+\begin{Exe}
+次の数式の例をタイプセットし，出力結果を吟味してください．
+\begin{InOut}
+\begin{displaymath}
+ f (x) = \frac{
+     \frac{a - b}{x + z} + 
+     \frac{a + b}{x + y}}
+ {\frac{1}{x + a} + z}
+\end{displaymath} 
+\end{InOut}
+では，次のように出力するためにはどのような入力になるか，考えてみてくださ
+い．
+\begin{OutText}
+\begin{displaymath}
+   f (x) = \frac{(a-b)/(x+z)+(a+b)/(x+y)}{(1)/(x+a)+z} 
+\end{displaymath}
+\end{OutText}
+簡単に考えると，次のように記述できると思われます．
+
+\begin{InTeX}
+\begin{displaymath}
+   f (x) = \frac{(a-b)/(x+z)+(a+b)/(x+y)}{(1)/(x+a)+z} 
+\end{displaymath} 
+\end{InTeX}
+
+しかし，どうせならばもう少しマクロで対処したい所です．
+例えば \cmd{sfrac}命令を次のように新設し，自動的に丸括弧と
+スラッシュを補うようにします．
+
+\begin{InTeX}
+\newcommand\sfrac[2]{(#1)/(#2)}
+\begin{displaymath}
+  f (x) = \frac{\sfrac{a-b}{x+z}+\sfrac{a+b}{x+y}}{\sfrac{1}{x+a}+z}
+\end{displaymath} 
+\end{InTeX}
+
+すると，先ほどと同じように出力できます．
+
+\begin{OutText}
+\newcommand\sfrac[2]{(#1)/(#2)}
+\begin{displaymath}
+  f (x) = \frac{\sfrac{a-b}{x+z}+\sfrac{a+b}{x+y}}{\sfrac{1}{x+a}+z}
+\end{displaymath}  
+\end{OutText}
+しかし，どうやら一番最後の \verb|\sfrac{1}{x+a}| に関しては
+うまくいっていないようです．これに関しては\kenten{おまじない}として
+次のように記述するとごまかせるでしょう．
+\C*{@ifnextchar}%
+\C*{bgroup}%
+\C*{sfrac}%
+\begin{InOut}
+\makeatletter
+\newcommand\sfrac{\@ifnextchar\bgroup
+  \@sfrac \@@sfrac}
+\newcommand\@sfrac[2]{(#1)/(#2)}
+\newcommand\@@sfrac[2]{#1/(#2)}
+\makeatother
+\begin{displaymath}
+ f(x) = \frac{\sfrac{a-b}{x+z}+
+  \sfrac{a+b}{x+y}}{\sfrac1{x+a}+z}
+\end{displaymath}   
+\end{InOut}
+ここでは丸括弧を補わない分子に関して\K{波括弧でグルーピングしない}
+という事で判別しています．
+\end{Exe}
+
+\section{数式モード中の記号}\indindz{記号}{数学}%
+\index{数学記号}%
+記号の中には数式モード中でしか使えないものがほとんどです．
+%そもそもこれらの記号は
+%として使われているからです．
+以下の記号は\verb+\( \)+で囲むなど，数式環境の中で
+使用しないと\dos{! Missing \$ inserted.}の
+ようなエラーが表示されます．
+
+
+\subsection{ギリシャ文字}
+数式中の変数ならびに\Z{定数}には\Z{ギリシャ文字}
+を使うのが一般的です．\zindind{ギリシャ文字}{の小文字}%
+ギリシャ小文字は\tabref{greek:lower}，
+小文字の\Z{変体文字}は\tabref{greek:lower:hen}，%
+\zindind{ギリシャ文字}{の大文字}%
+大文字は\tabref{greek:upper}となります．
+\begin{table}[htbp]
+\begin{scenter}
+\caption{ギリシャ小文字}\tablab{greek:lower}
+\begin{tabular}{LCCC}
+\M{alpha}   & \M{eta}    & \M{nu}    & \M{tau}     \\
+\M{beta}    & \M{theta}  & \M{xi}    & \M{upsilon} \\
+\M{gamma}   & \M{iota}   & $o$&o     & \M{phi}     \\
+\M{delta}   & \M{kappa}  & \M{pi}    & \M{chi}     \\
+\M{epsilon} & \M{lambda} & \M{rho}   & \M{psi}     \\
+\M{zeta}    & \M{mu}     & \M{sigma} & \M{omega}   \\
+\end{tabular}
+\end{scenter}
+\end{table}
+ギリシャ小文字において\Z{オミクロン}\qu{$o$}だけは
+アルファベットの\qu{o}と同じため特別に記号が用意
+されていません．逆に\qu{\cmd{o}}は文中で使うべき
+記号であり，この命令を数式中で使うと
+\dos{LaTeX Warning: Command \bs o invalid in math 
+mode on input line 30.}
+のように警告が表示されます．
+%
+\begin{InOut}
+\begin{eqnarray*}
+\cos^2\theta+\sin^2\theta &\neq&
+   \cos^2x + \sin^2x 
+\end{eqnarray*}
+\end{InOut}
+%
+\begin{table}[htbp]
+ \begin{scenter}
+\zindind{ギリシャ文字}{の変体小文字}%
+\caption{ギリシャ小文字の変体文字}\tablab{greek:lower:hen}
+ \begin{tabular}{LCC}
+ \M{varepsilon} & \M{vartheta} & \M{varpi} \\
+ \M{varrho}     & \M{varsigma} & \M{varphi}\\
+ \end{tabular}
+%\\ {\small 一筆書きできる小文字が使われた名残でしょうか．}
+ \end{scenter}
+\end{table}
+%
+\begin{table}[htbp]
+\begin{scenter}
+\caption{ギリシャ大文字}
+\tablab{greek:upper}
+\newcommand*\LG[1]{\C{mathrm}\texttt{\lb#1\rb}}
+\begin{tabular}{LCCC}
+%$A$&\str A&  $H$&\str{H}& $N$&\str{N}& $T$&\str T\\
+%$B$&\str B& \M{Theta}   & \M{Xi}    & \M{Upsilon}\\
+%\M{Gamma} & $I$&\str{I} & $O$&\str O& \M{Phi}   \\
+%\M{Delta} & $K$&\str{K} & \M{Pi}    & $X$&\str{X}\\
+%$E$&\str E& \M{Lambda}  & $P$&\str P& \M{Psi}    \\
+%$Z$&\str Z& $M$&\str{M} & \M{Sigma} & \M{Omega}  \\
+$\mathrm A$ & \LG A & $\mathrm H$         & \LG H & $\mathrm N$ & \LG N & $\mathrm T$ & \LG T\\
+$\mathrm B$ & \LG B & \M{Theta}             & \M{Xi}    & \M{Upsilon}\\
+\M{Gamma}   & $\mathrm I$         & \LG{I}& $\mathrm O$ & \LG O & \M{Phi}   \\
+\M{Delta}   & $\mathrm K$&\LG{K}  & \M{Pi}      & $\mathrm X$   & \LG{X}\\
+$\mathrm E$ & \LG E & \M{Lambda}  & $\mathrm P$&\LG P& \M{Psi}    \\
+$\mathrm Z$ & \LG Z & $\mathrm M$         &\LG{M}  & \M{Sigma}   & \M{Omega}  \\
+\end{tabular}
+\end{scenter}
+\end{table}
+ギリシャ大文字でもアルファベットと同じ文字は
+特別な記号が用意されておりません．ギリシャ小文字と
+同じようにオミクロン\qu{\cmd{O}}を数式中で使うと
+次のような警告が表示されます．
+\begin{quote}
+ \dos{LaTeX Warning: Command \bs O invalid in math 
+ mode on input line 40.}
+\end{quote}
+
+さらにギリシャ大文字の
+$A$，$B$，$E$，$Z$，$H$，$I$，$K$，$M$，
+$N$，$O$，$P$，$T$，$X$はそのままではイタリック体
+となって\Z{変数}を意味してしまいますので\Z{定数}としての
+ギリシャ大文字を出力するためには \Cmd{mathrm}を使います．
+\begin{InOut}
+\begin{eqnarray*}
+     A      &\neq& \mathrm A\\
+F(x)+C      &\neq& F(x)+ \mathrm C\\
+\mathit{foo}&\neq& \mathrm{foo}
+\end{eqnarray*}
+\end{InOut}
+
+\clearpage
+
+\subsection{関係子や演算子などの数学記号}
+\index{演算子}\index{関係子}%
+\index{記号!演算子}%
+\index{記号!関係子}%
+\begin{table}[htbp]
+\begin{scenter}\indindz{否定}{演算子の}
+\caption{関係子}\tablab{kannkeisi}
+{\small 以下のコマンドの前に \Cmd{not}コマンドを付ければ
+その関係子の否定になります}\par
+\begin{tabular}{LCCC}
+\M{le}         & \M{in}        & \M{sqsupseteq} & \M{neq}      \\
+\M{prec}       & \M{notin}     & \M{dashv}      & \M{doteq}    \\
+\M{preceq}     & \M{ge}        & \M{ni}         & \M{propto}   \\
+\M{ll}         & \M{succ}      & \M{equiv}      & \M{models}   \\
+\M{subset}     & \M{succeq}    & \M{sim}        & \M{perp}     \\
+\M{subseteq}   & \M{gg}        & \M{simeq}      & \M{mid}      \\
+\M{sqsubseteq} & \M{supset}    & \M{asymp}      & \M{parallel} \\
+\M{vdash}      & \M{supseteq}  & \M{approx}     & \M{bowtie}   \\
+\M{smile}      & \M{frown}     & \M{cong}       &     &        \\
+\end{tabular}
+\end{scenter}
+\end{table}
+\begin{table}[htbp]
+\begin{scenter}
+\indindz{演算子}{二項}%
+\index{記号!二項演算子}%
+\caption{二項演算子}\tablab{ennzannsi}
+\begin{tabular}{LCCC}
+\M{pm}     & \M{cdot}  & \M{setminus}        & \M{ominus} \\
+\M{mp}     & \M{cap}   & \M{wr}              & \M{otimes} \\
+\M{times}  & \M{cup}   & \M{diamond}         & \M{oslash} \\
+\M{div}    & \M{uplus} & \M{bigtriangleup}   & \M{odot}   \\
+\M{ast}    & \M{sqcap} & \M{bigtriangledown} & \M{bigcirc}\\
+\M{star}   & \M{sqcup} & \M{triangleleft}    & \M{dagger} \\
+\M{circ}   & \M{vee}   & \M{triangleright}   & \M{ddagger}\\
+\M{bullet} & \M{wedge} & \M{oplus}           & \M{amalg}  \\
+\end{tabular}
+\end{scenter}
+\end{table}
+%
+\begin{table}[htbp]
+\begin{scenter}
+\caption{大型演算子}
+\indindz{演算子}{大型}%
+\index{大型演算子}%
+\index{記号!大型演算子}%
+{\small これらは大きさが可変です}\par
+\begin{tabular}{LCCC}
+\M{sum}    & \M{oint}     & \M{bigvee}   & \M{bigoplus}  \\
+\M{prod}   & \M{bigcup}   & \M{bigwedge} & \M{bigotimes} \\
+\M{coprod} & \M{bigcap}   &    &          & \M{bigodot}  \\
+\M{int}    & \M{bigsqcup} &    &          & \M{biguplus} \\
+\end{tabular}
+\end{scenter}
+\end{table}
+%\begin{InOut}
+%\( \sum^n_{i=0} a_i \neq a_o+
+% {\displaystyle\sum^{n-1}_{i=1}a_i}\)
+%\end{InOut}
+%
+\begin{table}[htbp]
+\begin{scenter}\indindz{アクセント}{数式中の}%
+\caption{小さいアクセント}\tablab{smallac}
+{\small これらの小さいアクセント%
+\indindz{アクセント}{小さい}は大きさが変わりません}\par
+\begin{tabular}{LCCC}
+\W{hat}{a}  & \W{check}{a}& \W{breve}{a}&\W{acute}{a}\\
+\W{grave}{a}& \W{tilde}{a}& \W{bar}{a}  &\W{dot}{a}  \\
+\W{ddot}{a} & \W{vec}{a}  &   &    & &   \\
+\end{tabular}
+\end{scenter}
+\end{table}
+\zindind{ベクトル}{記号}%
+\begin{InOut}
+\( \vec{a}+\vec{b}\neq \vec{a+b} 
+   \neq \overrightarrow{a+b} \)
+\end{InOut}
+\begin{table}[htbp]
+\begin{scenter}
+% \overrightarrow, \overbrace, overleftarrow, 
+% \underbrace
+\caption{大きいアクセント}\tablab{bigac}
+{\small 大きいアクセント\indindz{アクセント}{大きい}%
+\indindz{アクセント}{数式中の}%
+は大きさが可変です}\par
+\begin{tabular}{LC}
+$\overline{m+M}$      &\Cmd{overline}      & 
+  $\overbrace{m+M}$& \Cmd{overbrace}  \rule{0pt}{1.5em}\\
+$\underline{m+M}$     &\Cmd{underline}     &
+  $\underbrace{m+M}$&  \Cmd{underbrace} \rule{0pt}{1.5em}\\
+$\overleftarrow{m+M}$ &\Cmd{overleftarrow} & 
+  $\widehat{m+M}$& \Cmd{widehat} \rule{0pt}{1.5em}\\
+$\overrightarrow{m+M}$&\Cmd{overrightarrow}& 
+  $\widetilde{m+M}$& \Cmd{widetilde}  \rule{0pt}{1.5em}\\
+\end{tabular}
+\end{scenter}
+\end{table}
+\begin{InOut}
+\begin{displaymath}
+ \overbrace{a+b+c+d+e+f+g}^{h+i+j+k}+
+ \underbrace{l+m+n}_{o+p+q}
+\end{displaymath} 
+\end{InOut}
+%
+\begin{table}[htbp]
+\begin{scenter}
+ \caption{矢印}
+ \index{矢印}%
+ \index{記号!矢印}%
+ \begin{tabular}{LCC}
+ \M{leftarrow}       & \M{longrightarrow}   &\M{leftrightarrow}    \\
+ \M{Leftarrow}       & \M{Longrightarrow}   &\M{Leftrightarrow}    \\
+ \M{hookleftarrow}   & \M{longmapsto}       &\M{rightleftharpoons} \\
+ \M{leftharpoonup}   & \M{hookrightarrow}   &\M{Longleftrightarrow}\\
+ \M{leftharpoondown} & \M{rightharpoonup}   &\M{updownarrow}       \\
+ \M{longleftarrow}   & \M{rightharpoondown} &\M{Updownarrow}       \\
+ \M{Longleftarrow}   & \M{uparrow}          &\M{nearrow}           \\
+ \M{rightarrow}      & \M{Uparrow}          &\M{swarrow}           \\
+ \M{Rightarrow}      & \M{downarrow}        &\M{searrow}           \\
+ \M{mapsto}          & \M{Downarrow}        &\M{nwarrow}           \\
+ \end{tabular}
+\end{scenter}
+\end{table}
+\begin{InOut}
+\begin{displaymath}
+  (p\rightarrow r)\vee
+  (q\rightarrow s)
+\end{displaymath}
+\end{InOut}
+%
+\begin{table}[htbp]
+\begin{scenter}
+\caption{特殊な数学記号}
+%\ifusehtml\Picture+[]{}\else\fi
+\begin{tabular}{LCCC}
+\M{aleph} & \M{partial}  & \M{bot}       & \M{natural}     \\
+\M{hbar}  & \M{infty}    & \M{angle}     & \M{sharp}       \\
+\M{imath} & \M{prime}    & \M{triangle}  & \M{clubsuit}    \\
+\M{jmath} & \M{emptyset} & \M{forall}    & \M{diamondsuit} \\
+\M{ell}   & \M{nabla}    & \M{exists}    & \M{heartsuit}   \\
+\M{wp}    & \M{surd}     & \M{neg}       & \M{spadesuit}   \\
+\M{Re}    & $|$&\verb+|+& \M{backslash} &     &           \\
+\M{Im}    & \M{top}      & \M{flat}      &     &           \\
+\end{tabular}
+%\ifusehtml\EndPicture\fi
+\end{scenter}
+\end{table}
+%
+\begin{InOut}
+\[ \forall{x}\forall{y}( 
+     P(x,y)\vee(f(x)\wedge g(x))) \] 
+\end{InOut}
+%
+\begin{InOut}
+\( e^{j\theta}=\Re{\{e^{j\theta}\}}
+   +\Im{\{e^{j\theta}\}}
+   =\cos\theta+j\sin\theta\)
+\end{InOut}
+\begin{table}[htbp]
+\begin{scenter}
+\caption{点}\tablab{tenn}
+\index{点}%
+\index{3点リーダ}%
+\index{3点リーダ!中点\zdash}%
+\index{3点リーダ!下付き\zdash}%
+\index{...@\ldots（下付3点リーダ）}%
+\index{...@$\cdots$（中点3点リーダ）}%
+\begin{tabular}{LCCC}
+\M{ldots} &  \M{cdots} & \M{vdots} &  \M{ddots}\\
+\end{tabular}
+\end{scenter}
+\end{table}
+\begin{InOut}
+\[ (a_0+a_1+\cdots+a_n) 
+   \neq \{a_0,a_1,\ldots,a_n\} \]
+\end{InOut}
+
+\begin{Exe}
+\C{ldots} や \cmd{cdots} 以外に \cmd{dots} という命令
+もあります．これは自動的に \cmd{ldots} と \cmd{cdots} を
+切り替えてくれる命令です．
+\begin{InOut}
+\[ \{f_n\} = f_1, f_2, \dots, f_n \]
+\end{InOut} 
+時おり適切に選定されない場合がありますので，その場合は手動で
+対処します．
+%\begin{InOut}
+%\[
+%  
+%\] 
+%\end{InOut}
+\end{Exe}
+
+
+\subsection{標準ではない数学記号\zdash\Y{latexsym}}
+{\LaTeXe}からはこぼれた記号類を出力するためには，
+\Person{Frank}{Mittelbach}が作成した\Sty{latexsym}
+を読み込むと良いでしょう．すでに\Sty{amssymb}か
+\Sty{amsfonts}を読み込んでいるならば，そちらに定
+義されているので\sty{latexsym}をさらに読み込まな
+くても良いです．
+\begin{table}[htbp]
+ \begin{scenter}
+\caption{標準ではない数学記号}
+  \begin{tabular}{LCCC}
+ \M{mho} & \M{Join} & \M{Box} & \M{Diamond} \\
+ \M{leadsto} & \M{sqsubset} & \M{sqsupset} & \M{lhd} \\
+ \M{unlhd} &  \M{rhd} & \M{unrhd} & & \\
+  \end{tabular}
+ \end{scenter}
+\end{table}
+
+
+\section{定義や定理など}
+\Cmd{theorem}命令を使うと新規に定義型や定理型の環境を
+作成できます．
+\begin{Syntax}
+\C{newtheorem}\pa{名前}\pa{ラベル}\opa{親カウンタ}\\
+\C{newtheorem}\pa{名前}\opa{定義済みの環境}%
+\pa{ラベル}
+\end{Syntax}
+章や節などを通し番号の前に付けるにはその\va{親カウンタ}を
+\tabref{latexcounters}から選びます．別々の環境で同じ
+通し番号を使いたい場合は\va{定義済みの環境}を指定します．
+具体的な例として \env{Prob}環境と\env{Exe}環境を次のようにプリアンブルに
+記述します．
+
+\begin{InTeX}
+\newtheorem{Prob}{問題}[chapter]
+\newtheorem{Exe}[Prob]{例題} 
+\end{InTeX}
+
+そうしておけば以下のように使えます．
+
+\begin{InOut}
+\begin{Exe}\label{Hoge:ware}
+この文書は難しいか．答えは簡単だ．
+\end{Exe}
+\begin{Prob}\label{Geho:yueni}
+この文書は適切かどうか考えよ．
+\end{Prob}
+例題~\ref{Hoge:ware}より
+問題~\ref{Geho:yueni}が導かれる． 
+\end{InOut}
+
+実際の出力は異なると思います．\cmd{theorem}命令は
+定理型や定義型の環境を作成するために作られたので
+日本語用には思うようにカスタマイズできないようです．
+
+\subsection{定理型環境のカスタマイズ}\seclab{theorem}
+\indindz{環境}{定理型の}%
+\indindz{環境}{問題型の}%
+\indindz{環境}{例題型の}%
+\Person{Frank}{Mittelbach}が作成した\Sty{theorem}は
+{\LaTeX}における \C{theorem}命令を拡張したパッ
+ケージです．このパッケージは例えば\yo{定理型}や
+\yo{定義型}だけでなく，\yo{問題型}や\yo{例題型}
+などの環境を作成するときに満足の行く出力になると
+思われます．{\AmSLaTeX}に含まれる\Sty{amsthm}と
+%いうパッケージもありますが\Person{Frank}{Mittelbach}が
+%作成した\sty{theorem}を使ったほうが便利だと思います．
+いうパッケージもありますが\Person{Frank}{Mittelbach}
+による\sty{theorem}を使ったほうが便利だと思います．
+定理型の環境を新設するときは{\LaTeX}の \cmd{theorem}
+命令と同じように環境を新設します．
+\begin{Syntax}
+\Cmd{newtheorem}\pa{環境名}\pa{名前}
+\end{Syntax}
+
+\indindz{カウンタ}{親}%
+章などの\Z{親カウンタ}に連動させたい場合は
+次のように\va{親カウンタ}を指定します．
+\begin{Syntax}
+\Cmd{newtheorem}\pa{環境名}\pa{名前}\opa{親カウンタ名}
+\end{Syntax}
+
+同系の環境を作成するときは既存の環境名も指定して定義します．
+\begin{Syntax}
+\Cmd{newtheorem}\pa{環境名}\opa{同系の環境名}\pa{名前}
+\end{Syntax}
+
+\sty{theorem}パッケージではさらに
+それぞれの定理型環境の書式を以下の命令で変更できます．
+\begin{Syntax}
+\Cmd{theoremstyle}\pa{スタイル}\\
+\Cmd{theorembodyfont}\pa{書式}\\
+\Cmd{theoremheaderfont}\pa{書式}
+\end{Syntax}
+
+\va{書式}に対しては書体変更用の宣言型の命令を
+使います．\va{スタイル}には以下の六つが使えます．
+\begin{description}
+\item[\str{plain}] 
+   標準の \cmd{theorem}命令と同じ書式にします．
+\item[\str{break}] 
+   \va{名前}を出力した後に改行をします．
+\item[\str{margin}] 
+   通し番号を余白に出力します．
+\item[\str{change}]
+   通し番号と\va{名前}を入れ替えます．
+\item[\str{marginbreak}] 
+  \qu{\str{margin}}に付け加え，それを出力した後に改行します．
+\item[\str{changebreak}]
+  \qu{\str{change}}に付け加え，それを出力した後に改行します．
+\end{description}
+\sty{theorem}パッケージで\yo{例題2.1，参考2.2，問題2.3}の
+ような環境を作成したければ次のようにすると良いでしょう．
+
+\begin{InTeX}
+{\theorembodyfont{\normalfont}
+\theoremheaderfont{\normalfont\bfseries}
+\newtheorem{Exam}{例題}
+\newtheorem{Refer}[Exam]{参考}
+\newtheorem{Prob}[Exam]{問題}}
+\end{InTeX}
+
+
+
+\section{その他有益な事柄}
+
+まずはマクロと数式を組み合わせた簡単な例を紹介します．
+\begin{InOut}
+\newcommand*\niji[3][]{% [a]{b}{c}
+  \ensuremath{#1x^2+#2x+#3=0}}
+\newcommand*\Niji[3][]{% [a]{b}{c}
+  \ensuremath{x=\frac{-#2\pm%
+  \sqrt{#2^2-4#1#3}}{2#1}}}
+二次方程式\niji[a]{b}{c}の一般解は
+\begin{displaymath}
+\Niji[a]{b}{c}
+\end{displaymath}
+となる．\niji{6}{5}の場合は
+ \niji{6}{5}より，$x=1,5$となる．
+\end{InOut}
+
+不定積分を表現したり定積分を表現したりする次の場
+合を考えてみましょう．
+\begin{InOut}
+\usepackage{txfonts}
+\[ \int f(x)dx + \int g(y)dy + 
+   \iint h(x,y)dx\,dy  \]
+\end{InOut}
+この場合は新規に \cmd{intx} や \cmd{iintxy} などを
+定義すると手間が省けるでしょう．
+\begin{InOut}
+\newcommand\intx[1]{\int#1dx}
+\newcommand\inty[1]{\int#1dy}
+\newcommand\iintxy[1]{\iint#1dx\,dy}
+\[ \intx{f(x)} + \inty{g(y)} + 
+ \iintxy{h(x,y)} \]
+\end{InOut}
+あまり複雑な数式になるとマクロを書くよりも
+直接書いたほうが良いかも知れません．
+
+ある線形微分方程式\(dy/dx+P(x)y=Q(x)\)の
+一般解を表現するために
+\begin{InOut}
+\[ y=e^{-\int P(x)dx}\left\{
+   \int{Q(x)e^{\int P(x)dx}dx + 
+   \mathrm{c}}  \right\} \] 
+\end{InOut}
+というのを何回も書くのはエネルギーの無駄ですから，
+公式通りに新規に命令を作ると汎用的に$P(x)$や
+$Q(x)$を書く事ができます．
+\begin{InOut}
+\newcommand{\my}{%
+  \ensuremath{dy/dx+P(x)y=Q(x)}}
+\newcommand{\mypq}[2]{\ensuremath{%
+   e^{\int{#1}dx}\left\{\int{{#2}%
+   e^{\int{#1}dx}dx+\mathrm{c}}%
+   \right\}}}
+$P(x)=x^2+\pi$ として $Q(x)=e^x$
+とすると{\my}の一般解 $y$ は \[
+\mypq{(x^2+\pi)}{e^x}\]となる．
+\end{InOut}
+
+何らかの数式が公式として確立している場合はそれを
+マクロとして作成しておくと便利です．\zindind{マクロ}{の作成}%
+マクローリン展開やテイラー展開を毎回書くのは面倒です
+から次のような使い方をすると良いでしょう．
+%\begin{InOut}
+%\newcommand{\macl}[2][x]{\ensuremath{%
+% f(#2)+\frac{1}{1!}f'(#2)(#1-#2)+%
+% \frac{1}{2!}f''(#2)(#1-#2)^2+\cdots+%
+% \frac{1}{k!}f^{(k)}(#2)(#1-#2)^k+\cdots}}
+%\newcommand{\Macl}[2][x]{\ensuremath{%
+% \sum^{\infty}_{k=0}\frac{1}{k!}%
+% f^{(k)}(#2)(#1-#2)^k}}
+%関数$f(z)$の$z=0$におけるテイラー展開は
+%\(\macl[z]{0}\)であり\(\Macl[z]{0}\)
+%となるので$z=0$における級数は\[ 
+% f(z)=\sum^{\infty}_{k=0}\frac{1}{k!}
+% f^{(k)}(0)z^k
+%\]となり，これをマクローリン展開と呼ぶ．
+%\end{InOut}
+
+\indindz{記号}{偏微分}\Z{偏微分記号}が多く出てくる数式を考えます．
+\begin{InOut}
+\[\frac{\partial f}{\partial x}+
+  \frac{\partial^2f}{\partial x^2}+
+  \frac{\partial^3f}{\partial x^3}\]
+\end{InOut}
+毎回このように記述するのは疲れますので
+次のようにマクロを作成して用います．
+\begin{InOut}
+\newcommand{\pdif}[3][]{\frac{%
+ \partial^{#1}{#2}}{\partial{#3}^{#1}}}
+\[ \pdif{f}{x}+\pdif[2]{f}{x} \]
+\end{InOut}
+このようにしても良いのですが，変数が二つ以上の
+場合は手動で対処します．
+\begin{InOut}
+\newcommand{\pdif}[3][]{\frac{%
+  \partial^{#1}{#2}}{\partial{#3}^{#1}}}
+\[ \pdif[2]{f}{x} + \pdif{\sp2f}{xy} + 
+   \pdif[2]{f}{y} \]
+\end{InOut}
+\cmd{partial} と \Cmd{frac}をごちゃごちゃ書くよりは
+このほうがすっきりしているでしょう．
+
+作成中の文書の分野を考えてあらかじめ公式の一部分を
+マクロとして作成するのも有効かも知れません．%マク
+%ロは同じ文書の中で何度も出てくる公式どおりの数式
+%には有効ですが，たった一度しか登場しないような数式
+%に対してわざわざマクロを作成する必要はありません．
+
+\subsection{記号の積み重ね}\seclab{stack:math}
+\zindind{記号}{の積み重ね}%
+イコール\qu{$=$}のうえに\qu{$\mathrm{def}$}をのせて
+\qu{$\stackrel{\mathrm{def}}{=}$}のような記号を
+出したいときがあります．これには \Cmd{stackrel} という
+命令が使えます．一つ目の引数を二つ目の引数のうえに載せて
+関係子を作ります．
+\begin{Syntax}
+\cmd{stackrel\pa{上の記号}\pa{下の記号}}
+\end{Syntax}
+%%
+\begin{InOut}
+\newcommand{\defeq}{%
+   \stackrel{\mathrm{def}}{=}}
+\( x \defeq p(t)+q(t)+r(t) \)
+\end{InOut}
+記号の積み重ねとは少し違うのですが，次のような
+数式を出力するときもあるでしょう．この例では \C{substack}
+という\sty{amsmath}パッケージに含まれる
+命令を使っています．
+\begin{InOut}
+\begin{displaymath}
+ \sum^l_{i=1} \sum^m_{j=1} \sum^n_{k=1} 
+ p_i q_j r_k \neq \sum_{
+ \substack{i\le 1\le l \\ j\le 1 \le m
+ \\ k\le 1 \le n}} p_i q_j r_k
+\end{displaymath} 
+\end{InOut}
+
+\subsection{記号の重ね合わせ}\zindind{記号}{の重ね合わせ}%
+二つの記号を重ね合わせて新しい記号を作りたいとき
+があります．\cmd{ooalign} と \cmd{crcr}命令を組み合
+わせるとうまくできます．
+\begin{Syntax}
+\verb|{|\Cmd{ooalign}\verb|{|%
+ \va{一つ目}\Cmd{crcr}\va{二つ目}\verb|}}|
+\end{Syntax}
+二つの記号の内で横幅の広いほうの幅が優先されます．
+二つの記号を中心に重ね合わせたいときは \Cmd{hss}という
+空白を挿入する命令を使います．さらに文字列に \Cmd{not}%
+\zindind{演算子}{の否定}%%
+を使っても演算子の否定のようにはなりませんので
+次のような定義をしておくと良いでしょう．
+
+\begin{InTeX}
+\newcommand{\cnot}[1]{\ooalign{／\crcr{\hss{#1}\hss}}}
+\end{InTeX}
+
+スラッシュは全角を使っています．
+
+\begin{InOut}
+\newcommand{\pile}[2]{%
+  {\ooalign{#1\crcr#2}}}
+\newcommand{\cpile}[2]{{\ooalign{{%
+  \hss#1\hss}\crcr{\hss#2\hss}}}}
+\newcommand{\cnot}[1]{%
+  \ooalign{／\crcr{\hss{#1}\hss}}}
+特性数$\pile Y=$は定数$\cpile Y=$の云々で
+あり，\cnot{A}は\pile/Aとは別物なのである．
+\end{InOut}
+
+\subsection{数式の太字}\seclab{bm}
+\zindind{数式}{の太字}%
+何らかの理由である数式の一部や，ある数式全体を
+\Z{太字}にする事があるそうです．方法として
+\begin{itemize}
+ \item \Cmd{mathbf}命令を使う．
+ \item \Cmd{boldmath} と \Cmd{unboldmath}を使って太字かどうかを切り替える．
+ \item \Sty{amsmath}に含まれる\Sty{amsbsy}パッケージの \Cmd{boldsymbol}命令を使う．
+ \item \Sty{bm}パッケージの \Cmd{bm} 命令を使う．
+\end{itemize}
+などがあります．これは使用している数式書体に
+よっては使えない事があります．\Sty{txfonts}や
+\Sty{pxfonts}を使うとなんら問題なく出力できます．
+一つ目の \cmd{boldmath} と \cmd{unboldmath}は
+\K{数式モード中で使う事ができません}．
+\begin{InOut}
+\(\mathbf{\int^a_b f(x)dx}  \neq\)
+\boldmath  \(\int^a_b f(x)dx  \neq\)
+\unboldmath\(\int^a_b f(x)dx \)
+\end{InOut}
+\Cmd{mathbf}の場合は\Z{ギリシャ文字}などの特定の記号しか
+太字にならないうえにイタリック体ではなくローマン体に
+なってしまいます．もう少し局所的に使いたい場合は
+\sty{amsbsy}の \Cmd{boldsymbol}を使います．
+\begin{InOut}
+\(\mathbf{\int^a_b f(x)dx}  \neq
+\boldsymbol{\int^a_b f(x)dx}\neq
+\int^a_b f(x)dx \)
+\end{InOut}
+現在は\sty{amsbsy}を使うよりも\Sty{bm}パッケージの \Cmd{bm}
+命令を使うのが良いでしょう．
+\begin{InOut}
+\(\mathbf{\int^a_b f(x)dx} \neq
+  \bm{\int^a_b f(x)dx} \neq
+  \int^a_b f(x)dx \)
+\end{InOut}
+%結論として \cmd{bm}命令を使うようにすると
+%思い通りの結果になるのではないかと思います．
+
+\subsection{高さや幅を揃える}
+\indindz{記号}{ルート}%
+\indindz{記号}{根号}%
+\indindz{高さ}{ルートの}%
+ルート記号などを使っているとルートの高さが揃わずに
+見栄えが悪くなるときがあります．これには数式中で
+ルートなどの高さを揃える \Cmd{mathstrut}命令が使えます．
+\begin{InOut}
+\[ \overline{\sqrt a + \sqrt b 
+   \neq \sqrt{\mathstrut a}+
+   \sqrt{\mathstrut b}} \]
+\end{InOut}
+分かりづらいのですが実は高さのみならず，深さも \cmd{mathstrut}
+によって自動的に調整されています．
+
+もう少し高度な命令として \Cmd{phantom}，
+\Cmd{vphantom}，\Cmd{hphantom}の三つが用意されています．
+\Cmd{phantom}命令は引数に与えられた要素だけの
+高さと幅と深さを持った空白を作成します．\cmd{vhpantom}
+は引数に与えた要素の高さと同じ目には見えない箱を
+作成します．\cmd{hphantom}はその横方向バージョンです．
+\begin{InOut}
+\[ \sqrt{\int f(x)dx}+\sqrt{g}
+   \neq \sqrt{\int f(x)dx}+\sqrt
+   {\vphantom{\int f(x)dx} g} \]
+\end{InOut}
+もう一つ \Cmd{smash}という命令もあり，これは
+引数に与えられた要素の高さと深さを0にする
+魔法のようなものです．\cmd{smash} と \cmd{vphantom}
+を組み合わせると要素の幅はそのままで高さと深さを0に
+したうえで \cmd{vphantom}で指定した高さと深さの
+見えない箱を作成できるので，\K{高さや深さを揃えるのに}
+使えます．\indindz{幅}{要素の}%
+\begin{InOut}
+\[\underbrace{a+b}+\underbrace{i+j}
+ \neq \underbrace{\smash{a+b}
+ \vphantom{i+j}} + \underbrace{i+j}\]
+\end{InOut}
+
+\begin{Exe}
+高さ，幅，深さを擬似的に模倣する \C{phantom} 命令に
+よって，次のような整列が可能となります．
+\begin{InOut}
+\newcommand\PN[1]{\phantom{\mbox{}#1}}
+\begin{eqnarray*}
+a_{11}x_1  +a_{12}x_1 \PN{+a_{23}x_3}
+  &=& b_1\\
+a_{21}x_1  +a_{22}x_2 + a_{23}x_3
+  &=& b_2\\
+a_{31}x_1 \PN{+a_{22}x_2}+ a_{33}x_3
+  &=& b_3
+\end{eqnarray*}
+\end{InOut} 
+ただし，プラス `\str{+}'の前に何らかの要素をおかないと，
+適切な空白が挿入されないため，\C{mbox} 命令を補っています．
+\end{Exe}
+
+\subsection{スマートな分数の書き方}\index{/@\verb+/+}
+文中数式中で分数を出力する \Cmd{frac}命令を使うと
+\(\frac{a}{b}\)となります．このような分数の書き方は
+スマートではありません．\(a/b\)と書くと一般的な
+文中の分数のスタイルとなります．
+\begin{InOut}
+\[ \frac{\frac{a}{b}}{c}\neq
+   \frac{a/b}{c}             \]
+\end{InOut}
+このような分数のスタイルは別行数式にも当てはまります．
+別行数式において分数を記述しており，その分母・分子
+上にさらに分数を書く，連分数を記述する場合などは
+スラッシュ\qu{\str/}による表記をするとスマートになります．
+ただしスラッシュによる表記では\K{適宜丸括弧を補います}．
+\begin{InOut}
+\begin{displaymath}
+\frac{\frac{a-b}{c}}{d} \neq
+\frac{a-b/c}{d} \neq \frac{(a-b)/c}{d}
+\end{displaymath} 
+\end{InOut}
+%
+%\begin{InOut}
+%\begin{displaymath}
+%\frac{x+f(x)}{x-g(x)} \neq 
+%(x+f(x))/(x-g(x))     \neq 
+%\bigl(x+f(x)\bigr)\big/\bigl(x-g(x)\bigr)
+%\end{displaymath} 
+%\end{InOut}
+\begin{InOut}
+\begin{displaymath}
+(a+f(x))/(a-g(x)) \neq
+\bigl(a+f(x)\bigr)\big/
+  \bigl(a-g(x)\bigr)
+\end{displaymath} 
+\end{InOut}
+
+
+\begin{Exe}
+次の入力例を \cmd{frac}を使わないスタイルに書き直してください．
+\begin{InOut}
+ある定理により $f=\frac{1}{ef + ev}$
+であるから，$g=\frac{f + e - v}{2}$
+と定義する．
+\end{InOut}
+括弧を補うだけですから，次のようになります．
+\begin{InOut}
+ある定理により $f=1/(ef + ev)$
+であるから，$g=(f + e - v)/2$
+と定義する． 
+\end{InOut}
+\end{Exe}
+
+
+\subsection{場合分けなど}
+
+一つの式から解が複数に{\KY{場合分け}}される場合 \Cmd{cases}
+命令が使えますが\sty{amsmath}の
+\Env{cases}環境のほうがうまく行くでしょう．
+\begin{Syntax}
+\verb|\begin{cases}|\\
+%要素1 \verb|\\| 要素2 \verb|\\| $\ldots$\\
+\va{要素\mbox{$_1$}} \verb|\\| \va{要素\mbox{$_2$}} 
+ \verb|\\| $\ldots$ \verb|\\| \va{要素\mbox{$_n$}}\\
+\verb|\end{cases}|
+\end{Syntax}
+\begin{InOut}
+\( f(x) = \begin{cases}
+ \,x & \quad(x>0)\\ 
+ \,0 & \quad(x=0)\\
+ \,-x & \quad(x<0)
+  \end{cases} \)
+\end{InOut}
+他にも \Cmd{choose}のように要素を縦に並べて括弧を
+付ける命令があります．
+\zindind{丸括弧}{の数式での出力}%
+\zindind{角括弧}{の数式での出力}%
+\zindind{波括弧}{の数式での出力}%
+\zindind{数式}{中の丸括弧}%
+\zindind{数式}{中の角括弧}%
+\zindind{数式}{中の波括弧}%
+\begin{Syntax}
+\begin{tabular}{llll}
+\C{choose} & \pp{\Z{丸括弧}付き} & \C{brack} & \pp{\Z{角括弧}付き}\\
+\C{brace}  & \pp{\Z{波括弧}付き} & \C{atop}  & \pp{括弧なし}
+\end{tabular}
+\end{Syntax}
+\cmd{choose}などは全体を波括弧で括ってあげると
+正しく出力できます．
+\begin{InOut}
+\[ {a + b \brack x + y} \neq 
+   {a + b \brace x + y} \neq 
+   {a + b \atop  x + y}  \]
+\end{InOut}
+
+\begin{InOut}
+\begin{displaymath}
+\frac{a+b}{x+y} \neq \binom{a+b}{x+y}
+\end{displaymath} 
+\end{InOut}
+
+
+\subsection{数式モード中の空白と書体}
+
+数式用の環境では自動的に要素の前後の記号の種類になどにより
+空白が調節されますから意図していた結果と異なる場合があります．
+\begin{InOut}
+\emph{fool}は\(fool\)にはなりませんから
+\[ fool \neq \mathit{fool}. \]
+\end{InOut}
+\qu{fool}という文字が全て数式中では変数と解釈され，
+それぞれ{\LaTeX}が適切だと思う空白を挿入してくれています．
+これから分かるように数式モード中ではユーザが明示的に
+空白を調節すると良い場合があります．
+\begin{InOut}
+$5,000\times10=50,000$円です．\par
+$5{,}000\times10=50{,}000$円です．
+\end{InOut}
+上記の例ではコンマ\qu{\str,}が恐らく何かの区切りとして
+解釈されたのでしょう，意図していたものよりも広く
+なっています．同じように感嘆符\qu{\str{!}}などは逆に
+空白が挿入されません．ですから \cmd{,}命令で若干の
+空きを挿入します．
+\begin{InOut}
+\[  \frac{(p - 1)! (q - 1)!}
+  {p! q! r!} \neq 
+\frac{(p - 1)!\,(q - 1)!}
+  {p!\,q!\,r!}  \]
+\end{InOut}
+感嘆符\qu{\str!}の例を見ると分かりますが数式モード中
+では斜体になっていません．このように数式モード中でも
+斜体にならない記号がいくつかあります．\cmd{textit}で
+は記号もイタリック体になりますが数式中の \cmd{mathit}を
+使うといくつかの記号が斜体にならないばかりか，空白制御
+が行われません．
+\begin{InOut}
+\usepackage{amsmath}
+\newcommand*\temptxt{Is this text 
+   mode?!}
+\textit{\temptxt}\\
+\(\mathit{\temptxt}\)\\
+\(\temptxt\)\\
+\(\mathit{Is\ this\ text\ 
+   mode?!}\)
+\end{InOut}
+いずれの場合も疑問符\qu{\str?}はイタリック体には
+なっていません．このように数式中では明示的に
+イタリック体に書体を変更する命令を使ってもローマン体
+のままの記号があります．
+
+\subsection{行列の省略点}\seclab{array:dots}
+
+例えば，連立方程式を列挙するときがあるとします．
+\begin{InOut}
+\begin{eqnarray}
+ a_{11}x_1 + a_{12}x_2 + \dots + 
+ a_{1k}x_k & = & b_1 \nonumber \\
+ a_{21}x_1 + a_{12}x_2 + \dots + 
+ a_{1k}x_k & = & b_2 \nonumber \\
+  \vdots   & = & \vdots \nonumber\\
+ a_{n1}x_1 + a_{n2}x_2 + \dots + 
+ a_{nk}x_k & = & b_n  \nonumber
+\end{eqnarray}
+\end{InOut}
+
+%\env{eqnarray}環境ではなくても \env{array} 環境をうまく使えば，次のよう
+%な連立法手式を記述する事もできます．
+%
+%\begin{InTeX}
+%\begin{displaymath}
+%  \begin{array}{ccccccccc}
+%   a_{11}x_1 &+& a_{12}x_2 &+& \dots &+& a_{1k}x_k & = & b_1 \\
+%   a_{21}x_1 &+& a_{12}x_2 &+& \dots &+& a_{1k}x_k & = & b_2 \\
+%   \vdots    & &   \vdots  & &       & &  \vdots   & = & \vdots\\
+%   a_{n1}x_1 &+& a_{n2}x_2 &+& \dots &+& a_{nk}x_k & = & b_n  \\
+%  \end{array}
+%\end{displaymath}
+%\end{InTeX}
+%
+しかし，これだと適切な空白が挿入されていないので，正統な
+入出力とは言えないでしょう．そこで次のように修正します．
+
+\begin{InOut}
+\begin{displaymath}
+\begin{array}{*{2}{c@{\:+\:}}%
+   @{\cdots\:+\:}c@{\;=\;}c}
+ a_{11}x_1 & a_{12}x_2 & a_{1k}x_k
+   & b_1\\
+ a_{21}x_1 & a_{12}x_2 & a_{1k}x_k
+   & b_2\\
+ \vdots    & \vdots    & \vdots
+   & \vdots\\
+ a_{n1}x_1 & a_{n2}x_2 & a_{nk}x_k
+   & b_n\\
+\end{array}
+\end{displaymath}
+\end{InOut}
+ただし，これでは3行目にまで影響が及んでいるため，意図した
+結果になりません．そこで \C{multicolumn} 命令を用いて次のように修正しま
+す．
+\C*{dotfill}%
+\begin{InOut}
+\begin{displaymath}
+ \begin{array}{*{2}{c@{\:+\:}}%
+   @{\cdots\:+\:}c@{\;=\;}c}
+ a_{11}x_1 & a_{12}x_2 & a_{1k}x_k
+    & b_1\\
+ a_{21}x_1 & a_{12}x_2 & a_{1k}x_k
+    & b_2\\
+ \multicolumn{4}{c}{\dotfill} \\
+ a_{n1}x_1 & a_{n2}x_2 & a_{nk}x_k
+   & b_n\\
+ \end{array}
+\end{displaymath}
+\end{InOut}
+しかし，この場合においても省略点の間隔が不揃いで，完全とは言えません．
+
+
+
+%\subsection{数式の構成要素}
+%
+%新しく数学記号を作っても良いが，その記号がどのような構成要素，
+%例えば演算子なのか，関係子なのかを明示する必要があります．
+
+%\begin{Syntax}
+%\begin{tabular}{llll}
+% \C{mathop}    &\pp{大型演算子} &
+% \C{mathord}   &\pp{関係演算子} \\
+% \C{mathbin}   &\pp{普通の記号} &
+% \C{mathopen}  &\pp{二項演算子} \\
+% \C{mathclose} &\pp{開きの区切り記号} &
+% \C{mathpunc}  &\pp{閉じの区切り記号} \\
+% \C{mathinner} &\pp{内部数式} & & \\
+%\end{tabular}
+%\end{Syntax}
+
+
+\section{良くある間違いと正統な入力方法}
+
+\TeX で数式を入力しているときに初学者が犯しやすい間違いが，いろい
+ろあります．数学についてのある程度の知識があるにも関わらず表記の慣習上の
+規則を知らないがために起こり得ます．本書では比較的基礎的な部分だけの説明
+に留めてありますので，それよりも発展的な話題は，例えば\Hito{小田}{忠雄}
+による『数学の常識・非常識\zdash 由緒正しい \TeX 入力法』
+\footnote{\webOdaTeX}等を参照してください．
+
+\subsection{全角で数式は入力しない}
+
+\zindind{全角}{の数字}%
+\indindz{数字}{全角の}%
+数式において\KY{数字}は重要な基本要素です．この数字の表記の仕方一つにおいても
+丁寧に原稿の執筆を心がける事が，全体の統一性や一貫性のために重要であると
+思います．まず，基本的に\K{数字に全角はいっさい使わない}のが良いでしょ
+う．見栄え上の問題もありますが，\TeX が数式モード中で全角の数字に遭遇し
+ても，うまく処理できない場合が多いためです．次のような入力は絶対に
+やってはいけない例です．
+\begin{InOut}
+$y^２ = x^３ + ３２x^２$
+\end{InOut}
+上記の例では全ての数字を全角で入力しています．正しくは次のように表記します．
+\begin{InOut}
+$y^2 = x^3 + 32x^2$
+\end{InOut}
+
+
+\indindz{数字}{ローマ}%
+\indindz{数字}{アラビア}%
+数字だけに限らずに，全角の\Z{英字}，\Z{ローマ数字}，\Z{アラビア
+数字}は\LaTeX において\K{文章中でも数式中でも使わない}のが基本です．
+次のような入力も絶対にやってはいけない例です．
+\begin{InOut}
+１／ｅ＝１／３＋１／ｑ−１／２
+\end{InOut}
+とにかく，全角の英数字は使わないという方針で執筆すれば，
+\laTEX は正しい空白の調整ができるようになります．
+
+\subsection{文中の数式の入力}
+
+文中に出てくる数式，例えば「関数 f(x) において x = 0 では」
+という表記は誤りで，正しくは次のようにします．
+\begin{InOut}
+関数 f(x) において x = 0 では（×）\\
+関数$f(x)$において$x = 0$では（○）
+\end{InOut}
+どんなに細かい部分でも，ある部分が数式である以上，\LaTeX に対して
+そこが「数式である」という事を明示的に教えます．これにより，適切に
+数式中での書体が選択されます．
+
+\begin{Exe}
+次の入力には記法上の誤りがあります．どこに誤りがあるか見つけてください．
+\begin{InOut}
+n 次元の特性数v，１次元の特性数e，
+２次元の特性数fを考えるとき\ldots.
+\end{InOut} 
+入力例では文中のアラビア数字が全角になっています．さらに本来ならば，
+イタリック体になるべき英字も文章における通常のローマン体に
+なっていますので，次のように修正します．%「頭悪いね，チミは」と言われそう．
+\begin{InOut}
+$n$次元の特性数$v$，1次元の特性数$e$,
+2次元の特性数$f$を考えるとき\ldots.
+\end{InOut}
+\end{Exe}
+
+何らかの要素を列挙するときに，数式モードでのコンマ\str{,}を使うと，
+文中でのコンマの空白が入りません．そのため，次のような入力は避けた
+方が無難です．
+\begin{InOut}
+特性数 $v, e, f$ を考えるとき\ldots.
+\end{InOut}
+\zindind{行}{分割}
+文書全体における句読点に全角のコンマ・ピリオドか，それとも半角のカ
+ンマ・ピリオドか，または全角の点丸を使うかという問題もあります
+\footnote{句読点問題に関しては宗教論争にもなり得る話題であり，奥が深いた
+め，本書では詳しく言及しません．}．投稿先によっては指定される場合も
+あります．一貫性を重視するのであれば，以下のように半角のピリオド・コンマ
+で修正するのが良いでしょう．これにより適切な行分割も行われるようになりま
+す．
+\begin{InOut}
+特性数 $v$, $e$, $f$ を考えるとき
+\ldots. 
+\end{InOut}
+
+%\subsection{正則}
+
+
+%\subsection{ベクトルや各括弧}
+%
+%\begin{InOut}
+%$<x, y> = \sqrt{x^2 + y^2}$
+%\end{InOut}
+%
+%\begin{InOut}
+%$\langle x, y\rangle = \sqrt{x^2 + y^2}$
+%\end{InOut}
+
+
+
+%\subsection{小中高の負の遺産}
+%
+%%親切すぎる表記．由緒正しい文献を見れば分かりますが，limits付き／なし
+%
+%\begin{InOut}
+% $\displaystyle\lim_{x \to \infty} f(x)dx$
+% $\lim_{x \to \infty} f(x)dx$
+%\end{InOut}
+
+
+\input{09highmath}%   高度な数式

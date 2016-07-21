@@ -1,0 +1,107 @@
+\ProvidesFile{settings.tex}
+\makeatletter
+\ifHyper
+% 意図
+\def\@setref#1#2#3{% csname, extract group, refname
+  \ifx#1\relax
+    \protect\G@refundefinedtrue
+    \nfss@text{\reset@font\bfseries ??}%
+    \@latex@warning{%
+      Reference `#3' on page \thepage \space undefined%
+    }%
+  \else
+    \hyper@@link
+      {\expandafter\@fifthoffive#1}%
+      {\expandafter\@fourthoffive#1\@empty\@empty}%
+      {\expandafter#2#1\@empty\@empty \spacefactor \@m}%
+  \fi
+}
+\def\auto@setref#1#2#3{% csname, extract group, refname
+  \@safe@activestrue
+  \ifx#1\relax
+    \protect\G@refundefinedtrue
+    \nfss@text{\reset@font\bfseries ??}%
+    \@latex@warning{%
+      Reference `#3' on page \thepage \space undefined%
+    }%
+  \else
+    \edef\@thisref{\expandafter\@fourthoffive#1\@empty\@empty}%
+    \expandafter\test@reftype\@thisref\\%
+    \hyper@@link
+      {\expandafter\@fifthoffive#1}%
+      {\expandafter\@fourthoffive#1\@empty\@empty}%
+      {\@currentHtag\expandafter#2#1\@empty\@empty \spacefactor \@m}%
+  \fi
+  \@safe@activesfalse
+}
+
+% CTAN のベースディレクトリ
+\newcommand*\@ctan@base{http://www.ring.gr.jp/pub/text/CTAN/}
+\let \ctanBaseDir= \@ctan@base
+% CTAN に直接あくせく出来るようにする配慮
+\newcommand*\CTAN[1]{\href{\@ctan@base#1}{CTAN:~\fl{#1}}}
+\else
+\newcommand*\CTAN[1]{CTAN:~\fl{#1}}
+\fi
+% 15info.tex で使う
+\newenvironment{myreferences}{%
+  \begin{mybibliography}{99}\small}{\end{mybibliography}}
+%
+% usepackage を無効かする
+\clear@usepackage%
+% 書体属性の宣言
+\DeclareFontShape{JY1}{gbm}{m}{sc}{<->ssub*gbm/m/n}{}
+\DeclareFontShape{JT1}{gbm}{m}{sc}{<->ssub*gbm/m/n}{}
+\DeclareFontShape{U}{manual}{bx}{n}{<->ssub*manual/m/n}{}
+\DeclareFontShape{JT1}{gbm}{bx}{sc}{<->ssub*gbm/bx/n}{}
+\DeclareFontShape{JY1}{gbm}{bx}{sc}{<->ssub*gbm/bx/n}{}
+% ちょっと奇数起こしはどうしたのさ
+\def\@makeEvenChapterHead#1{%
+  \vspace*{2\Cvs}% 欧文は50pt
+  {\parindent \z@ \raggedright
+    \reset@font
+    \interlinepenalty\@M
+    \hb@xt@ \fullwidth{\Huge \headfont #1\hfill}\par\nobreak\vskip\fboxsep
+    \hrule height 1ex
+    \par\vskip2\Cvs}}% 欧文は40pt
+% 索引だけは別物さ
+\renewenvironment{theindex}{% 索引を3段組で出力する環境
+    \if@twocolumn
+      \onecolumn\@restonecolfalse
+    \else
+      \clearpage\@restonecoltrue
+    \fi
+    \columnseprule.4pt \columnsep 2zw
+    \ifx\multicols\@undefined
+      \twocolumn[\@makeschapterhead{\indexname}%
+      \addcontentsline{toc}{chapter}{\indexname}]%
+    \else
+      \ifdim\textwidth<\fullwidth
+        \setlength{\evensidemargin}{\oddsidemargin}
+        \setlength{\textwidth}{\fullwidth}
+        \setlength{\linewidth}{\fullwidth}
+        \begin{multicols}{3}[%
+           \@makeEvenChapterHead{\indexname}%
+           \addcontentsline{toc}{chapter}{\indexname}]%
+      \else
+        \begin{multicols}{2}[\chapter*{\indexname}%
+        \addcontentsline{toc}{chapter}{\indexname}]%
+      \fi
+    \fi
+    \@mkboth{\indexname}{\indexname}%
+    \thispagestyle{plainhead}%
+    \parindent\z@
+    \parskip\z@ \@plus .3\p@\relax
+    \let\item\@idxitem
+    \raggedright
+    \footnotesize\narrowbaselines
+  }{
+    \ifx\multicols\@undefined
+      \if@restonecol\onecolumn\fi
+    \else
+      \end{multicols}
+    \fi
+    \clearpage
+  }
+\makeatother
+\endinput

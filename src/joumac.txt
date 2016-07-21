@@ -1,0 +1,1014 @@
+% \iffalse meta-comment
+% Copyright (C) 2004 by Thor Watanabe
+% 
+% This file may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either
+% version 1.2 of this license or (at your option) any later
+% version.  The latest version of this license is in:
+% 
+%    http://www.latex-project.org/lppl.txt
+% 
+% and version 1.2 or later is part of all distributions of
+% LaTeX version 1999/12/01 or later.
+% 
+% \fi
+% \CheckSum{0}
+% \iffalse
+%<joumac>\NeedsTeXFormat{LaTeX2e}
+%<joumac>\ProvidesPackage{joumac}
+%<joumac>   [20006/03/01 v0.3 (Thor)]
+%<*driver>
+\documentclass{jsarticle}
+\usepackage{doc}
+\usepackage{shortvrb}
+\newcommand{\marg}[1]{\string{$\langle$\mbox{}#1\mbox{}$\rangle$\string}}
+\MakeShortVerb|
+\EnableCrossrefs
+\CodelineIndex
+\DoNotIndex{\textsf,\bs,\texttt,\glossary,\index,\zdash}
+\DoNotIndex{\def,\DescribeMacro,\@ifnextchar,\mbox,\newcommand}
+\DoNotIndex{\hspace,\normalfont,\newfont,\string,\protect}
+\DoNotIndex{\@ne,\@for,\@tempcnta,\@tempcntb,\addvspace}
+\DoNotIndex{\advance,\al,\begin,\begingroup,\bfseries}
+\DoNotIndex{\char,\color,\colorbox}
+\DoNotIndex{\DeclareRobustCommand}
+\DoNotIndex{\endlist,\varbatim,\endvarbatim}
+\DoNotIndex{\fullwidth,\hbox,\hskip,\immediate}
+\DoNotIndex{\itshape,\kern,\member,\newenvironment}
+\DoNotIndex{\parskip,\par,\parindent,\put,\ref,\relax}
+\DoNotIndex{\rightmargin,\rmfamily,\small,\TeX,\textcolor}
+\DoNotIndex{\textsl,\ttfamily,\upshape,\usepackage}
+\DoNotIndex{vector,\vskip}
+\addtolength{\textwidth}{-1in}
+\addtolength{\evensidemargin}{1in}
+\addtolength{\oddsidemargin}{1in}
+\addtolength{\marginparwidth}{1in}
+\setlength\marginparsep{10pt}
+\setlength\marginparpush{0pt}
+\setcounter{StandardModuleDepth}{1}
+\GetFileInfo{joumac.sty}
+\begin{document}
+  \DocInput{joumac.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \title{『好き好き{\LaTeXe}』用マクロ集}
+% \author{渡辺徹}
+% \date{\number\year/\number\month/\number\day}
+% \maketitle
+% \StopEventually{}
+%    \begin{macrocode}
+%<*joumac>
+%    \end{macrocode}
+%
+% \DescribeMacro{\FileDatej}
+% \DescribeMacro{\FileVerjou}
+% 冊子の配布日とバージョン情報を保持する|\FileDatej|と
+% |\FileVerjou|を定義します．
+%    \begin{macrocode}
+\newcommand* \FileDatej{\number\year/\two@digits\month/\two@digits\day}
+\FileVerjou{0.3d}
+%    \end{macrocode}
+%
+% \DescribeMacro{\author}
+% \DescribeMacro{\title}
+% \DescribeMacro{\date}
+% |\author|と|\title|と|\date|は固定です．
+%    \begin{macrocode}
+\author {渡辺徹}
+\title  {好き好き \LaTeXe 初級編}
+\date   \today
+%    \end{macrocode}
+%
+% \DescribeMacro{\RequirePackage}
+% 『好き好き』が必要とするマクロたちです．
+% マクロを読み込むときに|\ifusedvipdfm|等のブール値を
+% 使ってパッケージオプションを判定します．これは主原稿
+% で定義されています．\textsf{listings}は様々な場面で
+% 使われます．\textsf{jlisting}は通称しっぽ愛好家氏より
+% 頂いたものです．\textsf{okumacro}からは|\ruby|，
+% |\yen|，|\key|，|\return|，|\MARU|，
+% |\JTeX|，|\JLaTeX|，|screen|環境などを
+% 借用しています．箇条書き用の|namelist|環境や
+% 文献一覧を出力する|mybibliography|環境も使っています．
+% \textsf{url}パッケージからは|\url|命令などを使っています．
+% 
+%    \begin{macrocode}
+\RequirePackage[usenames]{color}[1999/02/16]%
+\RequirePackage{graphicx}[1999/02/16]%
+\RequirePackage{epic}\relax%
+\RequirePackage{eepic}\relax%
+\RequirePackage{pict2e}[2004/02/19]%
+\RequirePackage{amsmath}[2000/07/18]
+\RequirePackage{amssymb}[2002/01/22]
+\RequirePackage{array}[2003/12/17]
+\RequirePackage{bm}[2004/02/26]
+\RequirePackage{booktabs}[2003/03/28]
+\RequirePackage{calc}[1998/07/07]
+\RequirePackage{cmtt}[1996/05/25]
+\RequirePackage{delarray}[1994/03/14]
+\RequirePackage{dcolumn}[2001/05/28]
+\RequirePackage{enumerate}[1999/03/05]
+\RequirePackage{fancybox}[2000/09/19]
+\RequirePackage{ifthen}[2001/05/26]
+\RequirePackage{labelfig}\relax
+\RequirePackage{latexsym}[1998/08/17]
+\RequirePackage{leftidx}\relax
+\RequirePackage{indent}\relax% TODO
+\RequirePackage{listings}[2004/02/13]% v1.2
+\RequirePackage{longtable}[2004/02/01]
+\RequirePackage{makeidx}[2000/03/29]
+\RequirePackage{manfnt}\relax
+\RequirePackage{mflogo}[1999/03/10]
+\RequirePackage{multicol}[2004/02/14]
+\RequirePackage{multirow}\relax
+\RequirePackage{tabularx}[1999/01/07]
+\RequirePackage{theorem}[1995/11/23]
+\RequirePackage[obeyspaces,spaces]{url}\relax
+\RequirePackage{verbatim}[2003/08/22]
+\RequirePackage{wrapfig}[2003/01/31]
+\RequirePackage{xspace}[1997/10/13]
+\RequirePackage{alltt}[1991/01/01]% TODO 
+\ifx \pfmtname \@undefined \else
+  \RequirePackage{jlisting}[2004/03/24]
+  \RequirePackage {okumacro}[2003/11/24]
+\fi
+\RequirePackage{type1ec}[1991/01/01]% TODO
+\RequirePackage[T1]{fontenc}\relax%
+\RequirePackage{textcomp}\relax% TODO
+\RequirePackage{emathN}[1991/01/01]% http://emath.s40.xrea.com/
+\resettagform % これは必要
+%    \end{macrocode}
+%
+% \DescribeMacro{\lstset}
+% \DescribeMacro{\lstlistlistingname}
+% \DescribeMacro{\lstlistingname}
+% \textsf{listings}用の設定です．|\lstset|ですべての
+% \textsf{listings}の環境の設定をします．
+%    \begin{macrocode}
+\lstset{breaklines=true,columns=[l]{fullflexible},%
+   numbers=left,numberstyle={\scriptsize},%
+   stepnumber=1,numbersep=1zw,%
+   lineskip=-0.5ex}%
+\def\lstlistlistingname{ソースコード目次}
+\def\lstlistingname{ソースコード}
+% wrapfig 用の設定 (\fullwidthで入れる)
+\setlength{\wrapoverhang}{\fullwidth}
+\addtolength{\wrapoverhang}{-\textwidth}
+\addtolength{\wrapoverhang}{\marginparsep}
+\addtolength{\wrapoverhang}{-2zw}
+%    \end{macrocode}
+%
+% \DescribeMacro{\contact}
+% 冊子の作成者への連絡先を定義します．これは
+% 表紙に使われます．
+%    \begin{macrocode}
+\contact{%
+   Th\'or Watanabe\\%
+   Dept.\ of System Information Science\\%
+   Future University-Hakodate\\%
+   thor@tex.dante.jp\\%
+   \url{http://tex.dante.jp/}}%
+%    \end{macrocode}
+%
+% \DescribeMacro{\makeindex}
+% \DescribeMacro{\makeglossary}
+% \DescribeMacro{\indexname}
+% \DescribeMacro{\glossaryname}
+% 索引と命令索引を作るために|\makeindex|と|\makeglossary|
+% しています。それに因んで|\indexname|と|\glossaryname|を
+% それぞれ「索 引」と「命 令 索 引」に決めています．
+%    \begin{macrocode}
+\makeindex
+\makeglossary
+\def\indexname{索 引}
+\def\glossaryname{命 令 索 引}
+%    \end{macrocode}
+%
+% \DescribeMacro{\bs}
+% バックスラッシュにアクセスするために|\bs|命令を定義します．
+% 様々な場面で使われますがタイプライタ体での出力のときにしか
+% 使いません．
+%    \begin{macrocode}
+\newcommand{\bs}{\symbol{'134}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\cmd}
+% 文書中で{\LaTeX}のコマンドを参照するときに使われる命令です．
+% |\cmd{newcommand}|のように使います．先頭にバックスラッ
+% シュが付加されます．これは前述の|\bs|命令が使われます．
+% \DescribeMacro{\Cmd}
+% {\LaTeX}のコマンドを「索引」に追加する場合は|\cmd|ではなく
+% |\Cmd|命令を使うようにします．
+%    \begin{macrocode}
+\newcommand{\cmd}[1]{\texttt{\bs#1}}
+\newcommand{\Cmd}[1]{%
+   \glossary{#1@\texttt{\hspace*{-1.2ex}{\protect\bs#1}}}%
+   \texttt{\bs#1}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\env}
+% {\LaTeX}の環境型のコマンドを文書中で参照するときは
+% |\env|命令を使います．
+% \DescribeMacro{\Env}
+% その環境を索引に追加したければ|\Env|命令を使います．
+%    \begin{macrocode}
+\newcommand{\env}[1]{\texttt{#1}}%
+\newcommand{\Env}[1]{%
+   \index{環境!#1@\texttt{#1}}%
+   \glossary{環境!#1@\texttt{#1}}%
+   \glossary{#1かんきよう@\texttt{#1}環境}%
+   \texttt{#1}}%
+%    \end{macrocode}
+%
+% \DescribeMacro{\word}
+% 語句は|\word|命令の中に入れます．
+% \DescribeMacro{\Word}
+% 語句を索引に追加するときは|\Word|命令を使います．
+%    \begin{macrocode}
+\newcommand{\word}[1]{#1}
+\newcommand{\Word}[1]{\index{#1}#1}
+%    \end{macrocode}
+%
+% \DescribeMacro{\zdash}
+%  索引中に挿入する倍角ダッシュを|\protect|するために
+%  |\zdash|命令を定義しています．
+% \DescribeMacro{\indindz}
+% \DescribeMacro{\zindind}
+%  階層的な索引には「親」と「子」を指定してエントリさせます．
+%    \begin{macrocode} 
+\DeclareRobustCommand\zdash{\char\jis"213D\kern-.5zw%
+   \char\jis"213D\kern-.5zw\char\jis"213D\relax}
+\newcommand\zindind[2]{\index{#1!\zdash#2}}
+\newcommand\indindz[2]{\index{#1!#2\zdash}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\prog}
+% プログラム名を参照する場合は|\prog|命令を使います．
+% \DescribeMacro{\Prog}
+% プログラム名を索引に追加する場合は|\Prog|命令を使います．
+%    \begin{macrocode}
+\newcommand{\prog}{\@ifnextchar[{\yomi@prog}{\@prog}}%]
+\newcommand{\@prog}[1]{#1}
+\newcommand{\yomi@prog}[2][]{#2}
+\newcommand{\Prog}{\@ifnextchar[{\yomi@Prog}{\@Prog}}
+\newcommand{\@Prog}[1]{%
+   \index{プログラム!#1}\index{#1}#1}
+\newcommand{\yomi@Prog}[2][]{%
+   \index{プログラム!#1@\protect#2}%
+   \index{#1@\protect#2}#2}
+%    \end{macrocode}
+%
+% \DescribeMacro{\fl}
+% ファイル名を参照する場合は|\fl|を使います．
+% \DescribeMacro{\Fl}
+% ファイル名を参照し索引に追加するときは|\Fl|を使います．
+%    \begin{macrocode}
+\newcommand{\fl}[1]{\texttt{#1}}
+\newcommand{\Fl}[1]{%
+   \index{ファイル!#1@\texttt{#1}}%
+   \index{#1@\texttt{#1}}\texttt{#1}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\cls}
+% しつこいようですが，ドキュメントクラスを参照するときは
+% |\cls|命令を使います。
+% \DescribeMacro{\Cls}
+% クラスを索引にも追加するときは|\Cls|命令を使います．
+%    \begin{macrocode}
+\newcommand{\cls}[1]{\textsf{#1}}
+\newcommand{\Cls}[1]{%
+   \index{クラス!#1@\textsf{#1}}%
+   \index{#1@\textsf{#1}}\textsf{#1}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\sty}
+% マクロパッケージは|\sty|で参照します．
+% \DescribeMacro{\Sty}
+% さらに索引にも追加するには|\Sty|命令を使います．
+%    \begin{macrocode}
+\newcommand{\sty}[1]{\textsf{#1}}
+\newcommand{\Sty}[1]{%
+   \index{パッケージ!#1@\textsf{#1}}%
+   \index{#1@\textsf{#1}}\textsf{#1}}%
+%    \end{macrocode}
+%
+% \DescribeMacro{\bst}
+% 文献スタイルを参照するときは|\bst|命令を使います．
+% \DescribeMacro{\Bst}
+% 索引追加は|\Bst|です。
+%    \begin{macrocode}
+\newcommand{\bst}[1]{\textsf{#1}}
+\newcommand{\Bst}[1]{%
+	\index{文献スタイル!#1@\textsf{#1}}%
+	\index{#1@\textsf{#1}}\textsf{#1}}%
+%    \end{macrocode}
+%
+% \DescribeMacro{\hito}
+% 人名を書くときは|\hito|命令を使い敬称を省略します．
+% 敬称は|\hito|命令側で統一します．
+% \DescribeMacro{\Hito}
+% 索引に追加する場合は|\Hito|命令です．読みがある場合は
+% 任意引数で指定します．
+%    \begin{macrocode}
+\newcommand{\hito}{\@ifnextchar[{\yomi@hito}{\@hito}}
+\newcommand{\yomi@hito}[2][]{#2氏}
+\newcommand{\@hito}[1]{#1氏}
+\newcommand{\Hito}{\@ifnextchar[{\yomi@Hito}{\@Hito}}
+\newcommand{\yomi@Hito}[2][]{%
+	\index{人名!#1@\protect{#2}}%
+	\index{#1@\protect{#2}}#2氏}
+\newcommand{\@Hito}[1]{\index{人名!#1}\index{#1}#1氏}
+\newcommand{\HITO}{\@ifnextchar[{\yomi@HITO}{\@HITO}}
+\newcommand{\yomi@HITO}[2][]{%
+   \index{人名!#1@\protect{#2}}%
+   \index{#1@\protect{#2}}#2}%
+\newcommand{\@HITO}[1]{\index{人名!#1}\index{#1}#1}
+%    \end{macrocode}
+%
+% \DescribeMacro{\kount}
+% {\LaTeX}のカウンタ名を参照する場合は|\kount|を使います．
+% \DescribeMacro{\Kount}
+% 案の定索引に追加するには|\Kount|を使います．
+%    \begin{macrocode}
+\newcommand{\kount}[1]{\texttt{#1}}
+\newcommand{\Kount}[1]{%
+  \index{#1@\texttt{#1}\pp{カウンタ}}\index{カウンタ!#1@\texttt{#1}}%
+  \texttt{#1}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\exten}
+% 拡張子を示す場合は|\exten|命令を使います．引数にピリオドは
+% 省略します。
+% \DescribeMacro{\Exten}
+% 索引にも追加する場合は|\Exten|を使います．
+%    \begin{macrocode}
+\newcommand{\exten}[1]{\texttt{.#1}}
+\newcommand{\Exten}[1]{%
+  \index{拡張子!#1@\texttt{\protect\hspace*{-1ex}.#1}}%
+  \index{#1@\texttt{\protect\hspace*{-1ex}.#1} (拡張子)}%
+  \texttt{.#1}}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\newfont{\manfnt}{manfnt}
+\newcommand{\key}[1]{\texttt{#1}}
+\newcommand{\ka}{{\normalfont\textbar}}
+\renewcommand{\kaku}[1]{#1\textdegree}
+%    \end{macrocode}
+% 
+% \DescribeMacro{\va}
+% 一般的な「変数」と呼ばれる要素に対しては|\va|命令を使います．
+% \DescribeMacro{\Va}
+% |\Va|命令は2つの引数を取ります。1つ目には任意の文字列、2つ目には
+% 拡張子を書きますから，これは任意のファイルを拡張子付きで
+% 示す場合に使います．
+% \DescribeMacro{\str}
+% ソースコードの入力やその他必要と思われる「文字列」に対しては
+% |\str|命令を使います．これは先頭の文字列が|\string|で
+% カテゴリーが無効になります．
+%    \begin{macrocode}
+\newcommand{\va}[1]{{\normalfont$\langle$\mbox{}#1\mbox{}$\rangle$}}
+\newcommand{\av}[1]{{\normalfont$\langle$\mbox{}#1\mbox{}$\rangle$}}
+\newcommand{\Va}[2]{%
+   $\langle$\mbox{}\textit{#1}\mbox{}$\rangle$\exten{#2}}
+\newcommand{\str}[1]{{\normalfont\ttfamily\mdseries\string#1}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\pa}
+% {\LaTeX}コマンドの必須引数を示すために|\pa|命令を使います．
+% \DescribeMacro{\opa}
+% 任意引数の場合は|\opa|命令を使います．
+% \DescribeMacro{\xy}
+% 座標系の場合は|\xy|を使い，$x$と$y$の2つの引数を渡します．
+%    \begin{macrocode}
+\newcommand{\pa}[1]{{\ttfamily\string{}\va{#1}{\ttfamily\string}}}%
+\newcommand{\opa}[1]{{\ttfamily[}\va{#1}{\ttfamily]}}%
+\newcommand{\xy}[2]{\string({\itshape#1}\texttt, {\itshape#2}\string)}
+%    \end{macrocode}
+%
+% \DescribeMacro{\func}
+% 主にC言語における関数を示すときは|\func|命令を使います．
+% \DescribeMacro{\Func}
+% 関数を索引にも追加するときは|\Func|を使います．
+% \DescribeMacro{\res}
+% 予約語は|\res|命令を使います．
+% \DescribeMacro{\ope}
+% 演算子は|\ope|です。
+% \DescribeMacro{\Ope}
+% 演算子を索引にも追加するならば|\Ope|です．
+% \DescribeMacro{\bun}
+% C言語における「文」は|\bun|を使います．
+% \DescribeMacro{\Bun}
+% 「文」を索引に追加するときは|\Bun|です．
+%    \begin{macrocode}
+\newcommand{\func}[1]{{\ttfamily#1}}
+\newcommand{\Func}[1]{\index{関数!#1@{\ttfamily#1}}%
+   \index{#1@{\ttfamily#1}関数}{\ttfamily#1}}
+\newcommand{\res}[1]{{\normalfont\bfseries#1}}
+\newcommand{\ope}[1]{{\ttfamily#1}}
+\newcommand{\Ope}[1]{\index{演算子!#1@{\ttfamily#1}}
+   \index{#1@{\ttfamily#1}演算子}{\ttfamily#1}}
+\newcommand{\bun}[1]{{\ttfamily#1}}
+\newcommand{\Bun}[1]{\index{C言語!#1@{\ttfamily#1}文}%
+   \index{#1@{\ttfamily#1}文}{\ttfamily#1}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\option}
+% パッケージオプションやクラスオプションには|\option|命令を使う．
+% これはスラント体に変更される．
+% \DescribeMacro{\Option}
+% オプションを索引に追加する場合には|\Option|命令を使う．
+% \DescribeMacro{\copt}
+% 特別にプログラムのコマンドラインオプションの場合は|\copt|
+% 命令を使うようにすれば良い．これは索引に追加する必要はない．
+%    \begin{macrocode}
+\newcommand{\option}[1]{\textsl{#1}}
+\newcommand{\Option}[1]{%
+	\index{#1@\textsl{#1}}%
+	\index{オプション!#1@\textsl{#1}}%
+	\textsl{#1}}
+\newcommand{\copt}[1]{\texttt{#1}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\qu}
+% \DescribeMacro{\qq}
+% 欧文の引用には|\qu|と|\qq|を使います．単語の引用は|\qu|で，
+% 文の引用には|\qq|を使うようにします．
+% \DescribeMacro{\yo}
+% \DescribeMacro{\yy}
+% 和文の引用には|\yo|と|\yy|を使います．これも同じように
+% 単語には|\yo|で，文には|\yy|です．
+% \DescribeMacro{\pp}
+% 丸括弧で括る場合は|\pp|命令を使います．全角丸括弧が使われます．
+% \DescribeMacro{\wasyo}
+% \DescribeMacro{\yousyo}
+% 雑誌名や書籍名を参照するときは|\wasyo|と|\yousyo|命令を
+% 使います．和書の場合は|\wasyo|，洋書の場合は|\yousyo|です．
+% わかりやすいでしょう？
+%    \begin{macrocode}
+\newcommand{\qu}[1]{`#1'}
+\newcommand{\qq}[1]{``#1''}
+\newcommand{\yo}[1]{「#1」}
+\newcommand{\yy}[1]{『#1』}
+\newcommand{\pp}[1]{（#1）}
+\newcommand{\wasyo}[1]{『#1』}
+\newcommand{\yousyo}[1]{\emph{#1}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\optionlist}
+% クラスオプションやパッケージオプションを複数個同時に
+% 並べるときは|\optionlist|命令を使います．
+% \DescribeMacro{\Optionlist}
+% それらを索引に追加する場合は|\Optionlist|になります．
+%    \begin{macrocode}
+\def\optionlist#1{\@tempcnta=\z@ \@tempcntb=\z@%
+ \@for\member:=#1\do{\advance\@tempcnta\@ne}%
+ \@for\member:=#1\do{\advance\@tempcntb\@ne%
+   \ifnum\@tempcntb<\@tempcnta%
+         \textsl{\member}，%
+ \else%
+  \ifnum\@tempcntb=\@tempcnta%
+    \textsl{\member}%
+  \fi%
+\fi}}%
+\def\Optionlist#1{\@tempcnta=\z@ \@tempcntb=\z@%
+ \@for\member:=#1\do{\advance\@tempcnta\@ne}%
+ \@for\member:=#1\do{\advance\@tempcntb\@ne%
+   \ifnum\@tempcntb<\@tempcnta%
+	\index{\member @\textsl{\member}}%
+	\index{オプション!\member @\textsl{\member}}%
+	\textsl{\member}，%
+ \else%
+  \ifnum\@tempcntb=\@tempcnta%
+	\index{\member @\textsl{\member}}%
+	\index{オプション!\member @\textsl{\member}}%
+	\textsl{\member}%
+  \fi%
+\fi}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\win}
+% Windowsのツールバーやメニューバーを参照するときに
+% |\win|を使います．途中で改行が起こりませんので|Overfull|
+% になるので注意が必要です．
+%    \begin{macrocode}
+\newcommand{\win}[1]{{%
+   \fboxsep0pt\fboxrule0pt\colorbox[gray]{.8}{[#1]}}} 
+%    \end{macrocode}
+%
+% \begin{environment}{myquote}
+% jsclasses等では右側が字下げされませんが，
+% 右側も字下げする引用環境です．
+%    \begin{macrocode}
+\newenvironment{myquote}%
+  {\list{}{\rightmargin\leftmargin}\item\relax}{\endlist}
+%    \end{macrocode}
+% \end{environment}
+% \begin{environment}{myquotation}
+% こちらは段落の行頭が字下げされます．
+%    \begin{macrocode}
+\newenvironment{myquotation}{%
+  \list{}{%
+    \listparindent\parindent
+    \itemindent\listparindent
+    \rightmargin\leftmargin}%
+  \item\relax}{\endlist}
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{environment}{InText}
+% ユーザが入力すべきテキストを示すには|InText|環境を
+% 使います．これは|verbatim|環境に|\small|と左側の字下げをした
+% だけで，至ってシンプルです．
+%    \begin{macrocode}
+\newenvironment{InText}{%
+  \list{}{\leftmargin=2zw \rightmargin=0zw}
+   \item\small\verbatim}{\endverbatim \endlist}%
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{environment}{OutText}
+% ソースコードをタイプセットしたあとの表示を示すには
+% |OutText|環境を使います．これは入力の|InText|と対になります．
+%    \begin{macrocode}
+\newenvironment{OutText}{\unitlength=1pt
+	\begin{screen}}{\end{screen}}
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{environment}{InTerm}
+% コンソールからの文字列の入力には|InTerm|環境を
+% 使います．複数行の入力には|\item|命令を先頭におきます．
+% 特殊文字の前には適宜バックスラッシュを付けなければ
+% なりません．
+%    \begin{macrocode}
+\newenvironment{InTerm}%
+   {\list{\rule[-.2em]{1ex}{1em}}{\ttfamily
+      \itemsep=-.5ex \parsep=-.5ex}\item\relax}%
+   {\endlist}
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{environment}{OutTerm}
+% コンソールに出力される文字列を示す場合は|OutTerm|環境を
+% 使います。draftオプションが有効のときは|verbatim|に入れます．
+% そうでない時はlistingsパッケージを使います．
+%    \begin{macrocode}
+\ifdraft
+\newenvironment{OutTerm}{%
+   \list{}{\leftmargin=1.5zw \rightmargin=1.5zw}
+   \item\small\verbatim}{\endverbatim \endlist}%
+\else
+\lstnewenvironment{OutTerm}{%
+  \lstset{%
+    columns=[l]{fullflexible},
+    basicstyle={\small\ttfamily},%
+    identifierstyle={\small},%
+    commentstyle={\small},%
+    keywordstyle={\small\bfseries},%
+    ndkeywordstyle={\small},%
+    numbers=none,%
+    formfeed=\linebreak,%
+    frameshape={yny}{}{}{yny},
+    xrightmargin=1.5zw,%
+    xleftmargin=1.5zw,%
+    }}{}%
+\fi%
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{environment}{C}
+% Cのソースコードを記述するにはずばり|C|環境を使います．
+%    \begin{macrocode}
+\lstnewenvironment{C}{%
+  \lstset{%
+    xleftmargin=3zw,%
+    basicstyle={\small\ttfamily\upshape},%
+    identifierstyle={\small\ttfamily\upshape},%
+    commentstyle={\small\ttfamily\itshape},%
+    keywordstyle={\small\ttfamily\upshape},%
+    ndkeywordstyle={\small\ttfamily\upshape},%
+    }}{}%
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{macro}{\lstbash}
+% listingsのbash用の設定ですが使っていません．
+%    \begin{macrocode}
+%\newcommand{\lstbash}{%
+%\lstset{%
+%  formfeed={\linebreak},%
+%   columns=[l]{fullflexible},%
+%   basicstyle={\small},%
+%   identifierstyle={\small},%
+%   commentstyle={\small\ttfamily},%
+%   keywordstyle={\small\bfseries},%
+%   ndkeywordstyle={\small},%
+%   xrightmargin=1.5zw,xleftmargin=1.5zw,%
+%   frame=tb,
+%   language=ksh,numbers=left,numberstyle={\scriptsize},%
+%   stepnumber=1,numbersep=1zw}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{environment}{Syntax}
+% {\LaTeX}などにおける重要な構文は|Syntax|環境中に入れます．
+% 改行などは行われず，ただ単に要素を文章幅いっぱいの枠付きの
+% 箱に挿入するだけですから，ページ区切りには気をつけてください．
+%    \begin{macrocode}
+\newenvironment{Syntax}%
+  {\bgroup \parindent=0pt%
+    \par\addvspace{1ex plus 0.8ex minus 0.5ex}%
+    \vskip-\parskip\begin{Sbox}%
+    \begin{minipage}{\ftextwidth}}%
+  {\end{minipage}\end{Sbox}\fbox{\TheSbox}%\IOlabel%
+    \par\addvspace{1ex plus 0.8ex minus 0.5ex}%
+    \vskip-\parskip\egroup\par\noindent}%
+%    \end{macrocode}
+% \end{environment}
+%
+% \DescribeMacro{\pref}
+% ページを参照する場合は|\pageref|ではなく|\pref|を使います．
+% この場合|\pref|側で「○ページ」の「ページ」に該当する
+% 文字を統一します．
+% \DescribeMacro{\chapref}
+% 章を参照するときは|\ref|ではなく|\chapref|命令を使います．
+% \DescribeMacro{\secref}
+% 同じように節も|\secref|を使います．%
+% \DescribeMacro{\fullref}
+% ページ番号と節番号の両方を「○ページ○節」として
+% 参照するには|\fullref|を使います．
+% \DescribeMacro{\figref}
+% 図は|\figref|です．
+% \DescribeMacro{\tabref}
+% 表は|\tabref|です．
+% \DescribeMacro{\eqref}
+% 式を参照するための|\eqref|はすでにamsmathか何かで定義されているので
+% |\def|を使っています．
+%    \begin{macrocode}
+\newcommand{\pref}[1]{\pageref{#1}~ページ}
+\newcommand{\chapref}[1]{\ref{#1}~章}
+\newcommand{\secref}[1]{\ref{#1}~節}
+\newcommand{\fullref}[1]{\pref{#1}\secref{#1}~参照}
+\newcommand{\figref}[1]{\figurename~\ref{#1}}
+\newcommand{\tabref}[1]{\tablename~\ref{#1}}
+\def\eqref#1{式~(\ref{#1})}
+%    \end{macrocode}
+%
+% \DescribeMacro{\Xy}
+% 各種ロゴを定義します．
+% \DescribeMacro{\PIC}
+% \DescribeMacro{\Tpic}
+% \DescribeMacro{\JLaTeXe}
+% \DescribeMacro{\XyMTeX}
+% \DescribeMacro{\eTeX}
+% \DescribeMacro{\eLaTeX}
+% \DescribeMacro{\AmsLaTeX}
+% \DescribeMacro{\dvipdfmx}
+% dvipdfm$x$のロゴは正式なものではないかもしれません．
+% |\kterm|はLinux系OSで広く使われている漢字も入力できる
+% 端末エミュレータです．
+% |\TtH|のロゴも正式ではありません．索引追加において
+% 不都合があるのでこのスタイルになっています．
+%    \begin{macrocode}
+\DeclareRobustCommand{\Xy}{\leavevmode%
+   \hbox{\kern-.1em X\kern-.3em\lower.4ex\hbox{Y\kern-.15em}}}
+\newcommand{\PIC}{PIC}
+\newcommand{\Tpic}{{\normalfont\textsc{Tpic}}}
+\DeclareRobustCommand{\JLaTeXe}{\leavevmode%
+   \lower.5ex\hbox{\rm J}\kern-.1em\LaTeXe}
+\DeclareRobustCommand{\XyMTeX}{%
+   X\kern-.3em\smash{\raise.5ex\hbox{$\m@th\Upsilon$}}%
+   \kern-.3em{M}\kern-0.1em\TeX}
+\DeclareRobustCommand{\eTeX}{$\m@th\varepsilon$-\TeX}
+\DeclareRobustCommand{\eLaTeX}{$\m@th\varepsilon$-\LaTeX}
+\def\NTS{\leavevmode\hbox{$\cal N\kern-0.35em\lower0.5ex\hbox{$\cal T$}%
+  \kern-0.2emS$}}
+\providecommand{\AmSLaTeX}{\AmS-\LaTeX}
+\newcommand{\dvipdfmx}{Dvipdfm{\rmfamily\itshape x}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\kterm}
+% 用語の統一のためにいくつかの書籍名や用語を登録しています．
+% |\LMANUAL|，|\COMP|，|\GCOMP|，|\WCOMP|の4冊は金字塔の作品．
+% |\TEXBOOK|と|\METAFONTBOOK|はKnuth氏のバイブル．
+%    \begin{macrocode}
+\newcommand{\LMANUAL}{文書処理システム{\LaTeXe}}
+\newcommand{\COMP}{{\LaTeX}コンパニオン}
+\newcommand{\GCOMP}{{\LaTeX}グラフィックスコンパニオン}
+\newcommand{\WCOMP}{{\LaTeX} Webコンパニオン}
+\newcommand{\TEXBOOK}{\TeX book}% 原著
+\newcommand{\METAFONTBOOK}{\MF ブック} % 訳著
+\newcommand{\ANOTHERMANUAL}{Another Manual}
+\newcommand{\PS}{PostScript}
+\newcommand{\IM}{ImageMagick}
+\newcommand{\EPSconv}{EPS-Conv}
+\newcommand{\GS}{Ghostscript}
+\newcommand{\BB}{BoundingBox}
+\newcommand{\kterm}{kterm}
+\newcommand{\TtH}{TtH}
+\newcommand{\laTEX}{\TeX/\LaTeX}
+%    \end{macrocode}
+%
+% \DescribeMacro{\m}
+% 以下|\m|，|\M|，|\T|，|\KM|，|\A|，|\B|，|\W|は
+% すべて表中で使います．これは左側の要素に記号を出力し
+% 右側の要素にソースを出力します．要するに記号の
+% 入出力の対を示すために何度も使われています．
+% 上記の命令ではバックスラッシュは省略します．
+% 結果的に記号が出力されていない場合もあるので
+% タイプミスに注意してください．
+% \DescribeMacro{\M}
+% |\m|の場合は索引に追加しない数学記号であり，
+% |\M|命令は数学記号として命令索引に追加します．
+% \DescribeMacro{\T}
+% 文字記号は|\T|として命令索引に追加します．
+% \DescribeMacro{\KM}
+% 「記号　命令」は何度も使われるかもしれないので|\KM|
+% としてあります．
+%    \begin{macrocode}
+\newcommand{\m}[1]{$#1$&\texttt{\string#1}}
+\newcommand{\M}[1]{%
+   \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs#1}%
+	\hskip1em($\protect\csname #1\endcsname$)}%
+   $\csname #1\endcsname$&\texttt{\bs#1}}
+\newcommand{\BM}[1]{%
+   \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs#1}%
+	\hskip1em($\protect\csname #1\endcsname$)}%
+   \texttt{\bs#1}}
+\newcommand{\T}[1]{%
+   \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs\string#1}%
+	\hskip1em(\csname#1\endcsname)}%
+   \csname#1\endcsname&\texttt{\bs\string#1}}
+\newcommand{\KM}{記号&命令}
+%    \end{macrocode}
+%
+% \DescribeMacro{\A}
+% 文章中の特殊記号には|\A|を使います．
+% \DescribeMacro{\B}
+% 文長中のアクセントには|\B|命令を使い，1つ目の引数に
+% 命令を，2つ目の引数にアクセントつけられる文字を書きます．
+% \DescribeMacro{\W}
+% 数式中のアクセントには|\W|命令で，1つ目の引数に
+% 命令を，2つ目の引数にアクセントをつけられる記号を書きます．
+%    \begin{macrocode}
+\newcommand{\A}[1]{%
+   \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs#1}%
+      \hskip1em(\csname#1\endcsname)}%
+   \csname#1\endcsname&\texttt{\bs#1}}
+\newcommand{\B}[2]{%
+   \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs#1}%
+      \hskip1em(\csname#1\endcsname{#2}\relax)}%
+   \csname#1\endcsname{#2}&%
+    \texttt{\protect\bs\string#1\string{#2\string}}}
+% \W{#1}{#2} 数式中のアクセント
+\newcommand{\W}[2]{%
+  \glossary{#1@\hspace*{-1.2ex}\texttt{\bs#1}%
+    \hskip1em($\csname#1\endcsname{#2}$)}%
+  $\csname#1\endcsname{#2}$ & %
+  \texttt{\bs#1\string{#2\string}}}%
+%    \end{macrocode}
+%
+% \DescribeMacro{\demowidth}
+% 文章中で線の長さを示すには|\demowidth|を使います．これは
+% lshortからの改変です．長さが負の場合の処理を追加した方が
+% 良いかもしれません．
+%    \begin{macrocode}
+\newcommand{\demowidth}[1]{%
+   \rule{0.3pt}{1.3ex}\rule{#1}{0.3pt}\rule{0.3pt}{1.3ex}}
+%    \end{macrocode}
+% どこかで|hoge|カウンタが使われています．というか様々な
+% ところでこの|hoge|カウンタが乱用されています．
+%    \begin{macrocode}
+\newcounter{hoge}
+\newcommand{\bool}{ブール値}%?
+%    \end{macrocode}
+%
+% \begin{environment}{Prob}
+% 「問題」型の環境です．\textsf{theorem}パッケージを使って
+% 定義しています．
+%    \begin{macrocode}
+{\theoremstyle{plain}
+   \theorembodyfont{\normalfont\rmfamily}
+   \theoremheaderfont{\normalfont\bfseries}
+   \newtheorem{Prob}{{\manfnt \char'170}問題}[chapter]}
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{environment}{Exe}
+% 「例題」型の環境です．
+%    \begin{macrocode}
+{\theoremstyle{plain}
+   \theorembodyfont{\normalfont\rmfamily}
+   \theoremheaderfont{\normalfont\bfseries}
+   \newtheorem{Exe}[Prob]{$\triangleright$例題}}
+%    \end{macrocode}
+% \end{environment}
+%
+% \DescribeMacro{\ifusehyperref}
+% \textsf{hyperref}を使っていた場合にはPDF文書情報やPDFしおり
+% 等の設定が必要になりますので，|\ifusehyperref|で判断しています．
+%    \begin{macrocode}
+\ifusehyperref
+	\usepackage[dvipdfm,bookmarks=true,hyperindex=true%
+	bookmarkstype=toc,bookmarksnumbered=false,%
+	bookmarksopen=true,colorlinks=true,%
+	linkcolor=blue,citecolor=blue,filecolor=blue,%
+	menucolor=magenta,pagecolor=blue,urlcolor=blue,%
+        plainpages=false%
+	]{hyperref}
+	\special{pdf:docinfo <<
+	/Author   ( Thor Watanabe )
+	/Title    ( How to Use LaTeX2e )
+	/Subject  ( For LaTeX2e Begginers )
+	/Creator  ( pLaTeX2e with hyperref and dvipdfmx )
+	/Keywords ( TeX, LaTeX, LaTeX2e, pTeX, pLaTeX, pLaTeX2e)
+	>>}
+\AtBeginDocument{%
+  \def\theHProb{\theHchapter.\arabic{Prob}}%
+  \def\theHExe{\theHchapter.\arabic{Prob}}%
+  \def\theHItem{\theHchapter.\arabic{Item}}%
+  \def\theHenumi{\theHchapter.\arabic{enumi}}%
+}
+\else
+   \ifusehtml
+      \usepackage[jp,html,3,fonts+,fn-in,png,imgdir:images/,%
+         pic-m,pic-eqnarray,pic-align]{tex4ht}%
+      \usepackage[tex4ht]{hyperref}
+      \def\ruby#1#2{#1(#2)}
+      \def\Ruby#1#2{#1(#2)}
+      \def\JBibTeX{J\BibTeX}
+      \def\pTeX{p\TeX}
+      \def\pLaTeX{p\LaTeX}
+      \def\pLaTeXe{p\LaTeXe}
+   \fi\fi
+\newcommand{\RED}[1]{\ifusehyperref\textcolor{red}{#1}\else#1\fi}
+\newcommand{\BLUE}[1]{\ifusehyperref\textcolor{blue}{#1}\else#1\fi}
+\DeclareRobustCommand{\funnist}{{FUNNIST}}
+\ifusehyperref
+   \def\funnist{\textcolor{red}{FUN}\textcolor{blue}{NIST}}
+\fi
+\ifusehtml
+   \def\funnist{\textcolor{red}{FUN}\textcolor{blue}{NIST}}
+\fi
+\newcommand{\HEXCODE}[1]{0x#1}%${}_{16}$}
+\newcommand{\DECCODE}[1]{#1}%${}_{10}$}
+\newcommand{\OCTCODE}[1]{\str'#1}%${}_{8}$}
+\newcommand{\BINCODE}[1]{#1}%${}_{2}$} 
+\newcommand{\kasane}[2]{{\ooalign{#1\crcr\hss#2\hss}}}
+%    \end{macrocode}
+%
+% \DescribeMacro{\dos}
+% 端末に表示される警告などを示すために|\dos|命令を使います．
+% これは背景が黒，文字色が白になりますので，まるでプロンプトの
+% ようなスタイルになります．
+% \DescribeMacro{\dosh}
+% |\dosh|を使うと文章幅いっぱいのスタイルになります。自分で
+% 適宜改行をします．
+%    \begin{macrocode}
+\newcommand{\dos}[1]{%
+   \colorbox{black}{\color{white}{%
+   \small\normalfont\ttfamily #1\hfil}}}
+\newcommand{\dosh}[1]{%
+   \noindent\colorbox{black}{%
+   \hbox to \ftextwidth{\color{white}{%
+   \small\normalfont\ttfamily #1\hfil}}}}
+%    \end{macrocode}
+
+% \DescribeMacro{\IOmargin}
+% \DescribeMacro{\IOlabel}
+% 文章幅からはみ出る要素は一応版面いっぱいまでなら許容される．
+% このとき，奇数ページか偶数ページかでマージンを変更する．
+% これには|\IOmargin|と|\IOlabel|を合わせて使うようにすると
+% 可能です．文章幅を飛び出る要素の直前に|\IOmargin|命令を書き
+% 要素の直後に|\IOlabel|を書きます．あらかじめ要素は|\makebox|
+% 命令などで幅を0ptに見せかける処理が必要になります．\par
+% 入出力の対を版面いっぱいに表示するために|InOut|環境を定義します．
+% これもlshortの定義を少し変更しただけです．\textsf{fancybox}の
+% マクロを使えばもう少し簡単になる？
+%    \begin{macrocode}
+\newlength{\IOm}
+\setlength{\IOm}{\textwidth}
+\addtolength{\IOm}{-\fullwidth}
+\newwrite\example@out
+\newcounter{IOcnt}
+\setcounter{IOcnt}{1}
+\newcommand{\IOmargin}{%
+  \stepcounter{IOcnt}%
+  \expandafter\ifx\csname r@exa:\theIOcnt\endcsname\relax\else
+    \ifusehyperref
+      \ifodd\HyPsd@pageref{exa:\theIOcnt}\hspace*{0pt}%
+         \else\hspace*{\IOm}\fi
+    \else
+      \ifodd\pageref{exa:\theIOcnt}\hspace*{0pt}%
+         \else\hspace*{\IOm}\fi\fi\fi}
+\newcommand{\IOlabel}{\label{exa:\theIOcnt}}
+\newenvironment{InOut}%
+   {\begingroup%
+      \@bsphack%
+       \immediate\openout \example@out \jobname.exa%
+       \let\do\@makeother\dospecials\catcode`\^^M\active%
+       \def\verbatim@processline{%
+          \immediate\write\example@out{\the\verbatim@line}}%
+          \verbatim@start}%
+   {\immediate\closeout\example@out\@esphack\endgroup%
+   \stepcounter{IOcnt}% 
+   \setlength{\parindent}{0pt}%
+   \par\addvspace{3.0ex plus 0.8ex minus 0.5ex}\vskip-\parskip%
+\expandafter\ifx\csname r@exa:\theIOcnt\endcsname\relax\else%
+   \ifusehyperref%
+     \ifodd\HyPsd@pageref{exa:\theIOcnt}\hspace*{0pt}%
+     \else\hspace*{\IOm}\fi%
+   \else\ifodd\pageref{exa:\theIOcnt}\hspace*{0pt}%
+     \else\hspace*{\IOm}\fi%
+   \fi\fi%
+   \makebox[0pt][l]{%
+   {\begin{minipage}[c]{.47\fullwidth}%
+      \small\verbatiminput{\jobname.exa}%
+   \end{minipage}}%
+   \hspace{0.05\fullwidth}%
+   {\begin{minipage}{.47\fullwidth}%
+      \begin{trivlist}\item\small\input{\jobname.exa}%
+      \end{trivlist}%
+   \end{minipage}}%
+   }\label{exa:\theIOcnt}%
+   \par\addvspace{3.0ex plus 0.8ex minus 0.5ex}\vskip-\parskip}%
+%    \end{macrocode}
+%
+% \DescribeMacro{LRArrow}
+% 作りかけのマクロです．使ってません．
+%    \begin{macrocode}
+%\newcount\al
+%\newcount\posX
+%\newcount\posY
+%\def\LRArrow(#1,#2)#3[#4]{%
+%   \@tempcnta=#1
+%   \@tempcntb=#2
+%   \al=#3
+%   \divide\al 2
+%   \advance\@tempcnta \al
+%   \put(\@tempcnta,\@tempcntb){\vector(+1,0){\al}}%
+%   \put(\@tempcnta,\@tempcntb){\vector(-1,0){\al}}%
+%   \put(\@tempcnta,\@tempcntb){\makebox(0,-3)[t]{\texttt{#4}}}%
+%}
+%\def\UpArrow(#1,#2)#3[#4]{%
+%   \@tempcnta=#1
+%   \@tempcntb=#2
+%   \al=#3
+%   \divide\al 2
+%   \advance\@tempcntb \al
+%   \put(\@tempcnta,\@tempcntb){\vector(0,+1){\al}}%
+%   \put(\@tempcnta,\@tempcntb){\vector(0,-1){\al}}%
+%   \put(\@tempcnta,\@tempcntb){\mbox{\space\texttt{#4}}}%
+%}
+%    \end{macrocode}
+% \DescribeMacro{\image}
+% 以下のマクロはほとんど使われていないはず．
+% プログラムやマクロの作成者などの顔写真を紹介するには
+% |\authorpict|命令を使います．
+% \begin{quote}
+%    |\authorpict||{bb=x0 y0 x1 y1}||{ファイル名}||{人名}| 
+% \end{quote}
+% これは標準では傍注に出力されます．画像はJPEG形式であると
+% 改訂の元で取り込まれますので，画像の拡張子は省略します．
+%    \begin{macrocode}
+\newcommand{\image}[4][]{%
+\begin{figure}[htbp]
+ \begin{center}
+   \includegraphics[#1]{images/#2}
+   \caption{#3}\label{fig:#4}
+ \end{center}
+\end{figure}}
+\newenvironment{ftable}[1][htbp]%
+  {\begin{table}[#1]
+   \begin{Sbox}\begin{minipage}{%
+  (\linewidth-2\fboxrule-2\fboxsep)}}%
+  {\end{minipage}\end{Sbox}\fbox{\TheSbox}\end{table}} 
+\newcommand{\cc}[2]{{#1} & \color{#1}{■} &{#2}}
+\newcommand{\kutiref}[1]{口絵~\ref{kuti:#1}}
+\newcommand{\kuti}[1]{\refstepcounter{enumi}%
+  口絵\theenumi~#1}
+\newcommand{\authorpict}[3]{%
+   \marginpar{%
+     \ifusedvipdfm%
+      \includegraphics[#1,width=\linewidth]{images/#2.jpg}%
+     \else
+      \includegraphics[#1,width=\linewidth]{images/#2.eps}%
+     \fi
+   {\small\\\hfil#3\hfil\\\hfil(HPより)\hfil\par}}}%
+\newenvironment{column}{\begin{small}\paragraph*{コラム}}{\end{small}}
+\newcommand{\okumura}{\url{http://oku.edu.mie-u.ac.jp/~okumura/}}
+\newcommand{\joukuten}{。}
+\newcommand{\joutouten}{、}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%</joumac>
+\endinput
+%    \end{macrocode}
+%
+% \PrintChanges
+% \PrintIndex
+% \Finale

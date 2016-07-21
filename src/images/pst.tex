@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+\usepackage[dvips]{graphicx,color}
+\usepackage{pst-all,pstcol}
+\pagestyle{empty}
+\begin{document}
+\begin{TeXtoEPS}
+\begin{math}
+ \rput(0,3.5){\rnode{root}\relax}
+ \cnodeput[fillstyle=solid,fillcolor=cyan](1,3){N}{N}
+ \cnodeput[fillstyle=solid,fillcolor=magenta](3,3){M}{M}
+ \cnodeput[fillstyle=solid,fillcolor=yellow](5,3){S}{S}
+ \cnodeput[doubleline=true,fillstyle=solid,fillcolor=red](3,1){Q}{q}
+ \psset{arrows=->,labelsep=3pt}
+ \ncarc{N}{M}   \Aput{b}
+ \ncarc{M}{S}   \Aput{a}
+ \ncarc{S}{M}   \Aput{b}
+ \ncline{N}{Q}  \Bput{y}
+ \ncline{M}{Q}  \Aput{y}
+ \ncline{S}{Q}  \Aput{y}
+ \ncline[doubleline=true]{root}{N}
+ \nccircle{->}{N}{10pt} \Bput{a}
+ \nccircle{->}{M}{10pt} \Bput{b}
+ \nccircle{->}{S}{10pt} \Bput{a}
+ \nccircle[angleA=180]{->}{Q}{10pt} \Bput{\{a,b,y\}}
+\end{math}
+\end{TeXtoEPS}
+\end{document}

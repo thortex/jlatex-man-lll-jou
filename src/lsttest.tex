@@ -1,0 +1,133 @@
+%#!platex
+\begin{filecontents}{lstlng.tex}
+\lsttestlang ABAP.
+\lsttestlang ACSL.
+\lsttestlang Ada.
+\lsttestlang Algol.
+\lsttestlang Ant.
+\lsttestlang Assembler.
+\lsttestlang [x86masm]Assembler.
+\lsttestlang [gnu]Awk.
+\lsttestlang [POSIX]Awk.
+\lsttestlang bash.
+\lsttestlang Basic.
+\lsttestlang [Visual]Basic.
+\lsttestlang [ANSI]C.
+\lsttestlang [Handel]C.
+\lsttestlang [Objective]C.
+\lsttestlang [Sharp]C.
+\lsttestlang [ISO]C++.
+\lsttestlang [ANSI]C++.
+\lsttestlang [GNU]C++.
+\lsttestlang [Visual]C++.
+\lsttestlang [light]Caml.
+\lsttestlang [Objective]Caml.
+\lsttestlang Clean.
+\lsttestlang [ibm]Cobol.
+\lsttestlang [1974]Cobol.
+\lsttestlang [1985]Cobol.
+%\lsttestlang Comal 80.
+\lsttestlang csh.
+\lsttestlang Delphi.
+\lsttestlang Eiffel.
+\lsttestlang Elan.
+\lsttestlang erlang.
+\lsttestlang Euphoria.
+\lsttestlang Fortran.
+\lsttestlang [77]Fortran.
+\lsttestlang [90]Fortran.
+\lsttestlang [95]Fortran.
+\lsttestlang GCL.
+\lsttestlang Gnuplot.
+\lsttestlang Haskell.
+\lsttestlang HTML.
+\lsttestlang IDL.
+\lsttestlang [empty]IDL.
+\lsttestlang [CORBA]IDL.
+\lsttestlang inform.
+\lsttestlang Java.
+\lsttestlang [empty]Java.
+\lsttestlang [AspectJ]Java.
+\lsttestlang JVMIS.
+\lsttestlang ksh.
+\lsttestlang Lisp.
+\lsttestlang [empty]Lisp.
+\lsttestlang [Auto]Lisp.
+\lsttestlang Logo.
+\lsttestlang [empty]make.
+\lsttestlang [gnu]make.
+\lsttestlang Mathematica.
+\lsttestlang Matlab.
+\lsttestlang Mercury.
+\lsttestlang MetaPost.
+\lsttestlang Miranda.
+\lsttestlang Mizar.
+\lsttestlang ML.
+\lsttestlang Modula-2.
+\lsttestlang MuPAD.
+\lsttestlang NASTRAN.
+\lsttestlang Oberon-2.
+\lsttestlang [OMG]OCL.
+\lsttestlang [decorative]OCL.
+\lsttestlang Octave.
+\lsttestlang Oz.
+\lsttestlang [Borland6]Pascal.
+\lsttestlang [Standard]Pascal.
+\lsttestlang [XSC]Pascal.
+\lsttestlang Perl.
+\lsttestlang PHP.
+\lsttestlang PL/I.
+\lsttestlang Plasm.
+\lsttestlang POV.
+\lsttestlang Prolog.
+\lsttestlang Promela.
+\lsttestlang Python.
+\lsttestlang R.
+\lsttestlang Reduce.
+\lsttestlang Rexx.
+\lsttestlang RSL.
+\lsttestlang Ruby.
+\lsttestlang [PLUS]S.
+\lsttestlang [empty]S.
+\lsttestlang SAS.
+\lsttestlang Scilab.
+\lsttestlang sh.
+\lsttestlang SHELXL.
+\lsttestlang [67]Simula.
+\lsttestlang [CII]Simula.
+\lsttestlang [DEC]Simula.
+\lsttestlang [IBM]Simula.
+\lsttestlang SQL.
+\lsttestlang [empty]tcl.
+\lsttestlang [tk]tcl.
+\lsttestlang [AlLaTeX]TeX.
+\lsttestlang [common]TeX.
+\lsttestlang [LaTeX]TeX.
+\lsttestlang [plain]TeX.
+\lsttestlang [primitive]TeX.
+\lsttestlang VBScript.
+\lsttestlang Verilog.
+\lsttestlang [empty]VHDL.
+\lsttestlang [AMS]VHDL.
+\lsttestlang [97]VRML.
+\lsttestlang XML.
+\lsttestlang XSLT.
+\end{filecontents}
+\documentclass[a4j,papersize]{jsarticle}
+\usepackage{listings,jlisting}
+\IfFileExists{dvipdfmx.def}{%
+  \usepackage[dvipdfmx]{color,graphicx}}{%
+  \usepackage[dvipdfm]{color,graphicx}}
+\begin{document}
+\par \narrowbaselines
+\makeatletter
+\def\@dir@prefix{/}
+\def\@lstsrc@dir{lstsrc\@dir@prefix}
+\def\lsttestlang{\@ifnextchar[{\@lsttestlang}{\@@lsttestlang}}
+\def\@@lsttestlang#1.{\IfFileExists{\@lstsrc@dir#1.tst}%
+   {\input{#1.tst}}{\texttt{no file #1.tst}\par}}
+\def\@lsttestlang[#1]#2.{\IfFileExists{\@lstsrc@dir#2-#1.tst}%
+   {\input{#2-#1.tst}}{\texttt{no file #2-#1.tst}\par}}
+\makeatother
+\input{lstlng}
+\end{document}

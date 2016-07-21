@@ -1,0 +1,1264 @@
+%#!platex jou.tex
+\chapter{文献一覧の作成}\seclab{jbibtex}
+\begin{abstract}
+%論文などの文書で重要なのが\Z{参考文献}です．参考文献の
+%扱いがきちんとできればより良い論文になります．参考文献を
+%明記することはその文献の著者に対する礼儀です．さらに読者が
+%その論文に興味を持ったとき，その事項を深く知るための道しるべ
+%にもなります．そもそも他人の著作物を引用したり転載するには
+%\Z{著作権法}という法律の範囲内で行う必要があります．
+%この章では{\LaTeX}での参考文献の取り扱い方を紹介します．
+論文などの文書で重要なのが\Z{参考文献}です．参考文献の扱い
+がきちんとできればより良い論文になります．参考文献を明記す
+る事はその文献の著者に対する礼儀です．さらに読者がその論
+文に興味を持ったとき，その事項を深く知るための道しるべにも
+なります．そもそも他人の著作物を（転載ではなく）引用するに
+は著作権法という法律の範囲内で行う必要があります．この章で
+は{\LaTeX}での参考文献の取り扱い方を紹介します．
+\end{abstract}
+
+%\input{copy}
+
+%\section{参考文献の慣わし}
+%%あまりに前置きが長くなりましたが，参考文献の意義と出
+%%典の明記の必要性について理解してもらえたと思います．
+%
+%\Z{参考文献}を明記することはその文献の著者に対する
+%礼儀です．さらに読者がその論文に興味を持ったとき，その
+%事項を深く知るための道しるべにもなります．そもそも他
+%人の著作物を引用したり転載するには著作権法という法律
+%の範囲内で行う必要があるのは前述の通りです．参考文
+%献は文書の終わりにまとめて記載するのが慣わしです．本
+%文中では括弧書きで\yo{著者名と年号}だけの表示にしたり，
+%参考文献の通し番号だけの表示にする場合もあります．
+%
+%\indindz{スタイル}{文献一覧の}%
+%参考文献は文書の終わりにまとめて表示するのは分かりま
+%したが，さらにそれらの文献はあるスタイルに合わせて
+%\K{並べ替える}ことになります．例えば参考文献を
+%引用した順番で並べ替えるスタイルや，文献の著者名順
+%に並べ替えるスタイルもあります．いずれにしても読者に
+%対しての明確な道しるべとして存在する必要があります
+%ので，その点を考慮した並べ替え方を行います．例えば参
+%考文献が非常に多い場合，これらを手動で並べ替える作業
+%だけで一晩かかりそうです．これを自動化するために
+%\Person{Oren}{Patashnik}が作成した\Prog[BibTeX]{\BibTeX}
+%というプログラムを使うと便利です．通常は日本語化された
+%\Prog[JBibTeX]{\JBibTeX}を使うことになるでしょう．
+
+\section{参考文献の明記}
+\indindz{スタイル}{文献一覧の}%
+
+\Z{参考文献} (\Z{references}) を明記する事はその文献の
+{著者}に対する礼儀です．さらに\Z{読者}がその論文に興味
+を持ったとき，その事項を深く知るための道しるべにもなりま
+す．そもそも他人の\Z{著作物}を（\Z{転載}ではなく）\Z{引用}
+するには\K{\Z{著作権法}という法律の範囲内で行う必要が
+あります}．
+
+参考文献は，文書の\Z{巻末}にまとめて記載するものや，
+脚注としてそのページに記載する書式などがあります．本文中
+では括弧書きで\yo{著者名と年号}だけの表示にしたり，参考
+文献の通し番号だけにする場合もあります．参考文献の書式は
+各学会やその地方の慣習によって異なります．
+
+さらにそれらの文献はあるスタイルに合わせて\K{並べ替える}
+事になります．
+例えば参考文献を\K{引用した順番で並べ替える}スタイルや，
+文献の\K{著者名順に並べ替える}スタイルもあります．いず
+れにしても読者に対しての明確な道しるべとして存在する必要が
+ありますので，その点を考慮した並べ替え方を行います．
+
+例えば参考文献が非常に多い場合，これらを手動で並べ替える作業
+だけで一晩かかりそうです．これを自動化するために
+\Person{Oren}{Patashnik}が作成した\Prog[BibTeX]{\BibTeX}%
+というプログラムを使うと便利です．通常は日本語化された
+\Prog[JBibTeX]{\JBibTeX}を使う事になると思われます．
+
+手動で参考文献を並べ替える場合は\E{thebibliography}環境と
+呼ばれる専用の環境に \C{bibitem} コマンドで文献を追加します．
+\zindind{参考文献}{データベース}%
+\JBibTeX\ を用いる場合は{参考文献データベース}である
+\Va{file}{bib}に文献を追加し，\JBibTeX\ がソーティングを
+行います．いずれの方法においても本文中では \C{cite} で追加した
+文献を参照します．
+
+
+\section{参考文献を手動で並べる場合}\seclab{tedeyaru}
+%まずは文献を手動で並べ替えそれを出力する方法を先に
+%紹介します．参考文献がそれほど多くない場合は文献を
+%手動で並べ替えることが考えられます．そのときは
+%\Env{thebibliography}環境を使います．文献を
+%\begin{Syntax}
+% \Cmd{bibitem}\opa{表示形式}\pa{ラベル} \va{項目}
+%\end{Syntax}
+%のように文書の末尾にまとめます．
+%これらの文献を\env{thebibliography}環境を使って
+%囲みます．
+%\begin{Syntax}
+%\verb|\begin{thebibliography}|\pa{ラベルの幅}\\
+% \Cmd{bibitem}\opa{表示形式}\pa{ラベル} \va{項目}\\
+%\verb|\end{thebibliography}|
+%\end{Syntax}
+%
+%参照するときは
+%\begin{quote}
+% \Cmd{cite}\pa{ラベル}
+%\end{quote}
+%とします．例を示すと以下のようになります．
+%\begin{InTeX}
+%Donald Knutu氏による\emph{\TeX ブッ
+%ク}~\cite{TeX book}は手元に置きたい
+%名著である．
+%\begin{thebibliography}{9}
+%\bibitem{TeX book} Donald~E. Knuth. 
+%   改訂新版{\TeX}ブック. 
+%   アスキー, 1989. 
+%\end{thebibliography}
+%\end{InTeX}
+%ここでの\env{thebibliography}環境
+%の引数は\qu{\str{9}}となっていますがこれは参考文献の表示形式に
+%割り当てるラベルの最大の幅を指定します．
+%参照している文献が一桁のときは
+%\begin{InTeX}
+%\begin{thebibliography}{9}
+%\end{InTeX}
+%のようにしますが，2桁に突入したときは
+%\begin{InTeX}
+%\begin{thebibliography}{99}
+%\end{InTeX}
+%と書きます．
+
+\oldBibItem% ここでオリジナルの \bibitem の定義を使う．
+
+まずは文献を手動で並べ替えそれを出力する方法を先に
+紹介します．参考文献がそれほど多くない場合は文献を
+手動で並べ替える事が考えられます．そのときは
+\Env{thebibliography}環境を使います．文献を \C{bibitem}命令
+を用いて文書の末尾にまとめます．
+\zindind{文書}{の末尾}%
+
+\begin{Syntax}
+ \Cmd{bibitem}\opa{表示形式}\pa{ラベル} \va{項目}
+\end{Syntax}
+
+これらの文献を\env{thebibliography}環境を使って囲みます．
+\begin{Syntax}
+\verb|\begin{thebibliography}|\pa{幅}\\
+ \Cmd{bibitem}\opa{表示形式}\pa{ラベル} \va{項目}\\
+\verb|\end{thebibliography}|
+\end{Syntax}
+\indindz{幅}{参考文献リストの}%
+
+参照するときは該当箇所で \cmd{cite}コマンドを使います．
+\begin{Syntax}
+ \va{文献}\string~\Cmd{cite}\opa{注記}\pa{ラベル}
+\end{Syntax}
+
+\va{注記}にはページ番号などを記述します．例を示すと以下のようになります．
+
+\begin{InText}
+論文作成をするならば木下是雄による『理科系の作文技術』\cite{KK1981}は
+一読したい著作である．複数の文献を参照する場合は文献~\cite{KK1981}
+\cite{AY1991}とせずに，文献~\cite{KK1981,AY1991}とするのが正しい．
+ただし，注記がある場合は複数の参照を一つにまとめるという事はしないという
+規則も存在する~\cite[Chapter.~8]{KK1981}\cite[pp.80--89]{AY1991}．
+\begin{thebibliography}{9}
+\bibitem{KK1981}
+	木下是雄．『理科系の作文技術』．中公新書624．中央公論社，1981．
+\bibitem{AY1991} Ada Young. \emph{The Art of Awk Programming}. 
+      \textbf{5}. Angus Univ.~Press. 1991.
+\end{thebibliography}
+\end{InText}
+
+\zindind{論文}{作成}
+\begin{OutText}\small
+\zindind{作文}{技術}%
+論文作成をするならば\Z{木下是雄}による『理科系の{作文技術}』[1] は
+一読したい名著である．複数の文献を参照する場合は文献~[1][2]とせずに，
+文献~[1,2]とするのが正しい．
+ただし，注記がある場合は複数の参照を一つにまとめるという事はしないという
+規則も存在する~[Chapter.~8; 1][pp.80--89; 2]．
+
+\par\vskip 1em
+\noindent{\Large\headfont 参考文献}\par\vskip 1em
+\begin{mybibliography}{9}
+\item 木下是雄．『理科系の作文技術』．中公新書624．中央公論社，1981． 
+\item Ada Young. \emph{The Art of awk programming}. 
+      \textbf{5}. Angus Univ.~Press. 1991.
+\end{mybibliography} 
+\end{OutText}
+
+ここでの\env{thebibliography}環境
+の引数は\qu{\str{9}}となっていますがこれは参考文献の表示形式に
+割り当てる番号などの最大の幅を指定します．参照している文献が一桁のときは
+`\verb|\begin{thebibliography}{9}|'
+のようにしますが，文献項目が2桁を超えたときは
+`\verb|\begin{thebibliography}{99}|'
+と書きます．
+
+\subsection{文献の並べ方}
+
+\env{thebibliography}環境では文献は自動的に並べ替えられません．
+そのときは手動で文献を並び替えます．文献の並べ替えの仕方は
+様々あるのですが，書籍の場合は例えば次のように統一するという
+方法があります．
+
+\begin{Syntax}
+\Cmd{bibitem}\opa{表示}\pa{ラベル} \va{著者}. 
+ \va{\Z{書名}}. \va{\Z{シリーズ}}. \va{\Z{発行年}}, 
+ \va{\Z{出版社}}. \va{\Z{注記}}.
+\end{Syntax}
+
+読者には\K{誰のなんという文献}という
+事が伝わりやすいスタイルです．このように文献を追加し，
+複数の文献を並べるときは
+\begin{itemize}
+ \item 最初の著者の姓をアルファベット順で並べる．
+ \item 同じ著者から複数の文献を参考にしているときは
+       発表年が早い方を先に並べる．
+\end{itemize}
+という規則に従います．その他読者に有益だと思う情報があれば，
+\zindind{参考文献}{の補足事項}
+項目の最後に\va{注記}として補足事項を書きます．
+
+例えば1999年に未来出版から出版された\yo{未来太郎}の『未来論』という文献
+があるとします．
+\begin{InText}
+ \bibitem[Mirai 1999]{MT1999} 未来太郎. 『未来論』．1999, 未来出版. 
+\end{InText}
+\yo{未来太郎}は\qu{Taro Mirai}という読みになるので，
+\begin{InText}
+\begin{thebibliography}{Watanabe 2000}
+ \bibitem[Hokkai 1997]{HM1997a} Michiko Hokkai. 
+   \emph{Going My Way}. 1997, Future.
+ \bibitem[Hokkai 1999]{HM1999a} 北海道子.
+   それが私の生きる道. 1999, 未来出版.
+ \bibitem[Watanabe 2000]{NN2000a} 渡辺徹. 
+   未来大学の見学. 2000, NNN出版.
+\end{thebibliography}
+\end{InText}
+のような文献リストがあった場合は，
+\qu{[Hokkai 1999]}と\qu{[Watanabe 2000]}のあいだに入り，
+次のような出力になります．
+\begin{OutText}
+\begin{mybibliography}{Watanabe 2000}
+ \bibitem[Hokkai 1997]{HM19971a} 
+   Michiko Hokkai. \emph{Going My Way}. 1997, Future.
+ \bibitem[Hokkai 1999]{HM1999a} 
+   北海道子.それが私の生きる道. 1999, 未来出版.
+ \bibitem[Mirai 1999]{MT1999} 
+   未来太郎. 『未来論』．1999, 未来出版. 
+ \bibitem[Watanabe 2000]{NN2000a} 
+  渡辺徹. 未来大学の見学. 2000, NNN出版.
+\end{mybibliography}
+\end{OutText}
+
+
+例では北海道子の場合は\yo{北海道子}と\qu{Michiko Hokkai}
+\zindind{著者名}{の統一}%
+の2通りあります．これは不正確で，\K{同じ著者名の表示は統一します}．
+%\K{日本人の名前は姓名のあいだに空白は挿入しません}．%
+\indindz{番号}{参考文献の}%
+表示形式は特に指定しなかった場合は昇順に番号付けされます．
+この表示形式の規則としては\yo{[番号]}とか\yo{[名前 年号]}など
+作成者と読者に分かりやすいような表示方法にすれば良いでしょう．
+
+しかし，これは自分で文献を並べ替えなどする必要がありますので
+文献を沢山参照している論文などを作成するときには実用的とは言
+えません．
+
+\section{参考文献をプログラムで並べ替えるとき}\seclab{bunken2}
+
+%参考文献が非常に多い場合は手動で並べ替えるのが
+%困難です．参考文献の番号付け，並び替えを行うときに
+%著者順とか発表年順などの規則が存在します．{\LaTeX}には
+%このような手間を省いてくれるプログラムがきちんとあります．
+%日本語化された\Prog[JBibTeX]{\JBibTeX}~\cite{omjbibtex,omjbtxdoc} 
+%というのがこれにあたります．原理は簡単で決められたスタイル
+%に合わせて複数の文献を並び替えるだけです．
+
+参考文献が非常に多い場合は手動で並べ替えるのが困難です．
+参考文献の番号付け，並び替えを行うときに引用順とか発表年
+順などの書式が存在します．{\LaTeX}にはこのような手間を省
+いてくれるプログラムがきちんとあります．日本語化された
+\Prog[JBibTeX]{\JBibTeX}~\cite{omjbibtex,omjbtxdoc} とい
+うのがこれにあたります．原理は簡単で決められたスタイル
+\indindz{並び替え}{文献の}に合わせて複数の文献を\Z{並び替え}る
+だけです．
+
+\subsection{\texorpdfstring \JBibTeX {JBibTeX}  の使い方}
+
+参考\pp{引用}文献は{\LaTeX}のソースとは別のファイルに保存
+します．これを\K{文献データベース}と呼びます．ファイ
+ル名は任意でよいのですが拡張子は{\exten{bib}}となるよう
+にしてください．
+
+\subsection{文献データベースの作成}
+\indindz{ファイル}{文献データベース}%
+
+プログラムによって半自動的に文献を並べ替える方法を紹介します．
+まずは\KY{文献データベース}と呼ばれるファイルを作ります．
+名前は\fl{file.bib}という事にしておきます．
+使い方は一つの文献に対して
+\begin{Syntax}
+\str@\va{文献の形式}\verb|{|\va{ラベル}\str,\\
+\quad   \va{属性\mbox{$_1$}} \str= \pa{値\mbox{$_1$}}\str,\\
+\quad   \va{属性\mbox{$_2$}} \str= \pa{値\mbox{$_2$}}\str, \\
+\verb|}|
+\end{Syntax}
+という記述をします．このような記述を文献の数だけ作成します．
+参考文献といっても色々ありますので，まずは具体例を見てください．
+\begin{InText}
+@book{TM2004a,
+author    = {未来 太郎},
+yomi      = {Taro Mirai},
+title     = {未来を深く考える},
+publisher = {未来出版},
+year      = {2004},
+note      = {007//Wa},
+}
+\end{InText}
+%これを見て，勘の良い人ならば
+この文献データベースを記述するための規則があります．
+\begin{itemize}
+ \item 一つの文献は\Z{アットマーク}\qu{\str{@}} からはじめます．
+
+ \item \qu{\str@}の後に\qu{\str{book}}とありますが
+       これは\yo{文献の形式}を表します．この場合は一般に
+       本屋さんで売っている\qu{\str{book}}である事が
+       分かります．
+
+\indindz{波括弧}{文献リスト中の}%
+ \item 次にその文献の情報を{波括弧}で括ります．
+       括るときはまずその文献に\va{ラベル}を
+       つけます．要は目印です．これがないと参照できません．
+       ここでは覚えやすいように\qu{\str{TM2004a}}と著者名
+       の頭文字と発行年にしています．\zindind{著者名}{の頭文字}
+
+ \item \qu{\bibi{author}}，\qu{\bibi{yomi}}，\qu{\bibi{title}}，
+       \qu{\bibi{publisher}}，\qu{\bibi{year}}，\qu{\bibi{note}}
+       などの属性に値を設定します．
+
+ \item \K{行末にコンマを記述します}．
+       \zindind{行末}{のコンマ}
+       これがないと処理の段階でエラーになります．
+
+ \item \K{値は波括弧で囲みます}．
+
+ \item 日本人の著者名は姓名のあいだに半角の空白を入れます．
+       \zindind{著者名}{の姓名のあいだ}%
+       \indindz{空白}{著者名中の}%
+       \K{実際に出力されるときは自動的に除かれます}．
+
+ \item 著者名の読み\qu{\str{yomi}}には\yo{名}の次に\yo{姓}を書きます．
+\end{itemize}
+このような文献データベース\fl{file.bib}を作成したならば，今度
+は原稿の本体で，この文献を参照します．参照のコマンドは \Cmd{cite} で
+す．方法は\secref{tedeyaru}の場合と同様です．
+
+\subsection{参考文献一覧の出力}
+
+%一通り参照したら今度は{\LaTeX}文書の一番最後に参考文献を
+%出力する記述を追加します．\Z{プリアンブル}でする事は
+%ありません．文書の最後のほうで \Cmd{bibliography}命令を
+%使って次のようにします．
+%\begin{Syntax}
+%\Cmd{bibliographystyle}\pa{スタイル}\\
+%\Cmd{bibliography}\pa{ファイル名}
+%\end{Syntax}
+%\va{スタイル}には文献を並べかえるスタイルを指定し，
+%\va{ファイル名}には文献データベースの\Va{ファイル}{bib}
+%から拡張子\exten{bib}を除いた名前を書きます．
+%
+%これでソースファイルの編集は終わりました．しかしこのまま
+%では参考文献の一覧は出力されません．ここで{\JBibTeX}とい
+%うプログラムを使用します．端末などからファイルのある場所
+%に移動して次のコマンドを実行します．
+%\begin{InTerm}
+%  \type{platex file.tex}
+%  \type{jbibtex file}
+%  \type{platex file.tex}
+%  \type{platex file.tex}
+%\end{InTerm}
+%とすると参考文献が出力されます．ここで参考文献データベース
+%に文献を追加していても本文中で参考していない\pp{\cmd{cite}命令で
+%参照していない}場合はその文献は一覧には出力されませんので
+%注意してください．本文中で明示的に参考しなくても文献リスト
+%には出力したいときには
+%\begin{quote}
+%\cmd{nocite}\pa{ラベル}
+%\end{quote}
+%とすることで参考文献リストにも出力できます．
+
+一通り参照したら今度は{\LaTeX}文書の一番最後に参考文献を
+出力する記述を追加します．\Z{プリアンブル}でする事は
+ありません．文書の最後のほうで \Cmd{bibliography} 命令を
+使って次のようにします．\index{巻末}%
+\begin{Syntax}
+\Cmd{bibliographystyle}\pa{スタイル}\\
+\Cmd{bibliography}\pa{ファイル名}
+\end{Syntax}
+\va{スタイル}には文献を並べ替えるスタイルを指定し，
+\va{ファイル名}には文献データベースの\Va{ファイル}{bib}
+から拡張子\exten{bib}を除いた名前を書きます．
+
+これでソースファイルの編集は終わりました．
+例えば，ファイルは次のように記述できます．
+\begin{InText}
+\documentclass{jsarticle} 
+\begin{document}
+この冊子~\cite{TW2004a}を参照してください．
+\bibliographystyle{jplain}
+\bibliography{ref}
+\end{document}
+\end{InText}
+しかしこのままでは文献一覧は出力されません．
+ここで{\JBibTeX}というプログラムを使用します．
+コンソールなどからファイルのある場所に移動して次のコマンドを実行します．
+\begin{InTerm}
+\type{platex } \va{file} \pp{\cmd{cite}からラベル参照を作成}
+\type{jbibtex} \va{file} \pp{\Va{文献一覧}{bib}を入力}
+\type{platex } \va{file} \pp{\Va{文献一覧}{bbl}からラベル情報を取得}
+\type{platex } \va{file} \pp{相互参照の問題が解決する}
+\end{InTerm}
+すると文献一覧が出力されます%（\figref{bibtexproc}）．
+．
+
+%\begin{figure}[htbp]
+%\begin{center}
+%\begin{minipage}{\linewidth}
+% \newcommand\sitahe[1]{$\Downarrow$ \makebox[100pt][l]{#1}}%
+% \newcommand\hidarihe[1]{$\ \leftarrow\ $ #1}%
+%   \Va{原稿}{tex}\\
+%   \sitahe{\LaTeX \pp{\cmd{cite}からラベル参照を作成}}\\ 
+%   \Va{原稿}{aux}\\
+%   \sitahe{\BibTeX \hidarihe{\Va{文献一覧}{bib}を入力}}\\
+%   \Va{文献一覧}{bbl}\\
+%   \sitahe{\LaTeX \pp{\Va{文献一覧}{bbl}からラベル情報を取得}} \\
+%   \Va{原稿}{aux}\\
+%   \sitahe{\LaTeX \pp{相互参照の問題を解決する}}\\
+%   \Va{原稿}{dvi}
+%\end{minipage}
+% \caption{\texorpdfstring \BibTeX {BibTeX}の処理過程}\figlab{bibtexproc}
+%\end{center}
+%\end{figure}
+
+\JBibTeX を実行すると次のようなメッセージが出力されます．
+
+\begin{OutTerm}
+This is JBibTeX, Version 0.99c-j0.33 (Web2C 7.5.2)
+The top-level auxiliary file: file.aux
+The style file: jplain.bst
+Database file #1: ref.bib 
+\end{OutTerm}
+
+\Exten*{bbl}%
+上記のメッセージが表示されると，同一フォルダに並べ替え後の
+文献一覧ファイル \Va{file}{bbl}が生成されます．
+%のようなメッセージが表示されます．
+1行目には{\JBibTeX}のバージョン情報，2行目には使用した
+中途ファイル\pp{\fl{file.aux}}，3行目には文献を出力する
+スタイル\pp{\Fl{jplain.bst}}，最後に文献データベース 
+\pp{\fl{ref.bib}}には何を使ったのかが出力されています．
+もしも，この段階で何も表示されなければ\JBibTeX が
+\K{異常終了した事を意味しますので}，\JBibTeX\ の
+ログファイル \Va{file}{blg}を参照してください．
+
+3度もタイプセットしなければならないのは面倒かもしれませんが，
+1度{\JBibTeX}によって文献一覧 \Va{file}{bbl}を作成しておけば
+再度文献一覧を作成するのは新しく文献を参照したときだけです．
+原稿執筆中は特に正式な文献一覧が必要なわけではありませんので，
+最終的な原稿のタイプセットのときだけ3回ほどタイプセットすれば
+良い事になります．
+このようなタイプセット処理を半自動的に行うには，
+\Prog{Make}や\Prog{latexmk}を使う方法もあります．
+
+
+
+さて，どうしてこのようになっているのかを少し考えてみましょう．
+まずは以下のようなファイル\fl{hoge.tex}を作成してください．
+
+\begin{InTeX}
+\documentclass{jsarticle} 
+\begin{document}
+この文書~\cite{TW2004a}は稚拙だ．
+\bibliographystyle{jplain}
+\bibliography{ref}
+\end{document}
+\end{InTeX}
+
+次に以下のような参考文献データベース\fl{ref.bib}を作成してください．
+
+\begin{InText}
+@book{TW2004a,
+author    = {渡辺 徹},
+yomi      = {Toru Watanabe},
+title     = {未来を深く考える},
+publisher = {日本北海出版},
+year      = {2004},
+note      = {実在しません}}
+\end{InText}
+
+このようなファイルが出来上がったら端末から\fl{hoge.tex}を
+1回だけタイプセットします．すると端末には次のような警告が表示されます．
+
+\begin{OutTerm}
+LaTeX Warning: Citation `TW2004a' on page 1 undefined on 
+input line 3.
+No file hoge.bbl.
+LaTeX Warning: There were undefined references.
+\end{OutTerm}
+
+一つ目の警告では
+参照する対象が見つからないと言われています．次に
+\dos{No file hoge.bbl}と言われて\fl{hoge.bbl}という
+ファイルが足りない事になっています．最後に
+正しく相互参照の処理をできなかったと報告されます．
+
+\Exten*{aux}%
+ここで\fl{hoge.aux}の中身をのぞいてみましょう．
+ファイルの中には以下のの4行が書き出されているでしょう．
+
+\begin{InText}
+\relax
+\citation{TW2004a}
+\bibstyle{jplain}
+\bibdata{ref}
+\end{InText}
+
+実は{\JBibTeX}は
+この情報を使って参考文献の並び替えをします．
+例えば文書で引用された順に文献を並び替えるときには
+その引用された順番が分からなければなりませんから，
+このように\Va{file}{aux}から何らかの情報を得る事にな
+るのです．
+
+次に{\JBibTeX}を使って文献の一覧を作成します．端末などから
+\begin{InTerm}
+   \type{jbibtex hoge}
+\end{InTerm}
+とすると次のようなメッセージが表示されます．
+
+\begin{OutTerm}
+This is JBibTeX, Version 0.99c-j0.33 (Web2C 7.5.2)
+The top-level auxiliary file: hoge.aux
+The style file: jplain.bst
+Database file #1: ref.bib 
+\end{OutTerm}
+
+1行目には{\JBibTeX}のバージョン情報，2行目には使用した
+中途ファイル\pp{\fl{hoge.aux}}，3行目には文献を出力する
+スタイル\pp{\Fl{jplain.bst}}，最後に文献データベース 
+\pp{\fl{ref.bib}}には何を使ったのかが出力されています．
+
+このようにして並べ替えなどを終えた文献一覧はこの場合
+\fl{hoge.bbl}に書き出されています．実際\fl{hoge.bbl}の
+中身を見てみると次のような出力となっています．
+
+\begin{InTeX}
+\begin{thebibliography}{1}
+\bibitem{TW2004a} 渡辺徹.
+\newblock 未来を深く考える.
+\newblock 日本北海出版, 2004.
+\newblock 実在しません.
+\end{thebibliography} 
+\end{InTeX}
+
+これは\secref{tedeyaru}で
+手動で記述した場合と類似しています．この段階で
+\fl{hoge.bbl}が作成されていない場合は何らかの
+記述ミスが考えられますので{\JBibTeX}の処理結果を
+\fl{hoge.blg}から読み取ってください．
+
+うまく\fl{hoge.bbl}が作成されているならば，その文献一覧を
+\fl{hoge.tex}に取り込むために
+\begin{InTerm}
+   \type{platex hoge.tex}
+\end{InTerm}
+として再度タイプセットします．すると端末には次のような警告などが表示され
+ます．
+
+\begin{OutTerm}
+LaTeX Warning: Citation `TW2004a' on page 1 undefined on input line 3.
+(./hoge.bbl) [1] (./hoge.aux)
+LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. 
+Rerun to get cross-references right.) 
+\end{OutTerm}
+
+ラベルに関して何か変更があったから
+再度タイプセットしなさいと言われていますので，
+\begin{InTerm}
+   \type{platex hoge.tex}
+\end{InTerm}
+として3度目のタイプセットをする事になります．
+3度もタイプセットしなければならないのは面倒かもしれませんが，
+1度{\JBibTeX}によって文献一覧\Va{hoge}{bbl}を作成しておけば
+再度文献一覧を作成するのは新しく文献を参照したときだけだと
+思います．原稿執筆中は特に正式な文献一覧が必要なわけでは
+ありませんので，最終的な原稿のタイプセットのときだけ
+\begin{InTerm}
+   \type{platex hoge.tex}
+   \type{jbibtex hoge}
+   \type{platex hoge.tex}
+   \type{platex hoge.tex}
+\end{InTerm}
+とすれば良い事になります．
+
+
+\begin{Trick}
+基本的に文献一覧\Va{file}{bbl}は文書\Va{file}{tex}の巻末にまとめる事にな
+りますから，本文から参照\pp{\cmd{cite}}する場合は必ず\Z{後方参照}\pp{ファ
+イルの後ろに参照元がある状態}になってしまいます．そのため，\BibTeX を実
+行した後に 2 回ほど\LaTeX を実行しなければなりません．
+\end{Trick}
+
+\begin{Prob}
+これによりファイルの後方を参照している時には，絶対
+2 回以上のタイプセット（コンパイル）が必要になります．
+さらに C コンパイラが実は複数回に渡って同じファイル \Va{file}{c} を
+読み込んでいるという事実が判明します．
+
+\begin{InTeX}
+\documentclass{jsarticle}
+\begin{document}
+\section{序論}\label{joron}
+\section{本論}\label{honron}
+\ref{joron}節では云々．
+\end{document}
+\end{InTeX}
+
+参照する要素が一行先にあるだけでも，\TeX のような伝統的なプログラムは
+同じファイルを複数回読み込む必要があるわけです．
+
+\begin{InTeX}
+\documentclass{jsarticle}
+\begin{document}
+\section{序論}\label{joron}
+\ref{honron}節では云々．% 後方参照を追加
+\section{本論}\label{honron}
+\ref{joron}節では云々．
+\end{document}
+\end{InTeX}
+
+\end{Prob}
+
+\begin{Prob}
+参考文献データベースに文献を追加していても本文中で参考していない
+\pp{\cmd{cite}命令で参照していない}場合はその文献は一覧には出力
+されませんので注意してください．本文中で明示的に参照しなくても
+文献一覧に出力したいときは \C{nocite}コマンドを使います．
+\begin{Syntax}
+\cmd{nocite}\pa{ラベル}
+\end{Syntax}
+
+適当な文献データベース \Va{file}{bib}が存在するとして，
+以下のファイルをタイプセットし，この状況における \cmd{nocite}
+命令の役割について考えてみてください．
+
+\begin{InTeX}
+\documentclass{jsarticle}
+\bibliographystyle{jplain}
+\begin{document}
+\nocite{*}
+\bibliography{file}
+\end{document}
+\end{InTeX}
+
+% 略解：アスタリスクがワイルドカードになっています．
+\end{Prob}
+
+
+
+\subsection{文献の種類及び項目}
+%\begin{Syntax}
+%\Cmd{bibliographystyle}\pa{スタイル}\\
+%\Cmd{bibliography}\pa{ファイル名}
+%\end{Syntax}
+%\Cmd{bibliographystyle}命令は参考文献の出力形式
+%を指定します．\qu{jplain}というのは\yo{日本で標準}の形式
+%という意味です．\texttt{\bs bibliography}命令で文献データ
+%ベースを読み込んでいます．これは複数ファイルをコンマで区
+%切って読み込んでもできます．
+%
+%参考文献としてその文献がどのような形式なのかを指定する必
+%要があります．雑誌の1部なのか，論文の1部なのかを明示し
+%ます．
+%\begin{InText}
+%@book{label,
+%\end{InText}
+%となっている一行で\qu{\str{book}}となっている部分に対応する
+\begin{Syntax}
+\Cmd{bibliographystyle}\pa{スタイル}\\
+\Cmd{bibliography}\pa{ファイル名, \ldots}
+\end{Syntax}
+\Cmd{bibliographystyle}命令は参考文献の出力形式を指定します．
+\qu{jplain}というのは，昇順に番号付けを行なう一般的な形式で
+す．\C{bibliography}命令で文献データベースを読み込んでいます．
+これは複数ファイルをコンマで区切って読み込んでもできます．
+
+参考文献としてその文献がどのような形式なのかを指定する必
+要があります．雑誌の1部なのか，論文の1部なのかを明示し
+ます．
+
+\begin{InText}
+@book{label,
+\end{InText}
+
+となっている一行で\qu{\str{book}}となっている部分に対応する
+形式を\tabref{bunkenkeisiki}から選んでください．
+\begin{table}[htbp]
+\begin{center}
+\caption{文献の形式}\tablab{bunkenkeisiki}
+\begin{tabular}{ll}
+\hline
+\Th{文献の形式} & \Th{説明} \\
+\hline
+%\texttt{article} & 論文誌など発表された論文\\
+%\texttt{book} & 出版社の明示された本\\
+%\texttt{booklet} & 印刷，製本されているが出版主体が不明なもの\\
+%\texttt{inbook} & 書物の一部\pp{章，節，文など何でも}\\
+%\texttt{incollection} & それ自身の表題を持つ，本の一部分\\
+%\texttt{inproceedings} & 会議録中の論文\\
+%\texttt{manual} & マニュアル\\
+%\texttt{masterthesis} & 修士論文\\
+%\texttt{phdthesis} & 博士論文\\
+%\texttt{misc} & 他のどれにも当てはまらないときに使う\\
+\bubu{article}       & \Z{論文誌}など発表された論文\\
+\bubu{book}          & \Z{出版社}の明示された本\\
+\bubu{booklet}       & \Z{印刷}，\Z{製本}されているが出版主体が不明なもの\\
+\bubu{inbook}        & 書物の一部\pp{章，節，文など何でも}\\
+\bubu{incollection}  & それ自身の\Z{表題}を持つ，本の一部分\\
+\bubu{inproceedings} & \Z{会議録中の論文}\indindz{論文}{会議録中の}\\
+\bubu{manual}        & \Z{マニュアル}\\
+\bubu{masterthesis}  & \Z{修士論文}\indindz{論文}{修士}\\
+\bubu{phdthesis}     & \Z{博士論文}\indindz{論文}{博士}\\
+\bubu{misc}          & 他のどれにも当てはまらないときに使う\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\qu{\str{author}}，\qu{\str{title}}，\qu{\str{publisher}}，
+\qu{\str{year}}以外にも指定できる項目があります．
+文献リストの各文献に\tabref{bunkenfield}の項目 
+\pp{フィールド}を追加します．
+\begin{table}[htbp]
+\begin{center}\indindz{番号}{論文誌の}%
+\caption{フィールド名}\tablab{bunkenfield}
+\begin{tabular}{ll}
+\hline
+\Th{項目} & \Th{内容} \\\hline
+%\texttt{address} &  出版社の住所\\
+%\texttt{annote} &  注釈付きのスタイルで使われる\\
+%\texttt{author} & 著者名 \\
+%\texttt{booktitle} &  本の名前\\
+%\texttt{chapter} &  章，節などの番号\\
+%\texttt{crossref} &  相互参照する文献のデータベースキー\\
+%\texttt{edition} &  本の版\\
+%\texttt{editor} &  編集者\\
+%\texttt{howpublished} &  どのようにして発行されたか\\
+%\texttt{journal} &  論文誌名\\
+%\texttt{key} &  著者名がないときに相互引用，ラベル作成などに使われる\\
+%\texttt{month} &  発行月か書かれた月\\
+%\texttt{note} &  読者に役立つ付加情報\\
+%\texttt{number} &  論文誌などの番号\\
+%\texttt{organization} &  %
+%会議を主催した機関名あるいはマニュアルの出版主体\\
+%\texttt{pages} &  ページ\pp{範囲}\\
+%\texttt{publisher} & 出版社\pp{者}名 \\
+%\texttt{school} &  論文が書かれた大学\\
+%\texttt{series} &  シリーズの本の名前\\
+%\texttt{title} &  表題\\
+%\texttt{volume} &  論文誌などの巻\\
+%\texttt{year} &  発行年か書かれた年\\
+\bibi{address}      & \Z{出版社}の\Z{住所}\\
+\bibi{annote}       & \Z{注釈}付きのスタイルで使われる\\
+\bibi{author}       & 著者名 \\
+\bibi{booktitle}    & 本の名前\\
+\bibi{chapter}      & 章，節などの番号\\
+\bibi{crossref}     & 相互参照する文献の\Z{データベースキー}\\
+\bibi{edition}      & 本の\Z{版}\\
+\bibi{editor}       & \Z{編集者}\\
+\bibi{howpublished} & どのようにして\Z{発行}されたか\\
+\bibi{journal}      & \Z{論文誌}名\\
+\bibi{key} &  著者名がないときに相互引用，ラベル作成などに使われる\\
+\bibi{month}        & \Z{発行月}か書かれた月\\
+\bibi{note}         & 読者に役立つ\Z{付加情報}\\
+\bibi{number}       & \Z{論文誌}などの番号\\
+\bibi{organization} &  %
+             \Z{会議}を主催した\Z{機関名}あるいはマニュアルの出版主体\\
+\bibi{pages}        & ページ\pp{範囲}\\
+\bibi{publisher}    & \Z{出版社}\pp{者}名 \\
+\bibi{school}       & 論文が書かれた\Z{大学}\\
+\bibi{series}       & シリーズ名\\
+\bibi{title}        & \Z{表題}\\
+\bibi{volume}       & \Z{論文誌}などの巻\\
+\bibi{year}         & \Z{発行年}か書かれた年\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+文献の\va{形式}により必須となる項目が違います．各文献における
+必須項目と任意項目は\tabref{bunken:hissu}の通りです．
+\begin{table}[htbp]
+\begin{center}
+\caption{文献の種類における必須・任意項目}\tablab{bunken:hissu}
+\begin{tabular}{lp{50ex}}
+\hline
+\Th{文献の種類} & \Th{項目} \\ \hline
+%
+\texttt{article}    & 
+ \texttt{author}，\texttt{title}，\texttt{journal}，
+ \texttt{year} \\ 
+任意                & 
+ \texttt{volume}，\texttt{number}，\texttt{pages}，
+ \texttt{month}，\texttt{note}  \\ 
+\hline
+%
+\texttt{book}       &
+ \texttt{author}，\texttt{title}，\texttt{publisher},
+ \texttt{year} \\
+任意                & 
+ \texttt{volume}，\texttt{series}，\texttt{address}，
+ \texttt{edition}，\texttt{month}，\texttt{note} \\
+\hline
+%
+\texttt{booklet}    & \texttt{title}\\
+任意                & 
+ \texttt{author}，\texttt{howpublished}，\texttt{adddress}，
+ \texttt{month}，\hfil \texttt{year}，\hfil \texttt{note}\\
+\hline
+%
+\texttt{inbook}     & 
+ \texttt{author}，\texttt{title}，\texttt{chapter}，
+ \texttt{pages}，\texttt{publisher}，\texttt{year}\\
+任意                & 
+ \texttt{volume}，\texttt{series}，
+\texttt{type}，\texttt{note} ，
+ \texttt{address}，\texttt{edition}，\texttt{month}\\
+\hline
+%
+\texttt{incollection}&
+ \texttt{booktitle}，\texttt{author}，\texttt{title}，\texttt{year}
+ \texttt{publisher}，\\
+任意                & 
+ \texttt{editor}，\texttt{volume}，\texttt{series}，
+ \texttt{type}，\texttt{month}，\hfil \texttt{note}，\hfil
+ \texttt{address}，\texttt{edition}\\
+\hline
+%
+\texttt{inproceedings}& 
+ \texttt{author}，\texttt{title}，\texttt{booktitle}，
+ \texttt{year}\\
+任意                & 
+ \texttt{editor}，\texttt{volume}，\texttt{series}，
+ \texttt{pages}，\texttt{address}，\texttt{month}，
+ \texttt{organization}，\texttt{publisher}，\texttt{note}\\
+\hline
+%
+\texttt{manual}     & \texttt{title}\\
+任意                & 
+ \texttt{author}， \texttt{address}，\texttt{edition}，\texttt{month}，
+ \texttt{year}，\texttt{note}，\texttt{organization} \\
+\hline
+%
+\texttt{masterthesis}  & 
+ \texttt{author}，\texttt{title}，\texttt{school}，\texttt{year}\\
+任意                & 
+ \texttt{type}，\texttt{address}，\texttt{month}，\texttt{note} \\
+\hline
+%
+\texttt{misc}          & \\
+任意                & 
+ \texttt{author}，\texttt{title}，\texttt{howpublished}，
+ \texttt{month}，\texttt{year}，\texttt{note} \\
+\hline
+%
+\texttt{phdthesis}  & 
+ \texttt{author}，\texttt{title}，\texttt{school}，\texttt{year}\\
+任意                &
+ \texttt{type}，\texttt{address}，\texttt{month}，\texttt{note} \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+%必須項目は必ず記述しなければならない項目で任意項目は
+%必要に応じて書き足せば良いでしょう．項目のあるなし
+%で文献の並べ替えに若干の影響が出ますが，それ程神経
+%質になる必要はありません．どこかの学会などに提出時な
+%どは{\JBibTeX}によって並び替えられた\Va{file}{bbl}を
+%手動で修正・置換したほうが早いかもしれません．
+%
+%著者\qu{\str{author}}が複数人数のときはコンマで
+%区切るのではなく
+%\begin{InText}
+%author={夏目 漱石 and 福沢 諭吉 and 芥川 龍之介}
+%\end{InText}
+%のように\qu{\str{and}}を使用します．また著者の苗字と名
+%前のあいだには半角の空白を挿入するようにしてください．
+%\qu{\str{author}}や\qu{\str{editor}}の名前が非常に
+%多いときには名前を
+%\begin{InText}
+%author={代表著者 and others}
+%\end{InText}
+%とします．こうすると標準スタイルの\bst{jplain}では
+%自動的に適切な名前に変換されます．
+必須項目は必ず記述しなければならない項目で任意項目は
+必要に応じて書き足せば良いでしょう．項目のあるなし
+で文献の並べ替えに若干の影響が出ますが，それ程神経
+質になる必要はありません．
+
+%どこかの学会などに提出時などは{\JBibTeX}によって並び替え
+%られた\Va{file}{bbl}を手動で修正・置換したほうが早いかも
+%しれません．
+
+著者\qu{\str{author}}が複数人数のときはコンマで
+区切るのではなく次のように\qu{\str{and}}を使用します．
+
+\begin{InText}
+author={夏目 漱石 and 福沢 諭吉 and 芥川 龍之介}
+\end{InText}
+
+また著者の\Z{苗字}と\Z{名前}のあいだには半角の空白を挿入するようにしてく
+ださい．
+\qu{\str{author}}や\qu{\bibi{editor}}の人数が非常に
+多いときには名前を代表著者のみとします．
+
+\begin{InText}
+author={代表著者 and others}
+\end{InText}
+
+こうすると標準スタイルの\bst{jplain}では
+自動的に適切な名前，例えば`et~al.'などに置換されます．
+
+
+\subsection{各文献スタイルの出力例}
+\indindz{ファイル}{文献スタイル}%
+
+{\BibTeX}にはどのような文献スタイルが用意されているのか
+をここで出力例により紹介します．通常は\bst{jplain}で問題な
+いのですが学会によっては参考文献の出力形式を指定される
+場合があります．%そのような場面に対応するために各文献スタ
+%イルの出力例を載せます．
+使用できるものは欧文の場合，
+\Bst{plain}，\Bst{alpha}，\Bst{abbrv}，\Bst{unsrt}の4つ
+ほどで和文の場合は，\Bst{jplain}，\Bst{jalpha}，
+\Bst{jabbrv}，\Bst{junsrt}となります．他にもWWW上には
+個人や学会で文献スタイルを公開している事がありますので，
+それらを使用する事も可能です． 
+\begin{description}
+\item[\bst{jplain}] 昇順に通し番号を付けるだけの単純なもの．
+  \begin{quote}
+  {[1]}野比太郎, 剛太タケル. 2000. 四次元ポケットの考察. NNN出版.
+  \end{quote}
+\item[\bst{jalpha}] 著者が一人の場合は著者は\yo{頭文字3文字 年号}
+  で表示し，共著のときは\yo{各著者のイニシャル 年号}で表示する．
+   \qu{\str{key}}項目を追加する事により表示するイニシャルなどを変更できる．
+  \begin{quote}
+  {[NG 2000]}野比太郎, 剛太タケル. 2000. 四次元ポケットの考察. NNN出版. 
+  \end{quote}
+\item[\bst{jabbrv}] 著者名，月，誌名を簡略表記にする．
+  \begin{quote}
+  {[1]}野比, 剛太. 2000. 四次元ポケットの考察. NNN出版. 
+  \end{quote}
+\item[\bst{junsrt}] 文献を本文中で参照している順番で並べ替える． 
+  \begin{quote}
+  {[1]}野比太郎, 剛太タケル, 2000. 四次元ポケットの考察. NNN出版.
+  \end{quote}
+\end{description}
+
+
+\subsection{文献の追加例}
+
+\begin{Exe} \label{exe:okumura}
+%実例を元に，どのように文献データベースに文献を追加するかを
+%吟味してください．
+文献データベースに書籍を追加する例です．書籍 (\bubu{book}) の出典を明記
+ する場合は，その書籍を特定できる情報を記載する事が必須となります．
+\KY{著者名} (\str{author})，\KY{書名} (\str{title})，\KY{出版社} (\bibi{publisher})，
+\KY{出版年} (\str{year}) の四つは必ず記載します．
+必要に応じて\KY{巻} (\bibi{volume})，\KY{シリーズ} (\bibi{series})，\KY{版} (\bibi{edition})
+を併記します．
+
+2004年に技術評論社から出版された\Hito{奥村}{晴彦}の
+\wasyo{[改訂第3版] \LaTeXe\ 美文書作成入門}ならば，次のようにします．
+
+\begin{InText}
+@book{bibunsyo,
+  author    = {奥村 晴彦},
+  yomi      = {Haruhiko Okumura},
+  title     = {[改訂第3版] \LaTeXe\ 美文書作成入門},
+  publisher = {技術評論社},
+  year      = {2004},
+  note      = {021.49/Ok},
+}
+\end{InText}
+
+\zindind{著者名}{の読み}%
+著者名の\KY{読み} (\bibi{yomi}) は「姓」「名」の順番ではなく，
+「名」「姓」とします．
+\end{Exe}
+
+\begin{Exe} \label{exe:osawa}
+\zindind{論文誌}{の巻}\zindind{論文誌}{の番号}%
+学会・\Z{論文誌}などに投稿された論文を追加する場合は，
+\KY{著者名} (\str{author})，\KY{題名} (\str{title})，
+\K{論文誌名} (\bibi{journal})，\KY{発表年} (\str{year})が
+必須記載項目になります．必要に応じて\K{論文誌の巻} (\str{volume})，
+\K{論文誌の番号} (\bibi{number})，ページ番号 (\bibi{pages}) を追加します．
+\KY{学会誌}であれば学会誌の巻や番号がありますので，これも忘れずに
+追加します．
+\Hito{大澤}{英一}らによる論文誌\emph{The RoboCup Synthetic Agent Challenge
+ 97}を追加するには次のようにします．
+
+\begin{InText}
+@inproceedings{EO1997,
+  author    = {Ei-ichi Osawa and others}, 
+  booktitle = {Proceedings of the 15th International Joint Conference
+               on Artificial Intelligence: IJCAI-97}, 
+  title     = {The RoboCup Synthetic Agent Challenge~97},
+  volume    = 1,
+  pages     = {24--29},
+  year      = 1997, 
+}   
+\end{InText}
+
+この場合，この論文誌は\Z{会議} (\Z{conference}) 中の論文 (\Z{proceeding}) 
+という事で\bubu{inproceedings}として分類します．
+著者が多くなりすぎる場合は，代表著者（姓名の「姓」で
+並び替えたときに始めに来る執筆者）だけを書きます．
+論文中に代表著者が記されている場合はそれに従います．
+\end{Exe}
+
+\begin{Exe}
+\label{exe:url}
+近年は\Z{WWW}上に存在する資料を参照する場合が多くなっているようです．
+このとき，参照資料の \Z{ウェブページ} を記述する事があると思います．この
+場合は \K{URL} (\bibi{howpublished})，\KY{閲覧日} (\str{year},
+\bibi{month})，\K{題名} (\str{title})，\K{著者名} (\bibi{author})を記
+述する事になります．\hito{奥村}{晴彦}によって管理されている``\TeX~Wiki''
+という\Z{ウェブページ}を参照するには次のようにします．
+
+\begin{InText}
+@misc{HO2006,
+ howpublished = {\url{http://oku.edu.mie-u.ac.jp/~okumura/texwiki/}}, 
+ author    = {奥村 晴彦}, 
+ yomi      = {Haruhiko Okumura},
+ title     = {{\TeX\ Wiki}},
+ year      = 2006, 
+ month     = 2,
+}   
+\end{InText}
+
+ここでは閲覧日を著者名の更新日としています．さらに \Y{url}パッケージに含
+まれる \C{url} 命令を使っていますので，詳細は \secref{url}を参照してくだ
+さい．``\TeX~Wiki''という文字ではバックスラッシュが含まれており，
+正しく処理できない場合がありますので，波括弧で全体をくくります．
+\end{Exe}
+
+例題~\ref{exe:okumura}--\ref{exe:url}の
+二つの文献を\JBibTeX\ によって処理した結果，
+次のように並び替えられた文献一覧\Va{file}{bbl}が作成されます．
+
+\begin{InText}
+\begin{thebibliography}{9}
+\bibitem{HO2004} 奥村晴彦.
+ \newblock [改訂第3版] \LaTeXe\ 美文書作成入門.
+ \newblock 技術評論社, 2004.
+ \newblock 021.49/Ok.
+\bibitem{HO2006} 奥村晴彦.
+ \newblock {\TeX\ Wiki}.
+ \newblock \url{http://oku.edu.mie-u.ac.jp/~okumura/texwiki/}, 
+   2 2006.
+\bibitem{EO1997} Ei-ichi Osawa, et~al.
+ \newblock The robocup synthetic agent challenge~97.
+ \newblock In {\em Proceedings of the 15th International Joint 
+   Conference on Artificial Intelligence: IJCAI-97}, Vol.~1, 
+   pp.~24--29, 1997.
+\end{thebibliography} 
+\end{InText}
+
+この\Va{file}{bbl}が作成されていれば，次回のタイプセットで
+次のような文献一覧が表示されるようになります．
+\begin{OutText}
+{\Large\headfont 参考文献}\par\vskip1em
+\begin{mybibliography}{9}
+\setcounter{enumiv}{0}
+\item 奥村晴彦.
+  \newblock [改訂第3版] \LaTeXe\ 美文書作成入門.
+  \newblock 技術評論社, 2004.
+  \newblock 021.49/Ok.
+\item 奥村晴彦.
+  \newblock {\TeX\ Wiki}.
+  \newblock \url{http://oku.edu.mie-u.ac.jp/~okumura/texwiki/}, 
+     2 2006.
+\item Ei-ichi Osawa, et~al.
+  \newblock The robocup synthetic agent challenge~97.
+  \newblock In {\em Proceedings of the 15th International Joint 
+     Conference on Artificial Intelligence: IJCAI-97}, 
+     Vol.~1, pp.~24--29, 1997.
+\end{mybibliography}
+\end{OutText}
+欧文の文献を参照し，著者名を代表執筆者のみにした場合は，
+慣習的に`et~al.'を使います．ページ番号は範囲を示しますので，
+en-dash `--'を用います．
+
+
+
+\subsection{文献の複数参照\zdash\Y{cite}}
+
+%複数の文献を同時に参照しているときは\qu{\str{[3,2,5,1]}}となっ
+%てしまい文献リストの表示が並べ替えられず，\qu{\str{[1-3,5]}}と
+%なりません．その場合\Person{Donald}{Arseneau}による
+%\Y{cite}パッケージを使います．ただし\sty{hyperref}
+%との併用はできません．このパッケージを利用すれば参考
+%文献が複数ある場合\qu{\str{[1-3,5]}}のように連番をハ
+%イフンでつなげ昇順に並べ替えます．プリアンブルで読み
+%込むだけで使用可能です．
+`\cmd{cite}\pa{ラベル\mbox{$_1$}, ラベル\mbox{$_2$}, \ldots, ラベル
+\mbox{$_n$}}'のように
+複数の文献を同時に参照しているときは\qu{\str{[3,2,5,1]}}となっ
+てしまい文献リストの表示が並べ替えられず，\qu{\str{[1-3,5]}}と
+なりません．その場合\Person{Donald}{Arseneau}による
+\Sty{cite}パッケージを使います．ただし\sty{hyperref}
+との併用はできません．このパッケージを利用すれば参考
+文献が複数ある場合\qu{\str{[1-3,5]}}のように連番をハ
+イフンでつなげ昇順に並べ替えます．プリアンブルで読み
+込むだけで使用可能です．
+
+\subsection{参照の形式を変更する}
+ある分野では丸括弧を使い著者名と年号を使うスタイル
+\yo{(渡辺 1999)}が推奨される\pp{丸括弧は全角で}場合は
+
+\begin{InTeX}
+\makeatletter
+\renewcommand{\@cite}[2]{（{#1\if@tempswa , #2\fi}）}
+\renewcommand{\@biblabel}[1]{（#1）} 
+\makeatother
+\end{InTeX}
+
+この記述をプリアンブルに入れると良いでしょう．
+{\JBibTeX}を使っている場合は文献スタイルに依存します．
+親切な方がウェブで提供していると思いますので文献スタイル
+ファイルを探してみてください．
+
+もう少し細かい設定をしたい場合は\Y{cite}パッケージを
+使います．このパッケージのオプションとして
+\begin{description}
+% \item[\Option{verbose}]  
+\indindz{区切り}{項目の}%
+ \item[\Option{nospace}] 項目のあいだの区切りで単語間空白を挿入しません．
+ \item[\Option{space}] 項目のあいだの区切りで単語間空白を挿入します．
+ \item[\Option{nosort}] 並べ替えを行いません．
+\end{description}
+などが用意されています．
+
+%\begin{InTeX}
+%\usepackage[space]{cite}
+%\end{InTeX}
+%
+%のように使用してください．
+設定できるコマンドとして\tabref{biblio:cite}の五つがあります．
+\begin{table}[htbp]
+ \begin{center}
+  \caption{\Y{cite}パッケージで変更できる命令}
+  \tablab{biblio:cite}
+\begin{tabular}{lll}
+\hline
+\Th{命令}            & \Th{意味} & \Th{標準のスタイル}\\
+\hline
+\Cmd{citeform}  & 個々の項目の修飾& なし\\
+\Cmd{citepunct} & 項目の区切り    & コンマと小さい空白\\
+\Cmd{citeleft}  & リストの左括弧  & \str[ \\
+\Cmd{citeright} & リストの右括弧  & \str] \\
+\Cmd{citemid}   & \cmd{cite}の任意引数の前に付ける記号& コンマと文字間空白\\
+\hline
+\end{tabular}
+ \end{center}
+\end{table}
+
+まずは使用例を見てください．
+例えば以下のようなファイル\fl{mycite.tex}を作成します．
+
+\begin{InText}
+\documentclass[12pt]{jsarticle} 
+\usepackage{cite}
+\begin{document}
+そうです~\cite[p.~130]{First,Second,Third,Sixth,Fifth}．
+\begin{thebibliography}{9}
+ \bibitem{First}  First Name. \emph{はじめ}. 1991, 未来出版.
+ \bibitem{Second} Second Name. \emph{つぎ}. 1992, ある出版.
+ \bibitem{Third}  Third Name. \emph{つぎのつぎ}. 1993, ある社.
+ \bibitem{Forth}  Forth Name. \emph{そのつぎ}. 1995, 未来社.
+ \bibitem{Fifth}  Fifth Name. \emph{さらにつぎ}. 1994, 未来出版.
+ \bibitem{Sixth}  Sixth Name. \emph{さいご}. 1990, 未来堂.
+\end{thebibliography}
+\end{document}
+\end{InText}
+
+このまま何も設定しなければ，
+%\begin{OutText}
+「そうです[1--3,5,6; p.~130]」
+%\end{OutText}
+のように並べ替えられ，\cmd{cite}の任意引数の\yo{\str{p.~130}}
+の前にコンマと小さい空白が挿入されております．さらに項目はコン
+マで区切られています．次にこのファイルのプリアンブルに 
+\pp{\qu{\cmd{usepackage}}の後に}という記述をしておけば良いのです．
+
+\begin{InText}
+\renewcommand\citemid{; } 
+\renewcommand\citeleft{（}
+\renewcommand\citeright{）}
+\renewcommand\citepunct{,}
+\end{InText}
+
+すると
+%\begin{OutText}
+「そうです（1--3,5,6; p.~130）」
+%\end{OutText}
+という出力になります．個々の項目を修飾するために
+は \C{citeform} 命令の再定義をします．ローマ数字で
+番号を表示するときは次のようにします．
+
+\begin{InText}
+\renewcommand\citeform[1]{\romannumeral 0#1}
+\end{InText}
+
+すると
+%\begin{OutText}
+「そうです（i--iii,v,vi; p.~130）」
+%\end{OutText}
+のようになります．
+
+\section{文献の管理}
+\zindind{文献}{の管理}
+文献の数があまりに多くなると管理するのが大変になります．
+
+%インタフェースは英語ですが\Person{Nizar}{Batada}が作成した%
+%\Prog[JBibTeXManager]{J\BibTeX Maneger}というプログラムが
+%\footnote\webJBibTeXM あります．%Javaで動くのでOSに依存しないと思います．
+%これを使うとGUIで文献を管理できます．項目による文献の
+%並び替え表示などもあります．日本語がうまく通るかどうか
+%検証していません．
+
+\Person{Morten}{Alver}と\Person{Nizar}{Batada}が作成した
+\Prog{JabRef}があります\footnote{\webJabRef}．
+こちらはJavaで動作するプログラムです．
+日本語がうまく通るか分かりませんが，ソースが公開さ
+れているのでどうにかなるでしょう．
+
+シェアウェアで\Prog{Ref for Windows}があります\footnote{\webRefforWin}．
+こちらはWindows上で動作する文献管理プログラムです．\prog{Ref for
+Windows}で文献のリストを作成し，それを\Va{file}{bib}に出力するという手法
+のプログラムです．
+
+%\section{その他}
+%多国語の文献を出力するには\Person{Harald}{Harders}による
+%\Sty{babelbib}を使うと良いそうです．また参考文献を脚注
+%に出力するスタイルにするためには\Person{Eric}{Domenjoud}に
+%よる\Sty{footbib}を使うと良いそうです．詳細はマニュアルを
+%参照してください．どちらもCTANを検索すると見つかるでしょう．
+
+

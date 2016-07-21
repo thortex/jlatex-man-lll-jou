@@ -1,0 +1,36 @@
+lethead_flag            1
+symhead_positive	"数字/記号"
+letter_head		2
+delim_0			" \\dotfill\\ "
+delim_1			" \\dotfill\\ "
+delim_2			" \\dotfill\\ "
+lethead_prefix "\n\\underline{\\hbox to \\linewidth{\\large{\\sffamily\\bfseries "
+lethead_suffix "\\hfill}}}\\nopagebreak\n"
+%★記号
+%\index{"@@\verb+"@+}%@
+%\index{" @\verb*+" +}
+%\index{"#@\verb+#+} 
+%\index{"$@\verb+$+}
+%\index{"&@\verb+&+}
+%\index{"\@\verb+\+}
+%\index{"^@\verb+^+}
+%\index{"_@\verb+_+}
+%\index{"{1"}@\protect\bgroup\verb+"{+"}}
+%\index{"{2"}@"{\verb+"}+\protect\egroup}
+%\index{"~@\verb+~+}
+%\index{%@\verb+%+}
+%\index{"|@\texttt{\symbol{'174}}}%"
+%\index{"!@verb+"!+}
+%% {, }, @ | ! " 
+%
+%★命令
+%\glossary{"#@\hspace*{-1.2ex}\verb+"\#+}%"
+%\glossary{"_@\hspace*{-1.2ex}\verb+"\_+}%"
+%\glossary{"$@\hspace*{-1.2ex}\verb+"\$+}%"
+%\glossary{"%@\hspace*{-1.2ex}\verb+"\%+}%"
+%\glossary{"{1"}@\hspace*{-1.2ex}\protect\bgroup\verb+"\"{+"}}
+%\glossary{"{2"}@\hspace*{-1.2ex}"{\verb+"\"}+\protect\egroup}
+%\glossary{"&@\hspace*{-1.2ex}\verb+"\&+}%"
+%\glossary{" @\hspace*{-1.2ex}\verb*+\" +}%"
+%\glossary{"!@\hspace*{-1.2ex}\verb+\"!+}%
+%

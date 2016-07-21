@@ -1,0 +1,14 @@
+lethead_flag            1
+lethead_prefix "\n\\underline{\\hbox to \\linewidth{\\large{\\sffamily\\bfseries "
+lethead_suffix "\\hfill}}}\\nopagebreak\n"
+symhead_positive	"数字/記号"
+letter_head		2
+delim_0			" \\dotfill\\ "
+delim_1			" \\dotfill\\ "
+delim_2			" \\dotfill\\ "
+preamble "\n\\begin{theglossary}\n\n"
+postamble "\n\n\\end{theglossary}\n"
+keyword "\\glossaryentry"
+
+
+

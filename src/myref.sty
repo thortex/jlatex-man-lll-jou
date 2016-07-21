@@ -1,0 +1,28 @@
+% File: myref.sty
+% Name: Th\'or Watanabe
+% Mail: thor@tex.dante.jp
+% Date: 2006/04/20
+% Copying: copyright (c) 2004, 2006 Thor Watanabe
+\ProvidesPackage{myref.sty}[2004/08/04 v0.1 Thor]
+\newcommand*{\chaplab}[1]{\label{chap:#1}}%     章のラベル
+\newcommand*{\chapref}[1]{第~\ref{chap:#1}~章}% 章の参照
+\newcommand*{\seclab}[1]{\label{sec:#1}}%       節のラベル
+\newcommand*{\secref}[1]{\ref{sec:#1}~節}%      節の参照
+\newcommand*{\figlab}[1]{\label{fig:#1}}%       図のラベル
+\newcommand*{\figref}[1]{\figurename~\ref{fig:#1}}%      図の参照
+\newcommand*{\tablab}[1]{\label{tab:#1}}%       表のラベル
+\newcommand*{\tabref}[1]{\tablename~\ref{tab:#1}}%     表の参照
+\newcommand*{\equlab}[1]{\label{equ:#1}}%       式のラベル
+\newcommand*{\equref}[1]{式~\ref{equ:#1}}%     式の参照
+\newcommand*{\applab}[1]{\label{app:#1}}%       付録のラベル
+\newcommand*{\appref}[1]{\appendixname~\ref{app:#1}}%    付録の参照
+%
+\newcommand*{\pref}[1]{\pageref{#1}ページ}%     ページの参照
+\newcommand*\Pref[2]{(\pageref{#1:#2}ページ)}
+%
+\newcommand*\fullchapref[1]{\chapref{#1} \Pref{chap}{#1}}
+\newcommand*\fullsecref[1]{\ref{#1} \Pref{sec}{#1}}
+\newcommand*\fullfigref[1]{\figurename~\ref{#1} \Pref{fig}{#1}}
+\newcommand*\fulltabref[1]{\tablename~\ref{#1} \Pref{tab}{#1}}
+\newcommand*\fullequref[1]{式~\ref{#1} \Pref{equ}{#1}}
+\endinput

@@ -1,0 +1,30 @@
+#!/bin/sh
+# 引数として与えられたディレクトリを作業対象とする
+cd $1;
+# PNG 画像の BoudingBox の生成を ebb により行う
+for f in `ls *.png`; do 
+   if [ -f `basename $f .png`.bb ] ; then 
+      echo "already `basename $f .png`.bb exits."
+   else 
+      ebb -v $f; 
+   fi
+done
+# JPEG 画像の BoundingBox の生成を ebb により行う
+for f in `ls *.jpg`; do 
+   if [ -f `basename $f .jpg`.bb ] ; then 
+      echo "already `basename $f .jpg`.bb exits."
+   else 
+      ebb -v $f; 
+   fi
+done
+# PDF 画像の BoundingBox の生成を pdfinfo によって 行う
+for f in `ls *.pdf`; do 
+   if [ -f `basename $f .pdf`.bb ] ; then 
+      echo "already `basename $f .pdf`.bb exits."
+   else 
+      echo "creating `basename $f.pdf`.bb..."
+      pdfinfo $f | grep -e 'Page size:' | \
+      sed -e 's/x//; s/Page size:/\%\%BoundingBox: 0 0 /; s/pts//;' \
+      > `basename $f .pdf`.bb
+   fi
+done

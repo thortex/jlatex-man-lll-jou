@@ -1,0 +1,57 @@
+#!/bin/sh
+## Author  : Thor Watanabe
+## date    : December 25, 2003
+# 走らせるTeX 
+TEX=platex
+# mendex に常に参照させる辞書ファイルの指定
+MAKEINDEX=mendex -d jisyo.dic
+# DVI->PS のデバイスドライバ
+DVIPS=dvipsk -Pdl
+# DVI->PDFのデバイスドライバ
+DVIPDFM=dvipdfmx -f dlbase14.map
+# メインファイル
+FILE=main
+# 参考文献データベース
+REF=thesis.bib journal.bib book.bib manual.bib
+# メインファイルでinput/includeされているファイル
+SRC=preface.tex chap1.tex chap2.tex thanx.tex
+# 標準のターゲット
+all: $(FILE).pdf 
+# main.pdf/main.ps
+$(FILE).pdf: $(FILE).dvi
+	$(TEX) $(FILE)
+	$(DVIPDF) -p $(SIZE) -o $(FILE).pdf $(FILE).dvi
+$(FILE).ps: $(FILE).dvi
+	$(DVIPS) -o $(FILE).ps $(FILE).dvi
+# main.dvi
+$(FILE).dvi: $(FILE).bbl $(FILE).ind $(FILE).gls
+	$(TEX) $(FILE) 
+	(while egrep "may have changed" $(FILE).log; \
+           do $(TEX) $(FILE); done)
+# main.ind/main.gls/main.bbl
+$(FILE).ind: $(FILE).idx 
+	$(MAKEINDEX) -s sind.ist -o $(FILE).ind $(FILE).idx
+$(FILE).gls: $(FILE).glo
+	$(MAKEINDEX) -s sgls.ist -o $(FILE).gls $(FILE).glo
+$(FILE).bbl: $(FILE).aux
+	$(BIBTEX) $(FILE)
+# main.glo/main.idx/main.aux
+$(FILE).glo: $(FILE).aux $(SRC)
+	$(TEX) $(FILE)
+$(FILE).idx: $(FILE).aux $(SRC)
+	$(TEX) $(FILE)
+$(FILE).aux: $(FILE).tex $(SRC)
+	$(TEX) $(FILE)
+# アーカイブ化
+tar: $(FILE).tex $(SRC) $(REF) Makefile
+	mkdir -p $(FILE)src/
+	cp $(REF) $(SRC) $(FILE).tex Makefile $(FILE)src/
+	tar czf $(FILE)src.tgz $(FILE)src/
+	rm -fr $(FILE)src
+clean:
+	rm -f $(FILE).glo $(FILE).blg $(FILE).lof $(FILE).lot
+	rm -f $(FILE).out $(FILE).toc $(FILE).ind $(FILE).aux
+	rm -f $(FILE).dvi $(FILE).idx $(FILE).ilg $(FILE).brf
+	rm -f $(FILE).gls 
+cleanany: clean
+	rm -f *.log *.aux *~

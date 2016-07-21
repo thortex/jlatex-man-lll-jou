@@ -1,0 +1,1302 @@
+%#!platex jou.tex
+\chapter{参考資料}\applab{info}
+
+% 敬称「氏」を無効化する．
+\makeatletter
+\def\@hito@keisyo{}
+\makeatother
+
+% \bibitem の定義を少し変える
+\newBibItem
+
+
+\section{\LaTeX{} と直接関係のない参考資料}
+{\LaTeX}を使うには\unixos のツールや\unixos の基本的な操作がで
+きる事が望ましいと思います．まずは\unixos の使い方に関する参
+考書です．
+
+{\LaTeX}を動かすための環境を構築するための技術を解説した資料で
+す．Windowsを手放せない方はCgywinを，フリーにこだわる方はGNU 
+Linuxを，飽き足らない人はUnixの書籍を参照ください．
+%
+\begin{myreferences}
+% Unix, GNU Linux, Cygwin
+\bibitem{cygwin1} 
+\Hito{佐藤}{竜一}, \Hito{いけだ}{やすし}, \Hito{野村}{直}. \newblock
+Cygwin $+$ CygwinJE\lower-.25ex\hbox{-}Windowsで動かすUNIX\zdash Cygwin is a 
+UNIX environment for Windows. 
+アスキー, 2003.
+\sanko
+日本語環境でもCygwinがある程度動作するように追加がなされていますし，
+大変参考になります．
+
+
+\bibitem{Vine_Linux2.6} 
+\Hito{市川}{順一}.  \newblock
+デスクトップLinux\zdash Vine Linux 2.6 \& OpenOffice.org.
+ローカス, 2004.
+\sanko
+GNU Linuxの中で日本語環境に配慮されたディストリビューション
+である\Prog{Vine Linux}の解説書です．新しいです．事務系ソフ
+トの\Prog{OpenOffice.org}に関する情報もあるそうです．
+%
+%\bibitem{Running_Linux}
+%Matt Welsh, Matthias~Kalle Dalheimer, Terry Dawson, and Lar Kaufman.
+% Running Linux 第4版.
+% オライリージャパン, 2003.
+% 山崎康宏 山崎邦子訳.\sanko
+%ちょっと固めのGNU Linuxに関する入門書です．
+%
+\bibitem{Learning_Unix}
+\Person{Jerry}{Peek}, \Person{Grace}{Todino}, and 
+  \Person{John}{Strang}. \newblock
+入門 Unixオペレーティングシステム　第5版.
+オライリージャパン, 2002.
+羽山博訳.
+\sanko
+Unixシステムの解説書です．
+\end{myreferences}
+
+シェル関連の書籍です．本書で\yo{端末}と
+か\yo{ターミナル}と呼ばれるカーネルを
+突付くためのプログラムです．コンソール
+などとも呼ばれます．\unixos ユーザは
+参照したほうが良いでしょう．%
+\begin{myreferences}
+%Shell, Editor
+\bibitem{bash2} 
+\Person{Cameron}{Newham} and \Person{Bill}{Rosenblatt}. \newblock
+入門 bash 第2版.
+オライリージャパン, 1998.
+QUIPU LLC, 遠藤美代子訳.
+\sanko
+\Prog{bash}に関する良書です．中身はちょっと初心者向けではないかもしれません．
+%
+% Paul DuBois か Paul Du Bois か微妙．
+\bibitem{tcsh} 
+\Person{Paul}{DuBois}. \newblock
+入門 csh \& tcsh.
+オライリージャパン, 2002.
+鈴鹿倫之, 福澤康裕訳.
+\sanko
+\prog{bash}ではなく\prog{csh}の本です．
+%
+\bibitem{zshell}
+ %\ISBN{1590593766}
+ \Person{Oliver}{Kiddle}, \Person{Jerry}{Peek} and
+ \Person{Peter}{Stephenson}. \newblock 
+ {\em From Bash to Z shell---Conquering the Command Line---}. 
+ Apress, 2004. 
+ \sanko bash や tcsh の良いとこ取りをしたシェルです．%ビビるくらい便利です．
+ 筆者はこのシェルを愛用しています．
+\end{myreferences}
+
+大規模な文書を作成している方や複数人数で文書を作成している方に
+お勧めの書籍です．
+\begin{myreferences}
+\bibitem{Make2} 
+\Person{Andrew}{Oram} and \Person{Steve}{Talbott}. \newblock
+make 改訂版.
+オライリージャパン, 1997.
+矢吹道郎監訳. 菊池彰訳.
+\sanko
+再コンパイル支援プログラム\Prog{make}の解説書です．
+これも初心者向けではないかもしれません．
+%
+\bibitem{CVS1} 
+\Person{Jennifer}{Vesperman}. \newblock
+実用 CVS.
+オライリージャパン, 2003.
+滝沢徹, 牧野祐子訳.
+\sanko
+\Z{版管理}プログラムCVSの解説書です．
+%
+\bibitem{CVS2} 
+\Person{Karl}{Fogel}. \newblock
+CVS\zdash バージョン管理システム\zdash .
+オーム社, 2000.
+\sanko
+版管理プログラムCVSの入門書です．
+これはウェブ上に日本語訳のマニュアルが公開されて
+いると思います．
+\end{myreferences}
+%
+
+コンピュータで文章を打ち込むためのプログラムをテキストエディッタと呼びま
+す．%本書ではGNU \Prog{Emacs}を推奨します．これはフリーウェアで
+特に Emacs であれば Windows\pp{\Prog{Meadow}が開発されています}など多く
+のOSで動作します．
+%Mac OS X にもそれらしきエディタがあります．
+\begin{myreferences}
+%Editor
+\bibitem{GNUEmacs2}
+\Person{Debra}{Cameron}, \Person{Bill}{Rosenblatt}, 
+  and \Person{Eric}{Raymond}. \newblock
+ 入門 GNU Emacs 第2版.
+ オライリージャパン, 1999.
+ 福崎俊博訳.
+\sanko
+テキストエディッタというか何でも屋のGNU Emacs
+の解説書です．GNU Emacsに関してもウェブ上に
+日本語化されたマニュアルがあると思われます．
+ただし数100ページに及ぶと思うので，紙に
+印刷されたものもあると便利でしょう．
+%
+\bibitem{Meadow} 
+\Hito{小関}{吉則}. \newblock
+入門 Meadow/Emacs.
+オーム社, 2003.
+\sanko
+GNU EmacsをWindows上に移植したMuleの後継の
+\Prog{Meadow}の入門書です．Emacsの内容も
+含まれるそうです．EmacsとMeadowも基本的には
+同じ機能を有していると思われます．
+\end{myreferences}
+%
+コンピュータがどのように文章を
+理解するのか，それが分かるとコンピュ
+ータに仕事をさせ易くなります．文字列
+処理やプログラミング言語を使うとさ
+まざまな文章の加工ができるようになります．
+\begin{myreferences}
+%Stream Editor
+\bibitem{RE2} 
+\Person{Jeffrey E.~F.}{Friedl}. \newblock
+詳説 正規表現 第2版.
+オライリージャパン, 2003.
+田和勝訳.
+\sanko
+正規表現は多くのプログラミング言語で
+使われている言語表現形式です．正規
+表現は言語学に近い内容かもしれないです．
+%
+\bibitem{sedawk2}
+\Person{Dale}{Dougherty} and \Person{Arnold}{Robbins}. \newblock
+ sed \& awk プログラミング 改訂版.
+ オライリージャパン, 1997.
+ 福崎俊博訳.
+\sanko
+古くから使われているテキスト加工プログラム，
+ストリームエディッタです．ほとんどのUnix系
+OSに導入されている標準的なプログラムです．
+%\emph{The Art Of Awk Programming}という
+%本もあるとかないとか．
+%
+\bibitem{Learning_Perl3}
+\Person{Randal~L.}{Schwartz} and \Person{Tom}{Phoenix}. \newblock
+ 初めてのPerl 第3版.
+ オライリージャパン, 2003.
+ 近藤嘉雪訳.
+\sanko
+スクリプト系プログラミング言語\Prog{Perl}の入門書です．
+\wasyo{プログラミング 
+Perl}~\cite{Programming_Perl3vol1,Programming_perl3vol2}
+の2冊よりは初心者向けの本です．PerlはCGIや
+テキスト処理など幅広い分野に応用されている
+優れた言語です．
+%
+\bibitem{Programming_Perl3vol1}
+\Person{Larry}{Wall}, \Person{Tom}{Christiansen}, and 
+  \Person{Jon}{Orwant}. \newblock
+ プログラミングPerl 第3版 VOLUME 1.
+ オライリージャパン, 2002.
+ 近藤嘉雪訳.
+\sanko
+\Prog{Perl}の開発者による公式なマニュアルの1巻目です．
+%
+\bibitem{Programming_perl3vol2}
+\Person{Larry}{Wall}, \Person{Tom}{Christiansen}, and 
+   \Person{Jon}{Orwant}. \newblock
+ プログラミングPerl 第3版 VOLUME 2.
+ オライリージャパン, 2002.
+ 近藤嘉雪訳.\sanko
+\Prog{Perl}の開発者による公式なマニュアルの2巻目です．
+%
+\bibitem{ruby2} 
+\Hito{原}{信一郎}. \newblock
+Rubyプログラミング入門.
+オーム社, まつもとゆきひろ監修.\sanko
+国産のスクリプト系オブジェクト指向プログラミング言語
+\Prog{Ruby}の入門書です．もちろん日本語の扱いが丁寧だし，
+\prog{Perl}に取って代わるかもしれない言語です．
+%
+\bibitem{ruby1} 
+\Hito{まつもと}{ゆきひろ}, \Hito{石塚}{圭樹}. \newblock
+オブジェクト指向スクリプト言語 Ruby.
+アスキー, 1999.\sanko
+プログラミング初心者向けとは言い難い
+\prog{ruby}の本です．
+%
+\bibitem{CJKV} 
+\Person{Ken}{Lunde}. \newblock
+CJKV日中韓越情報処理.
+オライリージャパン, 2002.
+小松章 逆井克己訳.\sanko
+\wasyo{日本語情報処理}の改訂版として出版された
+非常に分厚い本です．CJKV情報処理に関する数少ない良書だと
+思います．
+\end{myreferences}
+
+ウェブに関する技術もあると最新の情報を
+即座に入手できるなどの利点があります．
+ウェブは情報の検索にも役立ちます．
+\begin{myreferences}
+%Web HTML
+\bibitem{HTML5} 
+\Person{Chuck}{Musciano} and \Person{Bill}{Kennedy}. \newblock
+HTML \& XHTML 第5版.
+オライリージャパン, 2003.
+原隆文訳.\sanko
+HTMLを使いこなすというよりは現在のHTMLの詳細な
+仕様書と言った感じです．
+%
+\bibitem{GoogleHack} 
+\Person{Tara}{Calishain} and \Person{Rael}{Dornfest}. \newblock
+Google Hacks\zdash プロが使うテクニック \& ツール 100選.
+オライリージャパン, 2003.
+山名早人監訳, 田中裕子訳.\sanko
+検索エンジンGoogleの活用術を紹介した書籍です．
+\end{myreferences}
+
+Adobe社の開発した{\PS}とPDFについて
+知ると，ページ記述言語の特性や機能など
+が分かると思います．
+%
+\begin{myreferences}
+%PostScript PDF
+\bibitem{PDF1.3} 
+  Adobe Systems. \newblock
+  PDFリファレンス第2版\zdash Adobe Portable Document Format Version 1.3.
+  ピアソンエディケーション, 2001.
+  \sanko
+  数少ないPDFに関する日本語の技術資料です．
+  Acrobatに関する書籍は沢山ありますが，PDFの規
+  格そのものに言及したものはこれ以外にないと
+  思われます．
+%
+\bibitem{PS3} 
+\iiiemdash. \newblock
+PostScriptリファレンスマニュアル第3版\zdash ASCII電子出版シリーズ.
+アスキー, 2001.
+桑沢清志訳.
+\sanko
+Adobe社の開発したページ記述言語{\PS}の入門書です．
+%
+\bibitem{PS2} 
+\iiiemdash. \newblock
+ページ記述言語 PostScriptプログラム・デザイン\zdash 電子出版シリーズ.
+アスキー, 1990.
+松村邦仁 アスキー出版技術部訳.
+\sanko
+Adobe社の開発したページ記述言語{\PS}の入門書の
+次に読むべき書籍です．
+%
+\bibitem{pdftk}
+  \Person{Sid}{Steward}. \newblock
+  PDF Hacks\zdash 文書作成、管理、活用のための達人テクニック. 
+  オライリージャパン, 2005. 
+  千住 治郎訳. 
+  \sanko PDFの活用方法を解説した良書です．訳書では日本語を通すための
+  設定等も含まれています．
+ %\ISBN{4-87311-222-2}
+\end{myreferences}
+%
+描画やプロットなどのグラフィックに
+関わる書籍です\footnote{\Prog{MATLAB}
+とか\Prog{Octave}なんかの情報も載せた
+ほうが良いでしょうか？}．
+\begin{myreferences}
+% Graphic, GNUPLOT, GIMP, Tgif
+\bibitem{Gnuplot} 
+\Hito{川原}{稔}. \newblock
+gnuplot パーフェクト・マニュアル.
+ソフトバンク・パブリッシング, 1999.
+\sanko
+プロットソフト\Prog{Gnuplot}の解説書です．
+%
+\bibitem{GIMP_GNUPLOT_Tgif} 
+\Hito{皆本}{晃弥}, \Hito{坂上}{貴之}. \newblock
+GIMP/GNUPLOT/Tgifで学ぶグラフィック処理\zdash UNIXグラフィック
+ツール入門\zdash.
+サイエンス者, 1999.
+\sanko
+実際に読んだ事がないので詳細は分かりませんが
+\Prog{GIMP}，\Prog{Gnuplot}，\Prog{Tgif}を取り扱った書籍です．
+%
+\bibitem{GIMP2} 
+\Hito{向井}{領治}, \Hito{古川}{泰弘}. \newblock
+GIMPエッセンシャルテクニック.
+オーム社, 2000.
+\sanko
+描画プログラム\Prog{GIMP}の解説書です．
+\end{myreferences}
+%
+
+
+\section{{\protect\LaTeX}の書籍}
+{\LaTeX}に関する書籍は多く存在します．
+その中でも特に読むべきもの，
+手に入りやすいものを紹介します．
+
+\subsection{入門書その1}
+まずは入門として読むべき良書を紹介します．
+\begin{myreferences}
+%
+\index{奥村本}
+\bibitem{bibunsyo3} 
+\Hito{奥村}{晴彦}. \newblock
+[改訂第3版] {\LaTeXe}美文書作成入門.
+技術評論社, 2004 .
+\sanko
+通称\wasyo{奥村本}は定評があります．定期的に改訂が
+されているので，そのときの最新の情報も入手できます．
+%
+\bibitem{latexbook} 
+\Person{Leslie}{Lamport}. \newblock
+文書処理システム {\LaTeXe}. 
+ピアソン・エデュケーション, 1999.
+阿瀬はる美訳.
+\sanko
+{\LaTeX}の産みの親が執筆した良書．通称\emph{{\LaTeX} manual}とも
+呼ばれている．上記の\Hito{奥村}{晴彦}氏の文献を購入していれば特に
+困る事もないのだが，{\LaTeX}の基本をがっちりと押さえたい人向け．
+ただし，日本語環境の情報がないので別の情報が必要になると思います．%
+%
+\bibitem{latexcomp} 
+\Person{Michel}{Goossens}, \Person{Frank}{Mittelbach}, and \Person{Alexander}{Samarin}. \newblock
+The {\LaTeX}コンパニオン.
+アスキー, 1998.  
+アスキー書籍編集部監修. 
+\sanko
+\yousyo{{\LaTeX} manual}~\cite{latexbook}で解説できなかった事の
+補足説明と{\LaTeXe}で使用できるマクロパッケージの紹介がされています．
+%
+\bibitem{graphicscomp} 
+\Person{Michel}{Goossens}, \Person{Sebastian}{Rahtz}, and \Person{Frank}{Mittelbach}. \newblock
+{\LaTeX}グラフィックスコンパニオン\zdash{\TeX}と{\PS}による
+図形表現テクニック.
+アスキー, 2000. 
+鷺谷好輝訳.
+\sanko
+\wasyo{The {\LaTeX} コンパニオン}~\cite{latexcomp}で解説できな
+かった事の補足説明と{\PS}周辺の技術を解説したものです．
+%
+\bibitem{webcomp} 
+\Person{Michel}{Goossens} and \Person{Sebastian}{Rahtz}. \newblock
+{\LaTeX} Webコンパニオン\zdash{\TeX}とHTML/XMLの統合.
+アスキー, 2001.  
+鷺谷好輝訳. 
+\sanko
+PDFフォーマットの解説からHTMLやXMLと{\TeX}をどのように統合するか
+が解説されています．
+%	
+\bibitem{linuxthesis} 
+\Hito{臼田}{昭司}, \Hito{伊藤}{敏}, \Hito{井上}{祥史}. \newblock
+ Linux論文作成術.  オーム社, 1999. 
+\sanko
+Linux環境を前提としていますが{\LaTeX}やGnuplot，Tgifなどの
+解説を含んでいますので重宝すると思います．
+%
+\bibitem{bunten} 
+\Hito{生田}{誠三}.  \newblock
+{\LaTeXe} 文典. 
+朝倉書店, 2000.
+\sanko
+{\LaTeXe}ではこんな事もできるのかと感心してしまう1冊です．
+入力と出力が対になった辞典に近いと思います．
+%
+\bibitem{latex2ecommand} 
+\Hito{藤田}{眞作}. \newblock
+{\LaTeXe} コマンドブック.
+ソフトバンクパブリッシング, 2003. 
+\sanko
+その名の通りコマンドブックです．例題が多すぎる気もしますが，
+その分学習しながら読み進める事もできます．
+%
+\bibitem{honda:pocketref}
+\Hito{本田}{知亮}. \newblock
+\LaTeXe 標準コマンド ポケットリファレンス. 
+技術評論社, 2005. 
+\sanko
+\LaTeX の体裁調整に関して解説した良書です．他力本願的というよりは
+自作派向けのまとめ方になっています．
+\end{myreferences}
+
+\subsection{入門書その2}
+少し古くなったのですが，良書ですので紹介します．これらの書籍を
+購入しても最近の情報をインターネットなどで収集するのが良いと思います．
+%
+\begin{myreferences}
+\bibitem{anothermanual1} 
+\Hito{乙部}{厳己}, \Hito{江口}{庄英}. \newblock
+{\em {\pLaTeXe} for Windows Another Manual Vol.1 Basic Kit 1999}.
+ソフトバンク, 1998. 
+\sanko
+{\pLaTeXe}の丁寧な解説書です．持っていて損のない本です．
+%
+\bibitem{anothermanual2} 
+\iiiemdash. \newblock
+{\em {\pLaTeXe} for Windows Another Manual Vol.2 Extended Kit}.
+ソフトバンク, 1997. 
+\sanko
+上記で取り上げられなかった内容を紹介しています．Gnuplotや{\AmSLaTeX}
+に関する情報もあります．
+%%%%%
+\bibitem{anothermanual3} 
+\Hito{江口}{庄英}. \newblock
+{\em Ghostscript Another Manual}.
+ソフトバンク, 1997. 
+\sanko
+Ghostscriptに関する数少ない解説書で，貴重な書籍です．
+%
+ \bibitem{fujita1} 
+\Hito{藤田}{眞作}.  \newblock
+{\LaTeXe} 階梯 第2版. 
+ピアソン・エデュケーション, 2000. 
+\sanko
+{\LaTeXe}の基本的な部分から{\XyMTeX}やマクロの使用方法，
+カウンタの使い方にいたるまで，洗練された一冊です．
+持っていて損のない一冊です．
+%
+\bibitem{fujita2} 
+\iiiemdash.  \newblock
+\pLaTeXe 入門・縦横文書術. 
+ピアソン・エデュケーション, 2000. 
+\sanko
+上記の書籍を購入した後に縦組みにも興味のある人は
+購入すると良いでしょう．
+%
+
+\bibitem{platex2e} \Hito{中野}{賢}.
+日本語 {\LaTeXe} ブック. \newblock
+アスキー, 1996. 
+\sanko
+日本語{\TeX}の開発者による解説書です．これは良書なのですが，
+入手は難しいようです．
+\end{myreferences}
+
+
+\subsection{数学系}
+入門の書籍を持っていれば困る事はないと思いますが，数式を多用する方は
+{\AmSLaTeX}に関する書籍があったほうが便利だと思います．
+%
+\begin{myreferences}
+ \bibitem{AMSLaTeX1} 
+  \Hito{嶋田}{隆司}. \newblock
+  {\LaTeXe} 数式環境. 
+  シイエム・シイ出版部, 2001. 
+  \sanko
+  {\AmSLaTeX}に関する基本的な情報はこの1冊あれば良いでしょう．
+  少々説明不足だと感じる部分があるのが残念ですが，論文作成には役に立つと思います．
+%
+% \bibitem{AmSLaTeX2} \HITO{小林通正}, 小林 研.
+%  {\LaTeX}で数学を {\LaTeXe} + {\AmSLaTeX}入門.  \newblock
+%  朝倉書店, 1997. \sanko
+% 若干内容が古い\pp{{\AmSLaTeX 1.2}}かも知れません．{\LaTeXe}の
+% 記述が多いので{\AmSLaTeX}の記述は少なめです．
+%
+\bibitem{MathLaTeX} 
+\Person{George}{Gr\"atzer}.  \newblock
+Math into {\LaTeX}. 
+Springer, 2000. 
+\sanko
+英語ですがとても参考になる1冊です．\CTAN{info/mil/} に
+サンプルがあります．
+\end{myreferences}
+
+\subsection{化学・生化学}\zindind{化学}{式}\zindind{化学}{構造式}
+化学系では化学構造式や反応式などを書く必要があると思います．
+そのような図を作成するには\Hito{藤田}{眞作}氏が作成された{\XyMTeX}を
+使うのが良いと思います．
+\begin{myreferences}
+%
+\bibitem{xymtex} 
+\Hito{藤田}{眞作}. \newblock
+{\em {\XyMTeX:} typesetting chemical structural formulas}.
+星雲社, 1997. 
+\sanko
+英語と日本語の2ヶ国語で書かれた書籍で，海外でも広く使われていると
+思われます．バージョンアップされているので\Hito{藤田}{眞作}氏の
+ホームページを確認したほうが良いでしょう．
+%	
+\bibitem{chem}  
+\iiiemdash. \newblock
+化学者・生化学者のための\LaTeX\zdash パソコンによる論文作成の手引き. 
+東京化学同人, 1993. 
+\sanko
+少し古いので今の事情に従わない部分もあるかもしれません．
+%
+\end{myreferences}
+
+\subsection{マクロやクラスの作成}\zindind{マクロ}{の作成}%
+{\LaTeX}をしばらく使っていると，その内部の機構について知りたくなる
+ときがあるかもしれません．しかし\fl{book.cls}などの中を見て溜め息を
+つきたくなる人も多いでしょう．そのようなときはマクロ作成やクラス作成を
+解説した書籍を参考にすると良いと思います．
+%
+\begin{myreferences}
+%
+\bibitem{macroclass1} ページ・エンタープライゼズ株式会社.
+  {\LaTeXe}【マクロ\&クラス】プログラミング 基礎編. \newblock
+  ページエンタープライゼズ, 2002. 
+\sanko
+ かなりお勧めの書籍です．マクロ\&クラス作成に関しては，この本が
+ あれば今まで悩んでいた事が解決すると思います．
+%	
+\bibitem{macroclass2} \Hito{吉永}{徹美}.
+  {\LaTeXe}【マクロ\&クラス】プログラミング 実践編. \newblock
+  ページエンタープライゼズ, 2003. 
+\sanko
+ 上記の続編です．
+\end{myreferences}
+
+\subsection{{\TeX}についての本}
+{\LaTeX}を追求しているとやはり{\TeX}についても知りたくなります．
+\Person{Donald}{Knuth}やplain {\TeX}に関する書籍を参考にすると
+良いでしょう．いずれの本も入手が難しくなってきていますので，
+早めに購入するか古本屋で探してください．
+%
+\begin{myreferences}
+\bibitem{texbook} 
+  \Person{Donald}{Knuth}. \newblock
+  改訂新版 {\TeX} ブック.
+  アスキー, 1992.   
+  斎藤信男監修. 
+  鷺谷好輝訳.
+  \sanko
+  {\TeX}の作者が書いた本です．アスキーでは取り扱いを停止している模様です．
+  非常に重要な1冊です．
+% 
+\bibitem{metafontbook} 
+  \iiiemdash. \newblock
+  {\MF} ブック.
+  アスキー, 1994.  
+  鷺谷好輝訳.
+  \sanko
+  {\TeX}システムに必要だったフォントの作成をするためのプログラムの解説で
+  す．これも重要な1冊です．
+% 
+\end{myreferences}
+
+\section{文書作成全般}
+
+\subsection{作文技術}
+
+作文技術や校正に関する知識もあると執筆・編集作業の効率が
+向上する事があります．
+
+\begin{myreferences}
+\bibitem{KK1981} 木下是雄.
+\newblock 理科系の作文技術.
+\newblock 中公新書624. 中央公論社, 1981.
+
+\bibitem{HN1998} 中田英雄, 金城悟編.
+\newblock 大学生のための研究論文のまとめ方\zdash
+  データ収集からプレゼンテーションまで.
+\newblock 文化書房博文社, 1998.
+
+\bibitem{HO2002} 小笠原喜康.
+\newblock 大学生のためのレポート・論文術.
+\newblock 講談社, 2002.
+
+\bibitem{HO2004} 大隈秀夫.
+\newblock 分かりやすい日本語の書き方.
+\newblock 講談社, 2004.
+\end{myreferences}
+
+
+\subsection{組版全般}
+
+組版に関する知識がなければまともな本は作れませんので，
+以下の書籍を読んでみる事をお勧めします．
+
+\begin{myreferences}
+%
+%\bibitem{NES1999} 日本エディタースクール編.
+%\newblock 校正記号の使い方\zdash タテ組・ヨコ組・欧文組.
+%\newblock 日本エディタースクール, 1999
+%
+%\bibitem{NES2001a} 日本エディタースクール編.
+%\newblock 文字の組方ルールブック〈ヨコ組編〉.
+%\newblock 日本エディタースクール, 2001
+
+\index{日本エディタースクール}
+\bibitem{NES2001a} 
+  日本エディタースクール編集.  \newblock
+  文字の組方ルールブック\zdash 横組編. 
+  日本エディタースクール出版部, 2001. 
+\sanko
+ 横組における組版規則を要領よくまとめた手軽な良書です．
+%
+\bibitem{kumihan2} 
+  \iiiemdash.  \newblock
+  文字の組方ルールブック\zdash 縦組編. 
+  日本エディタースクール出版部, 2001. 
+  \sanko
+  縦組における組版規則を要領よくまとめた手軽な良書です．
+%
+\bibitem{NES1999} 
+  \iiiemdash.  \newblock
+  校正記号の使い方\zdash タテ組・ヨコ組・欧文組.
+  日本エディタースクール出版部, 1999. 
+  \sanko
+  校正記号の使い方をコンパクトにまとめた良書です．
+  以上の3冊は値段も手ごろです．
+% 
+\bibitem{kumihan4} 
+  \iiiemdash.  \newblock
+  新編 出版編集技術 上巻. 
+  日本エディタースクール出版部, 1997. 
+  \sanko
+  内容が少し古いのですが（写植時代の名残が強いので）実技的な部分も
+  多く含んだ出版編集に関わる人間は持っていて損のない1冊と言えます．
+  これはその上巻です．
+%
+\bibitem{kumihan5} 
+  \iiiemdash.  \newblock
+  新編 出版編集技術 下巻. 
+  日本エディタースクール出版部, 1997. 
+  \sanko
+   これは上記の下巻です．
+\index{Oxford Style}
+\bibitem{oxfordstyle2002} \Person{Robert}{Ritter}. 
+ {\em The Oxford Style Manual}. \newblock
+ Oxford University Press, 2002.\sanko
+欧文組版に関する優れた資料です．組版関係の
+事に興味が沸いてきたら参照してみてください．
+こちらは英語圏での標準の組版規則についての解説です．
+\index{Chicago Style}
+\bibitem{ChicagoStyle15} University of Chicago Press Staff.
+ {\em The Chicago Manual of Style 15th edition}. \newblock
+ Chicago University Press, 2003.\sanko
+こちらは米語圏での標準の組版規則についての解説です．
+% 
+\end{myreferences}
+
+\subsection{多少入手が難しい書籍}
+10年も経つと入手が難しくなるのが専門書というもので，
+売っているときに買わなければ2度と手に入らないかもしれません．
+%\begin{metacomment}
+% だから Free なマニュアルを配布しようよ．
+%\end{metacomment}
+
+\begin{myreferences}
+
+\bibitem{fujita:macro:yatimata} 
+  藤田眞作.  \newblock
+  {\LaTeX}まくろの八衢. 
+  アジソン・ウェスレイ, 1995. 
+  \sanko
+  繰り返し処理やカウンタの使い方などを習得するために
+  是非読んでおきたい本です．
+ 
+\index{本づくり}
+\bibitem{fujita:hon:yatimata} 
+  \iiiemdash.  \newblock
+  {\LaTeX}本づくりの八衢. 
+  アジソン・ウェスレイ, 1996. 
+  \sanko
+  和文組版に配慮した本づくりに関した技術を取り扱った本です．
+
+\end{myreferences}
+
+
+\subsection{無料の冊子}\applab{online}
+とにかく無料で済ませたい方はオンラインで公開されている無料の
+冊子をご自分で印刷して勉強されるのが良いでしょう．
+%
+\begin{myreferences}
+ \bibitem{lshort} 
+ \Person{Tobias}{Oetiker}\pp{\Person{Hubert}{Partl},  
+   \Person{Irene}{Hyna} and \Person{Elisabeth}{Schlegl}}. \newblock
+  \emph{The Not So Short Introduction to {\LaTeXe}---%
+    Or {\LaTeXe} in 129 minutes}.
+  \sanko \CTAN{info/lshort/english/}
+  \sanko
+ 通称\Z{lshort}と呼ばれる{\LaTeX}の入門書です．これだけ読めば一通り{\LaTeX}
+ が使えるようになると思います．
+%
+ \bibitem{jlshort} Tobias Oetiker.  \newblock
+  {\LaTeXe}への道\zdash 83分{\LaTeXe}入門. \Hito{野村}{昌孝}訳.
+  \sanko \CTAN{info/lshort/japanese/} 
+  \sanko 上記のlshortの日本語訳で通称\Z{jlshort}と呼ばれています．
+%
+ \bibitem{styleuse} \Hito{岩熊}{哲夫}, \Hito{古川}{徹生}.   \newblock
+%古川さんの名前を哲生と間違えて表記しました．大変失礼しました． \newblock
+  {\LaTeX}のマクロやスタイルファイルの利用.   1994.
+  \sanko \webBear
+  \sanko \LaTeX の旧版 \LaTeX\,2.09 でのマクロの利用についてです．今で
+  も十分参考になると思います．
+
+\end{myreferences}
+%
+%\begin{Prob} 最後の問題です，本冊子で紹介した
+%参考図書をすべて定価で購入したら合計金額は
+%いくらになるでしょうか．
+%\end{Prob}
+
+\section{ウェブの資料}
+近年はウェブ\pp{World Wide Web}というネットワークが広く活用されています．
+情報の共有や多様なメディアの共存などができるウェブ上では実に様々な情報が
+提供されています．しかし，あまりに沢山散在するために，どこをどう探せば良
+いのかが分かりづらいのも事実です．そのような場合は検索エンジンと呼ばれる
+無料の検索機構やディレクトリと呼ばれる検索対象を項目ごとに階層的に分類し
+たウェブページなども存在します．これらの中で著者のおすすめは
+\Z{Google}\footnote{\webGoogle}です．
+%ですからウェブブラウザの標準のページはこのサイトにするのも良いでしょう．
+%アドレス
+%を指定してGoogleのサイトに移動したならば
+%\figref{google}のような画面がブラウザに
+%表示されるはずです．
+%\begin{figure}[htbp]
+% \begin{center}
+%  \includegraphics[bb={0 0 571 389},scale=.41]{images/google}
+%  \caption{Googleのトップページ\figlab{google}}
+% \end{center}
+%\end{figure}
+%検索エンジンを有効に使いこなせば
+%{\LaTeX}に限らず，様々な情報が入
+%手できる事でしょう．
+
+\subsection{CTAN と Ring Serverの使い方}\seclab{RingServer}
+
+\Z{CTAN}とは Comprehensive {\TeX} Arhcive Networkの略で{\TeX}に関連する
+マクロパッケージやプログラムなどを収集しそれを提供するサイトです．英語版
+ですがCTANには\Person{Graham}{Williams}によるカタログ 
+(\CTAN{help/Catalogue/index.html}) がありますので，そこから自分がしたい
+事を実現できるパッケージなどを見つけると良いでしょう．
+
+%この冊子でも取り上げているマクロやプログラムなどの情報源の多くはウェブか
+%ら得ています．\qu{CTAN}と書かれているならば，
+%\url{http://www.ring.gr.jp/pub/text/CTAN/} 等をルートディレクトリとして
+%アクセスすると，
+
+Ring~Serverは（ネットワーク）社会にとって有用だと思われるソフトウェアと
+その開発を支援するプロジェクトが運営するファイルサーバ群です．
+\webRingServer にアクセスすると自動的に空いてい
+るサーバに接続できます．
+% P2P でこういうものを共有すれば良いはずだけど， release とか
+% ファイル保持の問題とかいろいろあるから，結局は集中させた方が
+% 良い事もあるんだよね．
+アクセスすると\Z{Ring Server}のトップページを閲覧する事ができるはずです．
+「ソフトウェアライブラリ」や「検索」等からお目当てのファイルを
+探す事ができます．直接 \webRingPub にアクセスすれば，\fl{CPAN/},
+\fl{GNU/}, \fl{linux/}, \fl{text/}
+等のディレクトリ\footnote{\webRingText}があります．特に有益だと思われる
+ディレクトリを抜粋したものを\figref{RingServer}に示します．
+
+\makeatletter
+\newcommand\basedir{http://www.ring.gr.jp/pub/text/}
+\let \@dir@i   = \relax
+\let \@dir@ii  = \relax
+\let \@dir@iii = \relax
+\let \@dir@space = \nobreakspace
+\def \@item@afterskip {\hskip\cwd}
+\def \@dir@label#1{\ifvmode \leavevmode \fi \llap{#1}\@dir@space}
+\def \@hdir@item#1#2{\href{#1}{\texttt{#2}}\@item@afterskip}
+\ifHyper
+\newcommand\diri[1]{\par\leftskip=1zw
+  \def\@dir@i{#1}%
+  \@dir@label{\labelitemi}%
+  \@hdir@item{\basedir#1}{#1}}
+\newcommand\dirii[1]{\par\leftskip=2.5zw
+  \def\@dir@ii{#1}%
+  \@dir@label{\labelitemii}%
+  \@hdir@item{\basedir\@dir@i#1}{#1}}
+\newcommand\diriii[1]{\par\leftskip=4zw
+  \def\@dir@iii{#1}%
+  \@dir@label{\labelitemiii}%
+  \@hdir@item{\basedir\@dir@i\@dir@ii#1}{#1}}
+\newcommand\diriiii[1]{\par\leftskip=5.5zw
+  \@dir@label{\labelitemiv}
+  \@hdir@item{\basedir\@dir@i\@dir@ii\@dir@iii#1}{#1}}
+\else
+\newcommand\diri[1]{\par\leftskip=1zw%
+   \@dir@label{\labelitemi}\texttt{#1}\@item@afterskip}
+\newcommand\dirii[1]{\par\leftskip=2.5zw%
+   \@dir@label{\labelitemii}\texttt{#1}\@item@afterskip}
+\newcommand\diriii[1]{\par\leftskip=4zw%
+   \@dir@label{\labelitemiii}\texttt{#1}\@item@afterskip}
+\newcommand\diriiii[1]{\par\leftskip=5.5zw%
+   \@dir@label{\labelitemiv}\texttt{#1}\@item@afterskip}
+\fi
+\newenvironment{KI}{%
+   \begin{figure}[p]
+      \begin{trivlist}%
+          \small \narrowbaselines \item[]}{%
+      \end{trivlist}%
+   \caption{Ring Server の探検}\figlab{RingServer}%
+   \end{figure}}
+\makeatother
+
+\begin{KI}
+\diri{CTAN/} 
+  CTAN: \emph{Comprehensive \TeX\ Archive Network}．ここから探検が始まります．
+\dirii{documentation/} 
+  \TeX に関連する文書が蓄積されています．
+%\diriii{Type1fonts/fontinstallationguide/} 
+%  \Person{Philipp}{Lehman} による \emph{The Font Installation Guide} と
+%  いう文書で，\TeX で\PS フォントを使用するための方法について解説してい
+%  ます．
+\diriii{epslatex.pdf}
+ \Person{Keith}{Reckdahl}氏による\LaTeX での画像の張り込みに関する解説
+  \emph{Using Imported Graphics in \LaTeX\ and \PDFLaTeX.}
+\diriii{gentle/}
+ \Person{Michael}{Doob}氏による\emph{A Gentle Introduction to \TeX---A
+  Manual for Self-study}．\LaTeX ではなく\Prog[plain TeX]{plain \TeX}
+ についての解説書です．
+\diriii{impatient/}
+ \Person{Paul W.}{Abrahams}氏らによるplain \TeX の解説書\emph{\TeX\ for the
+  Impatient}．本書と同じ \emph{\thefdl} のマニュアル．旧版で邦訳 (ISBN:
+  479529643X) も出版されています．
+\diriii{lshort/} 
+ \Person{Tobias}{Oetiker}氏らによる\LaTeXe の入門書
+ \emph{The Not So Short Introdution to \LaTeXe}．
+\diriiii{japanese/} \Hito{野村}{昌孝}氏による日本語訳があります．
+\diriii{mil/}
+ \Person{George}{Gr\"atzer}氏による数式について特記した入門書
+ \emph{Math into \LaTeX---An Introduction to \LaTeX\ and \AmSLaTeX.}
+ 第3版 (ISBN: 0817641319) が出版されています．
+\diriii{symbols/}
+ \LaTeX\ で使える記号類の一覧が閲覧できます．
+\diriiii{comprehensive/}
+  \Person{Scott}{Pakin}氏による\LaTeX で使用できる記号の一覧\emph{The
+  Comprehensive \LaTeX\ Symbol List}．
+\dirii{dviware/} デバイスドライバ等があります．
+%\diriii{dvipdfm/}
+% \Person{Mark}{Wicks}氏によるDVI \textto PDF 変換ができるデバイスドライバ
+%  です．
+\diriii{dvipdfmx/} \Hito{平田}{俊作}氏と\Hito{趙}{珍煥}氏による \Dvipdfm の
+  拡張 \Dvipdfmx です．
+\dirii{fonts/} \TeX に関するフォント等があります．
+%\diriii{amsfonts/} \AmSLaTeX で使用される \AmS フォントです．
+%\diriii{cm/} 各形式の Computer Modern フォントとその周辺フォントがあります．
+\diriii{jknappen/}
+ \indindz{フォント}{EC}
+ \Person{J\"org}{Knappen}氏による\emph{European Computer Modern Fonts}（通
+  称\Z{ECフォント}）があります．
+\dirii{macros/} \TeX で使用できる便利なマクロパッケージがここに収録され
+  ています．
+\diriii{latex/} \LaTeXe で使用できるマクロパッケージがあります．
+ 現在は \fl{latex2e}というディレクトリですが，\LaTeX の旧版のマクロは
+ \fl{latex209}というディレクトリに，次期\LaTeX\,3 の場合は \fl{latex3}
+ なるディレクトリに蓄積されるだろうと思います．
+\diriiii{base/} \LaTeXe の基本となるファイル群があります．
+\diriiii{contrib/} 世界中の\TeX\ ユーザから投稿されたマクロパッケージが
+  あります．
+\diriiii{doc/} \LaTeX\,3プロジェクトチームから公式に配布される文書です．
+\diriiii{required/} \AmSLaTeX, \Y{babel}, \Y{graphicx}等の重要なマクロです．
+%\dirii{nonfree/}
+\dirii{support/} 何らかの形で役立つツール等があります．
+%\diriii{TeX4ht/} \Person{Eitan}{Gurari}氏による\TeX \textto HTML への変換
+% プログラムです．
+\diriii{latexmk/} \Person{David J.}{Musliner}氏による\LaTeX の再コンパイル
+ 支援プログラムです．
+%\diriii{pdfbook/}
+% C コード%面付け前のページ入れ替え
+\diriii{pdfcrop/}
+ \Person{Heiko}{Oberdiek}氏による PDFの余白を切り抜く Perl スクリプト
+ (要 \PDFTeX, Perl, \GS) です．
+%\diriii{xpdf/}
+\dirii{systems/} 環境（オペレーティグシステム）に依存するファイル群です．
+%\diriii{aleph/}
+%\diriii{e-tex/}
+%\diriii{pdftex/}
+\diriii{win32/} Windows 環境に依存するプログラム等です．
+% \diriiii{winshell/} \Person{Ingo H. de }{Boer}氏による \LaTeX の
+% 統合執筆支援環境です．
+\dirii{tds/} \Z{TUG}: \emph{\TeX\ Users Group}による\Z{TDS}に関する文書です．
+\diri{TeX/} CTAN とは別に，Ring~Server が収録している \TeX 関連のものです．
+\dirii{ascii-ptex/} アスキーによる日本語化された\pTeX/\pLaTeX です．
+\dirii{dviout/} \Hito{大島}{利雄}氏による Windows用DVIプレビューア\Dviout です．
+\dirii{ptex-win32/}  \Hito{角藤}{亮}氏による Windows用の\pTeX とその周辺ツー
+ ルです．
+\diriii{current/}  角藤版 \pTeX の最新版です．
+\diriii{gs/} 日本語化済みの \GS 等があります．
+%\diriii{utils/} その他の便利なツールです．
+\end{KI}
+
+
+
+\subsection{\LaTeX}
+{\LaTeX}や{\LaTeX}の基本マクロ，{\LaTeX}の拡張マクロの情報源です．
+
+\begin{myreferences}
+%
+\bibitem{base.source2e}
+ \Person{Johannes}{Braams}, \Person{David}{Carlisle}, 
+ \Person{Alan}{Jeffrey}, \Person{Leslie}{Lamport}, 
+ \Person{Frank}{Mittelbach}, \Person{Chris}{Rowley}, and 
+ \Person{Rainer}{Sch\"opf}. \newblock% Shopfになっていたので修正
+  {\em \LaTeXe\ \ Sources}, 2001. 
+  \sanko \CTAN{macros/latex2e/base/source2e.tex}
+  \sanko \LaTeXe の全ソースコードです．大変勉強になります．
+%
+\bibitem{tool.enumerate} David Carlisle. \newblock
+  {\em The {enumerate} package}, 1999. 
+  \sanko \CTAN{macros/latex2e/required/tools/enumerate.dtx}
+  \sanko \LaTeX\ toolsに含まれるパッケージです．番号付きリスト環境の拡張です．
+%
+\bibitem{tool.longtable} \iiiemdash. \newblock
+  {\em The {longtable} package}, 2000. 
+  \sanko \CTAN{macros/latex2e/required/tools/longtable.dtx}
+  \sanko \LaTeX\ toolsに含まれるパッケージです．ページをまたぐ程の大きな
+  表を作成するために使います．
+%
+\bibitem{base.ifthen} \iiiemdash. \newblock
+  {\em The {ifthen} package}, 2001.
+  \sanko \CTAN{macros/latex2e/base/ifthen.dtx}
+  \sanko \LaTeX\ toolsに含まれるパッケージです．条件分岐などに使えます．
+%
+\bibitem{tool.layout} \Person{Kent}{McPherson}. \newblock
+  {\em Displaying page layout variables}, 2000.
+  \sanko \CTAN{macros/latex2e/required/tools/layout.dtx}
+  \sanko 現在使用中のクラスでのページレイアウトについての情報を出力するた
+  めのマクロです．
+%
+\bibitem{base.slides} Frank Mittelbach. \newblock
+  {\em Producing slides with {\LaTeXe}}, 1997.
+  \sanko \CTAN{macros/latex2e/base/slides.dtx}
+  \sanko \sty{slides}クラスについての情報です．
+%
+%\indindz{段組}{多}%
+\bibitem{tool.multicol} \iiiemdash. \newblock
+  {\em An environment for multicolumn output}, 2003.
+  \sanko \CTAN{macros/latex2e/required/tools/multicol.dtx}
+  \sanko \Z{多段組}を実現する\sty{multicol}パッケージについてです．
+  % 商用利用にはライセンスが必要という癖のあるマクロです．
+%
+\bibitem{tool.theorem} \iiiemdash. \newblock
+  {\em An Extension of the {\LaTeX} theorem environment}, 2003.
+ \sanko \fl{macros/latex2e/required/tools/theorem.dtx}
+ \sanko {\LaTeX}の\env{theorem}環境を拡張した\sty{theorem}パッケージです．
+ {\AmSLaTeX}のものよりも高性能かもしれません．
+%
+\bibitem{base.docstrip} Frank Mittelbach, \Person{Denys}{Duchier}, 
+  Johannes Braams, \Person{Marcin}{Wolinski}, and
+  \Person{Mark}{Wooding}. \newblock
+  {\em The {docStrip} program}, 1999. 
+ \sanko \CTAN{CTAN/macros/latex2e/base/docstrip.dtx}
+ \sanko クラス作成者は必読の\Z{DocStrip}ユーティリティーについ
+  ての解説です．
+%
+\bibitem{tool.verbatim}  \Person{Rainer}{Sch\"opf}, 
+  \Person{Bernd}{Raichle} and \Person{Chris}{Rowley}. \newblock
+  {\em A New Implementation of \LaTeX 's \texttt{verbatim} and
+ \texttt{verbatim*} Environments}, 2001. 
+ \sanko \CTAN{macros/latex2e/required/tools/verbatim.dtx}
+ \sanko  \env{verbatim}環境の拡張についてです．
+%
+ \zindind{フォント}{の選択方法}%
+\bibitem{base.fntguide} {\LaTeX\,3} Project Team. \newblock
+  {\em \LaTeXe\ \ font selection}, 2000. 
+ \sanko \CTAN{macros/latex2e/base/fntguide.tex}
+ \sanko {\LaTeX}でのフォントの選択方法\pp{NFSS}についての文書です．
+   {\LaTeX}で使われているフォントの定義の仕方について知りたい
+   ならば読むべきでしょう．
+%
+\bibitem{base.usrguide} \iiiemdash. \newblock
+  {\em \LaTeXe\ \ for authors}, 2001. 
+  \sanko \CTAN{macros/latex2e/base/usrguide.tex}
+  \sanko {\LaTeX}を使い始める人は読むべき情報です．{\LaTeX}の更新履歴などが
+ 含まれているので重要な文書です．
+%
+\bibitem{base.clsguide} \iiiemdash.  \newblock
+  \emph{\LaTeXe\ \ for class and package writers}, 1999.
+   \sanko \CTAN{macros/latex2e/base/clsguide.tex}
+   \sanko クラスファイルやマクロパッケージを設計する人向けの解説です．
+%
+\bibitem{tool.calc}
+ \Person{Kresten}{Thorup}, \Person{Frank}{Jensen}, and
+ \Person{Chris}{Rowley}. \newblock
+  {\em The {calc} package}, 1998. 
+  \sanko \CTAN{macros/latex2e/required/tools/calc.dtx}
+  \sanko {\LaTeX}での計算を楽にするパッケージです．
+%
+\indindz{文字}{キリル}%
+\bibitem{base.cyrguide}
+  \Person{Vlandimir}{Volovich}, \Person{Werner}{Lemberg} and 
+  {\LaTeX\,3 Project Team}.  \newblock
+  \emph{Cyrillic languages support in {\LaTeX}}, 1999.
+  \sanko \CTAN{macros/latex2e/base/cyrguide.tex}
+  \sanko \Z{キリル文字}（\Z{ロシア語}）を扱うための解説です．
+%
+\end{myreferences}
+
+
+\subsection{\LaTeX 周辺の資料}
+
+ \LaTeX 周辺の技術資料です．
+
+\begin{myreferences}
+%
+\bibitem{omdvipdfm} \Person{Mark}{Wicks}. \newblock
+  {\em Dvipdfm User's Manual}, 1999. 
+ \sanko \CTAN{dviware/dvipdfm/dvipdfm.pdf}
+ \sanko デバイスドライバ\prog{Dvipdfm}のマニュアルです．
+%
+\bibitem{omdvipdfmx} \Hito{趙}{珍煥}. \newblock
+  {\em DVIPDFMx, an eXtension of DVIPDFM}, 2003.
+  \sanko \webDvipdfmx
+  \sanko \prog{Dvipdfm}の拡張版である\prog{\Dvipdfmx}についての情報です．
+%
+\bibitem{omjbtxdoc} \Person{Oren}{Patashnik}. \newblock
+  \BibTeX ing: \BibTeX の使い方, 1991. 松井正一訳.
+  \sanko {\JBibTeX}と共に配布される文書です. 
+%
+\bibitem{omjbibtex} \Hito{松井}{正一}. \newblock
+  日本語\BibTeX: \JBibTeX, 1991.
+  \sanko {\JBibTeX}と共に配布される文書です.
+%
+\bibitem{DocPac} \Person{Scott}{Pakin}.  \newblock
+  {\em How to Package Your {\LaTeX} Package}, 2003.
+  \sanko \CTAN{info/dtxtut/}
+  \sanko 自分が作成した{\LaTeX}のパッケージを配布するための，
+  パッケージの作成方法が書かれた解説です.
+%
+\bibitem{FontInst} \Person{Philipp}{Lehman}.  \newblock
+  {\em The Font Installation Guide}, 2003. 
+  \sanko \CTAN{info/Type1fonts/fontinstallationguide/}
+  \sanko {\LaTeX}で{\PS}フォントを使うための解説です．
+%
+\zindind{フォント}{の名前}%%
+\bibitem{fontname} \Person{Karl}{Berry}.  \newblock
+  {\em Fontname}, 2003. 
+  \sanko \CTAN{info/fontname/}
+  \sanko {\LaTeX}におけるフォント名についての解説です．
+%
+\bibitem{psnfss2e} \Person{Walter}{Schmidt}.  \newblock
+  {\em Using common PostScript fonts with \LaTeX}, 2004. 
+  \sanko \CTAN{macros/latex/required/psnfss/psnfss2e.pdf}
+  \sanko \LaTeX で\PS フォントを使うための解説資料です．
+%
+\bibitem{TDS} {\TeX} Users Group.  \newblock
+  {\em A Directory Structure for {\TeX} Files}, 2003. 
+  \sanko \CTAN{tds/}
+  \sanko {\TeX}に関連するファイルが乱雑に分類されていたので，
+  ある基準できちんと整理するように定めた資料です．
+\end{myreferences}
+
+
+\subsection{マクロパッケージ}\seclab{ref:macropackage}
+\begin{myreferences}
+%
+%\bibitem{omlgrind} Various Artists. \newblock
+%  {\em The Lgrind Package}, 2002.\sanko
+%  \CTAN{support/lgrind/}\sanko
+% ソースコードを整形する\prog{Lgrind}パッケージについてです．
+% 最近はあまり使われなくなったのでしょうか．
+%%
+%\bibitem{omjlgrind} 古川正恵. \newblock
+%  {\em jlgrind---grind nice program listings using \LaTeX}, 1997.\sanko
+%  \url{http://www.vector.co.jp/authors/tfuruka1/}\sanko
+% 上記の\prog{Lgrind}を日本語化された\Hito{古川}{正恵}氏による文書です．
+% 日本語化されたのが1997年ですから，少々古くなっています．
+%%
+\bibitem{omlistings} \Person{Carsten}{Heinz}. \newblock
+  {\em The \textsf{Listings} Package}, 2003.
+  \sanko \CTAN{macros/latex2e/contrib/listings/}
+  \sanko ソースコードを整形する\sty{listings}パッケージについてです．
+% 日本でもよく使われているでしょうか．
+%
+\bibitem{omhyperref} Sebastian Rahtz. \newblock
+  {\em Hypertext marks in {\LaTeX} the hyperref package}, 1998.
+  \sanko \CTAN{macros/latex2e/contrib/hyperref/}
+  \sanko {\LaTeX}でハイパーリンクを実現するためのマクロ\Y{hyperref}に関して
+ の資料です．
+%
+\bibitem{omgraphics} \Person{Keith}{Reckdahl}. \newblock
+  {\em Using Imported Graphics in \LaTeX\ and \PDFLaTeX}, 2006.
+  \sanko \CTAN{info/epslatex.pdf} 
+  \sanko 画像を取り込むための\sty{graphicx}\pp{\sty{graphics}}パッケージの
+  使い方を丁寧に解説した文書です．
+%
+\bibitem{ompstricks} \Person{Timothy}{Zandt}. \newblock
+  {\em PSTricks: {\PS} macros for Generic \TeX}, 1993. 
+  \sanko  \webPSTricks
+  \sanko {\PS}命令を使って図形を描く\Y{pstricks}パッケージについての文書
+  です．
+%
+\bibitem{fancyhdr} \Person{Piet}{Oostrum}. \newblock
+ \emph{Page layout in \LaTeX}. 
+  \sanko \CTAN{macros/latex2e/contrib/fancyhdr/}
+  \sanko ヘッダーやフッターを調整する\Y{fancyhdr}についてのマニュアルです．
+%
+\bibitem{AmSGUide} American Mathematical Society.  \newblock
+ \emph{User's Guide for amsmath Package}. 
+ \sanko \webAmSLaTeX
+ \sanko 米国数学会が提供する{\AmSLaTeX}に含まれる\Y{amsmath}
+ パッケージに関する解説です．
+%http://www.ams.org/tex/amslatex.html
+%\bibitem{short-math-guide} \Person{Michael}{Downes}. \newblock
+%  \emph{Short Math Guide for \LaTeX}.
+% \sanko \url{http://www.ams.org/tex/short-math-guide.html}
+% \sanko 数式の書き方と{\AmSLaTeX}の簡単な紹介をした解説です．
+\end{myreferences}
+
+% 敬称「氏」を無効化する．
+%\makeatletter
+%\def\@hito@keisyo{氏}
+%\makeatother
+
+\section{ウェブページ}\applab{webpage}
+
+インターネットは広大で{\LaTeX}に関する情報がウェブページで沢山公開
+されています．それらの情報を追いかけるのも良いでしょう．
+
+\newcommand\weblab[1]{\item\relax\label{web:#1}}
+\newcommand*\raisehyphen{\raise.2ex\hbox{-}}
+\newenvironment{urllist}{%
+   \begin{enumerate}[{{[URL\raisehyphen}A]}] \small}{\end{enumerate}}
+
+\begin{urllist}
+%
+%\weblab{CTAN}
+%     CTAN: the Comprehensive {\TeX} Archive Network
+%     \sanko \webCTAN
+%     \sanko {\TeX}とその周辺のツールを納めたサイトです．各国にミラーサー
+%     バがあります．日本では
+%     Ring~Server\footnote{\webRingCTAN}などにあります．
+%
+\weblab{Okumura}
+     \TeX~Wiki
+     \sanko \webTeXWiki
+     \sanko \Hito{奥村}{晴彦}氏が管理しているページです. 
+%
+\weblab{ASCIIpTeX}
+     The Publishing {\TeX}
+     \sanko \webASCII
+     \sanko 日本語{\TeX}を開発したアスキー社のウェブページです．
+           日本語{\TeX}についての情報があります．
+%
+\weblab{W32TeX}
+     W32\TeX
+     \sanko \webWinTeX
+     \sanko \Hito{角藤}{亮}氏が{Windows}用に移植された{\pTeX}をダウンロードできます. 
+%
+\weblab{dviout}
+     \prog{dviout}/\prog{dviprt}情報
+     \sanko \webOshima
+     \sanko Windows用のDVIプレビューア\Dviout を開発している\Hito{大島}{利雄}氏の
+     ホームページ．
+%
+\weblab{macptex}
+     Mac {\pTeX}とその周辺
+     \sanko \url{http://macptex.appi.keio.ac.jp/~uchiyama/macptex.html}
+     \sanko\Hito{内山}{孝憲}氏が管理されているMac OS X 上で
+     動作するMac {\pTeX}を取り扱ったホームページ．
+%
+\weblab{ohishi}
+     {\pLaTeX} for Windows
+     \sanko \webOishi
+     \sanko \Hito{大石}{守}氏のホームページ．{\LaTeX}の周辺の情報も豊富です．
+%
+%\weblab{ftex}
+%     DTPと印刷フォーラム\sanko
+%     \url{http://forum.nifty.com/fdtp/}\sanko
+%     @niftyのDTPに関するウェブページで{\TeX}についても
+%     解説している．更新が早く，情報も豊富で非常に良いウェブページ．
+%     
+\weblab{fujita}
+     藤田眞作 個人ページ
+     \sanko \webFujita
+     \sanko \Hito{藤田}{眞作}氏のホームページ．いわゆる『\Z{藤田本}』と呼ばれる
+     良書の著者です．{\XyMTeX}~\cite{xymtex}の開発もしています．
+%
+\weblab{otobe}
+     \ruby{乙部}{おとべ}\ruby{厳己}{よしき}個人ページ
+     \sanko \webOtobe
+     \sanko \Hito{乙部}{厳己}氏のホームページ．いわゆる『\Z{乙部本}』と呼ばれる
+     良書の著者です．
+%    %
+\weblab{yamaga}
+     yama-Ga.com
+     \sanko \webYamaga
+     \sanko \Hito{山賀}{正人}氏のホームページ．\Prog{Gnuplot}の日本語化など．
+%
+\weblab{YaTeX} 
+     野鳥\pp{Ya\TeX}
+     \sanko \webYaTeX
+     \sanko \ruby{野鳥}{やちよう}は\Hito{広瀬}{雄二}氏が開発した
+     {GNU Emacs}上で 使える\Z{elisp}です. %{\LaTeX}原稿の編集が楽になります. 
+%
+%\weblab{Excel2LaTeX}
+%     Excel2\LaTeX
+%     \sanko \url{http://plaza19.mbn.or.jp/~Butcher_Bird/}
+%     \sanko {Excel}で作成された表を{\LaTeX}のソースに変換してくれます. 
+%
+\weblab{tone}
+     {\TeX}「超」入門
+     \sanko \webTony
+     \sanko \ruby{刀祢}{とね}\ruby{宏三郎}{こうざぶろう}氏のホームページ．
+%     @niftyの\yo{DTPと印刷フォーラム}のスタッフも兼ねています．
+%
+\weblab{emath}
+     {\small 初等}数学プリント作成{\small マクロ}\sty{emath}
+     \sanko \webEmath
+     \sanko 数学のプリントを作成するだけでなく，数学の多方面にも活用できそうな
+     マクロを収めた\Y{emath}パッケージの配布元です．
+%
+\weblab{klavis}
+     ワープロユーザーのための{\LaTeX}入門
+     \sanko \webOtomo
+     \sanko \Hito{大友}{康寛}氏が開設している初心者向けの{\LaTeX}の情報．
+     インストール等は丁寧に画像付きですから詳しいです．
+%
+\weblab{yoshinaga}
+     SMALL {\LaTeX} LAB
+     \sanko \webYoshinaga
+     \sanko マクロ作成の良書~\cite{macroclass1,macroclass2}を手がけられた
+     \Hito{吉永}{徹美}氏のホームページです．
+%
+\weblab{saito}
+     {\LaTeXe}的
+     \sanko \webSaito
+     \sanko さまざまなマクロを公開している\Hito{齋藤}{修三郎}氏のホーム
+     ページです．特に\LaTeX で \Z{ユニコード}文字や\Z{OpenType}フォント
+     を使う事ができる \sty{utf}/\sty{otf}パッケージはとても便利です．
+%
+\weblab{kumazawa}
+     \Hito{熊澤}{吉紀}のホームページ
+     \sanko \webKumazawa
+     \sanko ソースと画像でマクロの使用例がある\Hito{熊澤}{吉紀}氏のホー
+     ムページです．
+%
+\weblab{takeno}     
+     竹野研究室 Home Page
+     \sanko \webTakeno
+     \sanko \prog{latex2html}の日本語化や\Z{Gnuplot}のマニュアルの日本語化
+     などをされている\Hito{竹野}{茂治}氏のホームページです．
+%
+\weblab{hotta}
+%     Ghostscript 8.14 $+$ GSview 4.6 の日本語版
+%    \sanko\url{http://auemath.aichi-edu.ac.jp/member/khotta/ghost/} 
+      Ghostscript 8.53 $+$ GSview 4.8 の日本語版
+     \sanko \webHotta
+     \sanko 題名にとらわれずに{\pLaTeXe}についての情報を提供している
+     \Hito{堀田}{耕作}氏のホームページです．
+%たまに大学のサーバーが落ちているときはアクセス不能になるかもしれません．
+%
+\weblab{nagata}
+     {\LaTeX}によるドイツ語・日本語処理
+     \sanko \webNagata
+     \sanko
+     福岡大学の\Hito{永田}{善久}氏が管理されているホームページです．
+     本書では\Z{多言語処理}についてはほとんど扱っておりま
+     せん．申し訳ないのですがウェブからそれらの情報を集めてみ
+     てください．%私がせいぜい理解できるのは日本語と英語と
+%     アイヌ語の挨拶くらいですから．あとバウムクーヘンとか
+%     ドッペルゲンガーなどのドイツ語も知ってますけれど，
+%     ぜんぜん分からないので．
+%
+\weblab{inagaki}
+     日本語{\LaTeX}による多言語処理
+     \sanko \webInagaki
+     \sanko 上記の永田氏のページに比べてこちらの\Hito{稲垣}{徹}氏
+     のホームページでは日本語{\LaTeX}環境での多言語処理を
+     念頭に置かれた解説があります．
+%
+\end{urllist}
+
+
+\endinput

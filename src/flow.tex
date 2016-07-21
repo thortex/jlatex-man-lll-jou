@@ -1,0 +1,76 @@
+\expandafter\ifx\csname graph\endcsname\relax \csname newbox\endcsname\graph\fi
+\expandafter\ifx\csname graphtemp\endcsname\relax \csname newdimen\endcsname\graphtemp\fi
+\setbox\graph=\vtop{\vskip 0pt\hbox{%
+    \special{pn 8}%
+    \special{pa 0 500}%
+    \special{pa 750 500}%
+    \special{pa 750 0}%
+    \special{pa 0 0}%
+    \special{pa 0 500}%
+    \special{fp}%
+    \graphtemp=.5ex\advance\graphtemp by 0.250in
+    \rlap{\kern 0.375in\lower\graphtemp\hbox to 0pt{\hss 原稿の編集\hss}}%
+    \special{pa 750 250}%
+    \special{pa 1250 250}%
+    \special{fp}%
+    \special{sh 1.000}%
+    \special{pa 1150 225}%
+    \special{pa 1250 250}%
+    \special{pa 1150 275}%
+    \special{pa 1150 225}%
+    \special{fp}%
+    \graphtemp=\baselineskip\multiply\graphtemp by -1\divide\graphtemp by 2
+    \advance\graphtemp by .5ex\advance\graphtemp by 0.250in
+    \rlap{\kern 1.000in\lower\graphtemp\hbox to 0pt{\hss \MARU 1\hss}}%
+    \special{pa 1250 500}%
+    \special{pa 2000 500}%
+    \special{pa 2000 0}%
+    \special{pa 1250 0}%
+    \special{pa 1250 500}%
+    \special{fp}%
+    \graphtemp=.5ex\advance\graphtemp by 0.250in
+    \rlap{\kern 1.625in\lower\graphtemp\hbox to 0pt{\hss タイプセット\hss}}%
+    \special{pa 2000 250}%
+    \special{pa 2500 250}%
+    \special{fp}%
+    \special{sh 1.000}%
+    \special{pa 2400 225}%
+    \special{pa 2500 250}%
+    \special{pa 2400 275}%
+    \special{pa 2400 225}%
+    \special{fp}%
+    \graphtemp=\baselineskip\multiply\graphtemp by -1\divide\graphtemp by 2
+    \advance\graphtemp by .5ex\advance\graphtemp by 0.250in
+    \rlap{\kern 2.250in\lower\graphtemp\hbox to 0pt{\hss \MARU 2\hss}}%
+    \special{pa 2500 500}%
+    \special{pa 3250 500}%
+    \special{pa 3250 0}%
+    \special{pa 2500 0}%
+    \special{pa 2500 500}%
+    \special{fp}%
+    \graphtemp=.5ex\advance\graphtemp by 0.250in
+    \rlap{\kern 2.875in\lower\graphtemp\hbox to 0pt{\hss プレビュー\hss}}%
+    \special{pa 3250 250}%
+    \special{pa 3750 250}%
+    \special{fp}%
+    \special{sh 1.000}%
+    \special{pa 3650 225}%
+    \special{pa 3750 250}%
+    \special{pa 3650 275}%
+    \special{pa 3650 225}%
+    \special{fp}%
+    \graphtemp=\baselineskip\multiply\graphtemp by -1\divide\graphtemp by 2
+    \advance\graphtemp by .5ex\advance\graphtemp by 0.250in
+    \rlap{\kern 3.500in\lower\graphtemp\hbox to 0pt{\hss \MARU 3\hss}}%
+    \special{pa 3750 500}%
+    \special{pa 4500 500}%
+    \special{pa 4500 0}%
+    \special{pa 3750 0}%
+    \special{pa 3750 500}%
+    \special{fp}%
+    \graphtemp=.5ex\advance\graphtemp by 0.250in
+    \rlap{\kern 4.125in\lower\graphtemp\hbox to 0pt{\hss 出力・印刷\hss}}%
+    \hbox{\vrule depth0.500in width0pt height 0pt}%
+    \kern 4.500in
+  }%
+}%
