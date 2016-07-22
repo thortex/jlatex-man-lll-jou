@@ -1,53 +1,56 @@
-\documentclass[a4j,11pt,disablejfam,dvipdfmx]{jsbook}%
+\input{dvipdfmx.pre}
+\documentclass[a5j,10pt,dvipdfmx,papersize]{jsbook}%
 \usepackage[phiragino,hyper]{joumac}%
+%\includeonly{10apply}
+\setlength \overfullrule {5pt}
 \begin{document}%
 \author          {渡辺徹}%
 \title           {好き好き\LaTeXe 初級編}%
 \date            {\today}%
-\FileVersion     {1.00}%
+\def\genzai      {2006年4月現在}%
+\FileVersion     {1.14}%
 \copyrightAuthor {渡辺徹}%
-\copyrightYear   {2004, 2005, 2006}%
+\copyrightYear   {2004, 2005, 2006, 2016}%
 \eauthor         {Thor Watanabe}%
 \etitle          {Love Love LaTeX 2e}%
 \esubject        {for beginners}%
 \ekeywords       {TeX, LaTeX, LaTeX2e, pTeX, pLaTeX, pLaTeX2e, FUNNIST, thesis}%
 \contact         {Th\'or Watanabe\\%
-                  Dept.\ of System Information Science\\%
-                  Future University-Hakodate\\%
-                  thor@tex.dante.jp\\%
-                  \url{http://tex.dante.jp/typo/}}%
-\makeatletter
-\makeatother
+                  \url{http://github.com/thortex/}\\%
+                  \url{http://mytexpert.osdn.jp/}}%
+\input{settings}%
 \maketitle%
-%\end{document}%
-%\kuchie% 
-%\include{001kuchie}%
 \frontmatter%
-%\listofchapter%      章目次
 \include{002preface}% まえがき
 \include{003thanx}%   謝辞
-\include{004fwfm}%    フリーソフトウェアとフリーマニュアル
+%\include{004fwfm}%    フリーソフトウェアとフリーマニュアル
 \tableofcontents%
+\par \vskip 2\cvs%
+\listoffigures%
+\listoftables%
 \mainmatter%
-\include{01pregame}%  執筆を始める前に
-\include{02pre}%      LaTeX の基本
-\include{05output}%   出力形式
-\include{03text}%     文章の書き方
-\include{06ml}%       コマンドとマークアップ
-\include{07math}%     数式の書き方
-\include{09highmath}% 高度な数式
-\include{08graphic}%  図表の構成
-\include{04biblio}%   文献一覧の作成
-\include{10apply}%    LaTeX の応用
-\include{14sample}%   文書のサンプル
-\begin{appendix}%
+\include{01pregame}% 1 執筆を始める前に
+\include{02pre}%      2 LaTeX の基本
+\include{03text}%     3 文章の書き方
+\include{06ml}%       4 コマンドとマークアップ
+\include{07math}%     5 数式の書き方
+\include{08graphic}%  6 図表の構成
+\include{04biblio}%   7 文献一覧の作成
+\include{10apply}%    8 LaTeX の応用
+\include{14sample}%   9 書式のサンプル
+\appendix%
+\begin{small}%
 \include{13future}%   最近の動向
 \include{15info}%     参考資料
-\include{fdl}%        GNU FDL
 \include{16changelog}% 変更履歴
-\end{appendix}%
+\include{fdl}%        GNU FDL
+\end{small}%
 \backmatter%
+\ifdraft \else
+\makeatletter%
 \printglossary%       命令索引
 \printindex%          索引
+\makeatother%
 \printokuduke%        奥付
+\fi
 \end{document}%

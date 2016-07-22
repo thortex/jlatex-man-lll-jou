@@ -1,21 +1,16 @@
 #!/bin/sh
-# mendex のために jisyo.dic は適宜
-#    nkf -Lu --euc <jisyo.dic >hoge.dic
-#    mv jisyo.dic jisyo.dic.old 
-#    mv hoge.ci jisyo.dic
-# 等としてください．
 #\begin{comment}
 ## Author  : Thor Watanabe
-## date    : December 25, 2003
+## date    : 2016/07/22 
 ## Name    : Makefile
-## version : 1.0
+## version : 1.1
 #\end{comment}
 #\begin{setting}[valiable]
-TEX=	platex
-BIBTEX=	jbibtex
+TEX=	platex -kanij=utf8
+BIBTEX=	pbibtex -kanji=utf8
 DVIPS=	dvips 
 DVIPDFMX=dvipdfmx
-MAKEIDX=mendex
+MAKEIDX=mendex -E
 FILE=	jou
 #REF=	jou.bib latexbase.bib latexbase2.bib latextools.bib manual.bib
 IST=	sind.ist
@@ -53,7 +48,7 @@ STY=	jsbook.cls \
 MAC=joumac.sty joumac.dtx joumac.ins joumac.dvi
 #\end{setting}
 #\begin{target}
-all: joumac.sty $(FILE).ps $(FILE).pdf $(FILE)hyper.pdf cleanany
+all: joumac.sty $(FILE).pdf $(FILE)hyper.pdf cleanany
 #
 joumac.sty:	joumac.dtx joumac.ins
 	$(TEX) joumac.ins
@@ -81,8 +76,12 @@ $(FILE).pdf: $(FILE).dvi
 $(FILE)hyper.pdf: cleanany $(FILE)hyper.tex
 	$(TEX) $(FILE)hyper
 	$(TEX) $(FILE)hyper
-	$(MAKEIDX) -s $(IST) -d jou.dic -o $(FILE)hyper.ind $(FILE)hyper.idx
-	$(MAKEIDX) -s $(GST) -d jou.dic -o $(FILE)hyper.gls $(FILE)hyper.glo
+	cat $(FILE)hyper.idx | nkf -e > $(FILE)hyper.wrk
+	$(MAKEIDX) -s $(IST) -d jou.dic -o $(FILE)hyper.tmp $(FILE)hyper.wrk
+	cat $(FILE)hyper.tmp | nkf -w > $(FILE)hyper.ind
+	cat $(FILE)hyper.glo | nkf -e > $(FILE)hyper.wrk
+	$(MAKEIDX) -s $(GST) -d jou.dic -o $(FILE)hyper.tmp $(FILE)hyper.wrk
+	cat $(FILE)hyper.tmp | nkf -w > $(FILE)hyper.gls
 	$(TEX) $(FILE)hyper
 	$(TEX) $(FILE)hyper
 	$(DVIPDFMX) -o $(FILE)hyper.pdf $(FILE)hyper
@@ -93,10 +92,14 @@ $(FILE).dvi:$(FILE).ind $(FILE).gls# $(FILE).bbl
            do $(TEX) $(FILE); done)
 
 $(FILE).ind: $(FILE).idx 
-	$(MAKEIDX) -s $(IST) -d jou.dic -o $(FILE).ind $(FILE).idx
+	cat $(FILE).idx | nkf -e > $(FILE).wrk
+	$(MAKEIDX) -s $(IST) -d jou.dic -o $(FILE).tmp $(FILE).wrk
+	cat $(FILE).tmp | nkf -w > $(FILE).ind
 
 $(FILE).gls: $(FILE).glo
-	$(MAKEIDX) -s $(GST) -d jou.dic -o $(FILE).gls $(FILE).glo
+	cat $(FILE).glo | nkf -e > $(FILE).wrk
+	$(MAKEIDX) -s $(GST) -d jou.dic -o $(FILE).tmp $(FILE).wrk
+	cat $(FILE).tmp | nkf -w > $(FILE).gls
 
 $(FILE).bbl: $(FILE).aux
 	$(BIBTEX) $(FILE)
