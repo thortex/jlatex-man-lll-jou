@@ -135,16 +135,19 @@ clean:
 	rm -f $(FILE).glo $(FILE).blg $(FILE).lof $(FILE).lot
 	rm -f $(FILE).out $(FILE).toc $(FILE).ind $(FILE).aux
 	rm -f $(FILE).dvi $(FILE).idx $(FILE).ilg $(FILE).brf
-	rm -f $(FILE).gls $(FILE).exa $(FILE).chl
+	rm -f $(FILE).gls $(FILE).exa $(FILE).chl $(FILE).tmp
+	rm -f $(FILE).wrk 
 
 cleanh:
 	rm -f $(FILE)hyper.bbl $(FILE)hyper.blg $(FILE)hyper.lof 
-	rm -f $(FILE)hyper.lot
+	rm -f $(FILE)hyper.lot 
 	rm -f $(FILE)hyper.out $(FILE)hyper.toc $(FILE)hyper.ind 
 	rm -f $(FILE)hyper.aux
 	rm -f $(FILE)hyper.dvi $(FILE)hyper.idx $(FILE)hyper.ilg 
 	rm -f $(FILE)hyper.brf
+	rm -f $(FILE)hyper.glo $(FILE)hyper.gls $(FILE)hyper.tmp
+	rm -f $(FILE)hyper.wrk $(FILE)hyper.exa
 
 cleanany: clean cleanh
-	rm -f *.log *.aux *~ *.flc
+	rm -f *.log *.aux *~ *.flc .DS_Store
 #\end{target}
