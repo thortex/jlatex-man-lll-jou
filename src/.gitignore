@@ -1,0 +1,14 @@
+.aux
+.log
+.lot
+.lof
+.out
+.toc
+.dvi
+.exa
+.glo
+.gls
+.idx
+.ilg
+.ind
+.DS_Store
