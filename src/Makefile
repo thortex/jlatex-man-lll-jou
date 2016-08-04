@@ -8,7 +8,7 @@
 #\begin{setting}[valiable]
 TEX=	uplatex
 BIBTEX=	upbibtex
-DVIPDFMX=dvipdfmx
+DVIPDFMX=xdvipdfmx
 MAKEIDX=upmendex
 FILE=	jou
 #REF=	jou.bib latexbase.bib latexbase2.bib latextools.bib manual.bib

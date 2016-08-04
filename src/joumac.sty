@@ -171,20 +171,28 @@
 \DeclareKanjiFamily{JY2}{rml}{}
 \DeclareKanjiFamily{JT2}{rml}{}
 \ifcase \c@jfont@select % 普通
-  \DeclareFontShape{JY2}{rml}{m}{n}{<-> s * [0.961] jis}{}
-  \DeclareFontShape{JY2}{rml}{bx}{n}{<-> s * [0.961] jisg}{}
-  \DeclareFontShape{JT2}{rml}{m}{n}{<-> s * [0.961] tmin10}{}
-  \DeclareFontShape{JT2}{rml}{bx}{n}{<-> s * [0.961] tgoth10}{}
+  \DeclareFontShape{JY2}{rml}{m}{n}{<-> s * [0.961] upjisr-h}{}
+  \DeclareFontShape{JY2}{rml}{bx}{n}{<-> s * [0.961] upjisg-h}{}
+  \DeclareFontShape{JT2}{rml}{m}{n}{<-> s * [0.961] upjisr-v}{}
+  \DeclareFontShape{JT2}{rml}{bx}{n}{<-> s * [0.961] upjisg-v}{}
 \or % ヒラギノ
   \DeclareFontShape{JY2}{rml}{m}{n}{<-> s * [0.961] hminr-h}{}
   \DeclareFontShape{JT2}{rml}{m}{n}{<-> s * [0.961] hminr-v}{}
   \DeclareFontShape{JY2}{rml}{bx}{n}{<-> s * [0.961] hgothr-h}{}
   \DeclareFontShape{JT2}{rml}{bx}{n}{<-> s * [0.961] hgothr-v}{}
 \or % ヒラギノ OTF
-  \DeclareFontShape{JY2}{rml}{m}{n}{<-> s * [0.961] hiramin-w3-h}{}
-  \DeclareFontShape{JT2}{rml}{m}{n}{<-> s * [0.961] hiramin-w3-v}{}
-  \DeclareFontShape{JY2}{rml}{bx}{n}{<-> s * [0.961] hirakaku-w3-h}{}
-  \DeclareFontShape{JT2}{rml}{bx}{n}{<-> s * [0.961] hirakaku-w3-v}{}
+%  \DeclareFontShape{JY2}{rml}{m}{n}{<-> s * [0.961] hiramin-w3-h}{}
+%  \DeclareFontShape{JT2}{rml}{m}{n}{<-> s * [0.961] hiramin-w3-v}{}
+%  \DeclareFontShape{JY2}{rml}{bx}{n}{<-> s * [0.961] hirakaku-w3-h}{}
+%  \DeclareFontShape{JT2}{rml}{bx}{n}{<-> s * [0.961] hirakaku-w3-v}{}
+  \DeclareFontShape{JY2}{rml}{m}{n}{<-> s * [0.961] uphminr-h}{}
+  \DeclareFontShape{JT2}{rml}{m}{n}{<-> s * [0.961] uphminr-v}{}
+  \DeclareFontShape{JY2}{rml}{bx}{n}{<-> s * [0.961] uphgothr-h}{}
+  \DeclareFontShape{JT2}{rml}{bx}{n}{<-> s * [0.961] uphgothr-v}{}
+%  \DeclareFontShape{JY2}{rml}{m}{n}{<-> s * [0.961] uprml-h}{}
+%  \DeclareFontShape{JT2}{rml}{m}{n}{<-> s * [0.961] uprml-v}{}
+%  \DeclareFontShape{JY2}{rml}{bx}{n}{<-> s * [0.961] }{}
+%  \DeclareFontShape{JT2}{rml}{bx}{n}{<-> s * [0.961] }{}
 \or % ヒラギノ & プロポーショナル仮名
   \DeclareFontShape{JY2}{rml}{m}{n}{<-> s * [0.961] phiraminw3-h}{}
   \DeclareFontShape{JT2}{rml}{m}{n}{<-> s * [0.961] phiraminw3-v}{}
@@ -207,20 +215,24 @@
 \DeclareKanjiFamily{JY2}{fma}{}
 \DeclareKanjiFamily{JT2}{fma}{}
 \ifcase \c@jfont@select % 普通
-  \DeclareFontShape{JY2}{fma}{m}{n}{<-> s * [0.961] jis}{}
-  \DeclareFontShape{JY2}{fma}{bx}{n}{<-> s * [0.961] jisg}{}
-  \DeclareFontShape{JT2}{fma}{m}{n}{<-> s * [0.961] tmin10}{}
-  \DeclareFontShape{JT2}{fma}{bx}{n}{<-> s * [0.961] tgoth10}{}
+  \DeclareFontShape{JY2}{fma}{m}{n}{<-> s * [0.961] upjisr-h}{}
+  \DeclareFontShape{JY2}{fma}{bx}{n}{<-> s * [0.961] upjisg-h}{}
+  \DeclareFontShape{JT2}{fma}{m}{n}{<-> s * [0.961] upjisr-v}{}
+  \DeclareFontShape{JT2}{fma}{bx}{n}{<-> s * [0.961] upjisg-v}{}
 \or % ヒラギノ
   \DeclareFontShape{JY2}{fma}{m}{n}{<-> s * [0.961] hminr-h}{}
   \DeclareFontShape{JT2}{fma}{m}{n}{<-> s * [0.961] hminr-v}{}
   \DeclareFontShape{JY2}{fma}{bx}{n}{<-> s * [0.961] hminb-h}{}
   \DeclareFontShape{JT2}{fma}{bx}{n}{<-> s * [0.961] hminb-v}{}
 \or % ヒラギノ OTF
-  \DeclareFontShape{JY2}{fma}{m}{n}{<-> s * [0.961] hiramin-w3-h}{}
-  \DeclareFontShape{JT2}{fma}{m}{n}{<-> s * [0.961] hiramin-w3-v}{}
-  \DeclareFontShape{JY2}{fma}{bx}{n}{<-> s * [0.961] hiramin-w6-h}{}
-  \DeclareFontShape{JT2}{fma}{bx}{n}{<-> s * [0.961] hiramin-w6-v}{}
+%  \DeclareFontShape{JY2}{fma}{m}{n}{<-> s * [0.961] hiramin-w3-h}{}
+%  \DeclareFontShape{JT2}{fma}{m}{n}{<-> s * [0.961] hiramin-w3-v}{}
+%  \DeclareFontShape{JY2}{fma}{bx}{n}{<-> s * [0.961] hiramin-w6-h}{}
+%  \DeclareFontShape{JT2}{fma}{bx}{n}{<-> s * [0.961] hiramin-w6-v}{}
+  \DeclareFontShape{JY2}{fma}{m}{n}{<-> s * [0.961] uphminr-h}{}
+  \DeclareFontShape{JT2}{fma}{m}{n}{<-> s * [0.961] uphminr-v}{}
+  \DeclareFontShape{JY2}{fma}{bx}{n}{<-> s * [0.961] uphminbn-h}{}
+  \DeclareFontShape{JT2}{fma}{bx}{n}{<-> s * [0.961] uphminbn-v}{}
 \or % ヒラギノ & プロポーショナル仮名
   \DeclareFontShape{JY2}{fma}{m}{n}{<-> s * [0.961] phiraminw3-h}{}
   \DeclareFontShape{JT2}{fma}{m}{n}{<-> s * [0.961] phiraminw3-v}{}
@@ -235,20 +247,24 @@
 \DeclareKanjiFamily{JY2}{gbm}{}
 \DeclareKanjiFamily{JT2}{gbm}{}
 \ifcase \c@jfont@select % 普通
-  \DeclareFontShape{JY2}{gbm}{m}{n}{<-> s * [0.961] jisg}{}
-  \DeclareFontShape{JY2}{gbm}{bx}{n}{<-> s * [0.961] jisg}{}
-  \DeclareFontShape{JT2}{gbm}{m}{n}{<-> s * [0.961] tgoth10}{}
-  \DeclareFontShape{JT2}{gbm}{bx}{n}{<-> s * [0.961] tgoth10}{}
+  \DeclareFontShape{JY2}{gbm}{m}{n}{<-> s * [0.961] upjisr-h}{}
+  \DeclareFontShape{JY2}{gbm}{bx}{n}{<-> s * [0.961] upjisg-h}{}
+  \DeclareFontShape{JT2}{gbm}{m}{n}{<-> s * [0.961] upjisr-v}{}
+  \DeclareFontShape{JT2}{gbm}{bx}{n}{<-> s * [0.961] upjisg-v}{}
 \or % ヒラギノ
   \DeclareFontShape{JY2}{gbm}{m}{n}{<-> s * [0.961] hgothr-h}{}
   \DeclareFontShape{JT2}{gbm}{m}{n}{<-> s * [0.961] hgothr-v}{}
   \DeclareFontShape{JY2}{gbm}{bx}{n}{<-> s * [0.961] hgothb-h}{}
   \DeclareFontShape{JT2}{gbm}{bx}{n}{<-> s * [0.961] hgothb-v}{}
 \or % ヒラギノ OTF
-  \DeclareFontShape{JY2}{gbm}{m}{n}{<-> s * [0.961] hirakaku-w3-h}{}
-  \DeclareFontShape{JT2}{gbm}{m}{n}{<-> s * [0.961] hirakaku-w3-v}{}
-  \DeclareFontShape{JY2}{gbm}{bx}{n}{<-> s * [0.961] hirakaku-w6-h}{}
-  \DeclareFontShape{JT2}{gbm}{bx}{n}{<-> s * [0.961] hirakaku-w6-v}{}
+%  \DeclareFontShape{JY2}{gbm}{m}{n}{<-> s * [0.961] hirakaku-w3-h}{}
+%  \DeclareFontShape{JT2}{gbm}{m}{n}{<-> s * [0.961] hirakaku-w3-v}{}
+%  \DeclareFontShape{JY2}{gbm}{bx}{n}{<-> s * [0.961] hirakaku-w6-h}{}
+%  \DeclareFontShape{JT2}{gbm}{bx}{n}{<-> s * [0.961] hirakaku-w6-v}{}
+  \DeclareFontShape{JY2}{gbm}{m}{n}{<-> s * [0.961] uphgothr-h}{}
+  \DeclareFontShape{JT2}{gbm}{m}{n}{<-> s * [0.961] uphgothr-v}{}
+  \DeclareFontShape{JY2}{gbm}{bx}{n}{<-> s * [0.961] uphgothb-h}{}
+  \DeclareFontShape{JT2}{gbm}{bx}{n}{<-> s * [0.961] uphgothb-v}{}
 \or % ヒラギノ & プロポーショナル仮名
   \DeclareFontShape{JY2}{gbm}{m}{n}{<-> s * [0.961] phirakakuw3-h}{}
   \DeclareFontShape{JT2}{gbm}{m}{n}{<-> s * [0.961] phirakakuw3-v}{}
@@ -271,9 +287,9 @@
 \DeclareKanjiFamily{JY2}{jun}{}
 \DeclareKanjiFamily{JT2}{jun}{}
 \ifcase \c@jfont@select % 普通
-  \DeclareFontShape{JY2}{jun}{m}{n}{<-> s * [0.961] jisg}{}
+  \DeclareFontShape{JY2}{jun}{m}{n}{<-> s * [0.961] upjisg-h}{}
   \DeclareFontShape{JY2}{jun}{bx}{n}{<->ssub*jun/m/n}{}
-  \DeclareFontShape{JT2}{jun}{m}{n}{<-> s * [0.961] tgoth10}{}
+  \DeclareFontShape{JT2}{jun}{m}{n}{<-> s * [0.961] upjisg-v}{}
   \DeclareFontShape{JT2}{jun}{bx}{n}{<->ssub*jun/m/n}{}
 \or % ヒラギノ
   \DeclareFontShape{JY2}{jun}{m}{n}{<-> s * [0.961] hmgothr-h}{}
