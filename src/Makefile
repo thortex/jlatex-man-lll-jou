@@ -1,16 +1,15 @@
 #!/bin/sh
 #\begin{comment}
 ## Author  : Thor Watanabe
-## date    : 2016/07/22 
+## date    : 2016/08/01 
 ## Name    : Makefile
-## version : 1.1
+## version : 1.2
 #\end{comment}
 #\begin{setting}[valiable]
-TEX=	platex -kanij=utf8
-BIBTEX=	pbibtex -kanji=utf8
-DVIPS=	dvips 
+TEX=	uplatex
+BIBTEX=	upbibtex
 DVIPDFMX=dvipdfmx
-MAKEIDX=mendex -E
+MAKEIDX=upmendex
 FILE=	jou
 #REF=	jou.bib latexbase.bib latexbase2.bib latextools.bib manual.bib
 IST=	sind.ist
@@ -76,12 +75,8 @@ $(FILE).pdf: $(FILE).dvi
 $(FILE)hyper.pdf: cleanany $(FILE)hyper.tex
 	$(TEX) $(FILE)hyper
 	$(TEX) $(FILE)hyper
-	cat $(FILE)hyper.idx | nkf -e > $(FILE)hyper.wrk
-	$(MAKEIDX) -s $(IST) -d jou.dic -o $(FILE)hyper.tmp $(FILE)hyper.wrk
-	cat $(FILE)hyper.tmp | nkf -w > $(FILE)hyper.ind
-	cat $(FILE)hyper.glo | nkf -e > $(FILE)hyper.wrk
-	$(MAKEIDX) -s $(GST) -d jou.dic -o $(FILE)hyper.tmp $(FILE)hyper.wrk
-	cat $(FILE)hyper.tmp | nkf -w > $(FILE)hyper.gls
+	$(MAKEIDX) -s $(IST) -d jou.dic -o $(FILE)hyper.ind $(FILE)hyper.idx
+	$(MAKEIDX) -s $(GST) -d jou.dic -o $(FILE)hyper.gls $(FILE)hyper.glo
 	$(TEX) $(FILE)hyper
 	$(TEX) $(FILE)hyper
 	$(DVIPDFMX) -o $(FILE)hyper.pdf $(FILE)hyper
@@ -92,14 +87,10 @@ $(FILE).dvi:$(FILE).ind $(FILE).gls# $(FILE).bbl
            do $(TEX) $(FILE); done)
 
 $(FILE).ind: $(FILE).idx 
-	cat $(FILE).idx | nkf -e > $(FILE).wrk
-	$(MAKEIDX) -s $(IST) -d jou.dic -o $(FILE).tmp $(FILE).wrk
-	cat $(FILE).tmp | nkf -w > $(FILE).ind
+	$(MAKEIDX) -s $(IST) -d jou.dic -o $(FILE).ind $(FILE).idx
 
 $(FILE).gls: $(FILE).glo
-	cat $(FILE).glo | nkf -e > $(FILE).wrk
-	$(MAKEIDX) -s $(GST) -d jou.dic -o $(FILE).tmp $(FILE).wrk
-	cat $(FILE).tmp | nkf -w > $(FILE).gls
+	$(MAKEIDX) -s $(GST) -d jou.dic -o $(FILE).gls $(FILE).glo
 
 $(FILE).bbl: $(FILE).aux
 	$(BIBTEX) $(FILE)
@@ -112,13 +103,6 @@ $(FILE).idx: $(FILE).aux $(SRC)
 
 $(FILE).aux: $(FILE).tex $(SRC)
 	$(TEX) $(FILE)
-
-html:
-	jlatex $(FILE)
-	jlatex $(FILE)
-	jtex "\def\filename{{$(FILE)}{idx}{4dx}{ind}} \input idxmake.4ht"
-	jmakeindex -o $(FILE).ind $(FILE).4dx
-	ht --cleanup jlatex $(FILE)
 
 tar: $(FILE).tex $(STY) $(BST) $(IST) $(GST) $(SRC) $(SRC2) $(REF) \
 	Makefile $(MAC)
@@ -135,8 +119,7 @@ clean:
 	rm -f $(FILE).glo $(FILE).blg $(FILE).lof $(FILE).lot
 	rm -f $(FILE).out $(FILE).toc $(FILE).ind $(FILE).aux
 	rm -f $(FILE).dvi $(FILE).idx $(FILE).ilg $(FILE).brf
-	rm -f $(FILE).gls $(FILE).exa $(FILE).chl $(FILE).tmp
-	rm -f $(FILE).wrk 
+	rm -f $(FILE).gls $(FILE).exa $(FILE).chl
 
 cleanh:
 	rm -f $(FILE)hyper.bbl $(FILE)hyper.blg $(FILE)hyper.lof 
@@ -144,9 +127,8 @@ cleanh:
 	rm -f $(FILE)hyper.out $(FILE)hyper.toc $(FILE)hyper.ind 
 	rm -f $(FILE)hyper.aux
 	rm -f $(FILE)hyper.dvi $(FILE)hyper.idx $(FILE)hyper.ilg 
-	rm -f $(FILE)hyper.brf
-	rm -f $(FILE)hyper.glo $(FILE)hyper.gls $(FILE)hyper.tmp
-	rm -f $(FILE)hyper.wrk $(FILE)hyper.exa
+	rm -f $(FILE)hyper.brf $(FILE)hyper.exa
+	rm -f $(FILE)hyper.glo $(FILE)hyper.gls
 
 cleanany: clean cleanh
 	rm -f *.log *.aux *~ *.flc .DS_Store

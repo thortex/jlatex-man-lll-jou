@@ -37,7 +37,7 @@
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{pLaTeX2e}
 \ProvidesClass{jsbook}
-  [2006/01/21 okumura]
+  [2014/02/07 okumura]
 \newif\if@restonecol
 \newif\if@titlepage
 \newif\if@openright
@@ -98,6 +98,7 @@
 \@slidefalse
 \newcommand{\@ptsize}{0}
 \DeclareOption{slide}{\@slidetrue\renewcommand{\@ptsize}{26}\@landscapetrue\@titlepagetrue}
+\DeclareOption{8pt}{\renewcommand{\@ptsize}{-2}}
 \DeclareOption{9pt}{\renewcommand{\@ptsize}{-1}}
 \DeclareOption{10pt}{\renewcommand{\@ptsize}{0}}
 \DeclareOption{11pt}{\renewcommand{\@ptsize}{1}}
@@ -112,6 +113,10 @@
 \DeclareOption{43pt}{\renewcommand{\@ptsize}{33}}
 \DeclareOption{12Q}{\renewcommand{\@ptsize}{1200}}
 \DeclareOption{14Q}{\renewcommand{\@ptsize}{1400}}
+\DeclareOption{10ptj}{\renewcommand{\@ptsize}{1001}}
+\DeclareOption{10.5ptj}{\renewcommand{\@ptsize}{1051}}
+\DeclareOption{11ptj}{\renewcommand{\@ptsize}{1101}}
+\DeclareOption{12ptj}{\renewcommand{\@ptsize}{1201}}
 \hour\time \divide\hour by 60\relax
 \@tempcnta\hour \multiply\@tempcnta 60\relax
 \minute\time \advance\minute-\@tempcnta
@@ -119,8 +124,8 @@
   \tombowtrue \tombowdatetrue
   \setlength{\@tombowwidth}{.1\p@}%
   \@bannertoken{%
-     \jobname\space:\space\number\year/\two@digits\month/\two@digits\day\space
-      (\two@digits\hour:\two@digits\minute)}
+     \jobname\space(\number\year-\two@digits\month-\two@digits\day
+     \space\two@digits\hour:\two@digits\minute)}%
   \maketombowbox}
 \DeclareOption{tombo}{%
   \tombowtrue \tombowdatefalse
@@ -184,12 +189,21 @@
 \newif\ifdraft
 \DeclareOption{draft}{\drafttrue \setlength\overfullrule{5pt}}
 \DeclareOption{final}{\draftfalse \setlength\overfullrule{0pt}}
-\newif\ifjisfont
-\jisfonttrue
-\DeclareOption{mingoth}{\jisfontfalse}
 \newif\ifwinjis
 \winjisfalse
+\newif\ifmingoth
+\mingothfalse
+\newif\ifjisfont
+\jisfontfalse
+\newif\if@jsc@uplatex
+\@jsc@uplatexfalse
+\DeclareOption{mingoth}{\mingothtrue}
 \DeclareOption{winjis}{\winjistrue}
+\DeclareOption{jis}{\jisfonttrue}
+\DeclareOption{uplatex}{\@jsc@uplatextrue\winjisfalse}
+\def\jsc@JYn{\if@jsc@uplatex JY2\else JY1\fi}
+\def\jsc@JTn{\if@jsc@uplatex JT2\else JT1\fi}
+\def\jsc@pfx@{\if@jsc@uplatex u\else \fi}
 \newif\ifpapersize
 \papersizefalse
 \DeclareOption{papersize}{\papersizetrue}
@@ -201,7 +215,6 @@
 \DeclareOption{report}{\@reporttrue\@openrightfalse\@twosidefalse\@mparswitchfalse}
 \ExecuteOptions{a4paper,twoside,onecolumn,titlepage,openright,final}
 \ProcessOptions
-%% <jspf>\RequirePackage{url}
 \if@slide
   \def\maybeblue{\@ifundefined{ver@color.sty}{}{\color{blue}}}
 \fi
@@ -220,102 +233,129 @@
   \AtBeginDvi{\special{papersize=\the\@tempdima,\the\@tempdimb}}
 \fi
 \if@slide\def\n@baseline{13}\else\def\n@baseline{16}\fi
+\def\inv@mag{1}
+\ifnum\@ptsize=-2
+  \mag 833
+  \def\inv@mag{1.20048}
+  \def\n@baseline{15}%
+\fi
 \ifnum\@ptsize=-1
   \mag 913 % formerly 900
-  \setlength\paperwidth{1.09529\paperwidth}%
-  \setlength\paperheight{1.09529\paperheight}%
+  \def\inv@mag{1.09529}
   \def\n@baseline{15}%
 \fi
 \ifnum\@ptsize=1
   \mag 1095 % formerly 1100
-  \setlength\paperwidth{0.913242\paperwidth}% formerly 0.90909
-  \setlength\paperheight{0.913242\paperheight}% 0.90909
+  \def\inv@mag{0.913242}
 \fi
 \ifnum\@ptsize=2
   \mag 1200
-  \setlength\paperwidth{0.833333\paperwidth}%
-  \setlength\paperheight{0.833333\paperheight}%
+  \def\inv@mag{0.833333}
 \fi
 \ifnum\@ptsize=4
   \mag 1440
-  \setlength\paperwidth{0.694444\paperwidth}%
-  \setlength\paperheight{0.694444\paperheight}%
+  \def\inv@mag{0.694444}
 \fi
 \ifnum\@ptsize=7
   \mag 1728
-  \setlength\paperwidth{0.578704\paperwidth}%
-  \setlength\paperheight{0.578704\paperheight}%
+  \def\inv@mag{0.578704}
 \fi
 \ifnum\@ptsize=10
   \mag 2000
-  \setlength\paperwidth{0.5\paperwidth}%
-  \setlength\paperheight{0.5\paperheight}%
+  \def\inv@mag{0.5}
 \fi
 \ifnum\@ptsize=11
   \mag 2074
-  \setlength\paperwidth{0.48216\paperwidth}%
-  \setlength\paperheight{0.48216\paperheight}%
+  \def\inv@mag{0.48216}
 \fi
 \ifnum\@ptsize=15
   \mag 2488
-  \setlength\paperwidth{0.401929\paperwidth}%
-  \setlength\paperheight{0.401929\paperheight}%
+  \def\inv@mag{0.401929}
 \fi
 \ifnum\@ptsize=20
   \mag 2986
-  \setlength\paperwidth{0.334896\paperwidth}%
-  \setlength\paperheight{0.334896\paperheight}%
+  \def\inv@mag{0.334896}
 \fi
 \ifnum\@ptsize=26
   \mag 3583
-  \setlength\paperwidth{0.279096\paperwidth}%
-  \setlength\paperheight{0.279096\paperheight}%
+  \def\inv@mag{0.279096}
 \fi
 \ifnum\@ptsize=33
   \mag 4300
-  \setlength\paperwidth{0.232558\paperwidth}%
-  \setlength\paperheight{0.232558\paperheight}%
+  \def\inv@mag{0.232558}
 \fi
 \ifnum\@ptsize=1200
   \mag 923
-  \setlength\paperwidth{1.0834236\paperwidth}%
-  \setlength\paperheight{1.0834236\paperheight}%
+  \def\inv@mag{1.0834236}
 \fi
 \ifnum\@ptsize=1400
   \mag 1077
-  \setlength\paperwidth{0.928505\paperwidth}%
-  \setlength\paperheight{0.928505\paperheight}%
+  \def\inv@mag{0.928505}
 \fi
+\ifnum\@ptsize=1001
+  \mag 1085
+  \def\inv@mag{0.921659}
+\fi
+\ifnum\@ptsize=1051
+  \mag 1139
+  \def\inv@mag{0.877963}
+\fi
+\ifnum\@ptsize=1101
+  \mag 1194
+  \def\inv@mag{0.837521}
+\fi
+\ifnum\@ptsize=1201
+  \mag 1302
+  \def\inv@mag{0.768049}
+\fi
+\setlength\paperwidth{\inv@mag\paperwidth}%
+\setlength\paperheight{\inv@mag\paperheight}%
 \ifwinjis
   \DeclareFontShape{JY1}{mc}{m}{n}{<-> s * [0.961] winjis}{}
   \DeclareFontShape{JY1}{gt}{m}{n}{<-> s * [0.961] winjisg}{}
   \DeclareFontShape{JT1}{mc}{m}{n}{<-> s * [0.961] winjis-v}{}
   \DeclareFontShape{JT1}{gt}{m}{n}{<-> s * [0.961] winjisg-v}{}
 \else
-  \ifjisfont
-    \DeclareFontShape{JY1}{mc}{m}{n}{<-> s * [0.961] jis}{}
-    \DeclareFontShape{JY1}{gt}{m}{n}{<-> s * [0.961] jisg}{}
+  \ifmingoth
+    \DeclareFontShape{\jsc@JYn}{mc}{m}{n}{<-> s * [0.961] \jsc@pfx@ min10}{}
+    \DeclareFontShape{\jsc@JYn}{gt}{m}{n}{<-> s * [0.961] \jsc@pfx@ goth10}{}
+    \DeclareFontShape{\jsc@JTn}{mc}{m}{n}{<-> s * [0.961] \jsc@pfx@ tmin10}{}
+    \DeclareFontShape{\jsc@JTn}{gt}{m}{n}{<-> s * [0.961] \jsc@pfx@ tgoth10}{}
   \else
-    \DeclareFontShape{JY1}{mc}{m}{n}{<-> s * [0.961] min10}{}
-    \DeclareFontShape{JY1}{gt}{m}{n}{<-> s * [0.961] goth10}{}
+    \ifjisfont
+      \DeclareFontShape{\jsc@JYn}{mc}{m}{n}{<-> s * [0.961] \jsc@pfx@ jis}{}
+      \DeclareFontShape{\jsc@JYn}{gt}{m}{n}{<-> s * [0.961] \jsc@pfx@ jisg}{}
+      \DeclareFontShape{\jsc@JTn}{mc}{m}{n}{<-> s * [0.961] \jsc@pfx@ tmin10}{}
+      \DeclareFontShape{\jsc@JTn}{gt}{m}{n}{<-> s * [0.961] \jsc@pfx@ tgoth10}{}
+    \else
+      \if@jsc@uplatex
+        \DeclareFontShape{JY2}{mc}{m}{n}{<-> s * [0.924690] upjisr-h}{}
+        \DeclareFontShape{JY2}{gt}{m}{n}{<-> s * [0.924690] upjisg-h}{}
+        \DeclareFontShape{JT2}{mc}{m}{n}{<-> s * [0.924690] upjisr-v}{}
+        \DeclareFontShape{JT2}{gt}{m}{n}{<-> s * [0.924690] upjisg-v}{}
+      \else
+        \DeclareFontShape{\jsc@JYn}{mc}{m}{n}{<-> s * [0.961] \jsc@pfx@ jis}{}
+        \DeclareFontShape{\jsc@JYn}{gt}{m}{n}{<-> s * [0.961] \jsc@pfx@ jisg}{}
+        \DeclareFontShape{\jsc@JTn}{mc}{m}{n}{<-> s * [0.961] \jsc@pfx@ tmin10}{}
+        \DeclareFontShape{\jsc@JTn}{gt}{m}{n}{<-> s * [0.961] \jsc@pfx@ tgoth10}{}
+      \fi
+    \fi
   \fi
-  \DeclareFontShape{JT1}{mc}{m}{n}{<-> s * [0.961] tmin10}{}
-  \DeclareFontShape{JT1}{gt}{m}{n}{<-> s * [0.961] tgoth10}{}
 \fi
-\DeclareFontShape{JY1}{mc}{m}{it}{<->ssub*mc/m/n}{}
-\DeclareFontShape{JY1}{mc}{m}{sl}{<->ssub*mc/m/n}{}
-\DeclareFontShape{JY1}{mc}{m}{sc}{<->ssub*mc/m/n}{}
-\DeclareFontShape{JY1}{gt}{m}{it}{<->ssub*gt/m/n}{}
-\DeclareFontShape{JY1}{gt}{m}{sl}{<->ssub*gt/m/n}{}
-\DeclareFontShape{JY1}{mc}{bx}{it}{<->ssub*gt/m/n}{}
-\DeclareFontShape{JY1}{mc}{bx}{sl}{<->ssub*gt/m/n}{}
-\DeclareFontShape{JT1}{mc}{m}{it}{<->ssub*mc/m/n}{}
-\DeclareFontShape{JT1}{mc}{m}{sl}{<->ssub*mc/m/n}{}
-\DeclareFontShape{JT1}{mc}{m}{sc}{<->ssub*mc/m/n}{}
-\DeclareFontShape{JT1}{gt}{m}{it}{<->ssub*gt/m/n}{}
-\DeclareFontShape{JT1}{gt}{m}{sl}{<->ssub*gt/m/n}{}
-\DeclareFontShape{JT1}{mc}{bx}{it}{<->ssub*gt/m/n}{}
-\DeclareFontShape{JT1}{mc}{bx}{sl}{<->ssub*gt/m/n}{}
+\DeclareFontShape{\jsc@JYn}{mc}{m}{it}{<->ssub*mc/m/n}{}
+\DeclareFontShape{\jsc@JYn}{mc}{m}{sl}{<->ssub*mc/m/n}{}
+\DeclareFontShape{\jsc@JYn}{mc}{m}{sc}{<->ssub*mc/m/n}{}
+\DeclareFontShape{\jsc@JYn}{gt}{m}{it}{<->ssub*gt/m/n}{}
+\DeclareFontShape{\jsc@JYn}{gt}{m}{sl}{<->ssub*gt/m/n}{}
+\DeclareFontShape{\jsc@JYn}{mc}{bx}{it}{<->ssub*gt/m/n}{}
+\DeclareFontShape{\jsc@JYn}{mc}{bx}{sl}{<->ssub*gt/m/n}{}
+\DeclareFontShape{\jsc@JTn}{mc}{m}{it}{<->ssub*mc/m/n}{}
+\DeclareFontShape{\jsc@JTn}{mc}{m}{sl}{<->ssub*mc/m/n}{}
+\DeclareFontShape{\jsc@JTn}{mc}{m}{sc}{<->ssub*mc/m/n}{}
+\DeclareFontShape{\jsc@JTn}{gt}{m}{it}{<->ssub*gt/m/n}{}
+\DeclareFontShape{\jsc@JTn}{gt}{m}{sl}{<->ssub*gt/m/n}{}
+\DeclareFontShape{\jsc@JTn}{mc}{bx}{it}{<->ssub*gt/m/n}{}
+\DeclareFontShape{\jsc@JTn}{mc}{bx}{sl}{<->ssub*gt/m/n}{}
 \DeclareRobustCommand\rmfamily
         {\not@math@alphabet\rmfamily\mathrm
          \romanfamily\rmdefault\kanjifamily\mcdefault\selectfont}
@@ -327,21 +367,209 @@
          \romanfamily\ttdefault\kanjifamily\gtdefault\selectfont}
 \def\textmc#1{\relax\ifmmode\hbox\fi{\mcfamily #1}}
 \def\textgt#1{\relax\ifmmode\hbox\fi{\gtfamily #1}}
+\def\reDeclareMathAlphabet#1#2#3{%
+  \edef\@tempa{\expandafter\@gobble\string#2}%
+  \edef\@tempb{\expandafter\@gobble\string#3}%
+  \edef\@tempc{\string @\expandafter\@gobbletwo\string#2}%
+  \ifx\@tempc\@tempa%
+    \edef\@tempa{\expandafter\@gobbletwo\string#2}%
+    \edef\@tempb{\expandafter\@gobbletwo\string#3}%
+  \fi
+  \begingroup
+    \let\protect\noexpand
+    \def\@tempaa{\relax}%
+    \expandafter\ifx\csname RDMAorg@\@tempa\endcsname\relax
+      \edef\@tempaa{\expandafter\def\expandafter\noexpand%
+        \csname RDMAorg@\@tempa\endcsname{%
+          \expandafter\noexpand\csname\@tempa\endcsname}}%
+    \fi
+    \def\@tempbb{\relax}%
+    \expandafter\ifx\csname RDMAorg@\@tempb\endcsname\relax
+      \edef\@tempbb{\expandafter\def\expandafter\noexpand%
+        \csname RDMAorg@\@tempb\endcsname{%
+          \expandafter\noexpand\csname\@tempb\endcsname}}%
+    \fi
+    \edef\@tempc{\@tempaa\@tempbb}%
+  \expandafter\endgroup\@tempc%
+  \edef#1{\noexpand\protect\expandafter\noexpand\csname%
+    \expandafter\@gobble\string#1\space\space\endcsname}%
+  \expandafter\edef\csname\expandafter\@gobble\string#1\space\space\endcsname%
+    {\noexpand\DualLang@mathalph@bet%
+      {\expandafter\noexpand\csname RDMAorg@\@tempa\endcsname}%
+      {\expandafter\noexpand\csname RDMAorg@\@tempb\endcsname}%
+  }%
+}
+\@onlypreamble\reDeclareMathAlphabet
+\def\DualLang@mathalph@bet#1#2{%
+  \relax\ifmmode
+    \ifx\math@bgroup\bgroup%     2e normal style     (\mathrm{...})
+      \bgroup\let\DualLang@Mfontsw\DLMfontsw@standard
+    \else
+      \ifx\math@bgroup\relax%    2e two letter style (\rm->\mathrm)
+        \let\DualLang@Mfontsw\DLMfontsw@oldstyle
+      \else
+        \ifx\math@bgroup\@empty% 2.09 oldlfont style ({\mathrm ...})
+          \let\DualLang@Mfontsw\DLMfontsw@oldlfont
+        \else%                   panic! assume 2e normal style
+          \bgroup\let\DualLang@Mfontsw\DLMfontsw@standard
+        \fi
+      \fi
+    \fi
+  \else
+    \let\DualLang@Mfontsw\@firstoftwo
+  \fi
+  \DualLang@Mfontsw{#1}{#2}%
+}
+\def\DLMfontsw@standard#1#2#3{#1{#2{#3}}\egroup}
+\def\DLMfontsw@oldstyle#1#2{#1\relax\@fontswitch\relax{#2}}
+\def\DLMfontsw@oldlfont#1#2{#1\relax#2\relax}
 \if@enablejfam
-  \DeclareSymbolFont{mincho}{JY1}{mc}{m}{n}
-  \DeclareSymbolFontAlphabet{\mathmc}{mincho}
-  \SetSymbolFont{mincho}{bold}{JY1}{gt}{m}{n}
-  \DeclareMathAlphabet{\mathgt}{JY1}{gt}{m}{n}
-  \reDeclareMathAlphabet{\mathrm}{\@mathrm}{\@mathmc}
-  \reDeclareMathAlphabet{\mathbf}{\@mathbf}{\@mathgt}
-  \jfam\symmincho
+  \if@compatibility\else
+    \DeclareSymbolFont{mincho}{\jsc@JYn}{mc}{m}{n}
+    \DeclareSymbolFontAlphabet{\mathmc}{mincho}
+    \SetSymbolFont{mincho}{bold}{\jsc@JYn}{gt}{m}{n}
+    \jfam\symmincho
+    \DeclareMathAlphabet{\mathgt}{\jsc@JYn}{gt}{m}{n}
+  \fi
+  \AtBeginDocument{%
+    \reDeclareMathAlphabet{\mathrm}{\@mathrm}{\@mathmc}
+    \reDeclareMathAlphabet{\mathbf}{\@mathbf}{\@mathgt}}
 \fi
-\prebreakpenalty\jis"2147=10000      % 5000   ’
-\postbreakpenalty\jis"2148=10000     % 5000   “
-\prebreakpenalty\jis"2149=10000      % 5000   ”
-\inhibitxspcode`〒=2
+\prebreakpenalty\jis"2147=10000      % 5000   $B!G(B
+\postbreakpenalty\jis"2148=10000     % 5000   $B!H(B
+\prebreakpenalty\jis"2149=10000      % 5000   $B!I(B
+\inhibitxspcode`$B!*(B=1
+\inhibitxspcode`$B")(B=2
 \xspcode`+=3
 \xspcode`\%=3
+\xspcode`^^80=3
+\xspcode`^^81=3
+\xspcode`^^82=3
+\xspcode`^^83=3
+\xspcode`^^84=3
+\xspcode`^^85=3
+\xspcode`^^86=3
+\xspcode`^^87=3
+\xspcode`^^88=3
+\xspcode`^^89=3
+\xspcode`^^8a=3
+\xspcode`^^8b=3
+\xspcode`^^8c=3
+\xspcode`^^8d=3
+\xspcode`^^8e=3
+\xspcode`^^8f=3
+\xspcode`^^90=3
+\xspcode`^^91=3
+\xspcode`^^92=3
+\xspcode`^^93=3
+\xspcode`^^94=3
+\xspcode`^^95=3
+\xspcode`^^96=3
+\xspcode`^^97=3
+\xspcode`^^98=3
+\xspcode`^^99=3
+\xspcode`^^9a=3
+\xspcode`^^9b=3
+\xspcode`^^9c=3
+\xspcode`^^9d=3
+\xspcode`^^9e=3
+\xspcode`^^9f=3
+\xspcode`^^a0=3
+\xspcode`^^a1=3
+\xspcode`^^a2=3
+\xspcode`^^a3=3
+\xspcode`^^a4=3
+\xspcode`^^a5=3
+\xspcode`^^a6=3
+\xspcode`^^a7=3
+\xspcode`^^a8=3
+\xspcode`^^a9=3
+\xspcode`^^aa=3
+\xspcode`^^ab=3
+\xspcode`^^ac=3
+\xspcode`^^ad=3
+\xspcode`^^ae=3
+\xspcode`^^af=3
+\xspcode`^^b0=3
+\xspcode`^^b1=3
+\xspcode`^^b2=3
+\xspcode`^^b3=3
+\xspcode`^^b4=3
+\xspcode`^^b5=3
+\xspcode`^^b6=3
+\xspcode`^^b7=3
+\xspcode`^^b8=3
+\xspcode`^^b9=3
+\xspcode`^^ba=3
+\xspcode`^^bb=3
+\xspcode`^^bc=3
+\xspcode`^^bd=3
+\xspcode`^^be=3
+\xspcode`^^bf=3
+\xspcode`^^c0=3
+\xspcode`^^c1=3
+\xspcode`^^c2=3
+\xspcode`^^c3=3
+\xspcode`^^c4=3
+\xspcode`^^c5=3
+\xspcode`^^c6=3
+\xspcode`^^c7=3
+\xspcode`^^c8=3
+\xspcode`^^c9=3
+\xspcode`^^ca=3
+\xspcode`^^cb=3
+\xspcode`^^cc=3
+\xspcode`^^cd=3
+\xspcode`^^ce=3
+\xspcode`^^cf=3
+\xspcode`^^d0=3
+\xspcode`^^d1=3
+\xspcode`^^d2=3
+\xspcode`^^d3=3
+\xspcode`^^d4=3
+\xspcode`^^d5=3
+\xspcode`^^d6=3
+\xspcode`^^d7=3
+\xspcode`^^d8=3
+\xspcode`^^d9=3
+\xspcode`^^da=3
+\xspcode`^^db=3
+\xspcode`^^dc=3
+\xspcode`^^dd=3
+\xspcode`^^de=3
+\xspcode`^^df=3
+\xspcode`^^e0=3
+\xspcode`^^e1=3
+\xspcode`^^e2=3
+\xspcode`^^e3=3
+\xspcode`^^e4=3
+\xspcode`^^e5=3
+\xspcode`^^e6=3
+\xspcode`^^e7=3
+\xspcode`^^e8=3
+\xspcode`^^e9=3
+\xspcode`^^ea=3
+\xspcode`^^eb=3
+\xspcode`^^ec=3
+\xspcode`^^ed=3
+\xspcode`^^ee=3
+\xspcode`^^ef=3
+\xspcode`^^f0=3
+\xspcode`^^f1=3
+\xspcode`^^f2=3
+\xspcode`^^f3=3
+\xspcode`^^f4=3
+\xspcode`^^f5=3
+\xspcode`^^f6=3
+\xspcode`^^f7=3
+\xspcode`^^f8=3
+\xspcode`^^f9=3
+\xspcode`^^fa=3
+\xspcode`^^fb=3
+\xspcode`^^fc=3
+\xspcode`^^fd=3
+\xspcode`^^fe=3
+\xspcode`^^ff=3
 \def\@{\spacefactor3000\space}
 \def\@setfontsize#1#2#3{%
   \ifx\protect\@typeset@protect
@@ -349,7 +577,11 @@
   \fi
   \fontsize{#2}{#3}\selectfont
   \ifdim\parindent>\z@
-    \parindent=1zw
+    \if@english
+      \parindent=1em
+    \else
+      \parindent=1zw
+    \fi
   \fi
   \kanjiskip=0zw plus .1zw minus .01zw
   \ifdim\xkanjiskip>\z@
@@ -359,7 +591,9 @@
   \fi}
 \emergencystretch 3zw
 \newif\ifnarrowbaselines
-\if@english\narrowbaselinestrue\fi
+\if@english
+  \narrowbaselinestrue
+\fi
 \def\narrowbaselines{%
   \narrowbaselinestrue
   \skip0=\abovedisplayskip
@@ -378,9 +612,9 @@
   \else
     \@setfontsize\normalsize\@xpt{\n@baseline}%
   \fi
-  \abovedisplayskip 10\p@ \@plus3\p@ \@minus4\p@
+  \abovedisplayskip 11\p@ \@plus3\p@ \@minus4\p@
   \abovedisplayshortskip \z@ \@plus3\p@
-  \belowdisplayskip \abovedisplayskip
+  \belowdisplayskip 9\p@ \@plus3\p@ \@minus4\p@
   \belowdisplayshortskip \belowdisplayskip
   \let\@listi\@listI}
 \normalsize
@@ -507,7 +741,7 @@
 \iftombow
   \addtolength{\oddsidemargin}{-1in}
 \else
-  \addtolength{\oddsidemargin}{-1truein}
+  \addtolength{\oddsidemargin}{-\inv@mag in}
 \fi
 \setlength{\evensidemargin}{\oddsidemargin}
 \if@mparswitch
@@ -516,7 +750,7 @@
 \fi
 \setlength\marginparwidth{\paperwidth}
 \addtolength\marginparwidth{-\oddsidemargin}
-\addtolength\marginparwidth{-1truein}
+\addtolength\marginparwidth{-\inv@mag in}
 \addtolength\marginparwidth{-\textwidth}
 \addtolength\marginparwidth{-1cm}
 \addtolength\marginparwidth{-\marginparsep}
@@ -536,7 +770,7 @@
 \iftombow
   \addtolength\topmargin{-1in}
 \else
-  \addtolength\topmargin{-1truein}
+  \addtolength\topmargin{-\inv@mag in}
 \fi
 {\footnotesize\global\setlength\footnotesep{\baselineskip}}
 \setlength\footnotesep{0.7\footnotesep}
@@ -579,6 +813,7 @@
   \def\@oddhead{%
     \hbox to \fullwidth{\hfil\textbf{\thepage}}\hss}}
 \if@report \let\ps@plain\ps@plainfoot \else \let\ps@plain\ps@plainhead \fi
+\newif\if@omit@number
 \def\ps@headings{%
   \let\@oddfoot\@empty
   \let\@evenfoot\@empty
@@ -593,7 +828,9 @@
   \def\chaptermark##1{\markboth{%
     \ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
-        \@chapapp\thechapter\@chappos\hskip1zw
+        \if@omit@number\else
+          \@chapapp\thechapter\@chappos\hskip1zw
+        \fi
       \fi
     \fi
     ##1}{}}%
@@ -726,7 +963,7 @@
   \if@noskipsec \leavevmode \fi
   \par
   \@tempskipa #4\relax
-  \@afterindenttrue
+  \if@english \@afterindentfalse \else \@afterindenttrue \fi
   \ifdim \@tempskipa <\z@
     \@tempskipa -\@tempskipa \@afterindentfalse
   \fi
@@ -763,10 +1000,10 @@
         \ifnum #2>\c@secnumdepth \else
           \protect\numberline{\csname the#1\endcsname}%
         \fi
-        #7}}% 目次にフルネームを載せるなら #8
+        #7}}% $BL\<!$K%U%k%M!<%`$r:\$;$k$J$i(B #8
   \else
     \begingroup
-      \interlinepenalty \@M % 下から移動
+      \interlinepenalty \@M % $B2<$+$i0\F0(B
       #6{%
         \@hangfrom{\hskip #3\relax\@svsec}%
         #8\@@par}%
@@ -776,7 +1013,7 @@
       \ifnum #2>\c@secnumdepth \else
         \protect\numberline{\csname the#1\endcsname}%
       \fi
-      #7}% 目次にフルネームを載せるならここは #8
+      #7}% $BL\<!$K%U%k%M!<%`$r:\$;$k$J$i$3$3$O(B #8
   \fi
   \@xsect{#5}}
 \def\@xsect#1{%
@@ -865,7 +1102,7 @@
   \else
     \clearpage
   \fi
-  \thispagestyle{empty}% 欧文用標準スタイルでは plain
+  \thispagestyle{empty}% $B2$J8MQI8=`%9%?%$%k$G$O(B plain
   \if@twocolumn
     \onecolumn
     \@restonecoltrue
@@ -909,16 +1146,22 @@
   \fi}
 \newcommand{\chapter}{%
   \if@openright\cleardoublepage\else\clearpage\fi
-  \plainifnotempty % 元: \thispagestyle{plain}
+  \plainifnotempty % $B85(B: \thispagestyle{plain}
   \global\@topnum\z@
-  \secdef\@chapter\@schapter}
+  \if@english \@afterindentfalse \else \@afterindenttrue \fi
+  \secdef
+    {\@omit@numberfalse\@chapter}%
+    {\@omit@numbertrue\@schapter}}
 \def\@chapter[#1]#2{%
   \ifnum \c@secnumdepth >\m@ne
     \if@mainmatter
       \refstepcounter{chapter}%
       \typeout{\@chapapp\thechapter\@chappos}%
       \addcontentsline{toc}{chapter}%
-        {\protect\numberline{\@chapapp\thechapter\@chappos}#1}%
+        {\protect\numberline
+        % {\if@english\thechapter\else\@chapapp\thechapter\@chappos\fi}%
+        {\@chapapp\thechapter\@chappos}%
+        #1}%
     \else\addcontentsline{toc}{chapter}{#1}\fi
   \else
     \addcontentsline{toc}{chapter}{#1}%
@@ -933,18 +1176,18 @@
     \@afterheading
   \fi}
 \def\@makechapterhead#1{%
-  \vspace*{2\Cvs}% 欧文は50pt
+  \vspace*{2\Cvs}% $B2$J8$O(B50pt
   {\parindent \z@ \raggedright \normalfont
     \ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
         \huge\headfont \@chapapp\thechapter\@chappos
         \par\nobreak
-        \vskip \Cvs % 欧文は20pt
+        \vskip \Cvs % $B2$J8$O(B20pt
       \fi
     \fi
     \interlinepenalty\@M
     \Huge \headfont #1\par\nobreak
-    \vskip 3\Cvs}} % 欧文は40pt
+    \vskip 3\Cvs}} % $B2$J8$O(B40pt
 \def\@schapter#1{%
   \chaptermark{#1}%
   \if@twocolumn
@@ -953,12 +1196,12 @@
     \@makeschapterhead{#1}\@afterheading
   \fi}
 \def\@makeschapterhead#1{%
-  \vspace*{2\Cvs}% 欧文は50pt
+  \vspace*{2\Cvs}% $B2$J8$O(B50pt
   {\parindent \z@ \raggedright
     \normalfont
     \interlinepenalty\@M
     \Huge \headfont #1\par\nobreak
-    \vskip 3\Cvs}} % 欧文は40pt
+    \vskip 3\Cvs}} % $B2$J8$O(B40pt
 \if@twocolumn
   \newcommand{\section}{%
     \@startsection{section}{1}{\z@}%
@@ -968,8 +1211,8 @@
   \newcommand{\section}{%
     \if@slide\clearpage\fi
     \@startsection{section}{1}{\z@}%
-    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% 前アキ
-    {.5\Cvs \@plus.3\Cdp}% 後アキ
+    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% $BA0%"%-(B
+    {.5\Cvs \@plus.3\Cdp}% $B8e%"%-(B
     {\normalfont\Large\headfont\raggedright}}
 \fi
 \if@twocolumn
@@ -978,8 +1221,8 @@
     {\normalfont\normalsize\headfont}}
 \else
   \newcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
-    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% 前アキ
-    {.5\Cvs \@plus.3\Cdp}% 後アキ
+    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% $BA0%"%-(B
+    {.5\Cvs \@plus.3\Cdp}% $B8e%"%-(B
     {\normalfont\large\headfont}}
 \fi
 \if@twocolumn
@@ -994,13 +1237,13 @@
 \fi
 \if@twocolumn
   \newcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
-    {\z@}{-1zw}% 改行せず 1zw のアキ
-    {\normalfont\normalsize\headfont ■}}
+    {\z@}{-1zw}% $B2~9T$;$:(B 1zw $B$N%"%-(B
+    {\normalfont\normalsize\headfont $B"#(B}}
 \else
   \newcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
     {0.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
-    {-1zw}% 改行せず 1zw のアキ
-    {\normalfont\normalsize\headfont ■}}
+    {-1zw}% $B2~9T$;$:(B 1zw $B$N%"%-(B
+    {\normalfont\normalsize\headfont $B"#(B}}
 \fi
 \newcommand{\subparagraph}{\@startsection{subparagraph}{5}{\z@}%
    {\z@}{-1zw}%
@@ -1064,11 +1307,11 @@
 \renewcommand{\theenumiii}{\@roman\c@enumiii}
 \renewcommand{\theenumiv}{\@Alph\c@enumiv}
 \newcommand{\labelenumi}{\theenumi.}
-\newcommand{\labelenumii}{\inhibitglue（\theenumii）\inhibitglue}
+\newcommand{\labelenumii}{\inhibitglue$B!J(B\theenumii$B!K(B\inhibitglue}
 \newcommand{\labelenumiii}{\theenumiii.}
 \newcommand{\labelenumiv}{\theenumiv.}
 \renewcommand{\p@enumii}{\theenumi}
-\renewcommand{\p@enumiii}{\theenumi\inhibitglue（\theenumii）}
+\renewcommand{\p@enumiii}{\theenumi\inhibitglue$B!J(B\theenumii$B!K(B}
 \renewcommand{\p@enumiv}{\p@enumiii\theenumiii}
 \newcommand\labelitemi{\textbullet}
 \newcommand\labelitemii{\normalfont\bfseries \textendash}
@@ -1091,10 +1334,10 @@
   \let \\=\@centercr
   \list{}{%
     \itemsep \z@
-    \itemindent -2zw % 元: -1.5em
+    \itemindent -2zw % $B85(B: -1.5em
     \listparindent\itemindent
     \rightmargin \z@
-    \advance\leftmargin 2zw}% 元: 1.5em
+    \advance\leftmargin 2zw}% $B85(B: 1.5em
   \item\relax}{\endlist}
 \newenvironment{quotation}{%
   \list{}{%
@@ -1104,10 +1347,10 @@
   \item\relax}{\endlist}
 \newenvironment{quote}%
   {\list{}{\rightmargin\z@}\item\relax}{\endlist}
-\def\@begintheorem#1#2{\trivlist
-   \item[\hskip \labelsep{\bfseries #1\ #2}]}
-\def\@opargbegintheorem#1#2#3{\trivlist
-      \item[\hskip \labelsep{\bfseries #1\ #2\ (#3)}]}
+\def\@begintheorem#1#2{\trivlist\labelsep=1zw
+   \item[\hskip \labelsep{\headfont #1\ #2}]}
+\def\@opargbegintheorem#1#2#3{\trivlist\labelsep=1zw
+      \item[\hskip \labelsep{\headfont #1\ #2$B!J(B#3$B!K(B}]}
 \newenvironment{titlepage}{%
     \cleardoublepage
     \if@twocolumn
@@ -1167,11 +1410,11 @@
                {\end@dblfloat}
 \newlength\abovecaptionskip
 \newlength\belowcaptionskip
-\setlength\abovecaptionskip{5\p@} % 元: 10\p@
-\setlength\belowcaptionskip{5\p@} % 元: 0\p@
+\setlength\abovecaptionskip{5\p@} % $B85(B: 10\p@
+\setlength\belowcaptionskip{5\p@} % $B85(B: 0\p@
 \long\def\@makecaption#1#2{{\small
-  \advance\leftskip1cm
-  \advance\rightskip1cm
+  \advance\leftskip .0628\linewidth
+  \advance\rightskip .0628\linewidth
   \vskip\abovecaptionskip
   \sbox\@tempboxa{#1\hskip1zw\relax #2}%
   \ifdim \wd\@tempboxa <\hsize \centering \fi
@@ -1192,7 +1435,12 @@
 \newcommand\@tocrmarg{2.55em}
 \newcommand\@dotsep{4.5}
 \setcounter{tocdepth}{1}
+\newdimen\js@tocl@width
 \newcommand{\tableofcontents}{%
+  \settowidth\js@tocl@width{\headfont\prechaptername\postchaptername}%
+  \settowidth\@tempdima{\headfont\appendixname}%
+  \ifdim\js@tocl@width<\@tempdima \setlength\js@tocl@width{\@tempdima}\fi
+  \ifdim\js@tocl@width<2zw \divide\js@tocl@width by 2 \advance\js@tocl@width 1zw\fi
   \if@twocolumn
     \@restonecoltrue\onecolumn
   \else
@@ -1229,17 +1477,29 @@
       \rightskip\@tocrmarg
       \parfillskip-\rightskip
       \leavevmode\headfont
-      \setlength\@lnumwidth{4.683zw}%
+      % \if@english\setlength\@lnumwidth{5.5em}\else\setlength\@lnumwidth{4.683zw}\fi
+      \setlength\@lnumwidth{\js@tocl@width}\advance\@lnumwidth 2.683zw
       \advance\leftskip\@lnumwidth \hskip-\leftskip
       #1\nobreak\hfil\nobreak\hbox to\@pnumwidth{\hss#2}\par
       \penalty\@highpenalty
     \endgroup
   \fi}
-\newcommand*{\l@section}{\@dottedtocline{1}{1zw}{3.683zw}}
-\newcommand*{\l@subsection}   {\@dottedtocline{2}{3.8em}{3.2em}}
-\newcommand*{\l@subsubsection}{\@dottedtocline{3}{7.0em}{4.1em}}
-\newcommand*{\l@paragraph}    {\@dottedtocline{4}{10em}{5em}}
-\newcommand*{\l@subparagraph} {\@dottedtocline{5}{12em}{6em}}
+ % \newcommand*{\l@section}{\@dottedtocline{1}{1zw}{3.683zw}}
+\newcommand*{\l@section}{%
+          \@tempdima\js@tocl@width \advance\@tempdima -1zw
+          \@dottedtocline{1}{\@tempdima}{3.683zw}}
+\newcommand*{\l@subsection}{%
+          \@tempdima\js@tocl@width \advance\@tempdima 2.683zw
+          \@dottedtocline{2}{\@tempdima}{3.5zw}}
+\newcommand*{\l@subsubsection}{%
+          \@tempdima\js@tocl@width \advance\@tempdima 6.183zw
+          \@dottedtocline{3}{\@tempdima}{4.5zw}}
+\newcommand*{\l@paragraph}{%
+          \@tempdima\js@tocl@width \advance\@tempdima 10.683zw
+          \@dottedtocline{4}{\@tempdima}{5.5zw}}
+\newcommand*{\l@subparagraph}{%
+          \@tempdima\js@tocl@width \advance\@tempdima 16.183zw
+          \@dottedtocline{5}{\@tempdima}{6.5zw}}
 \newdimen\@lnumwidth
 \def\numberline#1{\hb@xt@\@lnumwidth{#1\hfil}\hspace{0pt}}
 \def\@dottedtocline#1#2#3#4#5{\ifnum #1>\c@tocdepth \else
@@ -1297,7 +1557,7 @@
    \endlist}
 \newcommand{\newblock}{\hskip .11em\@plus.33em\@minus.07em}
 \let\@openbib@code\@empty
-\newenvironment{theindex}{% 索引を3段組で出力する環境
+\newenvironment{theindex}{% $B:w0z$r(B3$BCJAH$G=PNO$9$k4D6-(B
     \if@twocolumn
       \onecolumn\@restonecolfalse
     \else
@@ -1334,16 +1594,19 @@
     \fi
     \clearpage
   }
-\newcommand{\@idxitem}{\par\hangindent 4zw} % 元 40pt
-\newcommand{\subitem}{\@idxitem \hspace*{2zw}} % 元 20pt
-\newcommand{\subsubitem}{\@idxitem \hspace*{3zw}} % 元 30pt
+\newcommand{\@idxitem}{\par\hangindent 4zw} % $B85(B 40pt
+\newcommand{\subitem}{\@idxitem \hspace*{2zw}} % $B85(B 20pt
+\newcommand{\subsubitem}{\@idxitem \hspace*{3zw}} % $B85(B 30pt
 \newcommand{\indexspace}{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
-\newcommand\seename{\if@english see\else →\fi}
-\newcommand\alsoname{\if@english see also\else →\fi}
+\newcommand\seename{\if@english see\else $B"*(B\fi}
+\newcommand\alsoname{\if@english see also\else $B"*(B\fi}
 \let\footnotes@ve=\footnote
 \def\footnote{\inhibitglue\footnotes@ve}
 \let\footnotemarks@ve=\footnotemark
 \def\footnotemark{\inhibitglue\footnotemarks@ve}
+\renewcommand\@makefnmark{\hbox{}\hbox{%
+  \ifydir \@textsuperscript{\normalfont\@thefnmark}%
+  \else\hbox{\yoko\@textsuperscript{\normalfont\@thefnmark}}\fi}\hbox{}}
 \def\thefootnote{\ifnum\c@footnote>\z@\leavevmode\lower.5ex\hbox{*}\@arabic\c@footnote\fi}
 \renewcommand{\footnoterule}{%
   \kern-3\p@
@@ -1377,16 +1640,16 @@
 \def\@inhibitglue{%
   \futurelet\@let@token\@@inhibitglue}
 \def\@@inhibitglue{%
-  \ifx\@let@token「
+  \ifx\@let@token$B!V(B
     \inhibitglue
   \else
-    \ifx\@let@token（
+    \ifx\@let@token$B!J(B
       \inhibitglue
     \else
-      \ifx\@let@token『
+      \ifx\@let@token$B!X(B
         \inhibitglue
       \else
-        \ifx\@let@token［
+        \ifx\@let@token$B!N(B
           \inhibitglue
         \fi
       \fi
@@ -1481,12 +1744,12 @@
     \unskip \reserved@e {\reserved@f#1}\nobreak \hfil \break \null
     \inhibitglue \ignorespaces
   \fi}
-\def\小#1{\hbox{$\m@th$%
+\def\$B>.(B#1{\hbox{$\m@th$%
   \csname S@\f@size\endcsname
   \fontsize\sf@size\z@
   \math@fontsfalse\selectfont
   #1}}
-\def\上小#1{{\sbox\z@ T\vbox to\ht0{\小{#1}\vss}}}
+\def\$B>e>.(B#1{{\sbox\z@ T\vbox to\ht0{\$B>.(B{#1}\vss}}}
 \def\cmrTeX{%
   \ifdim \fontdimen\@ne\font >\z@
     T\kern-.25em\lower.5ex\hbox{E}\kern-.125emX\@
@@ -1495,12 +1758,12 @@
   \fi}
 \def\cmrLaTeX{%
   \ifdim \fontdimen\@ne\font >\z@
-    L\kern-.32em\上小{A}\kern-.22em\cmrTeX
+    L\kern-.32em\$B>e>.(B{A}\kern-.22em\cmrTeX
   \else
-    L\kern-.36em\上小{A}\kern-.15em\cmrTeX
+    L\kern-.36em\$B>e>.(B{A}\kern-.15em\cmrTeX
   \fi}
 \def\sfTeX{T\kern-.1em\lower.4ex\hbox{E}\kern-.07emX\@}
-\def\sfLaTeX{L\kern-.25em\上小{A}\kern-.08em\sfTeX}
+\def\sfLaTeX{L\kern-.25em\$B>e>.(B{A}\kern-.08em\sfTeX}
 \def\ptmTeX{%
   \ifdim \fontdimen\@ne\font >\z@
     T\kern-.12em\lower.37ex\hbox{E}\kern-.02emX\@
@@ -1509,9 +1772,9 @@
   \fi}
 \def\ptmLaTeX{%
   \ifdim \fontdimen\@ne\font >\z@
-    L\kern-.2em\上小{A}\kern-.1em\ptmTeX
+    L\kern-.2em\$B>e>.(B{A}\kern-.1em\ptmTeX
   \else
-    L\kern-.3em\上小{A}\kern-.1em\ptmTeX
+    L\kern-.3em\$B>e>.(B{A}\kern-.1em\ptmTeX
   \fi}
 \def\pncTeX{%
   \ifdim \fontdimen\@ne\font >\z@
@@ -1521,9 +1784,9 @@
   \fi}
 \def\pncLaTeX{%
   \ifdim \fontdimen\@ne\font >\z@
-    L\kern-.3em\上小{A}\kern-.1em\pncTeX
+    L\kern-.3em\$B>e>.(B{A}\kern-.1em\pncTeX
   \else
-    L\kern-.3em\上小{A}\kern-.1em\pncTeX
+    L\kern-.3em\$B>e>.(B{A}\kern-.1em\pncTeX
   \fi}
 \def\pplTeX{%
   \ifdim \fontdimen\@ne\font >\z@
@@ -1533,9 +1796,21 @@
   \fi}
 \def\pplLaTeX{%
   \ifdim \fontdimen\@ne\font >\z@
-    L\kern-.27em\上小{A}\kern-.12em\pplTeX
+    L\kern-.27em\$B>e>.(B{A}\kern-.12em\pplTeX
   \else
-    L\kern-.3em\上小{A}\kern-.15em\pplTeX
+    L\kern-.3em\$B>e>.(B{A}\kern-.15em\pplTeX
+  \fi}
+\def\ugmTeX{%
+  \ifdim \fontdimen\@ne\font >\z@
+    T\kern-.1em\lower.32ex\hbox{E}\kern-.06emX\@
+  \else
+    T\kern-.12em\lower.34ex\hbox{E}\kern-.1emX\@
+  \fi}
+\def\ugmLaTeX{%
+  \ifdim \fontdimen\@ne\font >\z@
+    L\kern-.2em\$B>e>.(B{A}\kern-.13em\ugmTeX
+  \else
+    L\kern-.3em\$B>e>.(B{A}\kern-.13em\ugmTeX
   \fi}
 \DeclareRobustCommand{\TeX}{%
   \def\@tempa{cmr}%
@@ -1552,7 +1827,11 @@
         \else
           \def\@tempa{ppl}%
           \ifx\f@family\@tempa\pplTeX
-          \else\sfTeX
+          \else
+            \def\@tempa{ugm}%
+            \ifx\f@family\@tempa\ugmTeX
+            \else\sfTeX
+            \fi
           \fi
         \fi
       \fi
@@ -1574,7 +1853,11 @@
         \else
           \def\@tempa{ppl}%
           \ifx\f@family\@tempa\pplLaTeX
-          \else\sfLaTeX
+          \else
+            \def\@tempa{ugm}%
+            \ifx\f@family\@tempa\ugmLaTeX
+            \else\sfLaTeX
+            \fi
           \fi
         \fi
       \fi
@@ -1587,10 +1870,10 @@
 \def\pLaTeX{p\LaTeX}
 \def\pLaTeXe{p\LaTeXe}
 \def\AmSTeX{\protect\AmS-\protect\TeX{}}
-\DeclareRobustCommand{\BibTeX}{B\kern-.05em\小{I\kern-.025em B}%
+\DeclareRobustCommand{\BibTeX}{B\kern-.05em\$B>.(B{I\kern-.025em B}%
   \ifx\f@family\cmr\kern-.08em\else\kern-.15em\fi\TeX}
 \DeclareRobustCommand{\SliTeX}{%
-  S\kern-.06emL\kern-.18em\上小{I}\kern -.03em\TeX}
+  S\kern-.06emL\kern-.18em\$B>e>.(B{I}\kern -.03em\TeX}
 \let\ltx@ifnextchar\@ifnextchar
 \def\ProvidesFile#1{%
   \begingroup
@@ -1603,24 +1886,24 @@
     \@makeother\/%
     \@makeother\&%
     \ltx@ifnextchar[{\@providesfile{#1}}{\@providesfile{#1}[]}}
-\newcommand{\prepartname}{\if@english Part~\else 第\fi}
-\newcommand{\postpartname}{\if@english\else 部\fi}
-\newcommand{\prechaptername}{\if@english Chapter~\else 第\fi}
-\newcommand{\postchaptername}{\if@english\else 章\fi}
-\newcommand{\presectionname}{}%  第
-\newcommand{\postsectionname}{}% 節
-\newcommand{\contentsname}{\if@english Contents\else 目次\fi}
-\newcommand{\listfigurename}{\if@english List of Figures\else 図目次\fi}
-\newcommand{\listtablename}{\if@english List of Tables\else 表目次\fi}
-\newcommand{\refname}{\if@english References\else 参考文献\fi}
-\newcommand{\bibname}{\if@english Bibliography\else 参考文献\fi}
-\newcommand{\indexname}{\if@english Index\else 索引\fi}
-\newcommand{\figurename}{\if@english Fig.~\else 図\fi}
-\newcommand{\tablename}{\if@english Table.~\else 表\fi}
-\newcommand{\appendixname}{\if@english Appendix~\else 付録\fi}
-\newif\if西暦 \西暦true
-\def\西暦{\西暦true}
-\def\和暦{\西暦false}
+\newcommand{\prepartname}{\if@english Part~\else $BBh(B\fi}
+\newcommand{\postpartname}{\if@english\else $BIt(B\fi}
+\newcommand{\prechaptername}{\if@english Chapter~\else $BBh(B\fi}
+\newcommand{\postchaptername}{\if@english\else $B>O(B\fi}
+\newcommand{\presectionname}{}%  $BBh(B
+\newcommand{\postsectionname}{}% $B@a(B
+\newcommand{\contentsname}{\if@english Contents\else $BL\<!(B\fi}
+\newcommand{\listfigurename}{\if@english List of Figures\else $B?^L\<!(B\fi}
+\newcommand{\listtablename}{\if@english List of Tables\else $BI=L\<!(B\fi}
+\newcommand{\refname}{\if@english References\else $B;29MJ88%(B\fi}
+\newcommand{\bibname}{\if@english Bibliography\else $B;29MJ88%(B\fi}
+\newcommand{\indexname}{\if@english Index\else $B:w0z(B\fi}
+\newcommand{\figurename}{\if@english Fig.~\else $B?^(B\fi}
+\newcommand{\tablename}{\if@english Table~\else $BI=(B\fi}
+\newcommand{\appendixname}{\if@english \else $BIUO?(B\fi}
+\newif\if$B@>Nq(B \$B@>Nq(Btrue
+\def\$B@>Nq(B{\$B@>Nq(Btrue}
+\def\$BOBNq(B{\$B@>Nq(Bfalse}
 \newcount\heisei \heisei\year \advance\heisei-1988\relax
 \def\today{%
   \if@english
@@ -1629,14 +1912,14 @@
       July\or August\or September\or October\or November\or December\fi
       \space\number\day, \number\year
   \else
-    \if西暦
-      \number\year 年
-      \number\month 月
-      \number\day 日
+    \if$B@>Nq(B
+      \number\year $BG/(B
+      \number\month $B7n(B
+      \number\day $BF|(B
     \else
-      平成\number\heisei 年
-      \number\month 月
-      \number\day 日
+      $BJ?@.(B\number\heisei $BG/(B
+      \number\month $B7n(B
+      \number\day $BF|(B
     \fi
   \fi}
 \hyphenation{ado-be post-script ghost-script phe-nom-e-no-log-i-cal man-u-script}

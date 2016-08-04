@@ -1,7 +1,7 @@
 lethead_flag            1
 lethead_prefix "\n\\underline{\\hbox to \\linewidth{\\large{\\sffamily\\bfseries "
 lethead_suffix "\\hfill}}}\\nopagebreak\n"
-symhead_positive	"¿ô»ú/µ­¹æ"
+symhead_positive	"æ•°å­—/è¨˜å·"
 letter_head		2
 delim_0			" \\dotfill\\ "
 delim_1			" \\dotfill\\ "
